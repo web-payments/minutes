@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Scrawl - A Meeting Scribing Tool</title>
+  <meta name="description" content="The Scrawl scribing tool is used to translate IRC logs into meeting minutes." />
+  <link rel="stylesheet" media="screen" href="scrawl.css" />
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script type="text/javascript" src="scrawl.js"></script>
+</head>
+<body>
+
+<form>
+  <div>
+    <label for="meeting-audio">Audio Log</label>
+    <input type="url" id="meeting-audio" name="meeting-audio" placeholder="Link to audio recording of meeting" size="64">
+  </div>
+  <div>
+    <label for="meeting-irc-log">IRC Log</label>
+    <textarea id="meeting-irc-log" name="meeting-irc-log" placeholder="Paste and edit the IRC log here"></textarea>
+  </div>
+  <div>
+    <label for="meeting-minutes-generate" >&nbsp;</label>
+    <input name="meeting-minutes-generate" type="button" value="Generate" onclick="javascript:scrawl.generateMinutes()">
+  </div>
+</form>
+
+<div id="summary">
+</div>
+
+<div id="output">
+</div>
+
+<textarea id="code" width="80" height="20"></textarea>
+
+</body>
+</html>
+
