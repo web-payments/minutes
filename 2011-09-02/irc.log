@@ -25,9 +25,8 @@
 [Fri 12:16] <dlongley> also do some work in semantic web, eg: JSON-LD.
 [Fri 12:16] -->| mjohnson_db (60f0a64c@gateway/web/freenode/ip.96.240.166.76) has joined #payswarm
 [Fri 12:17] <voip-ps> <unknown> (IAX2/diamondcard-3894) has joined the conference.
-[Fri 12:18] <manu`> Manu: gives introduction on himself.
+[Fri 12:18] <taaz> manu`: Manu Sporny, founder of Digital Bazaar. Company purpose to help people buy and sell digital goods over the web. Focused on putting financial technology in peoples hands. Worked with P2P payments in the past. Involved in semantic web technologies: RDF, JSON-LD, RDFa. Need to use those for listing assets. Look at problems holistically. Very interested in creating patent and royalty free standards.
 [Fri 12:18] <voip-ps> Failed to associate mjohnson_db with an audio channel ending in '3984'
-[Fri 12:19] <mjohnson_db> thats not me
 [Fri 12:19] <manu`> Topic: Resources
 [Fri 12:19] <voip-ps> mjohnson_db is now associated with IAX2/diamondcard-3894.
 [Fri 12:19] <manu`> http://www.w3.org/community/webpayments/
@@ -37,16 +36,23 @@
 [Fri 12:21] <voip-ps> manu` has the floor. The speaker queue is empty.
 [Fri 12:21] <manu`> Manu explains the voip bridge/IRC bot.
 [Fri 12:22] <manu`> https://github.com/web-payments/
+[Fri 12:22] <taaz> manu`: GitHub site has minutes and payswarm.com site source. Everything open and transparent and recorded. Anyone can listen to audio and text logs, see source code for web sites and specs. Commits go live immediately.
+[Fri 12:22] <taaz> manu`: Also a wiki on web payments community site. Should start collecting links and other information.
 [Fri 12:23] -->| gf239 (6dbcc4ee@gateway/web/freenode/ip.109.188.196.238) has joined #payswarm
 [Fri 12:23] <voip-ps> mjohnson (SIP/192.168.66.64-00000046) has joined the conference.
 [Fri 12:23] <dlongley> voip: 0046 is mjohnson_db
 [Fri 12:23] <voip-ps> mjohnson_db is now associated with SIP/192.168.66.64-00000046.
 [Fri 12:25] -->| mitgor (6dbcb9cf@gateway/web/freenode/ip.109.188.185.207) has joined #payswarm
 [Fri 12:25] <manu`> http://payswarm.com/wiki/WordPress_Recipes_Demo
+[Fri 12:25] <taaz> manu`: WordPress demo of PaySwarm demo and source is available.
+[Fri 12:25] <taaz> manu`: Good to take a look at demo to understand the PaySwarm idea in practice.
+[Fri 12:26] <taaz> manu`: Dmitry, you wanted to talk about P2P payment systems as resources?
+[Fri 12:26] <taaz> mitgor: Yes, but will shift to next call to to prepare interactive demos.
 [Fri 12:26] <taaz> what are we using to track issues? github for per-project issues or should we use w3 community site issue tracker?
 [Fri 12:26] <manu`> Manu explains other resources.
 [Fri 12:27] <manu`> Pelle: I prefer the github issue tracker - we can start out using that one.
 [Fri 12:27] <taaz> github has api for issues (i think?) so we might be able to migrate issues if needed
+[Fri 12:27] <taaz> manu`: Advantage of W3C tracker is that issues are automatically linked in mailing list archives.
 [Fri 12:28] <manu`> jeffsayre: Github is my preference as well.
 [Fri 12:28] <dlongley> +1 github
 [Fri 12:28] <mjohnson_db> +1 github
@@ -57,22 +63,26 @@
 [Fri 12:29] <manu`> Discoverability of assets and payment methods
 [Fri 12:29] <manu`> Offer creation and discoverability
 [Fri 12:29] <manu`> Offer acceptance / Digital Contracts / Proof of Purchase
+[Fri 12:29] <taaz> manu`: Asks Pelle to talk about value transfer due to work on OpenTransact and bare minimum to build on.
 [Fri 12:30] <manu`> Pelle: Really, the issue is simply - paying someone something. It doesn't have to be a dollar amount, it can also be transferring an asset to someone.
 [Fri 12:30] <manu`> Pelle: We wanted to base it on HTTP - look at resources - look at URIs as assets - post to that w/ a couple of parameters and that's value transfer.
 [Fri 12:30] <manu`> Pelle: This is the core underlying payment in any of these use cases.
 [Fri 12:31] <manu`> Pelle: I see a standard like this to be able to replace just about any other payment-related system that are used right now in banking.
+[Fri 12:31] <taaz> manu`: So you would like to see us reduce this down to minimum so other more complex systems can be built on top. Approach from simplicity instead of a gigantic system.
 [Fri 12:32] <manu`> Pelle: All of these things should be usable on their own - for example, certain applications will not have a need for discoverability... but all of them will need value transfer.
-[Fri 12:32] <manu`> Dmitri: We're talking about agreements - whole system needs - money emissions - we should be able to manage small payments between peers.
-[Fri 12:33] <manu`> Dmitri: We need to understand peer-to-peer aspect of it.
-[Fri 12:34] <manu`> jeffsayre: I think that makes sense - I'd like to explore PaySwarm spec as it currently exists - see which parts are applicable to the overall group. There is a lot of it that is pretty simple already - need to look more into Open Transact.
+[Fri 12:32] <manu`> Dmitry: We're talking about agreements - whole system needs - money emissions - we should be able to manage small payments between peers.
+[Fri 12:33] <manu`> Dmitry: We need to understand peer-to-peer aspect of it.
+[Fri 12:34] <manu`> jeffsayre: I think that makes sense - I'd like to explore PaySwarm spec as it currently exists - see which parts are applicable to the overall group. There is a lot of it that is pretty simple already - need to look more into OpenTransact.
 [Fri 12:34] <jeffsayre> q+
 [Fri 12:34] <voip-ps> Added jeffsayre to the speaker queue: jeffsayre
-[Fri 12:34] <manu`> Manu: We want to pull in other folks.
+[Fri 12:34] <manu`> Manu: We want to pull in other folks from Bitcoin, Ben and RipplePay, and meta currency folks. Want to do due diligence on other payment systems to make sure we cover as many use cases as we can without over complicating the spec.
 [Fri 12:34] <manu`> ack jeffsayre
 [Fri 12:34] <voip-ps> jeffsayre has the floor. The speaker queue is empty.
 [Fri 12:35] <manu`> Jeff: We may want to look at the current alternatives - we want to discuss this - lets see where the commonalities exist between PaySwarm and the alternatives. We should have a good understanding after we start doing those types of comparison.
-[Fri 12:37] <manu`> Dmitri: We should talk about common standard for P2P payment standards like Bitcoin... do a quick presentation on this stuff. P2P payments - will cover that. Prospective directions.
+[Fri 12:37] <manu`> Dmitry: We should talk about common standard for P2P payment standards like Bitcoin... do a quick presentation on this stuff. P2P payments - will cover that. Prospective directions.
+[Fri 12:37] <taaz> manu`: We absolutely need to understand these technologies in depth before proposing a solution that we say covers something when we don't.
 [Fri 12:37] <manu`> Pelle: Peer-to-peer is very, very important.
+[Fri 12:37] <taaz> manu`: We've been using the word "decentralized" so as not to push complexity of P2P systems on to the clients. Ability to have a decentralized system is important.
 [Fri 12:38] <pelleb> q+
 [Fri 12:38] <voip-ps> Added pelleb to the speaker queue: pelleb
 [Fri 12:38] <jeffsayre> q+
@@ -80,13 +90,14 @@
 [Fri 12:38] <manu`> ack pelleb
 [Fri 12:38] <voip-ps> pelleb has the floor. The next speaker is jeffsayre.
 [Fri 12:38] <manu`> Pelle: P2P is person-to-person, not specifically a peer-to-peer transfer - PayPal could be defined as peer-to-peer / person-to-person.
-[Fri 12:39] <manu`> Dmitri: Ah, yes - "pure" P2P is not required, but is nice.
+[Fri 12:39] <manu`> Dmitry: Ah, yes - "pure" P2P is not required, but is nice.
 [Fri 12:39] <manu`> ack jeffsayre
 [Fri 12:39] <voip-ps> pelleb has the floor. The speaker queue is empty.
 [Fri 12:40] <dlongley> There will still be authorities that can enforce contracts, but they will be decentralized, which means person-to-person will interact with some kind of decentralized authority. In person-to-person there will be 3 parties, not just 2.
 [Fri 12:40] <jeffsayre> q+
 [Fri 12:40] <voip-ps> Added jeffsayre to the speaker queue: jeffsayre
 [Fri 12:41] <manu`> Jeff: Yes, that clarifies the issue for me - we should model the payment standard off of the way the Web is modeled - decentralized. If P2P means person-to-person that's good.
+[Fri 12:41] <taaz> manu`: Security and other issues with Bitcoin. Not necessarily a standard Digital Bazaar is working towards.
 [Fri 12:41] <manu`> ack jeffsayre
 [Fri 12:41] <voip-ps> jeffsayre has the floor. The speaker queue is empty.
 [Fri 12:42] <dlongley> (Not to mention all kinds of government and taxation issues)
@@ -101,8 +112,8 @@
 [Fri 12:43] <voip-ps> pelleb has the floor. The speaker queue is empty.
 [Fri 12:44] <jeffsayre> q+
 [Fri 12:44] <voip-ps> Added jeffsayre to the speaker queue: jeffsayre
-[Fri 12:44] <manu`> Pelle: I agree completely. Bitcoin itself is not HTTP - it's not Web at it's core. However, the core value transfer of BitCoin MtGox could implement PaySwarm. We're not talking about underlying economic principles here. Since this is a Web Payment - we're talking about the Web.
-[Fri 12:45] <manu`> Dmitri: Yes, I think that's fine, probably - I'll add some comments later on - next call. I don't want to discuss BitCoin on the first call - it's a big topic. Not a topic we want to get into on the first call. We shouldn't get into it today.
+[Fri 12:44] <manu`> Pelle: I agree completely. Bitcoin itself is not HTTP - it's not Web at it's core. However, the core value transfer of Bitcoin MtGox could implement PaySwarm. We're not talking about underlying economic principles here. Since this is a Web Payment - we're talking about the Web.
+[Fri 12:45] <manu`> Dmitry: Yes, I think that's fine, probably - I'll add some comments later on - next call. I don't want to discuss Bitcoin on the first call - it's a big topic. Not a topic we want to get into on the first call. We shouldn't get into it today.
 [Fri 12:46] <jeffsayre> q+
 [Fri 12:46] <voip-ps> Added jeffsayre to the speaker queue: jeffsayre, jeffsayre
 [Fri 12:46] <manu`> ack jeffsayre
@@ -120,15 +131,17 @@
 [Fri 12:47] <manu`> jeff: Yes, that's the same way I think about it.
 [Fri 12:47] <manu`> Pelle: We don't need a new transport protocol.
 [Fri 12:47] <manu`> ack manu`
+[Fri 12:47] <taaz> manu`: When we talk web we mean HTTP, not CSS, JS, etc. We are talking an Internet standard that tends to use web standards. Using RDFa to specify listings but could just use JSON-LD. Ben Laurie asked why we are we doing this through W3C vs IETF. Doing it in W3C because community groups makes the process easy and we are using a number of web technologies: IRI, HTML, RDFa, JSON-LD in the future. Don't need a web browser for this, can use command line or script.
 [Fri 12:47] <voip-ps> pelleb has the floor. The speaker queue is empty.
 [Fri 12:48] <dlongley> No new transport protocol, use HTTP/S.
 [Fri 12:48] <dlongley> Ben Laurie works with Google.
 [Fri 12:49] <dlongley> http://en.wikipedia.org/wiki/Ben_Laurie
-[Fri 12:49] <dlongley> Is founding directory of Apache project
-[Fri 12:49] <dlongley> director*
+[Fri 12:49] <dlongley> Is founding director of Apache project
 [Fri 12:49] <mjohnson_db> Sorry, I don't have voice so I can't hear where the discussion is gone. Just wanted to make a point about the decentralized structure being similar to how banks operate currently. There is overall regulation on the banks, but each can act independently and is able to communicate money transfers between each other.Basically an authority in the future might just be a bank, with a web status from running the authority software.
-[Fri 12:50] <manu`> Dmitri: We don't need to implement new protocols - we can rely on existing technolgies.
+[Fri 12:50] <manu`> Dmitry: We don't need to implement new protocols - we can rely on existing technologies.
+[Fri 12:51] <taaz> manu`: Sounds like we are all in agreement. Agreement on a number of core principles. Good sign we're all under same delusion or on the right path.
 [Fri 12:51] <manu`> * Offer creation and discoverability
+[Fri 12:51] <taaz> manu`: PaySwarm calls offers "listings" but is the same concept. People should be able to express what they want to sell in a decentralized way on the web. Someone else should be able to come to that resource and say the want to buy this without going through a central intermediary. Dmitry, might be a part of your P2P model. PaySwarm came out of a pure P2P network. Two people should be able to come to website and exchange something without a centralized listing service. That is a failure due to giving power to a single entity on the web. Is offer creation and discoverability in scope?
 [Fri 12:52] <dlongley> +1
 [Fri 12:52] <voip-ps> mitgor (IAX2/diamondcard-745) has left the conference.
 [Fri 12:52] <pelleb> +1
@@ -141,7 +154,7 @@
 [Fri 12:53] <mjohnson_db> yes
 [Fri 12:53] <taaz> +1
 [Fri 12:53] <dlongley> manu`: do people feel that offer/listing creation/discoverability (in a decentralized manner) are in scope for this group?
-[Fri 12:54] <manu`> Dmitri: Yes, offer creation/acceptance should be a part of this group.
+[Fri 12:54] <manu`> Dmitry: Yes, offer creation/acceptance should be a part of this group.
 [Fri 12:54] <manu`> * Offer acceptance
 [Fri 12:54] <gf239> +1
 [Fri 12:54] <dlongley> manu`: if a listing service is centralized, we will have failed, we usually want power like this to be decentralized on the web.
@@ -165,6 +178,7 @@
 [Fri 12:58] <manu`> Jeff: There is some implicit acceptance by wielding a credit card... there needs to be something similar to that.
 [Fri 12:59] <dlongley> http://www.w3.org/wiki/WebID
 [Fri 12:59] <manu`> Manu: WebID is there...
+[Fri 12:59] <taaz> manu`: Underlying identity mechanism in PaySwarm is based off of WebID. You have an IRI to your id, you have public id associated with it, a number of accounts associated with it, which may be public or private. Not full WebID stack.
 [Fri 12:59] <manu`> Jeff: BrowserID could be a part of it.
 [Fri 13:00] <manu`> Pelle: On authentication protocols, I think that if it is complex in any way - it may not be a necessary core part of it. We could say it's recommended.
 [Fri 13:00] <mjohnson_db> But we are not going to be focused on the identity part, correct? That is out of scope of this group. I ask because I cannot hear the conversation.
@@ -172,9 +186,10 @@
 [Fri 13:01] <dlongley> but instead make recommendations
 [Fri 13:01] <manu`> Jeff: That might be in keeping w/ what we said about 3rd party developers - point people to an IRI and let people decide whether it's WebID or BrowserID.
 [Fri 13:02] <manu`> Topic: Meetings
+[Fri 13:02] <taaz> manu`: Can do many things on mailing list, don't want to overload people with meetings.
+[Fri 13:02] <manu`> Manu: How does every other week sound?
 [Fri 13:02] <pelleb> +1
 [Fri 13:02] <mitgor> +1
-[Fri 13:02] <manu`> Manu: How does every other week sound?
 [Fri 13:03] <jeffsayre> +1
 [Fri 13:03] <dlongley> +1
 [Fri 13:03] <jeffsayre> Good convo.
