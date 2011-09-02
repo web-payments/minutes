@@ -1,0 +1,181 @@
+[Fri 12:08] <manu`> Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2011Aug/0030.html
+[Fri 12:08] <manu`> scribe: manu`
+[Fri 12:08] * manu` voip: mute <IRC NAME or last 4 of extension>
+[Fri 12:08] * manu` voip: unmute <IRC NAME or last 4 of extension>
+[Fri 12:09] <manu`> mitgor: I'd like discuss additional P2P monetary transaction resources.
+[Fri 12:10] <manu`> mitgor: We should discuss when to have monthly meetings.
+[Fri 12:10] <manu`> Manu: Every two weeks was intent.
+[Fri 12:11] <manu`> Topic: Introductions
+[Fri 12:11] <manu`> jeffsayre: My name is Jeff Sayre, involved in Open Source tech for a number of years, been interested in federated social web
+[Fri 12:11] <manu`> ... very interested in privacy, WebID - interested in Web Payments... written a number of articles on payments. Newest push is differentiating Web 2.0 startups from Web 3.0 "Smartups".
+[Fri 12:12] <manu`> ... very interested in pushing an open web payment standards.
+[Fri 12:12] <jeffsayre> http://jeffsayre.com/
+[Fri 12:13] <manu`> pelle: Hi I'm Pelle Brandengard, one of the main guys behind OpenTransact... been working on payments for over 12 years. My startup is PicoMoney - service provider for creating virtual currencies.
+[Fri 12:13] <manu`> pelle: Been working on standards w/ exactly same purpose as PaySwarm - we need some standards on this stuff. We need something at a lower level than PaySwarm, want a really simple basic standard for every single type of payment you can imagine.
+[Fri 12:14] <manu`> pelle: Very important to not just look at individual use cases - think holistically.
+[Fri 12:14] <manu`> mitgor: I am from Dmitry Gorilovsky from Aintsys corporation based in Russia. We are focused on monetary technologies, transactions protocols for P2P money.
+[Fri 12:15] <manu`> mitgor: Very helpful for companies that want digital P2P currencies for everyone.
+[Fri 12:16] <dlongley> no mic
+[Fri 12:16] <manu`> dlehn: I work at Digital Bazaar, been here working on Bitmunk (P2P music) - working on various bits and pieces to PaySwarm.
+[Fri 12:16] <dlongley> I'm the CTO of Digital Bazaar, been working on decentralized/P2P distribution of digital goods, culminating in PaySwarm work.
+[Fri 12:16] -->| pelleb (~pelleb@24-145-67-177-dhcp.mia.fl.atlanticbb.net) has joined #payswarm
+[Fri 12:16] <manu`> voip: connections?
+[Fri 12:16] <voip-ps> Conference connections: SIP/10.0.0.104-00000045, <unknown> (jeffsayre) [IAX2/diamondcard-9558], Dave Lehn [SIP/6003-00000043], <unknown> (mitgor) [IAX2/diamondcard-745], Manu Sporny [SIP/6000-00000042], Pelle Braendgaard [SIP/10.0.1.7-00000044]
+[Fri 12:16] <dlongley> been working with manu for about 7 years or so.
+[Fri 12:16] <dlongley> also do some work in semantic web, eg: JSON-LD.
+[Fri 12:16] -->| mjohnson_db (60f0a64c@gateway/web/freenode/ip.96.240.166.76) has joined #payswarm
+[Fri 12:17] <voip-ps> <unknown> (IAX2/diamondcard-3894) has joined the conference.
+[Fri 12:18] <manu`> Manu: gives introduction on himself.
+[Fri 12:18] <voip-ps> Failed to associate mjohnson_db with an audio channel ending in '3984'
+[Fri 12:19] <mjohnson_db> thats not me
+[Fri 12:19] <manu`> Topic: Resources
+[Fri 12:19] <voip-ps> mjohnson_db is now associated with IAX2/diamondcard-3894.
+[Fri 12:19] <manu`> http://www.w3.org/community/webpayments/
+[Fri 12:20] <manu`> q+
+[Fri 12:20] <voip-ps> Added manu` to the speaker queue: manu`
+[Fri 12:21] <manu`> ack manu`
+[Fri 12:21] <voip-ps> manu` has the floor. The speaker queue is empty.
+[Fri 12:21] <manu`> Manu explains the voip bridge/IRC bot.
+[Fri 12:22] <manu`> https://github.com/web-payments/
+[Fri 12:23] -->| gf239 (6dbcc4ee@gateway/web/freenode/ip.109.188.196.238) has joined #payswarm
+[Fri 12:23] <voip-ps> mjohnson (SIP/192.168.66.64-00000046) has joined the conference.
+[Fri 12:23] <dlongley> voip: 0046 is mjohnson_db
+[Fri 12:23] <voip-ps> mjohnson_db is now associated with SIP/192.168.66.64-00000046.
+[Fri 12:25] -->| mitgor (6dbcb9cf@gateway/web/freenode/ip.109.188.185.207) has joined #payswarm
+[Fri 12:25] <manu`> http://payswarm.com/wiki/WordPress_Recipes_Demo
+[Fri 12:26] <taaz> what are we using to track issues? github for per-project issues or should we use w3 community site issue tracker?
+[Fri 12:26] <manu`> Manu explains other resources.
+[Fri 12:27] <manu`> Pelle: I prefer the github issue tracker - we can start out using that one.
+[Fri 12:27] <taaz> github has api for issues (i think?) so we might be able to migrate issues if needed
+[Fri 12:28] <manu`> jeffsayre: Github is my preference as well.
+[Fri 12:28] <dlongley> +1 github
+[Fri 12:28] <mjohnson_db> +1 github
+[Fri 12:28] <manu`> Manu: Ok, looks like we'll use github for issue tracking.
+[Fri 12:28] <manu`> Topic: Web Payment Goals
+[Fri 12:29] <manu`> Let's use the following as discussion points:
+[Fri 12:29] <manu`> Value transfer (core payment)
+[Fri 12:29] <manu`> Discoverability of assets and payment methods
+[Fri 12:29] <manu`> Offer creation and discoverability
+[Fri 12:29] <manu`> Offer acceptance / Digital Contracts / Proof of Purchase
+[Fri 12:30] <manu`> Pelle: Really, the issue is simply - paying someone something. It doesn't have to be a dollar amount, it can also be transferring an asset to someone.
+[Fri 12:30] <manu`> Pelle: We wanted to base it on HTTP - look at resources - look at URIs as assets - post to that w/ a couple of parameters and that's value transfer.
+[Fri 12:30] <manu`> Pelle: This is the core underlying payment in any of these use cases.
+[Fri 12:31] <manu`> Pelle: I see a standard like this to be able to replace just about any other payment-related system that are used right now in banking.
+[Fri 12:32] <manu`> Pelle: All of these things should be usable on their own - for example, certain applications will not have a need for discoverability... but all of them will need value transfer.
+[Fri 12:32] <manu`> Dmitri: We're talking about agreements - whole system needs - money emissions - we should be able to manage small payments between peers.
+[Fri 12:33] <manu`> Dmitri: We need to understand peer-to-peer aspect of it.
+[Fri 12:34] <manu`> jeffsayre: I think that makes sense - I'd like to explore PaySwarm spec as it currently exists - see which parts are applicable to the overall group. There is a lot of it that is pretty simple already - need to look more into Open Transact.
+[Fri 12:34] <jeffsayre> q+
+[Fri 12:34] <voip-ps> Added jeffsayre to the speaker queue: jeffsayre
+[Fri 12:34] <manu`> Manu: We want to pull in other folks.
+[Fri 12:34] <manu`> ack jeffsayre
+[Fri 12:34] <voip-ps> jeffsayre has the floor. The speaker queue is empty.
+[Fri 12:35] <manu`> Jeff: We may want to look at the current alternatives - we want to discuss this - lets see where the commonalities exist between PaySwarm and the alternatives. We should have a good understanding after we start doing those types of comparison.
+[Fri 12:37] <manu`> Dmitri: We should talk about common standard for P2P payment standards like Bitcoin... do a quick presentation on this stuff. P2P payments - will cover that. Prospective directions.
+[Fri 12:37] <manu`> Pelle: Peer-to-peer is very, very important.
+[Fri 12:38] <pelleb> q+
+[Fri 12:38] <voip-ps> Added pelleb to the speaker queue: pelleb
+[Fri 12:38] <jeffsayre> q+
+[Fri 12:38] <voip-ps> Added jeffsayre to the speaker queue: pelleb, jeffsayre
+[Fri 12:38] <manu`> ack pelleb
+[Fri 12:38] <voip-ps> pelleb has the floor. The next speaker is jeffsayre.
+[Fri 12:38] <manu`> Pelle: P2P is person-to-person, not specifically a peer-to-peer transfer - PayPal could be defined as peer-to-peer / person-to-person.
+[Fri 12:39] <manu`> Dmitri: Ah, yes - "pure" P2P is not required, but is nice.
+[Fri 12:39] <manu`> ack jeffsayre
+[Fri 12:39] <voip-ps> pelleb has the floor. The speaker queue is empty.
+[Fri 12:40] <dlongley> There will still be authorities that can enforce contracts, but they will be decentralized, which means person-to-person will interact with some kind of decentralized authority. In person-to-person there will be 3 parties, not just 2.
+[Fri 12:40] <jeffsayre> q+
+[Fri 12:40] <voip-ps> Added jeffsayre to the speaker queue: jeffsayre
+[Fri 12:41] <manu`> Jeff: Yes, that clarifies the issue for me - we should model the payment standard off of the way the Web is modeled - decentralized. If P2P means person-to-person that's good.
+[Fri 12:41] <manu`> ack jeffsayre
+[Fri 12:41] <voip-ps> jeffsayre has the floor. The speaker queue is empty.
+[Fri 12:42] <dlongley> (Not to mention all kinds of government and taxation issues)
+[Fri 12:42] <manu`> Jeff: Yes, I think that makes sense - I agree with that. We shouldn't make assumptions and form opinions on things beyond community scope. There are economic issues w/ the bitcoin monetary supply. We should figure out a way to allow alternative currencies to interface in an appropriate way.
+[Fri 12:42] <dlongley> We should avoid that as much as possible.
+[Fri 12:43] <dlongley> The standard shouldn't force particular currencies, it should be able to be used with any viable currency.
+[Fri 12:43] <pelleb> q+
+[Fri 12:43] <voip-ps> Added pelleb to the speaker queue: pelleb
+[Fri 12:43] <manu`> Jeff: via modules - you could tie in and offer/extend the payment standard to allow alternative currencies. Supporting infrastructure is there - but we would not want it in base protocol (bitcoin in core protocol). You need to make sure that this is open to other alternatives - not integrate directly.
+[Fri 12:43] <dlongley> but implementing a currency should not be part of the standard.
+[Fri 12:43] <manu`> ack pelleb
+[Fri 12:43] <voip-ps> pelleb has the floor. The speaker queue is empty.
+[Fri 12:44] <jeffsayre> q+
+[Fri 12:44] <voip-ps> Added jeffsayre to the speaker queue: jeffsayre
+[Fri 12:44] <manu`> Pelle: I agree completely. Bitcoin itself is not HTTP - it's not Web at it's core. However, the core value transfer of BitCoin MtGox could implement PaySwarm. We're not talking about underlying economic principles here. Since this is a Web Payment - we're talking about the Web.
+[Fri 12:45] <manu`> Dmitri: Yes, I think that's fine, probably - I'll add some comments later on - next call. I don't want to discuss BitCoin on the first call - it's a big topic. Not a topic we want to get into on the first call. We shouldn't get into it today.
+[Fri 12:46] <jeffsayre> q+
+[Fri 12:46] <voip-ps> Added jeffsayre to the speaker queue: jeffsayre, jeffsayre
+[Fri 12:46] <manu`> ack jeffsayre
+[Fri 12:46] <voip-ps> jeffsayre has the floor. The next speaker is jeffsayre.
+[Fri 12:46] <manu`> ack jeffsayre
+[Fri 12:46] <voip-ps> jeffsayre has the floor. The speaker queue is empty.
+[Fri 12:46] <pelleb> q+
+[Fri 12:46] <voip-ps> Added pelleb to the speaker queue: pelleb
+[Fri 12:47] <manu`> Jeff: I think that we should clarify - the payment standard is a "Web" payment standard... the "Mobile" based Internet is not two separate things. We need to clarify: Are we speaking specifically from a technical standpoint - is this Web-only, or is it Internet-only.
+[Fri 12:47] <voip-ps> Added manu` to the speaker queue: pelleb, manu`
+[Fri 12:47] -->| youpas (5ebc1cf6@gateway/web/freenode/ip.94.188.28.246) has joined #payswarm
+[Fri 12:47] <manu`> ack pelleb
+[Fri 12:47] <voip-ps> pelleb has the floor. The next speaker is manu`.
+[Fri 12:47] <manu`> Pelle: When I say Web, I mean the underlying technology - mobile Web is a part of that.
+[Fri 12:47] <manu`> jeff: Yes, that's the same way I think about it.
+[Fri 12:47] <manu`> Pelle: We don't need a new transport protocol.
+[Fri 12:47] <manu`> ack manu`
+[Fri 12:47] <voip-ps> pelleb has the floor. The speaker queue is empty.
+[Fri 12:48] <dlongley> No new transport protocol, use HTTP/S.
+[Fri 12:48] <dlongley> Ben Laurie works with Google.
+[Fri 12:49] <dlongley> http://en.wikipedia.org/wiki/Ben_Laurie
+[Fri 12:49] <dlongley> Is founding directory of Apache project
+[Fri 12:49] <dlongley> director*
+[Fri 12:49] <mjohnson_db> Sorry, I don't have voice so I can't hear where the discussion is gone. Just wanted to make a point about the decentralized structure being similar to how banks operate currently. There is overall regulation on the banks, but each can act independently and is able to communicate money transfers between each other.Basically an authority in the future might just be a bank, with a web status from running the authority software.
+[Fri 12:50] <manu`> Dmitri: We don't need to implement new protocols - we can rely on existing technolgies.
+[Fri 12:51] <manu`> * Offer creation and discoverability
+[Fri 12:52] <dlongley> +1
+[Fri 12:52] <voip-ps> mitgor (IAX2/diamondcard-745) has left the conference.
+[Fri 12:52] <pelleb> +1
+[Fri 12:52] <jeffsayre> +1
+[Fri 12:52] <mjohnson_db> what is the vote for?
+[Fri 12:53] <dlongley> whether or not offer creation/discoverability is in scope
+[Fri 12:53] <mjohnson_db> +1
+[Fri 12:53] <voip-ps> <unknown> (IAX2/diamondcard-15905) has joined the conference.
+[Fri 12:53] <dlongley> (listings in payswarm)
+[Fri 12:53] <mjohnson_db> yes
+[Fri 12:53] <taaz> +1
+[Fri 12:53] <dlongley> manu`: do people feel that offer/listing creation/discoverability (in a decentralized manner) are in scope for this group?
+[Fri 12:54] <manu`> Dmitri: Yes, offer creation/acceptance should be a part of this group.
+[Fri 12:54] <manu`> * Offer acceptance
+[Fri 12:54] <gf239> +1
+[Fri 12:54] <dlongley> manu`: if a listing service is centralized, we will have failed, we usually want power like this to be decentralized on the web.
+[Fri 12:54] <manu`> Pelle: How do you take an offer and execute it.
+[Fri 12:54] <dlongley> Offer acceptance sounds like digital contract.
+[Fri 12:55] <manu`> Pelle: Let's say you see a Listing for something and you want to purchase it - it should be a fairly simple part of this.
+[Fri 12:55] <dlongley> well, digital contract is also important because there is some measure of enforceability/proof of purchase.
+[Fri 12:55] <mjohnson_db> If that is not part of the process, then there was simply a money transfer
+[Fri 12:55] <mjohnson_db> not necessarily a purchase
+[Fri 12:56] <dlongley> yes, not a transfer of asset.
+[Fri 12:56] <mjohnson_db> a purchase implies a receipt
+[Fri 12:56] <dlongley> manu`: Yes, we need a digital receipt and contract/proof of purchase for transferring an asset, which is different from a simple money transfer.
+[Fri 12:56] <dlongley> manu`: Proof of purchase/digital contract important part of the system?
+[Fri 12:56] <manu`> Is proof of purchase or a digital contract a part of this system?
+[Fri 12:57] <manu`> Pelle: I don't think a contract is necessary for the basic transfer - but for the higher-level (for offers) it should be a part of it.
+[Fri 12:57] <dlongley> i think it's very important, at a minimum, because of legal issues. copyright, etc.
+[Fri 12:57] <manu`> Pelle: I'm not certain if digital signatures are required, but they probably are.
+[Fri 12:57] <dlongley> proving that you have access to a particular asset.
+[Fri 12:58] Seems like the standard could easily fail if we don't take into consideration legality, intellectual property issues, etc.
+[Fri 12:58] <manu`> Jeff: I think digital contracts need to be a part of this system - it's how you pull it off - that's the question. You want an automated offer acceptance process. It needs to be a part of the overall transaction... there's always a type of acceptance.
+[Fri 12:58] <manu`> Jeff: There is some implicit acceptance by wielding a credit card... there needs to be something similar to that.
+[Fri 12:59] <dlongley> http://www.w3.org/wiki/WebID
+[Fri 12:59] <manu`> Manu: WebID is there...
+[Fri 12:59] <manu`> Jeff: BrowserID could be a part of it.
+[Fri 13:00] <manu`> Pelle: On authentication protocols, I think that if it is complex in any way - it may not be a necessary core part of it. We could say it's recommended.
+[Fri 13:00] <mjohnson_db> But we are not going to be focused on the identity part, correct? That is out of scope of this group. I ask because I cannot hear the conversation.
+[Fri 13:00] <dlongley> identity and authentication are important, but we shouldn't necessarily say: "you must use this"
+[Fri 13:01] <dlongley> but instead make recommendations
+[Fri 13:01] <manu`> Jeff: That might be in keeping w/ what we said about 3rd party developers - point people to an IRI and let people decide whether it's WebID or BrowserID.
+[Fri 13:02] <manu`> Topic: Meetings
+[Fri 13:02] <pelleb> +1
+[Fri 13:02] <mitgor> +1
+[Fri 13:02] <manu`> Manu: How does every other week sound?
+[Fri 13:03] <jeffsayre> +1
+[Fri 13:03] <dlongley> +1
+[Fri 13:03] <jeffsayre> Good convo.
+[Fri 13:03] <mjohnson_db> +1
