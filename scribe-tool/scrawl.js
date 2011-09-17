@@ -31,7 +31,7 @@
    scrawl.wordwrap = function(str, width, brk, cut ) 
    {
       brk = brk || '\n';
-      width = width || 75;
+      width = width || 65;
       cut = cut || false;
 
       if (!str) { return str; }
@@ -108,7 +108,7 @@
       }
       else
       {
-         rval = scrawl.wordwrap(msg, 75, "\n   ") + "\n";
+         rval = scrawl.wordwrap(msg, 65, "\n   ") + "\n";
       }
       
       return rval;
@@ -125,7 +125,7 @@
       }
       else
       {
-         rval = scrawl.wordwrap("\nPROPOSAL: " + msg, 75, "\n   ") + "\n\n";
+         rval = scrawl.wordwrap("\nPROPOSAL: " + msg, 65, "\n   ") + "\n\n";
       }
       
       return rval;
@@ -142,7 +142,7 @@
       }
       else
       {
-         rval = scrawl.wordwrap("\nRESOLUTION: " + msg, 75, "\n   ") + "\n\n";
+         rval = scrawl.wordwrap("\nRESOLUTION: " + msg, 65, "\n   ") + "\n\n";
       }
       
       return rval;
@@ -188,7 +188,7 @@
             scribeline += " [scribe assist by "+ assist + "]";
          }
       
-         rval = scrawl.wordwrap(scribeline, 75, "\n   ") + "\n";
+         rval = scrawl.wordwrap(scribeline, 65, "\n   ") + "\n";
       }
       
       return rval;
@@ -205,7 +205,7 @@
       }
       else
       {
-         rval = scrawl.wordwrap("   " + msg, 75, "\n   ") + "\n";
+         rval = scrawl.wordwrap("   " + msg, 65, "\n   ") + "\n";
       }
 
       return rval;
@@ -230,7 +230,7 @@
       }
       else
       {
-         rval = scrawl.wordwrap("\nError: " + msg, 75, "\n   ") + "\n";
+         rval = scrawl.wordwrap("\nError: " + msg, 65, "\n   ") + "\n";
       }
       
       return rval;
@@ -448,7 +448,7 @@
          rval += "Chair:\n   " + chair + "\n";
          rval += "Scribe:\n   " + scribe + "\n";
          rval += "Present:\n   " + 
-            scrawl.wordwrap(present.join(", "), 70, "\n   ") + "\n\n";
+            scrawl.wordwrap(present.join(", "), 65, "\n   ") + "\n\n";
       }
 
       return rval;
