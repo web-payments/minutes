@@ -329,7 +329,7 @@
       var aliases = scrawl.generateAliases();
       var context = 
       { 
-         "group": "JSON for Linking Data", 
+         "group": scrawl.group, 
          "chair": "Manu Sporny",
          "present": {},
          "topics": []
@@ -346,8 +346,10 @@
       $("#summary").html(summary);
       $("#output").html(minutes);
       
-      $("#code").html($('<div/>').text("" + summary).html());
-      $("#code").append($('<div/>').text("" + minutes).html());
+      $("#html-output").html($('<div/>').text("" + scrawl.htmlHeader).html());
+      $("#html-output").append($('<div/>').text("" + summary).html());
+      $("#html-output").append($('<div/>').text("" + minutes).html());
+      $("#html-output").append($('<div/>').text("" + scrawl.htmlFooter).html());
    };
 
 })(jQuery);
