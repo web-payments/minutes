@@ -69,6 +69,7 @@ print <<< htmlcode
 htmlcode;
 
 $allMinutes = scandir('.');
+rsort($allMinutes);
 
 foreach($allMinutes as $minutes)
 {
