@@ -1,0 +1,69 @@
+[Fri 12:07] <manu`> Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2011Sep/0001.html
+[Fri 12:07] <manu`> scribenick: jeffsayre
+[Fri 12:07] <manu`> Scribe: jeffsayre
+[Fri 12:07] <jeffsayre> Today's agenda: Use cases (in scope/out of scope); familiarize members in web payments techs
+[Fri 12:07] <manu`> Topic: Introductions
+[Fri 12:08] <manu`> We have a new participant - would you mind introducing yourself, Manny?
+[Fri 12:08] <jeffsayre> manny: Hi my name is Jose De Loera, but most people call me Manny. Recent grad of DeVry - technical management - have a big interest in technology, saw Web Payments stuff pop up online, wanted to get involved.
+[Fri 12:08] <jeffsayre> manu`: Great to have you here, Manny.
+[Fri 12:08] <jeffsayre> manu`: Agenda today is to try and cover use cases - we want to ground the discussion - focus on what we're working on. We want to get everyone familiar w/ various technologies applied to these problems. Let's go ahead an jump into first topic.
+[Fri 12:10] <manu`> Topic: PaySwarm Use Cases Review
+[Fri 12:10] <manu`> http://payswarm.com/specs/payswarm-use-cases
+[Fri 12:11] <jeffsayre> manu`: PaySwarm use cases may be out of date. There are 10 initially that may be useful to consider
+[Fri 12:11] <jeffsayre> manu`: Will do quick overview of use case and get members' feelings about usefulness
+[Fri 12:11] <manu`> http://payswarm.com/specs/payswarm-use-cases#for-profit-content-blogging
+[Fri 12:14] <jeffsayre> manu`: For profit content blogging -- reviews of music, book, etc. Want to provide value in digital content artists. Point people to artists content that is available online for sale... sell other people's content directly via a blog. This is digital content sales - not necessarily access to Web pages.
+[Fri 12:14] <manu`> jeffsayre: No middle man required - direct sale of item from artist to customer/fan - good use case.
+[Fri 12:15] <jeffsayre> manu`: requirement separation between users who create, distribute, and consume. Content distributor has to respect license put forth by artist.
+[Fri 12:16] <jeffsayre> manu`: Artist may be fine with marking up content to a certain level, let prices be set independently from other distributors. But artist would get the same required fee per sale regardless of who is distributing the content.
+[Fri 12:17] <jeffsayre> manu`: creator sets base royalties independent of the sale price, those are enforced by the system. Content distributor has the ability to then markup the sale price above the base fee to also make a profit - good for the artist, good for the content distributor.
+[Fri 12:18] <jeffsayre> manu`: Is this a good use case?
+[Fri 12:18] <jeffsayre> jeffsayre: +1
+[Fri 12:21] <jeffsayre> Manny: I like the PaySwarm model of allowing content distributors the opportunity to set their own retail price. Brick & mortar retail sales often do not allow much of a market up beyond listed, street price. This will allow digital sales sites more flexibility and content creators better chances of a sale.
+[Fri 12:22] <jeffsayre> manu`: Having the widest, broadest distribution channel as possible is desirable to content creators. Good, so since there are no objections, we'll add this one to the list of requirements.
+[Fri 12:22] <jeffsayre> manu`: Second Use Case: crowdsourcing of digital distribution. We were able to implement this for Bitmunk - peer-to-peer collaborative distribution platform - used micropayments to reimburse digital content distributors for each part of the digital file that they provided for download. Respected copyright, distribution restrictions setup by original artist.
+[Fri 12:22] <manu`> http://payswarm.com/specs/payswarm-use-cases#crowd-sourcing-digital-distribution
+[Fri 12:23] <jeffsayre> manu`: Bitmunk is like a BitTorrent w/ payment attached. Current PaySwarm technology supports it in theory, but this might be a little too much to focus on at this stage due to client complexity required to implement it correctly.
+[Fri 12:24] <jeffsayre> manu`: Example: what if every single customer of a NetFlix download could act as a data provider, piecing out fractional bits of the file to a paying customer. So, when you download from 1,000+ people, each one is remunerated for the piece of content that they provide.
+[Fri 12:25] <manu`> jeffsayre: It's an interesting model - swarming for bits of micropayments - it may be too complicated at this point.
+[Fri 12:25] <taaz> q+
+[Fri 12:25] <voip-ps> Added taaz to the speaker queue: taaz
+[Fri 12:26] <manu`> ack taaz
+[Fri 12:26] <voip-ps> taaz has the floor. The speaker queue is empty.
+[Fri 12:27] <jeffsayre> Manny: Everyone having the right to swarm a NetFLix file, for example, would have to have a PaySwarm account, permission (access) to a data provider's computer, etc. The complexity and scope might be outside our initial focus.
+[Fri 12:27] <taaz> Let's keep this (swarming) in mind for possible future implementation, but not add it to the list of use cases for PaySwarm 1.0.
+[Fri 12:28] <jeffsayre> manu`: If rejected as a use case, let's not reject it as a possibility for the future.
+[Fri 12:29] <jeffsayre> manny: The additive benefit of allowing for swarming of content form a data provider could add up to a reasonable revenue stream over time.
+[Fri 12:30] <jeffsayre> manu`: PaySwarm's swarming concept would benefit companies like NetFLix, would reduce data center loads. It could also allow new competitors to enter the market without needing to have large data centers to stream traffic.
+[Fri 12:30] <taaz> maybe we could put these "rejected but useful" use cases into a "roadmap" document
+[Fri 12:30] <jeffsayre> manu: We could possibly create a PaySwarm's Roadmap 2.0 and add use cases that we want to support in the future on to that doc.
+[Fri 12:30] <jeffsayre> manu`: Ok, so this use case is rejected for PaySwarm 1.0, but we'll move it into a future "Road Map" document. 
+[Fri 12:30] <manu`> http://payswarm.com/specs/payswarm-use-cases#streaming-content-payment
+[Fri 12:31] <jeffsayre> manu`: Next up is Streaming Content Payment
+[Fri 12:32] <jeffsayre> manu`: In US, as an example, Internet Radio Stations have to pay a standard ephemeral broadcasting fee per song, per play, per person. This use case is a way to help address this scenario - how does one setup an Internet Radio station and easily collect broadcast royalties.
+[Fri 12:34] <jeffsayre> manu`: Pick a PayWarm provider, sign in, based on what you listen to, your account will be debited for the required fee and credited directly to the artist's account. Let's the DJ/radio station address the issue easily, helping them focus on providing good music and not the nasty bits of collecting tiny fractions of royalties. Makes expenses low and accounting very precise. Could be applied to any streaming movies and television as well. Pay $x per y time viewed or listened.
+[Fri 12:35] <jeffsayre> manu`: This use case works today in the PaySwarm software - so it would be easy to put into the spec. The difference between for-profit blogging is that user pays for content in one lump sum. This is a pay-as-you-go option for streaming of content.
+[Fri 12:36] <jeffsayre> manny: Question - say a radio station charges $15 per month for listening to all of a station's content. What does PaySwarm offer?
+[Fri 12:38] <jeffsayre> manu`: PaySwarm does allow a flat rate per payment option -- like Flattr. The fee is used up each month no matter how much content is consumed. But the pay as you go is an a la carte model. So, you might spend $15 per month, less, or more. You just need to authorize that money is pulled from your PaySwarm account with set limits put on deductions. It would be up to the person that pulled money from your PaySwarm account to disburse the $15... but that's not necessarily the same thing as pay-as-you-go.
+[Fri 12:39] <manu`> jeffsayre: I think pay-as-you-go is crucial for digital content distribution - need it for version 1.0
+[Fri 12:40] <jeffsayre> manny: Even though I will not necessarily use it, I agree that the pay-as-you-go use case should be in version 1.0 of the standard.
+[Fri 12:42] <jeffsayre> manu`: iTunes, Spotify, Last.fm, Pandora have their own payment models. Maybe there is another market that desires a different model, that will allow others to offer competing models without worrying about how payments are done. Content creator's rights can be respected without each new content distributor having to think about what they need to do to honor licensing rights.
+[Fri 12:43] <jeffsayre> taaz: Need to support this use case. May not be a big deal to add it to PaySwarm's core spec because it kind of falls out of what we already do.
+[Fri 12:44] <jeffsayre> taaz: It probably just requires that the appropriate ephemeral broadcasting contracts get setup.
+[Fri 12:43] <jeffsayre> manu`: Ok, so this use case is in there - seems like everyone likes it. Next up is Ad-based support of digital media streams - like television shows with ads to cover the cost of the show.
+[Fri 12:44] <manu`> http://payswarm.com/specs/payswarm-use-cases#ad-based-content-payment
+[Fri 12:48] <manu`> jeffsayre: I wonder if this will also fall under some of the other basic spec stuff. An ad exec could still use PaySwarm to purchase ads, or a director could still sell ads. Should it be something we specifically target? I'm not sure.
+[Fri 12:49] <manu`> jeffsayre: Ad-slots are still something you could sell... whether it's a digital file or specific ad spot - still a sale.
+[Fri 12:49] <jeffsayre> This use case was inspired by Joss Whedon great shows and television execs' poor judgement. ;) This use case would allow directors/producers to support Web-based production via selling ad spots, via generating ad revenue to support Web-based video distribution
+[Fri 12:50] manny: Ad-free versus ad-sponsored Web-based shows. How would PaySwarm differentiate between this type of uses cases. How does is differentiate between different advertisers?
+[Fri 12:51] <manu`> jeffsayre: Producing a Web-based series or a single show... if you're going to generate all your revenue online - no studio budget. You need sponsorship through users and through advertisers.
+[Fri 12:51] <manu`> jeffsayre: maybe users aren't buying the content - they're funding the content - they're crowd-funding.
+[Fri 12:52] <manu`> jeffsayre: Maybe they're paying for additional shows down the road. It's a sponsorship of some sort - maybe they love the concept and want to fund it further. Maybe the advertiser wants to promote their product.
+[Fri 12:53] <manu`> jeffsayre: This is basically dealing directly with the content creator - "We love this concept, move it to the web and we'll support you through PaySwarm."
+[Fri 12:54] <jeffsayre> manny: Ratings give TV shows a type of acknowledgement and lead to a show staying on air or being canceled.
+[Fri 12:55] manu`: When Serenity was cancelled, many people complained, but the studio acted like a gatekeeper preventing the series from continuing. Fans were powerless to change it other than petition the studio to keep making it. It could've been done and could've been profitable, but not profitable enough for the studios, which usually require large ad sells to pay for the TV show spot - television spectrum and laying cable is expensive.
+[Fri 12:56] manu`: We are talking more about crowdfunding rather than negotiating of ad slots. How about cutting it out of version 1.0. When in doubt, cut it out.
+[Fri 12:56] <jeffsayre> manu`: It seems like everyone wants a crowd-funding focus. PaySwarm can support this. Let's add a crowdfunding use case
+[Fri 12:56] <jeffsayre> manu`: Ad-Based Content Payment pushed to PaySwarm 2.0 - put it in the Road Map document.
+[Fri 13:00] <jeffsayre> manu`: We only covered a small part of the agenda today, which is fine - we need to understand which problems we're tackling in order to be successful at what we're doing. Let's set up another call for a week from now to continue the discussion.
+
