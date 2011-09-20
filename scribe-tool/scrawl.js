@@ -114,7 +114,7 @@
       return rval;
    };
 
-   scrawl.proposal = function(msg)
+   scrawl.proposal = function(msg, textMode)
    {
       var rval = "";
       
@@ -131,7 +131,7 @@
       return rval;
    };
 
-   scrawl.resolution = function(msg)
+   scrawl.resolution = function(msg, textMode)
    {
       var rval = "";
       
@@ -194,7 +194,7 @@
       return rval;
    };
 
-   scrawl.scribeContinuation = function(msg)
+   scrawl.scribeContinuation = function(msg, textMode)
    {
       var rval = "";
       
@@ -219,7 +219,7 @@
       }
    };
 
-   scrawl.error = function(msg)
+   scrawl.error = function(msg, textMode)
    {
       var rval = "";
       
