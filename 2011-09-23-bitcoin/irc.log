@@ -1,0 +1,92 @@
+[Fri 15:23]	<manu-db>	Scribe: manu-db
+[Fri 15:23]	<manu-db>	Topic: PaySwarm and Flattr.com
+[Fri 15:23]	<manu-db>	Amir: I was checking out PaySwarm in the past, when I started getting involved in Bitcoin. Seems like you've been working on this standard for a while?
+[Fri 15:23]	<manu-db>	Manu: Yes, takes quite a bit of effort to get a standard off the ground. Likewise, I've been following Bitcoin for quite a while.
+[Fri 15:23]	<manu-db>	Amir: What do you think of Flattr?
+[Fri 15:23]	<manu-db>	Manu: Flattr is interesting - the main thing we're interested in is creating an open and patent and royalty free standard. We don't think anyone corporation should own how we reward each other on the Web. Flattr is great and is one business model that we support with the PaySwarm work, but our focus is more on enabling companies like Flattr to not have to worry about how the funds are moved around. We want the system to be decentralized, we want anyone that can implement the spec to setup a PaySwarm Authority. We also want to support multiple different types of currencies. That's why we're interested in Bitcoin right now - on people's minds. Unfortunately, don't know enough about tech to make any solid statements on support for Bitcoin.
+[Fri 15:23]	<manu-db>	Topic: Bitcoin Criticisms
+[Fri 15:23]	<manu-db>	Amir: Feel free to ask me anything about Bitcoin. There are people that say "Bitcoin is a Ponzi scheme" - but banks are looking at Bitcoin in a serious way. UK Exchange deals with the FSA - so far, no official statement on bitcoin. There will be a directive to classify bitcoin as a currency overlay. Banks are used as a messaging network - SWIFT - one of our guys is at the conference now talking about Bitcoin.
+[Fri 15:23]	<manu-db>	Manu: That's the SIBOS / Innotribe stuff at SWIFT, right?
+[Fri 15:23]	<manu-db>	Amir: Yeah.
+[Fri 15:23]	<manu-db>	Manu: I saw some of the stuff that Donald Norman had said.
+[Fri 15:23]	<manu-db>	Amir: Many people talk about Bitcoin as a bank killer, a subversive thing - but many of these higher-ups are wondering how they can use it - they don't see it like that.
+[Fri 15:23]	<manu-db>	Manu: That's certainly not our concern - we're more interested in the technical aspects - if there are any flaws. Any piece of technology can be used for evil.
+[Fri 15:23]	<manu-db>	Amir: Right - find a technology that isn't neutral, an atom bomb - it can be used for good, it can be used to destroy entire countries. A hammer can be used to build beautiful carpentry, or it can be used to kill somebody. Blaming the technology only shifts the blame away from the perpetrators - it's an unhealthy attitude.
+[Fri 15:23]	<manu-db>	Manu: That's certainly not the position we take on it. My concern is technical - have you spoken with Ben Laurie? He has some criticisms of Bitcoin - there are bits of the bitcoin algorithm that you can't switch it out. Like switching out AES-128-CBC for AES-256-CBC. So - technical concerns.
+[Fri 15:23]	<manu-db>	Amir: Is he a skeptic?
+[Fri 15:23]	<manu-db>	Manu: Not as far as crypto currencies are concerned - he has been heavily involved.
+[Fri 15:23]	<manu-db>	Manu: He published a number of papers critisiziing bitcoin 
+[Fri 15:23]	<manu-db>	http://www.links.org/?p=1164 
+[Fri 15:23]	<manu-db>	http://www.links.org/?p=1171 
+[Fri 15:23]	<manu-db>	http://www.links.org/?p=1175 
+[Fri 15:23]	<manu-db>	http://www.links.org/?p=1179 
+[Fri 15:23]	<manu-db>	http://www.links.org/?p=1183 
+[Fri 15:23]	<manu-db>	Amir: We have a conference in Prague, looking for people skeptical about Bitcoin - it's unhealthy to have too many people agreeing in the same room. If he is someone that's anti-bitcoin - we'd like to have him there.
+[Fri 15:23]	<manu-db>	Manu: I'll ping Ben and see if he can join. He's w/ Google right now - founder of Apache Software Foundation - good guy, should have a chat with him.
+[Fri 15:23]	<manu-db>	Topic: The Rise of Bitcoin, MtGox scandal
+[Fri 15:23]	<manu-db>	Manu: Getting back to PaySwarm interest in Bitcoin stuff - interest in Bitcoin URI scheme?
+[Fri 15:23]	<manu-db>	Amir: There is a sudden movement toward standardization. If you go to bittorrent.org - it's a spec. We want the same for bitcoin.org. That's the eventual direction - standardization. We need an RFC for bitcoin IRI RFC. We modeled it after Python PEP documents - We are having Bitcoin BEPs. Not sure about the names yet.
+[Fri 15:23]	<manu-db>	Manu: Are you ready to go for full standardization?
+[Fri 15:23]	<manu-db>	Amir: Bitcoin protocol still early days - we don't want full-blown standardization. We should start thinking about this stuff now though - multiple clients, light nodes - I'm the only person that's working on a full client implementation. Once it happens, it can't be one piece of software deciding the protocol. Lots of discussion around that.
+[Fri 15:23]	<manu-db>	Manu: I'm fairly involved in standards work - would be happy to help.
+[Fri 15:23]	<manu-db>	Amir: Yes, Melvin Carvalho told me about you.
+[Fri 15:23]	<manu-db>	Manu: Melvin is a great guy - he pings us about Bitcoin from time to time.
+[Fri 15:23]	<manu-db>	Amir: He introduced me to Bitcoin some time ago - I was complaining about money and he pointed me toward it. It was shaky back then, but then looking at it closer - it was incredible.
+[Fri 15:23]	<manu-db>	Manu: We had the same sort of opinion in the beginning. 
+[Fri 15:23]	<manu-db>	Amir: Yeah, I didn't think it was going anywhere in the beginning.
+[Fri 15:23]	<manu-db>	Manu: I saw a great amount of promise for it - but had no idea that it would build into what it is today so quickly. The fact that it is trading against the USD so strongly - didn't see it happening so quickly. We want to help Bitcoin in whatever way we can. Our focus is on helping people buy and sell digital content via the Web. PaySwarm is currency agnostic - but we do try to find out how Bitcoin could be integrated. How do transactions look in pure Bitcoin?
+[Fri 15:23]	<manu-db>	Amir: When I first started Bitcoin Consultancy - we had a 10 year plan - it had multiple stages. 8 years of that plan got done within 8 months - so, that was surprising - so much interest so quickly. Then this MtGox scandal happened - they got hacked. So people haven't realized that MtGox is just one private company - but people confuse it w/ Bitcoin. Interest in bitcoin has waned - gartner graph shows Bitcoin suffering in all ways - a crash. Looking at indicators on network - trading volume, price, nodes, etc. - activity in bitcoin is dropping. We are at a low point right now before we start growing slowly.
+[Fri 15:23]	<manu-db>	Manu: Yes, a very typical trough of disillusionment in the standard technology cycle: http://en.wikipedia.org/wiki/Hype_cycle
+[Fri 15:23]	<manu-db>	Amir: Look at Linux or Wikipedia or Internet - typical lifecycle is 10 years - that's how long it's going to take Bitcoin to get popular - 5% of people using it... not 100%.
+[Fri 15:23]	<manu-db>	Topic: Standardization and the Bitcoin IRI scheme
+[Fri 15:23]	<manu-db>	Manu: Is standardization a part of this growth - or do you think you can reach 5% w/o standardization?
+[Fri 15:23]	<manu-db>	Amir: Standardization helps development - all these groups are doing different things - we need to cooperate. The bitcoin URI is something people have been talking about. There are competing proposals - so we should standardize early.
+[Fri 15:23]	<manu-db>	Manu: You do need implementation experience. You could incubate in W3C Community Groups?
+[Fri 15:23]	<manu-db>	Amir: Yes, could do that. We could try to get into HTML5 standard - a property for bitcoin. That's when I raised Bitcoin URIs.
+[Fri 15:23]	<manu-db>	Manu: Currently chair of the RDFa / RDF Web Apps Working Group - markup of metadata in HTML - so we're working on this. Browser could go to a page and know that there is a payment URL in there... bitcoin URI or some other form of payment mechanism. The account name is given using a URI. Everything on the page is machine readable - lower-level protocol like Bitcoin could take over and process payment at that point. Same direction that PaySwarm is going in - ability to express payment endpoints and make it machine readable. We would be very happy to work with you on that. The Bitcoin URI seems pretty simple.
+[Fri 15:23]	<manu-db>	Amir: Yes, it's pretty simple. Bitcoin destination is easy - always starts w/ 1, then account, then SHA256 checksum are the last 4 bytes - fairly easy to tell it's a Bitcoin address.
+[Fri 15:23]	<manu-db>	Amir: about competing standards - there is one simple one - it can only send bitcoins and a label - the other one has options for everything. Don't know about more complex URI scheme - bitcoin is flexible - very difficult, perhaps impossible to cover everything. May want to start with something simple - need to talk with the person that created it first.
+[Fri 15:23]	<manu-db>	Manu: This URI is a pure P2P basis - right? There is no HTTP endpoint, there is no server sitting out there that you can depend on?
+[Fri 15:23]	<manu-db>	Amir: Correct.
+[Fri 15:23]	<manu-db>	Manu: The way we approached the PaySwarm stuff is that it is decentralized, but you always have an agent out there on the Web. Those endpoints can take arguments. So, supporting a bunch of different options - do it over HTTP and POST something ot the endpoint - you could extend it that way.
+[Fri 15:23]	<manu-db>	Amir: That's a bit out of scope right now - bit-pay.com could do something like that. Bitcoin payments are not instant - if you want more advanced options - you go over HTTP to dedicated services. 3rd party service - bitcoin URI is something that interfaces directly with Bitcoin.
+[Fri 15:23]	<manu-db>	Manu: I saw an e-mail-like scheme for Bitcoin. I know current Bitcoin address is a hash on their public key - one mechanism is more like an e-mail like scheme. Could be supported via DNS - but that's centralized. You have to be able to write records into DNS.
+[Fri 15:23]	<manu-db>	Amir: Maybe the domain is the extension, but the front-part is looked up on a service?
+[Fri 15:23]	<manu-db>	Manu: This is the whole problem with decentralized identity. DOn't know if you've seen anything about BrowserID or WebID - they're trying to solve "identity on the Web". You can have pseudonyms, but having payment accounts associated with you would be helpful. 
+[Fri 15:23]	<manu-db>	Amir: Ah, I thought they were only dealing with real identities. Ok, I get it now.
+[Fri 15:23]	<manu-db>	Manu: The whole PaySwarm spec right now uses public/private key for messaging - but you still have to specify who will manage your account and identity. We want it to be completely decentralized in the future - but for now, because of regulatory issues - they're not banks, money processors - but PaySwarm Authorities handle identity and accounts for people. So, paying someone using their e-mail address is doable because we have these PaySwarm Authorities that could look something up. You look up user preferences by using these HTTP URLs. Is the ability to type it in easily the main concern?
+[Fri 15:23]	<manu-db>	Amir: There is an artist that I like, I want to donate to him - he accepted bitcoin donations, but it's just text on his website. You have to copy-paste. I want them to be able to click the link and it opens a link in a bitcoin client. E-mail is copy-paste - it's easy. Type an amount, put a label, contact info, etc.
+[Fri 15:23]	<manu-db>	Manu: The assumption that you're making is that there is a bitcoin client that is external.
+[Fri 15:23]	<manu-db>	Amir: Same as mailto: - yes.
+[Fri 15:23]	<manu-db>	Manu: have you thought about Bitcoin in the browser - pure browser-based bitcoin? You wouldn't need a URI scheme if you had that.
+[Fri 15:23]	<manu-db>	Amir: Yes, but Bitcoin would need to be running already in the browser.
+[Fri 15:23]	<manu-db>	Manu: What about a 3rd party site that they trust?
+[Fri 15:23]	<manu-db>	Amir: People don't like that. There are some people that are doing this to offer fast micropayments. The core concept of Bitcoin is not to be locked into one vendor. You could run it in the browser - the way the protocol works - you can do a lot of stuff on initallization - load lots of blocks into memory. Or you need to have a database backend and have lots of connections - more suited for a Web server. Maybe a possibility in the future.
+[Fri 15:23]	<manu-db>	Manu: So the browsers have a database mechanism built into them - our CTO has done some pretty amazing crypto stuff in the browser. Don't know details about Bitcoin - guess it's very processor intensive. 
+[Fri 15:23]	<manu-db>	Amir: You have to download blocks and process each block. There is a school of thought that says that a client doesn't validate the blocks - but you have to trust who you're getting the blocks from.
+[Fri 15:23]	<manu-db>	Manu: You could always keep a Bitcoin tab open in your browser. I know that's what I do.
+[Fri 15:23]	<manu-db>	Amir: Not me.
+[Fri 15:23]	<manu-db>	Manu: It depends on who it is - but having a bitcoin client running in a tab - you would be able to validate blocks in-browser. I don't see a technical limitation to running a Bitcoin client in the browser today.
+[Fri 15:23]	<manu-db>	Amir: if it were me, I only keep 2-10 tabs open - don't keep  browser open all the time. I'd rather have Bitcoin in the system tray.
+[Fri 15:23]	<manu-db>	Manu: When you go to standardize - people are going to ask questions like this.
+[Fri 15:23]	<manu-db>	Amir: Someone has already done Bitcoin in the browser - but it's a light node, written in JavaScript.
+[Fri 15:23]	<manu-db>	Topic: Standardizing at IETF
+[Fri 15:23]	<manu-db>	Manu: So, we're getting off-topic a bit. What support are you looking for regarding the Bitcoin IRI scheme?
+[Fri 15:23]	<manu-db>	Amir: I don't know the standardization process - was going to read up on standardization process. I will ask people for input. Write the initial doc - consult with Melvin - maybe talk to IANA then?
+[Fri 15:23]	<manu-db>	Manu: Well, it depends on what you're registering.
+[Fri 15:23]	<manu-db>	Amir: A simple URI scheme - leave it open-ended - maybe tack more things on later on. Don't want to make it too complex - don't want to increase the burden on people. We want a simple spec. We can expand afterward.
+[Fri 15:23]	<manu-db>	Manu: You probably want to go through the IETF - that's where people create new URI schemes. Usually go through IETF. It's a protocol-level thing. It's not a Web thing, so no W3C. 
+[Fri 15:23]	<manu-db>	Amir: Really? It's for the browsers, right?
+[Fri 15:23]	<manu-db>	Manu: Yes, but the way that you specify the scheme is through IETF. It's a fairly straight-forward process. Here is the RFC for the mailto URI scheme: http://www.ietf.org/rfc/rfc2368.txt You could probably copy that almost directly.
+[Fri 15:23]	<manu-db>	Manu: I could also take a quick hack at it if you'd like.
+[Fri 15:23]	<manu-db>	Amir: I want to ask both of the people working on the schemes to get their blessing.
+[Fri 15:23]	<manu-db>	Manu: Ok, should be simple to spec - only 4-5 pages. There are editorial concerns, but I can edit that for you if you'd like. I know some folks at IETF that can help us - Julian Reschke - editor of HTTP spec.
+[Fri 15:23]	<manu-db>	Amir: Can you e-mail - put us in touch? I'll sort this out over a week. There is a conference tomorrow - but maybe next week I can start on it? Maybe something done by next week?
+[Fri 15:23]	<manu-db>	Manu: Okay, I'll do that. I promised to get you in contact with someone else?
+[Fri 15:23]	<manu-db>	Amir: The Bitcoin skeptic?
+[Fri 15:23]	<manu-db>	Manu: Yes, Ben Laurie - I'll do a quick e-mail intro between you two.
+[Fri 15:23]	<manu-db>	Manu: Okay - feel free to e-mail/ping if you have any questions - we want to help.
+[Fri 15:23]	<manu-db>	Amir: Thanks much
+[Fri 15:23]	<manu-db>	Manu: Good luck at the conference - great finally chatting with you. We'll talk soon, maybe next week or week after. Take care.
+[Fri 15:23]	<manu-db>	Amir: Ciao.
+
