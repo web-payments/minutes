@@ -5,7 +5,7 @@
 
    var people = 
    {
-      "Michael Johnson":
+      "Mike Johnson":
       {
          "alias": ["mjohnson", "mjohnson_db"]
       },
@@ -42,6 +42,15 @@
       {
          "alias": ["mitgor"],
          "homepage": "http://aintsys.com/en/index.html"
+      },
+      "Patrick Strateman":
+      {
+         "alias": ["phantomcircuit"]
+      },
+      "Amir Taaki":
+      {
+         "alias": ["genjix"],
+         "homepage": "http://en.wikipedia.org/wiki/Amir_Taaki"
       },
       "Ted Thibodeau Jr.":
       {

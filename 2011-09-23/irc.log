@@ -1,0 +1,146 @@
+[Fri 12:08]	<manu-db>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2011Sep/0004.html
+[Fri 12:08]	<manu-db>	Chair: Manu
+[Fri 12:09]	<manu-db>	Topic: Introduction
+[Fri 12:09]	<manu-db>	Scribe: manu-db
+[Fri 12:09]	-->|	jeffsayre (~jeffsayre@adsl-70-224-35-192.dsl.sbndin.ameritech.net) has joined #payswarm
+[Fri 12:09]	<manu-db>	phantomcircuit: Hi, I'm Patrick Strateman - I'm here on behalf of Bitcoin Consultancy
+[Fri 12:10]	<manu-db>	Manu: Amir Taaki said that bitcoin folks are interested in a URI scheme?
+[Fri 12:10]	<voip-ps>	<unknown> (IAX2/diamondcard-430) has joined the conference.
+[Fri 12:11]	<manu-db>	Patrick: Bitcoin address is pretty simple right now, a way of opening the payment window in the bitcoin client.
+[Fri 12:11]	<manu-db>	Patrick: Regular bitcoin addresses are a hash of a public key - want to make it simpler.
+[Fri 12:11]	<manu-db>	Amir: Our request is here: http://privatepaste.com/648ddfd486
+[Fri 12:12]	<manu-db>	voip: connections?
+[Fri 12:12]	<voip-ps>	Conference connections: Manu Sporny [SIP/6000-00000065], <unknown> (phantomcircuit) [SIP/192.168.1.99-00000068], Mike Johnson [SIP/6001-00000067], IAX2/diamondcard-430
+[Fri 12:13]	<manu-db>	permalink to Amir's request: http://lists.w3.org/Archives/Public/public-webpayments/2011Sep/0004.html
+[Fri 12:14]	<manu-db>	Manu: We are looking at bitcoin integration into PaySwarm, so we'd be happy to help author that spec or provide guidance. Glad to see interest from Bitcoin folks in W3C Web Payments / PaySwarm work.
+[Fri 12:14]	<manu-db>	Manu: Any updates/changes to agenda?
+[Fri 12:14]	<manu-db>	No changes requested.
+[Fri 12:14]	<manu-db>	Topic: PaySwarm Use Cases Review (continued)
+[Fri 12:15]	<manu-db>	Manu: We had reviewed quite a number of use cases last time: http://payswarm.com/minutes/2011-09-16/
+[Fri 12:15]	<manu-db>	Manu: Let's continue reviewing and accepting use cases - next up is content and payment metadata
+[Fri 12:15]	<manu-db>	Topic: Content and Payment Metadata
+[Fri 12:15]	<manu-db>	http://payswarm.com/specs/payswarm-use-cases#content-and-payment-metadata
+[Fri 12:15]	<manu-db>	Manu: We are trying to automate the purchase process by the browser. The basic requirement is the ability to express assets for sale via a Web page as well as listings that describe how the asset should be sold (licenses, payment amounts, etc.)
+[Fri 12:16]	<manu-db>	Manu: The end-goal is to have the purchase process both decentralized and integrated tightly with the Web browser. So, we need some sort of meta-data in HTML mechanism to do this. The current spec depends on using RDFa 1.1 to accomplish the expression of metadata in the page.
+[Fri 12:16]	<jeffsayre>	+1
+[Fri 12:17]	<manu-db>	+1 to support this
+[Fri 12:17]	<mjohnson>	+1
+[Fri 12:17]	<manu-db>	Patrick: +1 - Sounds good
+[Fri 12:17]	<manu-db>	Manu: Okay, Content and Payment metadata is accepted as a use case.
+[Fri 12:17]	<manu-db>	Topic: Price Negotiation
+[Fri 12:09]	<manu-db>	Scribe: mjohnson
+[Fri 12:18]	<manu-db>	http://payswarm.com/specs/payswarm-use-cases#price-negotiation
+[Fri 12:19]	<mjohnson>	Manu: Price negotiation allows dynamic pricing and can help enforce good market pricing. Was used in the original Bitmunk product.
+[Fri 12:20]	<mjohnson>	Manu: Example of price negotiation. Seller offers data for sale at a rate of 10 cents/GB. Buyer asks for 8 cents/GB versus 10 cents/GB. Seller can decide if they want to accept the lower figure based on if they have any spare bandwidth that is not being used.
+[Fri 12:20]	<mjohnson>	Manu: Lots of work on the client-side to implement. Client would be very complex. We want to add support in future, push off for now. Suggest that we add to PaySwarm 2.0 use cases.
+[Fri 12:21]	<mjohnson>	Mike: Agree. Move to PaySwarm 2.0 spec.
+[Fri 12:21]	<mjohnson>	Jeff: Priceline example. They will want negotiation, so it's an important use case - but agree that it's not for now.
+[Fri 12:21]	<mjohnson>	Manu: Okay, this use case is deferred to PaySwarm 2.0 use cases.
+[Fri 12:22]	<manu-db>	Topic: Multicast License Acquisition
+[Fri 12:22]	<manu-db>	http://payswarm.com/specs/payswarm-use-cases#multicast-license-acquisition
+
+[Fri 12:23]	<mjohnson>	Manu: Multicast license acquisition. This use case allows people to buy a license independently of the data. It effectively splits license acquisition from content acquisition. 
+[Fri 12:24]	<mjohnson>	Manu: You must be able to buy a license to something from one location, but get the content from another location.
+[Fri 12:24]	<mjohnson>	Manu: Data stream example - I buy access to a movie from the movie studio, but have a local content distribution network provide the data stream for me because it's faster.
+[Fri 12:25]	<mjohnson>	Manu: Third point, enabling this via multicast, is unclear. The technology is not well defined yet for IPv6 multicast / MBONE content. Or how this works with Content-Centric Networking.
+[Fri 12:26]	<mjohnson>	Manu: I suggest we drop the last bullet point. Push multicast data aquisition off from PaySwarm 1.0
+[Fri 12:26]	<mjohnson>	Patrick: Agrees splitting license from content is a good idea.
+[Fri 12:26]	<mjohnson>	Patrick: Multicast may be too specific at this point.
+[Fri 12:26]	<mjohnson>	Manu agrees.
+[Fri 12:27]	<mjohnson>	Jeff: Makes sense. CDN (content delivery networks) could use this mechanism. MicroCDNs would find benefit in this.
+[Fri 12:28]	<mjohnson>	Manu: Multicast means technical multicasting. But this is too specific - we may not want to say anything about what protocols are used to deliver the content.
+[Fri 12:28]	<mjohnson>	Manu: We keep going back to Netflix as an example. Someone could purchase access to content from Sony Pictures, but choose their download source as Netflix.
+[Fri 12:29]	<manu-db>	Mike: I was going to agree - we did build this into bitmunk - the idea of splitting license from content doesn't happen w/ physical goods, but it is possible with digital goods.
+[Fri 12:29]	<manu-db>	Mike: Buying a license from Best Buy and downloading from Netflix could be an option.
+[Fri 12:29]	<mjohnson>	General agreement to accept first two "Requirements" bullet points for this use case, but reject the third one. The use case should be rewritten to make a bit more sense w/o the third requirement bullet point.
+[Fri 12:30]	<manu-db>	Topic: Licensing Access to Extra Content
+[Fri 12:30]	<manu-db>	http://payswarm.com/specs/payswarm-use-cases#licensing-access-to-extra-content
+[Fri 12:31]	<mjohnson>	Manu: This use case covers the need for a verifiable digital receipt of sale. A digital receipt allows one to access value-added content from other sites.
+[Fri 12:31]	<mjohnson>	Manu: Purchasing content via PaySwarm gives you digital receipt today, so we support this use case now.
+[Fri 12:31]	<mjohnson>	Manu: Indie band example - you buy their digital album and have the digital receipt for that. You provide the digital receipt to the band's website a year later and get access to their latest tour videos and backstage videos. Merely providing the receipt gives you exclusive access to value-added content.
+[Fri 12:32]	<mjohnson>	Manu: The other important bit about the receipt is that it can be verified by a third party - which means that digital signatures are a requirement.
+[Fri 12:33]	<manu-db>	Mike: This is important for consumer protection - proof of sale today is almost entirely dependent on the seller website... this goes a step further - there is a way to prove that the receipt of sale is valid without having to go back to the seller.
+[Fri 12:34]	<mjohnson>	Jeff: I agree, this is important.
+[Fri 12:34]	<mjohnson>	Patrick: Digital signatures from merchants for consumer sales is very important.
+[Fri 12:34]	<manu-db>	Manu: Ok, then this use case is accepted.
+[Fri 12:34]	<manu-db>	Topic: Batching Micropayments
+[Fri 12:34]	<manu-db>	http://payswarm.com/specs/payswarm-use-cases#batching-micropayments
+[Fri 12:36]	<mjohnson>	Manu: This example explores a photography album that somebody puts together and sells. They want some amount to go to them and the rest to go to charities. Payments are split among the creator and charities that the creator has specified - could be 10, could be 100 different charities.
+[Fri 12:36]	<mjohnson>	Manu: Other example, multiple artists working together on same content. Online comic artists creating a single book.
+[Fri 12:36]	<mjohnson>	Manu: There could be 20-40 people participating - product put out as complete book.
+[Fri 12:37]	<mjohnson>	Manu: Royalty splits are automatically handled. Micropayments (royalties) are split to each author.
+[Fri 12:38]	<mjohnson>	Manu: Requirments of this use case are to specify arbitrary payment accounts. It could be a large number of payment accounts. No limits (10,000 people should be possible).
+[Fri 12:39]	<mjohnson>	Jeff: Integral to my Smartup - PubPie. I want to treat customers as 1st order payees.
+[Fri 12:39]	<mjohnson>	Jeff: I don't like the current Google split payment mechanism. A strong feature of PaySwarm is the ability to list multiple people.
+[Fri 12:40]	<mjohnson>	Jeff: Great from a collaborator and service provider standpoint. It removes extra accounting - all payments are direct.
+[Fri 12:40]	<mjohnson>	Jeff: Collaborators recognized as primaries, paid directly, not through a middle man - that's good.
+[Fri 12:40]	<voip-ps>	<unknown> (IAX2/diamondcard-430) has left the conference.
+[Fri 12:40]	<mjohnson>	Patrick: Micropayments are good - Bitcoin's minimum is 6.5 cents.
+[Fri 12:41]	<mjohnson>	Manu: PaySwarm's minimum is 1/100,000 of a cent.
+[Fri 12:41]	<voip-ps>	Dave Lehn (SIP/6003-00000069) has joined the conference.
+[Fri 12:41]	<mjohnson>	Manu: You obviously don't want to do USD/Bitcoin transactions that are that small - but it becomes important for currencies with large value units - such as gold or platinum. We think that precision is good enough for all currencies in the world today.
+[Fri 12:41]	<voip-ps>	<unknown> (IAX2/diamondcard-10675) has joined the conference.
+[Fri 12:42]	<mjohnson>	Manu: Credit cards have a minimum transaction amount that is much larger. PayPal is much larger.
+[Fri 12:42]	<mjohnson>	Manu: Going back to Jeff's example - PaySwarm treats everyone as first class citizen when it comes to payment.
+[Fri 12:43]	<mjohnson>	Batching micropayments use case is accepted.
+[Fri 12:43]	<manu-db>	Topic: Customized Application Stores
+[Fri 12:43]	<manu-db>	http://payswarm.com/specs/payswarm-use-cases#customized-application-stores
+[Fri 12:43]	<mjohnson>	Manu: Example came about because of App stores (Google, Apple, Verizon, Microsoft, etc)
+[Fri 12:44]	<mjohnson>	Manu: Wait, I'm wrong - that's not this use case. This use case is actually about embedding a digital contract in a binary data stream - watermarking or DRM.
+[Fri 12:44]	<mjohnson>	Manu: Buying software will personalize purchases and assign those to you directly.
+[Fri 12:44]	<mjohnson>	Manu: This requirement came from the music industry use cases a few years ago. Watermarking purchases (music files), receipt embedded in file. Important to prevent people from uploading the content to a P2P network.
+[Fri 12:45]	<mjohnson>	Manu: This use case was originally vital for Bitmunk... not sure if it is vital for PaySwarm.
+[Fri 12:45]	<mjohnson>	Manu: I would prefer to keep it out for now.
+[Fri 12:45]	<mjohnson>	Manu: Jeff, do you have a use case for watermarking books?
+[Fri 12:45]	<mjohnson>	Jeff: My company is opposed to DRM watermarking.
+[Fri 12:46]	<mjohnson>	Jeff: Let's not support DRM or watermarking initially.
+[Fri 12:46]	<mjohnson>	Jeff: DRM does not protect or increase sales - studies have shown that.
+[Fri 12:47]	<mjohnson>	Manu: Reason we had watermarks was so buyer could prove purchase.
+[Fri 12:47]	<mjohnson>	Manu: Ties to digital receipt examples earlier - we embed the digital receipt in the file so the person can prove ownership by just providing the file. However, it is very complex to implement.
+[Fri 12:48]	<mjohnson>	Manu: Difficult to keep the watermarking binary up to date, it has to be a closed-source module or it won't work, keeping all of the clients in sync is very difficult as well.
+[Fri 12:48]	<mjohnson>	Jeff: Physical objects are often not regisitered that way - there is no ownership with the item. Some small examples of registered items. Example of books in personal library.
+[Fri 12:49]	<manu-db>	Mike: The whole watermarking thing was done to try to appease the music industry 6-7 years ago - not a feature we need because the buyer still has access to the digital receipt via the PaySwarm Authority.
+[Fri 12:49]	<manu-db>	Mike: It's complex to implement and we don't need it right now.
+[Fri 12:50]	<mjohnson>	Manu: Jeff's example of physical goods not having a digital receipt of ownership is a good example. In the future people might buy a blueprint of an item to manufature.
+[Fri 12:50]	<mjohnson>	Manu: 3d printers will happen. People will be able to manufacture at home or locally.
+[Fri 12:51]	<mjohnson>	Manu: Schematics might be modified to add a watermark onto the object when it is printed.
+[Fri 12:51]	<mjohnson>	Manu: Example of printing out a knife with physically watermarked ownership information used in a crime. It's a use case that's a bit out there - but one that has philosophical implications. Should physical objects have owners?
+[Fri 12:52]	<mjohnson>	Jeff: You can't practically rewatermark a physical object.
+[Fri 12:52]	<mjohnson>	Manu: In the digital file case, when you resell, the software strips the old watermark and generates a new one.
+[Fri 12:53]	<mjohnson>	Manu: RFIDs could be used as programmable watermarks. Although, that is more of a digital watermark example. That way, you could have printed objects have temporary ownership - such as "This frisbee belongs to Jeff Sayre".
+[Fri 12:54]	<mjohnson>	Watermarking use case is out. We probably won't save use case as nobody really likes it.
+[Fri 12:54]	<manu-db>	Topic: Steven Rowat Use Cases Review
+[Fri 12:54]	<manu-db>	http://lists.w3.org/Archives/Public/www-tag/2009Sep/0055.html
+[Fri 12:55]	<mjohnson>	Manu: Most of Steven's use cases have to do with how the license metadata is expressed in the asset or the listing. Usage of RDFa addresses most of these use cases - we can tweak what a license allows by changing a few RDFa statements. Should PaySwarm support these use cases too?
+[Fri 12:55]	<mjohnson>	Manu: Most of these use cases seem to be immediately supportable with minor changes to the way the current specification works. We won't have time to go through all of these use cases today, but let's look at the first one.
+[Fri 12:56]	<manu-db>	Topic: Limiting Commercial Redistribution
+[Fri 12:56]	<manu-db>	An independent medical researcher in the USA who produces a pdf report about side-effects of a new prescription drug.
+[Fri 12:57]	<mjohnson>	Manu: First example has no resale limitation, however the license that it's available under is a simple Creative Commons attribution, no-derivatives license... maybe just a no-derivatives license?
+[Fri 12:57]	<mjohnson>	Manu: This barely says anything about payments, but we can read into it a bit.
+[Fri 12:57]	<mjohnson>	Manu: PaySwarm would allow us to do non-downstream sales if we specify that limitation in the listing.
+[Fri 12:58]	<mjohnson>	Manu: Jeff, does this use case seem useful to PubPie?
+[Fri 12:58]	<mjohnson>	Jeff: Yes. It's up to collaborative teams, but PubPie will allow a lot of flexibility and variety - this use case fits.
+[Fri 12:59]	<manu-db>	We already have a vocabulary in the works for specifying digital contacts here - http://purl.org/payswarm
+[Fri 12:59]	<mjohnson>	Manu: and we already have a limitation where you can state that you do not want to allow any additional payees... 
+[Fri 12:59]	<manu-db>	http://payswarm.com/vocabs/payswarm#NoAdditionalPayees
+[Fri 12:59]	<mjohnson>	Jeff: That's not the same as being external data provider.
+[Fri 13:00]	<manu-db>	That's true, but maybe we can build off of this:
+[Fri 13:00]	<manu-db>	http://payswarm.com/vocabs/commerce#limitation
+[Fri 13:00]	<mjohnson>	Manu: This use case would be if people don't want external data providers - we'd have to add something like ps:NoRedistribution.
+[Fri 13:00]	<mjohnson>	Jeff: We also want to allow sales through other networks (Amazon, iTunes)
+[Fri 13:01]	<mjohnson>	Manu: Commerce vocabulary allows specifying limitations.
+[Fri 13:01]	<mjohnson>	Manu: People could redistribute but not add extra payees, but that doesn't quite address this use case.
+[Fri 13:02]	<mjohnson>	Manu: We could add a limitation to only allow download of content from one data provider to support this use case.
+[Fri 13:02]	<manu-db>	Mike: This is a left-over from pre-digital sales era - it's an old mentality - "I need to control my data".
+[Fri 13:03]	<manu-db>	Mike: but it's still important for us to provide this functionality - some people want to drive people to their site - these are all things that are important - we need to be able to limit who the data provider is.
+[Fri 13:04]	<mjohnson>	Manu: We're out of time for this call. Let's have another call next week to go through rest of Steven's use cases.
+[Fri 13:04]	<mjohnson>	Manu: One thing that is not on the list is alternative currencies (Bitcoin) - we need a use case for that.
+[Fri 13:04]	<mjohnson>	Patrick: Very pro alternative currencies.
+[Fri 13:05]	<mjohnson>	Patrick: There is a caveat in Bitcoin in that there is a delay in the Bitcoin payment process - funds aren't available immediately.
+[Fri 13:05]	<mjohnson>	Manu: PaySwarm has concept of escrow, where we may not push the contract through without verification of payment.
+[Fri 13:05]	<mjohnson>	Manu: It is possible to add to spec, but either way we want to support alternative currencies.
+[Fri 13:06]	<mjohnson>	Manu: We may not go as far as supporting automatic currency exhange, as that is complex, but adding support for one may allow us to support all currencies.
+[Fri 13:07]	<mjohnson>	Manu: Supporting currency accounts may allow us to sidestep exchanges. If you have an account with a certain amount of money in it - great - it works.
+[Fri 13:07]	<mjohnson>	Jeff: I agree with the need for alternative currency support. More currencies allows more exchanges, complex but healthy for the economy.
+[Fri 13:07]	<taaz>	I agree - we should support alternative currencies.
+[Fri 13:07]	<mjohnson>	Manu: Ok, we should add a use case for that.
