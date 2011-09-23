@@ -27,7 +27,7 @@
 [Fri 15:23]	<manu-db>	Manu: Getting back to PaySwarm interest in Bitcoin stuff - interest in Bitcoin URI scheme?
 [Fri 15:23]	<manu-db>	Amir: There is a sudden movement toward standardization. If you go to bittorrent.org - it's a spec. We want the same for bitcoin.org. That's the eventual direction - standardization. We need an RFC for bitcoin IRI RFC. We modeled it after Python PEP documents - We are having Bitcoin BEPs. Not sure about the names yet.
 [Fri 15:23]	<manu-db>	Manu: Are you ready to go for full standardization?
-[Fri 15:23]	<manu-db>	Amir: Bitcoin protocol still early days - we don't want full-blown standardization. We should start thinking about this stuff now though - multiple clients, light nodes - I'm the only person that's working on a full client implementation. Once it happens, it can't be one piece of software deciding the protocol. Lots of discussion around that.
+[Fri 15:23]	<manu-db>	Amir: Bitcoin protocol still early days - we don't want full-blown standardization. We should start thinking about this stuff now though - multiple clients, light nodes - I'm the only person that's working on an alternative full client implementation. Once it happens, it can't be one piece of software deciding the protocol. Lots of discussion around that.
 [Fri 15:23]	<manu-db>	Manu: I'm fairly involved in standards work - would be happy to help.
 [Fri 15:23]	<manu-db>	Amir: Yes, Melvin Carvalho told me about you.
 [Fri 15:23]	<manu-db>	Manu: Melvin is a great guy - he pings us about Bitcoin from time to time.
