@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+      class="wf-adelle1adelle2-n6-active wf-active"> 
+ 
+<head> 
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+  <title>PaySwarm - Teleconferences</title> 
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ 
+  <link rel="stylesheet" href="../../css/1140.css" type="text/css" media="screen" /> 
+  <!--[if lte IE 9]>
+  <link rel="stylesheet" href="../css/ie.css" type="text/css" media="screen" />
+  <![endif]--> 
+  <link rel="stylesheet" href="../../css/typeimg.css" type="text/css" media="screen" /> 
+  <link rel="stylesheet" href="../../css/smallerscreen.css" media="only screen and (max-width: 1023px)" /> 
+  <link rel="stylesheet" href="../../css/mobile.css" media="handheld, only screen and (max-width: 767px)" /> 
+  <link rel="stylesheet" href="../../css/layout.css" type="text/css" media="screen" /> 
+  <link rel="shortcut icon" type="image/png" href="../../images/payswarm-icon.png" /> 
+  
+<style type="text/css">
+h1 {
+   margin-top: 24px;
+   margin-bottom: 14px;
+}
+
+#content {
+   margin-left: 15%;
+   margin-right: 15%;
+}
+
+.summary {
+   margin-left: 10%
+   margin-right: 10%
+}
+
+.name {
+   font-weight: bold;
+}
+
+.information {
+   font-style: italic;
+}  
+
+.comment-continuation {
+   margin-left: 2em;
+}
+
+dt {
+   font-style: oblique;
+}
+
+dd {
+   margin-left: 20px;
+}
+
+  </style>
+  
+</head> 
+<body> 
+ 
+<div class="titlebar"> 
+   <h1>PaySwarm</h1> 
+</div> 
+
+  <div id="content"> 
+ 
+  <div class="row"> 
+    <div class="twelvecol last"> 
+
+<h1>Web Payments Community Group Telecon</h1>
+<h2>Minutes for 2011-10-07</h2>
+<div class="summary">
+<dl>
+<dt>Agenda</dt><dd><a href="http://lists.w3.org/Archives/Public/public-webpayments/2011Oct/0002.html">http://lists.w3.org/Archives/Public/public-webpayments/2011Oct/0002.html</a></dd>
+<dt>Chair</dt><dd>Manu Sporny</dd>
+<dt>Scribe</dt><dd>Jose 'Manny' De Loera</dd>
+<dt>Present</dt><dd>Jose 'Manny' De Loera, Manu Sporny, Pelle Braendgaard, David I. Lehn</dd>
+<dt>Audio Log</dt><dd><div><a href="audio.ogg">audio.ogg</a></div>
+<div><audio controls="controls" preload="none">
+<source src="audio.ogg" type="audio/ogg" />Warning: Your browser does not support the HTML5 audio element, please upgrade.</div></dd>
+</dl>
+</div>
+<div class="information">Jose 'Manny' De Loera is scribing.</div>
+<h1 id=topic-1 class="topic">Topic: Payment Links</h1>
+<div class="comment"><span class="name">Manu Sporny</span>: <a href="http://lists.w3.org/Archives/Public/public-webpayments/2011Oct/0000.html">http://lists.w3.org/Archives/Public/public-webpayments/2011Oct/0000.html</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Let's limit discussion to payment links to 15 min for brevity purposes and cover it gradually over the next several web conferences</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  payment links is a simple attempt of getting individuals to integrate with a payment standard - it is simple way to request payment.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  Paypal does have something similar, but there is a need for standardization</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  My main concern is to find a middle ground, but if we stop at payment links, it does not address many of the use cases we have</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  another concern is if payment link spec is created, what is the likelyhood that Amazon and others would utilize such a link</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  not much interest from PayPal, Amazon or Google - they're the leaders and probably don't want anything that would enable competition... European banks have expressed interest.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  moving forward to create spec for payment links would be expressed in an IRI, it is not an end solution, but it still may be worth pursuing</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  The examples are for http, but it should work for any Internet protocol that has a scheme with parameterized options.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  Square could use this scheme to do Web Payments via Square's application.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  I will volunteer to translate Pelle's email into a spec and we'll take it from there.</div>
+<h1 id=topic-2 class="topic">Topic: Gradual Rollout of Web Payment Technologies</h1>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  We should focus on releasing different tier-ed levels of payment standards, rather than present this all at once. A tiered approach with payment link being first would be good.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  It's difficult to sell the whole idea at one time. It's not the agile way of doing things, start small with payment links and then auto-payments then build on that.</div>
+<div class="information">Manu agrees since payment technologies can be overwhelming technologically.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  The end goal is the democratization of finance. I agree that a gradual roll-out may help us maximize our ability to be successful. We will make mistakes along the way, we need to be able to learn from failures... not get to the end and find out that we have specified something that nobody is going to use.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  However, I want to make sure that we don't lose sight of the end goal - the democratization of finance - the work we do here should have a massively positive effect on the world - how people pool resources - not just slightly tweak the way people pay each other.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Payment Links do fit in with PaySwarm - we could utilize email address a simple peer-to-peer transaction. What about the other two - Automated Payments and Payment Notifications?</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  on automated payment processing - the way it would work would be to use an OAuth token with certain permissions to charge $20 a month for X many months.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  Payment Notifications are similar to PayPal IPN</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  Another example of why we can't roll out the whole thing at one time i.e. pre-existing invoicing system, can't roll out PaySwarm until you can integrate it into their invoicing system.</div>
+<div class="comment"><span class="name">Jose 'Manny' De Loera</span>:  I agree - gradual rollout seems reasonable - agile way is good - start small, get acceptance - build on that. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  I'm sure we'll do a good bit of this work in parallel. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Ok, then - we all agree on the basic direction of a gradual roll out.</div>
+<h1 id=topic-3 class="topic">Topic: Use Case Review (continued)</h1>
+<div class="comment"><span class="name">Manu Sporny</span>: <a href="http://lists.w3.org/Archives/Public/www-tag/2009Sep/0055.html">http://lists.w3.org/Archives/Public/www-tag/2009Sep/0055.html</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>:  The last use-case we covered was the  Publishing with Per-Country Prices use case.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  The next use case is the whistleblower use case.</div>
+<h1 id=topic-4 class="topic">Topic: Donor-Centric Donations</h1>
+<div class="information">A whistleblower leaking documents from inside the government showing evidence of torture practices, in text or pdf.	She specifies: anonymity; no content modification; free, but donation requested (user chooses);	no commercializing.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  anonymity is already covered - upload via Tor or proxy organization. The request of donations is where payment links could be utilized.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  commercialization and no content modification cannot be enforced if you are anonymous - so you'd have to go through another organization.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  Something like the Free Software foundation may be one way to enforce that - they enforce GPL on behalf of licensors.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Dontations may work best with the Payment Links stuff we just discussed and something a bit more dynamic like PaySwarm with multiple listings for each suggested donation target. We also support the ability for people to specify extra their own Payees via a contract.</div>
+<div class="comment"><span class="name">Jose 'Manny' De Loera</span>:  If we think we can support it w/ the current spec, we might as well support it. Payment Links seems like it would work out well in this case - we should support this use case. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We also state in the PaySwarm spec that the license should be machine readable, but linked to via a URL - so machine-readability of licenses is important.</div>
+<div class="information">Use case is accepted, specifically for the Payment Links portion of the use case.</div>
+<h1 id=topic-5 class="topic">Topic: Software Distribution</h1>
+<div class="information">A software engineer with a program for a particular OS, in zip or other compressed format. He specifies: authorship; no content modification; payment per download with constraints/permissions of: demo use is free on one machine for a month; payment thereafter is due for each machine in use with the program; downstream commercializing is possible with constraint of: payment to original author of 25% of net profits from resale or from any other commercializing, specifically including advertising.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  This is an incredibly complex use case, with most of the important bits falling outside of the purview of a payments specification of any kind.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  The major issue is that there is no easily spec-able way to enforce these constraints via software... most of this falls into enforcement via the legal system. Let's go through each item...</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  authorship and no content modification - covered by standard copyright. Downstream commercialization is covered by another use case as is 25% profit margin. Payment per download is covered by another use case. </div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Enforcing a cut of advertising revenue is far outside of the scope of any of the specs we intend to work on and it's very difficult to enforce in software without a completely unified software architecture for sales and advertising. </div>
+<div class="comment"><span class="name">Manu Sporny</span>:  I think we should reject use case outright and not add it to our future timeline - we already cover the stuff we can cover and the rest of the stuff is not implementable in software.</div>
+<div class="information">General agreement, no objections to rejecting the use case. This use case is rejected.</div>
+<h1 id=topic-6 class="topic">Topic: Per-page Payments</h1>
+<div class="information">A carpenter publishes plans with photos and text describing how to build a solar outhouse, in html or pdf. He specifies: authorship; no content modification; payment per download (pdf); payment per page view (HTML); no downstream commercializing.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  I don't understand what he means by "payment per page view" - does that mean for every time the person loads the page?</div>
+<div class="comment"><span class="name">Jose 'Manny' De Loera</span>:  Maybe he means that that page one is free, but the rest are for-profit pages. Page 2 is measurements, page 3 is the material you'll need, page 4 is how to build it, etc. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  other way to read that is that every single browser refresh causes another payment to happen - although, that's a pretty lame business model, so it must be what you said, Manny.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Payment per download and payment for pages identified by URLs is already covered by another use case</div>
+<div class="information">This use case is rejected since all items are covered in other use cases.</div>
+<h1 id=topic-7 class="topic">Topic: High-Quality/Low-Quality Image Sales</h1>
+<div class="information">A visual artist (oils and acrylics) with high- and low-resolution JPEGs of the paintings. She specifies: authorship; no content modification; free access online to low-res images of paintings; payment per download for hi-res images of paintings, calculated by total surface area of the image; downstream commercializing permitted with explicit author agreement.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  I think this use case is covered by the other use cases. Calculating by total surface area of the image is something the sales software would do - doesn't have to be in the spec. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Jose 'Manny' De Loera</span>:  This is covered - also if you use SVG - there is no "total surface area" [scribe assist by Manu Sporny]</div>
+<div class="information">Agreement that this use case is covered by other previously approved use cases.</div>
+<h1 id=topic-8 class="topic">Topic: Manufacturing Rights to an Invention</h1>
+<div class="information">An inventor of a patented simplified mechanical tool with a description in pdf and html text accompanied by embedded jpegs.	He specifies: authorship; no content modification; free HTML access to a summary of the tool specification; payment per pdf download of the complete specification including patent document; downstream commercializing allowed with constraints of: no resale of the patent or description itself; manufacturing of the tool for sale in any given country is permitted after explicit agreement with the inventor for that country.</div>
+<div class="comment"><span class="name">Manu Sporny</span>: All of the items above are covered by previously approved use cases, standard copyright law and standard patent law.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  This is good, we seem to be hitting a saturation point with the use cases. The more we start rejecting, the more certain that we can be that we have a good sampling of what people will want to do with these standards.</div>
+<h1 id=topic-9 class="topic">Topic: Subscription-based Games</h1>
+<div class="information">A digital game programmer with a new multi-player game for online and/or offline use. He specifies: authorship; content modification allowed with constraint of: no commercialization once modified; payment for online use by subscription (monthly, yearly); or single payment for downloaded version; downstream commercializing permitted for unmodified download version only, with constraints of: 30% of gross sales receipts paid to original author, as well as 10% of site advertising revenue (if any) from the downstream page selling the game.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Strange... we don't have a use case for subscriptions yet - such a useful use case - payment for online use by subscription (monthly, yearly)</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  These are already covered by other use cases or standard copyright: authorship; or single payment for downloaded version; downstream commercializing permitted for unmodified download version only, with constraints of: 30% of gross sales receipts paid to original author</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  These are not implementable in software, but could be a part of the license: content modification allowed with constraint of: no commercialization once modified; as well as 10% of site advertising revenue (if any) from the downstream page selling the game.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  Yes, this is a very important use case - we must support subscriptions.</div>
+<div class="information">General agreement that we support the subscription-based use case.</div>
+<h1 id=topic-10 class="topic">Topic: Any Other Business?</h1>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  I may have some other possible use cases - I will send them out on the mailing list.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Ok, so how about we take a one week break from meetings and then come back and discuss requirements?</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  I'll send my use case in for physical product sales - application of device in physical space such as NFC device or payment card via OAuth</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Our next meeting will be October 20th, 2011.</div>
+       </div>
+  </div>
+
+<div class="container vspacing onblack"> 
+  <div class="row"> 
+    <div class="threecol"> 
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a> 
+    </div> 
+    <div class="ninecol last"> 
+      <p>&copy; 2010-2011 Digital Bazaar, Inc. 
+Website CSS created by <a href="http://cssgrid.net/">@andytlr</a> 
+and is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/au/"> 
+Creative Commons Attribution-ShareAlike 3.0 Australia License</a>. All other
+website content is licensed under a
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"> 
+Creative Commons Attribution-ShareAlike 3.0 License</a>
+</p> 
+    </div> 
+  </div> 
+</div> 
+ 
+<script type="text/javascript"> 
+ 
+  var _gaq = _gaq || [];
+  _gaq.push(["_setAccount", "UA-1539674-7"]);
+  _gaq.push(["_trackPageview"]);
+
+  (function() {
+    var ga = document.createElement("script"); ga.type = "text/javascript"; ga.async = true;
+    ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";
+    (document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]).appendChild(ga);
+  })();
+ 
+</script>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+[Fri 12:04]	<manu-db>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2011Oct/0002.html
+[Fri 12:04]	<manu-db>	Scribe: Manny
+[Fri 12:05]	<manu-db>	Topic: Payment Links
+[Fri 12:05]	<manu-db>	http://lists.w3.org/Archives/Public/public-webpayments/2011Oct/0000.html
+[Fri 12:05]	<Manny>	Manu: Let's limit discussion to payment links to 15 min for brevity purposes and cover it gradually over the next several web conferences
+[Fri 12:06]	<Manny>	Pelle: payment links is a simple attempt of getting individuals to integrate with a payment standard - it is simple way to request payment.
+[Fri 12:06]	<Manny>	Pelle: Paypal does have something similar, but there is a need for standardization
+[Fri 12:07]	<manu-db>	q+ to respond to Pelle's comments.
+[Fri 12:07]	<voip-ps>	Added Manu: db to the speaker queue: Manu: db
+[Fri 12:07]	<manu-db>	ack Manu: db
+[Fri 12:07]	<voip-ps>	Manu: db has the floor (to respond to Pelle's comments.). The speaker queue is empty.
+[Fri 12:08]	<Manny>	Manu: My main concern is to find a middle ground, but if we stop at payment links, it does not address many of the use cases we have
+[Fri 12:09]	<Manny>	Manu: another concern is if payment link spec is created, what is the likelyhood that Amazon and others would utilize such a link
+[Fri 12:10]	<Manny>	Pelle: not much interest from PayPal, Amazon or Google - they're the leaders and probably don't want anything that would enable competition... European banks have expressed interest.
+[Fri 12:11]	<Manny>	Manu: moving forward to create spec for payment links would be expressed in an IRI, it is not an end solution, but it still may be worth pursuing
+[Fri 12:11]	<taaz>	q+
+[Fri 12:11]	<voip-ps>	Added taaz to the speaker queue: taaz
+[Fri 12:12]	<manu-db>	ack taaz
+[Fri 12:12]	<voip-ps>	taaz has the floor. The speaker queue is empty.
+[Fri 12:13]	<Manny>	Manu: The examples are for http, but it should work for any Internet protocol that has a scheme with parameterized options.
+[Fri 12:13]	<Manny>	Pelle: Square could use this scheme to do Web Payments via Square's application.
+[Fri 12:14]	<Manny>	Manu: I will volunteer to translate Pelle's email into a spec and we'll take it from there.
+[Fri 12:14]	<manu-db>	Topic: Gradual Rollout of Web Payment Technologies
+[Fri 12:15]	<Manny>	Pelle: We should focus on releasing different tier-ed levels of payment standards, rather than present this all at once. A tiered approach with payment link being first would be good.
+[Fri 12:16]	<Manny>	Pelle: It's difficult to sell the whole idea at one time. It's not the agile way of doing things, start small with payment links and then auto-payments then build on that.
+[Fri 12:18]	<Manny>	Manu agrees since payment technologies can be overwhelming technologically.
+[Fri 12:18]	<Manny>	Manu: The end goal is the democratization of finance. I agree that a gradual roll-out may help us maximize our ability to be successful. We will make mistakes along the way, we need to be able to learn from failures... not get to the end and find out that we have specified something that nobody is going to use.
+[Fri 12:19]	<Manny>	Manu: However, I want to make sure that we don't lose sight of the end goal - the democratization of finance - the work we do here should have a massively positive effect on the world - how people pool resources - not just slightly tweak the way people pay each other.
+[Fri 12:20]	<Manny>	Manu: Payment Links do fit in with PaySwarm - we could utilize email address a simple peer-to-peer transaction. What about the other two - Automated Payments and Payment Notifications?
+[Fri 12:21]	<Manny>	Pelle: on automated payment processing - the way it would work would be to use an OAuth token with certain permissions to charge $20 a month for X many months.
+[Fri 12:22]	<Manny>	Pelle: Payment Notifications are similar to PayPal IPN
+[Fri 12:25]	<Manny>	Pelle: Another example of why we can't roll out the whole thing at one time i.e. pre-existing invoicing system, can't roll out PaySwarm until you can integrate it into their invoicing system.
+[Fri 12:26]	<manu-db>	Manny: I agree - gradual rollout seems reasonable - agile way is good - start small, get acceptance - build on that.
+[Fri 12:27]	<manu-db>	dlehn: I'm sure we'll do a good bit of this work in parallel.
+[Fri 12:28]	<Manny>	Manu: Ok, then - we all agree on the basic direction of a gradual roll out.
+[Fri 12:28]	<manu-db>	Topic: Use Case Review (continued)
+[Fri 12:28]	<manu-db>	http://lists.w3.org/Archives/Public/www-tag/2009Sep/0055.html
+[Fri 12:29]	<Manny>	Manu: The last use-case we covered was the  Publishing with Per-Country Prices use case.
+[Fri 12:29]	<Manny>	Manu: The next use case is the whistleblower use case.
+[Fri 12:29]	<Manny>	Topic: Donor-Centric Donations
+[Fri 12:29]	<Manny>	A whistleblower leaking documents from inside the government showing evidence of torture practices, in text or pdf.	She specifies: anonymity; no content modification; free, but donation requested (user chooses);	no commercializing.
+[Fri 12:31]	<Manny>	Manu: anonymity is already covered - upload via Tor or proxy organization. The request of donations is where payment links could be utilized.
+[Fri 12:32]	<Manny>	Manu: commercialization and no content modification cannot be enforced if you are anonymous - so you'd have to go through another organization.
+[Fri 12:33]	<Manny>	Pelle: Something like the Free Software foundation may be one way to enforce that - they enforce GPL on behalf of licensors.
+[Fri 12:34]	<Manny>	Manu: Dontations may work best with the Payment Links stuff we just discussed and something a bit more dynamic like PaySwarm with multiple listings for each suggested donation target. We also support the ability for people to specify extra their own Payees via a contract.
+[Fri 12:35]	<manu-db>	Manny: If we think we can support it w/ the current spec, we might as well support it. Payment Links seems like it would work out well in this case - we should support this use case.
+[Fri 12:36]	<Manny>	Manu: We also state in the PaySwarm spec that the license should be machine readable, but linked to via a URL - so machine-readability of licenses is important.
+[Fri 12:36]	<Manny>	Use case is accepted, specifically for the Payment Links portion of the use case.
+[Fri 12:36]	<manu-db>	Topic: Software Distribution
+[Fri 12:36]	<Manny>	A software engineer with a program for a particular OS, in zip or other compressed format. He specifies: authorship; no content modification; payment per download with constraints/permissions of: demo use is free on one machine for a month; payment thereafter is due for each machine in use with the program; downstream commercializing is possible with constraint of: payment to original author of 25% of net profits from resale or from any other commercializing, specifically including advertising.
+[Fri 12:37]	<Manny>	Manu: This is an incredibly complex use case, with most of the important bits falling outside of the purview of a payments specification of any kind.
+[Fri 12:38]	<Manny>	Manu: The major issue is that there is no easily spec-able way to enforce these constraints via software... most of this falls into enforcement via the legal system. Let's go through each item...
+[Fri 12:39]	<Manny>	Manu: authorship and no content modification - covered by standard copyright. Downstream commercialization is covered by another use case as is 25% profit margin. Payment per download is covered by another use case. 
+[Fri 12:40]	<Manny>	Manu: Enforcing a cut of advertising revenue is far outside of the scope of any of the specs we intend to work on and it's very difficult to enforce in software without a completely unified software architecture for sales and advertising. 
+[Fri 12:42]	<Manny>	Manu: I think we should reject use case outright and not add it to our future timeline - we already cover the stuff we can cover and the rest of the stuff is not implementable in software.
+[Fri 12:44]	<Manny>	General agreement, no objections to rejecting the use case. This use case is rejected.
+[Fri 12:44]	<manu-db>	Topic: Per-page Payments
+[Fri 12:46]	<Manny>	A carpenter publishes plans with photos and text describing how to build a solar outhouse, in html or pdf. He specifies: authorship; no content modification; payment per download (pdf); payment per page view (HTML); no downstream commercializing.
+[Fri 12:48]	<Manny>	Manu: I don't understand what he means by "payment per page view" - does that mean for every time the person loads the page?
+[Fri 12:46]	<manu-db>	Manny: Maybe he means that that page one is free, but the rest are for-profit pages. Page 2 is measurements, page 3 is the material you'll need, page 4 is how to build it, etc.
+[Fri 12:48]	<Manny>	Manu: other way to read that is that every single browser refresh causes another payment to happen - although, that's a pretty lame business model, so it must be what you said, Manny.
+[Fri 12:48]	<Manny>	Manu: Payment per download and payment for pages identified by URLs is already covered by another use case
+[Fri 12:49]	<Manny>	This use case is rejected since all items are covered in other use cases.
+[Fri 12:49]	<manu-db>	Topic: High-Quality/Low-Quality Image Sales
+[Fri 12:49]	<Manny>	 A visual artist (oils and acrylics) with high- and low-resolution JPEGs of the paintings. She specifies: authorship; no content modification; free access online to low-res images of paintings; payment per download for hi-res images of paintings, calculated by total surface area of the image; downstream commercializing permitted with explicit author agreement.
+[Fri 12:51]	<manu-db>	Pelle: I think this use case is covered by the other use cases. Calculating by total surface area of the image is something the sales software would do - doesn't have to be in the spec.
+[Fri 12:51]	<manu-db>	Manny: This is covered - also if you use SVG - there is no "total surface area"
+[Fri 12:49]	<Manny>	 Agreement that this use case is covered by other previously approved use cases.
+[Fri 12:52]	<manu-db>	Topic: Manufacturing Rights to an Invention
+[Fri 12:52]	<Manny>	 An inventor of a patented simplified mechanical tool with a description in pdf and html text accompanied by embedded jpegs.	He specifies: authorship; no content modification; free HTML access to a summary of the tool specification; payment per pdf download of the complete specification including patent document; downstream commercializing allowed with constraints of: no resale of the patent or description itself; manufacturing of the tool for sale in any given country is permitted after explicit agreement with the inventor for that country.
+[Fri 12:52]	<manu-db>	All of the items above are covered by previously approved use cases, standard copyright law and standard patent law.
+[Fri 12:53]	<voip-ps>	Mike Johnson (SIP/6001-0000008d) has joined the conference.
+[Fri 12:54]	<Manny>	Manu: This is good, we seem to be hitting a saturation point with the use cases. The more we start rejecting, the more certain that we can be that we have a good sampling of what people will want to do with these standards.
+[Fri 12:54]	<manu-db>	Topic: Subscription-based Games
+[Fri 12:55]	<Manny>	A digital game programmer with a new multi-player game for online and/or offline use. He specifies: authorship; content modification allowed with constraint of: no commercialization once modified; payment for online use by subscription (monthly, yearly); or single payment for downloaded version; downstream commercializing permitted for unmodified download version only, with constraints of: 30% of gross sales receipts paid to original author, as well as 10% of site advertising revenue (if any) from the downstream page selling the game.
+[Fri 12:55]	<Manny>	Manu: Strange... we don't have a use case for subscriptions yet - such a useful use case - payment for online use by subscription (monthly, yearly)
+[Fri 12:55]	<Manny>	Manu: These are already covered by other use cases or standard copyright: authorship; or single payment for downloaded version; downstream commercializing permitted for unmodified download version only, with constraints of: 30% of gross sales receipts paid to original author
+[Fri 12:55]	<Manny>	Manu: These are not implementable in software, but could be a part of the license: content modification allowed with constraint of: no commercialization once modified; as well as 10% of site advertising revenue (if any) from the downstream page selling the game.
+[Fri 12:55]	<Manny>	Pelle: Yes, this is a very important use case - we must support subscriptions.
+[Fri 12:55]	<Manny>	General agreement that we support the subscription-based use case.
+[Fri 12:59]	<Manny>	Topic: Any Other Business?
+[Fri 12:59]	<Manny>	Pelle: I may have some other possible use cases - I will send them out on the mailing list.
+[Fri 13:00]	<Manny>	Manu: Ok, so how about we take a one week break from meetings and then come back and discuss requirements?
+[Fri 13:01]	<Manny>	Pelle: I'll send my use case in for physical product sales - application of device in physical space such as NFC device or payment card via OAuth
+[Fri 13:02]	<Manny>	Manu: Our next meeting will be October 20th, 2011.
+[Fri 13:03]	<voip-ps>	Manu Sporny (SIP/6000-0000008c) has left the conference.
+[Fri 13:03]	<voip-ps>	Pelle Braendgaard (SIP/10.0.1.2-0000008a) has left the conference.
+[Fri 13:03]	<voip-ps>	Mike Johnson (SIP/6001-0000008d) has left the conference.
+[Fri 13:03]	* Manu: db	Manny - I'll clean up and publish the minutes - thanks so much for scribing! :)
+[Fri 13:03]	<voip-ps>	<unknown> (IAX2/diamondcard-6544) has left the conference.
+[Fri 13:03]	<voip-ps>	Dave Lehn (SIP/6003-00000089) has left the conference.
+[Fri 13:03]	<manu-db>	voip: connections?
+[Fri 13:03]	<voip-ps>	There are currently no conference connections.
