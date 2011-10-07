@@ -1,0 +1,139 @@
+[Fri 12:03]	<manu`>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2011Sep/0012.html
+[Fri 12:03]	<voip-ps>	<unknown> (IAX2/diamondcard-3685) has joined the conference.
+[Fri 12:03]	<manu`>	Scribe: pelleb
+[Fri 12:03]	<pelleb>	Manu: We have Payment Links and use cases on the Agenda today, any additions to the Agenda?
+[Fri 12:03]	<pelleb>	Pelle: I'd like to discuss the base technology platform for this work - because it sounds like it is PaySwarm?
+[Fri 12:07]	<manu`>	Topic: Web Payments Base Technology Platform
+[Fri 12:08]	<pelleb> Manu: We need a base standard to work from, we don't want this work to devolve into philosophical discussion.
+[Fri 12:08]	<pelleb> Manu: We are proposing PaySwarm as the base technology because it seems to fit the use cases discussed thus far the best. However, it is not a fully baked specification, it is undergoing heavy change - specifically, the change from OAuth 1.0a to digitally signed messages.
+[Fri 12:09]	<pelleb> Manu: We need to bring ideas and technical concepts in from Bitcoin and Open Transact and Open Transactions. We need to support as much as possible without overly complicating the specification.
+[Fri 12:09]	<pelleb> Manu: We need to create something simple... and do it quickly.
+[Fri 12:10]	<manu`>	pelleb: I think that we need to have discussions about the basics... use cases are important.
+[Fri 12:10]	<manu`>	pelleb: However, I do think PaySwarm, as it is is too complex - it's too wide - it wants to do too many things. It would be easier if we split it into smaller pieces.
+[Fri 12:11]	<manu`>	pelleb: I find it difficult to see how it could take off in its current level of complexity.
+[Fri 12:12]	<pelleb>	Manu: Typically the way standards associations works is that we need to work out the use cases, then settle on requirements, then dive into the technical discussion. That's what we're attempting to do here.
+[Fri 12:12]	<voip-ps>	<unknown> (IAX2/diamondcard-10334) has joined the conference.
+[Fri 12:12]	<taaz>	Also, please feel free to send messages to mailing list with concerns about the direction of Payswarm.
+[Fri 12:12]	<manu1>	Yes, let's please have this discussion sooner than later. On the mailing list would be great because we want to have a record of this conversation and the reasons that we are making the decisions that we're making.
+[Fri 12:13]	<manu`>	Topic: Quick update on PaySwarm spec
+[Fri 12:14]	-->|	taaz-db (~dlehn@digitalbazaar.com) has joined #payswarm
+[Fri 12:15]	<pelleb>	Manu: PaySwarm spec is being simplified. The latest release uses digital signatures instead of OAuth 1.0a.
+[Fri 12:16]	<pelleb>	Manu: We needed to implement nonces as we moved away from OAuth 1.0a, which also uses nonces. The nonce's didn't scale for Twitter, Facebook etc, but is needed for small publishers if we are not going to use OAuth 1.0a. We found a more elegant solution than nonces, but we're still working on it.
+[Fri 12:17]	<pelleb>	Manu: We use a form of asymmetric message encryption. PaySwarm Authorities that are required to use SSL, which means that asynchronous messages coming back can be encrypted in a different way and delivered over regular HTTP. This means that publishers can use plain HTTP - they don't need to buy an expensive security certificate every year to be able to sell content via their website. So, we have removed the need for nonces, which makes the technology scale, while protecting against replay attacks and ensuring that Web Publishers don't need an SSL certificate in order to sell things via the Web.
+[Fri 12:17]	<manu`>	Topic: Standardizing Payment Links
+[Fri 12:18]	<manu`>	http://manu.sporny.org/2011/payment-links/
+[Fri 12:18]	<pelleb>	Manu: I wrote this article last week http://manu.sporny.org/2011/payment-links/ in response to the bitcoin community's desire for a payment link.
+[Fri 12:20]	<manu`>	Jeff: The article questions whether or not we need a standard way of expressing payment links on the web?
+[Fri 12:21]	<manu`>	Jeff: In the post, Manu suggests how Payment Links could be implemented, but questions whether or not they should be implemented - what use cases they solve.
+[Fri 12:21]	<voip-ps>	<unknown> (IAX2/diamondcard-10334) has left the conference.
+[Fri 12:22]	Dave Lehn (SIP/6003-00000077) has joined the conference.
+[Fri 12:22]	<pelleb>	Manu: Just having a payment link without describing what is being payed is insufficient - people like paying for refined goods, they have more of a problem buying unrefined goods and Payment Links seem to be associated with unrefined goods (tipjars, donations, etc.). Gregory Rader has a good series of posts on this topic
+[Fri 12:22]	<pelleb>	http://onthespiral.com/navigating-four-economies 
+[Fri 12:22]	<pelleb>	http://onthespiral.com/abundance-scarcity-four-quadrant-value-universe
+[Fri 12:24]	<pelleb>	Manu: You don't know what you are paying for and who you are paying - it's not tied in with the purchase process - that's problematic for pure Payment Links.
+[Fri 12:26]	<manu`>	pelleb: So, I think very differently on this - I think a simple payment link is a great idea.
+[Fri 12:27]	<manu`>	pelleb: We can't model everything out - whatever you are buying - it's out of the scope of a Web standard. I think the bitcoin standard link is a good idea - but for web-based systems - it should be a URL with some parameters on the end of it. It really doesn't have to be more complex than that. I think it'll be an error if we get more complex than that.
+[Fri 12:32]	<manu`>	Jeff: I agree. We don't want to be in a situation where there needs to be a new IRI for every new payment scheme that comes up. We need to be sufficiently generalized. There are issues with payment links - bitcoin example in Manu's article is good. We want something more generalized - that gets around the uniqueness of each currency.
+[Fri 12:33]	<manu`>	Scribe: mjohnson
+[Fri 12:34]	<mjohnson>	Pelle: 99.9% payments are done without digital sigs, fully legal. Legal system does not care about digital signatures and RDF. Courts care about email, HTML, and logs. Engineers over-complicate, payment links will fail if they turn it into something complex.
+[Fri 12:36]	<mjohnson>	Pelle: No need for standard, PayPal just uses https links. It can be good to add some details, but there is no need for a payer field or bitcoin accounts to draw from.
+[Fri 12:36]	<manu`>	q+ to discuss the need for standardization.
+[Fri 12:36]	<voip-ps>	Added manu` to the speaker queue: manu`
+[Fri 12:36]	<manu`>	ack manu`
+[Fri 12:36]	<voip-ps>	manu` has the floor (to discuss the need for standardization.). The speaker queue is empty.
+[Fri 12:36]	<mjohnson>	Pelle: Link, specify amount, who it is to and some other information. Can just be straight HTML.
+[Fri 12:38]	<mjohnson>	Manu: That argues away the entire need for standardization. That link allows people to implement whatever they want, but the whole point is to standardize the architecture people use to pay each other.
+[Fri 12:38]	<mjohnson>	Manu: If you take the oversimplification approach, that does nothing to standardize the payment process.
+[Fri 12:38]	<mjohnson>	Pelle: Take only one thing to standardize, payment link would be a lowest common denominator.
+[Fri 12:39]	<mjohnson>	Pelle: Payment links now have an asset as well. Payment provider builds something based off the link information.
+[Fri 12:39]	<mjohnson>	Pelle: I'm worried about over-complicating.
+[Fri 12:40]	<mjohnson>	Manu: I'm lost as to the direction Pelle wants the group to head in... what is actionable from what Pelle is saying?
+[Fri 12:40]	<mjohnson>	Pelle: Payment link is just one of the really basic things, a starting point.
+[Fri 12:42]	<mjohnson>	Pelle: Have a link on your homepage with your banking details exposed for payment, don't destroy implicitness of link. Links should have some parameters that are standardized, rest is just the web.
+[Fri 12:42]	<mjohnson>	Pelle: Bitcoins don't need to understand assets. Bitcoin just handles the payment part.
+[Fri 12:43]	<mjohnson>	Manu: Pelle wants just a generic payment link, parameters are just standardized.
+[Fri 12:43]	<mjohnson>	Pelle: Just a link, not even attributes. Something you could put in an email and someone could follow to do payment.
+[Fri 12:44]	<mjohnson>	Manu: Why would that need to be standardized at all, parameters are part of HTTP - people can do this today.
+[Fri 12:44]	<mjohnson>	Pelle: Parameters should be known to work with any payment mechanism - it would be a way of expressing how much you want to get paid and where to deposit the money.
+[Fri 12:44]	<mjohnson>	Manu: Amount and person to pay should be in the link.
+[Fri 12:44]	<mjohnson>	Pelle: Even the amount should be optional.
+[Fri 12:46]	<mjohnson>	Manu: Too hard to solve with just a link without browser (user-agent) knowing what accounts are.
+[Fri 12:46]	<mjohnson>	Manu: To do that you have to assume that the person has to have a specialized account for whatever service you want to use.
+[Fri 12:46]	<mjohnson>	Pelle: The person has to have that account, PayPal, Bitcoin, etc.
+[Fri 12:46]	<mjohnson>	Manu: Yes, but then you have the NASCAR problem - sites plastered with all sorts of payment buttons.
+[Fri 12:47]	<mjohnson>	Pelle: Yes, but that is a different issue.
+[Fri 12:47]	<mjohnson>	Manu: Let's discuss this on the mailing list - it would be good to understand the exact proposal.
+[Fri 12:47]	<mjohnson>	Pelle will write up a proposal and send to mailing list.
+[Fri 12:47]	<manu`>	Topic: Steven Rowat Use Case Review (continued)
+[Fri 12:47]	<manu`>	http://lists.w3.org/Archives/Public/www-tag/2009Sep/0055.html
+[Fri 12:48]	<mjohnson>	Manu: Most of these use cases are addressed by discussing the licenses associated with the asset. That conveys most of the information necessary.
+[Fri 12:48]	<mjohnson>	Manu: We addressed case 1 last week, we will start with 2.
+[Fri 12:48]	<mjohnson>	Topic: Anonymous, Free Content
+[Fri 12:49]	<mjohnson>	A journalist in Africa with an ogg or mp4 video of atrocities in an ongoing war.	She specifies: anonymity; no content modification; free; no downstream commercializing.
+[Fri 12:49]	<mjohnson>	Manu: Probably associate CC no-derivs license with the work. Distribute for free, no downstream commercializing.
+[Fri 12:50]	<mjohnson>	Manu: 2 seems not to be a use case we have to cover, Creative Commons handles this use case completely.
+[Fri 12:50]	<mjohnson>	Mike: +1
+[Fri 12:51]	<mjohnson>	Group chooses to pass on use case 2 - it is handled by Creative Commons
+[Fri 12:51]	<mjohnson>	Topic: Conditional Re-Distribution
+[Fri 12:51]	<mjohnson>	A writer with a complete novel in pdf, doc, html, and other text formats. He specifies: authorship as pseudonym; no content modification; payment per download; downstream commercializing allowed with constraints of: no advertising (direct sale only); payment of 20% of gross per copy re-sold; any additional commercial rights for other media must obtain agreement of the original author.
+[Fri 12:52]	<mjohnson>	Manu: Downstream commercialization, direct sale only and no advertising.
+[Fri 12:53]	<mjohnson>	Manu: PaySwarm listings allow a variety of terms to limit resale rules.
+[Fri 12:53]	<mjohnson>	Manu: No other rights are conveyed unless they are specified.
+[Fri 12:53]	<mjohnson>	Manu: Standard copyright practice for no content modification and requirement for additional commercial rights to be cleared by the author.
+[Fri 12:54]	<mjohnson>	Jeff: I agree that this falls under payment - it's a use case we care about.
+[Fri 12:54]	<mjohnson>	Jeff: My company, PubPie, would benefit from this.
+[Fri 12:55]	<mjohnson>	Jeff: Resale would help, gets around copyright and DRM issues, has social incentive.
+[Fri 12:55]	<mjohnson>	Manny: Very benefitial, expands distribution ability for authors while maintaining control.
+[Fri 12:55]	<pelleb>	+1
+[Fri 12:55]	<mjohnson>	+1
+[Fri 12:56]	<mjohnson> Group accepts conditional redistribution use case.
+[Fri 12:56]	<mjohnson> Topic: Publishing with Per-Country Prices
+[Fri 12:56]	<mjohnson> A folk-musician in Siberia who records local throat-singing into mp3 or ogg vorbis files. He specifies: authorship; no content modification; free streaming of first 10% of content online; payment per download at sliding scale proportional to user-country's average yearly income per person; no downstream commercializing.
+[Fri 12:57]	<mjohnson> Manu: This use case basically allows a 10% sample and per-capita income price adjustment. No downstream commercializing.
+[Fri 12:57]	<mjohnson> Manu: Free streaming might make sense if other people just stream 10% from their websites.
+[Fri 12:58]	<mjohnson> Manu: First and last requirements fall out due to being address by standard copyright.
+[Fri 12:59]	<mjohnson> Manu: License would have to allow first 10% to be streamed without compensation.
+[Fri 12:59]	<mjohnson> Manu: Sliding payment scale can be accomplished in two ways: Geoloc IP database to serve up different payment licenses with the PaySwarm Authority enforcing regions.
+[Fri 13:00]	<mjohnson> Manu: technically it can be accomplished, but it is very complicated to do on the client-side.
+[Fri 13:00]	<mjohnson> Manu: From a PaySwarm perspective the Authority would just have to enforce regional licenses.
+[Fri 13:01]	<voip-ps>	<unknown> (IAX2/diamondcard-3685) has left the conference.
+[Fri 13:01]	<mjohnson>	Jeff: Applies to publishing as well. Sliding scale of royalties. Net or retail books sold above this many units, additional royalty earned.
+[Fri 13:01]	<mjohnson>	Jeff: What scale and what unit? Books sold, country sold in, etc.
+[Fri 13:01]	<mjohnson>	Jeff: What you are talking about - how are payments split.
+[Fri 13:03]	<manu`>	mjohnson: This is how the movie industry does things too - they have a bunch of different regions - Region 2, Region 1 - publishers may still be interested in locking down content to different regions.
+[Fri 13:04]	<mjohnson>	Manny: This happened to me the other day too, downloading a Kindle book and was denied because not in US.
+[Fri 13:04]	<manu`>	mjohnson: We still need to understand whether or not the PaySwarm Authority needs to enforce these criteria - maybe this should be PA specific - maybe it doesn't need to apply to all PAs?
+[Fri 13:04]	<mjohnson> Manny: Odd to happen with books.
+[Fri 13:05]	<mjohnson> Jeff: Can get around using anonymizer sites, but those are often prevented.
+[Fri 13:05]	<mjohnson> Manny: In this particular case, how would someone using an IP masker be able to prove they are not in a specific region.
+[Fri 13:06]	<mjohnson> Manu: Do we even want to support this to start, because it often works against publishers (and customers!) when people cannot access content in their region.
+[Fri 13:06]	<mjohnson> Jeff: With a publisher, an author might have US rights only contract, or Aussie, etc.
+[Fri 13:06]	<mjohnson> Jeff: Most get world rights now, but there might be specific cases.
+[Fri 13:07]	<manu`>	mjohnson: There is a huge legacy to music licensing here as well - you can't distribute outside of country it was created in... lots of cases where this is applicable. Hard to say if we need to address it in PaySwarm 1.0 - do we create a mechanism, but don't directly address this use case right now?
+[Fri 13:07]	<mjohnson>	Jeff: Maybe this is something we can push to 2.0?
+[Fri 13:08]	<mjohnson> Manny: Yes, this does seem to be very complex.
+[Fri 13:08]	<mjohnson> Manu: We do have legacy issues, and some publishers without the ability to limit might be in big trouble unless we are able to support this.
+[Fri 13:09]	<mjohnson> Manu: The standard definitely needs to address this, and though we may push it off to 2.0 we need to not limit this from happening in the future in the 1.0 spec.
+[Fri 13:09]	<mjohnson> Manu: We should add to 1.0, but I do not feel strongly about this.
+[Fri 13:10]	<mjohnson> Jeff: Larger institutions would probably like this support earlier than later.
+[Fri 13:10]	<mjohnson> Manu: Allowing the transaction based on the sellers country and buyers country.
+[Fri 13:11]	<manu`>	mjohnson: Is this only applicable to countries? Or is it broader?
+[Fri 13:12]	<mjohnson>	Manu: This use case is complex, not just on country of origin, was on GDP and such.
+[Fri 13:12]	<mjohnson>	Manu: Making listings for every country might be wasteful, complex.
+[Fri 13:12]	<mjohnson>	Manu: Another way to address the issue would be a payment formula.
+[Fri 13:13]	Manu: Payment formulas much further down roadmap, whereas checking listings for countries is much simplier.
+[Fri 13:14]	<manu`>	mjohnson: Since each authority may be run by a different company, maybe some would allow certain types of transactions and others wouldn't.
+[Fri 13:15]	mjohnson: This might be outside of the bounds of a particular PaySwarm standard - the standard may want to say "This is how you check business rules and enforce them."
+[Fri 13:15]	|<--	jeffsayre has left freenode (Ping timeout: 258 seconds)
+[Fri 13:16]	<manu`>	pelleb: This is a competitive implementation detail - all the standard might need is plain english explaining how to apply the general process, but the more specific stuff in an external specification.
+[Fri 13:15]	<mjohnson> Manu: We may want to address in PaySwarm 1.0, but not address all business rules.
+[Fri 13:17]	<mjohnson> Manu: Let's push to 2.0, but be willing to address in 1.0 if we feel we need to have it sooner.
+[Fri 13:17]	<mjohnson> 	+1
+[Fri 13:17]	<mjohnson> Manu: We're out of time for this call. Thanks for everyone's contributions.
+[Fri 13:18]	<mjohnson> Manu: Let's do another call next week, use cases take time but we are making good progress.
+[Fri 13:18]	<mjohnson>	Jeff: I maybe absent next two weeks - traveling.
+[Fri 13:18]	<mjohnson>	Topic: Picking a Chair
+[Fri 13:19]	<mjohnson>	Manu: We might not pick a chair for right now, operating fine without one. Need more people in group so it's not just the few of us picking from a select few.
+[Fri 13:19]	<mjohnson>	Manu: We will need the chair more once have more members and more paperwork, until then, I can do all the paperwork as I have been doing these past several months.
+[Fri 13:19]	<mjohnson>	The group agrees to operate without chair for now.
+
