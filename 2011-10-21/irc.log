@@ -1,0 +1,162 @@
+[Fri 12:02]	<manu`>	Scribe: manu
+[Fri 12:02]	<manu`>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2011Oct/0026.html
+[Fri 12:03]	<manu`> Pelle: I was at IIW - we created a new draft for OpenTransact - some of that stuff is relevant.
+[Fri 12:03]	<pelleb>	http://www.opentransact.org/core.html
+[Fri 12:03]	<manu`>	Pelle: IIW was good - OpenID and OpenID Connect are getting finalized - they look good.
+[Fri 12:04]	<manu`> Manu: Do they allow associating public keys with the ID?
+[Fri 12:04]	<manu`> Pelle: They use JWT - it includes a signature and encryption component.
+[Fri 12:04]	<taaz>	Google in-app payments is also using JWT
+[Fri 12:05]	<manu`>	scribe: mjohnson
+[Fri 12:05]	<manu`> Topic: Newest Editor's Draft of PaySwarm Use Cases
+[Fri 12:05]	<mjohnson>	Manu: First topic is new editors draft
+[Fri 12:05]	<manu`>	http://payswarm.com/specs/ED/use-cases/2011-10-20/
+[Fri 12:06]	<mjohnson> Manu: breaks the use cases out into PaySwarm 1.0 cases, future cases. Organized from simple to complex/optional cases.
+[Fri 12:07]	<mjohnson> Manu: Do not include cases which haven't been discussed in these meetings yet.
+[Fri 12:07]	<mjohnson>Manu: Example, we dont have subscription or recurring payments use cases yet.
+[Fri 12:08]	-->|	MacTed (~Thud@63.119.36.36) has joined #payswarm
+[Fri 12:08]	<mjohnson>	Manu: We still need to discuss Pelle's two extra use cases.
+[Fri 12:08]	<manu`>	Topic: Simple Payment Request
+[Fri 12:08]	<manu`>	http://lists.w3.org/Archives/Public/public-webpayments/2011Oct/0008.html
+[Fri 12:08]	<mjohnson>	Manu: One is simple payment request, other is point of sale payment device.
+[Fri 12:09]	<mjohnson> Manu: First up is simple payment request.
+[Fri 12:09]	<manu`>	http://payswarm.com/specs/ED/use-cases/2011-10-20/#simple-payment-links
+[Fri 12:09]	<mjohnson>	Pelle: That covers my use case.
+[Fri 12:08]	<manu`>	Topic: Point-of-Sale Support
+[Fri 12:10]	<mjohnson>Manu: Next is point of sale payment device. Buy a drink in a coffee shop using NFC, etc.
+[Fri 12:11]	<mjohnson>Manu: We'd talked about tying a Visa card to a point of sale device.
+[Fri 12:11]	<pelleb>	Here are 2 examples of this using OpenTransact 
+[Fri 12:11]	<pelleb>	http://pays.ms 
+[Fri 12:11]	<pelleb>	http://capcard.heroku.com/
+[Fri 12:12]	<taaz>	q+
+[Fri 12:11]	<mjohnson>	Manu: Example - any time this visa card is swiped it doesn't have to go over Visa, it could go over PaySwarm and the merchant could pull funds and avoid credit card charges.
+[Fri 12:11]	<voip-ps>	Added taaz to the speaker queue: taaz
+[Fri 12:11]	<mjohnson>	Manu: Merchants may not be able to do that, Visa terms of service may not allow it.
+[Fri 12:13]	<mjohnson> Jeff: How is this different than PayPal? PayPal is be tied to credit card accounts.
+[Fri 12:13]	<mjohnson> Manu: We don't have a definitive answer for that. It probably still runs transaction over Visa network, but this idea would be to avoid running over Visa.
+[Fri 12:13]	<mjohnson> Manu: Example - Square's credit card swipers that plug into your phone - they probably still process via Visa network, but we don't /have/ to go over any particular network.
+[Fri 12:14]	<mjohnson> Manu: Needs to be a service to figure out how to map CC numbers to the person who has the account. But this would be more than what Pelle's use case would cover.
+[Fri 12:14]	<mjohnson> Pelle: The payment provider would have different sponsored or third party card providers.
+[Fri 12:15]	<mjohnson> Pelle: Replacement of the existing ISO payment card system.
+[Fri 12:15]	<mjohnson> Pelle: At Future of Money, at least 4 different mobile payment providers all with different front ends: SMS, etc. But all had to tie into one backend.
+[Fri 12:15]	<manu`>	ack taaz
+[Fri 12:15]	<voip-ps>	taaz has the floor. The speaker queue is empty.
+[Fri 12:15]	<mjohnson> Pelle: With this front end payment providers could just link in without having to worry about backend.
+[Fri 12:16]	<mjohnson> Lehn: Does this use case address purchases from vending machines?
+[Fri 12:17]	<manu`>	Pelle: If there is a simple approach to doing this, then it could be used for all types of applications.
+[Fri 12:18]	<mjohnson>	Manu: This is important and we should consider it for PaySwarm 1.0.
+[Fri 12:18]	<mjohnson> Manu: I'm concerned that the use case is too general, and needs to be broken up into more specific cases.
+[Fri 12:19]	<mjohnson> Manu: Visa replacement, vending machines, SMS messages, etc.
+[Fri 12:19]	<mjohnson> Pelle: The vending case may be different since it is more for merchants than the consumer side.
+[Fri 12:19]	<mjohnson> Manu: Ok, so we'll split into consumer/merchant cases for this use case.
+[Fri 12:19]	<taaz>	I think there are many possible ways to implement these sorts of systems so maybe the use case could just cover the general idea?
+[Fri 12:20]	<mjohnson>	Pelle: It's just a physical dongle - you can build anything on top of that.
+[Fri 12:20]	<mjohnson> Manu: This needs to be more specific, for instance think about disconnected operations.
+[Fri 12:21]	<mjohnson> Manu: A vending machine doesn't have an internet connection.
+[Fri 12:21]	<mjohnson> Manu: Vending machine could negotiate contract, keep contracts, upload for processing later.
+[Fri 12:22]	<mjohnson> Manu: Encrypted signed contract would route the contract through the buyer, allows the vendor to not have to contact the PaySwarm Authority.
+[Fri 12:22]	<mjohnson> Pelle: That introduces a great deal of complexity.
+[Fri 12:22]	<taaz>	Personally, I like thinking about how to solve these sorts of issues :)
+[Fri 12:22]	q+
+[Fri 12:22]	<voip-ps>	Added mjohnson to the speaker queue: mjohnson
+[Fri 12:23]	<mjohnson>	Pelle: Maybe we should have someone else create another layer on top, rather than supporting it in the underlying layer.
+[Fri 12:23]	<manu`>	ack mjohnson
+[Fri 12:23]	<voip-ps>	mjohnson has the floor. The speaker queue is empty.
+[Fri 12:23]	<manu`>	Mike: This use case already parallels what we've done - don't know if people are aware of how PaySwarm works - current purchases are always securely routed through the buyer... so this is already supported.
+[Fri 12:23]	<taaz>	I see PaySwarm providing the low level plumbing that will let you try out various implementations at a higher level.
+[Fri 12:24]	<taaz> We just want to make sure the use cases are sufficient to make sure the plumbing is good enough.
+[Fri 12:24]	<manu`>	Mike: I think the example of having a cellphone and using NFC via vending machine and the cellphone supporting it is already supported...
+[Fri 12:24]	<jeffsayre>	+1 on Mike's description
+[Fri 12:25]	<mjohnson>	Manu: We want to have that part already thought out. Supports putting this use case in there because we've already solved that problem.
+[Fri 12:26]	<mjohnson> Pelle: It might make other cases more complicated, but we can leave that use case in.
+[Fri 12:26]	<mjohnson> Pelle: Let's try to minimize it making other use cases more complicated.
+[Fri 12:27]	<mjohnson> Manu: First - buyer's side of the process. Buyer uses physical device to make a purchase using these standards.
+[Fri 12:27]	<mjohnson> Manu: Second - merchant's side of the process. Merchant has device and uses what customer provides or keys something in that allows them to use the standard.
+[Fri 12:28]	<mjohnson> Manu: Third - Proxy purchases. A vending machine routes payment requests through a phone or buyer's device, customer passes on to PSA and routes back to device to prove that customer has securely purchased.
+[Fri 12:28]	<mjohnson> Manu: That should cover point of sale devices.
+[Fri 12:29]	<mjohnson> Pelle: No other uses cases at the moment.
+[Fri 12:29]	<mjohnson> Manu: We can add more later as we come across them.
+[Fri 12:29]	<mjohnson> Manu: use cases are important, RDFa suffered from not having an updated set of use cases.
+[Fri 12:30]	<manu`>	Topic: Requirements Discussion
+[Fri 12:30]	<mjohnson>	Manu: This is to see if the set of requirements we were discussing all have use cases to support them.
+[Fri 12:31]	<mjohnson> Manu: First up is proof of purchase. (Digital contracts) We have the use case documented - 2.11 Proof of Purchase
+[Fri 12:31]	<mjohnson> Manu: Next is Digital Signatures. Pelle had concerns about digital sigs, but we may need to discuss on the mailing list.
+[Fri 12:31]	<manu`>	Topic: Digital Signatures
+[Fri 12:32]	<mjohnson> Pelle: Offline devices are a good technical reason to use dsigs, but there does not seem to be a legal reason to use it.
+[Fri 12:32]	<mjohnson> Manu: Digital signatures are more for security than legal upholding.
+[Fri 12:33]	<mjohnson> Manu: Dsigs allow things like offline use and allow us to list assets for sale and allows secondary market.
+[Fri 12:33]	<mjohnson> Manu: Comes into play for multiple download sources for content, and the buyer needs to prove that someone bought something.
+[Fri 12:34]	<mjohnson> Pelle: Don't think it's necessary. Dsigs don't hurt, but it does make it more complex. Would support it as optional.
+[Fri 12:34]	<mjohnson> Pelle: OpenID Connect has a concept of claim. Things can be signed but it is not required.
+[Fri 12:34]	<jeffsayre>	+q
+[Fri 12:34]	<mjohnson>	Pelle: I don't think it buys us anything except looking cool technically.
+[Fri 12:35]	Pelle: OpenAuth 2.0 uses SSL and needs for their framework. But signatures introduce complexity.
+[Fri 12:36]	Jeff: One of the best aspects of this spec is the secondary market, and it really should be included from the start. I strongly support digital signatures.
+[Fri 12:36]	<manu`>	q+ to discuss zero-cost setup via crypto.
+[Fri 12:36]	<voip-ps>	Added manu` to the speaker queue: manu`
+[Fri 12:36]	<mjohnson>	Jeff: Should be suggested, requirement may be optional.
+[Fri 12:36]	<manu`>	ack manu`
+[Fri 12:36]	<voip-ps>	manu` has the floor (to discuss zero-cost setup via crypto.). The speaker queue is empty.
+[Fri 12:36]	<pelleb>	+q
+[Fri 12:36]	<mjohnson>	Jeff: Would prefer they are included but we should investigate.
+[Fri 12:37]	<mjohnson> Manu: Qe need to be clear about what we mean by digital signature. We need to not lump it in the same basket as all other security/crypto.
+[Fri 12:37]	<mjohnson> Manu: When we say digital signatures we actually lump in other crypto in there too.
+[Fri 12:38]	<mjohnson> Manu: SSL is hidden from developers, but signatures are more visible.
+[Fri 12:38]	<mjohnson> Manu: SSL also requires certificates. Cost for operating your vendor now means you have to have a certificate - that's $30-$50 per year to setup one store.
+[Fri 12:38]	<mjohnson> Manu: We shouldn't assume everyone wants or can buy an SSL certificate for each vendor they have.
+[Fri 12:39]	<mjohnson> Manu: Buying an SSL cert doesn't lower the barrier to entry enough. We want people in developing nations to be able to use this technology, and for them - spending $30/year is not an option.
+[Fri 12:39]	<mjohnson> Manu: Pelle's arugment that it is more complex is true. But we would provide libraries to wrap almost all of that up so that it is as invisible as SSL.
+[Fri 12:40]	<mjohnson> Manu: Libraries would be open source, etc.
+[Fri 12:40]	<mjohnson> Manu: All of that to say, we want to drive costs of operating in PaySwarm network as close to zero as possible. Requiring SSL certificates is not a good start for the people we want to draw to use this.
+[Fri 12:41]	<mjohnson> Pelle: The cost issue, most small vendors would use a service provider to do it. They wouldn't develop it from scratch.
+[Fri 12:41]	<mjohnson> Pelle: Lessons from OAuth 1.0, even though there are good libraries, people would develop one themselves and fail, didn't understand and would implement an incorrect library.
+[Fri 12:42]	<mjohnson> Pelle: Requiring OAuth 2.0 to use SSL has dropped a lot of that.
+[Fri 12:42]	<mjohnson> Manu: Anything over HTTP is not secure.
+[Fri 12:43]	<mjohnson> Jeff: Also an issue with PCI compliance in the US?
+[Fri 12:43]	<mjohnson> Manu: Problem with PCI compliance is it is made for an idustry that doesn't keep in mind security too much. So, there may be an issue - but this is a completely different payment mechanism we're talking about - with security built in from day one.
+[Fri 12:44]	<mjohnson> Manu: If people write an implementation of this incorrectly, it just doesn't work - the digital signatures, hashes, etc. ensure that one has to be very specific and clear about the transaction that is occurring.
+[Fri 12:44]	<pelleb>	IETF's Security Analysis of OAuth 2 http://tools.ietf.org/html/draft-ietf-oauth-v2-threatmodel-00
+[Fri 12:44]	<mjohnson>	Manu: There is a way to implement a spec to allow us to not shoot us in the foot, must be aware of all attack vectors.
+[Fri 12:45]	<mjohnson> Manu: There are trade-offs between SSL only versus SSL in some parts and allowing other parts to be done over non-SSL. You can't look at the problem and just say that everything must be run over SSL.
+[Fri 12:45]	<mjohnson> Manu: PaySwarm authorities have to have SSL, but vendors would not need to buy one. People who would need an SSL cert would be the people who would have to buy one.
+[Fri 12:45]	<mjohnson> Jeff: Self signed certificates?
+[Fri 12:46]	<mjohnson> Manu: No, because the PSA doesn't know if it can trust you saying you are the person with a self-signed certificate.
+[Fri 12:46]	<mjohnson> Manu: If browser doesn't do network perspective reasoning on certificates, like what is done at http://convergence.io/, it fails. We wouldn't be talking about this if browsers did that already. The whole Certificate Authority system is broken currently - Network Perspectives are the best way out of it right now.
+[Fri 12:47]	<mjohnson> Pelle: Payment Authority requires it, but vendor does not.
+[Fri 12:47]	<mjohnson> Pelle: Similar to how Facebook connect works.
+[Fri 12:47]	<mjohnson> Pelle: Facebook connect is a widget you paste into an HTML page.
+[Fri 12:48]	<mjohnson> Manu: If it is simpler and addresses all security concerns then should adopt the technology. I am not convinced that Facebook connect solves our problem. There is a big difference between performing a purchase and someone signing into your facebook account.
+[Fri 12:48]	<mjohnson> Pelle: They have spent two years looking at threat model of OAuth 2.0
+[Fri 12:49]	<mjohnson> Manu: We should use that to investigate our own threat models.
+[Fri 12:49]	<mjohnson> Jeff: We need to better understand the whole system to understand our security issues.
+[Fri 12:49]	<mjohnson> Jeff: It's crucial to find out where the threats really are.
+[Fri 12:50]	<voip-ps>	Added mjohnson to the speaker queue: mjohnson
+[Fri 12:50]	<mjohnson>	Manu: We will keep the dsig discussion going.
+[Fri 12:30]	<manu`>	Topic: Currency Exchanges
+[Fri 12:50]	<mjohnson> Manu: Multiple currency use case is 2.8, so that's covered
+[Fri 12:51]	<mjohnson> Manu: Simple transfer from one account to another - I think Payment Links handle that, right?
+[Fri 12:51]	<mjohnson> Pelle: Payment link is just request for payment, but the actual payment process is different. Currency exchanges - that's basically covered.
+[Fri 12:52]	<mjohnson> Pelle: The most basic action, is part of all of them.
+[Fri 12:52]	<mjohnson> Pelle: Covered by all other use cases.
+[Fri 12:52]	<mjohnson> Jeff: Exception might be a pure currency conversion, Euros to Bitcoin.
+[Fri 12:53]	<mjohnson> Pelle: An exchange would require two transfers, so it's covered.
+[Fri 12:53]	<mjohnson> Pelle: Person A transfers asset to Person B. Person B transfers asset to Person A.
+[Fri 12:54]	<mjohnson> Jeff: Future of Money scenario, it's more of an open exchange where PSA is intermediary.
+[Fri 12:55]	<mjohnson> Jeff: Transactions would match two external parties and does an open exchange instead of a currency converter where the PSA has balances of all currencies.
+[Fri 12:56]	<mjohnson> Pelle: Technically the would probably be the same, it's how the exchange covers it in their backend. Use cases covered in OpenTransact for exchanges.
+[Fri 12:56]	<mjohnson> Jeff: A use case for an open exchange is not necessary? I think it is necessary.
+[Fri 12:56]	<mjohnson> Pelle: They would be the same, more like a business decision than a technical requirement.
+[Fri 12:57]	<mjohnson> Pelle: Market matcher vs Market maker.
+[Fri 12:57]	<mjohnson> Jeff: Do we need a specific use case for currency exchange?
+[Fri 12:57]	<mjohnson> Jeff: 2.8 is just alternate currencies.
+[Fri 12:57]	<mjohnson> Manu: Probably a good idea to have a use case for a currency exchange. I mean, we're talking about it and we're saying it should be supported.
+[Fri 12:57]	<mjohnson> Jeff: Future of Money will be interested in that.
+[Fri 12:58]	<mjohnson> Pelle: We don't need to split all of these cases, for instance asset means something very general. Use cases for an asset includes mp3, physical goods, etc.
+[Fri 12:59]	<mjohnson> Manu: Jeff we should be explicit about use cases. Pelle had to explain why they are the same. We agree on a technical reason, but use cases are to spell out these things.
+[Fri 13:00]	<mjohnson> Manu: We will put in a use case on currency exchange into the spec.
+[Fri 13:00]	<mjohnson> Manu: There are 4 requirements left, let's leave those until next time.
+[Fri 13:01]	<mjohnson> Manu: Let's meet again in two weeks to discuss requirements more.
+[Fri 13:01]	<voip-ps>	Manu Sporny (SIP/6000-000000ba) has left the conference.
+[Fri 13:01]	Pelle Braendgaard (SIP/10.0.1.5-000000b9) has left the conference.
+[Fri 13:01]	Dave Lehn (SIP/6003-000000b8) has left the conference.
+[Fri 13:01]	Mike Johnson (SIP/6001-000000b7) has left the conference.
+[Fri 13:01]	jeffsayre (IAX2/diamondcard-16200) has left the conference.
