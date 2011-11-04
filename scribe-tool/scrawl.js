@@ -17,7 +17,7 @@
    /* Standard regular expressions to use when matching lines */
    var commentRx = /^\[(.*)\]\s+\<(.*)\>\s+(.*)$/;
    var scribeRx = /^scribe:.*$/i;
-   var chairRx = /^chair:.*$/i;
+   var chairRx = /^(chair|facilitator):.*$/i;
    var proposalRx = /^(proposal|proposed):.*$/i;
    var resolutionRx = /^(resolution|resolved):.*$/i;
    var topicRx = /^topic:\s*(.*)$/i;
@@ -428,7 +428,7 @@
          rval += "<div class=\"summary\">\n<dl>\n";
          rval += "<dt>Agenda</dt><dd><a href=\"" + 
              agenda + "\">" + agenda + "</a></dd>\n";
-         rval += "<dt>Chair</dt><dd>" + chair + "</dd>\n";
+         rval += "<dt>Facilitator</dt><dd>" + chair + "</dd>\n";
          rval += "<dt>Scribe</dt><dd>" + scribe + "</dd>\n";
          rval += "<dt>Present</dt><dd>" + present.join(", ") + "</dd>\n";
          rval += "<dt>Audio Log</dt><dd>" +
@@ -445,7 +445,7 @@
          rval += "Minutes for " + time.getFullYear() + "-" + 
              month + "-" + day + "\n";
          rval += "Agenda:\n   " + agenda + "\n";
-         rval += "Chair:\n   " + chair + "\n";
+         rval += "Facilitator:\n   " + chair + "\n";
          rval += "Scribe:\n   " + scribe + "\n";
          rval += "Present:\n   " + 
             scrawl.wordwrap(present.join(", "), 65, "\n   ") + "\n\n";

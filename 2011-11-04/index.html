@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+      class="wf-adelle1adelle2-n6-active wf-active"> 
+ 
+<head> 
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+  <title>PaySwarm - Teleconferences</title> 
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ 
+  <link rel="stylesheet" href="../../css/1140.css" type="text/css" media="screen" /> 
+  <!--[if lte IE 9]>
+  <link rel="stylesheet" href="../css/ie.css" type="text/css" media="screen" />
+  <![endif]--> 
+  <link rel="stylesheet" href="../../css/typeimg.css" type="text/css" media="screen" /> 
+  <link rel="stylesheet" href="../../css/smallerscreen.css" media="only screen and (max-width: 1023px)" /> 
+  <link rel="stylesheet" href="../../css/mobile.css" media="handheld, only screen and (max-width: 767px)" /> 
+  <link rel="stylesheet" href="../../css/layout.css" type="text/css" media="screen" /> 
+  <link rel="shortcut icon" type="image/png" href="../../images/payswarm-icon.png" /> 
+  
+<style type="text/css">
+h1 {
+   margin-top: 24px;
+   margin-bottom: 14px;
+}
+
+#content {
+   margin-left: 15%;
+   margin-right: 15%;
+}
+
+.summary {
+   margin-left: 10%
+   margin-right: 10%
+}
+
+.name {
+   font-weight: bold;
+}
+
+.information {
+   font-style: italic;
+}  
+
+.comment-continuation {
+   margin-left: 2em;
+}
+
+dt {
+   font-style: oblique;
+}
+
+dd {
+   margin-left: 20px;
+}
+
+  </style>
+  
+</head> 
+<body> 
+ 
+<div class="titlebar"> 
+   <h1>PaySwarm</h1> 
+</div> 
+
+  <div id="content"> 
+ 
+  <div class="row"> 
+    <div class="twelvecol last"> 
+
+<h1>Web Payments Community Group Telecon</h1>
+<h2>Minutes for 2011-11-04</h2>
+<div class="summary">
+<dl>
+<dt>Agenda</dt><dd><a href="http://lists.w3.org/Archives/Public/public-webpayments/2011Nov/0006.html">http://lists.w3.org/Archives/Public/public-webpayments/2011Nov/0006.html</a></dd>
+<dt>Facilitator</dt><dd>Manu Sporny</dd>
+<dt>Scribe</dt><dd>David I. Lehn</dd>
+<dt>Present</dt><dd>David I. Lehn, Manu Sporny, Pelle Braendgaard, Mike Johnson, Jeff Sayre</dd>
+<dt>Audio Log</dt><dd><div><a href="audio.ogg">audio.ogg</a></div>
+<div><audio controls="controls" preload="none">
+<source src="audio.ogg" type="audio/ogg" />Warning: Your browser does not support the HTML5 audio element, please upgrade.</div></dd>
+</dl>
+</div>
+<div class="information">David I. Lehn is scribing.</div>
+<h1 id=topic-1 class="topic">Topic: Customer Digital Signatures</h1>
+<div class="comment"><span class="name">Manu Sporny</span>:  Hi Pelle, I think we're miscommunicating on the mailing list because our definitions are slightly different. We don't intend for the customers to digitally sign the contracts. I think that addresses your concerns - we're having the PaySwarm Authority sign on behalf of the customer. We also have Vendors digitally sign contracts. Will go into depth on the mailing list. I agree - we don't want external client software in the mix.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  Good, that was my main worry.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Yes, we don't want 3rd party clients in the mix. We do have cases where Certficiate generation and signing can be done via pure JavaScript/WebSockets. We have a full SSL/TLS login working via JS and WebSockets, however - that is very advanced and will not make it into the first spec.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  Nowadays people use multiple browsers on different devices. All the work in the 90s assumed that people would be using a single browser. I would love to see it happen.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Yes, we've replaced the client signatures w/ an Agent on the web that is able to sign on your behalf. That's what a PaySwarm Authority is right now. We have plans to push it into a Node on the Web somewhere... but this isn't for PaySwarm 1.0.</div>
+<h1 id=topic-2 class="topic">Topic: Requirements Discussion</h1>
+<div class="comment"><span class="name">Manu Sporny</span>:  4 requirements left from original list.. let's go through them.</div>
+<h1 id=topic-3 class="topic">Topic: Requirements - Payment for Digital Products</h1>
+<div class="comment"><span class="name">Manu Sporny</span>:  article, post, file you want to transact on in contract to physical good</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  safer to transact in digital goods than physical goods. You can revoke digital good transactions and things are usually fine when you do that. However, revoking physical good transactions is much more difficult/impossible.</div>
+<div class="comment"><span class="name">Mike Johnson</span>: +1</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>: +1</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  agreement we want to support digital products?</div>
+<div class="information">General agreement that we support the sale of digital products.</div>
+<h1 id=topic-4 class="topic">Topic: Requirements - Delayed Payment / Escrow</h1>
+<div class="comment"><span class="name">Manu Sporny</span>:  allow ability for system to put money into and take money out of escrow</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  one use case is crowd funding</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  (some examples) like kickstarter. commit money but the project is only funded if hits a certain level. if it doesn't hit the level, funds are returned.</div>
+<div class="comment"><span class="name">Mike Johnson</span>:  kickstarter is not only use case</div>
+<div class="comment"><span class="name">Mike Johnson</span>: +1 to support escrow</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>: +1</div>
+<div class="comment"><span class="name">David I. Lehn</span>: +1</div>
+<div class="information">Agreement to support delayed payment or escrow in the system.</div>
+<h1 id=topic-5 class="topic">Topic: Requirements - Time-based payments</h1>
+<div class="comment"><span class="name">Manu Sporny</span>:  This is basically scheduled payments. pay $X to someone every month.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  may not go into spec. authorities can provide as a service, but we should say it's a requirement so that we cover it.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  important to have requirement but may not effect spec.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  similar to subscription model</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  I'm for supporting it. perhaps not monthly payment but allow authority to allow merchant to take out certain amount each month. permissions system on spending amounts</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Our PaySwarm implementation is using the term "budgets" for a particular vendor.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  prevent vendors from taking out more than certain amount during a time period.</div>
+<div class="information">Agreement to support time-based payments and budgets.</div>
+<h1 id=topic-6 class="topic">Topic: Requirements - Decentralized Payment Processors</h1>
+<div class="comment"><span class="name">Manu Sporny</span>:  want system to be decentralized. give people choice on processor to use. Data Portability is part of this requirement - transactions could be exported between processors so that one can download/save/transfer transactions.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  accounts need to be transfered. if not money at least trnasaction history.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  core concept is not to have centralized any part of system</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  want competition. people should be able to implement spec and compete on the network.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  don't want to have to install specific software other than a web browser</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  belive strongly in decentralization. 3rd parties will aggregate transactions. authority stores local txn history. not good idea for them to be responsible for that.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  should be able to export txns</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  don't see use case of exporting paypal account to dwolla</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  do see use case of exporting history</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  also for decentralization</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  exporting history is desireable. if history exported old authority should keep history. unlike exporting from a social network. may be financial regulations to keep copy of txns at original authority.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  original authority should keep records as long as is required by local regulations</div>
+<div class="comment"><span class="name">Manu Sporny</span>: <a href="http://purl.org/">http://purl.org/</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>:  concept of using purl.org for permanent urls. have non profit or similar to provide urls forever for people - a life-time personal id space.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  could use that to specify personal financial accounts</div>
+<div class="comment"><span class="name">Manu Sporny</span>: <a href="http://finance.data.gov/pelleb/accounts/primary">http://finance.data.gov/pelleb/accounts/primary</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>:  url would be tied to your identity. give authority ability to transact on that account.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  makes it easier to change between authorities</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  just a thought for now. many details to consider.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  issue is creating txns that are tied to an authority and don't transfer easily</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>: +1</div>
+<div class="comment"><span class="name">Mike Johnson</span>: +1</div>
+<div class="comment"><span class="name">David I. Lehn</span>: +1</div>
+<div class="information">Agreement to support decentralization of the system.</div>
+<h1 id=topic-7 class="topic">Topic: Contributor License Agreement</h1>
+<div class="comment"><span class="name">Jeff Sayre</span>:  Is there an issue about contributor and license agreements for the group?</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  seems more like a non issue. W3C looking for lifetime license for content.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Typically, the way this works is that W3C holds copyright on the document while also allowing a Creative Commons, Attribution, Share-Alike license (CC-BY-SA). So, there is an official version of the W3C spec published by W3C. They are good stewards of World Wide Web Standards. However, if W3C goes haywire at any point in the future, the spec can be forked and developed via the Creative Commons license. So, I think we'll assign W3C the copyright and then keep the document under CC-BY-SA.</div>
+<h1 id=topic-8 class="topic">Topic: Review of New OpenTransact Draft</h1>
+<div class="comment"><span class="name">Pelle Braendgaard</span>: <a href="http://www.opentransact.org/">http://www.opentransact.org/</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Pelle, could you give us an overview on the OpenTransact updates and the new draft</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  a lot of people working with open transact</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  want to work through issues and standardize properly for implementors</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  before were two components, simple payments (payments links), but changed to "transfer requests" naming.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  better name since it's a request for money or other assets</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  core now requires OAuth 2. simplifies things.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  didn't want to specify it before but OAuth 2 is ready now</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  final building block is transfer authorization</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  looks simpler to request but allows merchant to make request at a later date</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  feel that all the payswarm use cases are covered</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  openid connect replaces openid that is simpler. allows you to combine openid connect and authorization at the same time.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  covers paypal usability features</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  payswarm deals with things that are higher up. open transact nice at a lower level.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  not attempting to handle higher level. better in other standards or in apps.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  room for payswarm to build on top of open transact?</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  absolutely</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  not mutually exclusive, can work together</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  OT could be lower level. PS could be higher level. PS more of an application level. good to standardize everything.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  looks good and simple. not specifying application level things.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  need to look at how PS and OT can work together and what can be used in PS spec.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  concerns with oauth 2 usage. easier to use digital signatures via PKI.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  might be able to use some of the OT spec in PS.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  happy to answer questions about integration</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  digital sigs fine for after-the-fact things like receipt. oauth 2 handles delegated responsiblity well. providers on SSL but using people using blog to use it</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  openid connect has same issues payswarm deals with regarding digital sigs. using "claims".</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  (claim example)</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  digital bazaar will look at OpenTransact</div>
+<h1 id=topic-9 class="topic">Topic: JSON-LD Relevance to Web Payments</h1>
+<div class="comment"><span class="name">Manu Sporny</span>:  digital contracts and receipts need to be extensible. can't spec out just a few terms that apply forever. apps have custom requirements that need to be considered.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  issue with decentralized system. want everyone to be able to process data.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  plain JSON has issues with how to spec things out - decentralized extensibility is a concern.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  look towards RDF and their data model</div>
+<div class="comment"><span class="name">Manu Sporny</span>: <a href="http://json-ld.org/">http://json-ld.org/</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>:  want ease of JSON format that represents a RDF graph</div>
+<div class="comment"><span class="name">Manu Sporny</span>: <a href="http://json-ld.org/playground/">http://json-ld.org/playground/</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>:  spec nearing completion. playground give basic examples. Goal is to have it look a great deal like JSON, but to also have it extensible in a way that prevents term/key collisions and to allow the graph of data to be digitally signed:</div>
+<div class="information">{</div>
+<div class="information">"@context": "<a href="http://json-ld.org/contexts/Person",">http://json-ld.org/contexts/Person",</a></div>
+<div class="information">"homepage": "<a href="http://manu.sporny.org/",">http://manu.sporny.org/",</a></div>
+<div class="information">"name": "Manu Sporny"</div>
+<div class="information">}</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  basic example of JSON-LD</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  can expand into triples representing a graph</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  allows extensible data structure</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  payswarm messaging is using JSON-LD. easy to understand for developers. but extensible without name clashes.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  motivation for JSON-LD?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  wanted way to describe assets that was open-ended. want providers to be able to process contracts without having to go through standards process for custom properites.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  authority can process assets without having to understand every property</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  when contract used by vendor their app can see and use special properites</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  example: article wants to only allow 5 copies to be printed at a time. specified in asset. authority could process transaction but printer could handle that custom property.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  probably better examples. want licenses to be machine readable too.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  innovation possible without involving core payswarm spec.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  express info on web pages using RDFa. or microdata or microformats in the future. wanted data format that could support all those data representation syntaxes.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  wanted machine processing of info to be possible</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  likes using JSON. how does it compare to other specs like schema.org and opengraph.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  opengraph uses rdfa. could use opengraph. still working with schema.org to get rdfa support. they use microdata. trying for better rdfa support, possibly with new "RDFa Lite" spec.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  any of these specs produce a data graph which can be expressed in JSON-LD.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  universal graph data format</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  gets into JWT and JWS. JSON-LD has normalization and digital signature mechanisms.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  JWT doesn't use graphs. makes it unable to use other representations than JSON.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  good idea to talk to JWT and JOSE lists but they might be solving different problems and not interested in problems JSON-LD solves.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  good to talk to other groups. could maybe use JSON-LD without external references. might be able to use with normalized JSON-LD format.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  graph normalization is difficult problem. linked data community pushing JSON-LD and wants to apply normalization algorithm to generalized RDF graphs.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  many cases don't need graphs. extensible decentralized system requires the extra complexity.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  (wrap up)</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  thanks for the good discussion today - 2 weeks to next telecon</div>
+       </div>
+  </div>
+
+<div class="container vspacing onblack"> 
+  <div class="row"> 
+    <div class="threecol"> 
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a> 
+    </div> 
+    <div class="ninecol last"> 
+      <p>&copy; 2010-2011 Digital Bazaar, Inc. 
+Website CSS created by <a href="http://cssgrid.net/">@andytlr</a> 
+and is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/au/"> 
+Creative Commons Attribution-ShareAlike 3.0 Australia License</a>. All other
+website content is licensed under a
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"> 
+Creative Commons Attribution-ShareAlike 3.0 License</a>
+</p> 
+    </div> 
+  </div> 
+</div> 
+ 
+<script type="text/javascript"> 
+ 
+  var _gaq = _gaq || [];
+  _gaq.push(["_setAccount", "UA-1539674-7"]);
+  _gaq.push(["_trackPageview"]);
+
+  (function() {
+    var ga = document.createElement("script"); ga.type = "text/javascript"; ga.async = true;
+    ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";
+    (document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]).appendChild(ga);
+  })();
+ 
+</script>
+
+</body>
+</html>

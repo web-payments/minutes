@@ -1,0 +1,136 @@
+[Fri 11:59]	<manu-db>	Scribe: taaz
+[Fri 12:06]	<manu-db>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2011Nov/0006.html
+[Fri 12:06]	<manu-db>	Topic: Customer Digital Signatures
+[Fri 12:07]	<taaz>	manu-db: Hi Pelle, I think we're miscommunicating on the mailing list because our definitions are slightly different. We don't intend for the customers to digitally sign the contracts. I think that addresses your concerns - we're having the PaySwarm Authority sign on behalf of the customer. We also have Vendors digitally sign contracts. Will go into depth on the mailing list. I agree - we don't want external client software in the mix.
+[Fri 12:07]	<taaz>	pelle: Good, that was my main worry.
+[Fri 12:07]	<taaz>	manu-db: Yes, we don't want 3rd party clients in the mix. We do have cases where Certficiate generation and signing can be done via pure JavaScript/WebSockets. We have a full SSL/TLS login working via JS and WebSockets, however - that is very advanced and will not make it into the first spec.
+[Fri 12:07]	<taaz>	pelle: Nowadays people use multiple browsers on different devices. All the work in the 90s assumed that people would be using a single browser. I would love to see it happen.
+[Fri 12:07]	<taaz>	manu: Yes, we've replaced the client signatures w/ an Agent on the web that is able to sign on your behalf. That's what a PaySwarm Authority is right now. We have plans to push it into a Node on the Web somewhere... but this isn't for PaySwarm 1.0.
+[Fri 12:07]	<manu-db>	Topic: Requirements Discussion
+[Fri 12:07]	<taaz>	manu-db: 4 requirements left from original list.. let's go through them.
+[Fri 12:08]	<manu-db>	Topic: Requirements - Payment for Digital Products
+[Fri 12:08]	<taaz>	manu-db: article, post, file you want to transact on in contract to physical good
+[Fri 12:09]	<taaz>	manu-db: safer to transact in digital goods than physical goods. You can revoke digital good transactions and things are usually fine when you do that. However, revoking physical good transactions is much more difficult/impossible.
+[Fri 12:09]	<mjohnson>	+1
+[Fri 12:09]	<pelleb>	+1
+[Fri 12:09]	<taaz>	manu-db: agreement we want to support digital products?
+[Fri 12:09]	<taaz>	General agreement that we support the sale of digital products.
+[Fri 12:09]	<manu-db>	Topic: Requirements - Delayed Payment / Escrow
+[Fri 12:10]	<taaz>	manu-db: allow ability for system to put money into and take money out of escrow
+[Fri 12:10]	<taaz>	manu-db: one use case is crowd funding
+[Fri 12:11]	<taaz>	manu-db: (some examples) like kickstarter. commit money but the project is only funded if hits a certain level. if it doesn't hit the level, funds are returned.
+[Fri 12:12]	<taaz>	mjohnson: kickstarter is not only use case
+[Fri 12:13]	<mjohnson>	+1 to support escrow
+[Fri 12:13]	<pelleb>	+1
+[Fri 12:13]	<taaz>	+1
+[Fri 12:13]	<taaz>	Agreement to support delayed payment or escrow in the system.
+[Fri 12:13]	<manu-db>	Topic: Requirements - Time-based payments
+[Fri 12:13]	-->|	jeffsayre (~jeffsayre@adsl-70-224-36-5.dsl.sbndin.ameritech.net) has joined #payswarm
+[Fri 12:14]	<taaz>	manu-db: This is basically scheduled payments. pay $X to someone every month.
+[Fri 12:14]	<taaz>	manu-db: may not go into spec. authorities can provide as a service, but we should say it's a requirement so that we cover it.
+[Fri 12:14]	<taaz>	manu-db: important to have requirement but may not effect spec.
+[Fri 12:14]	<taaz>	manu-db: similar to subscription model
+[Fri 12:15]	<taaz>	pelleb: I'm for supporting it. perhaps not monthly payment but allow authority to allow merchant to take out certain amount each month. permissions system on spending amounts
+[Fri 12:15]	<taaz>	manu-db: Our PaySwarm implementation is using the term "budgets" for a particular vendor.
+[Fri 12:16]	<voip-ps>	<unknown> (IAX2/diamondcard-13253) has joined the conference.
+[Fri 12:16]	<taaz>	manu-db: prevent vendors from taking out more than certain amount during a time period.
+[Fri 12:16]	<taaz>	Agreement to support time-based payments and budgets.
+[Fri 12:16]	<jeffsayre>	voip: 13253 is me
+[Fri 12:16]	<voip-ps>	jeffsayre is now associated with IAX2/diamondcard-13253.
+[Fri 12:17]	<manu-db>	Topic: Requirements - Decentralized Payment Processors
+[Fri 12:18]	<taaz>	manu-db: want system to be decentralized. give people choice on processor to use. Data Portability is part of this requirement - transactions could be exported between processors so that one can download/save/transfer transactions.
+[Fri 12:18]	<taaz>	manu-db: accounts need to be transfered. if not money at least trnasaction history.
+[Fri 12:18]	<taaz>	manu-db: core concept is not to have centralized any part of system
+[Fri 12:18]	<taaz>	manu-db: want competition. people should be able to implement spec and compete on the network.
+[Fri 12:19]	<taaz>	manu-db: don't want to have to install specific software other than a web browser
+[Fri 12:20]	<taaz>	pelleb: belive strongly in decentralization. 3rd parties will aggregate transactions. authority stores local txn history. not good idea for them to be responsible for that.
+[Fri 12:20]	<taaz>	pelleb: should be able to export txns
+[Fri 12:20]	<taaz>	pelleb: don't see use case of exporting paypal account to dwolla
+[Fri 12:21]	<taaz>	pelleb: do see use case of exporting history
+[Fri 12:21]	<taaz>	jeffsayre: also for decentralization
+[Fri 12:22]	<taaz>	jeffsayre: exporting history is desireable. if history exported old authority should keep history. unlike exporting from a social network. may be financial regulations to keep copy of txns at original authority.
+[Fri 12:22]	<taaz>	manu-db: original authority should keep records as long as is required by local regulations
+[Fri 12:22]	<manu-db>	http://purl.org/
+[Fri 12:23]	<taaz>	manu-db: concept of using purl.org for permanent urls. have non profit or similar to provide urls forever for people - a life-time personal id space.
+[Fri 12:24]	<taaz>	manu-db: could use that to specify personal financial accounts
+[Fri 12:24]	<manu-db>	http://finance.data.gov/pelleb/accounts/primary
+[Fri 12:24]	<taaz>	manu-db: url would be tied to your identity. give authority ability to transact on that account.
+[Fri 12:25]	<taaz>	manu-db: makes it easier to change between authorities
+[Fri 12:26]	<taaz>	manu-db: just a thought for now. many details to consider.
+[Fri 12:26]	<taaz>	manu-db: issue is creating txns that are tied to an authority and don't transfer easily
+[Fri 12:26]	<pelleb>	+1
+[Fri 12:26]	<mjohnson>	+1
+[Fri 12:26]	<taaz>	+1
+[Fri 12:26]	<taaz>	Agreement to support decentralization of the system.
+[Fri 12:27]	<manu-db>	Topic: Contributor License Agreement
+[Fri 12:27]	<taaz>	jeffsayre: Is there an issue about contributor and license agreements for the group?
+[Fri 12:28]	<taaz>	jeffsayre: seems more like a non issue. W3C looking for lifetime license for content.
+[Fri 12:29]	<taaz>	manu-db: Typically, the way this works is that W3C holds copyright on the document while also allowing a Creative Commons, Attribution, Share-Alike license (CC-BY-SA). So, there is an official version of the W3C spec published by W3C. They are good stewards of World Wide Web Standards. However, if W3C goes haywire at any point in the future, the spec can be forked and developed via the Creative Commons license. So, I think we'll assign W3C the copyright and then keep the document under CC-BY-SA.
+[Fri 12:32]	<manu-db>	Topic: Review of New OpenTransact Draft
+[Fri 12:32]	<pelleb>	http://www.opentransact.org/
+[Fri 12:33]	<taaz>	manu-db: Pelle, could you give us an overview on the OpenTransact updates and the new draft
+[Fri 12:33]	<taaz>	pelleb: a lot of people working with open transact
+[Fri 12:33]	<taaz>	pelleb: want to work through issues and standardize properly for implementors
+[Fri 12:34]	<taaz>	pelleb: before were two components, simple payments (payments links), but changed to "transfer requests" naming.
+[Fri 12:34]	<taaz>	pelleb: better name since it's a request for money or other assets
+[Fri 12:35]	<taaz>	pelleb: core now requires OAuth 2. simplifies things.
+[Fri 12:35]	<taaz>	pelleb: didn't want to specify it before but OAuth 2 is ready now
+[Fri 12:36]	<taaz>	pelleb: final building block is transfer authorization
+[Fri 12:36]	<taaz>	pelleb: looks simpler to request but allows merchant to make request at a later date
+[Fri 12:37]	<taaz>	pelleb: feel that all the payswarm use cases are covered
+[Fri 12:38]	<taaz>	pelleb: openid connect replaces openid that is simpler. allows you to combine openid connect and authorization at the same time.
+[Fri 12:38]	<taaz>	pelleb: covers paypal usability features
+[Fri 12:38]	<taaz>	pelleb: payswarm deals with things that are higher up. open transact nice at a lower level.
+[Fri 12:39]	<taaz>	pelleb: not attempting to handle higher level. better in other standards or in apps.
+[Fri 12:39]	<taaz>	manu-db: room for payswarm to build on top of open transact?
+[Fri 12:39]	<taaz>	pelleb: absolutely
+[Fri 12:39]	<taaz>	pelleb: not mutually exclusive, can work together
+[Fri 12:40]	<taaz>	pelleb: OT could be lower level. PS could be higher level. PS more of an application level. good to standardize everything.
+[Fri 12:41]	<taaz>	manu-db: looks good and simple. not specifying application level things.
+[Fri 12:42]	<taaz>	manu-db: need to look at how PS and OT can work together and what can be used in PS spec.
+[Fri 12:42]	<taaz>	manu-db: concerns with oauth 2 usage. easier to use digital signatures via PKI.
+[Fri 12:43]	<taaz>	manu-db: might be able to use some of the OT spec in PS.
+[Fri 12:44]	<taaz>	pelleb: happy to answer questions about integration
+[Fri 12:45]	<taaz>	pelleb: digital sigs fine for after-the-fact things like receipt. oauth 2 handles delegated responsiblity well. providers on SSL but using people using blog to use it
+[Fri 12:46]	<taaz>	pelleb: openid connect has same issues payswarm deals with regarding digital sigs. using "claims".
+[Fri 12:47]	<taaz>	pelleb: (claim example)
+[Fri 12:47]	<taaz>	manu-db: digital bazaar will look at OpenTransact
+[Fri 12:47]	<manu-db>	Topic: JSON-LD Relevance to Web Payments
+[Fri 12:49]	<taaz>	manu-db: digital contracts and receipts need to be extensible. can't spec out just a few terms that apply forever. apps have custom requirements that need to be considered.
+[Fri 12:50]	<taaz>	manu-db: issue with decentralized system. want everyone to be able to process data.
+[Fri 12:50]	<taaz>	manu-db: plain JSON has issues with how to spec things out - decentralized extensibility is a concern.
+[Fri 12:50]	<taaz>	manu-db: look towards RDF and their data model
+[Fri 12:50]	<manu-db>	http://json-ld.org/
+[Fri 12:50]	<taaz>	manu-db: want ease of JSON format that represents a RDF graph
+[Fri 12:51]	<manu-db>	http://json-ld.org/playground/
+[Fri 12:51]	<taaz>	manu-db: spec nearing completion. playground give basic examples. Goal is to have it look a great deal like JSON, but to also have it extensible in a way that prevents term/key collisions and to allow the graph of data to be digitally signed:
+[Fri 12:53]	<taaz>	{
+[Fri 12:53]	<taaz>	"@context": "http://json-ld.org/contexts/Person",
+[Fri 12:53]	<taaz>	"homepage": "http://manu.sporny.org/",
+[Fri 12:53]	<taaz>	"name": "Manu Sporny"
+[Fri 12:53]	<taaz>	}
+[Fri 12:54]	<taaz>	manu-db: basic example of JSON-LD
+[Fri 12:54]	<taaz>	manu-db: can expand into triples representing a graph
+[Fri 12:54]	<taaz>	manu-db: allows extensible data structure
+[Fri 12:55]	<taaz>	manu-db: payswarm messaging is using JSON-LD. easy to understand for developers. but extensible without name clashes.
+[Fri 12:55]	<taaz>	pelleb: motivation for JSON-LD?
+[Fri 12:56]	<taaz>	manu-db: wanted way to describe assets that was open-ended. want providers to be able to process contracts without having to go through standards process for custom properites.
+[Fri 12:56]	<taaz>	manu-db: authority can process assets without having to understand every property
+[Fri 12:57]	<taaz>	manu-db: when contract used by vendor their app can see and use special properites
+[Fri 12:58]	<taaz>	manu-db: example: article wants to only allow 5 copies to be printed at a time. specified in asset. authority could process transaction but printer could handle that custom property.
+[Fri 12:58]	<taaz>	manu-db: probably better examples. want licenses to be machine readable too.
+[Fri 12:59]	<taaz>	manu-db: innovation possible without involving core payswarm spec.
+[Fri 12:59]	<taaz>	manu-db: express info on web pages using RDFa. or microdata or microformats in the future. wanted data format that could support all those data representation syntaxes.
+[Fri 13:00]	<taaz>	manu-db: wanted machine processing of info to be possible
+[Fri 13:01]	<taaz>	pelleb: likes using JSON. how does it compare to other specs like schema.org and opengraph.
+[Fri 13:02]	<taaz>	manu-db: opengraph uses rdfa. could use opengraph. still working with schema.org to get rdfa support. they use microdata. trying for better rdfa support, possibly with new "RDFa Lite" spec.
+[Fri 13:02]	<taaz>	manu-db: any of these specs produce a data graph which can be expressed in JSON-LD.
+[Fri 13:02]	<taaz>	manu-db: universal graph data format
+[Fri 13:03]	<taaz>	manu-db: gets into JWT and JWS. JSON-LD has normalization and digital signature mechanisms.
+[Fri 13:04]	<taaz>	manu-db: JWT doesn't use graphs. makes it unable to use other representations than JSON.
+[Fri 13:06]	<taaz>	manu-db: good idea to talk to JWT and JOSE lists but they might be solving different problems and not interested in problems JSON-LD solves.
+[Fri 13:07]	<taaz>	pelleb: good to talk to other groups. could maybe use JSON-LD without external references. might be able to use with normalized JSON-LD format.
+[Fri 13:08]	<taaz>	manu-db: graph normalization is difficult problem. linked data community pushing JSON-LD and wants to apply normalization algorithm to generalized RDF graphs.
+[Fri 13:09]	<taaz>	manu-db: many cases don't need graphs. extensible decentralized system requires the extra complexity.
+[Fri 13:10]	<taaz>	manu-db: (wrap up)
+[Fri 13:10]	<taaz>	manu-db: thanks for the good discussion today - 2 weeks to next telecon
