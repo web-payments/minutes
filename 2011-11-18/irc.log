@@ -1,0 +1,122 @@
+[Fri 12:07]	<manu1>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2011Nov/0026.html
+[Fri 12:07]	<manu1>	Scribe: mjohnson
+[Fri 12:07]	=-=	YOU are now known as manu1
+[Fri 12:08]	-->|	pelleb (~pelleb@24-145-67-177-dhcp.mia.fl.atlanticbb.net) has joined #payswarm
+[Fri 12:08]	<voip-ps>	Pelle Braendgaard (SIP/10.0.1.8-00000013) has joined the conference.
+[Fri 12:08]	|<--	Guest73459 has left freenode (Ping timeout: 265 seconds)
+[Fri 12:09]	<manu1>	Topic: PaySwarm at W3Conf
+[Fri 12:09]	<mjohnson>	manu1: W3conf presentation went well, audience mostly shy but still had 1 question
+[Fri 12:10]	<mjohnson>	manu1: people came up after talk to discuss what the payment group was doing
+[Fri 12:10]	<mjohnson>	manu1: talked with representatives of browser vendors, got to talk in more depth about payments and browser integration
+[Fri 12:11]	<mjohnson>	Manu: browser vendors interested, but don't want to be identitfied yet. there is interest and they dont feel like our group is going the wrong direction
+[Fri 12:12]	<mjohnson>	Manu: watching people do the online demo was awkward, people didnt quite know where to go
+[Fri 12:12]	<mjohnson>	Manu: going to take some time to make demo website more clear about the direction of the payment process
+[Fri 12:12]	<mjohnson>	Manu: should be easy to find the demo and the spec, too many legacy links right now
+[Fri 12:13]	<mjohnson>	Manu: representatives from web foundation came up to chat about how these payments could be used in developing nations
+[Fri 12:14]	<mjohnson>	Manu: they offered to connect us with representatives from some developing states like those in India and Morocco
+[Fri 12:14]	<mjohnson>	Manu: also mentioned contacts at UN to extend payment into developing areas where poverty is high
+[Fri 12:14]	<mjohnson>	Manu: very hard to get people to join the group, they want a commercial launch or something they can use
+[Fri 12:15]	<mjohnson>	Manu: difficult to get people involved
+[Fri 12:15]	<manu1>	You can see the entire presentation video here: http://www.w3.org/conf/#Web_Payments
+[Fri 12:15]	<mjohnson>	Manny: Manu had a good presentation, got to see it streamed
+[Fri 12:15]	<mjohnson>	Manu: presentations are up and streamable now
+[Fri 12:16]	<mjohnson>	Manu: html5 demos presentation was very good: http://www.w3.org/conf/#Demo_Fest
+[Fri 12:17]	<manu1>	Topic: Development Update
+[Fri 12:17]	<mjohnson>	Manu: we've been bad about giving these updates on the mailing list, where the tech is at currently - we're making good progress
+[Fri 12:17]	<voip-ps>	<unknown> (IAX2/diamondcard-4978) has left the conference.
+[Fri 12:18]	<mjohnson>	Manu: we are going to release a new demo of the payment process, protocol has been re-written
+[Fri 12:18]	<mjohnson>	Manu: we changed from OAuth 1 to a custom protocol, this was after much heated discussion
+[Fri 12:18]	<voip-ps>	<unknown> (IAX2/diamondcard-2412) has joined the conference.
+[Fri 12:19]	<mjohnson>	Manu: OAuth 1 had ended up making process more complicated
+[Fri 12:19]	<mjohnson>	Manu: OAuth 2 will not solve the tech problems we've run into
+[Fri 12:19]	<mjohnson>	Manu: we'll spec out the protocol as soon as possible
+[Fri 12:19]	<mjohnson>	Manu: technical issues have been worked out, need opinions about implementation feasibility
+[Fri 12:19]	<mjohnson>	Manu: any questions about demo update?
+[Fri 12:20]	<manu1>	Topic: JSON-LD Message Format
+[Fri 12:20]	<mjohnson>	Manu: typically messages have been using RDF graphs, using vocabs and prefixes
+[Fri 12:20]	<manu1>	For example: http://payswarm.com/vocabs/security#signature
+[Fri 12:20]	<mjohnson>	Manu: this is an example of a digital signature in JSON-LD, note the use of prefixes like "sec:".
+[Fri 12:21]	<mjohnson>	Manu: some feedback from W3 conference is that developers will not like colons in the vocab names
+[Fri 12:21]	<mjohnson>	Manu: if we don't have prefix names, we will eventually have name clashes
+[Fri 12:22]	<mjohnson>	Manu: the problem comes from extensibility and collision prevention
+[Fri 12:22]	<mjohnson>	Manu: examples of vocab clashes, names and descriptions, etc
+[Fri 12:23]	<mjohnson>	Manu: people don't necessarily like prefixes, but if we remove them there will be name clashes
+[Fri 12:23]	<pelleb>	I don't like prefixes, personally
+[Fri 12:23]	<mjohnson>	Manu: do we want to use prefix names or limit the system?
+[Fri 12:23]	<mjohnson>	Manu: should the network objects use non-prefix names?
+[Fri 12:24]	<mjohnson>	Pelle: I do not like prefixes, complicates code
+[Fri 12:24]	<mjohnson>	Pelle: there might be other ways to do it
+[Fri 12:24]	<mjohnson>	Pelle: should be one way instead of 20 to extend
+[Fri 12:25]	<mjohnson>	Pelle: add attributes in a sub hash or sub array
+[Fri 12:25]	<mjohnson>	Pelle: people from Ruby, Python, Javascript world won't like it
+[Fri 12:25]	<mjohnson>	Pelle: there may be other extensibility considerations
+[Fri 12:25]	<mjohnson>	Manu: there may be a hybrid alternative, use keywords and if people want to extend it they add prefixes
+[Fri 12:26]	<mjohnson>	Manu: JSON-LD is flexibile enough to allow people to map values to anything they want to - JSON-LD allows you to strip out prefix values but keep object in valid form
+[Fri 12:27]	<manu1>	mjohnson: This isn't exactly talking about vocab prefixes - any feedback on structures that we're using from W3Conf?
+[Fri 12:28]	<mjohnson>	Manu: nothing specific
+[Fri 12:28]	<mjohnson>	Manu: they liked REST API and that we used JSON
+[Fri 12:29]	<manu1>	mjohnson: Yes, we need to figure out if they're going to have an issue with submitting JSON vs. a form POST.
+[Fri 12:30]	<mjohnson>	Pelle: I agree about not using JSON for form submission, regular form encoding allows people to just submit data from Ruby or Python
+[Fri 12:30]	<mjohnson>	Pelle: form submission might be lowest common denominator
+[Fri 12:31]	<mjohnson>	Manu: wordpress plugin to payment server is JSON
+[Fri 12:31]	<mjohnson>	Manu: someone putting a button on their webpage will only have a simple GET URL to attach
+[Fri 12:31]	<mjohnson>	Manu: FOAF was causing problems with signatures
+[Fri 12:32]	<mjohnson>	Pelle: browser to server wouldn't be covered by signatures anyway
+[Fri 12:32]	<mjohnson>	Pelle: browser doesnt have a good way of doing signatures on POST data yet.
+[Fri 12:32]	<mjohnson>	Manu: one of the W3 conf presentations was about browser based encryption, so we will want to track that closely.
+[Fri 12:33]	<mjohnson>	Manu: keep an eye on it, move it into the browser, more technical issues but we have addressed a lot of that with the Web ID work
+[Fri 12:34]	<mjohnson>	Manu: complicated digital signatures on receipts needs a more robust object than a form post
+[Fri 12:34]	<mjohnson>	Manu: back to original question of prefixes
+[Fri 12:34]	<mjohnson>	Manu: people generally would like us to remove prefixes
+[Fri 12:35]	<manu1>	Mike: I think hybrid approach is good - strange characters in different elements on the page are an issue.
+[Fri 12:36]	<manu1>	Mike: If people use strange characters in names, they might hit strange cases... because of using that content in IDs... there may be push-back on people using prefixes. Adding terms, extending vocabularies will be an issue... people will need to add vocabularies and prefixes.
+[Fri 12:36]	<manu1>	Mike: I honestly don't know if they like ':' vs. '.' - hard to tell... maybe people have issues with ':' and not '.'
+[Fri 12:37]	<mjohnson>	Manu: hard to tell why people don't like it, if some people started using the colon, they might not have an issue with it.
+[Fri 12:38]	<manu1>	voip: connections?
+[Fri 12:38]	<voip-ps>	Conference connections: Mike Johnson [SIP/6001-00000011], Manu Sporny [SIP/6000-00000010], IAX2/diamondcard-2412, Pelle Braendgaard [SIP/10.0.1.8-00000013], David I. Lehn [SIP/71.171.26.145-00000012]
+[Fri 12:38]	<manu1>	voip: mute 2412
+[Fri 12:38]	<voip-ps>	IAX2/diamondcard-2412 has been muted.
+[Fri 12:39]	<mjohnson>	Pelle: prefixes are confusing to the eye
+[Fri 12:39]	<mjohnson>	Pelle: the whole prefixing thing tended to turn people off XML, for example
+[Fri 12:39]	<mjohnson>	Pelle: the prefixes ended up being mostly useless information, lots of management overhead
+[Fri 12:40]	<mjohnson>	Pelle: enterprise developers are used to it, but a new generation of developers wont want to deal with it
+[Fri 12:40]	<manu1>	voip: unmute 2412
+[Fri 12:40]	<voip-ps>	IAX2/diamondcard-2412 has been unmuted.
+[Fri 12:40]	<mjohnson>	Pelle: also why extensibility is important
+[Fri 12:40]	<mjohnson>	Pelle: don't make the basic stuff complex, allow people to add the complexity on top of that
+[Fri 12:41]	<mjohnson>	Pelle: I suspect that it is one of the reasons RDF never took off, average developer will prefer simple naming
+[Fri 12:41]	<manu1>	voip: mute 2412
+[Fri 12:41]	<voip-ps>	IAX2/diamondcard-2412 has been muted.
+[Fri 12:42]	<mjohnson>	Manu: In general, we should try to get rid of prefixes if we can
+[Fri 12:42]	<mjohnson>	Manu: support for JSON-LD has libraries for javascript, python, ruby, erlang, php and c++
+[Fri 12:43]	<mjohnson>	Manu: but we should try to simplify, I agree.
+[Fri 12:43]	<mjohnson>	Manu: JSON-LD contexts will have foaf and payswarm and security and a number of others.
+[Fri 12:43]	<mjohnson>	Manu: but also generate a series of general terms we can use instead of prefix names
+[Fri 12:43]	<manu1>	voip: unmute 2412
+[Fri 12:43]	<voip-ps>	IAX2/diamondcard-2412 has been unmuted.
+[Fri 12:45]	<manu1>	mjohnson: Yes, feedback from outside the development group working on PaySwarm is good. This stuff can be confusing - all the prefixes...
+[Fri 12:45]	<manu1>	mjohnson: I'm all for simplifying it.
+[Fri 12:45]	<mjohnson>	dlehn: Might be complicated...
+[Fri 12:46]	<manu1>	Manu: Ok, so we'll try to work this into the technical timeline after we release the demo.
+[Fri 12:46]	<manu1>	Topic: Technical development after launch
+[Fri 12:46]	<mjohnson>	Manu: something we have been concerned about is getting people to use the libraries and develop on the system to give feedback
+[Fri 12:47]	<mjohnson>	Manu: right now we have the wordpress plugin, but we'd like other demos, like a gaming demo of someone playing an online arcade game
+[Fri 12:47]	<mjohnson>	Manu: we also have a radio spectrum purchase demo idea that should be worked on
+[Fri 12:47]	<mjohnson>	Manu: what's the best way to set up the developers to get them building on top of this system
+[Fri 12:48]	<mjohnson>	Manu: Jeff would like to integrated with his smart-up
+[Fri 12:48]	<mjohnson>	Manu: Pelle or Manny interested?
+[Fri 12:49]	<mjohnson>	Manny: The gaming demo arcade idea is interesting, but I'm not a good programmer.
+[Fri 12:49]	<mjohnson>	Manu: not being a programmer might be a good thing, we want people to be able to integrate even if they don't have deep experience programming
+[Fri 12:50]	<mjohnson>	Manny: the arcade idea tends more towards the payment process
+[Fri 12:51]	<mjohnson>	Pelle: alreading implementing several things close to an authority, can add integration
+[Fri 12:51]	<mjohnson>	Manu: next week is Thanksgiving, no telecon then
+[Fri 12:51]	<mjohnson>	Manu: week after, we will have a meeting
+[Fri 12:51]	<mjohnson>	Manu: more work on the demo and spec, website will be updated
+[Fri 12:51]	-->|	jeffsayre (~jeffsayre@adsl-70-224-36-82.dsl.sbndin.ameritech.net) has joined #payswarm
+[Fri 12:52]	<voip-ps>	<unknown> (IAX2/diamondcard-5666) has joined the conference.
+[Fri 12:52]	<voip-ps>	Pelle Braendgaard (SIP/10.0.1.8-00000013) has left the conference.
+[Fri 12:52]	<voip-ps>	Manu Sporny (SIP/6000-00000010) has left the conference.
+[Fri 12:52]	<voip-ps>	<unknown> (IAX2/diamondcard-2412) has left the conference.
+[Fri 12:52]	<voip-ps>	David I. Lehn (SIP/71.171.26.145-00000012) has left the conference.
+[Fri 12:52]	<voip-ps>	Mike Johnson (SIP/6001-00000011) has left the conference.
+
