@@ -1,0 +1,88 @@
+[Fri 12:08]	<manu1>	Scribe: jeffsayre
+[Fri 12:08]	<manu1>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2011Dec/0005.html
+[Fri 12:09]	<jeffsayre>	manu1: Any updates to agenda?
+[Fri 12:09]	<jeffsayre>	No updates to the Agenda.
+[Fri 12:09]	<manu1>	Topic: Buyer Registration
+[Fri 12:09]	<manu1>	http://payswarm.com/specs/ED/web-api/2011-09-26/#asset-acquirer-registration
+[Fri 12:10]	<jeffsayre>	manu1: IRI is used to identify identity (buyer)
+[Fri 12:11]	<manu1>	https://example.com/people/jane
+[Fri 12:11]	<jeffsayre>	manu1: IRI is used to identify financial account
+[Fri 12:11]	<manu1>	https://example.com/people/jane/accounts/primary
+[Fri 12:12]	<jeffsayre>	manu1: Builds off of WebID work. Since system is decentralized, we need way of identifying things. IRIs are a good way to do that.
+[Fri 12:12]	<jeffsayre>	manu1: Identities may be self minted or created by a 3rd-party identity source
+[Fri 12:13]	<jeffsayre>	mjohnson: The language is paragraph is not too clear before the three definitions.
+[Fri 12:13]	<jeffsayre>	mjohnson: Why do they need an entity/identity account?
+[Fri 12:14]	<jeffsayre>	mjohnson: ...versus just having a financial account. Why an entity account in addition to financial account?
+[Fri 12:15]	<jeffsayre>	Manny: This process attempts to broaden description as why these three steps are required, correct?
+[Fri 12:16]	<jeffsayre>	mjohnson: Financial transaction just gives identifier, it has nothing to do with actual identity (account info)
+[Fri 12:17]	<jeffsayre>	manu1: Entity IRI was put in as the actual asset acquirer in the digital contract.
+[Fri 12:18]	<jeffsayre>	mjohnson: Will system be tied to financial account or to a specific identity?
+[Fri 12:18]	<jeffsayre>	mjohnson: The spec is not sufficiently clear why an entity IRI is needed
+[Fri 12:19]	<jeffsayre>	manu1: We should change "entity IRI" to "identity IRI", since that's what we're using internally.
+[Fri 12:20]	<jeffsayre>	manu1: We have identity IRIs because we need to be able to tie specific financial accounts to specific individuals (identities), we need to tie WordPress sessions to customer IDs (which are identity IRIs), we need to be able to manage multiple financial accounts per person, and because financial accounts may not always belong to the same person through time.
+[Fri 12:21]	<jeffsayre>	jeffsayre: I like the change from entity to identity
+[Fri 12:22]	<jeffsayre>	mjohnson: What happend when identity is transferred?
+[Fri 12:23]	<jeffsayre>	manu1: This is why we have identity IRIs: tie identity to specific account. Second, identify user who goes to each site.
+[Fri 12:24]	<jeffsayre>	mjohnson: We don't need to get rid of identity IRI. Instead, tie it to a financial account.
+[Fri 12:24]	<jeffsayre>	jeffsayre: That does away with user-centric control, does it not?
+[Fri 12:24]	<jeffsayre>	q+
+[Fri 12:24]	<voip-ps>	Added jeffsayre to the speaker queue: jeffsayre
+[Fri 12:25]	<jeffsayre>	mjohnson: The things that owns the right to access account, is it the identity or the person behind it?
+[Fri 12:25]	-->|	tilgovi (~randall@adsl-67-116-241-49.dsl.pltn13.pacbell.net) has joined #payswarm
+[Fri 12:25]	|<--	tilgovi has left freenode (Changing host)
+[Fri 12:25]	-->|	tilgovi (~randall@couchdb/developer/tilgovi) has joined #payswarm
+[Fri 12:26]	<jeffsayre>	mjohnson: Can we simplify all that goes into transactions by limiting the amount of identifying info in each contract?
+[Fri 12:27]	<jeffsayre>	mjohnson: What happens when you sell/transfer an account? Is it tied to an identity?
+[Fri 12:27]	<manu1>	ack jeffsayre
+[Fri 12:27]	<voip-ps>	jeffsayre has the floor. The speaker queue is empty.
+[Fri 12:28]	<manu1>	jeffsayre: In my view, identity is the most atomic piece of datum that any transaction needs to store.
+[Fri 12:28]	<manu1>	jeffsayre: I think it's fundamental that identity is not only captured in an individual contract, but is also the underlying electricity in the whole transaction.
+[Fri 12:28]	<manu1>	jeffsayre: What happens when you transfer an account? An account or a series of accounts can be transferred... once it is transferred, the new identity is now the new owner.
+[Fri 12:28]	<manu1>	q+
+[Fri 12:28]	<voip-ps>	Added manu1 to the speaker queue: manu1
+[Fri 12:29]	<manu1>	jeffsayre: Identity IRIs are crucial to capturing the context.
+[Fri 12:30]	<jeffsayre>	mjohnson: In the current financial system identity is abstracted in financial transactions.
+[Fri 12:32]	<jeffsayre>	mjohnson: How can we facilitate anonymous accounts?
+[Fri 12:33]	<jeffsayre>	mjohnson: Not sure the best way to approach this, but it is important to look at info stored to protect privacy or at least more loosely tie in ID info.
+[Fri 12:34]	<jeffsayre>	Topic: Identity Privacy
+[Fri 12:34]	<jeffsayre>	mjohnson: Does an asset buyer have to give out ID or just associate their account?
+[Fri 12:35]	<manu1>	In PaySwarm, we have a Profile (usename/password), which can contain N identities, each identity can contain M financial accounts
+[Fri 12:36]	<jeffsayre>	manu1: Some IDs can be anonymous
+[Fri 12:36]	<jeffsayre>	q+
+[Fri 12:36]	<voip-ps>	Added jeffsayre to the speaker queue: manu1, jeffsayre
+[Fri 12:37]	<jeffsayre>	manu1: With an anon-ID, it would not be possible (at least not easily) traceable to a physical entity.
+[Fri 12:37]	<manu1>	ack jeffsayre
+[Fri 12:37]	<voip-ps>	manu1 has the floor. The next speaker is jeffsayre.
+[Fri 12:37]	<manu1>	ack jeffsayre
+[Fri 12:37]	<voip-ps>	manu1 has the floor. The speaker queue is empty.
+[Fri 12:38]	<manu1>	jeffsayre: When I use the word identity, I use it in a different way than many folks do - online, identity is just an identifier - that's what I mean.
+[Fri 12:39]	<jeffsayre>	manu1: When we say identity we mean identifier - that identifier can refer to a person, organization, dog, cat, tree, etc.
+[Fri 12:40]	<mjohnson>	q+
+[Fri 12:40]	<voip-ps>	Added mjohnson to the speaker queue: mjohnson
+[Fri 12:41]	<manu1>	jeffsayre: Yes, that makes sense - we may want to use 'identifier' instead of 'identity' - but that may raise another set of arguments/confusions.
+[Fri 12:42]	<jeffsayre>	mjohnson: Even though our system is designed so that a given user can have a particular identity (name, address, etc.), it would be nice to allow purchases to be made that give the purchaser a level of abstraction, that gives them some anonymity.
+[Fri 12:44]	<manu1>	ack mjohnson
+[Fri 12:44]	<voip-ps>	mjohnson has the floor. The speaker queue is empty.
+[Fri 12:45]	<jeffsayre>	mjohnson: It is a subtle difference that we may not want to support in PaySwarm 1.0, but providing the option for user anonymity is an important consideration. We may want to change the spec language to be more description of what is meant.
+[Fri 12:46]	<manu1>	q+ to address the limits of anonymity
+[Fri 12:46]	<voip-ps>	Added manu1 to the speaker queue: manu1
+[Fri 12:46]	<jeffsayre>	Manny: Depending on what you want to be anonymous about may be a bigger issue. How are we going to be able to deal with the consequences of questionable transactions?
+[Fri 12:46]	<taaz>	Also, it's not completely anonymous. it's just the authority choosing not to share who an identity belongs to.
+[Fri 12:47]	<manu1>	ack manu1
+[Fri 12:47]	<voip-ps>	manu1 has the floor (to address the limits of anonymity). The speaker queue is empty.
+[Fri 12:47]	<taaz>	Though a totally anonymous authority working with bitcoins or something would be possible in theory, I think
+[Fri 12:48]	<jeffsayre>	manu1: There are limits to the kind and level of anonymity that PaySwarm will offer. The system still allows for legal authorities, when necessary, to discover true owners of anonymous accounts... however, to address Mike's question - we do deal with anonymity in the system now.
+[Fri 12:48]	<mjohnson>	q+
+[Fri 12:48]	<voip-ps>	Added mjohnson to the speaker queue: mjohnson
+[Fri 12:49]	<manu1>	ack mjohnson
+[Fri 12:49]	<voip-ps>	mjohnson has the floor. The speaker queue is empty.
+[Fri 12:50]	<jeffsayre>	manu1: PaySwarm is not like Bitcoin that is strongly anonymous. We need to be aware of the issues with strong anonymity and make sure that a sufficiently level of protection (both for buyers and vendors and society) is offered.
+[Fri 12:51]	<jeffsayre>	mjohnson: I agree with these points. PaySwarm will be a much more powerful tool if we establish that questionable activity must be investigated by enforcement services and not the PaySwarm Authorities.
+[Fri 12:52]	<jeffsayre>	mjohnson: Although a user can have multiple online IDs, they must be tied to an actual real-world entity.
+[Fri 12:53]	<jeffsayre>	mjohnson: The point is that we facilitate some identity abstraction between parties.
+[Fri 12:55]	<jeffsayre>	mjohnson: We need to be aware of what info is captured in transactions and what is mandated.
+[Fri 12:55]	<jeffsayre>	manu1: The current spec simply mandates two IRIs without stating that it ties (captures) the specific identities of each party.
+[Fri 12:57]	<jeffsayre>	mjohnson: Bank transaction do not mandate an actual person be verified before a transaction is processed. All that is required is that an verifiable account is used.
+[Fri 12:59]	<jeffsayre>	manu1: We will continue discussing the registration process on our next call.
+[Fri 12:59]	<jeffsayre>	manu1: Next call December 16, 2011.
+
