@@ -1,0 +1,164 @@
+[Fri 12:07]	<manu1>	scribe: manu1
+[Fri 12:08]	<manu1>	Topic: Issues with PaySwarm and Simplicity
+[Fri 12:08]	<manu1>	pelle: I'd like to start out by discussing how this group has been operating. I'm going to send out an e-mail to the mailing list. I'm a bit unhappy about how this process has been progressing, it doesn't seem to be a W3C standard, it seems as if people think that PaySwarm is going to be the solution. I think that OpenTransact is just as good of a solution. I've been very open about how to integrate, but I don't think that there has been much in the way of feedback on that. I feel it's very important that we do things simply. For example, the Agenda today is quite irrelevant. We should only discuss this if we are going to follow PaySwarm. I completely disagree with that approach of having a full, all encompassing standard. I feel like I'm wasting my time.
+[Fri 12:12]	<manu1>	manu: You raise a valid point, but I think that there have been no other strong proposals put forward. 
+[Fri 12:12]	<manu1>	pelle: I believe I have. Out of not wanting to make this a PaySwarm vs. OpenTransact debate, I haven't proposed that yet. But that is what I'm going to propose today via e-mail. I'm going to propose OpenTransact as a basis for the W3C Web Payments work.
+[Fri 12:12]	<manu1>	manu: I think that would be good, please do that - we need to thoroughly vet these ideas.
+[Fri 12:12]	<manu1>	manu: Perhaps your reading on it is that we're trying to "push PaySwarm as the solution" is... well, you could look at it in two different ways: The whole reason this group started was because our company decided to place all of this technology into an open protocol, into an open standard, we led by producing working code, specifications, Web vocabularies, and then publishing those to the Web. We are completely open to modifications on the proposals, we're completely open to different approaches to the problem as long as it addresses the use cases. If OpenTransact can do that, we should consider it strongly. We need to vet these ideas, so please send the proposal to the list. Does that alleviate some of your concerns?
+[Fri 12:13]	<manu1>	pelle: Yes, I'll send a proposal to the list later on today. I haven't done that because I don't want to step on any toes... I wanted to guide PaySwarm into what I think is a realistic standard. Right now, it's too all-encompassing. I feel like input I've given is not reflected in the Web API.
+[Fri 12:13]	<manu1>	taaz: What parts of the PaySwarm spec do you have issues with? We do understand the need for low-level functionality, but we're trying to define the whole ecosystem. We don't want just the low-level stuff. Maybe that's the better approach, but...
+[Fri 12:13]	<manu1>	pelle: Well, I think we need to keep things very low level. For example, Vendor Registration doesn't need standardization yet... I don't think. That's something that different service providers could have their own, from that you could work out a standard for it. A standard is needed for payments right now, standard response format, querying whether a payment went through - that has to be done in a simple, low-level generic way. People need to use that for a while before we go in and create the higher-level stuff.
+[Fri 12:14]	<manu1>	pelle: For example, I see digital signatures as a great option for receipts, but for payment, I don't see that. It's very complex, the PaySwarm spec.
+[Fri 12:15]	<manu1>	manu: The spec is as complex as it needs to be to address the use cases we've laid out. In principle, I don't disagree with you, Pelle. However, we need to address the use cases. I think the issue is that nothing has been proposed that addresses all of the use cases...
+[Fri 12:15]	<manu1>	pelle: I think OpenTransact has been proposed, but not directly, to be the underlying low-level standard before. I think we put too much work into the use cases, we spent 2-3 months going through use cases. It's classic waterfall, not a historically successful model for creating standards. We need to start with simpler things. We can support all of the use cases using a combination of HTTP and HTML.
+[Fri 12:18]	<manu1>	manu: ... but that's exactly what we're trying to standardize here - how /do/ you support all of these use cases? 
+[Fri 12:18]	<manu1>	pelle: Exactly.
+[Fri 12:18]	<manu1>	manu: We need to understand exactly how each one of those use cases are addressed, we can't just simply say they can be addressed and not show how they can be technically addressed. That's what I'm concerned about. When you get down to the technical details, some of those use cases cannot be addressed, for example - decentralization, receipts, cannot be addressed without getting a bit more complicated with the implementations. Again, I agree with you in principle... but we have not seen a technical solution yet that addresses all of the use cases that we've interested in.
+[Fri 12:18]	<manu1>	pelle: I believe OpenTransact does.
+[Fri 12:18]	<manu1>	manu: I do not believe that OpenTransact solves some of the use cases that have been put forward. However, if you can make the technical case that it does, I see no reason why we couldn't also standardize OpenTransact. The end result of this community group could be two different specs for dealing with payments on the Web. It might be OpenTransact + PaySwarm. We shouldn't look at this as an all-or-nothing thing. Maybe OpenTransact is better at solving a subset of use cases, maybe PaySwarm is better at another subset. 
+[Fri 12:18]	<manu1>	pelle: This is why I've been proposing the layered, step-wise approach. It's how many successful standards have been created. I think that is important, we do not need to address all use cases there. 
+[Fri 12:18]	<manu1>	q+
+[Fri 12:18]	<voip-ps>	Added manu1 to the speaker queue: manu1
+[Fri 12:18]	<manu1>	pelle: I think there are a number of technologies out there that already solve the distributed use cases. It can already be done via OAuth. I don't see the need for most of the PaySwarm standard. It's definitely not following a layered approach, I thought we agreed it was going to do that?
+[Fri 12:18]	<manu1>	ack manu1
+[Fri 12:18]	<voip-ps>	manu1 has the floor. The speaker queue is empty.
+[Fri 12:19]	<manu1>	manu: We outlined why we thought OAuth was not a valid solution. If we implement OAuth, it's not a solution to the digital receipt problem. OAuth duplicates functionality already provided by digital signatures. Digital signatures are the correct technical solution for delegating access and for signing contracts and receipts.
+[Fri 12:19]	<manu1>	pelle: I think OAuth is different from digital signatures... OAuth provides distributed transactions and distributed checking of receipts. It provides a good standard for delegating access. I disagree... yes, OAuth doesn't support digital signatures, but it doesn't need to. Digital signatures should be an optional thing for digital receipts.
+[Fri 12:20]	<manu1>	q+ to explain why OAuth ends up being the same solution as digital signatures.
+[Fri 12:20]	<voip-ps>	Added manu1 to the speaker queue: manu1
+[Fri 12:20]	<manu1>	pelle: We should really look at OAuth 2 and it seems to work very well for the majority of people out there, it's a good standard. But it works for accessing receipts. We should not require digital signatures. The requirement for digital signatures should not be the reason that you don't pick OAuth 2, which is an official Internet standard now. I agree that it doesn't work for receipts... but it works for /accessing/ receipts.
+[Fri 12:24]	<manu1>	manu: Right... so we actually implemented the latest PaySwarm demo using OAuth and the finding we came to showed that the implementations were overly complex by integrating OAuth. You ended up doing many more HTTP calls than necessary and even after you implemented OAuth, you still had to implement digital signatures. We found that in fact, all you needed to implement was digital signatures and all of a sudden there was a massive reduction in complexity for the implementations. What OAuth 2 does is effectively replace digital signatures with this token mechanism... but if you just implement digital signatures, all of a sudden you have access control for free, because you know who is making calls to your system and whether or not they're allowed to perform certain actions on your system. You also get digital receipts for free because those depend on digital signatures as well. At the end of the day, all you really need digital signatures.
+[Fri 12:24]	<manu1>	pelle: I completely disagree with your conclusion. They're two completely different things. We don't want end-users to deal with digital signatures. We only want servers to deal with digital signatures. Until you can do digital signatures in browsers, on cellphones, we don't need to be discussing this. Digital signatures are a pure server side issue, I'm fine with it there, but we shouldn't throw out OAuth 2 just because we need digital signatures.
+[Fri 12:29]	<manu1>	Editorial note: you can do digital signatures in browsers and cellphones today: http://digitalbazaar.com/forge/
+[Fri 12:24]	<manu1>	pelle: I disagree with the way you guys are pushing forward with this, I don't fault your company for pushing ahead, I disagree with this being the W3C Web standard solution. I don't mind you guys experimenting with it and pushing it out. OpenTransact is simple and used, this is why I wanted to join in with W3C discussion, but you are discarding a bunch of standards that are already Internet standards. I don't want to be nasty or angry, I just feel that this is going the wrong way. Having these sorts of things on the Agenda, I just don't think we're there yet.
+[Fri 12:24]	<manu1>	manu: So, I think the best way to proceed is for you to put the proposal forward on the mailing list and see how much uptake that gets. I appreciate your feedback, but I'm still not hearing a technical argument for how OpenTransact addresses the use cases that we put forward as a group. Therefore, it's just not the correct technical solution until it addresses those use cases. I don't disagree that we should take a layered approach, and perhaps if there is disagreement on which use cases should be addressed, then that is a good signal for the requirement of two different specifications. Maybe we should standardize both. Typically that is what happens when you have fundamental disagreements on what the technology should do. If we are headed into a situation where we believe there are certain use cases that should be supported and you're not convinced that we need to support those use cases, then perhaps we need to have two different standards. We're not trying to plow through and just standardize PaySwarm - we need to make sure that the use cases that are important to people must be addressed. Is that a fair view of the situation?
+[Fri 12:29]	<manu1>	pelle: Yes. I think anyone who comes into the group is going to think that PaySwarm is the W3C standard that is being worked on. I disagree with that. I don't think that's right.
+[Fri 12:29]	<manu1>	manu: Well, you have commit privileges to everything. You were given commit privileges at the very beginning, so you have the power to change the perception if you'd like. I think you should propose something, I think we should evaluate it, and I think that we should figure out how we can continue to work together on this. Does that seem like a fair and reasonable way forward?
+[Fri 12:29]	<manu1>	Pelle answers in the affirmative.
+[Fri 12:29]	<manu1>	manu: Ok, based on that any updates or changes to the agenda that should be made?
+[Fri 12:29]	<manu1>	pelle: I'll hear what you have to say on these things.
+[Fri 12:29]	<manu1>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2011Dec/0027.html
+[Fri 12:29]	<manu1>	Topic: Spec updates
+[Fri 12:29]	<manu1>	Manu: We have a number of spec updates that happened last week. This is the latest implementation info that we have, we're going to have a live demo launched soon.
+[Fri 12:29]	<manu1>	Commerce Web Vocabulary (http://purl.org/commerce)
+[Fri 12:29]	<manu1>	http://payswarm.com/specs/ED/vocabs/commerce/2011-12-13/
+[Fri 12:29]	<manu1>	PaySwarm Web Vocabulary (http://purl.org/payswarm)
+[Fri 12:29]	<manu1>	http://payswarm.com/specs/ED/vocabs/payswarm/2011-12-13/
+[Fri 12:29]	<manu1>	PaySwarm Web API
+[Fri 12:29]	<manu1>	http://payswarm.com/specs/ED/web-api/2011-12-14/
+[Fri 12:29]	<manu1>	PaySwarm Web API diff-marked copy to previous version is here:
+[Fri 12:29]	<manu1>	http://payswarm.com/specs/ED/web-api/2011-12-14/diff-20110926.html
+[Fri 12:30]	<manu1>	Topic: Vendor Registration
+[Fri 12:30]	<manu1>	http://payswarm.com/specs/ED/web-api/2011-12-14/#vendor-registration
+[Fri 12:30]	<manu1>	manu: The idea here is that in order to operate on the network, you have to be able to create digital signatures - assets, listings, contracts, receipts, requests - all digitally signed. When you register your public key with the PaySwarm Authority you get some config info back. The destination financial account, default license, a whole bunch of preferences returned by PaySwarm Authority during registration. Vendor registration is used by a for-profit blog, web app store, etc. It's how a website registers with their PaySwarm Authority. The process is outlined in the link above. Two things that happen during Vendor creation: Identity is created, financial account is created. Any questions?
+[Fri 12:40]	<taaz>	scribe: taaz
+[Fri 12:41]	<taaz>	mjohnson: I think we're all pretty clear on this, Pelle?
+[Fri 12:41]	<taaz>	pelleb: Just reading it now. This is where public key/digital signatures come in. Where does vendor get their key, how do they sign?
+[Fri 12:41]	<taaz>	manu: The WordPress blog, for example, generates the public/private keypair. Keeps private key, registers public key with PaySwarm Authority. Registration works much like how Twitter/OAuth works, but simpler - you just register a public/private keypair from your server software. Registers public key w/ PaySwarm Authority, then all you need to do is make requests that are signed. You don't need to do the big OAuth token dance to get a token so that you can make requests, no nonces need to be tracked, no tokens need to be tracked.
+[Fri 12:41]	<taaz>	mjohnson: Any software written in any Web-capable language can do this key creation/registration... PHP, Python, Ruby, etc.
+[Fri 12:41]	<taaz>	pelleb: So, what does this buy us over OAuth 2?
+[Fri 12:41]	<taaz>	manu: You don't have to do the OAuth token dance and you don't have to implement/use OAuth. You eventually need digital receipts. Even if you implement OAuth, you still need digital signatures. So you simplify the system by not implementing OAuth without reducing what you can do with the system. You still need digital signatures/crypto for contracts, receipts, assets, listings, encrypting information over insecure channels (like HTTP), reduced cost because you don't need to buy an SSL Certificate for $30-$50/year.
+[Fri 12:41]	<taaz>	pelleb: None of those things are true, the only person that needs an SSL certificate is the PaySwarm Authority. 
+[Fri 12:41]	<taaz>	manu1: If you are going to have a callback from the PaySwarm Authority back to the WordPress software (for example, to notify that a purchase is complete), you absolutely need to have an SSL certificate on the WordPress software otherwise you open yourself up to a MiTM attack and you leak personal purchase information to the Web.
+[Fri 12:41]	<taaz>	pelle: but for receipts, you just need the PaySwarm Authority to have SSL.
+[Fri 12:41]	<taaz>	manu: But then you can't do digital signatures for things like requests.
+[Fri 12:41]	<taaz>	pelle: What kind of request?
+[Fri 12:42]	<taaz>	manu1: A request to another participant on the network that needs to verify the origin of a message. To do anything that you would use OAuth to do. For requesting the processing of a purchase request. To agree to a bill of sale. To digitally sign an asset or listing.
+[Fri 12:42]	<taaz>	pelle: I hear no reason why a vendor needs to have a public/private keypair, they can just use OAuth.
+[Fri 12:42]	<taaz>	manu: Then how does a vendor digitally sign anything?
+[Fri 12:42]	<taaz>	pelle: They don't have to digitally sign anything. Digital signatures is just one use case for a small use case. We increase complexity by incredible amounts for a small use case.
+[Fri 12:42]	<taaz>	manu: It's a use case that's important to us. You can't make the argument that because a use case isn't important to you that it's irrelevant. You can't say that OAuth 2 solves all of the use cases that are "important" and ignores the "unimportant" ones. That dodges the question. How do you address the many use cases that we have that require digital signatures? The question was: How do you use OAuth to address the digital signatures use cases? and the answer to that question is "You can't. You need a digital signatures solution for that."
+[Fri 12:43]	<taaz>	manu: Here's an example - purchasing a meal, book or groceries, using a mobile phone with NFC and no data connection. The phone reads information from an NFC device proposing a bill, the phone digitally signs the bill and sends it back over NFC. Then the restaurant forwards the digitally signed (and possibly encrypted) bill on to the PaySwarm Authority for processing. You can only solve that via crypto/digital signatures. If you don't have that, you can't create these peer-to-peer solutions.
+[Fri 12:43]	<mjohnson>      q+
+[Fri 12:43]	<voip-ps>	Added mjohnson to the speaker queue: manu1, mjohnson
+[Fri 12:43]	<manu1>	ack manu1
+[Fri 12:43]	<voip-ps>	manu1 has the floor (to explain why OAuth ends up being the same solution as digital signatures.). The next speaker is mjohnson.
+[Fri 12:44]	<taaz>	pelleb: So, what you're saying is that until a purchaser can do digital signatures, then PaySwarm is not valid?
+[Fri 12:44]	<taaz>	manu1: No, that is not what I am saying.
+[Fri 12:44]	<taaz>	pelleb: We've discussed this before, you've confirmed that end-users are not supposed to be signing anything. I'm making numbers up now, but everyday in US tens of millions of electronic contracts happen without digital signatures. They do not happen in the ideal way. I like digital signatures. When it comes to end-users, the technology isn't there for it yet.
+[Fri 12:45]	<manu1>	ack mjohnson
+[Fri 12:45]	<voip-ps>	manu1 has the floor. The speaker queue is empty.
+[Fri 12:46]	<taaz>	mjohnson: Digital Signatures allow for "intents to purchase"
+[Fri 12:46]	<taaz>	mjohnson: Vending machine may have signed contract but no internet connection. buyer can use nfc and phones network for communications, where the transaction is processed via the cellphone, securely and the vending machine knows that the contract wasn't modified. This is about having a distributed payment mechanism, not everyone has a data connection to the server. This is about being able to trust that your payment agreement can pass through multiple hostile networks without being tampered with. This is what a next generation payment system should be doing in a consistent way.
+[Fri 12:47]	<manu1>	q+ to discuss "consumer-side" digital signatures and the courts.
+[Fri 12:47]	<voip-ps>	Added manu1 to the speaker queue: manu1
+[Fri 12:49]	<taaz>	manu1: Pelle, you just admitted that things are not done in the ideal way. Current payment networks are not flexible. There are no IOUs from customers without incredible risk to merchants. Regarding you statement about digital signatures being too complex for customers - they're not going to see anything even remotely close to "Digitally Sign Contract" button - they're just going to see a "buy" button and they're going to click it. We just need to make sure that the technology being provided allows for flexibility and security. You can't do this with just OAuth alone. 
+[Fri 12:49]	<taaz>	scribe: mjohnson
+[Fri 12:51]	<mjohnson>	manu: we need digital signatures and they become a better replacement for oauth
+[Fri 12:51]	<mjohnson>	manu: you won't need these multiple layers, you get all of that through just having vendors/customers digitally sign the data
+[Fri 12:52]	<mjohnson>	manu: this allows us to have these use cases we want whereas with oauth we can't
+[Fri 12:52]	<mjohnson>	manu: the decisions need to be based on technical argument, so if the use cases don't match we need to address it through the use cases
+[Fri 12:52]	<mjohnson>	pelle: I agree with the reasoning
+[Fri 12:53]	<mjohnson>	pelle: but I dont think it should be part of the core
+[Fri 12:53]	<mjohnson>	pelle: but why does vendor registration need to be standardized? It doesn't need to be standardized.
+[Fri 12:53]	<manu1>	q+ to ask about receipts w/o digital signatures.
+[Fri 12:53]	<voip-ps>	Added manu1 to the speaker queue: manu1, manu1
+[Fri 12:53]	<manu1>	ack
+[Fri 12:53]	<voip-ps>	manu1 has the floor (to discuss "consumer-side" digital signatures and the courts.). The next speaker is manu1.
+[Fri 12:53]	<mjohnson>	pelle: by focusing on just a few use cases where digital signatures are necessary you make the other use cases much harder to address
+[Fri 12:54]	<mjohnson>	pelle: focus should be on the 95% of the use cases and push harder work onto the fewer use cases where digital signatures would be a good solution
+[Fri 12:54]	<mjohnson>	pelle: its danger to push for technology that historically most developers don't understand
+[Fri 12:55]	<mjohnson>	pelle: is it important to standardize things like vendor registration?
+[Fri 12:55]	<mjohnson>	pelle: Vendor registration shouldn't be in the spec. How it happens shouldn't be in there.
+[Fri 12:55]	<mjohnson>	manu: almost all of that stuff is outside the spec. It says that in the spec, that how the account is created is outside the spec.
+[Fri 12:55]	<mjohnson>	manu: only thing in spec is when vendor needs to talk to payswarm authority, when they register their public key.
+[Fri 12:56]	<mjohnson>	manu: specifically, vendor account creation is outside the spec
+[Fri 12:56]	<mjohnson>	manu: the spec says it is outside the spec
+[Fri 12:56]	<mjohnson>	pelle: it then goes and says how to do it
+[Fri 12:57]	<mjohnson>	manu: not quite, it specifies how the private/public key pair is registered with the PaySwarm Authority.
+[Fri 12:57]	<mjohnson>	manu: This is another reason for digital signatures - the vendor needs to be able to digitally sign the listing and terms under which the assets are available.
+[Fri 12:57]	<mjohnson>	manu: We need to do this because we don't want a centralized asset mechanism, we want to handle this in a distributed manner.
+[Fri 12:58]	<mjohnson>	manu: the emphasis is on the key registration, not vendor account creation
+[Fri 12:58]	<mjohnson>	pelle: Still does not see it as part of the implementation details of the payment API
+[Fri 12:58]	<mjohnson>	pelle: I think that section 5.3: Vendor Registration, including public/private key registration, is outside the spec. These are just implementation details as far as I see it.
+[Fri 12:58]	<mjohnson>	manu: But that's what a spec is about, it's about implementation details.
+[Fri 12:59]	<mjohnson>	pelle: by saying the key registration is already part of the vendor registration, you are explaining how to register a vendor
+[Fri 12:59]	<mjohnson>	pelle: isn't there already a spec for registering keys?
+[Fri 12:59]	<mjohnson>	manu: We looked and we haven't found any. No existing specs for public/private key registration, we were surprised as well.
+[Fri 12:59]	<mjohnson>	manu: we'd use it if it exists, but it doesn't as far as we know.
+[Fri 13:00]	<mjohnson>	pelle: well then it should be renamed to registering public/private key pairs
+[Fri 13:00]	<mjohnson>	manu: ok, we can rename
+[Fri 13:00]	<mjohnson>	manu: sure someone else may want to register a key pair
+[Fri 13:00]	<mjohnson>	manu: it was set up this way to enable one-click registration
+[Fri 13:00]	<mjohnson>	manu: explains wordpress registration
+[Fri 13:01]	<mjohnson>	manu: other thing that came up was that OAuth doesnt solve is the problem of decentralized assets and listings
+[Fri 13:01]	<mjohnson>	manu: how does a website specify that they have a something for sale in a secure way?
+[Fri 13:01]	<mjohnson>	manu: they would need SSL certificates if they dont digitally sign
+[Fri 13:02]	<mjohnson>	manu: one solution is to centralize assets and pricing, that's bad
+[Fri 13:02]	<mjohnson>	manu: more innovation comes from decentralization
+[Fri 13:02]	<pelleb>	q+
+[Fri 13:02]	<voip-ps>	Added pelleb to the speaker queue: manu1, pelleb
+[Fri 13:02]	<manu1>	ack manu1
+[Fri 13:02]	<voip-ps>	manu1 has the floor (to ask about receipts w/o digital signatures.). The next speaker is pelleb.
+[Fri 13:02]	<manu1>	ack pelleb
+[Fri 13:03]	<voip-ps>	manu1 has the floor. The speaker queue is empty.
+[Fri 13:03]	<mjohnson>	pelle: decentralized is important, but this is the web and by default it is decentralized...
+[Fri 13:03]	<mjohnson>	pelle: most people would use a third party and don't need an SSL-cert alternate solution
+[Fri 13:03]	<manu1>	q+ to ask if you said "search" or "cert"?
+[Fri 13:03]	<voip-ps>	Added manu1 to the speaker queue: manu1
+[Fri 13:03]	<mjohnson>	pelle: still does not understand the reason for offers being signed
+[Fri 13:04]	<manu1>	ack manu1
+[Fri 13:04]	<voip-ps>	manu1 has the floor (to ask if you said "search" or "cert"?). The speaker queue is empty.
+[Fri 13:04]	<mjohnson>	manu: but then they are locked into that site they are offering their services from
+[Fri 13:04]	<mjohnson>	pelle: don't think that is a problem
+[Fri 13:04]	<mjohnson>	manu: don't agree, they don't get to pick who their payment processor or authority is
+[Fri 13:05]	<mjohnson>	pelle: the market decides that
+[Fri 13:05]	<mjohnson>	pelle: right now you pick your payment process and can switch
+[Fri 13:05]	<mjohnson>	manu: all of your data is locked into that one payment processor, then you have a huge cost locked into that processor
+[Fri 13:05]	<mjohnson>	pelle: that's a market issue because a smart business will offer portability as an advantage
+[Fri 13:06]	<mjohnson>	manu: but where has that happened in the commercial world
+[Fri 13:06]	<mjohnson>	q+
+[Fri 13:06]	<voip-ps>	Added mjohnson to the speaker queue: mjohnson
+[Fri 13:06]	<mjohnson>	pelle: maybe the lack of it shows there is no need
+[Fri 13:06]	<manu1>	ack mjohnson
+[Fri 13:06]	<voip-ps>	mjohnson has the floor. The speaker queue is empty.
+[Fri 13:09]	<pelleb>	q+
+[Fri 13:09]	<voip-ps>	Added pelleb to the speaker queue: pelleb
+[Fri 13:10]	<manu1>	ack pelleb
+[Fri 13:10]	<voip-ps>	pelleb has the floor. The speaker queue is empty.
+[Fri 13:10]	<manu1>	q+ to end the telco
+[Fri 13:10]	<voip-ps>	Added manu1 to the speaker queue: manu1
+[Fri 13:10]	<manu1>	mike: Two different philosophies here. There has been a large shift on data portability. People want more control over how data is stored and moved across systems. With Diaspora/Facebook/Google+ - examples from social. I think the idea of distributed design and data portability are very strong requirements. I don't think we should lock ourselves into the way traditional payment processors work today. We shouldn't look at the state of payments today and say that's the best we can do. We're trying to help people control their data upfront and not wait for the problem to appear and then fix it at that point. The Web is distributed, data should be distributed. It's easier to implement centralized, but the issue is the philosophy: What is the data that is involved and who should be involved?
+[Fri 13:10]	<mjohnson>	pelle: I agree that things should not be locked down, but I still don't understand why product listings should have a place in a payment standard. I haven't put much thought into this yet. However, I don't understand why it's a core part of this. I don't think many small business owners would think of this as an issue, they'd just move their store.
+[Fri 13:11]	<mjohnson>	manu: we are out of time, let's continue the discussion on the mailing list. Pelle we'll wait for your OpenTransact proposal - thanks for voicing your opinion, important to address that early on. Let's keep the focus on technical merit. Thanks for great discussion, no call during the holidays. We'll have another telecon after the holidays.
+
