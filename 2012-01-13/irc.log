@@ -1,59 +1,68 @@
 [Fri 12:03]	<manu-db>	scribe: taaz
 [Fri 12:03]	<manu-db>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2012Jan/0007.html
-[Fri 12:04]	<taaz>	manu-db: overview of agenda
+[Fri 12:04]	<taaz>	manu-db: Overview of agenda.  Followup to PaySwarm and OpenTransact comparison and discussion over last month.  Then planning a path forward once philosophical and technical issues are resolved.
 [Fri 12:05]	<manu-db>	Topic: PaySwarm / OpenTransact Technical Comparison Highlights
-[Fri 12:05]	<manu-db>	Web Payments: PaySwarm vs. OpenTransact Shootout (Part 1)
-[Fri 12:05]	<manu-db>	http://manu.sporny.org/2011/web-payments-comparison/
-[Fri 12:06]	<taaz>	manu-db: last telecon pelle had concerns with how group was proceeding and wanted us to look at opentransact
+[Fri 12:06]	<taaz>	manu-db: First is PaySwarm and OpenTransact comparions discussion happening over the last month.  During the last telecon Pelle had concerns with how group was proceeding and wanted us to look at OpenTransact and see how we could merge that work.
+[Fri 12:06]	<taaz>	manu-db: Based on request did a comparison from our perspective in a blog post and there were followup posts and responses.
+[Fri 12:06]	<manu-db>	Web Payments: PaySwarm vs. OpenTransact Shootout (Part 1)
+[Fri 12:06]	<manu-db>	http://manu.sporny.org/2011/web-payments-comparison/
 [Fri 12:06]	<manu-db>	OpenTransact the payment standard where everything is out of scope
 [Fri 12:06]	<manu-db>	http://stakeventures.com/articles/2011/12/21/opentransact-the-payment-standard-where-everything-is-out-of-scope
 [Fri 12:06]	<manu-db>	Web Payments: PaySwarm vs. OpenTransact Shootout (Part 2)
 [Fri 12:06]	<manu-db>	http://manu.sporny.org/2012/web-payments-shootout-part-2/
 [Fri 12:06]	<manu-db>	OpenTransact vs PaySwarm part 2 - yes it's still mostly out of scope
 [Fri 12:06]	<manu-db>	http://stakeventures.com/articles/2012/01/02/opentransact-vs-payswarm-part-2-yes-its-still-mostly-out-of-scope
-[Fri 12:06]	<taaz>	manu-db: did a comparison in a blog post with followup posts and responses
 [Fri 12:06]	<manu-db>	Web Payments: PaySwarm vs. OpenTransact Shootout (Part 3)
 [Fri 12:06]	<manu-db>	http://manu.sporny.org/2012/web-payments-shootout-part-3/
-[Fri 12:06]	<dln>	does anyone know if Skype can dirrectly dial sip ?
-[Fri 12:06]	<taaz>	manu-db: discussion has moved onto mailing lists covering various topics
+[Fri 12:06]	<dln>	does anyone know if Skype can directly dial sip ?
+[Fri 12:06]	<taaz>	manu-db: Discussion has moved onto mailing lists, has fragmented into various topics, and is still ongoing.
 [Fri 12:07]	<manu-db>	Modularization (PaySwarm)
-[Fri 12:09]	<taaz>	manu-db: covering various pieces of payswarm. json-ld came out of payswarm work.
-[Fri 12:09]	<pelleb>	+
-[Fri 12:09]	<taaz>	manu-db: putting standard in one doc to start is easier and can be broken up later
+[Fri 12:09]	<taaz>	manu-db: Pelle has said various parts of the PaySwarm spec should be out of scope for a payment standard. Specifically, digital signatures, PKI systems, listing of assets and other commerce related things. Some have said conceptual model is overly limiting to PaySwarm. Position we've had is that if there is something in the specification that should be broken out, we would do that. Pelle said he's interested in JSON-LD and to see where that goes. Some people might not know that JSON-LD started out as a part of PaySwarm. At some point it was decided to move it out and develop it in a community as its own spec.
+[Fri 12:09]	<pelleb>	q+
+[Fri 12:09]	<taaz>	manu-db: No reason that can't happen with current spec. Reason it's all in one spec now is that it's easier editorially to edit when it's together while in development. Can split out sections when it's apparent it needs to be done.
 [Fri 12:10]	<voip-ps>	<unknown> (IAX2/diamondcard-15878) has joined the conference.
-[Fri 12:10]	<taaz>	pelleb: large standard is hard to understand for new viewers. many complex concepts.
-[Fri 12:11]	<taaz>	pelleb: hard to find where spec even talks about how to make a payment.
+[Fri 12:10]	<taaz>	pelleb: One reason it's important to do that is PaySwarm API standard as-is is very hard for an outsider to come in and understand. It is incredibly complex which is why some people didn't catch parts of it.
+[Fri 12:11]	<taaz>	pelleb: Can't find where it describes how to do a simple payment. OAuth being replaced by digital signatures, assumed there was some way to do delegation with it since that what OAuth does, but there isn't. Hard to read since it's so complex. It needs to be split up. Fine with commerce model part but it doesn't belong in core payment spec.
 [Fri 12:12]	<voip-ps>	<unknown> (SIP/99.117.84.89-00000075) has joined the conference.
-[Fri 12:12]	<taaz>	manu-db: haven't speced out things like simple payments. have been working on other issues. outline of payswarm to payswarm process is on mailing list. still needs to be speced out.
+[Fri 12:12]	<taaz>	manu-db: Haven't speced out simple payments since it's simple to spec out. Just an extra simple object and will spec it out. We've been working on hard problems rather than easy ones. Outline of PaySwarm authority to PaySwarm authority process is on mailing list. Still needs to be speced out but we've been working on commerce flow.
 [Fri 12:12]	-->|	Manny (63755459@gateway/web/freenode/ip.99.117.84.89) has joined #payswarm
-[Fri 12:13]	<taaz>	manu-db: delegation is out of scope. other sites use oauth.
-[Fri 12:13]	<pelleb>	+
+[Fri 12:13]	<taaz>	manu-db: The way you do delegation is out of scope. Facebook and Twitter do delegation differently.  Both use OAuth but that doesn't specify what rights you are granted. We think those are out of scope and it's up to PaySwarm authority to provide.
+[Fri 12:13]	<pelleb>	q+
 [Fri 12:13]	=-=	Manny is now known as Guest23209
-[Fri 12:13]	<taaz>	manu-db: granting certain rights can be done with digital signatures
-[Fri 12:14]	<taaz>	pelleb: opentransact is clear about what is defined. hope to use new 'recipes' to show best practices.
-[Fri 12:15]	<taaz>	pelleb: annoyed with initial comparison post since it lists many features that are not yet in payswarm spec.
+[Fri 12:13]	<taaz>	manu-db: When it comes to figuring out if something can a capability of running a certain command, like a grant, OAuth and digital signatures can provide that functionality. Can discuss how that works on mailing list. One thing digital signatures are used for in PaySwarm is delegation.
+[Fri 12:14]	<taaz>	pelleb: OpenTransact is clear about what is defined. Bunch of things not defined in the spec and using new 'recipes' to show best practices and how to do things.
+[Fri 12:15]	<taaz>	pelleb: Annoyed with initial post since it lists many features OpenTransact doesn't do but at same time all the fantastic features PaySwarm supports haven't been speced out yet. Table is offensive saying PaySwarm supports features that haven't been speced out yet and OpenTransact doesn't support them. Features supported in PaySwarm are not mentioned anywhere in the spec. Conversation heated up because of that.
 [Fri 12:15]	<dln>	"delegation" == "capability model" <--- hard to change later if not fully specified early; handwaving to PKI is erroneous IMO, I can explain in voice if reqested
 [Fri 12:15]	<pelleb>	dln please do
-[Fri 12:16]	<taaz>	manu-db: not meant as an attack. was a list of things that will be in the payswarm spec. also based on what appears to be possible with opentransact design.
-[Fri 12:17]	<taaz>	manu-db: tried to be factual. will update if facts are wrong.
+[Fri 12:16]	<taaz>	manu-db: Purpose of blog post not to annoy or meant as an attack. Purpose was to outline design of what PaySwarm allows and plans to spec out that will go in 1.0 spec or modularized version of the spec. Versus things we don't think are possible with the current design of the OpenTransact specification. Did an analysis of how these types of features could be built on top of OpenTransact and found OpenTransact doesn't spec enough or mention plans to spec enough to cover those scenarios. That's where blog post came from. Think current OpenTransact design does not allow for those use cases.
+[Fri 12:17]	<taaz>	manu-db: Tried to be factual. Please correct me if facts are wrong so post can be changed.
 [Fri 12:18]	<dln>	wiki would be better than mailing list for that discussion
-[Fri 12:18]	<taaz>	pelleb: has issues with parts of the comparison.
-[Fri 12:18]	<taaz>	pelleb: payswarm spec doesn't explain how features will work
-[Fri 12:19]	<taaz>	manu-db: opentransact spec doesn't show how features will work either
-[Fri 12:20]	<taaz>	pelleb: recipes section of opentransact is an attempt to show how to use opentransact to solve these issues. discussion over last few years on opentransact and agile-banking list has more info. will try to document better.
-[Fri 12:20]	<taaz>	pelleb: keeping up with discussion is time consuming
-[Fri 12:21]	<taaz>	manu-db: will try to also add better payswarm documentation
-[Fri 12:22]	<taaz>	dln: offering to diagram designs. people are federating using opentransact. hasn't made sense to have best practices until people are using the technology.
-[Fri 12:24]	<taaz>	manu-db: could use models of how the systems work.
-[Fri 12:24]	<taaz>	dln: need terms defined so we can communicate properly
-[Fri 12:25]	<taaz>	manu-db: yes, we really need terms defined.
-[Fri 12:26]	<taaz>	manu-db: re: federation. opentransact design of transactions on single asset seems like siloed payment model.
-[Fri 12:26]	<taaz>	manu-db: want to know how paypal or google or other small opentransact provider can participate in the network.
-[Fri 12:28]	<taaz>	dln: opentransact uses openid to get distributed identities
-[Fri 12:28]	<pelleb>	+
-[Fri 12:29]	<taaz>	manu-db: how do you know how much is in your account?
-[Fri 12:29]	<taaz>	dln: To see how much is in your account, it requires a centralized system. Gmail is centralized. I can't connect to Gmail and read Yahoo e-mails.
-[Fri 12:32]	<taaz>	manu-db: You can look at Gmail as "centralized" but that's the application. We are more concerned about the protocol, in Gmail's case - that is SMTP, which specifies exactly how an e-mail gets from one server to the next. We need the same sort of protocol for money - we are focused on the protocol, not the applications that are built on top (like GMail).
+[Fri 12:18]	<taaz>	pelleb: I've said facts are wrong before and will now.
+[Fri 12:18]	<taaz>	pelleb: Filled with cheap attacks especially when reading closely PaySwarm doesn't support these concepts.
+[Fri 12:18]	<taaz>	manu-db: I can explain how PaySwarm will support all those features. Send email showing were factual inaccuracies are will address them.
+[Fri 12:18]	<taaz>	pelleb: Ok. Everything that says OpenTransact doesn't support it, it does with an application on top of it.
+[Fri 12:19]	<taaz>	manu-db: No, that's not what blog post says. You can add an application on top of anything to accomplish anything. Point made in blog post is that OpenTransact spec makes no recommendation on how to implement an interoperable set of applications to accomplish those features. Need to not only say post is factual inaccurate but show how OpenTransact allows that to happen.
+[Fri 12:20]	<taaz>	pelleb: That's what we are doing with recipes section of OpenTransact. Could be a never ending thing. Need full time job to reply to all these things. Will try to add to recipes with things on mailing list. Most have been discussed over last few years on OpenTransact and agile-banking list. Will try to get that into recipes. Will do a final response but don't think it helps to do the back and forth.
+[Fri 12:20]	<taaz>	manu-db: I disagree and have found the discussion very helpful. Only way to figure out where specs overlap or how to figure out problems is to have these discussions. It is incredibly time consuming but is a necessary part of standardization process.
+[Fri 12:21]	<taaz>	manu-db: We need to go through and update PaySwarm so it's clear how to accomplish things in the blog post. I realize not enough info in spec now to know how to do things. Need to take things we've implemented and move them into the spec and explain how that stuff works. We'll be doing that over next weeks and months.
+[Fri 12:22]	<taaz>	dln: Can talk about capability models, delegation, and possible reference architecture of central points of software. Pelle has pointed out on mailing list that there are several alternative currency providers who are starting to federate. Makes sense to defer publishing best practices recommendation until somebody is practicing the action. Since no one has been federating with OpenTransact until now there's an argument it's premature to spec it out.
+[Fri 12:22]	<taaz>	dln: Do we have a reference model?  I've got one but haven't completely read either spec. Mine is more of a computer programmer object model reference. Starting with capabilities and both currencies and identities descend from that. Could create delegation of giving $2M budget out of $10M budget, can create identity which represents their budget and give that budget $2M and then assign control of that identity to person who has control of that budget.
+[Fri 12:24]	<taaz>	manu-db: We don't have such a diagram. It would be very help if you had such a diagram and we could map it to PaySwarm and OpenTransact and see where differences are. Would help to see what different models are. Will likely see overlap in models.
+[Fri 12:24]	<taaz>	dln: Need to define terms so we can communicate properly.
+[Fri 12:25]	<taaz>	manu-db: Yes, we really need terms defined. PaySwarm already defines a number of terms already in conceptual model part but a number of other terms need to be defined. Didn't think we needed to define payment but even that is leading to confusion. Anytime we see disagreement on a term we need to define it.
+[Fri 12:26]	<taaz>	manu-db: Speaking about federation, another issue with OpenTransact is to federate or not federate. Even if OpenTransact describes federation as an application that sits on top of OpenTransact that would be helpful. Currently, we don't believe model of having a single entity running transactions on a particular asset will have much of an impact on the web. Seems like siloed payment model. We want to see how that won't happen.
+[Fri 12:26]	<taaz>	manu-db: We want to know how PayPal or Google or other small OpenTransact provider can participate in the network.
+[Fri 12:28]	<taaz>	dln: The key to interoperability for PayPal and Google is if they decide to be OpenTransact providers dealing with some kind of proxy to USD. Way to have interoperability is to use OpenID for secure decentralized identities. You have OpenIDs instead of different accounts with each bank. You've got a common identity string for the account holders.
+[Fri 12:28]	<pelleb>	q+
+[Fri 12:29]	<taaz>	manu-db: How do you figure out how much money you have in your accounts?
+[Fri 12:29]	<taaz>	dln: That requires a centralization. The question presumes centralization.
+[Fri 12:29]	<taaz>	manu-db: That's our issue.
+[Fri 12:29]	<taaz>	dln: You're saying an additional parameter saying to pull funds from where I have them.
+[Fri 12:29]	<taaz>	manu-db: That's one way. Another way is to define a decentralized protocol for exchanging money between all these transaction processors. Effectively like banks; money transmittal services under the law but effectively holding on to a certain set of funds. Want to make sure buyer and vendor can exist on different payment processors. When a transaction happens the money moves from the buyer's financial account to the vendor's account. If that account is on some other third party, whether that exists in a decentralized system across the web, we just want it to be decentralized. If it is centralized you start giving people an unfair advantage in the market. Ends up like it is today with siloed payment networks and siloed accounts. Very concerned with that and want to decentralize what OpenTransact currently has now or use PaySwarm which is designed for this.
+[Fri 12:30]	<taaz>	dln: PaySwarm effectively models interbank check clearing without the ACH network?
+[Fri 12:30]	<taaz>	manu-db: Yes, exactly. That's a rough way to look at it but yes. Another way to look at it is how we do email today. People wouldn't like it if you could only send email to another person on the current system. SMTP defined a protocol to send a document from one server to another. The same thing has to happen with money on the web. We have to be able to move values around multiple accounts in a decentralized system. So basically we want a decentralized ACH system and that's what we think true interoperability is.
+[Fri 12:31]	<taaz>	dln: With same example, when you say something is centralized or not, you can't connect to Gmail server and read mail from Yahoo account, you have to connect to the other account.
+[Fri 12:32]	<taaz>	manu-db: You can look at it as centralized. What is centralized is the application and your email exists on a Google server. But if you wanted to send email to someone on another server the protocol defines how to send it. What we're talking about is the protocol for monetary exchange on the web. We're not talking about applications built on top of that protocol.
 [Fri 12:34]	<dln>	re Miami: is there any movement to have Conch Republic back a currency?
 [Fri 12:34]	<taaz>	pelleb: Are large existing silos (like banks, PayPal, Google Checkout) going to be a part of a federated system? Going to need strong market forces to make that happen. We cannot make decentralization a requirement. We could have Dwolla/PayPal use OpenTransact and then use an alternative currency to exchange money. Decentralization does not have to be a part of core. Only people that care about decentralization are currency implementers. We need to experiment w/ decentralization before we standardize. OpenTransact was designed to do linked transfers from the beginning - fairly simple extension on top of OpenTransact to do so. I will document how this happens.
 [Fri 12:34]	<taaz>	pelleb: Payment proviers need business connections between each other, that's the most important thing.
@@ -78,14 +87,14 @@
 [Fri 12:46]	<taaz>	manu-db: Decentralized systems will help move more money which can benifit bigger players like PayPal, Google Checkout, and banks. We don't want them to go out of business, we want to show them that decentralization is the right way to do this.
 [Fri 12:47]	<taaz>	manu-db: Ok, we've talked about decentralization, Pelle do you think you have a good understanding of our concerns?
 [Fri 12:47]	<taaz>	pelleb: Yes and I feel the same concerns apply to PaySwarm. All of these things have been discussed, mapped out, and it hasn't been put into specs before. 
-[Fri 12:48]	<jeffsayre>	+q
+[Fri 12:48]	<jeffsayre>	q+
 [Fri 12:49]	<taaz>	pelleb: OpenTransact federated extension should be done once people are doing it.
 [Fri 12:49]	<taaz>	dln: It's not just me, it's an IETF ground rule.
 [Fri 12:49]	<taaz>	pelleb: Yup.
 [Fri 12:50]	<taaz>	manu-db: No, it isn't. It is not an IETF ground rule. W3C doesn't operate like that, I don't think IETF does either. Read the mission statement for IETF. Look across technologies, SMTP, SIP, there was not a notion where you need a great number of people doing something in the same technological way that you are proposing to write a standard. You need people attempting to do the thing you spec the solution for, but in no way does the technical solution have to be the way that it is being done today. To provide an example, there are many people doing payment on the web, there are many people exchanging digital goods over the web, but the specification to solve that doesn't need to be based on the way that is accomplished today. The specification can propose a ground-breaking/revolutionary way to address the problem, but in no way does it have to match the current state of the art. 
 [Fri 12:50]	<taaz>	manu-db: I do not agree that you need a bunch of people using OpenTransact to do decentralized payments. What you will discover is that people that implement OpenTransact will not do decentralized payments because it is a very hard problem to solve. Instead, they will focus on the centralized solution because that is the technology that they've been given. To provide another example - Microformats and RDFa came into existence because people were publishing all sorts of data on their pages but not marking it up in any particular way. Microformats and RDFa showed people how to do decentralized data publishing that was machine-readable... but it didn't follow the state of the art, which was screen scraping, it proposed a new technical solution.
 [Fri 12:50]	<taaz>	manu-db: The idea that you need to have people attempting to solve the problem in the same technical way that you're solving it - I don't believe that for a second.
-[Fri 12:50]	<pelleb>	+q
+[Fri 12:50]	<pelleb>	q+
 [Fri 12:51]	<taaz>	jeffsayre: I agree with your assertion, Manu. One of the reasons I was interested in the Web Payments group is that it is a future-looking project. There is social unrest, they're trying to figure out what the future of money will be. They're trying to figure out how we make the monetary system work for the 99% of us. I think soverign currencies may give rise to more decentralized systems, you already see alternative currencies and future of payments, future of money. All of this relies upon a decentralized solution. A social Web that is decentralized, coupled with a decentralized financial layer, is a much more socially focused and future-looking solution than any solution that attempts to dove-tail into the way things are currently done.
 [Fri 12:51]	<taaz>	jeffsayre: This is exactly why PaySwarm interested me - the future is a decentralized financial system and PaySwarm shows us how to accomplish this.
 [Fri 12:52]	<manu-db>	q+
