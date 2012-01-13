@@ -1,0 +1,113 @@
+[Fri 12:03]	<manu-db>	scribe: taaz
+[Fri 12:03]	<manu-db>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2012Jan/0007.html
+[Fri 12:04]	<taaz>	manu-db: overview of agenda
+[Fri 12:05]	<manu-db>	Topic: PaySwarm / OpenTransact Technical Comparison Highlights
+[Fri 12:05]	<manu-db>	Web Payments: PaySwarm vs. OpenTransact Shootout (Part 1)
+[Fri 12:05]	<manu-db>	http://manu.sporny.org/2011/web-payments-comparison/
+[Fri 12:06]	<taaz>	manu-db: last telecon pelle had concerns with how group was proceeding and wanted us to look at opentransact
+[Fri 12:06]	<manu-db>	OpenTransact the payment standard where everything is out of scope
+[Fri 12:06]	<manu-db>	http://stakeventures.com/articles/2011/12/21/opentransact-the-payment-standard-where-everything-is-out-of-scope
+[Fri 12:06]	<manu-db>	Web Payments: PaySwarm vs. OpenTransact Shootout (Part 2)
+[Fri 12:06]	<manu-db>	http://manu.sporny.org/2012/web-payments-shootout-part-2/
+[Fri 12:06]	<manu-db>	OpenTransact vs PaySwarm part 2 - yes it's still mostly out of scope
+[Fri 12:06]	<manu-db>	http://stakeventures.com/articles/2012/01/02/opentransact-vs-payswarm-part-2-yes-its-still-mostly-out-of-scope
+[Fri 12:06]	<taaz>	manu-db: did a comparison in a blog post with followup posts and responses
+[Fri 12:06]	<manu-db>	Web Payments: PaySwarm vs. OpenTransact Shootout (Part 3)
+[Fri 12:06]	<manu-db>	http://manu.sporny.org/2012/web-payments-shootout-part-3/
+[Fri 12:06]	<dln>	does anyone know if Skype can dirrectly dial sip ?
+[Fri 12:06]	<taaz>	manu-db: discussion has moved onto mailing lists covering various topics
+[Fri 12:07]	<manu-db>	Modularization (PaySwarm)
+[Fri 12:09]	<taaz>	manu-db: covering various pieces of payswarm. json-ld came out of payswarm work.
+[Fri 12:09]	<pelleb>	+
+[Fri 12:09]	<taaz>	manu-db: putting standard in one doc to start is easier and can be broken up later
+[Fri 12:10]	<voip-ps>	<unknown> (IAX2/diamondcard-15878) has joined the conference.
+[Fri 12:10]	<taaz>	pelleb: large standard is hard to understand for new viewers. many complex concepts.
+[Fri 12:11]	<taaz>	pelleb: hard to find where spec even talks about how to make a payment.
+[Fri 12:12]	<voip-ps>	<unknown> (SIP/99.117.84.89-00000075) has joined the conference.
+[Fri 12:12]	<taaz>	manu-db: haven't speced out things like simple payments. have been working on other issues. outline of payswarm to payswarm process is on mailing list. still needs to be speced out.
+[Fri 12:12]	-->|	Manny (63755459@gateway/web/freenode/ip.99.117.84.89) has joined #payswarm
+[Fri 12:13]	<taaz>	manu-db: delegation is out of scope. other sites use oauth.
+[Fri 12:13]	<pelleb>	+
+[Fri 12:13]	=-=	Manny is now known as Guest23209
+[Fri 12:13]	<taaz>	manu-db: granting certain rights can be done with digital signatures
+[Fri 12:14]	<taaz>	pelleb: opentransact is clear about what is defined. hope to use new 'recipes' to show best practices.
+[Fri 12:15]	<taaz>	pelleb: annoyed with initial comparison post since it lists many features that are not yet in payswarm spec.
+[Fri 12:15]	<dln>	"delegation" == "capability model" <--- hard to change later if not fully specified early; handwaving to PKI is erroneous IMO, I can explain in voice if reqested
+[Fri 12:15]	<pelleb>	dln please do
+[Fri 12:16]	<taaz>	manu-db: not meant as an attack. was a list of things that will be in the payswarm spec. also based on what appears to be possible with opentransact design.
+[Fri 12:17]	<taaz>	manu-db: tried to be factual. will update if facts are wrong.
+[Fri 12:18]	<dln>	wiki would be better than mailing list for that discussion
+[Fri 12:18]	<taaz>	pelleb: has issues with parts of the comparison.
+[Fri 12:18]	<taaz>	pelleb: payswarm spec doesn't explain how features will work
+[Fri 12:19]	<taaz>	manu-db: opentransact spec doesn't show how features will work either
+[Fri 12:20]	<taaz>	pelleb: recipes section of opentransact is an attempt to show how to use opentransact to solve these issues. discussion over last few years on opentransact and agile-banking list has more info. will try to document better.
+[Fri 12:20]	<taaz>	pelleb: keeping up with discussion is time consuming
+[Fri 12:21]	<taaz>	manu-db: will try to also add better payswarm documentation
+[Fri 12:22]	<taaz>	dln: offering to diagram designs. people are federating using opentransact. hasn't made sense to have best practices until people are using the technology.
+[Fri 12:24]	<taaz>	manu-db: could use models of how the systems work.
+[Fri 12:24]	<taaz>	dln: need terms defined so we can communicate properly
+[Fri 12:25]	<taaz>	manu-db: yes, we really need terms defined.
+[Fri 12:26]	<taaz>	manu-db: re: federation. opentransact design of transactions on single asset seems like siloed payment model.
+[Fri 12:26]	<taaz>	manu-db: want to know how paypal or google or other small opentransact provider can participate in the network.
+[Fri 12:28]	<taaz>	dln: opentransact uses openid to get distributed identities
+[Fri 12:28]	<pelleb>	+
+[Fri 12:29]	<taaz>	manu-db: how do you know how much is in your account?
+[Fri 12:29]	<taaz>	dln: requires centralized system
+[Fri 12:32]	<taaz>	manu-db, dln: [talking about decentralization]
+[Fri 12:32]	<taaz>	(sorry, i can't keep up scribing all that)
+[Fri 12:34]	<dln>	re Miami: is there any movement to have Conch Republic back a currency?
+[Fri 12:34]	<taaz>	pelleb: opentransact designed to do linked transfers.
+[Fri 12:34]	<taaz>	pelleb: payment proviers need business connections between each other
+[Fri 12:34]	<taaz>	manu-db: need legal framework for backend transfers
+[Fri 12:35]	<taaz>	manu-db: want to see payswarm used instead of ACH. always needs backup of legal framework. need to ensure assets transfer properly.
+[Fri 12:35]	<pelleb>	+
+[Fri 12:36]	<taaz>	manu-db: if we don't build in interoperability in spec then you will end up with siloed systems.
+[Fri 12:36]	<taaz>	manu-db: interop needs to go into core spec
+[Fri 12:37]	<dln>	delegation is exactly the same kind of thing to get in early; there is more at stake with it. Doing delegation wrong opens security holes. Doing interop sloppily just bakes in something awkward.
+[Fri 12:37]	<taaz>	pelleb: payswarm spec talks about moving accounts and history. interop is more than that type of data portability.
+[Fri 12:37]	<taaz>	pelleb: will take paypal and google long time to implement such things
+[Fri 12:39]	<taaz>	pelleb: banks might implement some of the features but perhaps not all the backend transfers unless it is secure enough
+[Fri 12:40]	<taaz>	manu-db: paypal and google won't be first adopters. will be smaller players that can compete in a decentralized way.
+[Fri 12:40]	<taaz>	manu-db: bigger players will be intersted once there is adoption. can't know how it will turn out.
+[Fri 12:42]	<taaz>	pelleb: forcing too many features into spec will limit adoption especially if all features are requried.
+[Fri 12:43]	<taaz>	manu-db: banks have system that works, dectralization might scare them unless it is a competitive advantage to their business model. may be better to focus on smaller players.
+[Fri 12:44]	<taaz>	dln: some smaller failing banks may be looking for something to diferentiate themselves.
+[Fri 12:44]	<taaz>	pelleb: some groups are talking to banks about using opentransact
+[Fri 12:45]	<taaz>	manu-db: not convinced that's the right way to go. hard to make changes to world financial system.
+[Fri 12:45]	<taaz>	manu-db: decentralized systems will help move more money which can benifit bigger players.
+[Fri 12:48]	<jeffsayre>	+q
+[Fri 12:49]	<taaz>	pelleb: need to wait for fully speced federation layer until more users.
+[Fri 12:49]	<taaz>	dln: ietf requires that
+[Fri 12:50]	<taaz>	manu-db: not so. [discussion of designing tech early on]
+[Fri 12:50]	<pelleb>	+q
+[Fri 12:51]	<taaz>	jeffsayre: interested in group due to forward looking decentralized design for payments
+[Fri 12:51]	<taaz>	use "q+" to get on the queue :)
+[Fri 12:51]	<dln>	ok :)
+[Fri 12:52]	<taaz>	pelleb: decentralized community currencies are talking how to work together. many ways to do this.
+[Fri 12:52]	<manu-db>	q+
+[Fri 12:52]	<voip-ps>	Added manu-db to the speaker queue: manu-db
+[Fri 12:53]	<manu-db>	q-
+[Fri 12:53]	<voip-ps>	Removed manu-db from the speaker queue: (empty)
+[Fri 12:53]	<taaz>	pelleb: all in agreement that decentralization is good.
+[Fri 12:53]	<taaz>	manu-db: will all want decentralized system. disagreement on how to get there.
+[Fri 12:54]	<taaz>	manu-db: opentransact is payment only and will have other specs on top to implement other features
+[Fri 12:56]	<dln>	aside: no, it will be TJ90
+[Fri 12:57]	<taaz>	manu-db: looked at payments only solution but didn't appear to scale.
+[Fri 12:58]	<jeffsayre>	+q
+[Fri 12:58]	<taaz>	manu-db: [discussing]
+[Fri 12:58]	<manu-db>	q+
+[Fri 12:58]	<voip-ps>	Added manu-db to the speaker queue: manu-db
+[Fri 12:59]	<taaz>	jeffsayre: [spec comments]
+[Fri 13:00]	<taaz>	manu-db: digital bazaar has done poor job documenting payswarm features and specs.
+[Fri 13:01]	<pelleb>	http://www.opentransact.org/recipes/crowdfunding.html
+[Fri 13:01]	<taaz>	manu-db: new demo out soon, will try to build examples on top of that work
+[Fri 13:01]	<pelleb>	http://www.opentransact.org/recipes/reserves.html
+[Fri 13:01]	<taaz>	pelleb: opentransact is using it's 'recipes' site to show examples.
+[Fri 13:02]	<dln>	http://xmlns.com/foaf/spec/#term_tipjar one way to state how one receives payments
+[Fri 13:02]	<taaz>	pelleb: will set up a federated example
+[Fri 13:02]	<voip-ps>	<unknown> (SIP/99.117.84.89-00000075) has left the conference.
+[Fri 13:02]	<voip-ps>	Manu Sporny (SIP/6000-00000072) has left the conference.
+[Fri 13:02]	<voip-ps>	Pelle Braendgaard (SIP/10.0.1.8-00000074) has left the conference.
+[Fri 13:02]	<voip-ps>	<unknown> (IAX2/diamondcard-15878) has left the conference.
+[Fri 13:02]	|<--	jeffsayre has left freenode (Quit: Bye. Time to defrag my brain)
+[Fri 13:02]	<taaz>	manu-db: good to have this discussion. thanks!
