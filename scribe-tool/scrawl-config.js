@@ -23,6 +23,10 @@
       {
          "alias": ["dlongley", "dlongley-db"]
       },
+      "David Nicol":
+      {
+         "alias": ["dln"]
+      },
       "Manu Sporny":
       {
          "alias": ["manu-db", "manu1", "manu`"],
