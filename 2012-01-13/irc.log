@@ -52,62 +52,67 @@
 [Fri 12:28]	<taaz>	dln: opentransact uses openid to get distributed identities
 [Fri 12:28]	<pelleb>	+
 [Fri 12:29]	<taaz>	manu-db: how do you know how much is in your account?
-[Fri 12:29]	<taaz>	dln: requires centralized system
-[Fri 12:32]	<taaz>	manu-db, dln: [talking about decentralization]
-[Fri 12:32]	<taaz>	(sorry, i can't keep up scribing all that)
+[Fri 12:29]	<taaz>	dln: To see how much is in your account, it requires a centralized system. Gmail is centralized. I can't connect to Gmail and read Yahoo e-mails.
+[Fri 12:32]	<taaz>	manu-db: You can look at Gmail as "centralized" but that's the application. We are more concerned about the protocol, in Gmail's case - that is SMTP, which specifies exactly how an e-mail gets from one server to the next. We need the same sort of protocol for money - we are focused on the protocol, not the applications that are built on top (like GMail).
 [Fri 12:34]	<dln>	re Miami: is there any movement to have Conch Republic back a currency?
-[Fri 12:34]	<taaz>	pelleb: opentransact designed to do linked transfers.
-[Fri 12:34]	<taaz>	pelleb: payment proviers need business connections between each other
-[Fri 12:34]	<taaz>	manu-db: need legal framework for backend transfers
-[Fri 12:35]	<taaz>	manu-db: want to see payswarm used instead of ACH. always needs backup of legal framework. need to ensure assets transfer properly.
-[Fri 12:35]	<pelleb>	+
-[Fri 12:36]	<taaz>	manu-db: if we don't build in interoperability in spec then you will end up with siloed systems.
-[Fri 12:36]	<taaz>	manu-db: interop needs to go into core spec
-[Fri 12:37]	<dln>	delegation is exactly the same kind of thing to get in early; there is more at stake with it. Doing delegation wrong opens security holes. Doing interop sloppily just bakes in something awkward.
-[Fri 12:37]	<taaz>	pelleb: payswarm spec talks about moving accounts and history. interop is more than that type of data portability.
-[Fri 12:37]	<taaz>	pelleb: will take paypal and google long time to implement such things
-[Fri 12:39]	<taaz>	pelleb: banks might implement some of the features but perhaps not all the backend transfers unless it is secure enough
-[Fri 12:40]	<taaz>	manu-db: paypal and google won't be first adopters. will be smaller players that can compete in a decentralized way.
-[Fri 12:40]	<taaz>	manu-db: bigger players will be intersted once there is adoption. can't know how it will turn out.
-[Fri 12:42]	<taaz>	pelleb: forcing too many features into spec will limit adoption especially if all features are requried.
-[Fri 12:43]	<taaz>	manu-db: banks have system that works, dectralization might scare them unless it is a competitive advantage to their business model. may be better to focus on smaller players.
-[Fri 12:44]	<taaz>	dln: some smaller failing banks may be looking for something to diferentiate themselves.
-[Fri 12:44]	<taaz>	pelleb: some groups are talking to banks about using opentransact
-[Fri 12:45]	<taaz>	manu-db: not convinced that's the right way to go. hard to make changes to world financial system.
-[Fri 12:45]	<taaz>	manu-db: decentralized systems will help move more money which can benifit bigger players.
+[Fri 12:34]	<taaz>	pelleb: Are large existing silos (like banks, PayPal, Google Checkout) going to be a part of a federated system? Going to need strong market forces to make that happen. We cannot make decentralization a requirement. We could have Dwolla/PayPal use OpenTransact and then use an alternative currency to exchange money. Decentralization does not have to be a part of core. Only people that care about decentralization are currency implementers. We need to experiment w/ decentralization before we standardize. OpenTransact was designed to do linked transfers from the beginning - fairly simple extension on top of OpenTransact to do so. I will document how this happens.
+[Fri 12:34]	<taaz>	pelleb: Payment proviers need business connections between each other, that's the most important thing.
+[Fri 12:34]	<taaz>	manu-db: I don't disagree on the point of needing a legal framework for backend transfers... that needs to exist. Backhaul ACH is temporary, we eventually want banks to just use PaySwarm to transfer money, not ACH.
+[Fri 12:35]	<taaz>	manu-db: Always needs backup of legal framework. Need to ensure money transfer properly.
+[Fri 12:36]	<taaz>	manu-db: Speaking to your point that "we should not standardize decentralized mechanism" - I disagree completely. If we don't build in payment processor interoperability into the spec then you will end up with siloed systems because that is what you have by default. That is a very important point - we absolutely want a decentralized system. By default we want decentralization, in order for that to happen, it needs to go into the core spec.
+[Fri 12:36]	<taaz>	manu-db: Payment processor interoperability needs to go into core spec.
+[Fri 12:37]	<dln>	Delegation is exactly the same kind of thing to get in early; there is more at stake with it. Doing delegation wrong opens security holes. Doing interop sloppily just bakes in something awkward.
+[Fri 12:38]	<taaz>	pelleb: There are many ways to talk about interoperability. You keep saying that data portability is one way to do interoperability and that it's mandatory. There is also other types of interoperability
+[Fri 12:38]	<taaz>	manu-db: Data portability is different from payment interoperability (for payment processors). [The first has to do with moving your accounts from one system to the next, the second has to do with moving money from one system to the next.]
+[Fri 12:39]	<taaz>	pelleb: Yes, money portability is different from data portability. I agree that we want these things, if we decide that this is the most important thing, then PayPal/Google will not implement this stuff quickly.
+[Fri 12:40]	<taaz>	manu-db: Why do you think that they will want to implement something that allows other people to compete with them?
+[Fri 12:39]	<taaz>	pelleb: The payment business is complex. PayPal is the one that has least reason to implement decentralization/portability. Banks are open to implementing OpenTransact - not open to full decentralization via open standard in the beginning. If someone can put IBAN in to field, if they can figure it out on their systems, they might be open to do stuff like that. I'd love it if the banks implement OpenTransact, but if we make decentralization a requirement, it's given that they won't adopt it.
+[Fri 12:40]	<taaz>	manu-db: I don't think that's true. Banks buy software from software vendors, they rarely implement it. If there is a piece of software that supports PaySwarm, they will just buy that software to meet their need. Bigger players will be intersted once there is adoption. We can't say "it's a given" for many things in this specification, this is one of them.
+[Fri 12:40]	<taaz>	manu-db: It's important to understand who the market is for these specifications - it's not PayPal, Google Checkout, or traditional Banks. They are not going to be the early adopters, the early adopters are going to be entrepreneurs setting up their companies for the first time. If the network becomes large enough, and for that to happen, we need decentralization, if the network starts processing a huge amount of money - that's when PayPal, Google Checkout and Amazon Payments and the banks become interested. In fact, the banks would become interested before Google Checkout and Amazon Payments. It would be a mistake for us to say that there are any hard and fast rules on when these things may be adopted. I don't buy the argument that because we use digital signatures or decentralization, it automatically means that banks won't adopt the technology.
+[Fri 12:42]	<taaz>	pelleb: I agree with the general analysis, but I think it will take a long time for banks to adopt PaySwarm. They're scared to open up... which is why they like OpenTransact - it doesn't require them to open up too much. Forcing too many features into the spec will limit adoption especially if all features are mandatory. 
+[Fri 12:43]	<taaz>	manu-db: If our goal is to have a decentralized payment network, why are we not building the spec in that way? Why are we not building the network in a decentralized way? If the banks can see that a group of entrepreneurs have setup a decentralized payment network that is handling a bunch of money, it reduces their risk and they'll adopt it. Another way to look at it - use OpenTransact today, move to PaySwarm for the backhaul in the future. Again - If you are focused on the established players, you're focusing on the wrong people. This is speaking from experience - we launched the PaySwarm technology around 2004 to show the music industry how they could partner with their fans to sell music. They rejected the idea outright because they were afraid of change - large, stable companies reject ideas that could disrupt their grasp on the market.
+[Fri 12:43]	<taaz>	manu-db: The banks have system that works for them, dectralization might scare them unless it is a competitive advantage to their business model. We should be focusing on entrepreneurs and other smaller players. There may be a few people at banks that implement the idea, but focusing on them is largely a waste of time at this point. 
+[Fri 12:44]	<taaz>	dln: There are some smaller failing banks may be looking for something to diferentiate themselves. They might be a good candidate to talk to before talking to the larger players.
+[Fri 12:44]	<taaz>	pelleb: Some groups are talking to banks about using OpenTransact.
+[Fri 12:45]	<taaz>	manu-db: That's good, but I'm not convinced that's the right way to go. I hope OpenTransact finds success doing that, but I believe that it is very difficult to convince those large organizations to take on any sort of business risk like decentralization... and we've all stated that, ultimately, that is what we want.
+[Fri 12:46]	<taaz>	manu-db: Decentralized systems will help move more money which can benifit bigger players like PayPal, Google Checkout, and banks. We don't want them to go out of business, we want to show them that decentralization is the right way to do this.
+[Fri 12:47]	<taaz>	manu-db: Ok, we've talked about decentralization, Pelle do you think you have a good understanding of our concerns?
+[Fri 12:47]	<taaz>	pelleb: Yes and I feel the same concerns apply to PaySwarm. All of these things have been discussed, mapped out, and it hasn't been put into specs before. 
 [Fri 12:48]	<jeffsayre>	+q
-[Fri 12:49]	<taaz>	pelleb: need to wait for fully speced federation layer until more users.
-[Fri 12:49]	<taaz>	dln: ietf requires that
-[Fri 12:50]	<taaz>	manu-db: not so. [discussion of designing tech early on]
+[Fri 12:49]	<taaz>	pelleb: OpenTransact federated extension should be done once people are doing it.
+[Fri 12:49]	<taaz>	dln: It's not just me, it's an IETF ground rule.
+[Fri 12:49]	<taaz>	pelleb: Yup.
+[Fri 12:50]	<taaz>	manu-db: No, it isn't. It is not an IETF ground rule. W3C doesn't operate like that, I don't think IETF does either. Read the mission statement for IETF. Look across technologies, SMTP, SIP, there was not a notion where you need a great number of people doing something in the same technological way that you are proposing to write a standard. You need people attempting to do the thing you spec the solution for, but in no way does the technical solution have to be the way that it is being done today. To provide an example, there are many people doing payment on the web, there are many people exchanging digital goods over the web, but the specification to solve that doesn't need to be based on the way that is accomplished today. The specification can propose a ground-breaking/revolutionary way to address the problem, but in no way does it have to match the current state of the art. 
+[Fri 12:50]	<taaz>	manu-db: I do not agree that you need a bunch of people using OpenTransact to do decentralized payments. What you will discover is that people that implement OpenTransact will not do decentralized payments because it is a very hard problem to solve. Instead, they will focus on the centralized solution because that is the technology that they've been given. To provide another example - Microformats and RDFa came into existence because people were publishing all sorts of data on their pages but not marking it up in any particular way. Microformats and RDFa showed people how to do decentralized data publishing that was machine-readable... but it didn't follow the state of the art, which was screen scraping, it proposed a new technical solution.
+[Fri 12:50]	<taaz>	manu-db: The idea that you need to have people attempting to solve the problem in the same technical way that you're solving it - I don't believe that for a second.
 [Fri 12:50]	<pelleb>	+q
-[Fri 12:51]	<taaz>	jeffsayre: interested in group due to forward looking decentralized design for payments
-[Fri 12:51]	<taaz>	use "q+" to get on the queue :)
-[Fri 12:51]	<dln>	ok :)
-[Fri 12:52]	<taaz>	pelleb: decentralized community currencies are talking how to work together. many ways to do this.
+[Fri 12:51]	<taaz>	jeffsayre: I agree with your assertion, Manu. One of the reasons I was interested in the Web Payments group is that it is a future-looking project. There is social unrest, they're trying to figure out what the future of money will be. They're trying to figure out how we make the monetary system work for the 99% of us. I think soverign currencies may give rise to more decentralized systems, you already see alternative currencies and future of payments, future of money. All of this relies upon a decentralized solution. A social Web that is decentralized, coupled with a decentralized financial layer, is a much more socially focused and future-looking solution than any solution that attempts to dove-tail into the way things are currently done.
+[Fri 12:51]	<taaz>	jeffsayre: This is exactly why PaySwarm interested me - the future is a decentralized financial system and PaySwarm shows us how to accomplish this.
 [Fri 12:52]	<manu-db>	q+
 [Fri 12:52]	<voip-ps>	Added manu-db to the speaker queue: manu-db
 [Fri 12:53]	<manu-db>	q-
 [Fri 12:53]	<voip-ps>	Removed manu-db from the speaker queue: (empty)
-[Fri 12:53]	<taaz>	pelleb: all in agreement that decentralization is good.
-[Fri 12:53]	<taaz>	manu-db: will all want decentralized system. disagreement on how to get there.
-[Fri 12:54]	<taaz>	manu-db: opentransact is payment only and will have other specs on top to implement other features
-[Fri 12:56]	<dln>	aside: no, it will be TJ90
-[Fri 12:57]	<taaz>	manu-db: looked at payments only solution but didn't appear to scale.
+[Fri 12:53]	<taaz>	pelleb: I think we're all agreed that we want decentralization. OpenTransact only covers payments - that's it - that's by design. It uses other ways of identifying users, there are use cases about how you do different types of exchanges in OpenTransact. Delegated payments is one such use case. Most currencies are centralized, but some of them are community currencies. Currencies want to create links to each other - but that happens at the grassroots level. I think we can have an idea about how this should be done. Delegation - that's not in PaySwarm spec - but that should be a separate document. As an app developer, I don't have to understand the complexities in the other specs, I just want to do a payment, that's what the OpenTransact spec deals with. I think we're all in agreement that decentralization is good. 
+[Fri 12:53]	<taaz>	manu-db: Yes, we all want decentralization. This is good - when we look out to the horizon, we see the same place that we want to go. Decentralized payment system - that's great. What we're disagreeing about is how we get there. This is perfectly natural for a standardization process. Every standardization process has this sort of discussion in the beginning and it's a very useful/mandatory discussion to have.
+[Fri 12:54]	<taaz>	manu-db: This notion that OpenTransact is payment only and will have other specs on top to implement other features is concerning. We've been working on PaySwarm since 2004, first in music industry, then moved to financial industry when we failed in the music industry. We looked at a payments-only solution at first as well. We don't understand how it is going to scale into a decentralized system. When you have a broader scope, you start seeing the issues with focusing only on payments. The general concern is that when you define "payments only" you don't take into account the scalability problems because you don't have to pay anyone outside of your system.
+[Fri 12:55]	<taaz>	manu-db: The second point you made, Pelle, was on moving away from centralized currencies to alternative currencies. Digital Bazaar thinks that it is important to deal with both centralized currencies like the US Dollar and alternative currencies, like Bernal Bucks, Ven and BitCoin. For example, how many people use OpenTransact to exchange US Dollars? US Dollars are going to be the major currency used in PaySwarm - we're launching in the US and we need to prove the concept using real money, not alternative currencies... but we need to support both.
+[Fri 12:56]	<dln>	aside - no, it will be TJ90
 [Fri 12:58]	<jeffsayre>	+q
-[Fri 12:58]	<taaz>	manu-db: [discussing]
+[Fri 12:58]	<taaz>	manu-db: Your third point was that it's difficult to figure out what to standardize because there are so many competing ways to do something. However, that's exactly why a standard exists - to say that there is one single way to do something and interoperate. You do that so people don't have to implement it in a bunch of different ways. For example, if there were a Web payments standard, merchants wouldn't have to support Visa, Mastercard, Diner's Club, Google Checkout, Amazon Payments, and PayPal, they'd just support the online Web payments standard. That is not to say that it will happen overnight, but eventually, people move over to the standardized way of doing things. You standardize exactly because there are a hundred ways to do one thing - you don't wait for a solution to pop into existence. There are at least two reasons why you start standardizing - there are too many options, or no option exists.
 [Fri 12:58]	<manu-db>	q+
 [Fri 12:58]	<voip-ps>	Added manu-db to the speaker queue: manu-db
-[Fri 12:59]	<taaz>	jeffsayre: [spec comments]
-[Fri 13:00]	<taaz>	manu-db: digital bazaar has done poor job documenting payswarm features and specs.
-[Fri 13:01]	<pelleb>	http://www.opentransact.org/recipes/crowdfunding.html
-[Fri 13:01]	<taaz>	manu-db: new demo out soon, will try to build examples on top of that work
+[Fri 12:59]	<taaz>	jeffsayre: Yes, that's right. The standards process is showing people an alternate way or a new vision of how things can be. We identify the problem, we outline the opportunities and we connect those two with the standard. We need to be currency agnostic, but we do have to take the soverign currency into account. We need to lead people in a direction that we feel takes the current problems into account and promotes a solution. It doesn't have to be /the/ solution, but we need to put a stake in the ground while being forward-looking enough to understand where all of this is going.
+[Fri 13:00]	<taaz>	manu-db: Ok, we're at the end of the call - let's take this discussion and turn it into a couple of action points. It has become apparent as a part of this discussion that Digital Bazaar has done poor job of documenting PaySwarm features in the spec - we will correct that.
+[Fri 13:01]	<pelleb>	I'm also going to be adding more text to our recipes to show how to accomplish things with OpenTransact. Here is an example on crowdfunding: http://www.opentransact.org/recipes/crowdfunding.html
+[Fri 13:01]	<taaz>	manu-db: We're going to have a new demo out soon, we will try to build examples on top of that work. We'll do more documentation. We'll have implementations and demos of the technology working with the specification. Pelle, you're going to add recipes?
+[Fri 13:01]	<taaz>	pelleb: OpenTransact is using it's 'recipes' site to show examples. Recipe for escrow/reserves:
 [Fri 13:01]	<pelleb>	http://www.opentransact.org/recipes/reserves.html
-[Fri 13:01]	<taaz>	pelleb: opentransact is using it's 'recipes' site to show examples.
 [Fri 13:02]	<dln>	http://xmlns.com/foaf/spec/#term_tipjar one way to state how one receives payments
-[Fri 13:02]	<taaz>	pelleb: will set up a federated example
+[Fri 13:02]	<taaz>	pelleb: will set up a federated example as well
+[Fri 13:02]	<taaz>	manu-db: Ok, thanks for the great discussion today - this was incredibly helpful. Good to know that we all have the same goal in mind - there will be churn while we try to figure out how we get to where we want to go. Have a great weekend, we'll chat soon.
 [Fri 13:02]	<voip-ps>	<unknown> (SIP/99.117.84.89-00000075) has left the conference.
 [Fri 13:02]	<voip-ps>	Manu Sporny (SIP/6000-00000072) has left the conference.
 [Fri 13:02]	<voip-ps>	Pelle Braendgaard (SIP/10.0.1.8-00000074) has left the conference.
 [Fri 13:02]	<voip-ps>	<unknown> (IAX2/diamondcard-15878) has left the conference.
 [Fri 13:02]	|<--	jeffsayre has left freenode (Quit: Bye. Time to defrag my brain)
-[Fri 13:02]	<taaz>	manu-db: good to have this discussion. thanks!
+
