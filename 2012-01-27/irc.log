@@ -1,0 +1,41 @@
+[Fri 12:05]	<manu1>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2012Jan/0058.html
+[Fri 12:06]	<manu1>	scribe: Manu
+[Fri 12:06]	<manu1>	Manu: Any additions to the Agenda, before we start?
+[Fri 12:07]	-->|	dln (~davidnico@cpe-69-76-179-81.kc.res.rr.com) has joined #payswarm
+[Fri 12:07]	<manu1>	Jeff: Looked through the split - we have been discussion OT and OpenTransact.
+[Fri 12:07]	<manu1>	Jeff: At some point we need to hone in on that decision. I don't think we can accommodate everything.
+[Fri 12:07]	<manu1>	Manu: Yeah, there are more splits on the way - at some point, we have to pick a particular track and focus on that.
+[Fri 12:08]	<manu1>	Jeff: We need to pick a direction and go with it.
+[Fri 12:08]	<manu1>	Topic: PaySwarm Innotribe@Sibos
+[Fri 12:09]	<manu1>	Manu: We've been invited
+[Fri 12:11]	<manu1>	Manu: Invited to speak at two events.
+[Fri 12:12]	<manu1>	Topic: Updated PaySwarm Editors Draft
+[Fri 12:12]	<manu1>	http://payswarm.com/specs/ED/web-api/2012-01-16/
+[Fri 12:12]	<manu1>	Manu: updated editors drafts
+[Fri 12:13]	<manu1>	http://payswarm.com/specs/ED/web-api/2012-01-16/#the-transaction-process
+[Fri 12:15]	<manu1>	Manu: Are digital signatures difficult?
+[Fri 12:16]	<manu1>	Jeff: There is substantial value doing it this way - desirable approach.
+[Fri 12:17]	<manu1>	Jeff: Digital signaturs are used heavily in WebID... there was debate on the mailing list on security issues - what is the best way to handle security.
+[Fri 12:18]	<manu1>	Jeff: Months and months of debate... push back at Identity and Browser workshop - people that like OpenID and OAuth know of one way to do it... and WebID is harder to understand because of the digital signatures bit. It makes it harder to just jump in.
+[Fri 12:19]	<manu1>	Jeff: All this stuff is complex though - the way Web pages get sent back and forth... all fantastically complex.
+[Fri 12:20]	<manu1>	Jeff: There are certificates involved no matter what - whether you're in control is a different issue. If you are doing authentication - there are certificates involved.
+[Fri 12:21]	<manu1>	Jeff: You can authenticate w/o TLS - lots of earlier social web apps did that - they encrypted.
+[Fri 12:23]	<manu1>	Topic: The Decentralized Settlement Process
+[Fri 12:24]	<manu1>	http://payswarm.com/specs/ED/web-api/2012-01-16/#the-decentralized-settlement-process
+[Fri 12:28]	<manu1>	Lehn: Is this sort of how the system started a long time ago.
+[Fri 12:33]	<manu1>	Jeff: This really comes down to trust... people will trust some authorities and distrust others.
+[Fri 12:34]	<manu1>	Jeff: Just like any financial institution - you trust that banks have the money they say they have.
+[Fri 12:35]	<manu1>	Manu: Is there some place we should mandate this stuff?
+[Fri 12:35]	<manu1>	Lehn: It may not be practical to do so.
+[Fri 12:35]	<manu1>	Topic: The Data Portability and Authority Migration Algorithm
+[Fri 12:35]	<manu1>	http://payswarm.com/specs/ED/web-api/2012-01-16/#the-authority-migration-algorithm
+[Fri 12:37]	<manu1>	Manu: Data Portability is a big concern - we want to support it.
+[Fri 12:38]	<manu1>	Manu: Are we being too aggressive?
+[Fri 12:39]	<manu1>	Jeff: We are pushing for a decentralized, open standard for Web Payments - the system overall has to be decentralized. It's necessary. Will certain banks not want to become authorities? Yes... but will they still use it... possibly. This is playing in the Web space - this may not be that big of a turn-off to financial institutions.
+[Fri 12:40]	<manu1>	Jeff: Looking at Facebook, who is opposed to true data portability, would they like this - probably not. It's not beneficial to their corporate goals. We need to separate what's been going on globally - people trying to get more control in their lives - need to separate the needs of the few from the needs of the many.
+[Fri 12:43]	<manu1>	Topic: The Transaction Intents Process and Algorithm
+[Fri 12:44]	<manu1>	http://payswarm.com/specs/ED/web-api/2012-01-16/#the-transaction-intent-process
+[Fri 12:47]	<manu1>	Jeff: Can you freeze funds if you are the promisee?
+[Fri 12:49]	<manu1>	Jeff: Can we split this into, promised funds, and available funds.
+[Fri 12:49]	<manu1>	Jeff: Other thing you could do is get a full report from PaySwarm Authority for all promised funds. Weekly/Daily/Monthly report.
+[Fri 12:51]	<manu1>	Manu: We may want to spec out how to query for TransactionIntents.
