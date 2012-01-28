@@ -91,6 +91,19 @@
 '   margin-bottom: 14px;\n' +
 '}\n' +
 '\n' +
+'.header {\n' +
+'   margin-top: 0px;\n' +
+'   margin-bottom: 14px;\n' +
+'}\n' +
+'\n' +
+'ol {\n' +
+'   margin-bottom: 0em;\n' +
+'}\n' +
+'\n' +
+'li {\n' +
+'   margin-left: 1.5em;\n' +
+'   margin-bottom: 0em;\n' +
+'}\n' +
 '#content {\n' +
 '   margin-left: 15%;\n' +
 '   margin-right: 15%;\n' +
@@ -127,7 +140,7 @@
 '<body> \n' +
 ' \n' +
 '<div class="titlebar"> \n' +
-'   <h1>PaySwarm</h1> \n' +
+'   <h1 class="header">PaySwarm</h1> \n' +
 '</div> \n' +
 '\n' +
 '  <div id="content"> \n' +
@@ -139,7 +152,7 @@
    var htmlFooter = '       </div>\n' +
 '  </div>\n' +
 '\n' +
-'<div class="container vspacing onblack"> \n' +
+'<div class="container vspacing"> \n' +
 '  <div class="row"> \n' +
 '    <div class="threecol"> \n' +
 '      <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a> \n' +
