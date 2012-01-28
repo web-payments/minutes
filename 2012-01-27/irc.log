@@ -1,41 +1,96 @@
 [Fri 12:05]	<manu1>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2012Jan/0058.html
-[Fri 12:06]	<manu1>	scribe: Manu
+[Fri 12:06]	<manu1>	scribe: manu1
 [Fri 12:06]	<manu1>	Manu: Any additions to the Agenda, before we start?
+[Fri 12:06]	<manu1>	Manu: Since discussing this stuff with the OT folks, it became clear that we didn't have enough in the spec. So, we detailed the algorithms we're using in the current implementation in the spec, let's review those today.
+[Fri 12:06]	<manu1>	Manu: Transactions, decentralized settlement, data migration, transaction intents, and web keys have been split.
 [Fri 12:07]	-->|	dln (~davidnico@cpe-69-76-179-81.kc.res.rr.com) has joined #payswarm
-[Fri 12:07]	<manu1>	Jeff: Looked through the split - we have been discussion OT and OpenTransact.
+[Fri 12:07]	<manu1>	Jeff: Looked through the split - interesting. We have been discussing OpenTransact and PaySwarm.
 [Fri 12:07]	<manu1>	Jeff: At some point we need to hone in on that decision. I don't think we can accommodate everything.
-[Fri 12:07]	<manu1>	Manu: Yeah, there are more splits on the way - at some point, we have to pick a particular track and focus on that.
-[Fri 12:08]	<manu1>	Jeff: We need to pick a direction and go with it.
+[Fri 12:07]	<manu1>	Manu: Yeah, there are more splits on the way.
+[Fri 12:08]	<manu1>	Jeff: At some point, we have to pick a particular track and focus on that. We need to pick a direction and go with it.
+[Fri 12:08]	<manu1>	Manu: Yes, I agree. It was important to have the discussion, now we need to pick a direction.
 [Fri 12:08]	<manu1>	Topic: PaySwarm Innotribe@Sibos
-[Fri 12:09]	<manu1>	Manu: We've been invited
-[Fri 12:11]	<manu1>	Manu: Invited to speak at two events.
+[Fri 12:09]	<manu1>	Manu: Positive news - Peter Vander Auwera invited us to present PaySwarm at Innotribe @ Sibos in Osaka, Japan in October of this year. This is a great opportunity to get the standard in front of the world's financial sector.
+[Fri 12:11]	<manu1>	Manu: Sibos is the world's banking conference. Innotribe focuses on innovation in banking. Peter invites new payment technologies to come and speak. Last year they had Bitcoin, Bank Simple, etc. speak. Invited to speak at two events - a great opportunity for us.
+[Fri 12:11]	<manu1>	Manu: I asked Peter if he understood what PaySwarm does and he really had a very strong grasp of what we're going for - a universal payment standard for the Internet. He got it, it was nice to see someone in the financial sector really understand what we're trying to do here.
+[Fri 12:11]	<manu1>	Manu: We are going to be speaking at the Future of Money talk and a break-out session on payment APIs.
+[Fri 12:11]	<manu1>	Lehn: Who else is speaking there?
+[Fri 12:11]	<manu1>	Manu: 40-80 people, Bitcoin folks, Bank Simple folks, etc. It's very early days.
 [Fri 12:12]	<manu1>	Topic: Updated PaySwarm Editors Draft
 [Fri 12:12]	<manu1>	http://payswarm.com/specs/ED/web-api/2012-01-16/
-[Fri 12:12]	<manu1>	Manu: updated editors drafts
+[Fri 12:12]	<manu1>	Manu: The latest Editor's Draft for the PaySwarm Web API has been updated. The updates were directly influenced by the month-long conversation we've been having w/ the OpenTransact folks. The positive that came out of it was that it made us realize that we were focusing too much on implementation and not enough on specs and explanation of what we're doing here.
 [Fri 12:13]	<manu1>	http://payswarm.com/specs/ED/web-api/2012-01-16/#the-transaction-process
-[Fri 12:15]	<manu1>	Manu: Are digital signatures difficult?
-[Fri 12:16]	<manu1>	Jeff: There is substantial value doing it this way - desirable approach.
-[Fri 12:17]	<manu1>	Jeff: Digital signaturs are used heavily in WebID... there was debate on the mailing list on security issues - what is the best way to handle security.
+[Fri 12:13]	<manu1>	Manu: The biggest complaint was that the specification was too heavy weight, we didn't cover the basics first. So, we added documentation for the simpler mechanism into the spec - simple transactions. Basically, you take a JSON object, digitally sign it, and you post it to an authority transaction service and the payment is made. You know who it came from, the payment can be made in a decentralized way going from one authority to another. The transaction can happen in a disconnected way. It's just one object, you sign it, do a post - it covers a ton of our use cases.
+[Fri 12:15]	<manu1>	Manu: There is still this question of digital signatures floating out there. Jeff, do you feel that digital signatures are overkill? Is it too high of a barrier to entry?
+[Fri 12:16]	<manu1>	Jeff: I think digital signatures are fine. There is substantial value doing it this way - it is a desirable approach.
+[Fri 12:16]	<manu1>	Manu: Yeah, we feel the same way. OAuth and TLS are complicated to do implementations for, but that's why there are libraries and once there are libraries, the technology becomes much easier to use. The same for many of the APIs in the browser, very complicated, but the APIs make it easy for the non-expert to use. This stuff gets easier when you have demos out there, public domain licensed software - people can use that. 
+[Fri 12:16]	<manu1>	Manu: Did you guys get push-back on WebID and digital signatures?
+[Fri 12:17]	<manu1>	Jeff: Digital signatures are used heavily in WebID... there was debate on the mailing list on security issues - what is the best way to handle security.
 [Fri 12:18]	<manu1>	Jeff: Months and months of debate... push back at Identity and Browser workshop - people that like OpenID and OAuth know of one way to do it... and WebID is harder to understand because of the digital signatures bit. It makes it harder to just jump in.
-[Fri 12:19]	<manu1>	Jeff: All this stuff is complex though - the way Web pages get sent back and forth... all fantastically complex.
+[Fri 12:19]	<manu1>	Jeff: All this stuff is complex though - the way Web pages get sent back and forth... all fantastically complex. In the long run, WebID simplifies the process... but you really have to understand the internals more.
 [Fri 12:20]	<manu1>	Jeff: There are certificates involved no matter what - whether you're in control is a different issue. If you are doing authentication - there are certificates involved.
-[Fri 12:21]	<manu1>	Jeff: You can authenticate w/o TLS - lots of earlier social web apps did that - they encrypted.
+[Fri 12:20]	<manu1>	Manu: The danger here is that people see "digital signature" and get scared by it and end up using the "simpler" solution that doesn't use digital signatures. People may not grasp the benefits right away - decentralization, verification, etc.
+[Fri 12:21]	<manu1>	Manu: We also require TLS, just like OpenTransact for pieces of the spec. There are some things, like submitting a transaction, that you just don't want to run over an unencrypted connection.
+[Fri 12:21]	<manu1>	Jeff: This is about giving the everyday person controlling their software more control. You can authenticate w/o TLS - lots of earlier social web apps did that - they encrypted.
+[Fri 12:21]	<manu1>	Jeff: Yeah, encryption is important... early social web apps didn't have good security. It's important to really do a deep dive on this stuff.
+[Fri 12:21]	<manu1>	Manu: The other issue with TLS is cost, we can't require everybody to buy a $30/year security certificate to use this technology - and when stuff is decentralized, you have lots of people that don't have that sort of money to spend to just participate in sending and receiving money.
+[Fri 12:21]	<manu1>	Manu: Ok, so general position is - digital signatures can be scary to beginners, but most of that is mitigated by libraries - digital signatures bring too much to the table to ignore - they support a ton of use cases that we care about.
 [Fri 12:23]	<manu1>	Topic: The Decentralized Settlement Process
 [Fri 12:24]	<manu1>	http://payswarm.com/specs/ED/web-api/2012-01-16/#the-decentralized-settlement-process
-[Fri 12:28]	<manu1>	Lehn: Is this sort of how the system started a long time ago.
-[Fri 12:33]	<manu1>	Jeff: This really comes down to trust... people will trust some authorities and distrust others.
+[Fri 12:24]	<manu1>	Manu: It's important to point out that none of the core protocol for PaySwarm changed - we've been working on this problem for a long time, we had just not documented it. This is very different from not putting something in the spec by design as OpenTransact does. We didn't put it in the spec due to time limitations on our part.
+[Fri 12:24]	<manu1>	Manu: The decentralized settlement algorithm is /not/ a Nostro account - far more detailed in how it works, decentralized and automatic book keeping is used. So, the decentralized settlement algorithm works like this: when an authority detects that a payment must go between two authorities, the first authority notifies the second one that there will be an incoming transfer. There is an escrow transfer log. When you do a transaction, you could be paying thousands of people across hundreds of authorities. When you settle a transaction, it must be atomic. Decentralized settlement algorithm explains how it works. Decentralized settlement is a two-stage commit - first you say what you're getting ready to transfer, then once every authority acknowledges that, then you perform the transfer.
+[Fri 12:26]	<manu1>	Manu: This algorithm does require organizations to have legal agreements with one another, it is not a replacement for that. If money is moved from one authority to another authority - they will most likely hold their money at other banks - and when they hold their money at other banks, you have to do an ACH transfer to move the money.
+[Fri 12:27]	<manu1>	Jeff: Is this something that is in the license?
+[Fri 12:27]	<manu1>	Manu: No. If you run an authority and I run an authority - both of us have to agree that any payments across our systems will be settled. Lying about money that you don't have will result in legal consequences.
+[Fri 12:28]	<manu1>	Lehn: Is this sort of how the banking system started a long time ago before they had the central bank?
+[Fri 12:30]	<manu1>	Manu: Well, in short - yes. It's SWIFT that does all of this inter-bank transfer communication, but basically - all banks have to have legal agreements in place (and regulations) that state that they will not misrepresent transfers among themselves. This is how the banks operate today - it's just that PaySwarm is far more automated - books kept across the entire system is automated - no human must get involved unless something goes horribly wrong (mismatched bulk transfers between authorities). Other than that, the system is meant to be fully automated.
+[Fri 12:33]	<manu1>	Jeff: This really comes down to trust... authorities will trust most authorities but maybe not others. Customers will trust certain authorities.
 [Fri 12:34]	<manu1>	Jeff: Just like any financial institution - you trust that banks have the money they say they have.
-[Fri 12:35]	<manu1>	Manu: Is there some place we should mandate this stuff?
-[Fri 12:35]	<manu1>	Lehn: It may not be practical to do so.
+[Fri 12:35]	<manu1>	Manu: We hope to just get rid of ACH in the future. 
+[Fri 12:35]	<manu1>	Lehn: Well, timing is important - you can send money unless you have it.
+[Fri 12:35]	<manu1>	Manu: Actually, with ACH you can - depends on the settlement order. That is not to say that there aren't implementation concerns with timing and money. For example if you have something equivalent to a bank run on an authority. However, authorities can protect against that by delaying withdrawals by a certain number of days or preventing high-dollar withdrawals from happening too quickly. We could create a best practices document... is there some place you would like to see us mandate this stuff in the spec?
+[Fri 12:35]	<manu1>	Lehn: Some of this stuff may be policies that may happen in the authorities - we don't want the spec to assume that it is always instant. It may not be practical to do so.
 [Fri 12:35]	<manu1>	Topic: The Data Portability and Authority Migration Algorithm
 [Fri 12:35]	<manu1>	http://payswarm.com/specs/ED/web-api/2012-01-16/#the-authority-migration-algorithm
-[Fri 12:37]	<manu1>	Manu: Data Portability is a big concern - we want to support it.
-[Fri 12:38]	<manu1>	Manu: Are we being too aggressive?
-[Fri 12:39]	<manu1>	Jeff: We are pushing for a decentralized, open standard for Web Payments - the system overall has to be decentralized. It's necessary. Will certain banks not want to become authorities? Yes... but will they still use it... possibly. This is playing in the Web space - this may not be that big of a turn-off to financial institutions.
-[Fri 12:40]	<manu1>	Jeff: Looking at Facebook, who is opposed to true data portability, would they like this - probably not. It's not beneficial to their corporate goals. We need to separate what's been going on globally - people trying to get more control in their lives - need to separate the needs of the few from the needs of the many.
+[Fri 12:37]	<manu1>	Manu: Data Portability is a big concern. Vendor lock in is a big concern - this is something that the market cannot address. If you let the market address it, there are a ton of different incompatible formats. We want to spec data portability - moving all accounts, identities, all of it should be downloadable or transferrable to another authority. We want to support it - it's mandated in the spec. You are not conforming unless you implement data portability in PaySwarm.
+[Fri 12:38]	<manu1>	Manu: Are we being too aggressive? Is this going to far? Are we going to loose implementers because of this - people like banks?
+[Fri 12:39]	<manu1>	Jeff: We are pushing for a decentralized, open standard for Web Payments. The system overall has to be decentralized. This is necessary. Will certain banks not want to become authorities? Yes... but will they still use it... possibly. This is playing in the Web space - this may not be that big of a turn-off to financial institutions.
+[Fri 12:40]	<manu1>	Jeff: Looking at Facebook, who is opposed to true data portability, would they like this - probably not. It's not beneficial to their corporate goals - they're going to offer up their own payment solution that is beneficial to their corporate goals - not customer-centric. We need to separate what's been going on globally - people trying to get more control in their lives - need to separate the needs of the few from the needs of the many.
+[Fri 12:42]	<manu1>	Manu: We are going to split data portability out of the spec, but these are required to be implemented: Web Keys, Transactions, Commerce, Decentralized Settlement and Data Portability MUST be implemented in order to label yourself as a PaySwarm Authority. For portability to happen - you must be able to export public keys, identities, financial accounts and all transactions. This means that you can hope from authority to authority without issue... just like you can port a cellphone number, you should be able to port your entire financial history.
 [Fri 12:43]	<manu1>	Topic: The Transaction Intents Process and Algorithm
 [Fri 12:44]	<manu1>	http://payswarm.com/specs/ED/web-api/2012-01-16/#the-transaction-intent-process
-[Fri 12:47]	<manu1>	Jeff: Can you freeze funds if you are the promisee?
-[Fri 12:49]	<manu1>	Jeff: Can we split this into, promised funds, and available funds.
-[Fri 12:49]	<manu1>	Jeff: Other thing you could do is get a full report from PaySwarm Authority for all promised funds. Weekly/Daily/Monthly report.
-[Fri 12:51]	<manu1>	Manu: We may want to spec out how to query for TransactionIntents.
+[Fri 12:45]	<manu1>	Manu: This is the newest stuff we've been working on - support for crowd funding. A Transaction Intent is an intent to pay - kind of like an IOU. Kind of like Melvin's Web Credits proposal. His system is more decentralized because there is no authority - but his Web Credit could be submitted to an authority and the payment would be made at that point. Transaction intents are an intent to pay something based on some pre-set requirements.
+[Fri 12:45]	<manu1>	Manu: A promisor says "I will do X if I raise Y by Z date.". A promissee says "I will put A towards the goal of Y as long as the minimum amount is reached by Z date.". Transaction intents are stored on the promisor's authority. The authority collects transaction intents until it thinks it can collect the entire amount. When it thinks it can gather all of the intents, it goes out to all authorities and sees if all funds are available.
+[Fri 12:47]	<manu1>	Jeff: Can you freeze funds if you are the promisee? Can an authority notify the promissee's that they've promised a certain amount? Freeze the funds?
+[Fri 12:47]	<manu1>	Manu: So, you're saying can the promisor freeze the funds?
+[Fri 12:49]	<manu1>	Jeff: No, I'm asking can the promisee freeze the funds so they're guaranteed to pay the person when the authority goes to collect the funds? 
+[Fri 12:49]	<manu1>	Manu: Ah, so it's the reverse of that. 
+[Fri 12:49]	<manu1>	Jeff: Yeah, I want to make sure that if I have a number of payment intents that I've promised to pay, that I can pay them when the time comes.
+[Fri 12:49]	<manu1>	Manu: That's neat - no, we didn't think of it from that direction. There are a few approaches we discussed to ensure that the funds are available; 1) Tie your bank account or credit card to your authority so you are always auto-debited the amount in the transaction intent, 2) have the authority put a "safe to spend" amount and warn you if you go over that 
+[Fri 12:49]	<manu1>	Lehn: This is sort of a personal escrow.
+[Fri 12:49]	<manu1>	Manu: Yes, there is nothing in the spec now.
+[Fri 12:49]	<manu1>	Jeff: Yes, other thing you could do is get a full report from PaySwarm Authority for all promised funds. Weekly/Daily/Monthly report.
+[Fri 12:49]	<manu1>	Manu: I don't know if we need to spec this out - maybe have a best practices? Transaction Intents aren't required for an authority - side issue. I don't know what spec language we could actually write on this.
+[Fri 12:51]	<manu1>	Manu: I guess the spec language we could add would be to be how you could query. Show me all Transaction Intents on record. We could spec that out.
+[Fri 12:51]	<manu1>	Manu: If you have a way to query, then you have a way to export. The authority could do it anyway, but if it doesn't, you still have a way to get to your Transaction Intents. Yes, this is a good idea Jeff - we hadn't thought about it this way.
+[Fri 12:51]	<manu1>	Manu: We had thought about putting the funds on hold - but that sucks, because you may want to overcommit on funding knowing that only a small percentage will reach their limit. If you look at KickStarter's successful funding runs, slightly less than 50% make it.
+[Fri 12:51]	<manu1>	Manu: So, if something isn't funded - you may have to wait for 1-2 months. So, we thought it best to not put funds on hold like that.
+[Fri 12:53]	<manu1>	Manu: A Transaction Intent is a 3-stage commit process. The first stage queries to see if enough funds are available to meet the minimum amount, the second stage puts the funds on hold for a very short amount of time (maybe 5-10 minutes), the third stage collects the money across all authorities using the decentralized settlement algorithm.
+[Fri 12:53]	<manu1>	Manu: There is a chance that the promisor meets their goal ahead of time. If that happens, all Transaction Intents after the minimum is met automatically go through because the minimum was met.
+[Fri 12:54]	<manu1>	Lehn: Some transfers can fail, and that is okay?
+[Fri 12:55]	<manu1>	Manu: Yes, the transfers that fail don't end up with a completed contract for the thing that the promisor is promissing. So, if the promisor is trying to raise $10,000, and when they go to collect, only $9,999 can be withdrawn, then the authority waits for new Transaction Intents to come in and tries to collect all of the money all over again and keeps doing so until the minimum is met or the timeout passes.
+[Fri 12:55]	<manu1>	Lehn: Yeah, it's a problem when people don't have the money. With KickStarter, they sometimes don't pay out the minimum because some people didn't have the money.
+[Fri 12:55]	<manu1>	Manu: So, this algorithm is an improvement on the KickStarter algorithm - with this algorithm, you're guaranteed to at least get the minimum if enough people have the funds available. You won't end up in a situation where you don't meet the minimum.
+[Fri 12:57]	<manu1>	Lehn: There are still failure cases - like what happens if a credit card is charged on demand and the charge is reversed?
+[Fri 12:57]	<manu1>	Manu: Well, that is still the authority's responsibility - if it tells another authority that it has sent funds over, those funds are the sending authority's liability. Very bad things happen if it doesn't follow through on the funds transfer.
+[Fri 12:58]	<manu1>	Manu: While it could be that an authority may not have the money, it's of no consequence to the person that is receiving the money.
+[Fri 12:58]	<manu1>	Lehn: Yes, but what happens when the money isn't there? The entire series of Transaction Intents fail, right?
+[Fri 12:58]	<manu1>	Manu: Yes, but that just means that the authority tries again when the next Transaction Intent comes through.
+[Fri 12:58]	<manu1>	Lehn: Would that go beyond the expiration date?
+[Fri 12:58]	<manu1>	Manu: No, once the expiration date passes, the authority cannot try to process the Transaction Intent. If you don't hit the minimum by the expiration date, you don't get the money.
+[Fri 12:59]	<manu1>	Lehn: We could just run the transaction intents through if they're close enough?
+[Fri 1:00]	<manu1>	Manu: Yeah, but then you might as well have a donation button. You could also set your transaction intent low - if you want $40K, you could set it at $35K to make sure you get it if you get close.
+[Fri 1:00]	<manu1>	Lehn: Well, that has all sort of social consequences. We can discuss later.
+[Fri 1:01]	<manu1>	Manu: Does this cover the basic crowd-funding use case?
+[Fri 1:01]	<manu1>	Jeff: Yeah, it's a good basis.
+[Fri 1:02]	<manu1>	Manu: Ok, we're out of time today. We'll continue to split the specs and re-organize them.
