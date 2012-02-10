@@ -1,0 +1,77 @@
+[Fri 16:06]	<manu-db>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2012Feb/0009.html
+[Fri 16:08]	<pelleb>	I'm trying to call in but not having any luck.
+[Fri 16:09]	<manu-db>	Pelle - are you trying SIP or regular phone?
+[Fri 16:09]	<pelleb>	sip
+[Fri 16:09]	<pelleb>	I thought it was because of my isp, but I'm able to call the test lines
+[Fri 16:10]	<manu-db>	hmm, are you connecting directly or going through a SIP proxy? (like sip2sip?)
+[Fri 16:10]	<voip-ps>	<unknown> (IAX2/diamondcard-12402) has joined the conference.
+[Fri 16:10]	<voip-ps>	<unknown> (IAX2/diamondcard-12402) has left the conference.
+[Fri 16:10]	<pelleb>	I'm using Blink Lite
+[Fri 16:10]	<taaz>	regular phone worked for me
+[Fri 16:10]	<pelleb>	I'll try calling in with skype
+[Fri 16:11]	<voip-ps>	<unknown> (IAX2/diamondcard-12921) has joined the conference.
+[Fri 16:12]	<manu-db>	scribe: taaz
+[Fri 16:13]	<taaz>	manu-db: Standardization updates and spec split on the agenda today.
+[Fri 16:14]	<manu-db>	Topic: JSON-LD Standardization Updates
+[Fri 16:14]	<taaz>	manu-db: Potential call time change. 4pm EST friday? 4pm other days? Will do a poll.
+[Fri 16:16]	<taaz>	manu-db: talking with w3c about standardization. may move to rdf wg.
+[Fri 16:16]	<manu-db>	manu-db: RDF WG may pick up work for JSON-LD... been working on it for some time... maybe in next 4-6 months we will start official standardization on it.
+[Fri 16:17]	<manu-db>	Topic: Linked Data and Payment Technologies
+[Fri 16:17]	<taaz>	manu-db: David Nicol sent some questions to the mailing lists. Asked if or how linked data should be a part of these standards.
+[Fri 16:18]	<taaz>	manu-db: issue with the use of JSON-LD in payswarm
+[Fri 16:18]	<taaz>	manu-db: wants more documentation about why linked data and IRIs are needed in a payment standard
+[Fri 16:19]	<manu-db>	Pelle: Not from the aspect of using IRIs as identifiers... it is pretty accepted as a best practice for REST stuff.
+[Fri 16:19]	<taaz>	manu-db: pelle, have you had any issues with use of linked data in OpenTranact?
+[Fri 16:20]	<manu-db>	Pelle: Dave Nicols largest concern is that it can be hard to understand what is in a message - it can be derefrenced in many different ways - this is what I understood - it could be dangerous with novice programmers.
+[Fri 16:21]	<manu-db>	Pelle: In the XML digital signatures standard - huge standard designed to do everything - novice programmer would think that XMl document is the signature - they would pass the document in and the library would say the signature was okay.
+[Fri 16:21]	<manu-db>	Pelle: Except, the signature wasn't okay - big security risk.
+[Fri 16:21]	<manu-db>	Pelle: You could imagine that there could be things referenced elsewhere and a novice programmer would use regular JSON library to "verify" the document.
+[Fri 16:22]	<manu-db>	Pelle: It's a legitimate security issue - bad implementations.
+[Fri 16:22]	<manu-db>	Pelle: There are a lot of the language of Linked Data and RDF that makes many average developers switch off.
+[Fri 16:22]	<manu-db>	Manu: Yes, it's certainly an issue.
+[Fri 16:23]	<manu-db>	Pelle: All of a sudden you can't understand everything in the document - they're all aesthetic concerns.
+[Fri 16:23]	* manu-db	Pelle - we lost your audio.
+[Fri 16:23]	<voip-ps>	<unknown> (IAX2/diamondcard-12921) has left the conference.
+[Fri 16:23]	* manu-db	and we lost your connection. :(
+[Fri 16:23]	<voip-ps>	<unknown> (IAX2/diamondcard-5420) has joined the conference.
+[Fri 16:24]	-->|	pelleb_ (~pelleb@201-246-81-53.baf.movistar.cl) has joined #payswarm
+[Fri 16:25]	<manu-db>	Pelle: The normal workflow for Ruby and JavaScript is that when you parse JSON, the fields become symbols - having namespace or @signs in there make it weird for a Ruby programmer.
+[Fri 16:25]	<manu-db>	Pelle: Dot-notation is used more than dictionary notation.
+[Fri 16:25]	<manu-db>	taaz: Yes, we've run into that issue as well.
+[Fri 16:26]	|<--	pelleb has left freenode (Ping timeout: 240 seconds)
+[Fri 16:30]	<manu-db>	Manu: Maybe we need to explain Linked Data a bit better.
+[Fri 16:31]	<manu-db>	Pelle: Some suggestions - for example, rdfs:comment - com:amount, com: currency - I don't think you need to specify the namespace.
+[Fri 16:31]	<manu-db>	Pelle: I think there is a middle-way - of course use URIs/IRIs - URL / URI - people don't know what an IRI is (culturally difficult)
+[Fri 16:32]	<manu-db>	Manu: Yes, Internationalized languages was a big concern at W3C - UTF-8 came out as a result, IRI came out as a result.
+[Fri 16:32]	<manu-db>	Pelle: I think we should use URL - colloquial.
+[Fri 16:33]	<manu-db>	Pelle: Part of the whole Linked Data movement is to have strong definitions - everyday speech, it confuses people.
+[Fri 16:33]	<manu-db>	Pelle: Going back to receipts - transfers / receipts - yes, use references - you could have an object encapsulated, right?
+[Fri 16:35]	<taaz>	processors might need to deref the context
+[Fri 16:35]	<manu-db>	Pelle: That's where there may be a slight danger, here. We could have JSON-LD that is dereferenced.
+[Fri 16:36]	<manu-db>	Manu: We should narrow the envelope of attack.
+[Fri 16:36]	<manu-db>	Pelle: Most of functionality should be useful w/o JSON-LD library.
+[Fri 16:41]	<manu-db>	Manu: Maybe the solution to this is to use colloquial explanations when writing blog posts and tutorials and use the technically correct term in the spec.
+[Fri 16:42]	<manu-db>	Pelle: Yes, we should use colloquial terms when communicating to Web developers, use specific terms in spec.
+[Fri 16:43]	<manu-db>	Pelle: We should have a bit in the spec that outlines briefly what an IRI is, for beginner readers.
+[Fri 16:43]	<manu-db>	Topic: Web Payments 1.0
+[Fri 16:44]	<taaz>	manu-db: Over last two weeks took Pelle's comments and split the spec up.
+[Fri 16:44]	<taaz>	manu-db: Spec split into four major components.
+[Fri 16:45]	<taaz>	manu-db: Web Key spec
+[Fri 16:45]	<taaz>	manu-db: Web Payments with transactions and distributed settlement algorithm
+[Fri 16:45]	<taaz>	manu-db: Web Commerce spec
+[Fri 16:46]	<taaz>	manu-db: Payments spec
+[Fri 16:46]	<taaz>	manu-db: built on top of each other. can be developed and standardized on their own.
+[Fri 16:47]	<taaz>	pelleb: congrats on the split
+[Fri 16:48]	<taaz>	manu-db: thanks for arguing for that change
+[Fri 16:48]	<manu-db>	http://payswarm.com/specs/ED/web-payments/2012-01-30/
+[Fri 16:51]	<manu-db>	Pelle: I think eventually, Decentralized Settlement would make more sense in a separate specification. It's an important aspect, there are a lot of different ways it can be done.
+[Fri 16:56]	<manu-db>	Pelle: My main two objections to having the decentralized settlement algorithm in there: 1) There has to be some trust relationship between authorities (this is really important - it's a complicated issue)
+[Fri 16:56]	<manu-db>	Pelle: I think Melvin's Web Credits shows how to build a Web of Trust, good start to solving this issue.
+[Fri 16:57]	<manu-db>	Pelle: 2) It limits us to national currencies or one or two alternative currencies.
+[Fri 16:57]	<manu-db>	Pelle: For example - w/ OpenTransact - you could use it to transfer Domains, you could use it for Shares, you could use it for non-traditional money. It could be a local community currency - it wouldn't make any sense to have a decentralized settlement process.
+[Fri 16:58]	<manu-db>	Pelle: So, for example - Coconut Grove Currency - whole idea is to be local.
+[Fri 17:02]	<manu-db>	Pelle: If you require Decentralized Settlement, it limits it because (I understand the reasons) - then we need to make that a separate ...
+[Fri 17:03]	<manu-db>	Pelle: Are you married to "source" and "destination"?
+[Fri 17:03]	<manu-db>	Manu: no, not really.
+[Fri 17:03]	<manu-db>	Pelle: What about "to" and "from"? Make it more human.
+[Fri 17:04]	<manu-db>	Pelle: We could create some level of compatibility between Web Payments and OpenTransact.
