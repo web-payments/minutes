@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+      class="wf-adelle1adelle2-n6-active wf-active"> 
+ 
+<head> 
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+  <title>PaySwarm - Teleconferences</title> 
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ 
+  <link rel="stylesheet" href="../../css/1140.css" type="text/css" media="screen" /> 
+  <!--[if lte IE 9]>
+  <link rel="stylesheet" href="../css/ie.css" type="text/css" media="screen" />
+  <![endif]--> 
+  <link rel="stylesheet" href="../../css/typeimg.css" type="text/css" media="screen" /> 
+  <link rel="stylesheet" href="../../css/smallerscreen.css" media="only screen and (max-width: 1023px)" /> 
+  <link rel="stylesheet" href="../../css/mobile.css" media="handheld, only screen and (max-width: 767px)" /> 
+  <link rel="stylesheet" href="../../css/layout.css" type="text/css" media="screen" /> 
+  <link rel="shortcut icon" type="image/png" href="../../images/payswarm-icon.png" /> 
+  
+<style type="text/css">
+h1 {
+   margin-top: 24px;
+   margin-bottom: 14px;
+}
+
+.header {
+   margin-top: 0px;
+   margin-bottom: 14px;
+}
+
+ol {
+   margin-bottom: 0em;
+}
+
+li {
+   margin-left: 1.5em;
+   margin-bottom: 0em;
+}
+#content {
+   margin-left: 15%;
+   margin-right: 15%;
+}
+
+.summary {
+   margin-left: 10%
+   margin-right: 10%
+}
+
+.name {
+   font-weight: bold;
+}
+
+.information {
+   font-style: italic;
+}  
+
+.comment-continuation {
+   margin-left: 2em;
+}
+
+dt {
+   font-style: oblique;
+}
+
+dd {
+   margin-left: 20px;
+}
+
+  </style>
+  
+</head> 
+<body> 
+ 
+<div class="titlebar"> 
+   <h1 class="header">PaySwarm</h1> 
+</div> 
+
+  <div id="content"> 
+ 
+  <div class="row"> 
+    <div class="twelvecol last"> 
+
+<h1>Web Payments Community Group Telecon</h1>
+<h2>Minutes for 2012-02-10</h2>
+<div class="summary">
+<dl>
+<dt>Agenda</dt><dd><a href="http://lists.w3.org/Archives/Public/public-webpayments/2012Feb/0009.html">http://lists.w3.org/Archives/Public/public-webpayments/2012Feb/0009.html</a></dd>
+<dt>Topics</dt><dd><ol><li><a href="#topic-1">JSON-LD Standardization Updates</a><li><a href="#topic-2">Linked Data and Payment Technologies</a><li><a href="#topic-3">Web Payments 1.0</a></ol></dd><dt>Facilitator</dt><dd>Manu Sporny</dd>
+<dt>Scribe</dt><dd>David I. Lehn, Manu Sporny</dd>
+<dt>Present</dt><dd>David I. Lehn, Manu Sporny, Pelle Braendgaard</dd>
+<dt>Audio Log</dt><dd><div><a href="audio.ogg">audio.ogg</a></div>
+<div><audio controls="controls" preload="none">
+<source src="audio.ogg" type="audio/ogg" />Warning: Your browser does not support the HTML5 audio element, please upgrade.</div></dd>
+<div class="information">David I. Lehn is scribing.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  JSON-LD Standardization updates and spec split on the agenda today. Trying to figure out focus for next few months. Any changes or updates?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Potential call time change? 4pm EST Friday? 4pm other days? I'll setup a poll.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  12pm would be best for me.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We'll put up a poll and see what times works for everyone.</div>
+<h1 id="topic-1" class="topic">Topic: JSON-LD Standardization Updates</h1>
+<div class="comment"><span class="name">Manu Sporny</span>:  Talking with w3c about standardization. Work on JSON-LD started 2 years ago, built it for PaySwarm. Building it in Linked JSON Commuity Group. RDF WG has JSON for RDF in its charter. JSON-LD can be transformed to RDF, but it's primarily meant for Web developers.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  RDF WG may pick up work for JSON-LD... it is getting stable enough for standardization, maybe in next 4-6 months we will start official standardization on it. [scribe assist by Manu Sporny]</div>
+<h1 id="topic-2" class="topic">Topic: Linked Data and Payment Technologies</h1>
+<div class="comment"><span class="name">Manu Sporny</span>:  David Nicol sent some questions to the mailing lists. Asked if or how linked data should be a part of these standards. How does Linked Data work for payment technologies?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  David had an issue with the use of JSON-LD in payswarm... but not clear exactly what his issue was.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We may want more documentation about why linked data and IRIs are needed in a payment standard. Melvin Carvalho, Web Credits, has been having same issues. We should write something up explaining why Linked Data is used in payment tech. Pelle, any thoughts on this?</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  No push back on the aspect of using IRIs as identifiers... it is pretty accepted as a best practice for REST stuff. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Pelle, have you had any issues with use of linked data in OpenTranact?</div>
+<div class="information">Manu Sporny is scribing.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  Dave Nicols largest concern is that it can be hard to understand what is in a message - it can be derefrenced in many different ways - this is what I understood - it could be dangerous with novice programmers.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  In the XML digital signatures standard - huge standard designed to do everything - novice programmer would think that XML document is the signature - they would pass the document in and the library would say the signature was okay.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  Except, the signature wasn't okay - big security risk.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  You could imagine that there could be things referenced elsewhere and a novice programmer would use regular JSON library to "verify" the document.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  It's a legitimate security issue - bad implementations.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  There are a lot of the language of Linked Data and RDF that makes many average developers switch off.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Yes, it's certainly an issue.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  All of a sudden you can't understand everything in the document - they're all aesthetic concerns.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  The normal workflow for Ruby and JavaScript is that when you parse JSON, the fields become symbols - having namespace or @ signs in there make it weird for a Ruby programmer.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  Dot-notation is used more than dictionary notation.</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  Yes, we've run into that issue as well. The dot-notation one - there are issues.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  I think David Nicol's security concern is a bigger issue.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Yeah, we've tried very hard to try to make JSON-LD simple... avoid the nasty Semantic Web terminology for the most part. Unfortunately, this is lost on people that look at the JSON-LD spec for the first time. It's a balancing act - difficult to find something that wouldn't conflict w/ existing JSON, would merge with it easily, but also have something simple and expressive. I think we need to explain Linked Data a bit better.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  It's difficult to take a novice developer from JSON to JSON-LD... in the end, our hope is that the data structures will look very familiar to JSON developers. Take colons out of the names? Instead of 'foaf:homepage', we use 'homepage'. That was your preference, right Pelle? The difficult part in the Web Commerce spec - decentralized assets/listings - difficult to solve the problem w/o using Linked Data. We tried to solve the problem w/ regular JSON - it was a mess. We speak from experience - we tried regular JSON... it was a mess. David Nicol's issue was mostly with messaging - "show me why Linked Data is beneficial". Maybe we start at URLs and go into JSON-LD aspect of it.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  Some suggestions - for example, rdfs:comment - com:amount, com:currency - I don't think you need to specify the namespace. </div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  I think there is a middle-way - of course use URIs/IRIs - URL / URI - people don't know what an IRI is (culturally difficult)</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Yes, Internationalized languages was a big concern at W3C - UTF-8 came out as a result, IRI came out as a result.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  I think we should use URL - it's colloquial... when we explain it to people. Use IRI in the spec.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  Part of the whole Linked Data movement is to have strong definitions. In everyday speech, technical preciseness confuses people.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  Going back to receipts - transfers / receipts - yes, use references - you could have an object encapsulated, right? Isn't it a security risk to have to go out and derefernce an IRI?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Oh, right - we have tried to write the application so that dereferencing rarely ever needs to happen.</div>
+<div class="comment"><span class="name">David I. Lehn</span>: Processors might need to dereference the context.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Yes, but in most cases, they won't becaue the context will be hard coded or cached. It is a security risk... but a manageable one (look at Web browsers - they have to dereference stuff all the time).</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  That's where there may be a slight danger, here. We could have JSON-LD that is dereferenced. Novice programmers may have issues with all of this... using libraries without understanding everything that is going on. A false sense of security. We should protect against that.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Yes, I agree - security issues we need to look out for. Addressing each is going to be slightly different. We should narrow the envelope of attack.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  Most of functionality should be useful w/o JSON-LD library. You should be able to use just regular JSON.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  The Authorities are the ones that have to check the JSON-LD objects. The digital signatures will be able to be handled via JSON-LD libraries... but I think those libraries will be required for this type of system. Same argument for OAuth - use the libraries, don't try to roll your own. This isn't a simple problem - it's not going to be easy to address.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  The security aspect of this is not going to be easy. I'll try to look at what David Nicol is saying - we'll try to update the spec language to give a gentler introduction to Linked Data. Big mistake of Linked Data is not making the concepts very accessible to people.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Maybe the solution to this is to use colloquial explanations when writing blog posts and tutorials and use the technically correct term in the spec. Writing specs is different - we have to use technically correct definition because they are W3C specs... so, we will have to use IRI there... URL when discussing w/ regular web developer folks.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  Yes, we should use colloquial terms when communicating to Web developers, use specific terms in spec.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  We should have a bit in the spec that outlines briefly what an IRI is, for beginner readers.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We've tried to do that in the spec - we go into terminology fairly deeply - we should do the same for the PaySwarm specs.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Anything else on this topic before we move on?</div>
+<h1 id="topic-3" class="topic">Topic: Web Payments 1.0</h1>
+<div class="information">David I. Lehn is scribing.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Over last two weeks we took Pelle's criticisms to heart and split the spec up into multiple documents.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Spec split into four major components, along the lines that Pelle outlined. Didn't think spec split was going to lead to as many arguments as it did.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Web Keys 1.0 - public key infrastructure for the Web.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Web Payments 1.0 - with basic transaction support, decentralized settlement algorithm, and data portability.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Web Commerce 1.0 - how to sell digital content on the web - assets, listings, contracts, receipts, etc.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Payment Intents 1.0 - how to do crowd-funding, etc.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  The specs are built on top of each other. They can be developed and standardized on their own timeframes - Web Keys, Web Payments lead... Web Commerce next... then Payment Intents.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  Congratulations on the split, it is the right thing to do.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Thank you. I think we started out with fairly rocky arguments - glad you stuck it out Pelle and kept fighting for it. I think we're all better off for it. I hope it's a clear sign that we do listen and want what's best for the Web, payments and these specs. Thanks for arguing for that change... I don't think we would have made the change this soon had you not argued as strongly as you did.</div>
+<div class="comment"><span class="name">Manu Sporny</span>: The Web Payments 1.0 spec: <a href="http://payswarm.com/specs/ED/web-payments/2012-01-30/">http://payswarm.com/specs/ED/web-payments/2012-01-30/</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Section 4.2 specifies how Transactions happen - basic transfer of money from one place to the next. You take a JSON transaction and HTTP POST it to a transaction endpoint to move money. Pretty simple and straight forward. The decentralized settlement process is also there - if source and destination account exist on different authorities - how do you make sure electronic bookkeeping stays in sync. This is about ensuring that the decentralized system does not require human intervention.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  How do you make the transaction atomic between decentralized systems. The algorithm has to be resistant to failure - has to be atomic. The algorithm outlined is a decentralized settlement algorithm. Any questions?</div>
+<div class="information">Manu Sporny is scribing.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  I think eventually, Decentralized Settlement would make more sense in a separate specification. It's an important aspect, there are a lot of different ways it can be done. Does PaySwarm require decentralized settlement for the base level spec?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Right now, yes, decentralized settlement is required. The concern is that a large payment processor would implement the spec such that they don't interoperate with other payment providers. Counter-argument is that they wouldn't implement PaySwarm if they didn't want to interoperate. The counter-counter argument to that is that if PaySwarm is successful, implementers would only implement things that would benefit them and not the parts that would create competition for them. By and large, many corporations believe that interoperability in their core business leads to stronger competition and corporations don't like that. They tend to favor monopolies rather than even playing fields. The short answer is: Yes, decentralized settlement is required. We may end up being out-voted at W3C - Google, Amazon, PayPal may feel that they don't want decentralized settlement in there. Make sense?</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  My main two objections to having the decentralized settlement algorithm in there: 1) There has to be some trust relationship between authorities (this is really important - it's a complicated issue)</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  I think Melvin's Web Credits shows how to build a Web of Trust, good start to solving this issue. However, that is a separate issue to doing just a simple payment. This is why we're indifferent to the types of assets we're transferring in OpenTransact. It limits us to national currencies or one or two alternative currencies - there has to be a trust infrastructure for each alternative currency.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  So, 2) It limits us to national currencies or one or two alternative currencies.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  For example - w/ OpenTransact - you could use it to transfer Domains, you could use it for Shares, you could use it for non-traditional money. It could be a local community currency - it wouldn't make any sense to have a decentralized settlement process.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  So, for example - Coconut Grove Currency - whole idea is to be local.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  If you require Decentralized Settlement, it limits it because (I understand the reasons - we don't want a PayPal to just sit and operate as an island) - then we need to make that a separate... have people opt-in.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Not enough language in the spec to get this right now - we do support alternative currencies - you can use any ISO currency code, or you can use an IRI as the currency. If you use an IRI, that IRI can mint new units of currency. If one Authority wants to use the IRI currency, the other Authority doesn't have to accept it. The decentralized algorithm doesn't always have to succeed. You would expect it to always succeed for USD, Euro, Yuan, etc. However, you wouldn't always expect it to work for alternative currencies. Maybe it /would/ work for alternative currencies... maybe local currencies stay local if they have a flag. What I'm saying is that there is no requirement that every authority has to accept every currency. You're right - there are some currencies where it doesn't make sense for it to be decentralized.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We're out of time for today. I'll send out a link to a poll to decide on a time. We'll try to clean up language in Web Keys and Web Payments specs. Any other comments before we get off of the phone?</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  One quick comment - are you really married to the "source" and "destination" parameter names?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We like them, but not married to them. Everything is fairly malleable during the demo period, once we launch a commercial system, we would really not like to change those. One of the nice things about JSON-LD is that you don't always have to use 'source' and 'destination', you could use 'to' and 'from'.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  What about "to" and "from"? Make it more human. It's shorter. Let's try to keep these things simple. For example: memo vs. note. We should try to map between OpenTransact and PaySwarm.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  We could create some level of compatibility between Web Payments and OpenTransact.</div>
+       </div>
+  </div>
+
+<div class="container vspacing"> 
+  <div class="row"> 
+    <div class="threecol"> 
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a> 
+    </div> 
+    <div class="ninecol last"> 
+      <p>&copy; 2010-2011 Digital Bazaar, Inc. 
+Website CSS created by <a href="http://cssgrid.net/">@andytlr</a> 
+and is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/au/"> 
+Creative Commons Attribution-ShareAlike 3.0 Australia License</a>. All other
+website content is licensed under a
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"> 
+Creative Commons Attribution-ShareAlike 3.0 License</a>
+</p> 
+    </div> 
+  </div> 
+</div> 
+ 
+<script type="text/javascript"> 
+ 
+  var _gaq = _gaq || [];
+  _gaq.push(["_setAccount", "UA-1539674-7"]);
+  _gaq.push(["_trackPageview"]);
+
+  (function() {
+    var ga = document.createElement("script"); ga.type = "text/javascript"; ga.async = true;
+    ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";
+    (document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]).appendChild(ga);
+  })();
+ 
+</script>
+
+</body>
+</html>
