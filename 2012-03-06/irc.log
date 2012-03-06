@@ -1,0 +1,178 @@
+[Tue 14:08]	<manu-db>	Agenda: http://VOCABULARY_DISCUSSION/
+[Tue 14:08]	<manu-db>	scribe: dlongley
+[Tue 14:08]	<dlongley>	manu: Longley, Lehn, on the call, Jeff not sure, Pelle not present, we're going to cover some vocab issues today instead of the original agenda.
+[Tue 14:08]	<manu-db>	We need to discuss the following vocabularies:
+[Tue 14:08]	<manu-db>	http://payswarm.com/vocabs/security 
+[Tue 14:08]	<manu-db>	http://payswarm.com/vocabs/commerce 
+[Tue 14:08]	<manu-db>	http://payswarm.com/vocabs/creditcard 
+[Tue 14:08]	<manu-db>	http://payswarm.com/vocabs/payswarm
+[Tue 14:08]	<dlongley>	manu: The first set of vocabs we need to discuss are in IRC (security, commerce, credit card, payswarm).
+[Tue 14:09]	<dlongley>	manu: These are all tied together in PaySwarm, making up the spec. There's also the web keys vocab that has some overlap with security.
+[Tue 14:09]	<manu-db>	Topic: Security Vocabulary
+[Tue 14:09]	<dlongley>	manu: We're going to discuss the security vocab to discuss what needs to be changed/modified.
+[Tue 14:09]	<manu-db>	http://payswarm.com/vocabs/security
+[Tue 14:10]	<dlongley>	manu: Used to be called the signature vocab, we kept changing it a bit because we have needed to add cryptography, etc., so it is more appropriately named "security" because the scope is wider.
+[Tue 14:10]	<dlongley>	manu: We have classes for signatures, keys, etc.
+[Tue 14:10]	<dlongley>	manu: Also for encrypted messages.
+[Tue 14:10]	<dlongley>	manu: One change we need to discuss is how the security vocab and the web keys spec will work together.
+[Tue 14:10]	<manu-db>	http://payswarm.com/specs/source/web-keys/
+[Tue 14:11]	<taaz>	(btw, the source security doc has fancier colorized text, not sure why that isn't in the main one)
+[Tue 14:11]	<dlongley>	manu: The web keys spec is different in that it talks more about web-based PKI, whereas the security vocab deals with the specifics of the objects used in cryptography and signatures, etc.
+[Tue 14:12]	<manu-db>	dlongley: From what I recall, there are a few minor property naming issues - we were mixing security terms with vocabularies like Dublin Core.
+[Tue 14:12]	<manu-db>	dlongley: With respect to conflict between security and Web Keys - they are separate concerns - the security vocabulary defines terms that the webkey spec uses. The webkey spec defines how the Web PKI will work.
+[Tue 14:13]	<manu-db>	configuration service - A Web service that is used to publish the public Web service end-points and other public configuration information for a key listing service. A key listing service must publish this service at a top-level IRI named/.well-known/linked- data-services. The document must be available in JSON-LD compacted form and must include the http://purl.org/web-keys/v1 JSON-LD context. The following key must be present in the published document: wkey:publicKeyService.
+[Tue 14:13]	<dlongley>	manu: The web key spec talks about publishing services that help you configure clients (like the above service).
+[Tue 14:14]	<dlongley>	manu: Therefore, I was thinking that's why we need two different vocabs
+[Tue 14:14]	-->|	jeffsayre (~jeffsayre@adsl-70-224-42-156.dsl.sbndin.ameritech.net) has joined #payswarm
+[Tue 14:15]	<manu-db>	dlongley: If there is nothing else that goes in the Web Key vocabulary, then we're fine putting that in the security vocabulary. We should wait on this, no need to make a decision yet.
+[Tue 14:15]	<manu-db>	Topic: Specifying Key Ownership
+[Tue 14:15]	<manu-db>	Another is is stuff like this: "ps:owner": "https://payswarm.example.com/i/bob",
+[Tue 14:15]	<voip-ps>	<unknown> (IAX2/diamondcard-6258) has joined the conference.
+[Tue 14:16]	<jeffsayre>	voip: 6258 is me
+[Tue 14:16]	<voip-ps>	jeffsayre is now associated with IAX2/diamondcard-6258.
+[Tue 14:16]	<dlongley>	manu: Assuming payswarm doesn't exist at all, ps:owner doesn't make sense in the security vocab so it doesn't seem like it belongs there.
+[Tue 14:16]	<dlongley>	manu: You could claim that ownership is a security concern so it should be in there?
+[Tue 14:17]	<manu-db>	dlongley: I think we'd be expanding the scope if we put ownership terms in the security vocabulary. I think people may find it odd to reference a security vocabulary to claim ownership over a Web resource.
+[Tue 14:18]	<manu-db>	http://payswarm.com/vocabs/security#Key
+[Tue 14:18]	<dlongley>	manu: So, the question is, we have a term "ps:owner" that specifies the owner of a public key. Which spec should that be part of?
+[Tue 14:19]	<dlongley>	manu: You came across an ownership issue in the webid spec also?
+[Tue 14:19]	<dlongley>	jeff: yes we did.
+[Tue 14:19]	<dlongley>	manu: Do you remember which term you used for it?
+[Tue 14:19]	<dlongley>	jeff: I'd have to go back and dig through notes, it's been a while.
+[Tue 14:20]	<dlongley>	manu: This doesn't belong in the payswarm spec because it's too specific, and it doesn't belong in the security vocab.
+[Tue 14:20]	<dlongley>	manu: There isn't a general ownership vocab for the web.
+[Tue 14:20]	<dlongley>	jeff: it's sort of a privacy issue, right?
+[Tue 14:20]	<dlongley>	jeff: identity, privacy and part of security, etc, they are all similar ideas.
+[Tue 14:21]	<dlongley>	jeff: there needs to be some vocab term for owner, whether its in the security vocab is a different issue.
+[Tue 14:21]	<dlongley>	manu: yes, we agree, but where does it go?
+[Tue 14:21]	<dlongley>	manu: Should we create a privacy vocab?
+[Tue 14:21]	<taaz>	q+
+[Tue 14:21]	<voip-ps>	Added taaz to the speaker queue: taaz
+[Tue 14:21]	<dlongley>	manu: Larger companies are ignoring privacy/do not link/do not track/etc there's a general need for this.
+[Tue 14:22]	<dlongley>	jeff: it's hard to control your content if you don't have a stake in ownership, so it is in a sense a privacy issue, more so than security.
+[Tue 14:22]	<dlongley>	jeff: from an individual stand point, an asset that is not security claimed is a security threat to your personal ownership, not necessarily a big threat, if there are mechanisms to prevent hijacking.
+[Tue 14:23]	<dlongley>	lehn: i wonder if ownership is explicit in the semantic web ... or is it more likely that you just have your identity resource point off somewhere else and point at your public key? you don't have the relationship going the other direction?
+[Tue 14:23]	<dlongley>	lehn: maybe we only need a forward relationship and not a reverse one.
+[Tue 14:24]	<dlongley>	manu: if you go to a public key url it has to be able to say who the owner of the key is.
+[Tue 14:24]	<manu-db>	ack taaz
+[Tue 14:24]	<voip-ps>	taaz has the floor. The speaker queue is empty.
+[Tue 14:24]	<manu-db>	dlongley: I agree, I don't think we should make ownership a uni-directional link.
+[Tue 14:25]	<manu-db>	taaz: That's fine with me, just putting it out there as an option.
+[Tue 14:25]	<manu-db>	dlongley: Also, not sure if privacy is the right term either, ownership isn't necessarily a privacy thing.
+[Tue 14:25]	<manu-db>	taaz: Does this need to be a generic property? Could we use sec:keyFor?
+[Tue 14:25]	<dlongley>	lehn: does it have to be generic? should it be specific to each circumstance?
+[Tue 14:25]	<dlongley>	lehn: instead of just a catch-all property for ownership?
+[Tue 14:27]	<dlongley>	jeff: yes, owner is a broad term, you have profiles, accounts, assets, keys, all of these can be owned by something.
+[Tue 14:27]	<manu-db>	dlongley: Yes, we use this stuff extensively - profiles own identities. identities own accounts and keys, etc.
+[Tue 14:28]	<dlongley>	manu: i could talk with who is in charge with the rdfs vocab (dan brickley, guha, etc).
+[Tue 14:29]	<dlongley>	manu: maybe we can create rdfs:owner and use it and push w3c to adopt it.
+[Tue 14:29]	<dlongley>	manu: maybe in a few years they will adopt it.
+[Tue 14:30]	<dlongley>	manu: it would only stop reasoning on data, i don't think it would affect payswarm.
+[Tue 14:30]	<dlongley>	manu: (to adopt rdfs:owner)
+[Tue 14:30]	<dlongley>	manu: i am a member of the rdf working group, i'll raise this over there.
+[Tue 14:31]	<manu-db>	PROPOSAL: Adopt rdfs;owner to describe ownership of a resource on the Web and use that to associate public keys with identities.
+[Tue 14:31]	<dlongley>	+1
+[Tue 14:31]	<manu-db>	+1
+[Tue 14:31]	<jeffsayre>	+1
+[Tue 14:31]	<taaz>	+1
+[Tue 14:31]	<manu-db>	RESOLVED: Adopt rdfs:owner to describe ownership of a resource on the Web and use that to associate public keys with identities.
+[Tue 14:32]	<manu-db>	Topic: Creator of a Digital Signature
+[Tue 14:32]	<manu-db>	dlongley: We were thinking about trying to re-use dc:creator instead of sec:signer for signatures on a graph. I think the current implementation uses dc:creator instead of sec:signer.
+[Tue 14:32]	<manu-db>	http://payswarm.com/vocabs/security#signer
+[Tue 14:33]	<dlongley>	manu: i don't see a reason to create a new term for this (sec:signer) when dc:creator will do.
+[Tue 14:33]	<jeffsayre>	There's also <sioc: has_creator>
+[Tue 14:33]	<dlongley>	manu: also, we might try to put ownership in dublin core (as an aside)
+[Tue 14:34]	<dlongley>	manu: unfortunately sioc:has_creator must have a range of a user account that made the resource
+[Tue 14:34]	<dlongley>	manu: which may be too specific
+[Tue 14:34]	<dlongley>	manu: we could make a ps:identity a subclass of foaf:online-account to make that work
+[Tue 14:35]	<dlongley>	dlongley: what advantages would there be with choosing sioc:has_creator over dc:creator
+[Tue 14:35]	<manu-db>	http://dublincore.org/documents/usageguide/elements.shtml
+[Tue 14:35]	<dlongley>	manu: none that i can think of
+[Tue 14:35]	<dlongley>	manu: that document in IRC is a bit old 2005.
+[Tue 14:35]	<manu-db>	http://dublincore.org/documents/dcmi-terms/
+[Tue 14:35]	<dlongley>	manu: there is the new link in IRC for dublin core
+[Tue 14:35]	<dlongley>	jeff: another possibility is that it would be easier to have sioc extend that.
+[Tue 14:36]	<dlongley>	jeff: i bring that up because sioc is very targeted towards social communities online and payswarm is closely tied to that too.
+[Tue 14:36]	<dlongley>	jeff: they are heavily user-centric so there are limits to sioc now, but it might be worth considering.
+[Tue 14:36]	<dlongley>	manu: i'm leaning towards just using dc:creator, it's just a simple, base vocab.
+[Tue 14:37]	<manu-db>	http://dublincore.org/documents/dcmi-terms/#terms-creator
+[Tue 14:37]	<dlongley>	manu: sioc is very specific to online communities and since we are talking about a security vocab and who created a signature versus the specificity of sioc.
+[Tue 14:37]	<dlongley>	jeff: that makes sense.
+[Tue 14:37]	<dlongley>	manu: the documentation for dc:creator (entity primarily responsible for creating the resource) makes perfect sense.
+[Tue 14:37]	<dlongley>	manu: i'm scanning quickly to see if there is already the concept of an owner in dublin core.
+[Tue 14:38]	<dlongley>	manu: there's provenance
+[Tue 14:38]	<dlongley>	Manu reads the description of provenance to the group:  http://dublincore.org/documents/dcmi-terms/#provenance
+[Tue 14:38]	<dlongley>	manu: i can talk to tom baker and see if they'd be willing to put owner into dublin core.
+[Tue 14:39]	<dlongley>	dlongley: they might also have a suggestion for us to use something else if what we're using is not appropriate.
+[Tue 14:39]	<dlongley>	manu: i will talk to the rdf group and dublin core about this.
+[Tue 14:39]	<dlongley>	manu: i think have a decision, we're going to use dc:creator.
+[Tue 14:39]	<dlongley>	manu: to replace sec:signer.
+[Tue 14:39]	<manu-db>	PROPOSAL: Use dc;creator instead of sec;signer to identify the entity that created the digital signature.
+[Tue 14:39]	<dlongley>	+1
+[Tue 14:39]	<manu-db>	+1
+[Tue 14:40]	<taaz>	+1
+[Tue 14:40]	<jeffsayre>	+1
+[Tue 14:40]	<manu-db>	RESOLVED: Use dc:creator instead of sec:signer to identify the entity that created the digital signature.
+[Tue 14:41]	<manu-db>	Topic: JSON-LD Signatures
+[Tue 14:41]	<manu-db>	dlongley: We may want to add a few things in here like nonces and dates to the signatures.
+[Tue 14:41]	<manu-db>	http://payswarm.com/vocabs/security#nonce
+[Tue 14:41]	<manu-db>	manu: We do have most of that in there already.
+[Tue 14:42]	<manu-db>	dlongley: There is a more complex issue - normalization in JSON-LD. Having it be generalized will change the value.
+[Tue 14:42]	<manu-db>	http://payswarm.com/vocabs/security#JsonldSignature
+[Tue 14:42]	<dlongley>	manu: the whole reason we have JsonLdSignature and XmlSignature is because we have multiple parameters that go into a signature.
+[Tue 14:43]	<dlongley>	manu: so those types tell you what parameters to use.
+[Tue 14:43]	<dlongley>	manu: in this case the parameters include the normalization method, digest method, and signing algorithm.
+[Tue 14:43]	<dlongley>	manu: we really just need to change the name
+[Tue 14:44]	<dlongley>	manu: JSON-LD normalization will be changing to operate on triples.
+[Tue 14:45]	<manu-db>	dlongley: Maybe we want to split this out into different parameters?
+[Tue 14:46]	<manu-db>	manu: We didn't want to give people too many choices...
+[Tue 14:46]	<dlongley>	dlongley: we don't want people to mix and match and create interoperability problems.
+[Tue 14:46]	<dlongley>	manu: right, so we should have a single type that specifies all the properties.
+[Tue 14:46]	<manu-db>	sec:SecureGraphSignatureV1
+[Tue 14:46]	<dlongley>	dlongley: a little redundant.
+[Tue 14:46]	<manu-db>	sec:GraphSignatureV1
+[Tue 14:47]	<jeffsayre>	+1
+[Tue 14:47]	<dlongley>	+1
+[Tue 14:48]	<dlongley>	jeff: 2011 does refer back to the normalization method
+[Tue 14:48]	<dlongley>	jeff: so it does make sense.
+[Tue 14:48]	<dlongley>	manu: i have a slight preference to including date, though if the year is 2020 it might seem archaic :)
+[Tue 14:48]	<manu-db>	PROPOSAL: Change sec;JsonldSignature to sec;GraphSignature2011
+[Tue 14:48]	<manu-db>	+1
+[Tue 14:48]	<dlongley>	+1
+[Tue 14:49]	<taaz>	+1
+[Tue 14:49]	<jeffsayre>	+1
+[Tue 14:49]	<manu-db>	RESOLVED: Change sec:JsonldSignature to sec:GraphSignature2011
+[Tue 14:49]	<manu-db>	Do we really need this: http://payswarm.com/vocabs/security#XmlSignature
+[Tue 14:50]	<jeffsayre>	http://purl.org/jsonld#UGNA2011 404s
+[Tue 14:51]	<manu-db>	Yeah, it isn't setup yet... :)
+[Tue 14:51]	<jeffsayre>	:)
+[Tue 14:51]	<dlongley>	manu: my argument to remove XmlSignature is that no systems are using it yet. We can always add it.
+[Tue 14:51]	<manu-db>	PROPOSAL: Remove sec;XMLSignature from the Security Vocabulary. Add it back in if an application requires it.
+[Tue 14:52]	<manu-db>	+1
+[Tue 14:52]	<dlongley>	+1
+[Tue 14:52]	<jeffsayre>	+1
+[Tue 14:52]	<taaz>	+1
+[Tue 14:52]	<manu-db>	RESOLVED: Remove sec:XMLSignature from the Security Vocabulary. Add it back in if an application requires it.
+[Tue 14:54]	<manu-db>	manu: What about sec:cipher?
+[Tue 14:54]	<manu-db>	dlongley: change it to sec:cipherAlgorithm?
+[Tue 14:54]	<manu-db>	PROPOSAL: Change sec;cipher to sec;cipherAlgorithm.
+[Tue 14:54]	<manu-db>	+1
+[Tue 14:54]	<dlongley>	+1
+[Tue 14:54]	<jeffsayre>	+1
+[Tue 14:55]	<taaz>	+1
+[Tue 14:55]	<manu-db>	RESOLVED: Change sec:cipher to sec:cipherAlgorithm.
+[Tue 14:55]	<taaz>	might want to look at latest source too. it has Digest too. http://payswarm.com/specs/source/vocabs/security
+[Tue 14:57]	<manu-db>	Topic: Expressing Encryption and Signature Data
+[Tue 14:57]	<manu-db>	manu: What about sec:data?
+[Tue 14:57]	<manu-db>	dlongley: We need to be clear about the scope... more than just data associated with the signature.
+[Tue 15:00]	<dlongley>	manu: we have vocabulary terms that are required to make the signature class self-describing
+[Tue 15:00]	<dlongley>	manu: right now you can look up the @type for a signature and figure that out
+[Tue 15:01]	<manu-db>	dlongley: We want to prevent people marking things up in the wrong way, we have to be able to support saying what the digest algorithm is.
+[Tue 15:01]	<manu-db>	dlongley: It's just an error to specify the signature algorithm and the digest algorithm in the same object.
+[Tue 15:02]	<manu-db>	manu: The digestAlgorithm term description should describe a signature algorithm, not a signature.
+[Tue 15:03]	<dlongley>	dlongley: it could be used to describe signature, but not also when @type is specified.
+[Tue 15:03]	<dlongley>	dlongley: the example should change.
+[Tue 15:03]	* taaz	notes we escaped a payswarm call w/o talking about commerce :)
+[Tue 15:03]	<dlongley>	manu: the security vocab should be close to be being finished.
+[Tue 15:03]	<dlongley>	manu: Good call, we'll chat again in two weeks.
+
