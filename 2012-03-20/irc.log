@@ -1,0 +1,154 @@
+[Tue 14:05]	<manu-db>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2012Mar/0035.html
+[Tue 14:05]	<dlongley>	scribe:dlongley
+[Tue 14:05]	-->|	jeffsayre (~jeffsayre@adsl-70-224-37-214.dsl.sbndin.ameritech.net) has joined #payswarm
+[Tue 14:05]	<dlongley>	manu: The above link is for the day's agenda.
+[Tue 14:05]	<dlongley>	manu: We'll be going over some vocabularies related to payswarm.
+[Tue 14:06]	<manu-db>	Topic: PaySwarm Reference Implementation
+[Tue 14:06]	<manu-db>	https://dev.payswarm.com/
+[Tue 14:07]	<manu-db>	Skipping this because there aren't any people that haven't seen it on the call.
+[Tue 14:07]	<dlongley>	manu: We're going to first discuss the commerce vocabulary.
+[Tue 14:07]	<manu-db>	Topic: Vocabulary Review - Commerce
+[Tue 14:08]	<dlongley>	manu: The main thing to try and understand with this vocabulary is to see what we might be able to get rid of (cut down) or things we might want to consolidate into the vocab.
+[Tue 14:08]	<taaz>	http://payswarm.com/specs/source/vocabs/commerce
+[Tue 14:08]	<taaz>	that's the latest one. we should look at that
+[Tue 14:08]	<dlongley>	manu: so we'll go from the top-level classes down into the constants and properties.
+[Tue 14:08]	<dlongley>	Topic: Commerce Vocabulary Classes
+[Tue 14:08]	<dlongley>	manu: Deposit, Account, Payee, all straightforward and needed.
+[Tue 14:09]	<voip-ps>	<unknown> (IAX2/diamondcard-11128) has joined the conference.
+[Tue 14:09]	<manu-db>	dlongley: PayeeRule is necessary, we use it - tells us what people allow to be tacked on to the prices they list...
+[Tue 14:09]	<dlongley>	manu: Wo we're keeping all of the classes in the commerce vocab.
+[Tue 14:10]	<dlongley>	manu: Are there any classes we need to be adding to the vocab?
+[Tue 14:10]	<dlongley>	manu: Last week we discussed the security vocab and it needed some work, but commerce seems fairly solid.
+[Tue 14:10]	<dlongley>	manu: Would credit card, banking account go in here?
+[Tue 14:11]	<dlongley>	manu: One specifically for each.
+[Tue 14:11]	<dlongley>	dlongley: We might also wrap all of the payment methods into a Payment vocab.
+[Tue 14:11]	-->|	dln (~davidnico@75.87.129.242) has joined #payswarm
+[Tue 14:11]	<manu-db>	dlongley: We were also talking about a 'pay' vocabulary and wrapping those things up into a single vocabulary - credit cards, banking information, etc.
+[Tue 14:12]	<dlongley>	manu: So we can talk about the pay vocab and the credit card vocab at the same time later.
+[Tue 14:12]	<dlongley>	Topic: Commerce Vocabulary Constants
+[Tue 14:12]	<dlongley>	manu: On to the constants listed in the vocab...
+[Tue 14:12]	<manu-db>	http://payswarm.com/specs/source/vocabs/commerce#toc
+[Tue 14:13]	<taaz>	Our code has Exclusive/Inclusive w/o the "Percentage" extension
+[Tue 14:13]	<manu-db>	dlongley: We use all of the constants in the vocabulary now... so we don't need to get rid of any of them. We have made some changes - we don't have exclusivePercentage and inclusivePercentage anymore... I think we just have percentage
+[Tue 14:13]	-->|	tilgovi (~randall@couchdb/developer/tilgovi) has joined #payswarm
+[Tue 14:13]	<manu-db>	dlongley: We have 'rate' and 'rateContext' now... 'rateContext' specifies how you understand the rate
+[Tue 14:13]	<manu-db>	dlongley: Exclusive percentage is something like a sales tax...
+[Tue 14:14]	<manu-db>	dlongley: Inclusive percentage is a way of calculating the total w/o modifying the total... so if you want the article to be $0.05 - payee rule w/ inclusive percentage of 2% would mean the article will always be $0.05...
+[Tue 14:15]	<dlongley>	manu: Exclusive percentage, add on to the total, inclusive percentage doesn't modify the total, it breaks up the percentages within the total for different destinations.
+[Tue 14:15]	<manu-db>	dlongley: 'rate' can only be percentage or flat amount
+[Tue 14:15]	<manu-db>	dlongley: 'rateContext 'determines how 'rate' is used to calculate the final amount.
+[Tue 14:16]	<manu-db>	manu: We don't have how to resolve payees in the specs anywhere, right now, right?
+[Tue 14:16]	<manu-db>	dlongley: Yeah, we need to add that to the specs.
+[Tue 14:17]	<manu-db>	dlongley: Commerce spec should be changed to remove ExclusivePercentage and InclusivePercentage.
+[Tue 14:17]	<dlongley>	lehn: Which is more up to date the implementation or the spec w/respect to Exclusive/Inclusive Percentage?
+[Tue 14:18]	<manu-db>	dlongley: Commerce spec should be modified to add constants for Percentage, Exclusive, and Inclusive.
+[Tue 14:18]	<dlongley>	manu: We'll want to take a look and see if there's any way we can simplify this.
+[Tue 14:18]	<taaz>	dln, tilgovi: We're chatting over voip now, you are welcome to join
+[Tue 14:19]	<dlongley>	manu: We need to remove ExclusivePercentage, InclusivePercentage and add Percentage, Exclusive, and Inclusive.
+[Tue 14:19]	<manu-db>	Topic: Commerce Vocabulary Properties
+[Tue 14:20]	<manu-db>	manu: Looking at 'account', 'source' and 'destination' - we need all three?
+[Tue 14:20]	<dlongley>	lehn: If you look at the account, it specifies the account for a person, it isn't a source or a destination.
+[Tue 14:20]	<dlongley>	manu: We can use it to list all of the public accounts on an identity page.
+[Tue 14:21]	<dlongley>	manu: We marked up the previous demo in RDFa using that.
+[Tue 14:21]	<manu-db>	dlongley: I don't remember if we had to have 'account'... 'account' was bleeding into cases where we need to use 'source' or 'destination'
+[Tue 14:21]	<manu-db>	dlongley: We need to be more clear in spec language on when you use 'com:account' vs. 'com:destination'
+[Tue 14:22]	<manu-db>	dln: What about 'vendor' and 'customer'
+[Tue 14:23]	<dlongley>	dln: There are/we want more layers, many layers of little definitions
+[Tue 14:23]	<manu-db>	http://payswarm.com/specs/source/vocabs/commerce#account
+[Tue 14:23]	<dlongley>	manu: that link gives an example that describes a person that has an account
+[Tue 14:23]	<dln>	Has the Payswarm vocab named the layers?
+[Tue 14:23]	<dlongley>	manu: We achieve layers by saying there are "identities" with "accounts" (two layers) ...
+[Tue 14:24]	<dlongley>	manu: We have identity as one layer and account as another.
+[Tue 14:25]	<dlongley>	manu: There is a distinction between account, source, and destination, we need all three
+[Tue 14:25]	<dlongley>	manu: 'amount' is next... refers to a number of bitcoins, dollars, etc.
+[Tue 14:25]	<dlongley>	manu: 'amount' only specifies the value, not the unit of measurement.
+[Tue 14:25]	<dlongley>	manu: Unit of measure is com:currency which is next
+[Tue 14:26]	<dlongley>	lehn: Possible problem with inconsistency between string and IRI for the value of a currency
+[Tue 14:27]	<dlongley>	manu: We could come up with a string for each alternative currency
+[Tue 14:27]	<dlongley>	manu: If we can specify currency mints we get problems
+[Tue 14:28]	<dlongley>	dlongley: Why don't we just normalize and always use IRIs
+[Tue 14:28]	<dlongley>	lehn: There isn't an official IRI for USD, etc.
+[Tue 14:29]	<dln>	That's one less thing for ICANN to do, if this working group takes ownership of the comprehensive list of short currency codes
+[Tue 14:30]	<manu-db>	We could do something like this - "com:currency": "iso4217:USD" or this "com:currency": "cur:USD"?
+[Tue 14:30]	<voip-ps>	Dave Longley (SIP/6002-0000003d) has joined the conference.
+[Tue 14:31]	<dln>	iso4217 will drift, that's one issue. Requiring upgrading when it happens.
+[Tue 14:32]	<voip-ps>	<unknown> (IAX2/diamondcard-9551) has joined the conference.
+[Tue 14:32]	<jeffsayre>	voip: 9551 is me
+[Tue 14:32]	<voip-ps>	jeffsayre is now associated with IAX2/diamondcard-9551.
+[Tue 14:32]	|<--	dlongley has left freenode (Ping timeout: 246 seconds)
+[Tue 14:34]	<manu-db>	manu: Do we need com:date?
+[Tue 14:34]	<manu-db>	dlongley: We were definitely using dc:created for signature creation...
+[Tue 14:34]	-->|	dlongley (~dlongley@pool-96-240-161-32.ronkva.east.verizon.net) has joined #payswarm
+[Tue 14:35]	<manu-db>	dlongley: Transactions may not be created at the same time they're authorized... so "com:date" is not the same thing as "dc:created".
+[Tue 14:35]	<manu-db>	dlongley: Any time we authorize or finalize a transaction, we use "com:date"
+[Tue 14:35]	<dlongley>	lehn: I have marked some places where we need to go back and look at it
+[Tue 14:37]	<manu-db>	dlongley: Source or destination seems to be more specific - you can't misunderstand that in the same way as to/from (which can be about identities, or it can be about accounts)
+[Tue 14:37]	<jeffsayre>	+1
+[Tue 14:38]	<dln>	to/from is at identity layer and source/destination is at account layer?
+[Tue 14:39]	-->|	dlongley (~dlongley@pool-96-240-161-32.ronkva.east.verizon.net) has joined #payswarm
+[Tue 14:40]	|<--	dlongley has left freenode (Ping timeout: 245 seconds)
+[Tue 14:40]	<dlongley>	manu: David Nicol, effectively, yes. We should keep source and destination because they are more specific to accounts...
+[Tue 14:40]	<dlongley>	manu: and they enable more layers of differentiation between identity, financial account, etc.
+[Tue 14:40]	<dlongley>	manu: next up is 'destinationOwnerType'
+[Tue 14:40]	<dln>	and not lose to/from as they pertain to something subtly differnt
+[Tue 14:41]	<manu-db>	dlongley: Yeah, this is important for making the differentiation in PayeeRules, so we need it.
+[Tue 14:41]	<dlongley>	manu: it is used in a payee rule, to specify that the only particular owners of destination accounts can take a cut of a sale, etc.
+[Tue 14:42]	<manu-db>	manu: We need to move gatewayApprovalCode and gatewayError in the Payment vocabulary... not in the Commerce vocabulary.
+[Tue 14:42]	<manu-db>	dlongley: Yeah, this is one of those things that bled into this vocab, we need to move it out.
+[Tue 14:43]	<dlongley>	manu: we're moving all of the gateway related properties to the payment vocabulary.
+[Tue 14:43]	<dlongley>	manu: any concerns about doing that change?
+[Tue 14:43]	<dlongley>	lehn: That's fine, i haven't noticed gateway error before
+[Tue 14:44]	<manu-db>	dlongley: The example for gatewayError is bad, but we may need to return this in exceptions.
+[Tue 14:44]	<dlongley>	lehn: It seems like it would be part of a response in some generic exception system
+[Tue 14:44]	<dlongley>	manu: 'maximumRate' is used
+[Tue 14:45]	<manu-db>	dlongley: I think we need to add minimumRate to the spec.
+[Tue 14:45]	<dlongley>	manu: forTransaction is for reverse linking transfers to the transaction they are a part of
+[Tue 14:45]	<dln>	...something about Ted Waitt (ed: founder of Gateway Computers)
+[Tue 14:45]	<taaz>	we don't have minimumRate anywhere in our code. maybe that wasn't needed?
+[Tue 14:47]	<dlongley>	taaz: I'm not sure ... will have to go back and look.
+[Tue 14:47]	<manu-db>	dlongley: We may not need "com:forTransaction"...
+[Tue 14:47]	<manu-db>	dlongley: I don't know if we minted any URLs for transfers.
+[Tue 14:48]	<manu-db>	dlongley: If we did give them URLs, then we would want reverse links... but if they're just embedded inside transactions, maybe we don't need it.
+[Tue 14:48]	<manu-db>	dlongley: If we have a transfer as a starting point in the database, then we may need forTransaction.
+[Tue 14:49]	<dlongley>	manu: We can't think of a good reason for forTransaction but we should double check before removing it.
+[Tue 14:49]	<dlongley>	manu: We could go through the payswarm reference demo now and answer some questions about it?
+[Tue 14:50]	<dlongley>	jeff: I think the time would be best spent going through the vocab.
+[Tue 14:50]	<dlongley>	dln: Agreed that time would be best spent talking about the vocab.
+[Tue 14:50]	<dlongley>	dlongley: Maybe next time we can start out with the demo quickly.
+[Tue 14:51]	<dlongley>	manu: 'limitation' is next, it allows people who sign listings to specify that they don't want anyone else taking a cut of a sale.
+[Tue 14:51]	<dlongley>	manu: Can be used to prevent affiliate type sales
+[Tue 14:52]	<dln>	We don't want to bring issues from business layer down here
+[Tue 14:52]	<dln>	rules about "no multi-level" -- no reselling?
+[Tue 14:53]	<manu-db>	dlongley: I think we need com:limitation - need a way to specify that someone shouldn't get paid.
+[Tue 14:53]	<dln>	Just don't want to put anything complex here
+[Tue 14:53]	<manu-db>	dlongley: We need a vocabulary that specifies rules for who gets paid... we need to give some basic set of rules somewhere.
+[Tue 14:54]	<manu-db>	manu: Well, the question is what vocabulary the terms should go in.
+[Tue 14:54]	<manu-db>	dlongley: I'm for breaking it out into a separate vocabulary - but it's something that we absolutely need.
+[Tue 14:54]	<dlongley>	manu: Anything associated with business rules, payee limitations, etc. should be shifted to another vocab maybe.
+[Tue 14:55]	<taaz>	Soon we will have a vocabulary explosion problem if we keep splitting vocabularies
+[Tue 14:55]	<dlongley>	dln: layers are good
+[Tue 14:55]	<dlongley>	manu: It's good to understand where the layers are
+[Tue 14:56]	<dlongley>	manu: Commerce should maybe have two layers low-level accounts, and high-level 'what makes the money dance around' ... rules about how the money can move between accounts, in exchange for assets, etc.
+[Tue 14:57]	<dlongley>	dlongley: Yes, we need to find a good balance here, so we don't have a vocab explosion but we don't want to mix layers and get things muddled.
+[Tue 14:57]	<dlongley>	manu: We could split the vocab documents into 2, 'high' and 'low' levels.
+[Tue 14:57]	<dlongley>	manu: moving on
+[Tue 14:58]	<manu-db>	manu: 'minimumAmount' is already here, what about 'minimumRate'?
+[Tue 14:59]	<manu-db>	dlongley: The reason we have 'minimumAmount' is to specify a floor to the amount that one would collect...
+[Tue 14:59]	<dlongley>	manu: minimumAmount specifies a floor
+[Tue 14:59]	<dlongley>	dlongley: Once payee amounts are resolved, they can't be below that floor.
+[Tue 15:00]	<dlongley>	manu: 'payeePosition' is next and is important because it can be used in the payee algorithm
+[Tue 15:03]	<dlongley>	manu: We need to spec out payeePosition a bit more if we keep it
+[Tue 15:03]	<dlongley>	manu: We might just use @list in JSON-LD now to avoid having to specify the order by property
+[Tue 15:03]	<dlongley>	lehn: We need to be clear about what the order is and how its used
+[Tue 15:03]	<dlongley>	manu: So we need to decide if we can get rid of it... if so, we should probably drop it.
+[Tue 15:04]	<dlongley>	dlongley: Having the position helps people know to be specific
+[Tue 15:04]	<dln>	'payeePosition' is a complicated business rule that only comes into effect when there is a short payment
+[Tue 15:05]	<dlongley>	manu: The algorithm and everything is complicated enough we're going to need visual depiction, etc.
+[Tue 15:05]	<dlongley>	lehn: If order is external instead of inside the object you could reuse them.
+[Tue 15:06]	<dlongley>	dlongley: We don't always give them @ids right now, but if they have @ids they could be reused
+[Tue 15:06]	<manu-db>	dlongley: If the payees have @ids, then we may want to reuse them in different places, which is an argument against having payeePosition.
+[Tue 15:06]	<dlongley>	manu: Which is an argument against payeePosition
+[Tue 15:06]	<dlongley>	manu: Top of the hour, we need to wrap up the call.
+[Tue 15:10]	<taaz>	<currency currencyScheme="http://www.fpml.org/ext/iso4217">DEM</currency>
+[Tue 15:10]	<taaz>	fpml has some scheme thing. they require registration to look at the spec though. just found an example on their site.
+

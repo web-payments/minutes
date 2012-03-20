@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+      class="wf-adelle1adelle2-n6-active wf-active"> 
+ 
+<head> 
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+  <title>PaySwarm - Teleconferences</title> 
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ 
+  <link rel="stylesheet" href="../../css/1140.css" type="text/css" media="screen" /> 
+  <!--[if lte IE 9]>
+  <link rel="stylesheet" href="../css/ie.css" type="text/css" media="screen" />
+  <![endif]--> 
+  <link rel="stylesheet" href="../../css/typeimg.css" type="text/css" media="screen" /> 
+  <link rel="stylesheet" href="../../css/smallerscreen.css" media="only screen and (max-width: 1023px)" /> 
+  <link rel="stylesheet" href="../../css/mobile.css" media="handheld, only screen and (max-width: 767px)" /> 
+  <link rel="stylesheet" href="../../css/layout.css" type="text/css" media="screen" /> 
+  <link rel="shortcut icon" type="image/png" href="../../images/payswarm-icon.png" /> 
+  
+<style type="text/css">
+h1 {
+   margin-top: 24px;
+   margin-bottom: 14px;
+}
+
+.header {
+   margin-top: 0px;
+   margin-bottom: 14px;
+}
+
+ol {
+   margin-bottom: 0em;
+}
+
+li {
+   margin-left: 1.5em;
+   margin-bottom: 0em;
+}
+#content {
+   margin-left: 15%;
+   margin-right: 15%;
+}
+
+.summary {
+   margin-left: 10%
+   margin-right: 10%
+}
+
+.name {
+   font-weight: bold;
+}
+
+.information {
+   font-style: italic;
+}  
+
+.comment-continuation {
+   margin-left: 2em;
+}
+
+dt {
+   font-style: oblique;
+}
+
+dd {
+   margin-left: 20px;
+}
+
+  </style>
+  
+</head> 
+<body> 
+ 
+<div class="titlebar"> 
+   <h1 class="header">PaySwarm</h1> 
+</div> 
+
+  <div id="content"> 
+ 
+  <div class="row"> 
+    <div class="twelvecol last"> 
+
+<h1>Web Payments Community Group Telecon</h1>
+<h2>Minutes for 2012-03-20</h2>
+<div class="summary">
+<dl>
+<dt>Agenda</dt><dd><a href="http://lists.w3.org/Archives/Public/public-webpayments/2012Mar/0035.html">http://lists.w3.org/Archives/Public/public-webpayments/2012Mar/0035.html</a></dd>
+<dt>Topics</dt><dd><ol><li><a href="#topic-1">PaySwarm Reference Implementation</a><li><a href="#topic-2">Vocabulary Review - Commerce</a><li><a href="#topic-3">Commerce Vocabulary Classes</a><li><a href="#topic-4">Commerce Vocabulary Constants</a><li><a href="#topic-5">Commerce Vocabulary Properties</a></ol></dd><dt>Facilitator</dt><dd>Manu Sporny</dd>
+<dt>Scribe</dt><dd>Dave Longley</dd>
+<dt>Present</dt><dd>Dave Longley, Manu Sporny, David I. Lehn, David Nicol, Jeff Sayre</dd>
+<dt>Audio Log</dt><dd><div><a href="audio.ogg">audio.ogg</a></div>
+<div><audio controls="controls" preload="none">
+<source src="audio.ogg" type="audio/ogg" />Warning: Your browser does not support the HTML5 audio element, please upgrade.</div></dd>
+<div class="information">Dave Longley is scribing.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  The above link is for the day's agenda.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We'll be going over some vocabularies related to payswarm.</div>
+<h1 id="topic-1" class="topic">Topic: PaySwarm Reference Implementation</h1>
+<div class="comment"><span class="name">Manu Sporny</span>: <a href="https://dev.payswarm.com/">https://dev.payswarm.com/</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>: Skipping this because there aren't any people that haven't seen it on the call.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We're going to first discuss the commerce vocabulary.</div>
+<h1 id="topic-2" class="topic">Topic: Vocabulary Review - Commerce</h1>
+<div class="comment"><span class="name">Manu Sporny</span>:  The main thing to try and understand with this vocabulary is to see what we might be able to get rid of (cut down) or things we might want to consolidate into the vocab.</div>
+<div class="comment"><span class="name">David I. Lehn</span>: <a href="http://payswarm.com/specs/source/vocabs/commerce">http://payswarm.com/specs/source/vocabs/commerce</a></div>
+<div class="comment"><span class="name">David I. Lehn</span>: that's the latest one. we should look at that</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so we'll go from the top-level classes down into the constants and properties.</div>
+<h1 id="topic-3" class="topic">Topic: Commerce Vocabulary Classes</h1>
+<div class="comment"><span class="name">Manu Sporny</span>:  Deposit, Account, Payee, all straightforward and needed.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  PayeeRule is necessary, we use it - tells us what people allow to be tacked on to the prices they list... [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Wo we're keeping all of the classes in the commerce vocab.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Are there any classes we need to be adding to the vocab?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Last week we discussed the security vocab and it needed some work, but commerce seems fairly solid.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Would credit card, banking account go in here?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  One specifically for each.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  We might also wrap all of the payment methods into a Payment vocab.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  We were also talking about a 'pay' vocabulary and wrapping those things up into a single vocabulary - credit cards, banking information, etc. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  So we can talk about the pay vocab and the credit card vocab at the same time later.</div>
+<h1 id="topic-4" class="topic">Topic: Commerce Vocabulary Constants</h1>
+<div class="comment"><span class="name">Manu Sporny</span>:  On to the constants listed in the vocab...</div>
+<div class="comment"><span class="name">Manu Sporny</span>: <a href="http://payswarm.com/specs/source/vocabs/commerce#toc">http://payswarm.com/specs/source/vocabs/commerce#toc</a></div>
+<div class="comment"><span class="name">David I. Lehn</span>: Our code has Exclusive/Inclusive w/o the "Percentage" extension</div>
+<div class="comment"><span class="name">Dave Longley</span>:  We use all of the constants in the vocabulary now... so we don't need to get rid of any of them. We have made some changes - we don't have exclusivePercentage and inclusivePercentage anymore... I think we just have percentage [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  We have 'rate' and 'rateContext' now... 'rateContext' specifies how you understand the rate [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Exclusive percentage is something like a sales tax... [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Inclusive percentage is a way of calculating the total w/o modifying the total... so if you want the article to be $0.05 - payee rule w/ inclusive percentage of 2% would mean the article will always be $0.05... [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Exclusive percentage, add on to the total, inclusive percentage doesn't modify the total, it breaks up the percentages within the total for different destinations.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  'rate' can only be percentage or flat amount [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  'rateContext 'determines how 'rate' is used to calculate the final amount. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We don't have how to resolve payees in the specs anywhere, right now, right? [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Yeah, we need to add that to the specs. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Commerce spec should be changed to remove ExclusivePercentage and InclusivePercentage. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  Which is more up to date the implementation or the spec w/respect to Exclusive/Inclusive Percentage?</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Commerce spec should be modified to add constants for Percentage, Exclusive, and Inclusive. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We'll want to take a look and see if there's any way we can simplify this.</div>
+<div class="comment"><span class="name">David I. Lehn</span>: dln, tilgovi: We're chatting over voip now, you are welcome to join</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We need to remove ExclusivePercentage, InclusivePercentage and add Percentage, Exclusive, and Inclusive.</div>
+<h1 id="topic-5" class="topic">Topic: Commerce Vocabulary Properties</h1>
+<div class="comment"><span class="name">Manu Sporny</span>:  Looking at 'account', 'source' and 'destination' - we need all three? [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  If you look at the account, it specifies the account for a person, it isn't a source or a destination.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We can use it to list all of the public accounts on an identity page.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We marked up the previous demo in RDFa using that.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  I don't remember if we had to have 'account'... 'account' was bleeding into cases where we need to use 'source' or 'destination' [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  We need to be more clear in spec language on when you use 'com:account' vs. 'com:destination' [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">David Nicol</span>:  What about 'vendor' and 'customer' [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">David Nicol</span>:  There are/we want more layers, many layers of little definitions</div>
+<div class="comment"><span class="name">Manu Sporny</span>: <a href="http://payswarm.com/specs/source/vocabs/commerce#account">http://payswarm.com/specs/source/vocabs/commerce#account</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>:  that link gives an example that describes a person that has an account</div>
+<div class="comment"><span class="name">David Nicol</span>: Has the Payswarm vocab named the layers?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We achieve layers by saying there are "identities" with "accounts" (two layers) ...</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We have identity as one layer and account as another.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  There is a distinction between account, source, and destination, we need all three</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  'amount' is next... refers to a number of bitcoins, dollars, etc.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  'amount' only specifies the value, not the unit of measurement.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Unit of measure is com:currency which is next</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  Possible problem with inconsistency between string and IRI for the value of a currency</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We could come up with a string for each alternative currency</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  If we can specify currency mints we get problems</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Why don't we just normalize and always use IRIs</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  There isn't an official IRI for USD, etc.</div>
+<div class="comment"><span class="name">David Nicol</span>: That's one less thing for ICANN to do, if this working group takes ownership of the comprehensive list of short currency codes</div>
+<div class="comment"><span class="name">Manu Sporny</span>: We could do something like this - "com:currency": "iso4217:USD" or this "com:currency": "cur:USD"?</div>
+<div class="comment"><span class="name">David Nicol</span>: iso4217 will drift, that's one issue. Requiring upgrading when it happens.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Do we need com:date? [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  We were definitely using dc:created for signature creation... [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Transactions may not be created at the same time they're authorized... so "com:date" is not the same thing as "dc:created". [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Any time we authorize or finalize a transaction, we use "com:date" [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  I have marked some places where we need to go back and look at it</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Source or destination seems to be more specific - you can't misunderstand that in the same way as to/from (which can be about identities, or it can be about accounts) [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Jeff Sayre</span>: +1</div>
+<div class="comment"><span class="name">David Nicol</span>: to/from is at identity layer and source/destination is at account layer?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  David Nicol, effectively, yes. We should keep source and destination because they are more specific to accounts...</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  and they enable more layers of differentiation between identity, financial account, etc.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  next up is 'destinationOwnerType'</div>
+<div class="comment"><span class="name">David Nicol</span>: and not lose to/from as they pertain to something subtly differnt</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Yeah, this is important for making the differentiation in PayeeRules, so we need it. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  it is used in a payee rule, to specify that the only particular owners of destination accounts can take a cut of a sale, etc.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We need to move gatewayApprovalCode and gatewayError in the Payment vocabulary... not in the Commerce vocabulary. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Yeah, this is one of those things that bled into this vocab, we need to move it out. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we're moving all of the gateway related properties to the payment vocabulary.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  any concerns about doing that change?</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  That's fine, i haven't noticed gateway error before</div>
+<div class="comment"><span class="name">Dave Longley</span>:  The example for gatewayError is bad, but we may need to return this in exceptions. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  It seems like it would be part of a response in some generic exception system</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  'maximumRate' is used</div>
+<div class="comment"><span class="name">Dave Longley</span>:  I think we need to add minimumRate to the spec. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  forTransaction is for reverse linking transfers to the transaction they are a part of</div>
+<div class="comment"><span class="name">David Nicol</span>: ...something about Ted Waitt (ed: founder of Gateway Computers)</div>
+<div class="comment"><span class="name">David I. Lehn</span>: we don't have minimumRate anywhere in our code. maybe that wasn't needed?</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  I'm not sure ... will have to go back and look.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  We may not need "com:forTransaction"... [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  I don't know if we minted any URLs for transfers. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  If we did give them URLs, then we would want reverse links... but if they're just embedded inside transactions, maybe we don't need it. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  If we have a transfer as a starting point in the database, then we may need forTransaction. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We can't think of a good reason for forTransaction but we should double check before removing it.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We could go through the payswarm reference demo now and answer some questions about it?</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  I think the time would be best spent going through the vocab.</div>
+<div class="comment"><span class="name">David Nicol</span>:  Agreed that time would be best spent talking about the vocab.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Maybe next time we can start out with the demo quickly.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  'limitation' is next, it allows people who sign listings to specify that they don't want anyone else taking a cut of a sale.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Can be used to prevent affiliate type sales</div>
+<div class="comment"><span class="name">David Nicol</span>: We don't want to bring issues from business layer down here</div>
+<div class="comment"><span class="name">David Nicol</span>: rules about "no multi-level" -- no reselling?</div>
+<div class="comment"><span class="name">Dave Longley</span>:  I think we need com:limitation - need a way to specify that someone shouldn't get paid. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">David Nicol</span>: Just don't want to put anything complex here</div>
+<div class="comment"><span class="name">Dave Longley</span>:  We need a vocabulary that specifies rules for who gets paid... we need to give some basic set of rules somewhere. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Well, the question is what vocabulary the terms should go in. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  I'm for breaking it out into a separate vocabulary - but it's something that we absolutely need. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Anything associated with business rules, payee limitations, etc. should be shifted to another vocab maybe.</div>
+<div class="comment"><span class="name">David I. Lehn</span>: Soon we will have a vocabulary explosion problem if we keep splitting vocabularies</div>
+<div class="comment"><span class="name">David Nicol</span>:  layers are good</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  It's good to understand where the layers are</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Commerce should maybe have two layers low-level accounts, and high-level 'what makes the money dance around' ... rules about how the money can move between accounts, in exchange for assets, etc.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Yes, we need to find a good balance here, so we don't have a vocab explosion but we don't want to mix layers and get things muddled.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We could split the vocab documents into 2, 'high' and 'low' levels.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  moving on</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  'minimumAmount' is already here, what about 'minimumRate'? [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  The reason we have 'minimumAmount' is to specify a floor to the amount that one would collect... [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  minimumAmount specifies a floor</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Once payee amounts are resolved, they can't be below that floor.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  'payeePosition' is next and is important because it can be used in the payee algorithm</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We need to spec out payeePosition a bit more if we keep it</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We might just use @list in JSON-LD now to avoid having to specify the order by property</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  We need to be clear about what the order is and how its used</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  So we need to decide if we can get rid of it... if so, we should probably drop it.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Having the position helps people know to be specific</div>
+<div class="comment"><span class="name">David Nicol</span>: 'payeePosition' is a complicated business rule that only comes into effect when there is a short payment</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  The algorithm and everything is complicated enough we're going to need visual depiction, etc.</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  If order is external instead of inside the object you could reuse them.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  We don't always give them @ids right now, but if they have @ids they could be reused</div>
+<div class="comment"><span class="name">Dave Longley</span>:  If the payees have @ids, then we may want to reuse them in different places, which is an argument against having payeePosition. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Which is an argument against payeePosition</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Top of the hour, we need to wrap up the call.</div>
+<div class="comment"><span class="name">David I. Lehn</span>: &lt;currency currencyScheme="<a href="http://www.fpml.org/ext/iso4217"&gt;DEM&lt;/currency&gt;">http://www.fpml.org/ext/iso4217"&gt;DEM&lt;/currency&gt;</a></div>
+<div class="comment"><span class="name">David I. Lehn</span>: fpml has some scheme thing. they require registration to look at the spec though. just found an example on their site.</div>
+       </div>
+  </div>
+
+<div class="container vspacing"> 
+  <div class="row"> 
+    <div class="threecol"> 
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a> 
+    </div> 
+    <div class="ninecol last"> 
+      <p>&copy; 2010-2011 Digital Bazaar, Inc. 
+Website CSS created by <a href="http://cssgrid.net/">@andytlr</a> 
+and is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/au/"> 
+Creative Commons Attribution-ShareAlike 3.0 Australia License</a>. All other
+website content is licensed under a
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"> 
+Creative Commons Attribution-ShareAlike 3.0 License</a>
+</p> 
+    </div> 
+  </div> 
+</div> 
+ 
+<script type="text/javascript"> 
+ 
+  var _gaq = _gaq || [];
+  _gaq.push(["_setAccount", "UA-1539674-7"]);
+  _gaq.push(["_trackPageview"]);
+
+  (function() {
+    var ga = document.createElement("script"); ga.type = "text/javascript"; ga.async = true;
+    ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";
+    (document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]).appendChild(ga);
+  })();
+ 
+</script>
+
+</body>
+</html>
