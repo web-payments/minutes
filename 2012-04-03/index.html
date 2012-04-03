@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+      class="wf-adelle1adelle2-n6-active wf-active"> 
+ 
+<head> 
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+  <title>PaySwarm - Teleconferences</title> 
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ 
+  <link rel="stylesheet" href="../../css/1140.css" type="text/css" media="screen" /> 
+  <!--[if lte IE 9]>
+  <link rel="stylesheet" href="../css/ie.css" type="text/css" media="screen" />
+  <![endif]--> 
+  <link rel="stylesheet" href="../../css/typeimg.css" type="text/css" media="screen" /> 
+  <link rel="stylesheet" href="../../css/smallerscreen.css" media="only screen and (max-width: 1023px)" /> 
+  <link rel="stylesheet" href="../../css/mobile.css" media="handheld, only screen and (max-width: 767px)" /> 
+  <link rel="stylesheet" href="../../css/layout.css" type="text/css" media="screen" /> 
+  <link rel="shortcut icon" type="image/png" href="../../images/payswarm-icon.png" /> 
+  
+<style type="text/css">
+h1 {
+   margin-top: 24px;
+   margin-bottom: 14px;
+}
+
+.header {
+   margin-top: 0px;
+   margin-bottom: 14px;
+}
+
+ol {
+   margin-bottom: 0em;
+}
+
+li {
+   margin-left: 1.5em;
+   margin-bottom: 0em;
+}
+#content {
+   margin-left: 15%;
+   margin-right: 15%;
+}
+
+.summary {
+   margin-left: 10%
+   margin-right: 10%
+}
+
+.name {
+   font-weight: bold;
+}
+
+.information {
+   font-style: italic;
+}  
+
+.comment-continuation {
+   margin-left: 2em;
+}
+
+dt {
+   font-style: oblique;
+}
+
+dd {
+   margin-left: 20px;
+}
+
+  </style>
+  
+</head> 
+<body> 
+ 
+<div class="titlebar"> 
+   <h1 class="header">PaySwarm</h1> 
+</div> 
+
+  <div id="content"> 
+ 
+  <div class="row"> 
+    <div class="twelvecol last"> 
+
+<h1>Web Payments Community Group Telecon</h1>
+<h2>Minutes for 2012-04-03</h2>
+<div class="summary">
+<dl>
+<dt>Agenda</dt><dd><a href="http://lists.w3.org/Archives/Public/public-webpayments/2012Apr/0000.html">http://lists.w3.org/Archives/Public/public-webpayments/2012Apr/0000.html</a></dd>
+<dt>Topics</dt><dd><ol><li><a href="#topic-1">Commerce Vocabulary Properties</a><li><a href="#topic-2">Credit Card Vocabulary</a><li><a href="#topic-3">PaySwarm Vocabulary</a></ol></dd><dt>Facilitator</dt><dd>Manu Sporny</dd>
+<dt>Scribe</dt><dd>Dave Longley</dd>
+<dt>Present</dt><dd>Dave Longley, Manu Sporny, David I. Lehn</dd>
+<dt>Audio Log</dt><dd><div><a href="audio.ogg">audio.ogg</a></div>
+<div><audio controls="controls" preload="none">
+<source src="audio.ogg" type="audio/ogg" />Warning: Your browser does not support the HTML5 audio element, please upgrade.</div></dd>
+<div class="information">Dave Longley is scribing.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We're continuing to go through the vocabularies today. We'll get to the pay vocab and see if we need it.</div>
+<h1 id="topic-1" class="topic">Topic: Commerce Vocabulary Properties</h1>
+<div class="comment"><span class="name">Manu Sporny</span>: <a href="http://payswarm.com/vocabs/commerce">http://payswarm.com/vocabs/commerce</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we left off last time on the payeePosition property.</div>
+<div class="comment"><span class="name">Manu Sporny</span>: <a href="http://payswarm.com/vocabs/commerce#payeePosition">http://payswarm.com/vocabs/commerce#payeePosition</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we were thinking we might get rid of payeePosition, in preference for the use of JSON-LD @list feature.</div>
+<div class="comment"><span class="name">Manu Sporny</span>: <a href="http://payswarm.com/vocabs/commerce#paymentGateway">http://payswarm.com/vocabs/commerce#paymentGateway</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we're postponing that decision until JSON-LD progresses a bit. next up is the payment gateway.</div>
+<div class="comment"><span class="name">David I. Lehn</span>: as i say every week, let's link to the latest specs.</div>
+<div class="comment"><span class="name">David I. Lehn</span>: <a href="http://payswarm.com/specs/source/vocabs/commerce">http://payswarm.com/specs/source/vocabs/commerce</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>:  it might belong in the pay vocab for credit cards, bank accounts, etc.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Yeah, I think we're mostly in agreement that we need to move it out into another "payments" vocabulary. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  ok, then we'll move it out.</div>
+<div class="comment"><span class="name">Manu Sporny</span>: <a href="http://payswarm.com/vocabs/commerce#payee">http://payswarm.com/vocabs/commerce#payee</a></div>
+<div class="comment"><span class="name">Dave Longley</span>:  This belongs in the commerce vocabulary [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Agreed, moving on. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>: <a href="http://payswarm.com/vocabs/commerce#rate">http://payswarm.com/vocabs/commerce#rate</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Is this a payment vocabulary thing, or a commerce vocabulary thing? [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  I think this is a commerce thing - not a payment thing. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Seems like this belongs in the commerce vocabulary. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  i'm a bit split, i can see it going in either.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  but i'm ok with keeping it in the commerce vocab since there are good arguments either way.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  last are source and transfer, source is a source account for a commercial transaction and transfer being the most fundamental unit of monetary transfer.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  a transfer is the movement of money ... multiple transfers are contained in a transaction.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  both of those are commerce terms.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we need to discuss the pay vocab in a little more depth as to what it actually does.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  nothing else to add to the commerce vocabulary discussion. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  ok moving on [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  i think we covered most of what we needed in the last discussion</div>
+<h1 id="topic-2" class="topic">Topic: Credit Card Vocabulary</h1>
+<div class="comment"><span class="name">Manu Sporny</span>: <a href="http://payswarm.com/vocabs/creditcard">http://payswarm.com/vocabs/creditcard</a></div>
+<div class="comment"><span class="name">David I. Lehn</span>: <a href="http://payswarm.com/specs/source/vocabs/creditcard">http://payswarm.com/specs/source/vocabs/creditcard</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>:  cc vocab is a way to describe credit cards and debit cards and using them to process payments and put money into an account on a payswarm authority.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  (this is how it related to payswarm)</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  the result of a charge is that money is pulled out of a credit card and put into a storage account online.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we need to add a bank/banking source.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Yeah, we currently have that in our source code - we started to create a 'bank' prefix - we may not need to make as much as a distinction on credit card vs. debit card. It's not necessary as it relates to how you process credit cards / debit cards. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  We do need stuff like routing numbers, bank account numbers. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  we'll need rounting, bank account numbers, etc.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so we'll need to take what's in the cc vocab and add it to a new vocab like payment along with the bank information.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we probably just want "card" instead of credit card.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Yes, we want to make this as general as possible. We have "cards", that can have brands ("Visa", "Mastercard", "Best Buy Gift Card", etc.) [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  it seems like a bank account could just be a sub class of com:Account</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Yeah, we could do that. If we want to re-use "Account", we may want to differentiate it as "BankAccount" instead of attempting to duck-type it. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  what are we calling the new vocab?</div>
+<div class="comment"><span class="name">Dave Longley</span>:  probably just "pay" with a prefix of "pay"</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  going down to the properties, we have brand...it's a text string like "visa", etc.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  that's fine, we have expiration dates, years, verification code, etc, all things associated with cards.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  We don't use 'name' anymore - we use vcard stuff for it now... [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  i have question about expiration dates...</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  do we want to use some kind of xsd year/month type for those properties so we can use semweb tech?</div>
+<div class="comment"><span class="name">Dave Longley</span>:  We don't want to make this too complicated - not combine "expirationMonth" and "expirtaitonYear" to "expiration" [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  We want a good balance. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  if we're using JSON-LD we could just use the number 11 in JSON, etc.</div>
+<div class="comment"><span class="name">David I. Lehn</span>: <a href="http://www.w3.org/TR/xmlschema-2/#gYear">http://www.w3.org/TR/xmlschema-2/#gYear</a></div>
+<div class="comment"><span class="name">David I. Lehn</span>: <a href="http://www.w3.org/TR/xmlschema-2/#gMonth">http://www.w3.org/TR/xmlschema-2/#gMonth</a></div>
+<div class="comment"><span class="name">Dave Longley</span>:  We want to use numbers in the JSON, and put the year/month typing into the @context. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  if we could just mark this up in the JSON-LD context and use numbers in the JSON that would be best</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we'll just do that for now, try and make that work.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  name and address have been replaced by the vcard vocab.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  there are lots of payment services that we would want to be able to mark up too</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  each one is a bit different</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  there's dwolla, paypal, etc. no generalized solution for this, so we should wait until these thigns are supported</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  i think that's ok, but in a general case, we need to figure out how to use this before we try and make it work</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  how do we handle cash?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  that's outside of the system and your handling deposits which puts you into bank territory</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  if we're talking about a pay vocab then cash is a mechanism</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  we're going a little too far, we should leave it open-ended enough to handle it in the future</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  is there anything else to discuss?</div>
+<div class="comment"><span class="name">Dave Longley</span>:  we're good.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  there's another question about the pay vocab...</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  is there any overlap with opentransact?</div>
+<div class="comment"><span class="name">Dave Longley</span>:  there's some overlap with email addresses to/from and possibly paypal, etc. We should wait until we have a better OpenTransact representative here to discuss.</div>
+<h1 id="topic-3" class="topic">Topic: PaySwarm Vocabulary</h1>
+<div class="comment"><span class="name">Manu Sporny</span>: <a href="http://payswarm.com/vocabs/payswarm">http://payswarm.com/vocabs/payswarm</a></div>
+<div class="comment"><span class="name">David I. Lehn</span>: <a href="http://payswarm.com/specs/source/vocabs/payswarm">http://payswarm.com/specs/source/vocabs/payswarm</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>:  for the classes we have asset, contract, data is something we don't use</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  data is a type of asset, people will want to use it so we should keep it</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we have license, etc. we need these things.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  webpage is a bit weird ... maybe we want an assets vocabulary</div>
+<div class="comment"><span class="name">Dave Longley</span>:  I'd rather we consolidate rather than split vocabularies... we could put "pay" into commerce vocabulary. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  Once we have everything defined, it's not that big of a deal to move them together. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  it's probably worth thinking about that. .. once we define everything it isn't that hard to put them together.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  The purpose of data was being able to buy and sell bits of information in a P2P system (paying for data streams) [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  the webpage term has a content url that is the same as the data one... what's the difference?</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  what's the difference in meaning?</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  could it all be collapsed into a resource or something because it's the same?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  i don't think there's an obvious answer to your question because we haven't done that much with data at the moment.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we could have byte ranges or other things specified to talk about data</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  you could specify a file, etc. we just don't have a byte range example</div>
+<div class="comment"><span class="name">Dave Longley</span>:  the meaning might be subtly different because when you buy data it might be a small chunk of data, not the whol efile</div>
+<div class="comment"><span class="name">Dave Longley</span>:  you might also buy the data in different formats so the content URL refers to a song ... but the data could be purchased as mp3 or ogg, etc.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we could have separate classes for this that would better clarify this or the property meaning</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we might just break this up into sections to make the vocab a little clearer</div>
+<div class="comment"><span class="name">Dave Longley</span>:  it's sort of a way to add in layers like david nicol mentioned on the previous call</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  we might have a better generalized way to approach all this so i think we need more experience</div>
+<div class="comment"><span class="name">Dave Longley</span>:  i think doign the layers is a good idea to try organizing this data and see if it works well instead of having to split vocabs up so much.</div>
+<div class="comment"><span class="name">Manu Sporny</span>: <a href="http://www.productontology.org/">http://www.productontology.org/</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>:  this describes any type of product you can think of, we could possibly reuse this.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  We could make it the general case that the PaySwarm Authority doesn't need to know the specific type of asset sold. The only concern is whether or not there are any rules that need to be applied based on the type of asset sold. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we could just always import those other terms in from another vocabulary</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  maybe if we're doing crowd funding ... there is an example of asset that needs to be processed differently</div>
+<div class="comment"><span class="name">Dave Longley</span>:  For example, for data, we may need to apply some rules that would need the code to do something different. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  i agree that the processing rules need to be things that are standardized and that we understand...</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  there may be extensions, etc., but this shouldn't be free form</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we could get rid of webpage now if we're not using it to affect processing</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  and we tell people to use another vocab to mark things up how they want to be more descriptive</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Yeah, that's fine - remove them for now. Would be better to give people fewer options in the beginning. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  especially if these things are specifically there to change the processing rules.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  the next thing that's up is the no additional payees rule.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  the reason that this exists is so that we can specify, in a listing (selling an article, etc), that they don't want any additional people adding fees to the item that they are selling</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so we definitely need that and it's not a general commerce thing it's specific to payswarm which is why it's here.</div>
+<div class="comment"><span class="name">Manu Sporny</span>: <a href="http://payswarm.com/specs/source/vocabs/payswarm#asset">http://payswarm.com/specs/source/vocabs/payswarm#asset</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we definitely need that, assets are in contracts, receipts, they are what's for sale.</div>
+<div class="comment"><span class="name">Manu Sporny</span>: <a href="http://payswarm.com/specs/source/vocabs/payswarm#assetAcquirer">http://payswarm.com/specs/source/vocabs/payswarm#assetAcquirer</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>:  next is assetAcquirer</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  yes, we use it</div>
+<div class="comment"><span class="name">Dave Longley</span>:  yes, i believe so</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  assetProvider ... do we need that?</div>
+<div class="comment"><span class="name">Dave Longley</span>:  yes</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  do we need authority?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  can't we get that from the asset provider?</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  that isn't necessarily true, i didn't think those were bound together</div>
+<div class="comment"><span class="name">Dave Longley</span>:  it might be used to specify the ID in the client config</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  i think we should do that a different way</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  there might be an argument to push a .well-known linked data services thing that can be served up in JSON-LD</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  i think how it's being used now is confusing, pointing it at a config URL</div>
+<div class="comment"><span class="name">Dave Longley</span>:  We may still need ps:authority - we could use it in the service discovery stage to specify which authority IRI to trust when receiving signatures from it. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  it specifies the owner for all keys to be trusted.</div>
+<div class="comment"><span class="name">Manu Sporny</span>: <a href="http://payswarm.com/specs/source/vocabs/payswarm#authority.">http://payswarm.com/specs/source/vocabs/payswarm#authority.</a></div>
+<div class="comment"><span class="name">Dave Longley</span>:  the spec might need to be updated to cover that use.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  There are two different URLs - there is a distinction between where the asset is vs. where the information about the asset is. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  the asset URL and the asset information URL may be different because the asset itself can't have the markup in it due to data format limitations.</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  The @id has the information about the asset, the contentUrl has the location of the data. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  are we using these URLs?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We need to determine if we're using this, right? [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  it's a required feature</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  we might be able to avoid this now for webpages, but we'll immediately have a need for it</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  for any raw data stream that can't have embedded asset information in it</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  if you're buying something that doesn't have content, you don't need this property, like buying radio spectrum ... there is no content.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  should we use content URL or just content.</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  i think we had a reason to do it at some point ...</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  maybe we wanted to be explicit to say they had to put a URL there, but we don't need to do that.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  it makes it look ugly and we have plenty of other URL properties where we don't have that, it isn't a design pattern that is supported or useful.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  let's drop it.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  we should drop URL, but we might change it to assetContent or something more explicit</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  why do we need "asset" there?"</div>
+<div class="comment"><span class="name">Manu Sporny</span>: <a href="http://dublincore.org/documents/dcmi-terms/">http://dublincore.org/documents/dcmi-terms/</a></div>
+<div class="comment"><span class="name">Dave Longley</span>:  you can move properties around outside of an asset, there might be some confusion if it isn't general enough</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  maybe we should use something from dublin core?</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  do we need to support more structure/data formats, etc?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we could allow base64-encoding content instead of it being a URL, etc.</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  it seems like it might be a case that comes up with buying ebook formats, etc. various different formats.</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  it may be that the people are providing it may take you to a link outside of the contract with more information</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  dc:source doesn't really fit since it refers to the source material, i dont' see anything in dublin core that really fits.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  let's just use content for now.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Is there a situation where ps:content would be ambiguous? [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  someone could use it in a way that's confusing, but i think in payswarm we're being very specific about its meaning</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  ok, we're at the top of the hour, we'll finish up the payswarm vocab</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  and get the documents updated.</div>
+       </div>
+  </div>
+
+<div class="container vspacing"> 
+  <div class="row"> 
+    <div class="threecol"> 
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a> 
+    </div> 
+    <div class="ninecol last"> 
+      <p>&copy; 2010-2011 Digital Bazaar, Inc. 
+Website CSS created by <a href="http://cssgrid.net/">@andytlr</a> 
+and is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/au/"> 
+Creative Commons Attribution-ShareAlike 3.0 Australia License</a>. All other
+website content is licensed under a
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"> 
+Creative Commons Attribution-ShareAlike 3.0 License</a>
+</p> 
+    </div> 
+  </div> 
+</div> 
+ 
+<script type="text/javascript"> 
+ 
+  var _gaq = _gaq || [];
+  _gaq.push(["_setAccount", "UA-1539674-7"]);
+  _gaq.push(["_trackPageview"]);
+
+  (function() {
+    var ga = document.createElement("script"); ga.type = "text/javascript"; ga.async = true;
+    ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";
+    (document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]).appendChild(ga);
+  })();
+ 
+</script>
+
+</body>
+</html>

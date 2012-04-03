@@ -1,0 +1,161 @@
+[Tue 14:02]	<manu-db>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2012Apr/0000.html
+[Tue 14:03]	<dlongley>	manu: we're continuing to go through the vocabularies today. we'll get to the pay vocab and see if we need it.
+[Tue 14:03]	<manu-db>	Topic: Commerce Vocabulary Properties
+[Tue 14:03]	<manu-db>	http://payswarm.com/vocabs/commerce
+[Tue 14:03]	<dlongley>	manu: we left off last time on the payeePosition property.
+[Tue 14:03]	<manu-db>	http://payswarm.com/vocabs/commerce#payeePosition
+[Tue 14:04]	<dlongley>	manu: we were thinking we might get rid of payeePosition, in preference for the use of JSON-LD @list feature.
+[Tue 14:04]	<manu-db>	http://payswarm.com/vocabs/commerce#paymentGateway
+[Tue 14:04]	<dlongley>	manu: we're postponing that decision until JSON-LD progresses a bit. next up is the payment gateway.
+[Tue 14:04]	<taaz>	as i say every week, let's link to the latest specs.
+[Tue 14:04]	<taaz>	http://payswarm.com/specs/source/vocabs/commerce
+[Tue 14:04]	<dlongley>	manu: it might belong in the pay vocab for credit cards, bank accounts, etc.
+[Tue 14:05]	<manu-db>	dlongley: Yeah, I think we're mostly in agreemen that we need to move it out into another "payments" vocabulary.
+[Tue 14:05]	<dlongley>	manu: ok, then we'll move it out.
+[Tue 14:05]	<manu-db>	http://payswarm.com/vocabs/commerce#payee
+[Tue 14:06]	<manu-db>	dlongley: This belongs in the commerce vocabulary
+[Tue 14:06]	<manu-db>	manu: Agreed, moving on.
+[Tue 14:06]	<manu-db>	http://payswarm.com/vocabs/commerce#rate
+[Tue 14:07]	<manu-db>	manu: Is this a payment vocabulary thing, or a commerce vocabulary thing?
+[Tue 14:07]	<manu-db>	dlongley: I think this is a commerce thing - not a payment thing.
+[Tue 14:07]	<manu-db>	dlongley: Seems like this belongs in the commerce vocabulary.
+[Tue 14:07]	<dlongley>	manu: i'm a bit split, i can see it going in either.
+[Tue 14:07]	<dlongley>	manu: but i'm ok with keeping it in the commerce vocab since there are good arguments either way.
+[Tue 14:08]	<dlongley>	manu: last are source and transfer, source is a source account for a commercial transaction and transfer being the most fundamental unit of monetary transfer.
+[Tue 14:08]	<dlongley>	manu: a transfer is the movement of money ... multiple transfers are contained in a transaction.
+[Tue 14:08]	<dlongley>	manu: both of those are commerce terms.
+[Tue 14:08]	<dlongley>	manu: we need to discuss the pay vocab in a little more depth as to what it actually does.
+[Tue 14:09]	<manu-db>	dlongley: nothing else to add to the commerce vocabulary discussion.
+[Tue 14:09]	<manu-db>	manu: ok moving on
+[Tue 14:09]	<dlongley>	dlongley: i think we covered most of what we needed in the last discussion
+[Tue 14:09]	<manu-db>	Topic: Credit Card Vocabulary
+[Tue 14:09]	<manu-db>	http://payswarm.com/vocabs/creditcard
+[Tue 14:10]	<taaz>	http://payswarm.com/specs/source/vocabs/creditcard
+[Tue 14:11]	<dlongley>	manu: cc vocab is a way to describe credit cards and debit cards and using them to process payments and put money into an account on a payswarm authority.
+[Tue 14:11]	<dlongley>	manu: (this is how it related to payswarm)
+[Tue 14:11]	<dlongley>	manu: the result of a charge is that money is pulled out of a credit card and put into a storage account online.
+[Tue 14:11]	<dlongley>	manu: we need to add a bank/banking source.
+[Tue 14:12]	<manu-db>	dlongley: Yeah, we currently have that in our source code - we started to create a 'bank' prefix - we may not need to make as much as a distinction on credit card vs. debit card. It's not necessary as it relates to how you process credit cards / debit cards.
+[Tue 14:12]	<manu-db>	dlongley: We do need stuff like routing numbers, bank account numbers.
+[Tue 14:12]	<dlongley>	dlongley: we'll need rounting, bank account numbers, etc.
+[Tue 14:13]	<dlongley>	manu: so we'll need to take what's in the cc vocab and add it to a new vocab like payment along with the bank information.
+[Tue 14:13]	<dlongley>	manu: we probably just want "card" instead of credit card.
+[Tue 14:13]	<manu-db>	dlongley: Yes, we want to make this as general as possible. We have "cards", that can have brands ("Visa", "Mastercard", "Best Buy Gift Card", etc.)
+[Tue 14:15]	<dlongley>	manu: it seems like a bank account could just be a sub class of com:Account
+[Tue 14:16]	<manu-db>	dlongley: Yeah, we could do that. If we want to re-use "Account", we may want to differentiate it as "BankAccount" instead of attempting to duck-type it.
+[Tue 14:16]	<dlongley>	manu: what are we calling the new vocab?
+[Tue 14:16]	<dlongley>	dlongley: probably just "pay" with a prefix of "pay"
+[Tue 14:17]	<dlongley>	manu: going down to the properties, we have brand...it's a text string like "visa", etc.
+[Tue 14:17]	<dlongley>	manu: that's fine, we have expiration dates, years, verification code, etc, all things associated with cards.
+[Tue 14:18]	<manu-db>	dlongley: We don't use 'name' anymore - we use vcard stuff for it now...
+[Tue 14:18]	<dlongley>	dlehn: i have question about expiration dates...
+[Tue 14:18]	<dlongley>	dlehn: do we want to use some kind of xsd year/month type for those properties so we can use semweb tech?
+[Tue 14:19]	<manu-db>	dlongley: We don't want to make this too complicated - not combine "expirationMonth" and "expirtaitonYear" to "expiration"
+[Tue 14:19]	<manu-db>	dlongley: We want a good balance.
+[Tue 14:20]	<dlongley>	manu: if we're using JSON-LD we could just use the number 11 in JSON, etc.
+[Tue 14:20]	<taaz>	http://www.w3.org/TR/xmlschema-2/#gYear
+[Tue 14:20]	<taaz>	http://www.w3.org/TR/xmlschema-2/#gMonth
+[Tue 14:21]	<manu-db>	dlongley: We want to use numbers in the JSON, and put the year/month typing into the @context.
+[Tue 14:21]	<dlongley>	dlongley: if we could just mark this up in the JSON-LD context and use numbers in the JSON that would be best
+[Tue 14:21]	<dlongley>	manu: we'll just do that for now, try and make that work.
+[Tue 14:21]	<dlongley>	manu: name and address have been replaced by the vcard vocab.
+[Tue 14:22]	<dlongley>	manu: there are lots of payment services that we would want to be able to mark up too
+[Tue 14:23]	<dlongley>	dlehn: each one is a bit different
+[Tue 14:23]	<dlongley>	manu: there's dwolla, paypal, etc. no generalized solution for this, so we should wait until these thigns are supported
+[Tue 14:23]	<dlongley>	dlehn: i think that's ok, but in a general case, we need to figure out how to use this before we try and make it work
+[Tue 14:23]	<dlongley>	dlehn: how do we handle cash?
+[Tue 14:23]	<dlongley>	manu: that's outside of the system and your handling deposits which puts you into bank territory
+[Tue 14:24]	<dlongley>	manu: if we're talking about a pay vocab then cash is a mechanism
+[Tue 14:24]	<dlongley>	dlehn: we're going a little too far, we should leave it openended enough to handle it in the future
+[Tue 14:24]	<dlongley>	manu: is there anything else to discuss?
+[Tue 14:25]	<dlongley>	dlongley: we're good.
+[Tue 14:25]	<dlongley>	manu: there's another question about the pay vocab...
+[Tue 14:25]	<dlongley>	manu: is there any overlap with opentransact?
+[Tue 14:25]	<manu-db>	Topic: PaySwarm Vocabulary
+[Tue 14:25]	<dlongley>	dlongley: there's some overlap with email addresses to/from and possibly paypal, etc.
+[Tue 14:26]	<manu-db>	http://payswarm.com/vocabs/payswarm
+[Tue 14:26]	<taaz>	http://payswarm.com/specs/source/vocabs/payswarm
+[Tue 14:27]	<dlongley>	manu: for the classes we have asset, contract, data is something we don't use
+[Tue 14:27]	<dlongley>	manu: data is a type of asset, people will want to use it so we should keep it
+[Tue 14:27]	<dlongley>	manu: we have license, etc. we need these things.
+[Tue 14:27]	<dlongley>	manu: webpage is a bit weird ... maybe we want an assets vocabulary
+[Tue 14:28]	<manu-db>	dlongley: I'd rather we consolidate rather than split vocabularies... we could put "pay" into commerce vocabulary.
+[Tue 14:28]	<manu-db>	dlehn: Once we have everything defined, it's not that big of a deal to move them together.
+[Tue 14:28]	<dlongley>	dlehn: it's probably worth thinking about that. .. once we define everything it isn't that hard to put them together.
+[Tue 14:29]	<manu-db>	dlongley: The purpose of data was being able to buy and sell bits of information in a P2P system (paying for data streams)
+[Tue 14:29]	<dlongley>	dlehn: the webpage term has a content url that is the same as the data one... what's the difference?
+[Tue 14:29]	<dlongley>	dlehn: what's the difference in meaning?
+[Tue 14:30]	<dlongley>	dlehn: could it all be collapsed into a resource or something because it's the same?
+[Tue 14:30]	<dlongley>	manu: i don't think there's an obvious answer to your question because we haven't done that much with data at the moment.
+[Tue 14:30]	<dlongley>	manu: we could have byte ranges or other things specified to talk about data
+[Tue 14:30]	<dlongley>	manu: you could specify a file, etc. we just don't have a byte range example
+[Tue 14:32]	<dlongley>	dlongley: the meaning might be subtly different because when you buy data it might be a small chunk of data, not the whol efile
+[Tue 14:32]	<dlongley>	dlongley: you might also buy the data in different formats so the content URL refers to a song ... but the data could be purchased as mp3 or ogg, etc.
+[Tue 14:32]	<dlongley>	manu: we could have separate classes for this that would better clarify this or the property meaning
+[Tue 14:33]	<dlongley>	manu: we might just break this up into sections to make the vocab a little clearer
+[Tue 14:33]	<dlongley>	dlongley: it's sort of a way to add in layers like david nicol mentioned on the previous call
+[Tue 14:34]	<dlongley>	dlehn: we might have a better generalized way to approach all this so i think we need more experience
+[Tue 14:35]	<dlongley>	dlongley: i think doign the layers is a good idea to try organizing this data and see if it works well instead of having to split vocabs up so much.
+[Tue 14:35]	<manu-db>	http://www.productontology.org/
+[Tue 14:35]	<dlongley>	manu: this describes any type of product you can think of, we could possibly reuse this.
+[Tue 14:36]	<manu-db>	dlongley: We could make it the general case that the PaySwarm Authority doesn't need to know the specific type of asset sold. The only concern is whether or not there are any rules that need to be applied based on the type of asset sold.
+[Tue 14:37]	<dlongley>	manu: we could just always import those other terms in from another vocabulary
+[Tue 14:37]	<dlongley>	manu: maybe if we're doing crowd funding ... there is an example of asset that needs to be processed differently
+[Tue 14:38]	<manu-db>	dlongley: For example, for data, we may need to apply some rules that would need the code to do something different.
+[Tue 14:38]	<dlongley>	dlehn: i agree that the processing rules need to be things that are standardized and that we understand...
+[Tue 14:38]	<dlongley>	dlehn: there may be extensions, etc., but this shouldn't be free form
+[Tue 14:39]	<dlongley>	manu: we could get rid of webpage now if we're not using it to affect processing
+[Tue 14:39]	<dlongley>	manu: and we tell people to use another vocab to mark things up how they want to be more descriptive
+[Tue 14:40]	<manu-db>	dlongley: Yeah, that's fine - remove them for now. Would be better to give people fewer options in the beginning.
+[Tue 14:40]	<dlongley>	dlongley: especially if these things are specifically there to change the processing rules.
+[Tue 14:40]	<dlongley>	manu: the next thing that's up is the no additional payees rule.
+[Tue 14:41]	<dlongley>	manu: the reason that this exists is so that we can specify, in a listing (selling an article, etc), that they don't want any additional people adding fees to the item that they are selling
+[Tue 14:41]	<dlongley>	manu: so we definitely need that and it's not a general commerce thing it's specific to payswarm which is why it's here.
+[Tue 14:41]	<manu-db>	http://payswarm.com/specs/source/vocabs/payswarm#asset
+[Tue 14:42]	<dlongley>	manu: we definitely need that, assets are in contracts, receipts, they are what's for sale.
+[Tue 14:42]	<manu-db>	http://payswarm.com/specs/source/vocabs/payswarm#assetAcquirer
+[Tue 14:42]	<dlongley>	manu: next is assetAcquirer
+[Tue 14:42]	<dlongley>	dlehn: yes, we use it
+[Tue 14:42]	<dlongley>	dlongley: yes, i believe so
+[Tue 14:43]	<dlongley>	manu: assetProvider ... do we need that?
+[Tue 14:43]	<dlongley>	dlongley: yes
+[Tue 14:43]	<dlongley>	manu: do we need authority?
+[Tue 14:43]	<dlongley>	manu: can't we get that from the asset provider?
+[Tue 14:43]	<dlongley>	dlehn: that isn't necessarily true, i didn't think those were bound together
+[Tue 14:44]	<dlongley>	dlongley: it might be used to specify the ID in the client config
+[Tue 14:44]	<dlongley>	dlehn: i think we should do that a different way
+[Tue 14:45]	<dlongley>	manu: there might be an argument to push a .well-known linked data services thing that can be served up in JSON-LD
+[Tue 14:45]	<dlongley>	dlehn: i think how it's being used now is confusing, pointing it at a config URL
+[Tue 14:46]	<manu-db>	dlongley: We may still need ps:authority - we could use it in the service discovery stage to specify which authority IRI to trust when receiving signatures from it.
+[Tue 14:47]	<dlongley>	dlongley: it specifies the owner for all keys to be trusted.
+[Tue 14:47]	<manu-db>	http://payswarm.com/specs/source/vocabs/payswarm#authority.
+[Tue 14:47]	<dlongley>	dlongley: the spec might need to be updated to cover that use.
+[Tue 14:49]	<manu-db>	dlongley: There are two different URLs - there is a distinction between where the asset is vs. where the information about the asset is.
+[Tue 14:49]	<dlongley>	dlongley: the asset URL and the asset information URL may be different because the asset itself can't have the markup in it due to data format limitations.
+[Tue 14:49]	<manu-db>	dlehn: The @id has the information about the asset, the contentUrl has the location of the data.
+[Tue 14:50]	<dlongley>	manu: are we using these URLs?
+[Tue 14:50]	<manu-db>	manu: We need to determine if we're using this, right?
+[Tue 14:50]	<dlongley>	dlehn: it's a required feature
+[Tue 14:51]	<dlongley>	dlehn: we might be able to avoid this now for webpages, but we'll immediately have a need for it
+[Tue 14:51]	<dlongley>	dlehn: for any raw data stream that can't have embedded asset information in it
+[Tue 14:51]	<dlongley>	dlehn: if you're buying something that doesn't have content, you don't need this property, like buying radio spectrum ... there is no content.
+[Tue 14:51]	<dlongley>	manu: should we use content URL or just content.
+[Tue 14:52]	<dlongley>	dlehn: i think we had a reason to do it at some point ...
+[Tue 14:52]	<dlongley>	manu: maybe we wanted to be explicit to say they had to put a URL there, but we don't need to do that.
+[Tue 14:52]	<dlongley>	manu: it makes it look ugly and we have plenty of other URL properties where we don't have that, it isn't a design pattern that is supported or useful.
+[Tue 14:52]	<dlongley>	manu: let's drop it.
+[Tue 14:53]	<dlongley>	dlongley: we should drop URL, but we might change it to assetContent or something more explicit
+[Tue 14:54]	<dlongley>	dlehn: why do we need "asset" there?"
+[Tue 14:54]	<manu-db>	http://dublincore.org/documents/dcmi-terms/
+[Tue 14:54]	<dlongley>	dlongley: you can move properties around outside of an asset, there might be some confusion if it isn't general enough
+[Tue 14:54]	<dlongley>	manu: maybe we should use something from dublin core?
+[Tue 14:54]	<dlongley>	dlehn: do we need to support more structure/data formats, etc?
+[Tue 14:55]	<dlongley>	manu: we could allow base64-encoding content instead of it being a URL, etc.
+[Tue 14:55]	<dlongley>	dlehn: it seems like it might be a case that comes up with buying ebook formats, etc. various different formats.
+[Tue 14:56]	<dlongley>	dlehn: it may be that the people are providing it may take you to a link outside of the contract with more information
+[Tue 14:56]	<dlongley>	manu: dc:source doesn't really fit since it refers to the source material, i dont' see anything in dublin core that really fits.
+[Tue 14:57]	<dlongley>	manu: let's just use content for now.
+[Tue 14:58]	<manu-db>	dlongley: Is there a situation where ps:content would be ambiguous?
+[Tue 14:59]	<dlongley>	manu: someone could use it in a way that's confusing, but i think in payswarm we're being very specific about its meaning
+[Tue 14:59]	<dlongley>	manu: ok, we're at the top of the hour, we'll finish up the payswarm vocab
+[Tue 14:59]	<dlongley>	manu: and get the documents updated.
