@@ -1,0 +1,163 @@
+[Tue 14:03]	<manu-db>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2012Apr/0008.html
+[Tue 14:03]	<manu-db>	scribe: dlongley
+[Tue 14:03]	<dlongley>	manu: on the agenda today -  talk about IFEX, Mintchip, potential security vulnerabilities, vocabs, RDFa and JSON-LD updates.
+[Tue 14:03]	<voip-ps>	dlongley is not associated with an audio channel. You may specify the first or last name of a person's Caller ID. You may also specify the last 2 or more digits of the audio channel name. You can also map an IRC nickname to an audio channel. Use 'voip-ps: <CHANNEL> is me' to map yourself to an audio channel. Use 'voip-ps: <CHANNEL> is <NICK>' to map someone else to an audio channel.
+rdfa+jsonld updates.
+[Tue 14:03]	<manu-db>	voip: mute Longley
+[Tue 14:03]	<voip-ps>	Longley is not associated with an audio channel. You may specify the first or last name of a person's Caller ID. You may also specify the last 2 or more digits of the audio channel name. You can also map an IRC nickname to an audio channel. Use 'voip-ps: <CHANNEL> is me' to map yourself to an audio channel. Use 'voip-ps: <CHANNEL> is <NICK>' to map someone else to an audio channel.
+[Tue 14:04]	<dlongley>	manu: no updates to the agenda? ... ok, let's start with IFEX.
+[Tue 14:04]	<manu-db>	Topic: IFEX proposal by Payward
+[Tue 14:04]	<manu-db>	http://lists.w3.org/Archives/Public/public-webpayments/2012Apr/0006.html
+[Tue 14:05]	<dlongley>	manu: I had a long discussion with Walter Stanish who works for Payward, they are trying to create a system to do payment settlement, which is different from PaySwarm where PaySwarm is focused on e-commerce and doing transactions from point A to point B, they are concerned with actually moving the money (backend transfer), PaySwarm only keeps track of where the money *should* be, IFEX moves the money.
+[Tue 14:06]	<dlongley>	manu: IFEX creates an open and decentralized network, sort of a parallel to ACH, but more prone to competition, it is an open network vs. closed banking network.
+[Tue 14:06]	<dlongley>	manu: the way it works is, say, I need to transfer $100 to British pounds and put that money into someone else's account ... the way I think IFEX works is that you put a bid out there to do the transfer and people would compete to complete the transfer for you.
+[Tue 14:07]	<dlongley>	manu: you pick the winner, providers compete ... could be used on stock exchanges and they could be done in subseconds - very quickly instead of it taking seconds, hours, days, weeks.
+[Tue 14:08]	<dlongley>	manu: it seemed like what Walter was going towards with IFEX and what we were doing with webpayments here ... made it seem like we can work together, they are trying to do settlements, PaySwarm is dealing with e-commerce, sort of the front end and tracking money/transfers, and IFEX provides the backend for moving the physical money around.
+[Tue 14:08]	<dlongley>	manu: PaySwarm could use a backend of IFEX or ACH (whichever works best for customers) to move the actual money in the background.
+[Tue 14:08]	<dlongley>	manu: Walter is also talking to some other currency folks, but wants to really work with fiat currencies
+[Tue 14:09]	<dlongley>	manu: so that's what we know about IFEX now ... any questions about how we work with Walter in the future?
+[Tue 14:09]	<dlongley>	dlehn: sure, how do we integrate that into what we have now?
+[Tue 14:09]	<dlongley>	manu: Walter said IFEX would be built into an open source server that you install
+[Tue 14:09]	<dlongley>	manu: it would function just like a payment gateway (with a merchant account ,etc).
+[Tue 14:09]	<dlongley>	manu: like we would call out to a payment gateway, we would similarly call out to the IFEX server instead.
+[Tue 14:10]	<dlongley>	manu: I think they are going to have a software release sometime in the near future and we'd deal with the currently muddy details at that point.
+[Tue 14:10]	<dlongley>	dlehn: ok.
+[Tue 14:10]	<manu-db>	Topic: MintChip by the Royal Canadian Mint
+[Tue 14:10]	<manu-db>	http://lists.w3.org/Archives/Public/public-webpayments/2012Apr/0003.html
+[Tue 14:10]	<dlongley>	manu: Next up is MintChip, the Royal Canadian Mint launched this project
+[Tue 14:10]	<dlongley>	manu: so a gov't is getting into more advanced payment systems, which is great.
+[Tue 14:11]	<dlongley>	manu: There's a good analysis of MintChip by Pelle here: http://payglo.be/2012/04/05/mintchip/
+[Tue 14:11]	<taaz>	he has an update too: http://payglo.be/2012/04/17/mintchip-roundup/
+[Tue 14:11]	<dlongley>	manu: He says it may be difficult to scale and there are security issues with the physical card.
+[Tue 14:12]	<dlongley>	manu: You always worry about the security and whether or not it can survive security attacks once you put it into hardware ... always a concern that hardware will be stolen/hacked, etc.
+[Tue 14:12]	<dlongley>	manu: It's a neat way to do offline payments
+[Tue 14:12]	<dlongley>	manu: Different from PaySwarm in that PaySwarm focuses on online payments, though PaySwarm can do offline payments by deferring a transfer by digitally signing it and then uploading later.
+[Tue 14:12]	<dlongley>	manu: MintChip is supposed to be fairly anonymous which is good news, like cash.
+[Tue 14:13]	<dlongley>	manu: bad news is that if you lose your card it's just like losing cash, it's gone.
+[Tue 14:13]	<dlongley>	manu: it's meant for smaller amounts on cards, several hundred dollars at a time at most.
+[Tue 14:13]	<dlongley>	manu: any questions on MintChip, etc?
+[Tue 14:13]	<dlongley>	dlehn: how would we begin to integrate with them?
+[Tue 14:14]	<dlongley>	manu: we could contact the Royal Canadian Mint and talk to them ... we could have MintChip tied in as just another currency, it is supposedly a virtual currency
+[Tue 14:14]	<dlongley>	dlehn: actually I think it is in Canadian Dollars.
+[Tue 14:14]	<dlongley>	dlehn: they have currencies that are listed in Canadian dollars.
+[Tue 14:14]	<dlongley>	manu: Pelle came to the same conclusion that it is its own currency, I remember reading that as well.
+[Tue 14:14]	<taaz>	http://payglo.be/2012/04/05/mintchip/#comment-3
+[Tue 14:14]	<dlongley>	manu: in any case, if it is its own currency we could use it like that.
+[Tue 14:15]	<dlongley>	manu: we would need to talk to them to figure out how we could integrate or charge in that currency over PaySwarm.
+[Tue 14:15]	<dlongley>	manu: I think you have to have an official hardware device to add money to it.
+[Tue 14:15]	<jeffsayre>	http://www.canadafreepress.com/index.php/article/46008
+[Tue 14:15]	<dlongley>	manu: there is an online version of it that maybe we could work with.
+[Tue 14:15]	<dlongley>	manu: but now you need hardware devices, merchants would need them along side credit card readers etc, and that is problematic for integration.
+[Tue 14:15]	<dlongley>	manu: I don't really know how we'd integrate cleanly.
+[Tue 14:15]	<jeffsayre>	See link above: " The Royal Canadian Mint is pleased to announce that it has launched a program for developers from across North America to test and challenge a digital currency technology and to determine its applicability to the current marketplace."
+[Tue 14:15]	<dlongley>	manu: I can only think of the online version integration working.
+[Tue 14:16]	<dlongley>	dlehn: at one level we could accept money that way, if we had the hardware.
+[Tue 14:16]	<dlongley>	dlehn: it could just be another way to deposit or withdraw funds.
+[Tue 14:16]	<dlongley>	jeff: there's a link that was released just two days ago
+[Tue 14:16]	<dlongley>	jeffsayre: the Royal Canadian Mint is challenging devs to test their new technology
+[Tue 14:17]	<dlongley>	jeffsayre: they are asking for devs to get involved so they are clearly interested in developer input, so we should investigate
+[Tue 14:17]	<dlongley>	dlehn: the roundup link from Pelle's blog has pictures of the devkit.
+[Tue 14:17]	<manu-db>	"MintChip™ uses innovative technology, for which the Mint has prototypes and five patents pending."
+[Tue 14:17]	<dlongley>	manu: there's one other issue which is that MintChip looks to be a patent-encumbered technology which is always a concern.
+[Tue 14:17]	<jeffsayre>	http://mintchipchallenge.com/
+[Tue 14:17]	<dlongley>	manu: they probably did that just to prevent other companies from patenting it
+[Tue 14:18]	<dlongley>	...conversation about patent licenses...
+[Tue 14:18]	<dlongley>	manu-db: PaySwarm needs to be patent and royalty-free
+[Tue 14:19]	<dlongley>	manu: we should try and get them to be readily available in the webpayments group
+[Tue 14:19]	<dlongley>	jeffsayre: in the MintChip challenge there is a cash prize, which they are issuing in physical gold not their currency. =)
+[Tue 14:20]	<dlongley>	manu: Jeff, you are right we should try and contact them, would you like to do that if you're interested?
+[Tue 14:20]	<dlongley>	jeffsayre: sure!
+[Tue 14:20]	<dlongley>	manu: it would be great to see if they are interested in what we're doing and get them involved
+[Tue 14:20]	<dlongley>	manu: Thanks Jeff
+[Tue 14:20]	<dlongley>	manu: anything else on MintChip before we move on?
+[Tue 14:20]	<manu-db>	Topic: Potential security vulnerability via HTTPS
+[Tue 14:20]	<manu-db>	http://lists.w3.org/Archives/Public/public-webpayments/2012Apr/0007.html
+[Tue 14:21]	<dlongley>	manu: this was brought up on the mailing list ...
+[Tue 14:21]	<dlongley>	manu: there was a discussion about PaySwarm on a closed facebook group and how it does automatic payments over HTTPS...
+[Tue 14:21]	<dlongley>	manu: Specifically the issue raised by a "crypto expert" was that we use HTTPS to protect transaction integrity
+[Tue 14:21]	<dlongley>	manu: I wrote a response to Fabio to ask for more information
+[Tue 14:21]	<dlongley>	manu: it seems like the person misread the intent of the spec - perhaps the spec needs to be more clear
+[Tue 14:22]	<dlongley>	manu: about what we're depending on HTTPS to prevent and what we're depending on digital signatures to prevent
+[Tue 14:22]	<dlongley>	manu: they may be misunderstanding how the system operates or is intended to operate
+[Tue 14:22]	<dlongley>	manu: they don't think HTTPS is good enough to prevent replay attacks, which is confusing because that's exactly what one of the things TLS (which HTTPS operates on top of) is meant to prevent.
+[Tue 14:22]	<dlongley>	manu: it depends on what their suggested attack is, but it's hard to tell from the little text that we received.
+[Tue 14:23]	<manu-db>	dlongley: Yeah, HTTPS has nonces to prevent replay attacks - if they get out of order, messages will not validate. HTTPS is specifically designed to prevent replay attacks, authentication (MITM) - two parts to protocol - don't know which part of the protocol they were criticizing/saying we weren't using correctly.
+[Tue 14:24]	<manu-db>	dlongley: I'm sure their argument wasn't "HTTPS can't prevent replay attacks" - it's unclear from the message what they were concerned about.
+[Tue 14:24]	<dlongley>	manu: the only thing I can think of is that they were talking about a MiTM related attack to the certificate system...
+[Tue 14:25]	<dlongley>	manu: with regard to network perspectives: http://perspectives-project.org/
+[Tue 14:25]	<dlongley>	manu: if China can sign for US websites or vice versa then there's a problem - this can happen today, vulnerability for all websites.
+[Tue 14:25]	<dlongley>	manu: if a signing authority gets compromised or acts nefariously there can be an issue, PaySwarm is no different from all other e-commerce sites out there in this respect.
+[Tue 14:26]	<dlongley>	manu: every e-commerce site is susceptible to this attack it isn't specific to PaySwarm
+[Tue 14:26]	<dlongley>	manu: you could always narrow down the PaySwarm authorities that you trust
+[Tue 14:26]	<dlongley>	to a very specific set
+[Tue 14:26]	<dlongley>	manu: even if that's what the actual complaint what about, there is a solution for it
+[Tue 14:27]	<dlongley>	manu: the other issue could be... what happens if a steal a private key (nothing we can do about that) other than revoke the key ... or what happens if you accidentally make a purchase request over HTTP and try to replay it?
+[Tue 14:28]	<manu-db>	dlongley: I don't think we get very specific on transaction IDs - how do you deal with transactions at a PaySwarm Authority? If we generate transaction IDs, we get rid of many of these issues.
+[Tue 14:28]	<manu-db>	dlongley: We really need to find out what the specific attack they're talking about is.
+[Tue 14:29]	<dlongley>	manu: anything else on this issue before we move on?
+[Tue 14:29]	<manu-db>	Topic: PaySwarm Vocabulary
+[Tue 14:29]	<dlongley>	manu: next up is the PaySwarm vocab
+[Tue 14:29]	<manu-db>	http://payswarm.com/specs/source/vocabs/PaySwarm
+[Tue 14:29]	<dlongley>	manu: Let's finish off the remaining bits that we have in here
+[Tue 14:30]	<dlongley>	manu: Let me check the last minutes real quick to figure out where we were
+[Tue 14:31]	<manu-db>	dlongley: Yeah, we were discussing contentURL - drop URL, maybe just use 'content'
+[Tue 14:31]	<manu-db>	dlongley: We need the definition of what that term is to be clear - if it is a general term that covers everything we need, then that's fine.
+[Tue 14:32]	<dlongley>	manu: So we decided that contentUrl should just be content.
+[Tue 14:32]	<dlongley>	manu: Next up is licenseTemplate
+[Tue 14:32]	<manu-db>	http://payswarm.com/specs/source/vocabs/payswarm#licenseTemplate
+[Tue 14:32]	<dlongley>	manu: in PaySwarm we have a concept .... you have an asset like a webpage (blog/article) and a listing for it that tells you the cost,etc ... and there is a license.
+[Tue 14:33]	<dlongley>	manu: the webpage/song is the asset and the license tells you if something is free for non-commercial use, or whatever other terms there are ... and those two things (asset+license) go into the listing.
+[Tue 14:33]	<dlongley>	manu: the license can say things like "the maximum number of people can be in a room watching a movie"
+[Tue 14:33]	<dlongley>	manu: and other fairly complex statements.
+[Tue 14:34]	<dlongley>	manu: for 3d-printed goods, you buy a digital file that allows you to print a physical item and the license may say the number of times you can print the item or there could be serial numbers in the license.
+[Tue 14:34]	<dlongley>	manu: the license will be an html file that is a template that lets you fill in part sof the license
+[Tue 14:35]	<manu-db>	dlongley: To be clear - the purpose of this is to re-use the same license language - so you don't have to mint a new license for every asset that you generate.
+[Tue 14:36]	<manu-db>	dlongley: It also gives people certain boilerplate URLs that they can use - the listing contains the license, the asset, and the terms for the license. The PaySwarm Authority can look at the license and parse that information if it knows what the terms mean.
+[Tue 14:36]	<manu-db>	dlongley: This is also there in english prose, you can see exactly what the license says and where the terms go and find out legally if you're abiding by the license. The license is digitally signed.
+[Tue 14:36]	<manu-db>	manu: I don't think we plan to change licenseTemplate or licenseTerms
+[Tue 14:37]	<manu-db>	dlongley: Just to be clear - the license itself isn't signed, the listing is signed, which contains the license.
+[Tue 14:37]	<manu-db>	dlongley: Anybody can publish license - this is important for re-use of licenses like Creative Commons licenses.
+[Tue 14:37]	<dlongley>	jeffsayre: just to be clear, you can use existing licenses or create your own.
+[Tue 14:38]	<dlongley>	jeffsayre: there's nothing holding people back from creating their own licenses and terms
+[Tue 14:38]	<dlongley>	dlongley: that's correct
+[Tue 14:38]	<dlongley>	manu: yes, anyone can create those templates and pick the terms they want.
+[Tue 14:38]	<dlongley>	manu: hopefully it's fairly easy to create a license template
+[Tue 14:38]	<dlongley>	manu: you'll want to get legal help to make sure the license you write is legally enforceable.
+[Tue 14:38]	<dlongley>	manu: but that is contract law and out of scope for PaySwarm
+[Tue 14:39]	<dlongley>	manu: the assumption is that there is a legal framework in your country that will acknowledge the license.
+[Tue 14:39]	<dlongley>	manu: anything else before moving on?
+[Tue 14:39]	<dlongley>	manu: so we're not changing those, they are fine the way they are.
+[Tue 14:39]	<dlongley>	manu: identityHash is up next.
+[Tue 14:39]	<manu-db>	http://PaySwarm.com/specs/source/vocabs/PaySwarm#identityHash
+[Tue 14:39]	<dlongley>	manu: this one is problematic ...
+[Tue 14:39]	<dlongley>	manu: background on identityHash...
+[Tue 14:39]	<dlongley>	manu: we wanted the ability to allow these contracts to be fully anonymous - even the vendor
+[Tue 14:40]	<dlongley>	manu: the PaySwarm system was designed so that you could be anonymous on the system and make purchases
+[Tue 14:40]	<dlongley>	manu: the downside is verifying a contract if a PaySwarm Authority disappears... you still need to prove you have legal access to the item
+[Tue 14:41]	<dlongley>	manu: a movie studio might take you to a court of law if you started showing a movie to 200-300 people at a time, you have to prove that the Movie Studio allowed you to do that.
+[Tue 14:42]	<manu-db>	dlongley: The point of this is to answer the question: What happens if the PaySwarm Authority goes out of business and disappears?
+[Tue 14:46]	<taaz>	dlongley: The identity hash is only used for vendors and only those providers that are providing an asset other than data. If you are providing raw data only then it is assumed that you have implicitly given access to that data already anyway -- there are no rights involved other than the data access itself and the contract is considered fairly temporal. If you are not providing data then you are providing rights to an asset where the creator of that asset is known. However, the home address of that person isn't necessarily known. If that home address is a matter of public record then our scheme doesn't care about protecting that knowledge -- meaning that person's address can be determined just from their name anyway -- even without buying anything from them using our system. However, if their address is not a matter of public record, our scheme protects that individual's address because the set of all addresses where that person has lived are not available to do a brute force attack. It is true though, that all addresses where that person might have lived within an entire state or country might be available. If that's the case, it is typically unfeasible to try every possible address in the region (high CPU/$ cost). If it isn't unfeasible, then it's likely just as easy to check some other public record(s) as it is to look in our contracts for that information.
+[Tue 14:46]	<taaz>	dlongley: Since CPU power will continue to improve over time... we need to ensure that it is sufficiently difficult to test the (sufficiently small) set of addresses that an attacker believes a person exists in. In order to do this, we will append a random number, in a certain range, to the identity message that is digested. This nearly identical to the concept of a salt, except that this salt doesn't just protect against dictionary attacks, it protects against computational attacks because the salt is kept secret (actually, it is thrown away after use).
+[Tue 14:46]	<taaz>	dlongley: This salt can be discarded because, in the event of a subpoena, there will be a very small data set (relative to the "guess set" a brute force attacker would have to use) that will have to processed looking for a hash match. We can just test all random numbers (possible salts) along with each address in the set. The random number should be sufficiently small that we can test identities when subpoena'd but sufficiently large to thwart attackers. It can increase with time as CPU power gets better. Note that this test only needs to be run if the PaySwarm authority involved has gone away (the actual identities are no longer stored in an available database).
+[Tue 14:49]	<taaz>	jeffsayre: if identity can be discerned through brute force techniques, why would this be considered a desireable feature?
+[Tue 14:50]	<taaz>	manu-db: An attempt to brute-force the hash would take more than 20 years on a large computing cluster - at considerable cost (millions of dollars)
+[Tue 14:50]	<manu-db>	dlongley: Right now, there are two different versions of the contact - the version of the contract given to the vendor does not have the address information for the buyer. The vendor defers to the PaySwarm Authority for the address information (it can't see it). The buyer gets a version of the contract that contains their address information, but possibly not the vendor's address information (but the identityHash instead).
+[Tue 14:50]	<manu-db>	jeffsayre: Still, if you could brute-force this, then is it a desirable feature?
+[Tue 14:51]	<manu-db>	dlongley: You can only brute-force if you know a set of potential answers ahead of time.
+[Tue 14:52]	<manu-db>	jeffsayre: If it's only a handful of people that can carry out a brute-force attack on this, it still makes me wonder why this would be considered useful if this mechanism can be broken.
+[Tue 14:57]	<manu-db>	dlongley: I think we should look at the use cases for identityHash again - it's been a long time since we've looked at this use case.
+[Tue 14:57]	<manu-db>	jeffsayre: You could solve this issue using a form of escrow as well.
+[Tue 15:00]	<manu-db>	dlongley: We do already support escrow in PaySwarm - we can hold funds for a period of time - the way we plan to deal with bad vendors is if you get enough "I didn't get the product" complaints - you start getting refused from the system.
+[Tue 15:00]	<manu-db>	jeffsayre: You could use escrow until you trust the person enough and then lift the need for escrow.
+[Tue 15:01]	<dlongley>	manu: so that's identityHash ... the other remaining hashes are really necessary
+[Tue 15:01]	<manu-db>	manu: We keep license, licenseHash, listing and listingHash
+[Tue 15:02]	<manu-db>	dlongley: Yeah, those are very necessary - we need those. The hashes are important to determine that you know what you're signing for - that both sides agree that they're signing the same text/document.
+[Tue 15:02]	<dlongley>	manu: right, there is no way to switch out the asset/license/listing out from underneath you
+[Tue 15:02]	<dlongley>	manu: because the hash of what they signed must match what you're looking at as the buyer.
+[Tue 15:03]	<manu-db>	dlongley: There may be other terms for validFrom validUntil, but we do need them - sellers need to be able to sign listings for a short period of time. For the current demo, the recipes are signed for 24 hours (and that way they're valid). You don't say you're selling something for all of eternity for $0.05 - you can change prices quickly w/o having to contact anybody to do it.
+[Tue 15:04]	<dlongley>	manu: that's all the time we have for today for the call
+[Tue 15:04]	<dlongley>	manu: we can talk about more vocab next time and talk about rdfa and JSON-LD updates.
+[Tue 15:04]	<dlongley>	manu: we've been doing a lot of RDFa and JSON-LD updates lately at DB to get them ready for PaySwarm (and to just get them ready for REC, etc).
+[Tue 15:04]	<dlongley>	manu: once those foundational things are done we can focus more on higher-level PaySwarm stuff.
+[Tue 15:05]	<dlongley>	manu: Dave Longley has been doing a lot of work on digitally signing deterministic graphs
+[Tue 15:05]	<dlongley>	manu: we need these foundational things working before we can put much more effort into the PaySwarm specs.
