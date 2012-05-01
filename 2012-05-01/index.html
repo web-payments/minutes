@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+      class="wf-adelle1adelle2-n6-active wf-active"> 
+ 
+<head> 
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+  <title>PaySwarm - Teleconferences</title> 
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ 
+  <link rel="stylesheet" href="../../css/1140.css" type="text/css" media="screen" /> 
+  <!--[if lte IE 9]>
+  <link rel="stylesheet" href="../css/ie.css" type="text/css" media="screen" />
+  <![endif]--> 
+  <link rel="stylesheet" href="../../css/typeimg.css" type="text/css" media="screen" /> 
+  <link rel="stylesheet" href="../../css/smallerscreen.css" media="only screen and (max-width: 1023px)" /> 
+  <link rel="stylesheet" href="../../css/mobile.css" media="handheld, only screen and (max-width: 767px)" /> 
+  <link rel="stylesheet" href="../../css/layout.css" type="text/css" media="screen" /> 
+  <link rel="shortcut icon" type="image/png" href="../../images/payswarm-icon.png" /> 
+  
+<style type="text/css">
+h1 {
+   margin-top: 24px;
+   margin-bottom: 14px;
+}
+
+.header {
+   margin-top: 0px;
+   margin-bottom: 14px;
+}
+
+ol {
+   margin-bottom: 0em;
+}
+
+li {
+   margin-left: 1.5em;
+   margin-bottom: 0em;
+}
+#content {
+   margin-left: 15%;
+   margin-right: 15%;
+}
+
+.summary {
+   margin-left: 10%
+   margin-right: 10%
+}
+
+.name {
+   font-weight: bold;
+}
+
+.information {
+   font-style: italic;
+}  
+
+.comment-continuation {
+   margin-left: 2em;
+}
+
+dt {
+   font-style: oblique;
+}
+
+dd {
+   margin-left: 20px;
+}
+
+  </style>
+  
+</head> 
+<body> 
+ 
+<div class="titlebar"> 
+   <h1 class="header">PaySwarm</h1> 
+</div> 
+
+  <div id="content"> 
+ 
+  <div class="row"> 
+    <div class="twelvecol last"> 
+
+<h1>Web Payments Community Group Telecon</h1>
+<h2>Minutes for 2012-05-01</h2>
+<div class="summary">
+<dl>
+<dt>Agenda</dt><dd><a href="Http://lists.w3.org/Archives/Public/public-webpayments/2012Apr/0042.html">Http://lists.w3.org/Archives/Public/public-webpayments/2012Apr/0042.html</a></dd>
+<dt>Topics</dt><dd><ol><li><a href="#topic-1">PaySwarm Vocabulary</a><li><a href="#topic-2">Prefixed-terms vs. keywords for PaySwarm 1.0</a><li><a href="#topic-3">Webcredit spec concerns</a><li><a href="#topic-4">Currency IRIs</a><li><a href="#topic-5">Enforce-ability of amounts in currencies</a><li><a href="#topic-6">Range of vocabulary terms</a><li><a href="#topic-7">Fragment Identifiers</a></ol></dd><dt>Facilitator</dt><dd>Manu Sporny</dd>
+<dt>Scribe</dt><dd>Dave Longley</dd>
+<dt>Present</dt><dd>Dave Longley, Manu Sporny, David I. Lehn</dd>
+<dt>Audio Log</dt><dd><div><a href="audio.ogg">audio.ogg</a></div>
+<div><audio controls="controls" preload="none">
+<source src="audio.ogg" type="audio/ogg" />Warning: Your browser does not support the HTML5 audio element, please upgrade.</div></dd>
+<div class="information">Dave Longley is scribing.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We're going to discuss the payswarm vocabulary and the webcredit spec. Anything else for today?</div>
+<h1 id="topic-1" class="topic">Topic: PaySwarm Vocabulary</h1>
+<div class="comment"><span class="name">David I. Lehn</span>: <a href="http://payswarm.com/specs/source/vocabs/payswarm">http://payswarm.com/specs/source/vocabs/payswarm</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We were on the "owner" term.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  We use ps:owner for a lot of different things, we need an ownership term. This is in the same state that it was in before. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  We already talked about ownership; it's still in limbo.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  We were looking for another term for it from another vocabulary.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Do we want an external term or not? [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  do we want to keep owner here?</div>
+<div class="comment"><span class="name">Dave Longley</span>:  We might want to layer it.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  We should keep it for now, it might move to another vocab or be "layered" (like discussed before) but it is needed.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  moving on, validFrom specifies when some information begins being valid</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  validUntil indicates when the validity period ends</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We certainly need this, we use it for keys, listings, etc.</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  Is the reliable terminology the right usage here?</div>
+<div class="comment"><span class="name">Dave Longley</span>:  It refers to a validity period.</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  ok</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  maybe we should put these things in RDF Schema vocabulary (core web resource thing) (owner/validFrom/validUntil)</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  We don't have control over that</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We can ask them to add it.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  I don't think there's any question it is the right thing to do, it's just a question as to whether or not we can get it done in a reasonable time frame.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  I'll talk to some people (Ivan Herman, etc.) about this.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  yeah, there were several things I have to talk to people about here.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  I will talk with W3C to see if we can get these terms into a vocab.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  that's that for the payswarm vocabulary.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  anything else that needs to be discussed?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We didn't really discuss the payment vocab.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  and we may just make it a "layer" within the payswarm vocab.</div>
+<h1 id="topic-2" class="topic">Topic: Prefixed-terms vs. keywords for PaySwarm 1.0</h1>
+<div class="comment"><span class="name">Manu Sporny</span>:  a couple of people (eg: Pelle) have raised the point that it would be nice if we could just use terms</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  rather than prefixes</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  I think the vocabs are simple enough so that we could do that using the payswarm context</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  the keys are unique enough so that we don't have conflicts right now</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  the question is whether or not we want to support that or stay with prefixes</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so do we just want to use just plain terms?</div>
+<div class="comment"><span class="name">Dave Longley</span>:  I think prefixed-terms are going to turn many people away from PaySwarm... the folks that don't care about Linked Data. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  It might be a good idea to just use terms, I think it'll just be more attractive for folks. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  Are we sure there are no conflicts/ [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  If there are, we can change the vocabulary term to something else. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  of course people and extend this if they want to.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We allow people to use prefixed-values if they want to, right? [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  yes, that's what JSON-LD is for. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  ok, I think we're all in agreement</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  lots of code we'll have to make.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  In the long run this will be better.</div>
+<h1 id="topic-3" class="topic">Topic: Webcredit spec concerns</h1>
+<div class="comment"><span class="name">David I. Lehn</span>:  the JSON-LD spec has matured enough that we can use it as intended to deal with this.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  yes.</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  Can you summarize what was going on in the thread(s)?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Michiel de Jong is the project lead for the unhosted project</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  they are trying to do decentralized payments, etc. decentralized everything.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  let you have your own data service that provides your pictures, payments, everything that facebook/twitter uses, etc.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so what is the type of URI that you use when you want to make a payment?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Can you use a mailto: URI?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Can someone take a currency message that says "EUR" and agree to it?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  How are different currencies resolved/specified by URI, text, etc?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  It seems like Michiel's argument is that people will challenge the type of currency specified if how a currency is specified isn't in the spec</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  I think that if there's something that says { "amount": "5", "currency": "EUR" } in the document, I don't think courts would have a problem with that</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  I think it would be clear what you intended to pay someone.</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  I thought it was odd that anyone would think there was an issue at all.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  right; I think we're in agreement</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  His issues one by one:</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  He said he's struggling with the vagueness of the syntax</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  He says ... what if someone uses a mailto: In the currency field</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  because any URI will do</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  I'm not sure that's actually what the spec says</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  the payswarm spec; so there may be no issue there.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  He said he wants the URI to point to a document explaining what the currency is</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We wanted to actually go further, we wanted it to be an endpoint where you could hit the URI and be able to get a certain amount of the currency.</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  I don't know how far we want to go with this but it doesn't really matter with the URIs are ...</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  you can dereference it, but you can just use other semweb stuff to describe that URI.</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  If you use a mailto: It's weird, and I don't know why you'd do that</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  He's saying you don't have interoperability if you do that</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  If two apps use different kinds of URIs they are non-interoperable</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  It isn't that one is at fault, it's just that they aren't agreeing on a common currency</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  sounds like its out of scope</div>
+<div class="comment"><span class="name">Dave Longley</span>:  This is not any different from having an app that don't support a currency. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  just viewing the currency field as a string ...</div>
+<div class="comment"><span class="name">Dave Longley</span>:  If you want to exchange value, both apps have to agree on the currency. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  If you don't support a certain currency you can't talk to the apps that do.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  It doesn't matter what the actual string is.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  yes, both apps have to understand a currency value, that's it.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  It's like if someone came up to a US counter and tried to pay in EURO it wouldn't work if they didnt' accept that.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  It's not different than trying to pay with "mailto:".</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  yes, we should just try to better explain this.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We're in agreement.</div>
+<h1 id="topic-4" class="topic">Topic: Currency IRIs</h1>
+<div class="comment"><span class="name">David I. Lehn</span>:  there may be some other standards /currency IDs that are in IRI form that we could use</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  that might somewhat help with this</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  there might be an IRI form with the ISO for currencies</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  I dont' know there's a common standard that has IRIs in it.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We say currency code in the spec because we know that we can do that</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  If someone makes an IRI that people accept in the future we'll just add support for that.</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  It would be nice to not special case currency</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  yes, but I don't think the world is there yet</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  and we don't want to have to solve that problem in PaySwarm 1.0 - we can always say we support "USD" today and "<a href="http://some-official-currency.org/currencies/USD"">http://some-official-currency.org/currencies/USD"</a> in the future.</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  Could we just claim our own IRIs?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We'd have to go through a process that would be problematic.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  at the end it would be the W3C saying "here are the URLs for the currencies in the world", and they won't be willing to do that w/o buy in from major banks and standards-setting organizations.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  getting that support might be a big political issue</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  I dont' know, maybe it wouldn't be.</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  this would certainly simplify our system and let us put descriptions, etc into these URLs</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Could we just use urn:currency, etc?</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  Well, it would make it an IRI and simplify how we handle things</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  let me see if there's an IRI for this</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Six Interbank Clearing is the company that is in charge of this</div>
+<div class="information">(for providing codes and numbers for currencies)</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  I think it would be a pain to support the numbers</div>
+<div class="comment"><span class="name">Manu Sporny</span>: urn:iso4217:USD</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  should we do that just to be consistent?</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Let's try to find some standard that specifies IRIs for currencies, and if there is one, use that. If not, we can revisit. [scribe assist by Manu Sporny]</div>
+<h1 id="topic-5" class="topic">Topic: Enforce-ability of amounts in currencies</h1>
+<div class="comment"><span class="name">Manu Sporny</span>:  His next concern we sort of talked about already, if you go and buy a car and give a web credit of 2000 with a currency of EURO on it, (webcredits is an IOU system), lets say that after 2 months someone asks you for the IOU and you say that all the things you sign are in grains of sand ... so why do you want EUROs?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  I think it's pretty clear what a court would do in this case</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  I don't think that any court would find that because the spec wasn't specific enough that the buyer was never intending to buy in EUROs but always in grains of sand</div>
+<div class="comment"><span class="name">Dave Longley</span>:  We can just add a sentence that says: If you say amount and currency, then you mean the amount in that currency.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  to the spec; that will be easy.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  I don't think we want to support self-issued currencies yet, which is something in the webcredits spec</div>
+<div class="comment"><span class="name">Dave Longley</span>:  I agree</div>
+<div class="information">(discussion about webcredits spec ... doesn't really apply to payswarm)</div>
+<div class="comment"><span class="name">Dave Longley</span>:  We just have to have core support for that sort of thing in payswarm, we don't need support specifically</div>
+<div class="comment"><span class="name">Dave Longley</span>:  We made payswarm to allow extensions like this</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  I agree</div>
+<div class="comment"><span class="name">Dave Longley</span>:  (refers to lots of extra contract-related things that can be implemented on top of base PaySwarm spec in WebCredits spec)</div>
+<h1 id="topic-6" class="topic">Topic: Range of vocabulary terms</h1>
+<div class="comment"><span class="name">Manu Sporny</span>:  the payswarm spec says what goes into source and destination ... which may be different from what the vocab says (more limited)</div>
+<div class="comment"><span class="name">Dave Longley</span>:  sounds fine to respond by saying there's no issue if the vocab terms are broad but the spec narrows it down for specific messages.</div>
+<h1 id="topic-7" class="topic">Topic: Fragment Identifiers</h1>
+<div class="comment"><span class="name">Manu Sporny</span>:  Michiel says everyone uses a hash URL to mean a document fragment (identify something within a document), but this breaks machine readibility</div>
+<div class="comment"><span class="name">Manu Sporny</span>: Michiel said: "everybody uses the # to mean document fragment, and the definition of a URL-with-fragment as both the document and its topic breaksmachine-readability. "</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  this is HTTP range 14 territory, let's not spend much time on it</div>
+<div class="comment"><span class="name">Dave Longley</span>:  What this comes down to is this:</div>
+<div class="comment"><span class="name">Dave Longley</span>:  a # can be interpreted by a client however it wants to, we have a specific kind of client that participates in payswarm (a linked data aware PaySwarm client) and we mandate how to interpret those hashes</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  next ...</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  some other concerns about the webcredits spec ... that, conversely, we should have covered in payswarm</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  His concern is about who owes who in a document, the spec needs to be clear and really the graphical interfaces being used to transact must actually be clear.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  I think we've discussed most of Michiel's concerns</div>
+       </div>
+  </div>
+
+<div class="container vspacing"> 
+  <div class="row"> 
+    <div class="threecol"> 
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a> 
+    </div> 
+    <div class="ninecol last"> 
+      <p>&copy; 2010-2011 Digital Bazaar, Inc. 
+Website CSS created by <a href="http://cssgrid.net/">@andytlr</a> 
+and is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/au/"> 
+Creative Commons Attribution-ShareAlike 3.0 Australia License</a>. All other
+website content is licensed under a
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"> 
+Creative Commons Attribution-ShareAlike 3.0 License</a>
+</p> 
+    </div> 
+  </div> 
+</div> 
+ 
+<script type="text/javascript"> 
+ 
+  var _gaq = _gaq || [];
+  _gaq.push(["_setAccount", "UA-1539674-7"]);
+  _gaq.push(["_trackPageview"]);
+
+  (function() {
+    var ga = document.createElement("script"); ga.type = "text/javascript"; ga.async = true;
+    ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";
+    (document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]).appendChild(ga);
+  })();
+ 
+</script>
+
+</body>
+</html>

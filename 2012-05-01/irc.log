@@ -1,0 +1,141 @@
+[Tue 14:02]	<manu1>	Agenda: Http://lists.w3.org/Archives/Public/public-webpayments/2012Apr/0042.html
+[Tue 14:02]	<manu1>	scribe: dlongley
+[Tue 14:03]	<dlongley>	manu: We're going to discuss the payswarm vocabulary and the webcredit spec. Anything else for today?
+[Tue 14:03]	<manu1>	Topic: PaySwarm Vocabulary
+[Tue 14:03]	<taaz>	http://payswarm.com/specs/source/vocabs/payswarm
+[Tue 14:03]	<dlongley>	manu: We were on the "owner" term.
+[Tue 14:04]	<manu1>	dlongley: We use ps:owner for a lot of different things, we need an ownership term. This is in the same state that it was in before.
+[Tue 14:04]	<dlongley>	dlongley: We already talked about ownership; it's still in limbo.
+[Tue 14:04]	<dlongley>	dlongley: We were looking for another term for it from another vocabulary.
+[Tue 14:05]	<manu1>	manu: Do we want an external term or not?
+[Tue 14:05]	<dlongley>	manu: do we want to keep owner here?
+[Tue 14:05]	<dlongley>	dlongley: We might want to layer it.
+[Tue 14:06]	<dlongley>	dlongley: We should keep it for now, it might move to another vocab or be "layered" (like discussed before) but it is needed.
+[Tue 14:06]	<dlongley>	manu: moving on, validFrom specifies when some information begins being valid
+[Tue 14:06]	<dlongley>	manu: validUntil indicates when the validity period ends
+[Tue 14:06]	<dlongley>	manu: We certainly need this, we use it for keys, listings, etc.
+[Tue 14:07]	<dlongley>	dlehn: Is the reliable terminology the right usage here?
+[Tue 14:07]	<dlongley>	dlongley: It refers to a validity period.
+[Tue 14:07]	<dlongley>	dlehn: ok
+[Tue 14:07]	<dlongley>	manu: maybe we should put these things in RDF Schema vocabulary (core web resource thing) (owner/validFrom/validUntil)
+[Tue 14:07]	<dlongley>	dlehn: We don't have control over that
+[Tue 14:07]	<dlongley>	manu: We can ask them to add it.
+[Tue 14:08]	<dlongley>	manu: I don't think there's any question it is the right thing to do, it's just a question as to whether or not we can get it done in a reasonable time frame.
+[Tue 14:08]	<dlongley>	manu: I'll talk to some people (Ivan Herman, etc.) about this.
+[Tue 14:08]	<dlongley>	manu: yeah, there were several things I have to talk to people about here.
+[Tue 14:08]	<dlongley>	manu: I will talk with W3C to see if we can get these terms into a vocab.
+[Tue 14:08]	<dlongley>	manu: that's that for the payswarm vocabulary.
+[Tue 14:09]	<dlongley>	manu: anything else that needs to be discussed?
+[Tue 14:09]	<dlongley>	manu: We didn't really discuss the payment vocab.
+[Tue 14:09]	<dlongley>	dlongley: and we may just make it a "layer" within the payswarm vocab.
+[Tue 14:09]	<manu1>	Topic: Prefixed-terms vs. keywords for PaySwarm 1.0
+[Tue 14:10]	<dlongley>	manu: a couple of people (eg: Pelle) have raised the point that it would be nice if we could just use terms
+[Tue 14:10]	<dlongley>	manu: rather than prefixes
+[Tue 14:10]	<dlongley>	manu: I think the vocabs are simple enough so that we could do that using the payswarm context
+[Tue 14:10]	<dlongley>	manu: the keys are unique enough so that we don't have conflicts right now
+[Tue 14:10]	<dlongley>	manu: the question is whether or not we want to support that or stay with prefixes
+[Tue 14:11]	<dlongley>	manu: so do we just want to use just plain terms?
+[Tue 14:11]	<manu1>	dlongley: I think prefixed-terms are going to turn many people away from PaySwarm... the folks that don't care about Linked Data.
+[Tue 14:11]	<manu1>	dlongley: It might be a good idea to just use terms, I think it'll just be more attractive for folks.
+[Tue 14:12]	<manu1>	dlehn: Are we sure there are no conflicts/
+[Tue 14:12]	<manu1>	manu: If there are, we can change the vocabulary term to something else.
+[Tue 14:12]	<dlongley>	manu: of course people and extend this if they want to.
+[Tue 14:12]	<manu1>	manu: We allow people to use prefixed-values if they want to, right?
+[Tue 14:12]	<manu1>	dlongley: yes, that's what JSON-LD is for.
+[Tue 14:13]	<dlongley>	manu: ok, I think we're all in agreement
+[Tue 14:13]	<dlongley>	dlehn: lots of code we'll have to make.
+[Tue 14:13]	<dlongley>	manu: In the long run this will be better.
+[Tue 14:13]	<manu1>	Topic: Webcredit spec concerns
+[Tue 14:13]	<dlongley>	dlehn: the JSON-LD spec has matured enough that we can use it as intended to deal with this.
+[Tue 14:13]	<dlongley>	manu: yes.
+[Tue 14:14]	<dlongley>	dlehn: Can you summarize what was going on in the thread(s)?
+[Tue 14:14]	<dlongley>	manu: Michiel de Jong is the project lead for the unhosted project
+[Tue 14:14]	<dlongley>	manu: they are trying to do decentralized payments, etc. decentralized everything.
+[Tue 14:15]	<dlongley>	manu: let you have your own data service that provides your pictures, payments, everything that facebook/twitter uses, etc.
+[Tue 14:15]	<dlongley>	manu: so what is the type of URI that you use when you want to make a payment?
+[Tue 14:15]	<dlongley>	manu: Can you use a mailto: URI?
+[Tue 14:15]	<dlongley>	manu: Can someone take a currency message that says "EUR" and agree to it?
+[Tue 14:16]	<dlongley>	manu: How are different currencies resolved/specified by URI, text, etc?
+[Tue 14:16]	<dlongley>	manu: It seems like Michiel's argument is that people will challenge the type of currency specified if how a currency is specified isn't in the spec
+[Tue 14:16]	<dlongley>	manu: I think that if there's something that says { "amount": "5", "currency": "EUR" } in the document, I don't think courts would have a problem with that
+[Tue 14:17]	<dlongley>	manu: I think it would be clear what you intended to pay someone.
+[Tue 14:17]	<dlongley>	dlehn: I thought it was odd that anyone would think there was an issue at all.
+[Tue 14:17]	<dlongley>	manu: right; I think we're in agreement
+[Tue 14:17]	<dlongley>	manu: His issues one by one:
+[Tue 14:17]	<dlongley>	manu: He said he's struggling with the vagueness of the syntax
+[Tue 14:18]	<dlongley>	manu: He says ... what if someone uses a mailto: In the currency field
+[Tue 14:18]	<dlongley>	manu: because any URI will do
+[Tue 14:18]	<dlongley>	manu: I'm not sure that's actually what the spec says
+[Tue 14:18]	<dlongley>	manu: the payswarm spec; so there may be no issue there.
+[Tue 14:18]	<dlongley>	manu: He said he wants the URI to point to a document explaining what the currency is
+[Tue 14:19]	<dlongley>	manu: We wanted to actually go further, we wanted it to be an endpoint where you could hit the URI and be able to get a certain amount of the currency.
+[Tue 14:19]	<dlongley>	dlehn: I don't know how far we want to go with this but it doesn't really matter with the URIs are ...
+[Tue 14:19]	<dlongley>	dlehn: you can dereference it, but you can just use other semweb stuff to describe that URI.
+[Tue 14:19]	<dlongley>	dlehn: If you use a mailto: It's weird, and I don't know why you'd do that
+[Tue 14:19]	<dlongley>	manu: He's saying you don't have interoperability if you do that
+[Tue 14:20]	<dlongley>	manu: If two apps use different kinds of URIs they are non-interoperable
+[Tue 14:20]	<dlongley>	dlehn: It isn't that one is at fault, it's just that they aren't agreeing on a common currency
+[Tue 14:20]	<dlongley>	manu: sounds like its out of scope
+[Tue 14:21]	<manu1>	dlongley: This is not any different from having an app that don't support a currency.
+[Tue 14:21]	<dlongley>	dlongley: just viewing the currency field as a string ...
+[Tue 14:21]	<manu1>	dlongley: If you want to exchange value, both apps have to agree on the currency.
+[Tue 14:21]	<dlongley>	dlongley: If you don't support a certain currency you can't talk to the apps that do.
+[Tue 14:21]	<dlongley>	dlongley: It doesn't matter what the actual string is.
+[Tue 14:22]	<dlongley>	manu: yes, both apps have to understand a currency value, that's it.
+[Tue 14:22]	<dlongley>	manu: It's like if someone came up to a US counter and tried to pay in EURO it wouldn't work if they didnt' accept that.
+[Tue 14:22]	<dlongley>	manu: It's not different than trying to pay with "mailto:".
+[Tue 14:22]	<dlongley>	dlehn: yes, we should just try to better explain this.
+[Tue 14:22]	<dlongley>	manu: We're in agreement.
+[Tue 14:22]	<dlongley>	Topic: Currency IRIs
+[Tue 14:22]	<dlongley>	dlehn: there may be some other standards /currency IDs that are in IRI form that we could use
+[Tue 14:23]	<dlongley>	dlehn: that might somewhat help with this
+[Tue 14:23]	<dlongley>	manu: there might be an IRI form with the ISO for currencies
+[Tue 14:23]	<dlongley>	dlehn: I dont' know there's a common standard that has IRIs in it.
+[Tue 14:23]	<dlongley>	manu: We say currency code in the spec because we know that we can do that
+[Tue 14:23]	<dlongley>	manu: If someone makes an IRI that people accept in the future we'll just add support for that.
+[Tue 14:24]	<dlongley>	dlehn: It would be nice to not special case currency
+[Tue 14:24]	<dlongley>	manu: yes, but I don't think the world is there yet
+[Tue 14:24]	<dlongley>	manu: and we don't want to have to solve that problem in PaySwarm 1.0 - we can always say we support "USD" today and "http://some-official-currency.org/currencies/USD" in the future.
+[Tue 14:24]	<dlongley>	dlehn: Could we just claim our own IRIs?
+[Tue 14:24]	<dlongley>	manu: We'd have to go through a process that would be problematic.
+[Tue 14:25]	<dlongley>	manu: at the end it would be the W3C saying "here are the URLs for the currencies in the world", and they won't be willing to do that w/o buy in from major banks and standards-setting organizations.
+[Tue 14:25]	<dlongley>	manu: getting that support might be a big political issue
+[Tue 14:25]	<dlongley>	dlehn: I dont' know, maybe it wouldn't be.
+[Tue 14:25]	<dlongley>	dlehn: this would certainly simplify our system and let us put descriptions, etc into these URLs
+[Tue 14:26]	<dlongley>	dlongley: Could we just use urn:currency, etc?
+[Tue 14:27]	<dlongley>	dlehn: Well, it would make it an IRI and simplify how we handle things
+[Tue 14:27]	<dlongley>	manu: let me see if there's an IRI for this
+[Tue 14:28]	<dlongley>	manu: Six Interbank Clearing is the company that is in charge of this
+[Tue 14:28]	<dlongley>	(for providing codes and numbers for currencies)
+[Tue 14:28]	<dlongley>	manu: I think it would be a pain to support the numbers
+[Tue 14:29]	<manu1>	urn:iso4217:USD
+[Tue 14:30]	<dlongley>	manu: should we do that just to be consistent?
+[Tue 14:31]	<manu1>	dlongley: Let's try to find some standard that specifies IRIs for currencies, and if there is one, use that. If not, we can revisit.
+[Tue 14:32]	<dlongley>	Topic: Enforce-ability of amounts in currencies
+[Tue 14:32]	<dlongley>	manu: His next concern we sort of talked about already, if you go and buy a car and give a web credit of 2000 with a currency of EURO on it, (webcredits is an IOU system), lets say that after 2 months someone asks you for the IOU and you say that all the things you sign are in grains of sand ... so why do you want EUROs?
+[Tue 14:33]	<dlongley>	manu: I think it's pretty clear what a court would do in this case
+[Tue 14:33]	<dlongley>	manu: I don't think that any court would find that because the spec wasn't specific enough that the buyer was never intending to buy in EUROs but always in grains of sand
+[Tue 14:34]	<dlongley>	dlongley: We can just add a sentence that says: If you say amount and currency, then you mean the amount in that currency.
+[Tue 14:34]	<dlongley>	dlongley: to the spec; that will be easy.
+[Tue 14:35]	<dlongley>	manu: I don't think we want to support self-issued currencies yet, which is something in the webcredits spec
+[Tue 14:35]	<dlongley>	dlongley: I agree
+[Tue 14:36]	<dlongley>	(discussion about webcredits spec ... doesn't really apply to payswarm)
+[Tue 14:37]	<dlongley>	dlongley: We just have to have core support for that sort of thing in payswarm, we don't need support specifically
+[Tue 14:37]	<dlongley>	dlongley: We made payswarm to allow extensions like this
+[Tue 14:37]	<dlongley>	dlehn: I agree
+[Tue 14:38]	<dlongley>	dlongley: (refers to lots of extra contract-related things that can be implemented on top of base PaySwarm spec in WebCredits spec)
+[Tue 14:39]	<manu1>	Topic: Range of vocabulary terms
+[Tue 14:39]	<dlongley>	manu: the payswarm spec says what goes into source and destination ... which may be different from what the vocab says (more limited)
+[Tue 14:39]	<dlongley>	dlongley: sounds fine to respond by saying there's no issue if the vocab terms are broad but the spec narrows it down for specific messages.
+[Tue 14:39]	<dlongley>	Topic: Fragment Identifiers
+[Tue 14:40]	|<--	tilgovi has left freenode (Read error: Connection reset by peer)
+[Tue 14:40]	<dlongley>	manu: Michiel says everyone uses a hash URL to mean a document fragment (identify something within a document), but this breaks machine readibility
+[Tue 14:41]	-->|	tilgovi (~randall@couchdb/developer/tilgovi) has joined #payswarm
+[Tue 14:41]	<manu1>	Michiel said: "everybody uses the # to mean document fragment, and the definition of a URL-with-fragment as both the document and its topic breaksmachine-readability. "
+[Tue 14:41]	<dlongley>	manu: this is HTTP range 14 territory, let's not spend much time on it
+[Tue 14:43]	<dlongley>	dlongley: What this comes down to is this:
+[Tue 14:44]	<dlongley>	dlongley: a # can be interpreted by a client however it wants to, we have a specific kind of client that participates in payswarm (a linked data aware PaySwarm client) and we mandate how to interpret those hashes
+[Tue 14:44]	<dlongley>	manu: next ...
+[Tue 14:46]	<dlongley>	manu: some other concerns about the webcredits spec ... that, conversely, we should have covered in payswarm
+[Tue 14:46]	<dlongley>	manu: His concern is about who owes who in a document, the spec needs to be clear and really the graphical interfaces being used to transact must actually be clear.
+[Tue 14:46]	<dlongley>	manu: I think we've discussed most of Michiel's concerns
