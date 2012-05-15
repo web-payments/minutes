@@ -1,0 +1,134 @@
+[Tue 14:02]	<manu1>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2012May/0024.html
+[Tue 14:03]	<dlongley> scribe: dlongley
+[Tue 14:03]	<dlongley>	manu: today's call is mostly about w3c's headlights program for 2012 and what our position is on Dave Raggett's questions
+[Tue 14:03]	<dlongley>	manu: both Doug Schepers and Dave Raggett have asked us to think about how web intents in payments would work
+[Tue 14:03]	<dlongley>	manu: the other thing they've asked is for some kind of review on the state of art for payments
+[Tue 14:03]	<dlongley>	manu: we may follow up on what technologies we ought to focus on and what the w3c should focus on over the next year on webpayments
+[Tue 14:04]	<dlongley>	manu: so we're going to discuss the direction to take, etc.
+[Tue 14:04]	<dlongley>	manu: any updates/changes to the agenda?
+[Tue 14:04]	<dlongley>	dlongley: nope
+[Tue 14:04]	<manu1>	Topic: Web Intents for Payment
+[Tue 14:04]	<manu1>	http://www.w3.org/wiki/Payments_Task_Force#Payments_and_Web_Intents
+[Tue 14:04]	<dlongley>	manu: first, the most "dangerous" thing that dave raggett hinted at in his email
+[Tue 14:04]	<dlongley>	manu: this is for web intents for payment
+[Tue 14:05]	<dlongley>	manu: it seems a lot of people in the w3c think web intents would go a far way in handling webpayments
+[Tue 14:05]	<dlongley>	manu: without really covering interoperability
+[Tue 14:05]	<dlongley>	manu: Dave Lehn, didn't you implement some web intents stuff at some point?
+[Tue 14:05]	<dlongley>	dlehn: i made a quick demo for buying images/etc... stuff like that using the new scheme handler/registration stuff. It had more to do with payment schemes, but it would more or less work the same way.
+[Tue 14:06]	<dlongley>	manu: the w3c is thinking of doing a demo with webpayments with webintents
+[Tue 14:06]	<dlongley>	manu: the idea is you get your payment provider from web intents ...
+[Tue 14:06]	<dlongley>	manu: but a lot of what payswarm does isn't in there
+[Tue 14:06]	<dlongley>	manu: some of the w3c people don't seem to be aware of this interoperabilty issue.
+[Tue 14:07]	<manu1>	dlongley: A couple of thoughts - web intents are a good way to pick your payment provider.
+[Tue 14:07]	<manu1>	dlongley: You visit your payment provider, and that site registers for 'pay' web intent - you go to another site and the browser's interface shows you that you can use visa, payswarm provider, etc. to do that. In PaySwarm, how does the client pick their PaySwarm provider?
+[Tue 14:08]	<manu1>	dlongley: We chose not to address this because BrowserID and Web Intents were going to address it - works well for NASCAR problem. It's fine when the website owner doesn't have a large stake in what's going on... but when they want to sell a good or a service, they need to receive money... fundamentally different situation from login or photo preferences. Dealing with money requires far more trust and security than photos.
+[Tue 14:08]	<taaz>	The quick demo I tried was using registerProtocolHandler API: http://lists.w3.org/Archives/Public/public-webpayments/2011Oct/0013.html
+[Tue 14:09]	<manu1>	dlongley: There must be a greater level of trust between vendor and customer and payment provider - there are also two payment providers involved, potentially. There are four parties that need to trust each other, and two parties that need to interoperate (from a financial standpoing).
+[Tue 14:09]	<manu1>	dlongley: Vendors have to know how to mark up what they have for sale - they need to be able to describe what they're offering - what's the cost? Description of good/service? They need to know that the customer's payment provider is going to process this in the correct way.
+[Tue 14:10]	<manu1>	dlongley: Customers and payment providers need to know that they're doing business with the appropriate party - that the customer's payment provider is abiding by rules that the vendor wants to enforce... if the correct amount isn't paid, you're going to have a big problem. There needs to be some sort of digital agreement/contract/receipt... when you are dealing with those sorts of things, you need to check for authenticity.
+[Tue 14:11]	<manu1>	dlongley: All of this stuff goes way beyond the simple concept of web intents - you also need to care about privacy and encryption... digital signatures.
+[Tue 14:11]	<manu1>	dlongley: All of this leads to some sort of PKI - we end up introducing all of these technologies to establish trust - if we are going to talk about Web Intents - we need to have a way to list assets on a website - PaySwarm does that and we have a vocabulary.
+[Tue 14:12]	<manu1>	dlongley: You need to be able to put this data on your site - RDFa + JSON-LD is one way to do this - this is why we have this in PaySwarm. Once you've done that, you need a way to encrypt and decrypt data - AES and RSA in PaySwarm does that.
+[Tue 14:12]	<manu1>	dlongley: Then you need to check the authenticity of contracts/receipts - you need non-repudiation, you need to be able to check digital signatures - RSA... basically a PKI... you need all of these layers /in addition to/ Web Intents to have the systems be interoperable.
+[Tue 14:13]	<manu1>	dlongley: Not only that, but the payment providers need to interoperate or you have a centralized system - you need some sort of payment provider whitelist - to ensure that payment provider for the buyer can get money to payment provider for the vendor.
+[Tue 14:14]	<manu1>	dlongley: If you don't have all of this stuff, you end up with a centralized system... you have Google, PayPal, Amazon - no room for smaller players, no room for interoperabilty between bigger players.
+[Tue 14:14]	<dlongley>	manu: i agree, this is a good breakdown of the problems that exist that aren't covered by Web Intents payments proposal.
+[Tue 14:15]	<dlongley>	manu: we can argue that you don't need some of the things on this list individually, but each time you do that, you take away something fundamental from interoperablity or competition ... or you require centralization,etc.
+[Tue 14:15]	<dlongley>	manu: any of these things take away from a basic decentralized w3c web solution
+[Tue 14:15]	<dlongley>	manu: we need to make this very clear in our response that web intents is just the tip of the iceberg
+[Tue 14:15]	<dlongley>	manu: to do payments correctly on the web there's more that has to be done
+[Tue 14:16]	<dlongley>	manu: my concern is people will come in an say "well, we can get something working really quickly" and do something centralized
+[Tue 14:16]	<dlongley>	manu: but lay out a path to decentralization
+[Tue 14:16]	<dlongley>	manu: the intention for this will be good but they could easily be corrupted if a large company jumps in an stops that process
+[Tue 14:17]	<dlongley>	manu: i'm going to point doug schepers and dave raggett at this discussion, perhaps they can ping the right people at W3C.
+[Tue 14:17]	<dlongley>	manu: they seem to be interested in how to do webpayments in the browser, which is very important, but it's really the last step in the whole process.
+[Tue 14:19]	<manu1>	dlongley: I can see how you can look at existing systems and shopping carts and come up with some UI that looks like it would work - but you'd have the same silo problem that you have today with payment providers - very important to solve the underlying problems first before coming up with the perfect UI for a browser. Web Intents solves the problem of popping up a UI, but it doesn't solve any of the more important, back-end issues.
+[Tue 14:19]	<dlongley>	manu: anything else before moving on?
+[Tue 14:19]	<dlongley>	manu: ok, moving on
+[Tue 14:19]	<manu1>	Topic: State of the Art Review of Payments
+[Tue 14:19]	<manu1>	http://www.w3.org/wiki/Payments_Task_Force#Brief_survey_of_existing_payment_services
+[Tue 14:20]	<dlongley>	manu: typically the w3c creates an exploratory group to see how/if they want to tackle a problem on the web and they review all the existing relevant technologies
+[Tue 14:20]	<dlongley>	manu: the group generates a report that indicates the problems the standard can address and can't address ,etc.
+[Tue 14:21]	<dlongley>	manu: so what i think dave raggett wanted is for a list of payment providers to be created and then we'd search for a common thread for standardizing between them.
+[Tue 14:21]	<dlongley>	manu: we've been looking at this area for a long time, maybe about 4 years, but the issue is that we haven't really written our findings down...
+[Tue 14:21]	<dlongley>	manu: we've done the work, we just didn't write the report but we don't want to distract ourselves from the technical work right now.
+[Tue 14:21]	<dlongley>	manu: i indicated on the mailing list that it would be a big distraction for us, but maybe someone else in the group could volunteer.
+[Tue 14:22]	<dlongley>	manu: in any case, the biggest problem is that all of the payment providers listed are not interoperable, some of them only work with visa or only mastercard, they each have their own APIs, they aren't compatible with each other
+[Tue 14:22]	<dlongley>	manu: some of them are in the spirit of payswarm (using REST-based APIs) but they have other drawbacks - like you have to be a cell network operator to implement their APIs
+[Tue 14:23]	<dlongley>	manu: so there are many centralization problems here. I'm hesitant to sign us up for doing work for writing a report on all of this
+[Tue 14:23]	<dlongley>	dlehn: who do they expect to do this work?
+[Tue 14:23]	<dlongley>	manu: us (the community group)
+[Tue 14:24]	<dlongley>	manu: the w3c is interested in webpayments, but they don't have the W3C membership that would be interested in webpayments, particularly if some large companies aren't interested in interoperability
+[Tue 14:24]	<dlongley>	manu: the people that are involved in payments (apple, google, paypal) seem to want to have closed environments
+[Tue 14:24]	<dlongley>	manu: the people that are already out there (visa, mastercard, cell phone operators) and really established only work on their payment network (no interoperability)
+[Tue 14:24]	<dlongley>	manu: so w3c has asked "why don't these payment providers (or banks) want to write a report on this?"
+[Tue 14:25]	<dlongley>	manu: usually these groups don't have the technical expertise to do it (banks), or they don't necessarily want to do any work towards interoperability (large established payment networks like VISA, PayPal, etc.)
+[Tue 14:25]	<dlongley>	manu: so instead we have people like those in our CG that are focused on creating interoperability
+[Tue 14:26]	<dlongley>	manu: the w3c has an argument then that it should be easy for us to write a report on this because most people in the CG have spent a lot of time researching this already
+[Tue 14:26]	<dlongley>	manu: but it's actually quite a time consuming task to do, doing a table wouldn't be difficult, but a report would take a while
+[Tue 14:26]	<dlongley>	manu: even just doing a comparison between payswarm and opentransact took a week of writing.
+[Tue 14:26]	<dlongley>	manu: there are at least 30 services out there, comparing each one may take a year worth of writing...
+[Tue 14:27]	<dlongley>	manu: i think everyone has their plate full and we don't have to write a report, i'm just concerned about the ramifications of that
+[Tue 14:27]	<dlongley>	manu: because i can see them saying we didn't have a report on the basic research
+[Tue 14:27]	<dlongley>	manu: so how can we create a solution that works for everyone?
+[Tue 14:28]	<dlongley>	manu: but we're creating *the* interoperable solution because there isn't one out there
+[Tue 14:28]	<dlongley>	manu: i really don't think we should make this our focus now ... we're trying to get payswarm out there and proving the API in the field
+[Tue 14:28]	<dlongley>	manu: i think that's much more important than reviewing the current state of the art
+[Tue 14:28]	<manu1>	dlehn: I agree
+[Tue 14:29]	<manu1>	dlongley: Yeah... maybe once we show how we have an interoperable system - we can show how all the other systems are not interoperable - we don't have the bandwidth to go off and write those reports right now. If someone at W3C wants to write these reports - our CG does not have the resources to do this at this point in time.
+[Tue 14:30]	<dlongley>	manu: moving on, the w3c also talked about 3rd party complementary systems
+[Tue 14:30]	<dlongley>	manu: on top of payment systems, like checking for lists of ingredients, checking allergies before buying things at the store, etc.
+[Tue 14:30]	<dlongley>	manu: all of these things are very linked-data sort of things
+[Tue 14:30]	<dlongley>	manu: all interesting extensions that you could investigate
+[Tue 14:31]	<dlongley>	manu: but, this is out of scope at present for this group.
+[Tue 14:31]	<manu1>	dlongley: I agree that the extensions are out of scope... but I do think that we need to understand the use cases to make sure PaySwarm covers those use cases. I think that's why we're using JSON-LD and RDFa - we want people to build on the basic, core Linked Data in the system.
+[Tue 14:31]	<dlongley>	manu: at the bottom of the w3c report we have two use cases
+[Tue 14:32]	<dlongley>	manu: one is using a phone as a ticket
+[Tue 14:32]	<dlongley>	manu: we cover that in our payswarm use cases (the concept of a digital receipt and doing something with it)
+[Tue 14:32]	<dlongley>	manu: the one use case is monetary transfer without a bank account
+[Tue 14:32]	<dlongley>	manu: just using the phone as wallet
+[Tue 14:32]	<dlongley>	manu: we go a step further, we say your wallet is something that can't be destroyed/you can't use ...
+[Tue 14:33]	<dlongley>	manu: you either store your wallet on your own server or with a payment provider you trust
+[Tue 14:33]	<dlongley>	manu: we've discussed these i think and payswarm covers them
+[Tue 14:34]	<manu1>	dlongley: Can we change the mailing list that they use? Did they meant to do this: public-web-payments@w3.org
+[Tue 14:34]	<dlongley>	dlehn: i got the idea that they meant to have a different mailing list for different purposes
+[Tue 14:35]	<dlongley>	discussion about the mailing list issues, etc.
+[Tue 14:35]	<dlongley>	manu: i'll send an email to dave raggett about how the two mailing lists might cause confusion
+[Tue 14:35]	<dlongley>	manu: since the working group doesn't exist yet, etc.
+[Tue 14:36]	<manu1>	Topic: Technologies Focused on in the Group
+[Tue 14:36]	<dlongley>	manu: we're focused on specifically payswarm, webcredits, and opentransact
+[Tue 14:36]	<dlongley>	manu: most discussion has been on payswarm
+[Tue 14:36]	<dlongley>	manu: now we also have IFEX
+[Tue 14:37]	<dlongley>	manu: which we should track because it solves an issue that none of the other specs cover
+[Tue 14:37]	<dlongley>	manu: which is how you do an exchange for currency and move physical funds
+[Tue 14:37]	<dlongley>	manu: for example, the frontend for webpayments could be payswarm with the backend being visa, mastercard, etc, and IFEX
+[Tue 14:38]	<dlongley>	manu: the group also asked why don't we focus on a major player ... the simple answer is that no one in the group works there or knows where they are trying to go
+[Tue 14:38]	<dlongley>	manu: we don't know what they want or how we ought to standardize for them
+[Tue 14:38]	<dlongley>	dlongley: i agree
+[Tue 14:38]	<dlongley>	dlehn: agreed
+[Tue 14:38]	<manu1>	Topic: W3C Next Steps for Web Payment
+[Tue 14:38]	<dlongley>	manu: so what do we want them to do to help webpayments out?
+[Tue 14:39]	<dlongley>	manu: dave raggett proposed a workshop/outreach
+[Tue 14:39]	<dlongley>	manu: one of the things w3c could do is become more involved in the mailing list and on the calls
+[Tue 14:39]	<dlongley>	manu: i know doug subscribes to the list but is very busy as is dave
+[Tue 14:39]	<dlongley>	manu: we could ask them to make w3c a priority
+[Tue 14:40]	<dlongley>	manu: i think we should push them to figure out where payments belongs (which group it belongs in)
+[Tue 14:40]	<dlongley>	manu: and figure out the criteria for starting a working group, etc.
+[Tue 14:40]	<manu1>	dlongley: I'd really like to see W3C be more involved on the list or the calls - or both. All the people that are working on this stuff toward interoperability are fairly involved already... we need them to be more involved.
+[Tue 14:42]	<manu1>	dlehn: I agree - I want to make sure we are addressing everything they want us to address.
+[Tue 14:42]	<manu1>	dlehn: Would having a summary help them understand where we are from week to week.
+[Tue 14:43]	<dlongley>	manu: i think the minutes are clear, we're having regular meetings, they could attend and give their thoughts or they could read the minutes and comment on the list
+[Tue 14:43]	<dlongley>	manu: we announce the meeting on twitter and the mailing list and the website
+[Tue 14:43]	<dlongley>	manu: i think the problem is they are lacking the bandwidth to keep up with this stuff
+[Tue 14:44]	<dlongley>	manu: and none of the member companies really want to get involved
+[Tue 14:44]	<dlongley>	manu: i don't want to create more work than we already have
+[Tue 14:44]	<dlongley>	manu: we're already focused on the things we think will make a difference
+[Tue 14:44]	<dlongley>	manu: what the working group needs is a spec and an experimental implementation of that spec
+[Tue 14:45]	<dlongley>	manu: i think we need to discuss with the w3c team and indicate what we want out of this and what they need
+[Tue 14:45]	<dlongley>	manu: we could try reaching out to google and paypal or have w3c reach out to them
+[Tue 14:45]	<dlongley>	manu: flattr/IFEX/opentransact are keeping an eye on the list
+[Tue 14:45]	<dlongley>	manu: Amir Taaki (bitcoin) pings us from time to time, watches the group
+[Tue 14:46]	<dlongley>	manu: most of the experimental providers on the w3c report are watching this list/know about it
+[Tue 14:46]	<dlongley>	manu: maybe it would be helpful to get the ripple on board
+[Tue 14:46]	<dlongley>	manu: opentabs work is being done in this group
+[Tue 14:47]	<manu1>	dlongley: I really think we need to get someone from W3C participating in the calls, or reading the minutes - the Web Intents suggestion was a great example of missing the mark. We need the W3C folks to be more educated about the work that is happening in this group.

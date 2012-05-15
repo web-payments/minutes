@@ -498,7 +498,7 @@
             rval += "</ol></dd>";
          }
 
-         rval += "<dt>Facilitator</dt><dd>" + chair + "</dd>\n";
+         rval += "<dt>Chair</dt><dd>" + chair + "</dd>\n";
          rval += "<dt>Scribe</dt><dd>" + scribe + "</dd>\n";
          rval += "<dt>Present</dt><dd>" + present.join(", ") + "</dd>\n";
          rval += "<dt>Audio Log</dt><dd>" +
@@ -551,7 +551,7 @@
             }
          }
          
-         rval += "Facilitator:\n   " + chair + "\n";
+         rval += "Chair:\n   " + chair + "\n";
          rval += "Scribe:\n   " + scribe + "\n";
          rval += "Present:\n   " + 
             scrawl.wordwrap(present.join(", "), 65, "\n   ") + "\n\n";
