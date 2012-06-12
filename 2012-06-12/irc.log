@@ -1,0 +1,155 @@
+[Tue 14:02]	<manu-db>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2012Jun/0001.html
+[Tue 14:02]	<manu-db>	scribe: dlongley
+[Tue 14:02]	<dlongley>	manu: on the agenda we have updates to the implementation (mainly switching from c++/mysql to node/mongo)
+[Tue 14:02]	<dlongley>	... then the rest of the call will focus on updates and finalizations we need to make to the web keys specification.
+[Tue 14:03]	<dlongley>	... is there anything else that we need to discuss?
+[Tue 14:03]	<manu-db>	Topic: Updates to the PaySwarm implementation
+[Tue 14:03]	<dlongley>	manu: ok, so recently dave longley implemented the payswarm spec in node/mongo rather than in c++/mysql.
+[Tue 14:04]	<dlongley>	... development on it was going slower than we would have liked, so we switched technologies.
+[Tue 14:04]	<dlongley>	... this way we can make more rapid progress implementing things in the spec and other technologies, etc.
+[Tue 14:04]	<dlongley>	... dave would you mind doing a high-level overview on why we switched, etc?
+[Tue 14:04]	<manu-db>	dlongley: Sure... in terms of performance, we weren't seeing an issue with C++ and MySQL... that implementation was performing well.
+[Tue 14:05]	<manu-db>	dlongley: However, we were pushing off the need to scale out to further down the road... scaling out would've required us to write more custom code in C++ and MySQL.
+[Tue 14:05]	<manu-db>	dlongley: It was fairly slow going when developing with C++ and MySQL... so we wanted to switch to something that's more flexible. Easier to integrate technologies and scale out with JavaScript and MongoDB.
+[Tue 14:06]	<manu-db>	dlongley: We also don't need to write sharding code for the database - use MongoDB instead. We wanted to deal with transaction processing more asynchronous.
+[Tue 14:07]	<manu-db>	dlongley: We wanted to move to a more asynchronous transaction processing engine - works well with non-transactional engines. MongoDB is better for this use case.
+[Tue 14:07]	<dlongley>	manu: ok, thanks for the overview, for the near future we plan on using this code/technology stack?
+[Tue 14:07]	<manu-db>	dlongley: This was mostly about accelerating development speed and ease of implementation.
+[Tue 14:07]	<dlongley>	dlongley: yes, moving forward this is what we'll be using.
+[Tue 14:08]	<dlongley>	manu: good work, it has sped up how quickly we can handle new things upcoming like payment intents, etc.
+[Tue 14:08]	<dlongley>	... hopefully we'll be able to implement new ideas more quickly.
+[Tue 14:08]	<dlongley>	... anything else on this before moving on? (nothing) ... so on to web keys.
+[Tue 14:08]	<manu-db>	Topic: Web Keys: Removing prefixes & context management
+[Tue 14:08]	<manu-db>	http://payswarm.com/specs/source/web-keys/
+[Tue 14:09]	<dlongley>	... we'll be talking about section 2 in the spec first.
+[Tue 14:09]	<dlongley>	... first we want to talk about if we want to do what we did with the payswarm spec with terms vs. prefixes/curies.
+[Tue 14:09]	<dlongley>	... i think we want to switch over to terms here as well.
+[Tue 14:10]	<dlongley>	... the other important thing to note is that if we go to a prefix-less mechanism we have to make sure that the payswarm context (JSON-LD) must contain the same terms defined in the web keys context
+[Tue 14:10]	<dlongley>	... the payswarm json-ld context would become a superset of the web keys context.
+[Tue 14:10]	<dlongley>	dlongley: yes, it's possible and we should move to terms.
+[Tue 14:10]	<dlongley>	dlehn: would the payswarm spec contain more than that?
+[Tue 14:10]	<dlongley>	manu: yes
+[Tue 14:10]	<dlongley>	manu: we were going to have a web keys vocab (and JSON-LD context)
+[Tue 14:11]	<dlongley>	manu: but instead the web keys spec will just use the security vocab
+[Tue 14:11]	<dlongley>	... and the payswarm context will import the security vocab and other vocabs (commerce), etc
+[Tue 14:11]	<dlongley>	... the payswarm context will grow considerably in size, but the trade off will be to make it easier json developers
+[Tue 14:11]	<dlongley>	... was there a concern there, dlehn?
+[Tue 14:12]	<dlongley>	dlehn: maybe just maintenance if the versions are changing at different rates, etc.
+[Tue 14:12]	<dlongley>	manu: what we did with rdfa was that whenever something was added to the context it couldn't be removed, and each context was versioned along with the spec
+[Tue 14:12]	<dlongley>	... so for example we have purl.org/payswarm/v1 as the json-ld context and webkey/v1 as the web keys version
+[Tue 14:13]	<dlongley>	... so on non-major versions you can add terms, but on major versions you could minimize things down and remove terms
+[Tue 14:13]	<dlongley>	... and that allows a decent forward compatibility way and add new terms in an ad-hoc way
+[Tue 14:13]	<dlongley>	... does that seem like a reasonable way to go forward?
+[Tue 14:13]	<dlongley>	dlehn: we should try it and see how it works
+[Tue 14:13]	<dlongley>	... is there an issue with terms that collide with other vocabularies?
+[Tue 14:13]	<dlongley>	manu: yes, we were concerned with that in the beginning but we haven't found anything yet
+[Tue 14:14]	<dlongley>	manu: we will rename terms if there is a collision
+[Tue 14:14]	<dlongley>	... for instance, title collided in the other community work we did, (title of a book, etc. title of a job), so we would use jobTitle or bookTitle instead, etc.
+[Tue 14:14]	<dlongley>	... we would just add more specific terms as needed, but there are no known conflicts with these vocabs at the moment
+[Tue 14:15]	<dlongley>	... in the future we should know there is a conflict right away and the keys will point at different IRIs
+[Tue 14:15]	<dlongley>	... the other thing we might need to do is put prefixes in there, so for web keys we might put wkey prefixes in there (in the context) just so you can use terms if you want to
+[Tue 14:15]	<dlongley>	... so you can use prefixed terms from various vocabs if you really want to, but the terms would be preferred.
+[Tue 14:15]	<dlongley>	... (non-prefixed terms)
+[Tue 14:16]	<dlongley>	... so i guess we're switching to terms and dropping prefixes (other than as optional).
+[Tue 14:16]	<dlongley>	... in the contexts we use.
+[Tue 14:16]	<dlongley>	dlongley: yes, that's the best course of action i think.
+[Tue 14:16]	<dlongley>	manu: so on to the key registration process...
+[Tue 14:16]	<manu-db>	Topic: Web Keys: Key Registration Process
+[Tue 14:16]	<manu-db>	http://payswarm.com/specs/source/web-keys/#the-key-registration-process
+[Tue 14:17]	<manu-db>	We currently use this URL for exposing the web key registration URL - /.well-known/linked-data-services
+[Tue 14:17]	<dlongley>	... there's a document on a server that supports web keys that tells any client application where the service end points are
+[Tue 14:17]	<manu-db>	We might try switching to this - /.well-known/web-services
+[Tue 14:17]	<dlongley>	... we could change that to just web-services (instead of linked-data-services)
+[Tue 14:17]	<dlongley>	... because people may not understand what "linked-data-services" means
+[Tue 14:18]	<dlongley>	... the other concern is that the linked-data community might be confused because they don't publish linked data services in this way
+[Tue 14:18]	<manu-db>	Make it specific like - /.well-known/web-keys ?
+[Tue 14:18]	<dlongley>	... the two options are make it very specific and say web-keys or if we believe that this is a pattern that the rest of the web is going to start using more heavily we could make it more general
+[Tue 14:19]	<manu-db>	Make it more general - /.well-known/liked-data-services or /.well-known/web-services ?
+[Tue 14:19]	<manu-db>	dlongley: Suppose it is more popular - do we want just one endpoint where various APIs and services would share one file?
+[Tue 14:20]	<taaz>	we probably should register what we use:
+[Tue 14:20]	<taaz>	http://tools.ietf.org/html/rfc5785#section-5.1
+[Tue 14:20]	<taaz>	http://www.iana.org/assignments/well-known-uris/well-known-uris.xml
+[Tue 14:21]	<dlongley>	manu: it's cleaner to have a monolithic file, i think, but that isn't very webby
+[Tue 14:21]	<dlongley>	... here's the concern i have: for payswarm, we would have to have two different endpoints
+[Tue 14:22]	<dlongley>	... and two separate HTTP requests would have to be done if we take the more monolithic approach
+[Tue 14:22]	<dlongley>	... then there's a concern that you might start stomping on other services
+[Tue 14:22]	<dlongley>	... do we need to figure out how each application registers with that file?
+[Tue 14:23]	<manu-db>	dlongley: This needs some more thought and discussion before we try to make a decision.
+[Tue 14:24]	<manu-db>	dlongley: If it's all in one monolithic place - sure we cut down on the number of HTTP requests - but how often does that happen. There is a concern that you might have spec fighting if you use one file.
+[Tue 14:24]	<manu-db>	dlongley: I can see benefits and drawbacks for both... I'm not leaning toward either one.
+[Tue 14:24]	<dlongley>	dlehn: i also don't have any strong feelings about it
+[Tue 14:24]	<dlongley>	manu: maybe we should ask the linked data community which way they think is a good approach
+[Tue 14:25]	<dlongley>	... i would expect that we get the document back as key-values in JSON-LD compacted form
+[Tue 14:25]	<manu-db>	dlongley: There is also stuff in there about whether we return relative URLs...
+[Tue 14:26]	<manu-db>	dlongley: We may want to support different URL naming schemes that URLs have w/o making it too complex. For example - individual identities have public keys. Public keys exist as a path off of an identity... you have to construct the URL. Not everybody is going to want to use a query string to pass the correct information to get back the key.
+[Tue 14:28]	<dlongley>	manu: well, the spec's URLs might just have to do with where you go to get a UI for registration for registering a key
+[Tue 14:30]	<dlongley>	(discussion about specifics of webkey registration, etc)
+[Tue 14:31]	<manu-db>	dlongley: I need to go back to see what other key services we expose in PaySwarm.
+[Tue 14:32]	<dlongley>	manu: is there anything we need to change about the registration process?
+[Tue 14:33]	<manu-db>	dlongley: I'm pretty sure this is effectively what we have going on right now.
+[Tue 14:33]	<manu-db>	Topic: Web Keys - Discovery
+[Tue 14:33]	<dlongley>	manu: we have a section in here on discovery
+[Tue 14:34]	<dlongley>	manu: when you register a key you get an IRI back for where the key is so you can get it back (i'm guessing v1 we'll just return JSON-LD)
+[Tue 14:34]	<dlongley>	... you get back other information about the key like the owner, revocation date and time, etc.
+[Tue 14:34]	<dlongley>	... you do a GET on the IRI and you get that information.
+[Tue 14:34]	<dlongley>	... we have a section on verifiable messaging
+[Tue 14:35]	<dlongley>	... we need to strip out prefixes, etc
+[Tue 14:35]	<dlongley>	... we have two forms of messages here, digital signatures and encrypted messages
+[Tue 14:35]	<manu-db>	Topic: Web Keys - Messaging
+[Tue 14:35]	<dlongley>	... a question about the messaging system is: where do we store the signatures?
+[Tue 14:36]	<dlongley>	... JSON-LD has an @graph property where we could store the graph information and then have the signature as an attribute of that graph
+[Tue 14:36]	<dlongley>	... but rdfa can't express that information.
+[Tue 14:36]	<dlongley>	... we can't express the signature in named graph form
+[Tue 14:36]	<dlongley>	... so what we have right now may be what the digital signature stuff may have to look like.
+[Tue 14:37]	<dlongley>	... there's an optional thing we could do is have a payswarm application go out to the web and try to discover a digital signature on an asset, that signature will have the asset (or whatever else is signed) as the subject
+[Tue 14:37]	<dlongley>	... what we could do in payswarm, we could translate the data and move the signature out of the data
+[Tue 14:37]	<dlongley>	... so that when we store the JSON-LD the signature would be on the graph itself and the name of the graph would be the asset
+[Tue 14:37]	<dlongley>	... and we'd move the signature property out
+[Tue 14:38]	<dlongley>	... or we'd keep things as they are and just have the signature be internal to the graph.
+[Tue 14:38]	<dlongley>	... and at least that way the rdfa and JSON-LD will express the same thing.
+[Tue 14:38]	<dlongley>	... the problem is that you have to extract the signature like we do now.
+[Tue 14:38]	<dlongley>	... if rdfa had a graph attribute it would be clear what to do, but it doesn't have one.
+[Tue 14:38]	<dlongley>	... so we have to figure out which side we want to come down on.
+[Tue 14:39]	<dlongley>	... sandro hawke of the rdf working group thought it was fairly elegant that you could express the digital signature using triples rather than needing quads
+[Tue 14:39]	<dlongley>	... and i thought that it was actually kind of hackish because it's a signature on the graph not on the asset.
+[Tue 14:39]	<dlongley>	... thoughtS?
+[Tue 14:40]	<manu-db>	dlongley: Well, given that RDFa can't really express this information right now, I think it would be more of a hack if PaySwarm applications move the property onto the graph instead of onto the asset itself.
+[Tue 14:41]	<manu-db>	dlongley: The process for verifying a digital signature is to remove the signature, normalize the graph and then check it against the signature. Since we can't do it cleanly, from both a political and technological standpoint, we should keep it as is. We can just specify that the signature algorithm removes "sec:signature" and serializes the graph.
+[Tue 14:42]	<manu-db>	dlongley: The best thing is to just remove one signature property and validate that... it's unfortunate that everything isn't in a state to use named graphs, but it doesn't sound like not everyone in the RDF community agrees with that approach. I don't think we want to start treating the data differently from other applications.
+[Tue 14:42]	<dlongley>	dlehn: thoughts?
+[Tue 14:42]	<dlongley>	dlehn: i think dlongley summarized it pretty well, i agree
+[Tue 14:42]	<dlongley>	manu: so we're not going to use @graph for the digital signature stuff.
+[Tue 14:42]	<dlongley>	... we may use it internally, we'll see.
+[Tue 14:42]	<dlongley>	... if rdfa were to gain a graph attribute, we would probably use it.
+[Tue 14:43]	<manu-db>	dlongley: if that's the direction that the community wants to go, if people agree, then sure - I think that's the correct direction, and if they go that way - we'll follow.
+[Tue 14:43]	<dlongley>	manu: so the signature stays inside the object that is being signed
+[Tue 14:43]	<dlongley>	... so next up is the permission and access rights delegation
+[Tue 14:44]	<manu-db>	Topic: Web Keys - Permission and Access Rights Delegation
+[Tue 14:44]	<dlongley>	... i think this is out of scope for the spec.
+[Tue 14:44]	<manu-db>	http://payswarm.com/specs/source/web-keys/#permission-and-access-rights-delegation
+[Tue 14:44]	<dlongley>	... this is just a note that says that during key registration you can indicate that you allow a service to have certain rights.
+[Tue 14:45]	<manu-db>	Topic: Web Keys - Key Revocation and Expiration
+[Tue 14:45]	<dlongley>	... next is key revocation
+[Tue 14:46]	<dlongley>	... the revocationDate property allows a date to be set earlier than the expirationDate to revoke a key
+[Tue 14:46]	<dlongley>	... the spec doesn't say how the key revocation happens
+[Tue 14:46]	<dlongley>	... is it a digitally signed delete message?
+[Tue 14:46]	<dlongley>	... does the revocation need to be programmatic? or are we allowing the UI to deal with it?
+[Tue 14:47]	<manu-db>	dlongley: Do we need to be specific about this?
+[Tue 14:48]	<dlongley>	manu: we do a fair bit of hand waving with rights management
+[Tue 14:48]	<dlongley>	... and we could do the same with key revocation, where the process is out of scope, but you must provide a mechanism for allowing keys to be revoked.
+[Tue 14:49]	<dlongley>	dlongley: it is probably sufficient to say how to check if a key is revoked, which we currently say in the spec.
+[Tue 14:49]	<dlongley>	manu: however, an application probably wants to be able to revoke a key when uninstalled
+[Tue 14:49]	<dlongley>	manu: so we might want to include a message for doing this.
+[Tue 14:50]	<dlongley>	... is that useful or do we not want to deal with it?
+[Tue 14:50]	<dlongley>	dlehn: there is an issue where if you include the revocation date in the message the server needs to ensure it isn't in the past, etc.
+[Tue 14:51]	<dlongley>	manu: we can't allow people to revoke keys in the past as they could invalidate financial transactions they performed
+[Tue 14:51]	<dlongley>	... so there's an argument that the revocation date can't be sent by the user.
+[Tue 14:52]	<manu-db>	dlongley: We should say that in the spec - how to do revocation.
+[Tue 14:53]	<manu-db>	dlongley: It should probably be a POST since you're just updating the information for the key with a revocation date.
+[Tue 14:53]	<dlongley>	dlongley: then we should probably just define a POST message in the spec for doing revocation
+[Tue 14:53]	<dlongley>	manu: ok, then we'll add something to the spec.
+[Tue 14:54]	<dlongley>	manu: any other concerns about the web keys spec?
+[Tue 14:54]	<dlongley>	... alright then, that's it for the call today.
+[Tue 14:54]	<voip-ps>	Manu Sporny (SIP/6000-0000002d) has left the conference.
+[Tue 14:54]	<voip-ps>	Dave Longley (SIP/6002-0000002e) has left the conference.
+[Tue 14:54]	<voip-ps>	Dave Lehn (SIP/6003-0000002c) has left the conference.
