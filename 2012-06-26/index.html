@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+      class="wf-adelle1adelle2-n6-active wf-active"> 
+ 
+<head> 
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+  <title>PaySwarm - Teleconferences</title> 
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ 
+  <link rel="stylesheet" href="../../css/1140.css" type="text/css" media="screen" /> 
+  <!--[if lte IE 9]>
+  <link rel="stylesheet" href="../css/ie.css" type="text/css" media="screen" />
+  <![endif]--> 
+  <link rel="stylesheet" href="../../css/typeimg.css" type="text/css" media="screen" /> 
+  <link rel="stylesheet" href="../../css/smallerscreen.css" media="only screen and (max-width: 1023px)" /> 
+  <link rel="stylesheet" href="../../css/mobile.css" media="handheld, only screen and (max-width: 767px)" /> 
+  <link rel="stylesheet" href="../../css/layout.css" type="text/css" media="screen" /> 
+  <link rel="shortcut icon" type="image/png" href="../../images/payswarm-icon.png" /> 
+  
+<style type="text/css">
+h1 {
+   margin-top: 24px;
+   margin-bottom: 14px;
+}
+
+.header {
+   margin-top: 0px;
+   margin-bottom: 14px;
+}
+
+ol {
+   margin-bottom: 0em;
+}
+
+li {
+   margin-left: 1.5em;
+   margin-bottom: 0em;
+}
+#content {
+   margin-left: 15%;
+   margin-right: 15%;
+}
+
+.summary {
+   margin-left: 10%
+   margin-right: 10%
+}
+
+.name {
+   font-weight: bold;
+}
+
+.information {
+   font-style: italic;
+}  
+
+.comment-continuation {
+   margin-left: 2em;
+}
+
+dt {
+   font-style: oblique;
+}
+
+dd {
+   margin-left: 20px;
+}
+
+  </style>
+  
+</head> 
+<body> 
+ 
+<div class="titlebar"> 
+   <h1 class="header">PaySwarm</h1> 
+</div> 
+
+  <div id="content"> 
+ 
+  <div class="row"> 
+    <div class="twelvecol last"> 
+
+<h1>Web Payments Community Group Telecon</h1>
+<h2>Minutes for 2012-06-26</h2>
+<div class="summary">
+<dl>
+<dt>Agenda</dt><dd><a href="http://lists.w3.org/Archives/Public/public-webpayments/2012Jun/0012.html">http://lists.w3.org/Archives/Public/public-webpayments/2012Jun/0012.html</a></dd>
+<dt>Topics</dt><dd><ol><li><a href="#topic-1">Expressing alternative currencies</a><li><a href="#topic-2">Currency mints and currency creation</a></ol></dd><dt>Resolutions</dt><dd><ol><li><a href="#resolution-1">Create a /currency path off of the http://purl.org/ domain for mapping ISO currency codes to URLs. Use those URLs in PaySwarm to identify fiat currencies.</a></ol></dd><dt>Chair</dt><dd>Manu Sporny</dd>
+<dt>Scribe</dt><dd>Dave Longley</dd>
+<dt>Present</dt><dd>Manu Sporny, Dave Longley, David I. Lehn, Fabio Barone, Jeff Sayre</dd>
+<dt>Audio Log</dt><dd><div><a href="audio.ogg">audio.ogg</a></div>
+<div><audio controls="controls" preload="none">
+<source src="audio.ogg" type="audio/ogg" />Warning: Your browser does not support the HTML5 audio element, please upgrade.</div></dd>
+<div class="comment"><span class="name">Manu Sporny</span>: Anything else that needs to be added to the Agenda? </div>
+<div class="comment"><span class="name">Manu Sporny</span>: Okay, moving to the first item.</div>
+<div class="information">Dave Longley is scribing.</div>
+<h1 id="topic-1" class="topic">Topic: Expressing alternative currencies</h1>
+<div class="comment"><span class="name">Manu Sporny</span>:  first up is expressing alternative currencies in payswarm</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so we had mentioned that payswarm supports multiple currencies, mostly fiat currencies, etc. these types of currencies are easier to work with</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  alternative currencies are different and don't always follow the same model that fiat currencies use, one example such a currency is work hours for time spent on a farm, some kind of physical labor, etc.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  the currency type is work hour and could be exchanged for products on a farm, eg: 5 hours of work could get you so many heads of lettuce.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we need a fairly universal way for how to identify these currencies</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  currently we allow two types of things in the payswarm spec/messages in the currency field</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  one of these is a string that is an ISO code for fiat currencies like USD, JPY, etc.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  these are recognized by the world's financial industry</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  the other thing we support is a URL.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we think that a URL is the best way to handle minting your own currency (custom, alternative currencies)</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  once you create that URL somewhere it could be used to transact/exchange/mint that currency</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  should we be using text strings/numbers that map/URLs, should there be a central repository for this information?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  should we use some other method for identifying currencies?</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Well, we're certainly trying to be very Webby about this - URLs are generally what's used for providing universal identifiers on the Web. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  There is no reason we shouldn't use those, that I can think of. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  There may be some issues - what happens when a currency is mapped to a URL... what happens when that URL goes away? What happens when they lose the domain? [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  If the URLs are also used as the API endpoint - should they be secure? [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  I don't think using a string or a number would solve those issues... let's go with a URL... [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  If other fiat currencies use URLs, we should use those... for virtual currencies, they should use a URL for their identifier. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  We need to understand the downsides of using URLs... [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  We may want URLs that are per-authorities... maybe URLs would have information on them ... like ISO currency codes that they're associated with. We could 'mint' new currency URLs for USD... this may not work well with multiple PaySwarm Authorities. Maybe we could have currency hashes? [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  It's possible to have some sort of association between "USD" and a URL... [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">David I. Lehn</span>: <a href="http://www.schemacentral.com/sc/ubl20/t-clm54217_CurrencyCodeContentType.html">http://www.schemacentral.com/sc/ubl20/t-clm54217_CurrencyCodeContentType.html</a></div>
+<div class="comment"><span class="name">David I. Lehn</span>: oasis has some currency stuff</div>
+<div class="comment"><span class="name">David I. Lehn</span>: codes with type of urn:un:unece:uncefact:codelist:specification:54217:2001 or something</div>
+<div class="comment"><span class="name">David I. Lehn</span>: <a href="http://www.schemacentral.com/sc/ubl20/ss.html">http://www.schemacentral.com/sc/ubl20/ss.html</a></div>
+<div class="comment"><span class="name">David I. Lehn</span>: part of that UBL stuff</div>
+<div class="comment"><span class="name">David I. Lehn</span>: <a href="http://ripple-project.org/specification.html">http://ripple-project.org/specification.html</a></div>
+<div class="comment"><span class="name">David I. Lehn</span>: ripple uses urn:ripple:units: + ISO code or some other specific strings</div>
+<div class="comment"><span class="name">Fabio Barone</span>: I think most alt curr people are not that tech savvy</div>
+<div class="comment"><span class="name">Dave Longley</span>:  We might have to setup some sort of trust system - separate payswarm authorities trust certain URLs... we don't want different PAs creating URLs for things like USD... we'd have interoperability issues. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Fabio Barone</span>: thus you should be free to implement something workable</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  something else that is very important is that we make sure that whatever alternative currency mechanism we end up creating is easily implemented by people who aren't very technology-savvy</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  if someone wants to be able to create a local community currency but doesn't know anything about payswarm they should be able to go to a webpage and do it easily</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  if any payswarm authority could create a new virtual currency we would need to make sure that they dont' go to multiple payswarm authorities and create the same currency</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  ultimately, tawhauc is correct, we need to ensure that it is very easy to implement.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  the biggest danger for using URLs is that the URL for the alternative currency goes away</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  that would be a big problem for all accounts holding value in that currency</div>
+<div class="comment"><span class="name">Fabio Barone</span>: lots of alt curr projects start and then fade away</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  if we had a central account/URL service for these URLs and we required all currencies to register with, this might help mitigate the risk</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  is the problem the URL going away or the data changing?</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  ISO codes are standardized, not really going to change</div>
+<div class="comment"><span class="name">Fabio Barone</span>: should be robust enough to handle that</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  they still might disappear</div>
+<div class="comment"><span class="name">Fabio Barone</span>: if the URL goes away probably that project died....</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  tawhauc is right, the system should be robust enough to handle that</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  this is a pretty serious concern if we're going to use URLs</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  there are two things we could do, we have been using the URL for the currency as the API end point as well</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we could say that if the URL becomes unreachable at some point</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we could say that the only currency usable is that which is circulating within the system (payswarm system)</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we do want to be able to go to that URL to get new currency</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  is that mixing the use of that URL?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we want to be able to both identify and add new units of the currency into the system</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  do you think we should split these functions? identity and minting?</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  is there only going to be one mint for a particular currency?</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  it seems like the URL should have more information on what the currency is</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  it seems that there should be two services, one for more information on the currency</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  and one for interacting/minting</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  that's a good point, so we could split these two</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  is that a better design?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we could have the identifier say where all the mints are</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  that's a little centralized in design</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  that might be a good idea to prevent run away inflation, etc</div>
+<div class="comment"><span class="name">Dave Longley</span>:  It is centralized in a sense... but I don't see that as a big negative - there should be some centralized location that talks about where the mints are for a currency. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Fabio Barone</span>:  are you trying to address all kinds of virtual currencies?</div>
+<div class="comment"><span class="name">Dave Longley</span>:  There has to be some mechanism that decides whether or not new money should be created - this may or may not cause havoc/inflation if there is no coordination. Even if the system is decentralized, they're going to have to coordinate at some point. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Fabio Barone</span>:  there are all different kinds of designs</div>
+<div class="comment"><span class="name">Fabio Barone</span>:  bitcoins are minted, there are timebanks, some alternate currencies don't "mint" currencies</div>
+<div class="comment"><span class="name">Fabio Barone</span>:  amounts just come into existence, etc.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we want to support as much as we can without things becoming too complex</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we want to support timebanks, time shares, being able to exchange work hours for produce, etc.</div>
+<div class="comment"><span class="name">Fabio Barone</span>:  it can be pretty simple ... these projects should commit to having a URL</div>
+<div class="comment"><span class="name">Fabio Barone</span>:  if a URL goes away it's their problem</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  i agree and that's the design direction we're heading</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  however owns the URL is in charge of specifying who the mint is and how it's minted, etc. all of that management</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we just want to make sure we have all of the use cases covered</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  there are two things working against each other: we want the system to be as decentralized as possible, we also want the currency to be centrally identified and easy to manage</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we want to provide a very basic piece of open source software that enables them to create a very simple currency for themslves</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  the currency may be exchangeable with USD or not, some are more complex than others</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we generally agree that most of the responsibility falls to the alternative currency managers</div>
+<div class="comment"><span class="name">Fabio Barone</span>:  most of these alternative currencies are not decentralized they are local</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  what we mean by decentralized within payswarm is that anyone should be able to create their own currency</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  and transact with it</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so if you want a currency that applies just to your apartment :) or your town, locality, etc, you can do that</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we want to generalize it enough to permit it to apply to all of these various scenarios</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  does anyone think we should use something other than a URL to identify currencies?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  ok... so except for the major fiat currencies</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we will be using a URL.</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  i still have an issue with mixing URLs and strings for the same property</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  well the issue is that USD doesn't have a URL</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  there are some other projects that are trying to use URLs but they are not standards</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  maybe we want a comment pseudo URL</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  maybe we should use a URN</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  speaking of sovereign currencies, we had talked about the royal canadian mintchip project</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  i'm now in contact with them, i'll be talking to them about looking at our materials, etc.</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  perhaps they have already thought about some of these issues (URL to identity currencies) and if not (either way), maybe we can talk about this stuff with them</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  yes, we should do all we can to get them involved</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we could create a purl.org URL for USD/etc.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  if ISO comes by and wants to take over the URL we could grant them ownership over it</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  maybe we should get in touch with ISO and see if they'll create a URL for this</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  do you think it's worth reaching out to them? it may take 4-5 years to get it approved</div>
+<div class="comment"><span class="name">Jeff Sayre</span>: +1</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  it might be easier for us to just create one at purl.org and transition over to ISO if it takes off</div>
+<div class="comment"><span class="name">Dave Longley</span>: +1</div>
+<div class="comment"><span class="name">Manu Sporny</span>: Do we want something like this: <a href="http://purl.org/iso4201/usd">http://purl.org/iso4201/usd</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>: Do we want something like this: <a href="http://purl.org/currencies/usd">http://purl.org/currencies/usd</a></div>
+<div class="comment"><span class="name">David I. Lehn</span>: 4217?</div>
+<div class="comment"><span class="name">Manu Sporny</span>: Do we want something like this: <a href="http://purl.org/currency/usd">http://purl.org/currency/usd</a></div>
+<div class="information"><a href="http://purl.org/currency/usd">http://purl.org/currency/usd</a></div>
+<div class="comment"><span class="name">David I. Lehn</span>: <a href="http://purl.org/currency/iso4217/usd">http://purl.org/currency/iso4217/usd</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>:  i'd prefer simpler, easier to read (no iso4217)</div>
+<div class="comment"><span class="name">Dave Longley</span>:  We might be overthinking this - all ISO4217 codes are 3 characters long... let's keep it simple for now. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  If we needed to in the future, we could add it. [scribe assist by Manu Sporny]</div>
+<div class="information">[discussion over the naming for the URL for currencies (particularly ISO currencies for now)]</div>
+<div class="proposal"><strong>PROPOSAL:</strong>  Create a /currency path off of the http;//purl.org/ domain for mapping ISO currency codes to URLs. Use those URLs in PaySwarm to identify fiat currencies.</div>
+<div class="comment"><span class="name">Manu Sporny</span>: +1</div>
+<div class="comment"><span class="name">Jeff Sayre</span>: +1</div>
+<div class="comment"><span class="name">Dave Longley</span>: +1</div>
+<div class="comment"><span class="name">David I. Lehn</span>: +1</div>
+<div class="comment"><span class="name">Fabio Barone</span>: +1</div>
+<div id="resolution-1" class="resolution"><strong>RESOLUTION:</strong> Create a /currency path off of the <a href="http://purl.org/">http://purl.org/</a> domain for mapping ISO currency codes to URLs. Use those URLs in PaySwarm to identify fiat currencies.</div>
+<h1 id="topic-2" class="topic">Topic: Currency mints and currency creation</h1>
+<div class="comment"><span class="name">Manu Sporny</span>:  we use the term "currency mint" pretty loosely, when we think about "mint" we think about the actual creation of amounts of a currency, when we say "mint" we mean you can create units of a currency like heads of lettuce, sheep, work hours, whatever</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so how exactly do these currency mints create (or enable the creation of) currencies</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  if a currency mint simply publishes an exchange rate</div>
+<div class="information">USD, then payswarm authorities can use a service to get that exchange table and perform the currencytransformation/creat ion itself</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  the payswarm authority could hit multiple currency mints to get exchange rates to do the appropriate transformations to create the type of currency it needs</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so when someone wants to put money into a payswarm account the authority could get the exchange rates and do the actual currency creation by converting from say, USD.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  it gets difficult when the currency becomes very local and doesn't have these kinds of exchange rates</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  like if you can't exchange farm work hours for USD, but only for local produce, etc.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so we have to support currency creation outside of the payswarm system</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so one way is to create an API that allows the currency to be created elsewhere and reported back to the authority</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  for example, someone could go to a payswarm authority to try to deposit their egg share points into their account</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  and the authority checks for an exchange rate but there isn't one</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so it redirects them to a website for the currency mint</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  and that site shows the person a webpage that lets them enter their egg share information to get authorization</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  to send their egg shares to the payswarm authority</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  the site then authorizes the person and sends the amount to the payswarm authority which adds the information to their payswarm account</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Quick comment on this - when a payswarm authority uses the currency exchange rate, that's the easiest approach. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  In that case, we don't have to deal w/ decentralized failures. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  In the other case, it could be that a system fails while depositing or transacting w/ the PaySwarm Authority fails... in that case, it would be difficult to solve the issue - the issues are more complex than the exchange rate case. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  The case where you want to have truly localized currencies - we want to support that ... which is the harder case. We need to create good software for those folks to help them make this easier. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  We should definitely support the exchange rate case - it's easier... would increase the adoption rate for their currencies... makes things easier for them. It promotes the efficacy of the PaySwarm Authority in moving money around. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  the question i have is: have we missed any particular way of creating currencies that don't map to either of these approaches?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  are we covering everything?</div>
+<div class="comment"><span class="name">Fabio Barone</span>: most alt curr creation happens at the moment of transaction</div>
+<div class="comment"><span class="name">Dave Longley</span>:  It should be fairly obvious that we have covered everything - the only way you create currencies is via a centralized mint. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Fabio Barone</span>: mutual credit systems</div>
+<div class="comment"><span class="name">Dave Longley</span>:  I think we've covered any possible use case... if not, there is a way to extend the system (via external currency mints). [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Fabio Barone</span>: I offer a service, I am credited a certain amount, and the other party is debited the same amount</div>
+<div class="comment"><span class="name">Fabio Barone</span>: ok</div>
+<div class="comment"><span class="name">Fabio Barone</span>:  many alternative currency systems do not have a thing like a mint; of these sorts of local currency systems, there's a way where if i offer a service to someone one party will be credited 2 hours and i'll be debited 2 hours, and this happens at the time of transaction, over the whole system the total amount is zero</div>
+<div class="comment"><span class="name">Fabio Barone</span>:  it's just about shifting around hours, or a currency with a name, etc.</div>
+<div class="comment"><span class="name">Fabio Barone</span>:  timebanks also work like this, "i will work for you for 2 hours" and that debits 2 hours from the other party</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  i think the system can handle timebanking, but the external system will have to handle crediting and debiting differently</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  i'm wondering if this is more like a contract and not a currency</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  does everyone "have a currency mint" under this scenario (for timebanks)?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  everyone has their own time</div>
+<div class="comment"><span class="name">Fabio Barone</span>:  this isn't really correct, it is a contract but it's a social contract, there are different flavors</div>
+<div class="comment"><span class="name">Fabio Barone</span>:  standard timebanks consider everyone's time the same</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  since everyone's time is worth the same, you just need to make sure people aren't cheating the system</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  maybe having a centralized timebank currency mint would work fine, it just works on the honor system</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  the currency mint might just always grant you hours upon request</div>
+<div class="comment"><span class="name">Fabio Barone</span>:  these systems often don't work over time</div>
+<div class="comment"><span class="name">Fabio Barone</span>:  particularly converting to traditional currencies</div>
+<div class="comment"><span class="name">Fabio Barone</span>:  there may not be that great of a need for making these currencies work with the payswarm system</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  payswarm has the concept of listing assets and things ... so it takes care of that</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so once the currency (worked hours) is in the payswarm system</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  you could acquire whatever you wanted via payswarm listings, assets</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  and make purchases directly with your work hours</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  the only concern is with the currency mint, which is the thing that says its ok to create a currency</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  at some point though, we have to say that we can't necessarily get every one of these systems into payswarm itself, it has to be an external system</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  this also allows for flexibility</div>
+<div class="comment"><span class="name">Dave Longley</span>:  It sounds like the way these timebank things could work is that someone else in the community could promise you a number of hours. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  If we're looking at this in the way of a currency mint - the time bank has a currency mint - the time bank currency mint has accounts that keep track of who has promised other people hours. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  They could say that they could take 2 hours of their time from their time bank and spend them on things that are external to that timebank system. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  So you could use those hours to buy assets on PaySwarm... so they could do the transacting of assets through the payswarm system... but the system that creates the hours and tracks them is the time bank currency mint. It seems like that could be the best way to go.. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  It's a bit different from how these other systems work... if you pay with a credit card, your credit card company is giving you credit. Time bank works kind of like that - except that it's another member in the community that is giving you the currency (the unit of time) [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  that seems like how we'd go about solving the problem, we're at the top of the hour, so we'll push those other two issues to the next meeting</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  anything else?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  ok, thank you everyone</div>
+       </div>
+  </div>
+
+<div class="container vspacing"> 
+  <div class="row"> 
+    <div class="threecol"> 
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a> 
+    </div> 
+    <div class="ninecol last"> 
+      <p>&copy; 2010-2011 Digital Bazaar, Inc. 
+Website CSS created by <a href="http://cssgrid.net/">@andytlr</a> 
+and is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/au/"> 
+Creative Commons Attribution-ShareAlike 3.0 Australia License</a>. All other
+website content is licensed under a
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"> 
+Creative Commons Attribution-ShareAlike 3.0 License</a>
+</p> 
+    </div> 
+  </div> 
+</div> 
+ 
+<script type="text/javascript"> 
+ 
+  var _gaq = _gaq || [];
+  _gaq.push(["_setAccount", "UA-1539674-7"]);
+  _gaq.push(["_trackPageview"]);
+
+  (function() {
+    var ga = document.createElement("script"); ga.type = "text/javascript"; ga.async = true;
+    ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";
+    (document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]).appendChild(ga);
+  })();
+ 
+</script>
+
+</body>
+</html>

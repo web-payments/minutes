@@ -1,0 +1,212 @@
+[Tue 14:01]	<manu-db>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2012Jun/0012.html
+[Tue 14:01]	<voip-ps>	Manu Sporny (SIP/6000-0000004c) has joined the conference.
+[Tue 14:01]	<voip-ps>	Dave Lehn (SIP/6003-0000004d) has joined the conference.
+[Tue 14:01]	<voip-ps>	Dave Longley (SIP/6002-0000004e) has joined the conference.
+[Tue 14:03]	<manu-db>	Anything else that needs to be added to the Agenda? 
+[Tue 14:03]	<manu-db>	Okay, moving to the first item.
+[Tue 14:05]	<manu-db>	scribe: dlongley-db
+[Tue 14:05]	<manu-db>	Topic: Expressing alternative currencies
+[Tue 14:05]	<dlongley-db>	manu: first up is expressing alternative currencies in payswarm
+[Tue 14:06]	<dlongley-db>	manu: so we had mentioned that payswarm supports multiple currencies, mostly fiat currencies, etc. these types of currencies are easier to work with
+[Tue 14:06]	<dlongley-db>	manu: alternative currencies are different and don't always follow the same model that fiat currencies use, one example such a currency is work hours for time spent on a farm, some kind of physical labor, etc.
+[Tue 14:07]	<dlongley-db>	manu: the currency type is work hour and could be exchanged for products on a farm, eg: 5 hours of work could get you so many heads of lettuce.
+[Tue 14:07]	<dlongley-db>	manu: we need a fairly universal way for how to identify these currencies
+[Tue 14:07]	<dlongley-db>	manu: currently we allow two types of things in the payswarm spec/messages in the currency field
+[Tue 14:07]	<dlongley-db>	manu: one of these is a string that is an ISO code for fiat currencies like USD, JPY, etc.
+[Tue 14:08]	<dlongley-db>	manu: these are recognized by the world's financial industry
+[Tue 14:08]	<dlongley-db>	manu: the other thing we support is a URL.
+[Tue 14:08]	<dlongley-db>	manu: we think that a URL is the best way to handle minting your own currency (custom, alternative currencies)
+[Tue 14:08]	<dlongley-db>	manu: once you create that URL somewhere it could be used to transact/exchange/mint that currency
+[Tue 14:09]	<dlongley-db>	manu: should we be using text strings/numbers that map/URLs, should there be a central repository for this information?
+[Tue 14:09]	<dlongley-db>	manu: should we use some other method for identifying currencies?
+[Tue 14:10]	<manu-db>	dlongley: Well, we're certainly trying to be very Webby about this - URLs are generally what's used for providing universal identifiers on the Web.
+[Tue 14:10]	<manu-db>	dlongley: There is no reason we shouldn't use those, that I can think of.
+[Tue 14:10]	<manu-db>	dlongley: There may be some issues - what happens when a currency is mapped to a URL... what happens when that URL goes away? What happens when they lose the domain?
+[Tue 14:11]	<manu-db>	dlongley: If the URLs are also used as the API endpoint - should they be secure?
+[Tue 14:11]	<manu-db>	dlongley: I don't think using a string or a number would solve those issues... let's go with a URL...
+[Tue 14:11]	<manu-db>	dlongley: If other fiat currencies use URLs, we should use those... for virtual currencies, they should use a URL for their identifier.
+[Tue 14:12]	<manu-db>	dlongley: We need to understand the downsides of using URLs...
+[Tue 14:13]	<manu-db>	taaz: We may want URLs that are per-authorities... maybe URLs would have information on them ... like ISO currency codes that they're associated with. We could 'mint' new currency URLs for USD... this may not work well with multiple PaySwarm Authorities. Maybe we could have currency hashes?
+[Tue 14:13]	<manu-db>	taaz: It's possible to have some sort of association between "USD" and a URL...
+[Tue 14:13]	<taaz>	http://www.schemacentral.com/sc/ubl20/t-clm54217_CurrencyCodeContentType.html
+[Tue 14:13]	<taaz>	oasis has some currency stuff
+[Tue 14:13]	<taaz>	codes with type of urn:un:unece:uncefact:codelist:specification:54217:2001 or something
+[Tue 14:13]	<taaz>	http://www.schemacentral.com/sc/ubl20/ss.html
+[Tue 14:13]	<taaz>	part of that UBL stuff
+[Tue 14:13]	<taaz>	http://ripple-project.org/specification.html
+[Tue 14:13]	<taaz>	ripple uses urn:ripple:units: + ISO code or some other specific strings
+[Tue 14:13]	<tawhuac>	I think most alt curr people are not that tech savvy
+[Tue 14:13]	<manu-db>	dlongley: We might have to setup some sort of trust system - separate payswarm authorities trust certain URLs... we don't want different PAs creating URLs for things like USD... we'd have interoperability issues.
+[Tue 14:13]	<tawhuac>	thus you should be free to implement something workable
+[Tue 14:14]	<dlongley-db>	manu: something else that is very important is that we make sure that whatever alternative currency mechanism we end up creating is easily implemented by people who aren't very technology-savvy
+[Tue 14:14]	<dlongley-db>	manu: if someone wants to be able to create a local community currency but doesn't know anything about payswarm they should be able to go to a webpage and do it easily
+[Tue 14:15]	<dlongley-db>	manu: if any payswarm authority could create a new virtual currency we would need to make sure that they dont' go to multiple payswarm authorities and create the same currency
+[Tue 14:15]	<voip-ps>	<unknown> (IAX2/diamondcard-55) has joined the conference.
+[Tue 14:15]	<dlongley-db>	manu: ultimately, tawhauc is correct, we need to ensure that it is very easy to implement.
+[Tue 14:15]	<jeffsayre>	voip: 55 is me
+[Tue 14:15]	<voip-ps>	jeffsayre is now associated with IAX2/diamondcard-55.
+[Tue 14:16]	<dlongley-db>	manu: the biggest danger for using URLs is that the URL for the alternative currency goes away
+[Tue 14:16]	<dlongley-db>	manu: that would be a big problem for all accounts holding value in that currency
+[Tue 14:17]	<tawhuac>	lots of alt curr projects start and then fade away
+[Tue 14:17]	<dlongley-db>	manu: if we had a central account/URL service for these URLs and we required all currencies to register with, this might help mitigate the risk
+[Tue 14:17]	<dlongley-db>	dlehn: is the problem the URL going away or the data changing?
+[Tue 14:17]	<dlongley-db>	dlehn: ISO codes are standardized, not really going to change
+[Tue 14:17]	<tawhuac>	should be robust enough to handle that
+[Tue 14:17]	<dlongley-db>	manu: they still might disappear
+[Tue 14:17]	<tawhuac>	if the URL goes away probably that project died....
+[Tue 14:17]	<dlongley-db>	manu: tawhauc is right, the system should be robust enough to handle that
+[Tue 14:18]	<dlongley-db>	manu: this is a pretty serious concern if we're going to use URLs
+[Tue 14:18]	<dlongley-db>	manu: there are two things we could do, we have been using the URL for the currency as the API end point as well
+[Tue 14:18]	<dlongley-db>	manu: we could say that if the URL becomes unreachable at some point
+[Tue 14:18]	<dlongley-db>	manu: we could say that the only currency usable is that which is circulating within the system (payswarm system)
+[Tue 14:19]	<dlongley-db>	manu: we do want to be able to go to that URL to get new currency
+[Tue 14:19]	<voip-ps>	tawhuac (SIP/190.71.138.192-0000004f) has joined the conference.
+[Tue 14:19]	<dlongley-db>	dlehn: is that mixing the use of that URL?
+[Tue 14:19]	<dlongley-db>	manu: we want to be able to both identify and add new units of the currency into the system
+[Tue 14:20]	<dlongley-db>	manu: do you think we should split these functions? identity and minting?
+[Tue 14:20]	<dlongley-db>	dlehn: is there only going to be one mint for a particular currency?
+[Tue 14:20]	<dlongley-db>	dlehn: it seems like the URL should have more information on what the currency is
+[Tue 14:20]	<dlongley-db>	dlehn: it seems that there should be two services, one for more information on the currency
+[Tue 14:21]	<dlongley-db>	dlehn: and one for interacting/minting
+[Tue 14:21]	<dlongley-db>	manu: that's a good point, so we could split these two
+[Tue 14:21]	<dlongley-db>	manu: is that a better design?
+[Tue 14:21]	<dlongley-db>	manu: we could have the identifier say where all the mints are
+[Tue 14:21]	<dlongley-db>	dlehn: that's a little centralized in design
+[Tue 14:21]	<dlongley-db>	manu: that might be a good idea to prevent run away inflation, etc
+[Tue 14:22]	<manu-db>	dlongley: It is centralized in a sense... but I don't see that as a big negative - there should be some centralized location that talks about where the mints are for a currency.
+[Tue 14:23]	<dlongley-db>	tawhauc: are you trying to address all kinds of virtual currencies?
+[Tue 14:23]	<manu-db>	dlongley: There has to be some mechanism that decides whether or not new money should be created - this may or may not cause havoc/inflation if there is no coordination. Even if the system is decentralized, they're going to have to coordinate at some point.
+[Tue 14:23]	<dlongley-db>	tawhauc: there are all different kinds of designs
+[Tue 14:24]	<dlongley-db>	tawhauc: bitcoins are minted, there are timebanks, some alternate currencies don't "mint" currencies
+[Tue 14:24]	<dlongley-db>	tawhauc: amounts just come into existence, etc.
+[Tue 14:24]	<dlongley-db>	manu: we want to support as much as we can without things becoming too complex
+[Tue 14:24]	<dlongley-db>	manu: we want to support timebanks, time shares, being able to exchange work hours for produce, etc.
+[Tue 14:25]	<dlongley-db>	tawhauc: it can be pretty simple ... these projects should commit to having a URL
+[Tue 14:25]	<dlongley-db>	tawhauc: if a URL goes away it's their problem
+[Tue 14:25]	<dlongley-db>	manu: i agree and that's the design direction we're heading
+[Tue 14:25]	<dlongley-db>	manu: however owns the URL is in charge of specifying who the mint is and how it's minted, etc. all of that management
+[Tue 14:25]	<dlongley-db>	manu: we just want to make sure we have all of the use cases covered
+[Tue 14:26]	<dlongley-db>	manu: there are two things working against each other: we want the system to be as decentralized as possible, we also want the currency to be centrally identified and easy to manage
+[Tue 14:26]	<dlongley-db>	manu: we want to provide a very basic piece of open source software that enables them to create a very simple currency for themslves
+[Tue 14:27]	<dlongley-db>	manu: the currency may be exchangeable with USD or not, some are more complex than others
+[Tue 14:27]	<dlongley-db>	manu: we generally agree that most of the responsibility falls to the alternative currency managers
+[Tue 14:27]	<dlongley-db>	tawhauc: most of these alternative currencies are not decentralized they are local
+[Tue 14:27]	<dlongley-db>	manu: what we mean by decentralized within payswarm is that anyone should be able to create their own currency
+[Tue 14:27]	<dlongley-db>	manu: and transact with it
+[Tue 14:28]	<dlongley-db>	manu: so if you want a currency that applies just to your apartment :) or your town, locality, etc, you can do that
+[Tue 14:28]	<dlongley-db>	manu: we want to generalize it enough to permit it to apply to all of these various scenarios
+[Tue 14:28]	<dlongley-db>	manu: does anyone think we should use something other than a URL to identify currencies?
+[Tue 14:28]	<dlongley-db>	manu: ok... so except for the major fiat currencies
+[Tue 14:28]	<jeffsayre>	q+
+[Tue 14:28]	<voip-ps>	Added jeffsayre to the speaker queue: jeffsayre
+[Tue 14:28]	<dlongley-db>	manu: we will be using a URL.
+[Tue 14:29]	<dlongley-db>	dlehn: i still have an issue with mixing URLs and strings for the same property
+[Tue 14:29]	<dlongley-db>	manu: well the issue is that USD doesn't have a URL
+[Tue 14:29]	<dlongley-db>	dlehn: there are some other projects that are trying to use URLs but they are not standards
+[Tue 14:29]	<dlongley-db>	dlehn: maybe we want a comment pseudo URL
+[Tue 14:29]	<manu-db>	ack jeffsayre
+[Tue 14:29]	<voip-ps>	jeffsayre has the floor. The speaker queue is empty.
+[Tue 14:29]	<dlongley-db>	dlehn: maybe we should use a URN
+[Tue 14:30]	<dlongley-db>	jeff: speaking of sovereign currencies, we had talked about the royal canadian mintchip project
+[Tue 14:30]	<dlongley-db>	jeff: i'm now in contact with them, i'll be talking to them about looking at our materials, etc.
+[Tue 14:31]	<dlongley-db>	jeff: perhaps they have already thought about some of these issues (URL to identity currencies) and if not (either way), maybe we can talk about this stuff with them
+[Tue 14:31]	<dlongley-db>	manu: yes, we should do all we can to get them involved
+[Tue 14:31]	<dlongley-db>	manu: we could create a purl.org URL for USD/etc.
+[Tue 14:31]	<dlongley-db>	manu: if ISO comes by and wants to take over the URL we could grant them ownership over it
+[Tue 14:32]	<dlongley-db>	manu: maybe we should get in touch with ISO and see if they'll create a URL for this
+[Tue 14:32]	<dlongley-db>	manu: do you think it's worth reaching out to them? it may take 4-5 years to get it approved
+[Tue 14:32]	<jeffsayre>	+1
+[Tue 14:32]	<dlongley-db>	manu: it might be easier for us to just create one at purl.org and transition over to ISO if it takes off
+[Tue 14:32]	<dlongley-db>	+1
+[Tue 14:33]	<manu-db>	Do we want something like this: http://purl.org/iso4201/usd
+[Tue 14:33]	<manu-db>	Do we want something like this: http://purl.org/currencies/usd
+[Tue 14:33]	<taaz>	4217?
+[Tue 14:33]	<manu-db>	Do we want something like this: http://purl.org/currency/usd
+[Tue 14:33]	<dlongley-db>	http://purl.org/currency/usd
+[Tue 14:34]	<taaz>	http://purl.org/currency/iso4217/usd
+[Tue 14:36]	<dlongley-db>	manu: i'd prefer simpler, easier to read (no iso4217)
+[Tue 14:37]	<manu-db>	dlongley: We might be overthinking this - all ISO4217 codes are 3 characters long... let's keep it simple for now.
+[Tue 14:37]	<manu-db>	dlongley: If we needed to in the future, we could add it.
+[Tue 14:38]	<dlongley-db>	[discussion over the naming for the URL for currencies (particularly ISO currencies for now)]
+[Tue 14:39]	<manu-db>	PROPOSAL: Create a /currency path off of the http;//purl.org/ domain for mapping ISO currency codes to URLs. Use those URLs in PaySwarm to identify fiat currencies.
+[Tue 14:39]	<manu-db>	+1
+[Tue 14:39]	<jeffsayre>	+1
+[Tue 14:39]	<dlongley-db>	+1
+[Tue 14:39]	<taaz>	+1
+[Tue 14:39]	<tawhuac>	+1
+[Tue 14:39]	<manu-db>	RESOLVED: Create a /currency path off of the http://purl.org/ domain for mapping ISO currency codes to URLs. Use those URLs in PaySwarm to identify fiat currencies.
+[Tue 14:40]	<manu-db>	Topic: Currency mints and currency creation
+[Tue 14:40]	<manu-db>	voip: mute tawhuac
+[Tue 14:40]	<voip-ps>	SIP/190.71.138.192-0000004f has been muted.
+[Tue 14:41]	<dlongley-db>	manu: we use the term "currency mint" pretty loosely, when we think about "mint" we think about the actual creation of amounts of a currency, when we say "mint" we mean you can create units of a currency like heads of lettuce, sheep, work hours, whatever
+[Tue 14:42]	<dlongley-db>	manu: so how exactly do these currency mints create (or enable the creation of) currencies
+[Tue 14:42]	<dlongley-db>	manu: if a currency mint simply publishes an exchange rate
+[Tue 14:43]	<dlongley-db>	manu: for instance work hours => USD, then payswarm authorities can use a service to get that exchange table and perform the currencytransformation/creat ion itself
+[Tue 14:43]	<dlongley-db>	manu: the payswarm authority could hit multiple currency mints to get exchange rates to do the appropriate transformations to create the type of currency it needs
+[Tue 14:43]	<dlongley-db>	manu: so when someone wants to put money into a payswarm account the authority could get the exchange rates and do the actual currency creation by converting from say, USD.
+[Tue 14:44]	<dlongley-db>	manu: it gets difficult when the currency becomes very local and doesn't have these kinds of exchange rates
+[Tue 14:44]	<dlongley-db>	manu: like if you can't exchange farm work hours for USD, but only for local produce, etc.
+[Tue 14:44]	<dlongley-db>	manu: so we have to support currency creation outside of the payswarm system
+[Tue 14:45]	<dlongley-db>	manu: so one way is to create an API that allows the currency to be created elsewhere and reported back to the authority
+[Tue 14:45]	<dlongley-db>	manu: for example, someone could go to a payswarm authority to try to deposit their egg share points into their account
+[Tue 14:46]	<dlongley-db>	manu: and the authority checks for an exchange rate but there isn't one
+[Tue 14:46]	<dlongley-db>	manu: so it redirects them to a website for the currency mint
+[Tue 14:46]	<dlongley-db>	manu: and that site shows the person a webpage that lets them enter their egg share information to get authorization
+[Tue 14:46]	<dlongley-db>	manu: to send their egg shares to the payswarm authority
+[Tue 14:47]	<dlongley-db>	manu: the site then authorizes the person and sends the amount to the payswarm authority which adds the information to their payswarm account
+[Tue 14:47]	<manu-db>	dlongley: Quick comment on this - when a payswarm authority uses the currency exchange rate, that's the easiest approach.
+[Tue 14:47]	<manu-db>	dlongley: In that case, we don't have to deal w/ decentralized failures.
+[Tue 14:48]	<manu-db>	dlongley: In the other case, it could be that a system fails while depositing or transacting w/ the PaySwarm Authority fails... in that case, it would be difficult to solve the issue - the issues are more complex than the exchange rate case.
+[Tue 14:49]	<manu-db>	dlongley: The case where you want to have truly localized currencies - we want to support that ... which is the harder case. We need to create good software for those folks to help them make this easier.
+[Tue 14:49]	<manu-db>	dlongley: We should definitely support the exchange rate case - it's easier... would increase the adoption rate for their currencies... makes things easier for them. It promotes the efficacy of the PaySwarm Authority in moving money around.
+[Tue 14:50]	<dlongley-db>	manu: the question i have is: have we missed any particular way of creating currencies that don't map to either of these approaches?
+[Tue 14:50]	<dlongley-db>	manu: are we covering everything?
+[Tue 14:50]	<tawhuac>	most alt curr creation happens at the moment of transaction
+[Tue 14:50]	<manu-db>	dlongley: It should be fairly obvious that we have covered everything - the only way you create currencies is via a centralized mint.
+[Tue 14:50]	<tawhuac>	mutual credit systems
+[Tue 14:51]	<manu-db>	dlongley: I think we've covered any possible use case... if not, there is a way to extend the system (via external currency mints).
+[Tue 14:51]	<tawhuac>	I offer a service, I am credited a certain amount, and the other party is debited the same amount
+[Tue 14:51]	<tawhuac>	ok
+[Tue 14:51]	<manu-db>	voip: unmute tawhuac
+[Tue 14:51]	<voip-ps>	SIP/190.71.138.192-0000004f has been unmuted.
+[Tue 14:52]	<dlongley-db>	tawhauc: many alternative currency systems do not have a thing like a mint; of these sorts of local currency systems, there's a way where if i offer a service to someone one party will be credited 2 hours and i'll be debited 2 hours, and this happens at the time of transaction, over the whole system the total amount is zero
+[Tue 14:53]	<dlongley-db>	tawhauc: it's just about shifting around hours, or a currency with a name, etc.
+[Tue 14:53]	<dlongley-db>	tawhauc: timebanks also work like this, "i will work for you for 2 hours" and that debits 2 hours from the other party
+[Tue 14:54]	<dlongley-db>	manu: i think the system can handle timebanking, but the external system will have to handle crediting and debiting differently
+[Tue 14:54]	<dlongley-db>	manu: i'm wondering if this is more like a contract and not a currency
+[Tue 14:55]	<dlongley-db>	manu: does everyone "have a currency mint" under this scenario (for timebanks)?
+[Tue 14:55]	<dlongley-db>	manu: everyone has their own time
+[Tue 14:56]	<dlongley-db>	tawhauc: this isn't really correct, it is a contract but it's a social contract, there are different flavors
+[Tue 14:56]	<dlongley-db>	tawhauc: standard timebanks consider everyone's time the same
+[Tue 14:56]	<dlongley-db>	manu: since everyone's time is worth the same, you just need to make sure people aren't cheating the system
+[Tue 14:57]	<dlongley-db>	manu: maybe having a centralized timebank currency mint would work fine, it just works on the honor system
+[Tue 14:57]	<dlongley-db>	manu: the currency mint might just always grant you hours upon request
+[Tue 14:57]	<dlongley-db>	tawhauc: these systems often don't work over time
+[Tue 14:57]	<dlongley-db>	tawhauc: particularly converting to traditional currencies
+[Tue 14:58]	<dlongley-db>	tawhauc: there may not be that great of a need for making these currencies work with the payswarm system
+[Tue 14:59]	<dlongley-db>	manu: payswarm has the concept of listing assets and things ... so it takes care of that
+[Tue 14:59]	<dlongley-db>	manu: so once the currency (worked hours) is in the payswarm system
+[Tue 14:59]	<dlongley-db>	manu: you could acquire whatever you wanted via payswarm listings, assets
+[Tue 15:00]	<dlongley-db>	manu: and make purchases directly with your work hours
+[Tue 15:00]	<dlongley-db>	manu: the only concern is with the currency mint, which is the thing that says its ok to create a currency
+[Tue 15:00]	<dlongley-db>	manu: at some point though, we have to say that we can't necessarily get every one of these systems into payswarm itself, it has to be an external system
+[Tue 15:01]	<dlongley-db>	manu: this also allows for flexibility
+[Tue 15:01]	<dlongley-db>	q+
+[Tue 15:01]	<voip-ps>	Added dlongley-db to the speaker queue: dlongley-db
+[Tue 15:02]	<manu-db>	ack dlongley-db
+[Tue 15:02]	<voip-ps>	dlongley-db has the floor. The speaker queue is empty.
+[Tue 15:02]	<manu-db>	dlongley-db: It sounds like the way these timebank things could work is that someone else in the community could promise you a number of hours.
+[Tue 15:02]	<manu-db>	dlongley: If we're looking at this in the way of a currency mint - the time bank has a currency mint - the time bank currency mint has accounts that keep track of who has promised other people hours.
+[Tue 15:03]	<manu-db>	dlongley: They could say that they could take 2 hours of their time from their time bank and spend them on things that are external to that timebank system.
+[Tue 15:04]	<manu-db>	dlongley: So you could use those hours to buy assets on PaySwarm... so they could do the transacting of assets through the payswarm system... but the system that creates the hours and tracks them is the time bank currency mint. It seems like that could be the best way to go..
+[Tue 15:04]	<manu-db>	dlongley: It's a bit different from how these other systems work... if you pay with a credit card, your credit card company is giving you credit. Time bank works kind of like that - except that it's another member in the community that is giving you the currency (the unit of time)
+[Tue 15:05]	<dlongley-db>	manu: that seems like how we'd go about solving the problem, we're at the top of the hour, so we'll push those other two issues to the next meeting
+[Tue 15:06]	<dlongley-db>	manu: anything else?
+[Tue 15:06]	<dlongley-db>	manu: ok, thank you everyone
+[Tue 15:06]	<voip-ps>	Dave Longley (SIP/6002-0000004e) has left the conference.
+[Tue 15:06]	<voip-ps>	Manu Sporny (SIP/6000-0000004c) has left the conference.
+[Tue 15:06]	<voip-ps>	Dave Lehn (SIP/6003-0000004d) has left the conference.
+[Tue 15:06]	|<--	jeffsayre has left freenode (Quit: Bye. Time to defrag my brain)
+[Tue 15:06]	<voip-ps>	tawhuac (SIP/190.71.138.192-0000004f) has left the conference.
+[Tue 15:06]	<voip-ps>	jeffsayre (IAX2/diamondcard-55) has left the conference.
+

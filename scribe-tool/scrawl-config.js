@@ -47,6 +47,10 @@
          "alias": ["mitgor"],
          "homepage": "http://aintsys.com/en/index.html"
       },
+      "Fabio Barone":
+      {
+         "alias": ["tawhauc", "tawhuac"]
+      },
       "Patrick Strateman":
       {
          "alias": ["phantomcircuit"]
