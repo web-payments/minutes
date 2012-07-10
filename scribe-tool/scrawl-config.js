@@ -5,6 +5,15 @@
 
    var people = 
    {
+      "Fabio Barone":
+      {
+         "alias": ["tawhauc", "tawhuac"]
+      },
+      "Jose 'Manny' De Loera":
+      {
+         "alias": ["manny"],
+         "homepage": "http://www.linkedin.com/profile/view?id=60198289"
+      },
       "Mike Johnson":
       {
          "alias": ["mjohnson", "mjohnson_db"]
@@ -13,11 +22,6 @@
       {
          "alias": ["taaz", "dil", "dlehn"],
          "homepage": "http://dil.lehn.org/"
-      },
-      "Jose 'Manny' De Loera":
-      {
-         "alias": ["manny"],
-         "homepage": "http://www.linkedin.com/profile/view?id=60198289"
       },
       "Dave Longley":
       {
@@ -47,13 +51,14 @@
          "alias": ["mitgor"],
          "homepage": "http://aintsys.com/en/index.html"
       },
-      "Fabio Barone":
-      {
-         "alias": ["tawhauc", "tawhuac"]
-      },
       "Patrick Strateman":
       {
          "alias": ["phantomcircuit"]
+      },
+      "Melvin Carvalho":
+      {
+         "alias": ["melvster"],
+         "homepage": "http://melvincarvalho.com/"
       },
       "Amir Taaki":
       {
