@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+      class="wf-adelle1adelle2-n6-active wf-active"> 
+ 
+<head> 
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+  <title>PaySwarm - Teleconferences</title> 
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ 
+  <link rel="stylesheet" href="../../css/1140.css" type="text/css" media="screen" /> 
+  <!--[if lte IE 9]>
+  <link rel="stylesheet" href="../css/ie.css" type="text/css" media="screen" />
+  <![endif]--> 
+  <link rel="stylesheet" href="../../css/typeimg.css" type="text/css" media="screen" /> 
+  <link rel="stylesheet" href="../../css/smallerscreen.css" media="only screen and (max-width: 1023px)" /> 
+  <link rel="stylesheet" href="../../css/mobile.css" media="handheld, only screen and (max-width: 767px)" /> 
+  <link rel="stylesheet" href="../../css/layout.css" type="text/css" media="screen" /> 
+  <link rel="shortcut icon" type="image/png" href="../../images/payswarm-icon.png" /> 
+  
+<style type="text/css">
+h1 {
+   margin-top: 24px;
+   margin-bottom: 14px;
+}
+
+.header {
+   margin-top: 0px;
+   margin-bottom: 14px;
+}
+
+ol {
+   margin-bottom: 0em;
+}
+
+li {
+   margin-left: 1.5em;
+   margin-bottom: 0em;
+}
+#content {
+   margin-left: 15%;
+   margin-right: 15%;
+}
+
+.summary {
+   margin-left: 10%
+   margin-right: 10%
+}
+
+.name {
+   font-weight: bold;
+}
+
+.information {
+   font-style: italic;
+}  
+
+.comment-continuation {
+   margin-left: 2em;
+}
+
+dt {
+   font-style: oblique;
+}
+
+dd {
+   margin-left: 20px;
+}
+
+  </style>
+  
+</head> 
+<body> 
+ 
+<div class="titlebar"> 
+   <h1 class="header">PaySwarm</h1> 
+</div> 
+
+  <div id="content"> 
+ 
+  <div class="row"> 
+    <div class="twelvecol last"> 
+
+<h1>Web Payments Community Group Telecon</h1>
+<h2>Minutes for 2012-07-10</h2>
+<div class="summary">
+<dl>
+<dt>Agenda</dt><dd><a href="http://lists.w3.org/Archives/Public/public-webpayments/2012Jul/0000.html">http://lists.w3.org/Archives/Public/public-webpayments/2012Jul/0000.html</a></dd>
+<dt>Topics</dt><dd><ol><li><a href="#topic-1">Reducing hoarding of decentralized currencies</a><li><a href="#topic-2">Fixed allocation of currency (supporting bills, digitally signed currency amounts)</a><li><a href="#topic-3">Dynamic allocation of currencies (digital off-line wallets)</a><li><a href="#topic-4">New PaySwarm Beta release</a></ol></dd><dt>Chair</dt><dd>Manu Sporny</dd>
+<dt>Scribe</dt><dd>Dave Longley</dd>
+<dt>Present</dt><dd>Dave Longley, Manu Sporny, Jeff Sayre, Melvin Carvalho, David I. Lehn</dd>
+<dt>Audio Log</dt><dd><div><a href="audio.ogg">audio.ogg</a></div>
+<div><audio controls="controls" preload="none">
+<source src="audio.ogg" type="audio/ogg" />Warning: Your browser does not support the HTML5 audio element, please upgrade.</div></dd>
+<div class="information">Dave Longley is scribing.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  today we were going to spend more time discussing alternative currencies because we didn't get through it all in the last call</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we're going to also talk about fixed vs. dynamic allocation (fixed dollar amount/card vs. online account)</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we also have the transaction and decentralized settlement algorithm(s) last on the agenda</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  any updates or changes to the agenda?</div>
+<h1 id="topic-1" class="topic">Topic: Reducing hoarding of decentralized currencies</h1>
+<div class="comment"><span class="name">Manu Sporny</span>:  during the last call we talked about supporting bitcoin, etc. other alternative currencies</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we have this concept called a "Currency Mint"</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  which is a third-party interface that payswarm can call out to (via some mechanism) to get currency into payswarm</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  once the currency is in your payswarm account, you can spend it with anyone else who has an account that transacts in that currency</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so what is payswarm going to do about currencies that require inflation or deflation, etc.?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  with bitcoin, you don't have to worry about an external force putting pressure on it to devalue it over time</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  other currencies require this</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  this will help cause people to spend their currency more quickly and keep the market moving</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  the question is, should payswarm do anything about the "hoarding problem" or just depend on the currency mints to handle it?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  one way this could happen w/currency mints is that they could just change the exchange rate over time</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  for example the Foo currency could have an exchange rate on day 1 as 1 Foo = 1 USD</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  but over time that rate would change, eg: 1 Foo = 0.50 USD</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  another way to discourage hoarding is to put expiration dates on currency amounts</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  eg: if you dont' use 100 Foo in the next 6 months you don't get to use it, it gets destroyed</div>
+<div class="comment"><span class="name">Dave Longley</span>:  I think that if we start taking the approach of having a currency expire, it will get very complex between currency mints and payswarm authorities. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  The mint would have to contact the PA very often. Does the money get expired on it's expiration date? How would people get around this? Would they try to launder money through accounts. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  I don't know of any system that expires currency like you describe... we could discuss it. Even if it does work, I don't see it as being that viable of an option - it requires a great amount of synchronization. It would have to be built into PaySwarm for it to work. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  It's a separation of concerns problem. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  i agree with what dave said for the most part, i would add that if there's an alternative currency that is broadly accepted and used that does have an expiration, then there probably would have to be something that payswarm understands (part of the protocol)</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  it's often up to the people who are getting paid or have saved them in their account to deal with how those currencies behave</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  the only alternative to this should probably be if there's a popular alternative currency payswarm should interface with/etc.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  in the worst case, if we do absolutely nothing, then at least the standard devaluing mechanism is in place (changing exchange rates)</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  this already works with how we've discussed currency mints already, it's external to the system, we don't have to deal with it within payswarm, and inflation is still handled</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  the only time we would implement expiration is if there's a successful currency that uses it</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  i don't know how easy it would be to add it to payswarm, i'm wondering if there's a way we could bootstrap such a currency, i dont' know if we could implement currency destruction later, it seems like it has to be part of the protocol to begin with</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  i think that's correct</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  one of the issues that's involved that could come up with payswarm that facilitated that type of feature is that payswarm would be more than just ...</div>
+<div class="information">(bad audio)</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  could be a more political/social influence</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  by putting in those features up front before any of those currencies have thought about/implemented it we may be going down a path where payswarm is more political than is desirable</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  i think what would happen with a hyperinflationary currency like Zimbabwe's could be a disaster</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  i think we should try to avoid being too political, i agree</div>
+<div class="comment"><span class="name">Melvin Carvalho</span>: note: hyperinflation can also be considered a lack of trust in a currency</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we just want to give people tools that would make their lives easier when it comes to engaging in commerce over the web</div>
+<div class="comment"><span class="name">Melvin Carvalho</span>: note: hyperinflation can also be considered a lack of trust in a currency</div>
+<div class="comment"><span class="name">Melvin Carvalho</span>: every currency mint has a degree of trust</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  the more we're discussing this it does seem that we don't want to get involved in overly complex inflation systems</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  it is true that each currency mint has a degree of trust</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  i think we should just say that the currency mint can handle inflation as they see fit</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  i think we've covered the stuff that's supported today ... and jeff makes a good point that we don't want to become overly political on this, just provide the tools we need</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  anything else on reducing hoarding/inflation, etc, before moving on?</div>
+<h1 id="topic-2" class="topic">Topic: Fixed allocation of currency (supporting bills, digitally signed currency amounts)</h1>
+<div class="comment"><span class="name">Manu Sporny</span>:  so the idea is supporting the equivalent of a "digital bill"</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  a payswarm authority would digitally sign that you have 5 units of a particular currency</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  it would be a signed-json blob</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  and then you could take this information and do a p2p transaction without having to talk to any centralized authority of any kind</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so how this might work: you would get your digitally-signed 5 unit currency and this would be in your digital wallet... then you could then use that digital bill to pay for water (and this transaction would be logged) and then you'd give it back to a payswarm authority at some point</div>
+<div class="comment"><span class="name">David I. Lehn</span>: is that in our use cases?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so that's the idea of fixed allocation</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so we need to discuss if this use case is useful if you're connected all the time to the internet, etc.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  are there cases where you wouldn't be connected and this would work well?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  this isn't anonymous, however, to be clear, there is a transaction log</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Yeah, I do believe we have a use case for communicating with devices that don't themselves have internet connections. For example - cellphone buying from vending machine. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  what about the case where someone copies their digital bill and makes multiple purchases (essentially infinite ones)</div>
+<div class="comment"><span class="name">Dave Longley</span>:  they would eventually get caught once the bill was sent to a payswarm authority, however, in the mean time, they could commit a lot of fraud</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  well, it would be a crime and they'd eventually be caught -- we might want to rely on the law to handle this</div>
+<div class="comment"><span class="name">Dave Longley</span>:  There are a few issues - what do you do with somebody that has a digitally signed blob that they copy? [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Melvin Carvalho</span>: sounds interesting .... would be a cool feature if you can avoid double spend</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  this would amount to digital counterfeiting</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  there might be a lot of people that dont' think about it and just copy it maybe a single time -- a lot of people could fall victim to that</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  i dont' know if we could deal with that technologically at the time</div>
+<div class="comment"><span class="name">Melvin Carvalho</span>: bitcoin has a central registry</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  melvin is saying bitcoin has a central registry to take care of these issues, but with bitcoin you have to be online</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  to verify transfers</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  when you're exchanging digital money for digital goods, it's not that big of an issue because you could forgo sending the digital good until the payment has been verified, but when using digital currency for physical goods it's a different issue</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  i can't think of why a brick and mortar store wouldn't be online to handle this</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  maybe farmers, etc, could be in such a position</div>
+<div class="comment"><span class="name">Dave Longley</span>:  This offline digital currency thing only works in highly trusted scenarios... a brick-and-mortar store probably wouldn't want to accept something like this. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  We were talking about work-hours on the last call - maybe there is a use case there where there is inherent local trust. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  If there is a use case where you have to have a lot of trust - having a digital currency that is also based on your word would be important. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  part of this is that there are other systems that have similar issues, like bitcoin and ACH, they all have settlement times, but you can consider transfers instant even though they aren't ... maybe you can just charge a fee on top of the digital bill (upon creation)</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  it doesn't sound like there's a great need for this, but it's something that could be potentially implemented in the future</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  does anyone feel differently, that this is a high priority?</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  it would be nice to keep in mind and plan for in the future (not disable it's future use now)</div>
+<h1 id="topic-3" class="topic">Topic: Dynamic allocation of currencies (digital off-line wallets)</h1>
+<div class="comment"><span class="name">Manu Sporny</span>:  the digital offline wallet is like a transaction log</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  the idea here is that you would promise people money</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  this is similar to what melvin is doing with web credits</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  you make a number of promises to pay people money, and they submit those promises to their payswarm authority and it moves all of that money into their account</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  this is similar to the offline digital receipt mechanism that we are building into payswarm 1.0</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  this allows you to digitally sign a contract offline, for instance, you walk into a store, and they give you a bill that you digitally sign and give back to them, which they can, at some later point, upload it to get their payment</div>
+<div class="comment"><span class="name">Melvin Carvalho</span>: sounds very cool!</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Yes, it's a fairly straight-forward idea - but implementation details are important... like - what happens if you digitally sign a contract and don't have money in your account? [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  We have this use case of wanting to buy a coke from a vending machine - you digitally sign a contract for the coke and then using the internet connection on the phone, it communicates with a PaySwarm Authority that digitally signs that the transfer happened. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  The vending machine then checks the digital signature by the PaySwarm Authority, then gives you the coke - no need to "trust" each other. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  This other thing we're discussing is slightly different, because you don't have to confirm the payment before giving the product out - again, it comes down to a system of trust. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  PaySwarm Authorities could try to mitigate the trust issue via several ways - the trust issue isn't handled by digital signatures in the digital wallet case because there is potential for fraud there. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  yes, we're shying away from situations where there are trust issues</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we don't want to derail people being able to trust payswarm (the system on its own)</div>
+<div class="comment"><span class="name">Dave Longley</span>:  I think we should focus on the use cases we have right now - they are very powerful use cases. Buying something from a kiosk would be great - it's already a very powerful thing that you can do with PaySwarm. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  another idea could be to help eliminate parking meters by using GPS systems/locations to pay for parking, etc.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  there are several other interesting ideas in this arena</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  for these use cases, these vending machines, kiosks could be made cheaper by reusing the connections on smart phones of their customers, etc.</div>
+<h1 id="topic-4" class="topic">Topic: New PaySwarm Beta release</h1>
+<div class="comment"><span class="name">Manu Sporny</span>:  we've released a new payswarm beta, a new reference implementation using nodejs and mongodb, which we believe will make us more agile - in fact, that is already the case.</div>
+<div class="comment"><span class="name">Manu Sporny</span>: <a href="https://github.com/digitalbazaar/payswarm.js">https://github.com/digitalbazaar/payswarm.js</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we have a new payswarm client that we're releasing as well (work in progress)</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so i'd like to ask jeff and melvin if you have any input on how you'd like payswarm clients to work/what features you need and how you'd like to use them?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  over the next few months, we want people to be able to use payswarm clients to sign assets/listings and accept/do purchases as quickly as possible</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Jeff, here's the PHP implementation - <a href="https://github.com/digitalbazaar/payswarm-wordpress/blob/master/payswarm-client.inc">https://github.com/digitalbazaar/payswarm-wordpress/blob/master/payswarm-client.inc</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>: Here's the github project for the PHP implementation: <a href="https://github.com/digitalbazaar/payswarm-wordpress">https://github.com/digitalbazaar/payswarm-wordpress</a></div>
+<div class="comment"><span class="name">Melvin Carvalho</span>: thanks! Michiel is probably going to do the opentabs implementation, but the .js could be very useful ... need to look at it in a bit more detail ...</div>
+<div class="comment"><span class="name">Dave Longley</span>:  That is the PHP implementation - there is decent documentation on implementing that and integrating that. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  yes, very interesting, for using the PHP version with our smartup</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  we're looking at releasing the core of our smartup as a platform for creating whatever smartup they want</div>
+<div class="comment"><span class="name">Jeff Sayre</span>: <a href="http://jeffsayre.com/2011/08/24/building-the-social-web-the-layers-of-the-smartup-stack/">http://jeffsayre.com/2011/08/24/building-the-social-web-the-layers-of-the-smartup-stack/</a></div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  the true IP would be in modules, specific to products and services</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  payswarm would be a core standard which we would implement</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  so we could allow anyone to utilize payswarm for whatever they want in their smartup</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so the reason we're releasing the new beta now is we're doing a lot of load testing, etc.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so we're also hoping to do a commercial release within the next 3-6 months (it will be done when it's done ;))</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  our goal with the payswarm client stuff is to make payswarm stuff work within a day</div>
+<div class="comment"><span class="name">Melvin Carvalho</span>: yes</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so, in the simplest case, you can do web payments that quickly</div>
+<div class="comment"><span class="name">Melvin Carvalho</span>: cool!</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  for the opentabs implementation ... what language are you using?</div>
+<div class="comment"><span class="name">Melvin Carvalho</span>: mainly client side js right now</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Some of this stuff will work with client-side JavaScript... we leveraged Forge - based on what you're trying to do, there may be cross-domain issues. Ultimately, we do want the payswarm client to work on client-side, it boils down to what the limitations could be. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Right now you can generate RSA keys, digital sign, and do all those things. There are issues with where you're going to store those keys - you can either use HTML5 local storage or something like that right now. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we've been thinking about putting limits on private keys that are stored in browsers, etc.</div>
+<div class="comment"><span class="name">Melvin Carvalho</span>: makes sense</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  to help deal with issues regarding using html5 local storage, etc.</div>
+<div class="comment"><span class="name">Melvin Carvalho</span>: thanks!</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  good call guys, we'll meet again in 2 weeks.</div>
+       </div>
+  </div>
+
+<div class="container vspacing"> 
+  <div class="row"> 
+    <div class="threecol"> 
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a> 
+    </div> 
+    <div class="ninecol last"> 
+      <p>&copy; 2010-2011 Digital Bazaar, Inc. 
+Website CSS created by <a href="http://cssgrid.net/">@andytlr</a> 
+and is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/au/"> 
+Creative Commons Attribution-ShareAlike 3.0 Australia License</a>. All other
+website content is licensed under a
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"> 
+Creative Commons Attribution-ShareAlike 3.0 License</a>
+</p> 
+    </div> 
+  </div> 
+</div> 
+ 
+<script type="text/javascript"> 
+ 
+  var _gaq = _gaq || [];
+  _gaq.push(["_setAccount", "UA-1539674-7"]);
+  _gaq.push(["_trackPageview"]);
+
+  (function() {
+    var ga = document.createElement("script"); ga.type = "text/javascript"; ga.async = true;
+    ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";
+    (document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]).appendChild(ga);
+  })();
+ 
+</script>
+
+</body>
+</html>

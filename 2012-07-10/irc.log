@@ -1,0 +1,162 @@
+[Tue 14:02]	<manu-db>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2012Jul/0000.html
+[Tue 14:02]	<dlongley-db>	scribe: dlongley-db
+[Tue 14:02]	<dlongley-db>	manu: today we were going to spend more time discussing alternative currencies because we didn't get through it all in the last call
+[Tue 14:03]	<dlongley-db>	manu: we're going to also talk about fixed vs. dynamic allocation (fixed dollar amount/card vs. online account)
+[Tue 14:05]	<dlongley-db>	manu: we also have the transaction and decentralized settlement algorithm(s) last on the agenda
+[Tue 14:05]	<dlongley-db>	manu: any updates or changes to the agenda?
+[Tue 14:07]	<manu-db>	Topic: Reducing hoarding of decentralized currencies
+[Tue 14:07]	<manu-db>	voip: mute 11
+[Tue 14:07]	<voip-ps>	SIP/87.151.244.164-00000011 has been muted.
+[Tue 14:07]	<voip-ps>	<unknown> (IAX2/diamondcard-14095) has joined the conference.
+[Tue 14:07]	<manu-db>	voip: 14095 is jeffsayre
+[Tue 14:07]	<voip-ps>	jeffsayre is now associated with IAX2/diamondcard-14095.
+[Tue 14:08]	<dlongley-db>	manu: during the last call we talked about supporting bitcoin, etc. other alternative currencies
+[Tue 14:08]	<dlongley-db>	manu: we have this concept called a "Currency Mint"
+[Tue 14:08]	<dlongley-db>	manu: which is a third-party interface that payswarm can call out to (via some mechanism) to get currency into payswarm
+[Tue 14:09]	<dlongley-db>	manu: once the currency is in your payswarm account, you can spend it with anyone else who has an account that transacts in that currency
+[Tue 14:09]	<dlongley-db>	manu: so what is payswarm going to do about currencies that require inflation or deflation, etc.?
+[Tue 14:09]	<dlongley-db>	manu: with bitcoin, you don't have to worry about an external force putting pressure on it to devalue it over time
+[Tue 14:09]	<dlongley-db>	manu: other currencies require this
+[Tue 14:09]	<dlongley-db>	manu: this will help cause people to spend their currency more quickly and keep the market moving
+[Tue 14:10]	<dlongley-db>	manu: the question is, should payswarm do anything about the "hoarding problem" or just depend on the currency mints to handle it?
+[Tue 14:10]	<dlongley-db>	manu: one way this could happen w/currency mints is that they could just change the exchange rate over time
+[Tue 14:10]	<dlongley-db>	manu: for example the Foo currency could have an exchange rate on day 1 as 1 Foo = 1 USD
+[Tue 14:11]	<dlongley-db>	manu: but over time that rate would change, eg: 1 Foo = 0.50 USD
+[Tue 14:11]	<dlongley-db>	manu: another way to discourage hoarding is to put expiration dates on currency amounts
+[Tue 14:11]	<dlongley-db>	manu: eg: if you dont' use 100 Foo in the next 6 months you don't get to use it, it gets destroyed
+[Tue 14:11]	<dlongley-db>	q+
+[Tue 14:11]	<voip-ps>	Added dlongley-db to the speaker queue: dlongley-db
+[Tue 14:12]	<manu-db>	ack dlongley-db
+[Tue 14:12]	<voip-ps>	dlongley-db has the floor. The speaker queue is empty.
+[Tue 14:12]	<manu-db>	dlongley: I think that if we start taking the approach of having a currency expire, it will get very complex between currency mints and payswarm authorities.
+[Tue 14:13]	<jeffsayre>	q+
+[Tue 14:13]	<voip-ps>	Added jeffsayre to the speaker queue: jeffsayre
+[Tue 14:13]	<manu-db>	dlongley: The mint would have to contact the PA very often. Does the money get expired on it's expiration date? How would people get around this? Would they try to launder money through accounts.
+[Tue 14:14]	<manu-db>	dlongley: I don't know of any system that expires currency like you describe... we could discuss it. Even if it does work, I don't see it as being that viable of an option - it requires a great amount of synchronization. It would have to be built into PaySwarm for it to work.
+[Tue 14:14]	<manu-db>	dlongley: It's a separation of concerns problem.
+[Tue 14:14]	<dlongley-db>	jeffsayre: i agree with what dave said for the most part, i would add that if there's an alternative currency that is broadly accepted and used that does have an expiration, then there probably would have to be something that payswarm understands (part of the protocol)
+[Tue 14:15]	<dlongley-db>	jeffsayre: it's often up to the people who are getting paid or have saved them in their account to deal with how those currencies behave
+[Tue 14:15]	<dlongley-db>	jeffsayre: the only alternative to this should probably be if there's a popular alternative currency payswarm should interface with/etc.
+[Tue 14:16]	<dlongley-db>	manu: in the worst case, if we do absolutely nothing, then at least the standard devaluing mechanism is in place (changing exchange rates)
+[Tue 14:16]	<dlongley-db>	manu: this already works with how we've discussed currency mints already, it's external to the system, we don't have to deal with it within payswarm, and inflation is still handled
+[Tue 14:16]	<dlongley-db>	manu: the only time we would implement expiration is if there's a successful currency that uses it
+[Tue 14:17]	<dlongley-db>	manu: i don't know how easy it would be to add it to payswarm, i'm wondering if there's a way we could bootstrap such a currency, i dont' know if we could implement currency destruction later, it seems like it has to be part of the protocol to begin with
+[Tue 14:17]	<dlongley-db>	jeffsayre: i think that's correct
+[Tue 14:18]	<dlongley-db>	jeffsayre: one of the issues that's involved that could come up with payswarm that facilitated that type of feature is that payswarm would be more than just ...
+[Tue 14:18]	<dlongley-db>	(bad audio)
+[Tue 14:18]	<dlongley-db>	jeffsayre: could be a more political/social influence
+[Tue 14:18]	<dlongley-db>	jeffsayre: by putting in those features up front before any of those currencies have thought about/implemented it we may be going down a path where payswarm is more political than is desirable
+[Tue 14:19]	<dlongley-db>	jeffsayre: i think what would happen with a hyperinflationary currency like Zimbabwe's could be a disaster
+[Tue 14:19]	<dlongley-db>	manu: i think we should try to avoid being too political, i agree
+[Tue 14:19]	<melvster>	note: hyperinflation can also be considered a lack of trust in a currency
+[Tue 14:19]	<dlongley-db>	manu: we just want to give people tools that would make their lives easier when it comes to engaging in commerce over the web
+[Tue 14:20]	<manu-db>	voip: unmute 11
+[Tue 14:20]	<voip-ps>	SIP/87.151.244.164-00000011 has been unmuted.
+[Tue 14:20]	<melvster>	note: hyperinflation can also be considered a lack of trust in a currency
+[Tue 14:20]	<manu-db>	voip: mute 11
+[Tue 14:20]	<voip-ps>	SIP/87.151.244.164-00000011 has been muted.
+[Tue 14:21]	<melvster>	every currency mint has a degree of trust
+[Tue 14:21]	<dlongley-db>	manu: the more we're discussing this it does seem that we don't want to get involved in overly complex inflation systems
+[Tue 14:21]	<dlongley-db>	manu: it is true that each currency mint has a degree of trust
+[Tue 14:21]	<dlongley-db>	manu: i think we should just say that the currency mint can handle inflation as they see fit
+[Tue 14:22]	<dlongley-db>	manu: i think we've covered the stuff that's supported today ... and jeff makes a good point that we don't want to become overly political on this, just provide the tools we need
+[Tue 14:22]	<dlongley-db>	manu: anything else on reducing hoarding/inflation, etc, before moving on?
+[Tue 14:23]	<manu-db>	Topic: Fixed allocation of currency (supporting bills, digitally signed currency amounts)
+[Tue 14:23]	<dlongley-db>	manu: so the idea is supporting the equivalent of a "digital bill"
+[Tue 14:23]	<dlongley-db>	manu: a payswarm authority would digitally sign that you have 5 units of a particular currency
+[Tue 14:24]	<dlongley-db>	manu: it would be a signed-json blob
+[Tue 14:24]	<dlongley-db>	manu: and then you could take this information and do a p2p transaction without having to talk to any centralized authority of any kind
+[Tue 14:26]	<dlongley-db>	manu: so how this might work: you would get your digitally-signed 5 unit currency and this would be in your digital wallet... then you could then use that digital bill to pay for water (and this transaction would be logged) and then you'd give it back to a payswarm authority at some point
+[Tue 14:26]	<taaz>	is that in our use cases?
+[Tue 14:27]	<dlongley-db>	manu: so that's the idea of fixed allocation
+[Tue 14:27]	<dlongley-db>	manu: so we need to discuss if this use case is useful if you're connected all the time to the internet, etc.
+[Tue 14:27]	<dlongley-db>	manu: are there cases where you wouldn't be connected and this would work well?
+[Tue 14:27]	<dlongley-db>	manu: this isn't anonymous, however, to be clear, there is a transaction log
+[Tue 14:27]	<dlongley-db>	q+
+[Tue 14:28]	<voip-ps>	Added dlongley-db to the speaker queue: jeffsayre, dlongley-db
+[Tue 14:28]	<jeffsayre>	q-
+[Tue 14:28]	<voip-ps>	Removed jeffsayre from the speaker queue: dlongley-db
+[Tue 14:28]	<manu-db>	dlongley: Yeah, I do believe we have a use case for communicating with devices that don't themselves have internet connections. For example - cellphone buying from vending machine.
+[Tue 14:29]	<dlongley-db>	q+
+[Tue 14:29]	<voip-ps>	Added dlongley-db to the speaker queue: dlongley-db, dlongley-db
+[Tue 14:30]	<dlongley-db>	q-
+[Tue 14:30]	<voip-ps>	Removed dlongley-db from the speaker queue: dlongley-db
+[Tue 14:30]	<dlongley-db>	q-
+[Tue 14:30]	<voip-ps>	Removed dlongley-db from the speaker queue: (empty)
+[Tue 14:31]	<dlongley-db>	dlongley: what about the case where someone copies their digital bill and makes multiple purchases (essentially infinite ones)
+[Tue 14:31]	<dlongley-db>	dlongley: they would eventually get caught once the bill was sent to a payswarm authority, however, in the mean time, they could commit a lot of fraud
+[Tue 14:32]	<dlongley-db>	manu: well, it would be a crime and they'd eventually be caught -- we might want to rely on the law to handle this
+[Tue 14:32]	<manu-db>	dlongley: There are a few issues - what do you do with somebody that has a digitally signed blob that they copy?
+[Tue 14:32]	<melvster>	sounds interesting .... would be a cool feature if you can avoid double spend
+[Tue 14:32]	<dlongley-db>	jeffsayre: this would amount to digital counterfeiting
+[Tue 14:33]	<dlongley-db>	jeffsayre: there might be a lot of people that dont' think about it and just copy it maybe a single time -- a lot of people could fall victim to that
+[Tue 14:33]	<dlongley-db>	jeffsayre: i dont' know if we could deal with that technologically at the time
+[Tue 14:33]	<melvster>	bitcoin has a central registry
+[Tue 14:34]	<dlongley-db>	manu: melvin is saying bitcoin has a central registry to take care of these issues, but with bitcoin you have to be online
+[Tue 14:34]	<dlongley-db>	manu: to verify transfers
+[Tue 14:34]	<dlongley-db>	jeffsayre: when you're exchanging digital money for digital goods, it's not that big of an issue because you could forgo sending the digital good until the payment has been verified, but when using digital currency for physical goods it's a different issue
+[Tue 14:35]	<dlongley-db>	jeffsayre: i can't think of why a brick and mortar store wouldn't be online to handle this
+[Tue 14:35]	<dlongley-db>	jeffsayre: maybe farmers, etc, could be in such a position
+[Tue 14:36]	<manu-db>	dlongley: This offline digital currency thing only works in highly trusted scenarios... a brick-and-mortar store probably wouldn't want to accept something like this.
+[Tue 14:37]	<taaz>	q+
+[Tue 14:37]	<voip-ps>	Added taaz to the speaker queue: taaz
+[Tue 14:37]	<manu-db>	dlongley: We were talking about work-hours on the last call - maybe there is a use case there where there is inherent local trust.
+[Tue 14:37]	<manu-db>	dlongley: If there is a use case where you have to have a lot of trust - having a digital currency that is also based on your word would be important.
+[Tue 14:38]	<dlongley-db>	dlehn: part of this is that there are other systems that have similar issues, like bitcoin and ACH, they all have settlement times, but you can consider transfers instant even though they aren't ... maybe you can just charge a fee on top of the digital bill (upon creation)
+[Tue 14:38]	<dlongley-db>	manu: it doesn't sound like there's a great need for this, but it's something that could be potentially implemented in the future
+[Tue 14:39]	<dlongley-db>	manu: does anyone feel differently, that this is a high priority?
+[Tue 14:39]	<dlongley-db>	dlehn: it would be nice to keep in mind and plan for in the future (not disable it's future use now)
+[Tue 14:39]	<manu-db>	Topic: Dynamic allocation of currencies (digital off-line wallets)
+[Tue 14:40]	<dlongley-db>	manu: the digital offline wallet is like a transaction log
+[Tue 14:40]	<dlongley-db>	manu: the idea here is that you would promise people money
+[Tue 14:40]	<dlongley-db>	manu: this is similar to what melvin is doing with web credits
+[Tue 14:40]	<dlongley-db>	manu: you make a number of promises to pay people money, and they submit those promises to their payswarm authority and it moves all of that money into their account
+[Tue 14:40]	<dlongley-db>	manu: this is similar to the offline digital receipt mechanism that we are building into payswarm 1.0
+[Tue 14:41]	<dlongley-db>	manu: this allows you to digitally sign a contract offline, for instance, you walk into a store, and they give you a bill that you digitally sign and give back to them, which they can, at some later point, upload it to get their payment
+[Tue 14:42]	<melvster>	sounds very cool!
+[Tue 14:43]	<manu-db>	dlongley: Yes, it's a fairly straight-forward idea - but implementation details are important... like - what happens if you digitally sign a contract and don't have money in your account?
+[Tue 14:44]	<manu-db>	dlongley: We have this use case of wanting to buy a coke from a vending machine - you digitally sign a contract for the coke and then using the internet connection on the phone, it communicates with a PaySwarm Authority that digitally signs that the transfer happened.
+[Tue 14:45]	<manu-db>	dlongley: The vending machine then checks the digital signature by the PaySwarm Authority, then gives you the coke - no need to "trust" each other.
+[Tue 14:45]	<manu-db>	dlongley: This other thing we're discussing is slightly different, because you don't have to confirm the payment before giving the product out - again, it comes down to a system of trust.
+[Tue 14:46]	<manu-db>	dlongley: PaySwarm Authorities could try to mitigate the trust issue via several ways - the trust issue isn't handled by digital signatures in the digital wallet case because there is potential for fraud there.
+[Tue 14:46]	<dlongley-db>	manu: yes, we're shying away from situations where there are trust issues
+[Tue 14:46]	<dlongley-db>	manu: we don't want to derail people being able to trust payswarm (the system on its own)
+[Tue 14:47]	<manu-db>	dlongley: I think we should focus on the use cases we have right now - they are very powerful use cases. Buying something from a kiosk would be great - it's already a very powerful thing that you can do with PaySwarm.
+[Tue 14:48]	<dlongley-db>	manu: another idea could be to help eliminate parking meters by using GPS systems/locations to pay for parking, etc.
+[Tue 14:48]	<dlongley-db>	manu: there are several other interesting ideas in this arena
+[Tue 14:49]	<dlongley-db>	manu: for these use cases, these vending machines, kiosks could be made cheaper by reusing the connections on smart phones of their customers, etc.
+[Tue 14:50]	<manu-db>	Topic: New PaySwarm Beta release
+[Tue 14:51]	<dlongley-db>	manu: we've released a new payswarm beta, a new reference implementation using nodejs and mongodb, which we believe will make us more agile - in fact, that is already the case.
+[Tue 14:51]	<manu-db>	https://github.com/digitalbazaar/payswarm.js
+[Tue 14:51]	<dlongley-db>	manu: we have a new payswarm client that we're releasing as well (work in progress)
+[Tue 14:52]	<dlongley-db>	manu: so i'd like to ask jeff and melvin if you have any input on how you'd like payswarm clients to work/what features you need and how you'd like to use them?
+[Tue 14:53]	<dlongley-db>	manu: over the next few months, we want people to be able to use payswarm clients to sign assets/listings and accept/do purchases as quickly as possible
+[Tue 14:53]	<dlongley-db>	dlongley: Jeff, here's the PHP implementation - https://github.com/digitalbazaar/payswarm-wordpress/blob/master/payswarm-client.inc
+[Tue 14:53]	<manu-db>	Here's the github project for the PHP implementation: https://github.com/digitalbazaar/payswarm-wordpress
+[Tue 14:54]	<melvster>	thanks! Michiel is probably going to do the opentabs implementation, but the .js could be very useful ... need to look at it in a bit more detail ...
+[Tue 14:54]	<manu-db>	dlongley: That is the PHP implementation - there is decent documentation on implementing that and integrating that.
+[Tue 14:55]	<dlongley-db>	jeffsayre: yes, very interesting, for using the PHP version with our smartup
+[Tue 14:55]	<dlongley-db>	jeffsayre: we're looking at releasing the core of our smartup as a platform for creating whatever smartup they want
+[Tue 14:56]	<jeffsayre>	http://jeffsayre.com/2011/08/24/building-the-social-web-the-layers-of-the-smartup-stack/
+[Tue 14:56]	<dlongley-db>	jeffsayre: the true IP would be in modules, specific to products and services
+[Tue 14:56]	<dlongley-db>	jeffsayre: payswarm would be a core standard which we would implement
+[Tue 14:56]	<dlongley-db>	jeffsayre: so we could allow anyone to utilize payswarm for whatever they want in their smartup
+[Tue 14:57]	<dlongley-db>	manu: so the reason we're releasing the new beta now is we're doing a lot of load testing, etc.
+[Tue 14:57]	<dlongley-db>	manu: so we're also hoping to do a commercial release within the next 3-6 months (it will be done when it's done ;))
+[Tue 14:57]	<dlongley-db>	manu: our goal with the payswarm client stuff is to make payswarm stuff work within a day
+[Tue 14:58]	<melvster>	yes
+[Tue 14:58]	<dlongley-db>	manu: so, in the simplest case, you can do web payments that quickly
+[Tue 14:59]	<melvster>	cool!
+[Tue 14:58]	<dlongley-db>	manu: for the opentabs implementation ... what language are you using?
+[Tue 14:58]	<melvster>	mainly client side js right now
+[Tue 14:59]	<manu-db>	dlongley: Some of this stuff will work with client-side JavaScript... we leveraged Forge - based on what you're trying to do, there may be cross-domain issues. Ultimately, we do want the payswarm client to work on client-side, it boils down to what the limitations could be.
+[Tue 15:00]	<manu-db>	dlongley: Right now you can generate RSA keys, digital sign, and do all those things. There are issues with where you're going to store those keys - you can either use HTML5 local storage or something like that right now.
+[Tue 15:01]	<dlongley-db>	manu: we've been thinking about putting limits on private keys that are stored in browsers, etc.
+[Tue 15:01]	<melvster>	makes sense
+[Tue 15:01]	<dlongley-db>	manu: to help deal with issues regarding using html5 local storage, etc.
+[Tue 15:03]	<melvster>	thanks!
+[Tue 15:03]	<dlongley-db>	manu: good call guys, we'll meet again in 2 weeks.
+[Tue 15:03]	<voip-ps>	Melvin Carvalho (SIP/87.151.244.164-00000011) has left the conference.
+[Tue 15:03]	<voip-ps>	Dave Longley (SIP/6002-00000010) has left the conference.
+[Tue 15:03]	<voip-ps>	Manu Sporny (SIP/6000-00000012) has left the conference.
+[Tue 15:03]	<voip-ps>	Dave Lehn (SIP/6003-0000000f) has left the conference.
