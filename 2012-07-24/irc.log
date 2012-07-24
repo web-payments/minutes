@@ -1,0 +1,268 @@
+[Tue 14:04]	<manu-db>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2012Jul/0003.html
+[Tue 14:05]	<dlongley-db>	manu: any updates or changes to the agenda before we start?
+[Tue 14:05]	<manu-db>	Topic: Aligning of JSON Web Keys and Security Vocabulary
+[Tue 14:05]	<manu-db>	http://tools.ietf.org/html/draft-ietf-jose-json-web-key-00
+[Tue 14:05]	<manu-db>	http://payswarm.com/specs/source/vocabs/security
+[Tue 14:06]	<dlongley-db>	manu: melvin, over the weekend, asked if there was going to be any aligning of these two specifications
+[Tue 14:06]	<dlongley-db>	manu: his question was whether if the jwk spec overlaps with the web keys spec, actually.
+[Tue 14:06]	<dlongley-db>	manu: after looking at the jwk spec in detail, we came to the conclusion that it's much closer to the security vocab spec than the web keys spec.
+[Tue 14:06]	<dlongley-db>	manu: the jwk spec is an ietf spec that describes how you express a public key and its parameters in json
+[Tue 14:07]	<dlongley-db>	manu: it's a purely a container mechanism/format
+[Tue 14:07]	<dlongley-db>	manu: it doesn't talk about registering keys, generating them, or signing with related private keys, it's just for expressing them in json
+[Tue 14:07]	<dlongley-db>	manu: the security vocab also does this but also provides other things in the vocabulary
+[Tue 14:07]	<dlongley-db>	manu: including signature parameters/how to express other PKI information
+[Tue 14:08]	<dlongley-db>	manu: the question is whether or not those two vocabs need to be merged or if they are doing different things, etc.
+[Tue 14:08]	<manu-db>	dlongley-db: I do think we need to ensure that whatever is spec'd in JSON Web Keys do have properties in the Security Vocabulary.
+[Tue 14:09]	<manu-db>	dlongley-db: If people just want to use the JSON Web Keys spec, you can just add a "@context" via JSON-LD to that data to translate it to the Security Vocabulary easily.
+[Tue 14:09]	<dlongley-db>	manu: so your suggestion is to use Json-ld to map jwk to the security vocab?
+[Tue 14:10]	<manu-db>	dlongley-db: Yeah, I think that woudl be fine if people opt to continue using JWK. We can try to align it as much as needed, but since JSON-LD allows the easy mapping, they're mostly compatible now.
+[Tue 14:10]	<dlongley-db>	dlehn: are you sure that they are really compatible?
+[Tue 14:10]	<dlongley-db>	dlehn: if you are using simple strings for algorithms and we're using urls then we could have compatibility issues
+[Tue 14:10]	<dlongley-db>	manu: we could create/change the vocabulary to take strings or URLs to deal with that
+[Tue 14:11]	<dlongley-db>	manu: for example, let's say that the value is either a URL or a base64-encoded PEM value ... an application could easily tell the difference
+[Tue 14:11]	<dlongley-db>	manu: so the application interacting with the vocab could handle it
+[Tue 14:11]	<dlongley-db>	manu: so even without perfect compatibility there's a way around it, we just have to make sure that the jwk vocab works with the security vocab
+[Tue 14:11]	<dlongley-db>	manu: lehn, have you looked and seen any conflicts?
+[Tue 14:12]	<dlongley-db>	dlehn: not in detail, but the algorithm property looked like it could be an issue
+[Tue 14:12]	<dlongley-db>	manu: the way we express an algorithm in the security vocab now is a string
+[Tue 14:12]	<dlongley-db>	manu: and the wa[Tue 14:04]	<manu-db>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2012Jul/0003.html
+[Tue 14:05]	<dlongley-db>	scribe: dlongley-db
+[Tue 14:05]	<dlongley-db>	manu: any updates or changes to the agenda before we start?
+[Tue 14:05]	<manu-db>	Topic: Aligning of JSON Web Keys and Security Vocabulary
+[Tue 14:05]	<manu-db>	http://tools.ietf.org/html/draft-ietf-jose-json-web-key-00
+[Tue 14:05]	<manu-db>	http://payswarm.com/specs/source/vocabs/security
+[Tue 14:06]	<dlongley-db>	manu: melvin, over the weekend, asked if there was going to be any aligning of these two specifications
+[Tue 14:06]	<dlongley-db>	manu: his question was whether if the jwk spec overlaps with the web keys spec, actually.
+[Tue 14:06]	<dlongley-db>	manu: after looking at the jwk spec in detail, we came to the conclusion that it's much closer to the security vocab spec than the web keys spec.
+[Tue 14:06]	<dlongley-db>	manu: the jwk spec is an ietf spec that describes how you express a public key and its parameters in json
+[Tue 14:07]	<dlongley-db>	manu: it's a purely a container mechanism/format
+[Tue 14:07]	<dlongley-db>	manu: it doesn't talk about registering keys, generating them, or signing with related private keys, it's just for expressing them in json
+[Tue 14:07]	<dlongley-db>	manu: the security vocab also does this but also provides other things in the vocabulary
+[Tue 14:07]	<dlongley-db>	manu: including signature parameters/how to express other PKI information
+[Tue 14:08]	<dlongley-db>	manu: the question is whether or not those two vocabs need to be merged or if they are doing different things, etc.
+[Tue 14:08]	<manu-db>	dlongley-db: I do think we need to ensure that whatever is spec'd in JSON Web Keys do have properties in the Security Vocabulary.
+[Tue 14:09]	<manu-db>	dlongley-db: If people just want to use the JSON Web Keys spec, you can just add a "@context" via JSON-LD to that data to translate it to the Security Vocabulary easily.
+[Tue 14:09]	<dlongley-db>	manu: so your suggestion is to use Json-ld to map jwk to the security vocab?
+[Tue 14:10]	<manu-db>	dlongley-db: Yeah, I think that woudl be fine if people opt to continue using JWK. We can try to align it as much as needed, but since JSON-LD allows the easy mapping, they're mostly compatible now.
+[Tue 14:10]	<dlongley-db>	dlehn: are you sure that they are really compatible?
+[Tue 14:10]	<dlongley-db>	dlehn: if you are using simple strings for algorithms and we're using urls then we could have compatibility issues
+[Tue 14:10]	<dlongley-db>	manu: we could create/change the vocabulary to take strings or URLs to deal with that
+[Tue 14:11]	<dlongley-db>	manu: for example, let's say that the value is either a URL or a base64-encoded PEM value ... an application could easily tell the difference
+[Tue 14:11]	<dlongley-db>	manu: so the application interacting with the vocab could handle it
+[Tue 14:11]	<dlongley-db>	manu: so even without perfect compatibility there's a way around it, we just have to make sure that the jwk vocab works with the security vocab
+[Tue 14:11]	<dlongley-db>	manu: lehn, have you looked and seen any conflicts?
+[Tue 14:12]	<dlongley-db>	dlehn: not in detail, but the algorithm property looked like it could be an issue
+[Tue 14:12]	<dlongley-db>	manu: the way we express an algorithm in the security vocab now is a string
+[Tue 14:12]	<dlongley-db>	manu: and the way the jwk spec does is a little different (at least with what they have specified)
+[Tue 14:12]	<manu-db>	"alg":"EC", "crv":"P-256"
+[Tue 14:12]	<manu-db>	we do this instead: "aes-128-cbc"
+[Tue 14:13]	<manu-db>	dlongley-db: Also, we only have certain things specified. We only have the algorithms specified that allow us to do the PaySwarm work.
+[Tue 14:13]	<manu-db>	dlongley-db: We could use the same strings that OpenSSL uses...
+[Tue 14:13]	<dlongley-db>	manu: the other concern is making it too heavy-weight, we didn't want to support what we didn't have to at the moment
+[Tue 14:13]	<dlongley-db>	manu: but if we're going to make it complete, we'll have to add a lot of these algorithm possibilities in there
+[Tue 14:14]	<manu-db>	One way to tell if it's a JWK or not is this: {"jwk":
+[Tue 14:14]	<manu-db>	dlongley: We were thinking of mapping that to a specific term - like "sec:publicKey"
+[Tue 14:15]	<taaz>	http://tools.ietf.org/html/draft-ietf-jose-json-web-algorithms-04
+[Tue 14:15]	<dlongley-db>	dlehn: there's a general issue with these json pki specs, we may want to try and align with them
+[Tue 14:15]	<dlongley-db>	manu: the concern i have is that this is like a kitchen sink issue, defining absolutely everything
+[Tue 14:16]	<dlongley-db>	dlehn: we're doing that too, but we're looking at it from a linked data view
+[Tue 14:17]	<manu-db>	dlongley: I think it's important to not that we're going at this from a more flexible approach - we are taking the Linked Data approach... a graph can be structured in JSON in multiple different ways, with JSON-LD it doesn't matter where you put the info, just that the info is there in the graph.
+[Tue 14:18]	<manu-db>	dlongley: So, you don't need every app to work with the data in the same way. The approach that JWE takes doesn't take a Linked Data approach or a flexible graph approach - they say the data "has to look this way" - and that's not as flexible.
+[Tue 14:18]	<manu-db>	dlongley: Because we're using Linked Data, it makes it easier to translate the JWK/JWE stuff to the Security Vocabulary... the inverse is not possible.
+[Tue 14:19]	<manu-db>	dlongley: The only real incompatibility is the values of the properties... we can always map the properties into the Security Vocabulary - the Web Keys specs can take JWK as input if it has an appropriate context and map it to the Security Vocabulary.
+[Tue 14:20]	<manu-db>	dlongley: There may be minor translations that have to be done. The Web Keys spec should hopefully be able to take JWK input if you wanted to register JWK keys. Just send the JWK key up with the appropriate context and you're good.
+[Tue 14:20]	<dlongley-db>	manu: yes, and the web keys spec mostly just reuses PEM which most crypto tools have.
+[Tue 14:21]	<manu-db>	dlongley: Yeah, any crypto lib has support for ASN.1 and PEM - if you don't have it, getting from ASN to PEM is pretty easy. You just take what's DER encoded and base-64 encode that adding headers where appropriate. Most everyone can do base-64. If you do crypto, you're going to have ASN data.
+[Tue 14:21]	<manu-db>	dlongley: Almost all of the tools have some way to read/write PEM.
+[Tue 14:22]	<dlongley-db>	manu: this came up a few years ago with some other work (webid?) and our position has always been that crypto tools have PEM support
+[Tue 14:22]	<dlongley-db>	manu: vs. having to construct the key from its basic bignum components, etc.
+[Tue 14:23]	<manu-db>	dlongley: Yeah, having to take key compontents and having to turn them into keys is much harder than feeding PEM to these libs.
+[Tue 14:23]	<manu-db>	dlongley: Most people don't even understand that keys break down into those components.
+[Tue 14:24]	<dlongley-db>	manu: so before we go ahead and try to incorporate jwk/etc into the security vocabulary is probably a bit premature until we see it being used quite a bit
+[Tue 14:24]	<dlongley-db>	manu: right now we want to specify the bare minimum
+[Tue 14:25]	<dlongley-db>	manu: we can always add jwk parameters to the security vocabulary in the future as needed
+[Tue 14:25]	<taaz>	http://tools.ietf.org/html/draft-ietf-jose-json-web-key-04
+[Tue 14:26]	<manu-db>	dlongley: Looks like they've removed some of the more specific strings
+[Tue 14:29]	<dlongley-db>	manu: it seems like we just need to talk to m. jones and see if there's a way to cooperate
+[Tue 14:29]	<dlongley-db>	manu: it could be that we're just doing completely different things
+[Tue 14:29]	<dlongley-db>	manu: they aren't doing any linked data stuff, it's just pure json
+[Tue 14:29]	<dlongley-db>	manu: anything else before moving on?
+[Tue 14:30]	<manu-db>	Topic: New payswarm.js release
+[Tue 14:30]	<dlongley-db>	manu: let's talk briefly about the new payswarm.js release
+[Tue 14:30]	<dlongley-db>	manu: just today we updated the dev.payswarm.com website
+[Tue 14:30]	<manu-db>	Today we released a new version of - https://dev.payswarm.com/
+[Tue 14:30]	<dlongley-db>	manu: one of the features that we released here is the ability to interface with the rest API, which uses JSON-LD
+[Tue 14:31]	<manu-db>	Github code for payswarm.js - https://github.com/digitalbazaar/payswarm.js
+[Tue 14:31]	<dlongley-db>	manu: if you look in some of the examples, specifically
+[Tue 14:31]	<dlongley-db>	Registering a new public key: https://github.com/digitalbazaar/payswarm.js/blob/master/examples/register-new-key.js
+[Tue 14:31]	<dlongley-db>	Publishing an asset for sale: https://github.com/digitalbazaar/payswarm.js/blob/master/examples/publish-asset-for-sale.js
+[Tue 14:31]	<dlongley-db>	Purchasing an asset: https://github.com/digitalbazaar/payswarm.js/blob/master/examples/purchase-asset.js
+[Tue 14:32]	<manu-db>	Topic: Registering a new Web Key
+[Tue 14:32]	<manu-db>	https://github.com/digitalbazaar/payswarm.js/blob/master/examples/register-new-key.js
+[Tue 14:32]	<dlongley-db>	manu: we created these examples to see if they work the way developers would like to use them and to ensure ease of use
+[Tue 14:32]	<dlongley-db>	manu: all of the code uses the payswarm client javascript library, which is under a BSD 3-clause license
+[Tue 14:33]	<manu-db>	Steps to register a new Web Key:
+[Tue 14:33]	<manu-db>	1. Generate a public/private keypair (or use an existing one).
+[Tue 14:33]	<manu-db>	2. Fetch the Web Keys registration endpoint from the PaySwarm Authority.
+[Tue 14:33]	<manu-db>	3. Generate the key registration URL and go to it in a browser.
+[Tue 14:33]	<manu-db>	4. Get the new key information and provide it to the program.
+[Tue 14:34]	<manu-db>	https://github.com/digitalbazaar/payswarm.js/blob/master/examples/register-new-key.js#L90
+[Tue 14:34]	<manu-db>	https://github.com/digitalbazaar/payswarm.js/blob/master/examples/register-new-key.js#L68
+[Tue 14:34]	<dlongley-db>	manu: we start by reading from a config file that will store the keys
+[Tue 14:35]	<dlongley-db>	manu: we generate keys if there aren't any in the config file
+[Tue 14:35]	<dlongley-db>	manu: then we go out to the payswarm authority and get its web keys endpoint
+[Tue 14:35]	<manu-db>	Web Keys endpoints URL: https://dev.payswarm.com/.well-known/web-keys
+[Tue 14:35]	<dlongley-db>	manu: the PA config is key-value pairs in JSON-LD with endpoints
+[Tue 14:37]	<manu-db>	dlongley: If you include a callback and a nonce, you will receive an encrypted response back.
+[Tue 14:38]	<manu-db>	dlongley: There is another issue too - if they're using a web browser, they may be communicating w/ an insecure site - so the response must be encrypted.
+[Tue 14:39]	<manu-db>	dlongley: Most wordpress installations are served over http - we have to make sure that people don't get that registration information back over an insecure channel. It's not a big deal w/ key registration, but there are other callbacks that you don't want to go over an insecure channel.
+[Tue 14:40]	<manu-db>	dlongley: Also, vendors can register and set certain preferences that we don't want to be exposed via clear text over the Web.
+[Tue 14:41]	<dlongley-db>	manu: also keep in mind that the only people that have to do this sort of stuff is developers
+[Tue 14:41]	<dlongley-db>	manu: other people will use a web interface where they don't have to see any messy details
+[Tue 14:41]	<manu-db>	https://github.com/digitalbazaar/payswarm.js/blob/master/examples/register-new-key.js#L95
+[Tue 14:43]	<manu-db>	dlongley: Yeah, we just need to provide an options object to the call to create the registration URL. The part that fetches the endpoints wasn't in there yet, but much of it can be cleaned up now that we have the endpoints URL.
+[Tue 14:44]	<dlongley-db>	manu: we're probably also put the payswarm endpoints into .well-known
+[Tue 14:44]	<dlongley-db>	dlongley: yes
+[Tue 14:44]	<dlongley-db>	dlehn: yes
+[Tue 14:45]	<dlongley-db>	manu: one question is whether or not we should combine .well-known payswarm+webkeys to reduce # of requests
+[Tue 14:45]	<dlongley-db>	dlehn: two files sounds fine to me, (separate)
+[Tue 14:45]	<dlongley-db>	dlehn: we just need to ensure caching is set up properly
+[Tue 14:45]	<dlongley-db>	manu: so we'll keep them separate
+[Tue 14:47]	<dlongley-db>	manu: when you send up the request to register your key, the PA will generate a URL for you for the key
+[Tue 14:47]	<dlongley-db>	manu: which can be used later for revocation and for identifying the key in signatures
+[Tue 14:47]	<dlongley-db>	manu: other information like who owns the key will also be registered with it
+[Tue 14:47]	<dlongley-db>	manu: you'll need to be logged into the PA's website to accomplish this
+[Tue 14:48]	<dlongley-db>	manu: you take the generated registration url and paste it into your browser
+[Tue 14:48]	<dlongley-db>	... and then take the encrypted message that is returned in the browser and paste it back into the example
+[Tue 14:48]	<dlongley-db>	... and then the payswarm.js library is used to decrypt the message and confirm that the public key was registered
+[Tue 14:48]	<dlongley-db>	manu: then the local config is updated
+[Tue 14:48]	<dlongley-db>	manu: and that's about it for registering a public key
+[Tue 14:49]	<manu-db>	dlongley: Other than simplifications in the payswarm.js API, I think we're fine. If you gloss over some of the messier "configuration" details.
+[Tue 14:50]	<manu-db>	dlongley: The process is pretty simple now, yes.
+[Tue 14:50]	<manu-db>	manu: Any way we could simplify this?
+[Tue 14:50]	<manu-db>	dlongley: We could remove encryption of the response message? That doesn't help the UX any, though... they don't care about the data.
+[Tue 14:50]	<manu-db>	dlongley: If you're using a browser, it's even easier since you don't have to cut/paste.
+[Tue 14:52]	<manu-db>	manu: The PHP code is a bit more involved... mostly because it's assumption that you're on the Web.
+[Tue 14:52]	<manu-db>	dlongley: The PHP stuff is a bit less flexible than the JavaScript stuff - so, it's just a little more flexible - store it however you want (or don't store it).
+[Tue 14:53]	<manu-db>	dlongley: You could write a node.js app that stores it in a database, so it's more flexible.
+[Tue 14:53]	<manu-db>	manu: Do we want to align the payswarm.js code with the payswarm-php code?
+[Tue 14:53]	<manu-db>	dlongley: If we do, we'd align with the JavaScript code... it's more flexible.
+[Tue 14:53]	<manu-db>	dlongley: The PHP code relies more on hooks - you have to implement hooks and everything works.
+[Tue 14:54]	<manu-db>	dlongley: The JavaScript stuff uses options to convey the data that needs to be used during the process.
+[Tue 14:54]	<manu-db>	manu: So, do we use hooks and options?
+[Tue 14:55]	<manu-db>	dlongley: There are only a few modules that would use the PHP stuff, not much need for customization there - we could add options, but the hooks seem to be working well for now. Not that big of a deal right now.
+[Tue 14:55]	<manu-db>	dlongley: We also need to write one of these in Python... I'd imagine the JavaScript and Python versions would look pretty similar.
+[Tue 14:56]	<dlongley-db>	manu: it seems like the for the most basic stuff the thing that needs to work is the JSON-LD processing
+[Tue 14:56]	<dlongley-db>	manu: that and cryptography
+[Tue 14:57]	<dlongley-db>	manu: there are only a handful of methods that are needed to register keys, list items for sale, and purchase
+[Tue 14:57]	<manu-db>	manu: We're taking all the hooks out of payswarm.js, right?
+[Tue 14:57]	<manu-db>	dlongley: Yeah, we're taking out all the hooks... then it's just straight port to Python.
+[Tue 14:58]	<manu-db>	dlongley: Yeah, the hooks are only in there because of PHP - the hooks should probably be built on top of the basic options-based framework... then build the PHP hooks on top of that. It'll end up working the same way that it does now, so it should be pretty transparent to developers.
+[Tue 14:59]	<dlongley-db>	manu: we're at the top of the hour
+[Tue 14:59]	<dlongley-db>	manu: so we'll push off listing and purchasing assets to the next call.y the jwk spec does is a little different (at least with what they have specified)
+[Tue 14:12]	<manu-db>	"alg":"EC", "crv":"P-256"
+[Tue 14:12]	<manu-db>	we do this instead: "aes-128-cbc"
+[Tue 14:13]	<manu-db>	dlongley-db: Also, we only have certain things specified. We only have the algorithms specified that allow us to do the PaySwarm work.
+[Tue 14:13]	<manu-db>	dlongley-db: We could use the same strings that OpenSSL uses...
+[Tue 14:13]	<dlongley-db>	manu: the other concern is making it too heavy-weight, we didn't want to support what we didn't have to at the moment
+[Tue 14:13]	<dlongley-db>	manu: but if we're going to make it complete, we'll have to add a lot of these algorithm possibilities in there
+[Tue 14:14]	<manu-db>	One way to tell if it's a JWK or not is this: {"jwk":
+[Tue 14:14]	<manu-db>	dlongley: We were thinking of mapping that to a specific term - like "sec:publicKey"
+[Tue 14:15]	<taaz>	http://tools.ietf.org/html/draft-ietf-jose-json-web-algorithms-04
+[Tue 14:15]	<dlongley-db>	dlehn: there's a general issue with these json pki specs, we may want to try and align with them
+[Tue 14:15]	<dlongley-db>	manu: the concern i have is that this is like a kitchen sink issue, defining absolutely everything
+[Tue 14:16]	<dlongley-db>	dlehn: we're doing that too, but we're looking at it from a linked data view
+[Tue 14:17]	<manu-db>	dlongley: I think it's important to not that we're going at this from a more flexible approach - we are taking the Linked Data approach... a graph can be structured in JSON in multiple different ways, with JSON-LD it doesn't matter where you put the info, just that the info is there in the graph.
+[Tue 14:18]	<manu-db>	dlongley: So, you don't need every app to work with the data in the same way. The approach that JWE takes doesn't take a Linked Data approach or a flexible graph approach - they say the data "has to look this way" - and that's not as flexible.
+[Tue 14:18]	<manu-db>	dlongley: Because we're using Linked Data, it makes it easier to translate the JWK/JWE stuff to the Security Vocabulary... the inverse is not possible.
+[Tue 14:19]	<manu-db>	dlongley: The only real incompatibility is the values of the properties... we can always map the properties into the Security Vocabulary - the Web Keys specs can take JWK as input if it has an appropriate context and map it to the Security Vocabulary.
+[Tue 14:20]	<manu-db>	dlongley: There may be minor translations that have to be done. The Web Keys spec should hopefully be able to take JWK input if you wanted to register JWK keys. Just send the JWK key up with the appropriate context and you're good.
+[Tue 14:20]	<dlongley-db>	manu: yes, and the web keys spec mostly just reuses PEM which most crypto tools have.
+[Tue 14:21]	<manu-db>	dlongley: Yeah, any crypto lib has support for ASN.1 and PEM - if you don't have it, getting from ASN to PEM is pretty easy. You just take what's DER encoded and base-64 encode that adding headers where appropriate. Most everyone can do base-64. If you do crypto, you're going to have ASN data.
+[Tue 14:21]	<manu-db>	dlongley: Almost all of the tools have some way to read/write PEM.
+[Tue 14:22]	<dlongley-db>	manu: this came up a few years ago with some other work (webid?) and our position has always been that crypto tools have PEM support
+[Tue 14:22]	<dlongley-db>	manu: vs. having to construct the key from its basic bignum components, etc.
+[Tue 14:23]	<manu-db>	dlongley: Yeah, having to take key compontents and having to turn them into keys is much harder than feeding PEM to these libs.
+[Tue 14:23]	<manu-db>	dlongley: Most people don't even understand that keys break down into those components.
+[Tue 14:24]	<dlongley-db>	manu: so before we go ahead and try to incorporate jwk/etc into the security vocabulary is probably a bit premature until we see it being used quite a bit
+[Tue 14:24]	<dlongley-db>	manu: right now we want to specify the bare minimum
+[Tue 14:25]	<dlongley-db>	manu: we can always add jwk parameters to the security vocabulary in the future as needed
+[Tue 14:25]	<taaz>	http://tools.ietf.org/html/draft-ietf-jose-json-web-key-04
+[Tue 14:26]	<manu-db>	dlongley: Looks like they've removed some of the more specific strings
+[Tue 14:29]	<dlongley-db>	manu: it seems like we just need to talk to m. jones and see if there's a way to cooperate
+[Tue 14:29]	<dlongley-db>	manu: it could be that we're just doing completely different things
+[Tue 14:29]	<dlongley-db>	manu: they aren't doing any linked data stuff, it's just pure json
+[Tue 14:29]	<dlongley-db>	manu: anything else before moving on?
+[Tue 14:30]	<manu-db>	Topic: New payswarm.js release
+[Tue 14:30]	<dlongley-db>	manu: let's talk briefly about the new payswarm.js release
+[Tue 14:30]	<dlongley-db>	manu: just today we updated the dev.payswarm.com website
+[Tue 14:30]	<manu-db>	Today we released a new version of - https://dev.payswarm.com/
+[Tue 14:30]	<dlongley-db>	manu: one of the features that we released here is the ability to interface with the rest API, which uses JSON-LD
+[Tue 14:31]	<manu-db>	Github code for payswarm.js - https://github.com/digitalbazaar/payswarm.js
+[Tue 14:31]	<dlongley-db>	manu: if you look in some of the examples, specifically
+[Tue 14:31]	<dlongley-db>	you can register a new public key: https://github.com/digitalbazaar/payswarm.js/blob/master/examples/register-new-key.js
+[Tue 14:31]	<dlongley-db>	publishing an asset for sale: https://github.com/digitalbazaar/payswarm.js/blob/master/examples/publish-asset-for-sale.js
+[Tue 14:31]	<dlongley-db>	and purchasing an asset: https://github.com/digitalbazaar/payswarm.js/blob/master/examples/purchase-asset.js
+[Tue 14:32]	<manu-db>	Topic: Registering a new Web Key
+[Tue 14:32]	<manu-db>	https://github.com/digitalbazaar/payswarm.js/blob/master/examples/register-new-key.js
+[Tue 14:32]	<dlongley-db>	manu: we created these examples to see if they work the way developers would like to use them and to ensure ease of use
+[Tue 14:32]	<dlongley-db>	manu: all of the code uses the payswarm client javascript library, which is under a BSD 3-clause license
+[Tue 14:33]	<manu-db>	Steps to register a new Web Key:
+[Tue 14:33]	<manu-db>	1. Generate a public/private keypair (or use an existing one).
+[Tue 14:33]	<manu-db>	2. Fetch the Web Keys registration endpoint from the PaySwarm Authority.
+[Tue 14:33]	<manu-db>	3. Generate the key registration URL and go to it in a browser.
+[Tue 14:33]	<manu-db>	4. Get the new key information and provide it to the program.
+[Tue 14:34]	<manu-db>	https://github.com/digitalbazaar/payswarm.js/blob/master/examples/register-new-key.js#L90
+[Tue 14:34]	<manu-db>	https://github.com/digitalbazaar/payswarm.js/blob/master/examples/register-new-key.js#L68
+[Tue 14:34]	<dlongley-db>	manu: we start by reading from a config file that will store the keys
+[Tue 14:35]	<dlongley-db>	manu: we generate keys if there aren't any in the config file
+[Tue 14:35]	<dlongley-db>	manu: then we go out to the payswarm authority and get its web keys endpoint
+[Tue 14:35]	<manu-db>	Web Keys endpoints URL: https://dev.payswarm.com/.well-known/web-keys
+[Tue 14:35]	<dlongley-db>	manu: the PA config is key-value pairs in JSON-LD with endpoints
+[Tue 14:37]	<manu-db>	dlongley: If you include a callback and a nonce, you will receive an encrypted response back.
+[Tue 14:38]	<manu-db>	dlongley: There is another issue too - if they're using a web browser, they may be communicating w/ an insecure site - so the response must be encrypted.
+[Tue 14:39]	<manu-db>	dlongley: Most wordpress installations are served over http - we have to make sure that people don't get that registration information back over an insecure channel. It's not a big deal w/ key registration, but there are other callbacks that you don't want to go over an insecure channel.
+[Tue 14:40]	<manu-db>	dlongley: Also, vendors can register and set certain preferences that we don't want to be exposed via clear text over the Web.
+[Tue 14:41]	<dlongley-db>	manu: also keep in mind that the only people that have to do this sort of stuff is developers
+[Tue 14:41]	<dlongley-db>	manu: other people will use a web interface where they don't have to see any messy details
+[Tue 14:41]	<manu-db>	https://github.com/digitalbazaar/payswarm.js/blob/master/examples/register-new-key.js#L95
+[Tue 14:43]	<manu-db>	dlongley: Yeah, we just need to provide an options object to the call to create the registration URL. The part that fetches the endpoints wasn't in there yet, but much of it can be cleaned up now that we have the endpoints URL.
+[Tue 14:44]	<dlongley-db>	manu: we're probably also put the payswarm endpoints into .well-known
+[Tue 14:44]	<dlongley-db>	dlongley: yes
+[Tue 14:44]	<dlongley-db>	dlehn: yes
+[Tue 14:45]	<dlongley-db>	manu: one question is whether or not we should combine .well-known payswarm+webkeys to reduce # of requests
+[Tue 14:45]	<dlongley-db>	dlehn: two files sounds fine to me, (separate)
+[Tue 14:45]	<dlongley-db>	dlehn: we just need to ensure caching is set up properly
+[Tue 14:45]	<dlongley-db>	manu: so we'll keep them separate
+[Tue 14:47]	<dlongley-db>	manu: when you send up the request to register your key, the PA will generate a URL for you for the key
+[Tue 14:47]	<dlongley-db>	manu: which can be used later for revocation and for identifying the key in signatures
+[Tue 14:47]	<dlongley-db>	manu: other information like who owns the key will also be registered with it
+[Tue 14:47]	<dlongley-db>	manu: you'll need to be logged into the PA's website to accomplish this
+[Tue 14:48]	<dlongley-db>	manu: you take the generated registration url and paste it into your browser
+[Tue 14:48]	<dlongley-db>	and then take the encrypted message that is returned in the browser and paste it back into the example
+[Tue 14:48]	<dlongley-db>	and then the payswarm.js library is used to decrypt the message and confirm that the public key was registered
+[Tue 14:48]	<dlongley-db>	manu: then the local config is updated
+[Tue 14:48]	<dlongley-db>	manu: and that's about it for registering a public key
+[Tue 14:49]	<manu-db>	dlongley: Other than simplifications in the payswarm.js API, I think we're fine. If you gloss over some of the messier "configuration" details.
+[Tue 14:50]	<manu-db>	dlongley: The process is pretty simple now, yes.
+[Tue 14:50]	<manu-db>	manu: Any way we could simplify this?
+[Tue 14:50]	<manu-db>	dlongley: We could remove encryption of the response message? That doesn't help the UX any, though... they don't care about the data.
+[Tue 14:50]	<manu-db>	dlongley: If you're using a browser, it's even easier since you don't have to cut/paste.
+[Tue 14:52]	<manu-db>	manu: The PHP code is a bit more involved... mostly because it's assumption that you're on the Web.
+[Tue 14:52]	<manu-db>	dlongley: The PHP stuff is a bit less flexible than the JavaScript stuff - so, it's just a little more flexible - store it however you want (or don't store it).
+[Tue 14:53]	<manu-db>	dlongley: You could write a node.js app that stores it in a database, so it's more flexible.
+[Tue 14:53]	<manu-db>	manu: Do we want to align the payswarm.js code with the payswarm-php code?
+[Tue 14:53]	<manu-db>	dlongley: If we do, we'd align with the JavaScript code... it's more flexible.
+[Tue 14:53]	<manu-db>	dlongley: The PHP code relies more on hooks - you have to implement hooks and everything works.
+[Tue 14:54]	<manu-db>	dlongley: The JavaScript stuff uses options to convey the data that needs to be used during the process.
+[Tue 14:54]	<manu-db>	manu: So, do we use hooks and options?
+[Tue 14:55]	<manu-db>	dlongley: There are only a few modules that would use the PHP stuff, not much need for customization there - we could add options, but the hooks seem to be working well for now. Not that big of a deal right now.
+[Tue 14:55]	<manu-db>	dlongley: We also need to write one of these in Python... I'd imagine the JavaScript and Python versions would look pretty similar.
+[Tue 14:56]	<dlongley-db>	manu: it seems like the for the most basic stuff the thing that needs to work is the JSON-LD processing
+[Tue 14:56]	<dlongley-db>	manu: that and cryptography
+[Tue 14:57]	<dlongley-db>	manu: there are only a handful of methods that are needed to register keys, list items for sale, and purchase
+[Tue 14:57]	<manu-db>	manu: We're taking all the hooks out of payswarm.js, right?
+[Tue 14:57]	<manu-db>	dlongley: Yeah, we're taking out all the hooks... then it's just straight port to Python.
+[Tue 14:58]	<manu-db>	dlongley: Yeah, the hooks are only in there because of PHP - the hooks should probably be built on top of the basic options-based framework... then build the PHP hooks on top of that. It'll end up working the same way that it does now, so it should be pretty transparent to developers.
+[Tue 14:59]	<dlongley-db>	manu: we're at the top of the hour
+[Tue 14:59]	<dlongley-db>	manu: so we'll push off listing and purchasing assets to the next call
