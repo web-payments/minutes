@@ -1,0 +1,74 @@
+[Tue 14:01]	<manu1>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2012Aug/0021.html
+[Tue 14:02]	<dlongley>	scribe:dlongley
+[Tue 14:02]	<dlongley>	manu: Today we'll be reviewing the client-side purchase process, reviewing the alpha 4 payswarm release status update, and discussing the html5 web apps demo
+[Tue 14:02]	<dlongley>	manu: Over the last couple of telecons we've been discussing the web key creation/registration process, the asset/listing registration process, and then the final part of that whole process is purchasing the asset
+[Tue 14:02]	<manu1>	Topic: Client-side Purchase Process
+[Tue 14:02]	<manu1>	https://github.com/digitalbazaar/payswarm.js/blob/master/examples/purchase-asset.js
+[Tue 14:02]	<dlongley>	manu: the link to the source code in github is in IRC (above)
+[Tue 14:03]	<dlongley>	manu: so the assumption at this stage in the process is that a vendor has created and registered a webkey with a payswarm authority, they've created an asset and listing, signed and published those
+[Tue 14:03]	<dlongley>	manu: and the final step here is having a customer/buyer purchase the asset that has been listed for sale on the web
+[Tue 14:03]	<manu1>	https://github.com/digitalbazaar/payswarm.js/blob/master/examples/purchase-asset.js#L75
+[Tue 14:04]	<dlongley>	manu: the other examples have a config part in the source code and that happens at the link in IRC
+[Tue 14:04]	<dlongley>	manu: if the listing isn't specified in the config then the program will prompt (via the command line) the user/customer for a listing URL
+[Tue 14:04]	<manu1>	https://github.com/digitalbazaar/payswarm.js/blob/master/examples/purchase-asset.js#L132
+[Tue 14:04]	<dlongley>	manu: next, the listing is fetched over the web
+[Tue 14:05]	<dlongley>	manu: it doesn't matter where it is on the web, because it is digitally-signed and we know by whom
+[Tue 14:05]	<dlongley>	manu: it can be from anywhere
+[Tue 14:05]	<dlongley>	manu: what the example supports is a JSON-LD listing, it isn't HTML/RDFa here in this example, but other purchase clients support this
+[Tue 14:05]	<dlongley>	manu: for example, if you use the wordpress demo linked from dev.payswarm.com all of the asset/listing information is listed in HTML via RDFa
+[Tue 14:06]	<dlongley>	manu: a client goes to the HTML page there and gets the RDFa data and builds the JSON-LD listing from that information
+[Tue 14:06]	<dlongley>	manu: here, the request for the data just asks for JSON-LD
+[Tue 14:06]	<dlongley>	manu: and it is easier/more direct
+[Tue 14:06]	<manu1>	https://github.com/digitalbazaar/payswarm.js/blob/master/examples/purchase-asset.js#L154
+[Tue 14:07]	<dlongley>	manu: so next you just give the purchase call the listing
+[Tue 14:07]	<dlongley>	manu: and the transaction service for processing the purchase (this is the buyer's payswarm authority)
+[Tue 14:08]	<dlongley>	manu: you also give it who you are, your source financial account for paying for the asset, your public key ID (URI) for indicating which key you used to sign your purchase request, and your private key for signing your purchase request
+[Tue 14:08]	<dlongley>	manu: so the payswarm client will do all of that for you
+[Tue 14:08]	<dlongley>	manu: it will sign your purchase request and send it to your payswarm authority, which in turn, will check the amounts are correct on the listing, it is a valid listing, valid asset, everything checks out
+[Tue 14:09]	<dlongley>	manu: and if all of that passes, then the authority will run the transaction and then return a digitally-signed receipt back to you
+[Tue 14:09]	<dlongley>	manu: the receipt will be signed by the authority
+[Tue 14:09]	<dlongley>	manu: the receipt is a shortened form of the contract (a summary) whereas the contract will have all of the fine grained details about your purchase
+[Tue 14:10]	<manu1>	dlongley: Yeah, the process is fairly straight forward.
+[Tue 14:10]	<dlongley>	manu: the receipt will just have the summary of what you bought, etc.
+[Tue 14:11]	<manu1>	dlongley: One thing that we should add, is that there is a budgeting system built in. You can associated various vendors with budget amounts. So you can say that Vendor A is associated with the "Games" budget... which may be set at $10/month.
+[Tue 14:11]	<manu1>	dlongley: You can make purchase requests using those budgets. If you omit the account you want to pay with, or you specify a budget ID, the purchase can be run using a budget. If you don't want to accidentally go over your budget, the purchase won't go through.
+[Tue 14:12]	<manu1>	dlongley: You can always manage details of your budget via the PaySwarm Authority. It's very useful to limit spending, or not be bothered when purchasing something (do it in the background).
+[Tue 14:12]	<manu1>	manu: I don't think that budgets are a part of the specs now.
+[Tue 14:13]	<manu1>	dlongley: Yes, not a part of the spec right now, two different PAs don't have to support budgets for this to work. Vendors don't have to know about this existing. If you're a client talking to your PA knows about budgets, it could use them.
+[Tue 14:14]	<manu1>	Topic: Status Update on PaySwarm Alpha 4 release
+[Tue 14:14]	<dlongley>	manu: yeah, we might want to have some spec text in there.
+[Tue 14:14]	<manu1>	http://lists.w3.org/Archives/Public/public-webpayments/2012Aug/0016.html
+[Tue 14:14]	<dlongley>	manu: last week we (Digital Bazaar) made a release of the reference implementation ... we had to do a quick release to fix a couple of bugs for Melvin for working on a web app demo
+[Tue 14:15]	<dlongley>	manu: we also fixed a few other things and updated our release system to make releases quicker
+[Tue 14:15]	<dlongley>	manu: we haven't decided what the release cycles are going to be just yet
+[Tue 14:15]	<manu1>	dlongley: Once we stabilize a little more, we can start looking at more scheduled releases. Now it's just based on features/bug fixes as they come through.
+[Tue 14:16]	<dlongley>	manu: we also tightened some security, and are using AngularJS for some of the UI now
+[Tue 14:16]	<dlongley>	manu: we fixed some bugs that occurred during vendor registration
+[Tue 14:17]	<dlongley>	manu: we added some labels for voided/pending transactions, and we cleaned up the deposit UI a bit, fixed general UI bugs, we changed the i18n framework a bit to better support it in the future as needed, the financial activity links were updated to better show/handle your transaction activity in your financial accounts
+[Tue 14:18]	<dlongley>	manu: we added ACL for transactions and accounts
+[Tue 14:18]	<dlongley>	manu: so we wanted to make sure that people involved in transactions could see what they were involved in without seeing other details like what other people were paid, etc.
+[Tue 14:19]	<dlongley>	manu: vendors/customers can see all of the details
+[Tue 14:19]	<dlongley>	manu: we added email notifications for purchases and the links in those emails should work now and show the transaction details if you're logged in
+[Tue 14:20]	<dlongley>	manu: we're now working on adding the ability to register bank accounts, etc -- these and a few others are the last changes that we're working on before we do a commercial release of the software
+[Tue 14:20]	<manu1>	Topic: HTML5 Web Apps demo details
+[Tue 14:20]	<dlongley>	manu: Melvin sent an email to the mailing list saying he set up a wordpress demo and will be getting that working soon
+[Tue 14:21]	<dlongley>	manu: we plan to create another type of demo for melvin... a website with a few web apps (eg: games/productivity app or something) on the landing page
+[Tue 14:21]	<dlongley>	manu: and when you click on them, you can purchase access to those web apps
+[Tue 14:21]	<dlongley>	manu: and then the website will let you use that application
+[Tue 14:21]	<dlongley>	manu: this will be similar to apple store/android store
+[Tue 14:22]	<dlongley>	manu: and we also plan to demonstrate in-app payments
+[Tue 14:22]	<dlongley>	manu: which will require using the budgeting feature
+[Tue 14:22]	<dlongley>	manu: to do background purchases ... (without site-redirection)
+[Tue 14:23]	<manu1>	dlongley: All of the back-end code for background purchases are implemented. We're using this in the payswarm.js demo - there is no re-direction when you make the purchase via the client. If you omit the source account, and there is a budget, if the signature is by a vendor that matches the listing and budget, the purchase is allowed.
+[Tue 14:24]	<manu1>	dlongley: That is, I would think that we have some spec text on this, but I don't think we related it directly on how you do background purchases. How that gets implemented on the PaySwarm Authority side is implementation specific. You need to be able to support a signed purchase request holding the identity of the person doing the purchase request, just not their information.
+[Tue 14:25]	<dlongley>	manu: did we make a decision on whether or not it has to come from the vendor?
+[Tue 14:25]	<dlongley>	manu: could a vendor say "I'm going to do an auto-purchase for a madonna CD for the client?"
+[Tue 14:27]	<manu1>	dlongley: Right now, we're going to require an association between the vendor and the listing, and is the one that is making the purchase request. If we don't do that, someone else could come in and make multiple purchase requests on somebody else. A buyer trusts the vendor and only the vendor's listings are going to be purchased using the budget that is setup for the vendor.
+[Tue 14:27]	<dlongley>	manu: so the vast majority of the code we need is there, there may be bug fixes ,etc.
+[Tue 14:28]	<dlongley>	manu: so the next step is creating a github repo, probably doing this in node.js express, etc.
+[Tue 14:28]	<dlongley>	taaz: Is Melvin just using the WordPress plugin for now? Is there public code yet?
+[Tue 14:28]	<dlongley>	manu: Yes, I believe so, no code yet.
+[Tue 14:28]	<manu1>	dlongley: Yeah, most of the code is there, we just need to setup the demo code and integrate with PaySwarm.
+[Tue 14:29]	<manu1>	manu: What's the timeline for this?
+[Tue 14:29]	<manu1>	dlongley: As we have spare cycles... we have lots of other work to do.
+[Tue 14:29]	<dlongley>	manu: I'll ping Melvin about this, we have until something like november at the very latest (technical plenary he is attending is then)
