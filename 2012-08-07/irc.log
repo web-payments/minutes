@@ -1,0 +1,163 @@
+[Tue 14:01]	<voip-ps>	Manu Sporny (SIP/6000-0000003b) is in the conference.
+[Tue 14:01]	<voip-ps>	Manu Sporny (SIP/6000-0000003b) has joined the conference.
+[Tue 14:02]	<voip-ps>	Dave Longley (SIP/6002-0000003c) has joined the conference.
+[Tue 14:02]	<voip-ps>	Dave Lehn (SIP/6003-0000003d) has joined the conference.
+[Tue 14:03]	<manu-db>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2012Aug/0004.html
+[Tue 14:03]	<manu-db>	scribe: dlongley
+[Tue 14:04]	<dlongley>	manu: in addition to the agenda, something came up on the mailing list
+[Tue 14:04]	<dlongley>	... he asked if payswarm could support a paid app market concept
+[Tue 14:04]	<manu-db>	Melvin raised this as a point of interest - http://lists.w3.org/Archives/Public/public-webpayments/2012Aug/0005.html
+[Tue 14:04]	<dlongley>	manu: and perhaps we should talk about how payswarm enables decentralized webapp stores
+[Tue 14:05]	<dlongley>	manu: to allow people to pay to get access to webapps but then also pay small amounts to use features within webapps themselves
+[Tue 14:05]	<manu-db>	Topic: Decentralized Web app stores
+[Tue 14:06]	<manu-db>	dlongley: I would've figured we had a web app use case
+[Tue 14:06]	<dlongley>	dlongley: we are trying to cover that use case, maybe we have something about a web game
+[Tue 14:07]	<dlongley>	manu: we should probably add this to the use cases
+[Tue 14:07]	<dlongley>	+1
+[Tue 14:07]	<dlongley>	manu: because we are definitely supporting it
+[Tue 14:07]	<dlongley>	manu: melvin was interested in getting something together as a proof of concept within the month or at least within 3 months
+[Tue 14:08]	<dlongley>	manu: this is a demo we've been wanting to do for a while, so maybe we can talk with melvin and help it get built
+[Tue 14:08]	<dlongley>	manu: we have most of the code done (on the payswarm side) for this demo
+[Tue 14:08]	<manu-db>	dlongley: I think what we have in the PHP or JavaScript code is done ... we have everything required for doing a demo for selling recipes... Web Apps are not that much more different.
+[Tue 14:09]	<manu-db>	dlongley: We do want something a bit different for the automatic purchase part of it... if the web app store sells a game, and they wanted to do the purchase in the background.
+[Tue 14:09]	<manu-db>	dlongley: You could setup a budget for the game at your PaySwarm provider, subsequent purchases (as long as they're below the budget threshold you have), they'd be done in the background.
+[Tue 14:10]	<manu-db>	dlongley: I'm pretty sure we have that working in the client code in JavaScript... if we don't, it's easy to add.
+[Tue 14:10]	<manu-db>	dlongley: Most of what we would need is the infrastructure for the demo itself...
+[Tue 14:10]	<dlongley>	dlehn: i have a question about the message
+[Tue 14:10]	<dlongley>	dlehn: it's talking about paid apps, does that mean app stores like phone apps or webapsp
+[Tue 14:10]	<dlongley>	manu: i think he's talking about webapps not mobile apps
+[Tue 14:11]	<dlongley>	manu: but it could work for both, but i don't think that's what he wants
+[Tue 14:11]	<dlongley>	manu: we have had three groups approach us and ask how payswarm enables webapp stores
+[Tue 14:11]	<dlongley>	manu: the ability to sell an HTML5 webapp off of your website or a centralized webapp store
+[Tue 14:11]	<dlongley>	manu: we definitely support that use case
+[Tue 14:12]	<dlongley>	manu: we could also support an in-phone store app, but we don't have the code to demonstrate that just yet
+[Tue 14:12]	<dlongley>	dlehn: so the webapp store use case would look like our recipes demo now?
+[Tue 14:12]	<dlongley>	manu: i think so, but it could extend further to show how to buy extra lives/equipment/whatever for say, an HTML5 game that you originally bought simple access to
+[Tue 14:12]	<dlongley>	manu: so there are two things:
+[Tue 14:13]	<dlongley>	manu: access to the webapp and the other is in-app purchases
+[Tue 14:13]	<dlongley>	dlehn: it doesn't sound like it's a stretch to come up with a demo for that
+[Tue 14:13]	<dlongley>	manu: i'm wondering if there's some existing demo we could leverage
+[Tue 14:13]	<dlongley>	manu: if we could wrap an opensource game and hook it up to the fake money development site
+[Tue 14:13]	<dlongley>	manu: to show granting access to the game and also show buying say, extra lives within the game when you die
+[Tue 14:13]	<dlongley>	manu: it's the equivalent of an arcade style model
+[Tue 14:14]	<dlongley>	manu: so i'm hearing that we can help melvin with this and that it wouldn't be a distraction as it's a demo we've always wanted to do
+[Tue 14:14]	<dlongley>	dlongley: i agree
+[Tue 14:14]	<dlongley>	manu: so we'll ping melvin and see what kind of help he needs to build this demo
+[Tue 14:14]	<dlongley>	manu: we can make the demo open source and host it on a subdomain on payswarm.com (eg: games.payswarm.com) or something like that
+[Tue 14:16]	<dlongley>	dlongley: i think it would be faster to spin up a demo in node than PHP
+[Tue 14:16]	<dlongley>	manu: ok, we can get our current release out and then try to help melvin out on the demo
+[Tue 14:16]	<dlongley>	manu: ok, next topic then
+[Tue 14:17]	<manu-db>	Topic: Client-side Asset/Listing publishing process
+[Tue 14:18]	<manu-db>	https://github.com/digitalbazaar/payswarm.js/blob/master/examples/publish-asset-for-sale.js
+[Tue 14:19]	<dlongley>	manu: hitting .well-known for the payswarm config and the webkeys will give you the payswarm and webkeys end points
+[Tue 14:19]	<manu-db>	dlongley: Yeah, I think that's what we want to do.
+[Tue 14:19]	<dlongley>	manu: so, publishing an asset for sale
+[Tue 14:19]	<dlongley>	manu: the link to the source is in IRC ... there's a lot of boilerplate in there
+[Tue 14:21]	<manu-db>	dlongley: Yeah, the information in the config file is something that you don't want to keep repeating over and over again. It's in the config file so that they don't have to keep typing it over and over again.
+[Tue 14:21]	<dlongley>	manu: publishing an asset for sale is a 3 step process
+[Tue 14:21]	<dlongley>	manu: so you first need to create the asset and digitally sign it with your previously generated private key
+[Tue 14:22]	<manu-db>	dlongley: When we say things like "You have to digitally sign the asset", we mean that there is a call to the payswarm client... payswarm.sign(). No highly technical details that folks need to get into, they just use the method that's provided.
+[Tue 14:23]	<dlongley>	manu: the asset is what you want to sell and the listing indicates the pricing for it, etc.
+[Tue 14:23]	<manu-db>	dlongley: People using the API don't need to get into any of the technical details about what's happening with the crypto stuff.
+[Tue 14:23]	<dlongley>	manu: the listing also indicates the license that the asset is being sold under
+[Tue 14:23]	<dlongley>	...creating the asset is step 1, creating the listing is step 2
+[Tue 14:23]	<dlongley>	...and step 3 is publishing that asset and listing ...
+[Tue 14:23]	<dlongley>	...which can be done on your own website
+[Tue 14:24]	<dlongley>	manu: and that listing is decentralized, it can be distributed from anywhere
+[Tue 14:24]	<dlongley>	manu: the asset and listing are identified by a URL
+[Tue 14:24]	<dlongley>	manu: and anyone can pass them around as they are digitally-signed, you can get them from anywhere, but they typically just live at their URLs
+[Tue 14:25]	<dlongley>	manu: so we create an asset, a listing, and then publish them
+[Tue 14:25]	<manu-db>	https://github.com/digitalbazaar/payswarm.js/blob/master/examples/publish-asset-for-sale.js#L84
+[Tue 14:25]	<dlongley>	manu: then a purchasing client can just grab them from the URL and do a purchase.
+[Tue 14:25]	<dlongley>	manu: so let's go through the code briefly
+[Tue 14:25]	<dlongley>	manu: first a config is read in and then we create an asset
+[Tue 14:26]	<dlongley>	manu: the asset is created as JSON-LD, which really is just JSON
+[Tue 14:26]	<dlongley>	manu: we say that the asset's type is an asset and a webpage, we use an product ontology to mark it up as a webpage
+[Tue 14:26]	<dlongley>	manu: the creator of the asset is just the person who created the asset
+[Tue 14:27]	<dlongley>	manu: we give the title for the asset and the URL where the asset content can be found, and the provider of the asset, which is the asset's owner
+[Tue 14:27]	<dlongley>	manu: and that's all the basic information for an asset
+[Tue 14:27]	<dlongley>	manu: but because we're using JSON-LD you can extend this however you'd like
+[Tue 14:27]	<dlongley>	manu: you can put whatever vocabulary terms in there you want and it will be digitally-signed
+[Tue 14:28]	<dlongley>	manu: and custom applications can display that extra information or do something with it
+[Tue 14:28]	<dlongley>	manu: tracking numbers/other details, whatever they want can be added to the asset
+[Tue 14:28]	<dlongley>	manu: and payswarm authorities will keep that information around and include it in digital contracts
+[Tue 14:28]	<manu-db>	https://github.com/digitalbazaar/payswarm.js/blob/master/examples/publish-asset-for-sale.js#L102
+[Tue 14:28]	<dlongley>	manu: next the asset is passed off to the signature call
+[Tue 14:29]	<dlongley>	manu: and the payswarm client does an RSA signature on the JSON-LD object
+[Tue 14:29]	<dlongley>	manu: you give it the object to be signed (the asset) and your private key pem and your public key ID which is a URL to your public key
+[Tue 14:29]	<dlongley>	manu: that way anyone can fetch your public key and check the signature on the asset
+[Tue 14:29]	<manu-db>	https://github.com/digitalbazaar/payswarm.js/blob/master/examples/publish-asset-for-sale.js#L107
+[Tue 14:30]	<dlongley>	manu: next we hash the asset, and the reason we do that is so that the listing doesn't have to repeat the asset itself
+[Tue 14:31]	<manu-db>	dlongley: The asset hash is important because when you want to sell something, you're going to assign a price to it. There is a possibility that your asset will change over time. When you create your listing, you want to be very specific about the asset you're selling.
+[Tue 14:32]	<manu-db>	dlongley: You don't want somebody to come along and say that you promised to sell them something for $0.05, and you've changed the asset to be worth much more than that. It protects sellers against people claiming that they promised to sell them something they didn't. It's an assurance against situations where the asset changes.
+[Tue 14:32]	<manu-db>	https://github.com/digitalbazaar/payswarm.js/blob/master/examples/publish-asset-for-sale.js#L113
+[Tue 14:32]	<dlongley>	manu: we take the asset hash and include that in the listing
+[Tue 14:32]	<dlongley>	manu: which we generate next in step 2
+[Tue 14:32]	<dlongley>	manu: the listing has a validity period just like say, SSL certificates have
+[Tue 14:32]	<dlongley>	manu: this is so that people can offer something for sale but they aren't bound forever to offer that asset for sale forever
+[Tue 14:33]	<dlongley>	manu: so if a merchant wants to change their price every week or day then they'll generate their listing using that validity period (one week/one day)
+[Tue 14:33]	<dlongley>	manu: they can use whatever makes sense for them
+[Tue 14:33]	<dlongley>	manu: the listing also has an ID which is a URL
+[Tue 14:34]	<dlongley>	manu: the type is a ps:Listing (a payswarm Listing) and it's also a good-relations offering
+[Tue 14:34]	<dlongley>	manu: we might not keep that around in our example, but it isn't part of the spec, just like with the asset you can add additional markup
+[Tue 14:34]	<dlongley>	manu: the listing contains the list of people that should be paid (payees) when an asset is sold
+[Tue 14:35]	<dlongley>	manu: payees are associated with financial accounts and indicate some amount of money that should be paid to those accounts
+[Tue 14:35]	<manu-db>	dlongley: Payee position is important - you specify a rate and a rate type. rate can be a flat amount - rate type will be flat amount.
+[Tue 14:36]	<manu-db>	dlongley: There are also exclusive percentages and inclusive percentages for rate types.
+[Tue 14:36]	<manu-db>	dlongley: So, there are cases where you want to use exclusive percentage - sales tax falls into this category.
+[Tue 14:36]	<manu-db>	dlongley: inclusive percentages allow vendors to take a cut of the total price... so 2% of $2.
+[Tue 14:37]	<manu-db>	dlongley: These calculations are affected by where you put the payee in the list. When we talk about payees, we are talking about people that should get paid... not necessarily how much they will get paid (that amount is calculated)
+[Tue 14:37]	<manu-db>	dlongley: When you put your listing up for sale, you don't have to know about which PaySwarm authority is going to process your payment. This is where payee rules come in... you can limit who takes a cut of the sale like this.
+[Tue 14:38]	<manu-db>	dlongley: For example, you can limit how much a payswarm authority takes for processing your asset - this is good because it's a really decentralized way of who gets the money, and makes sure that the people running the transactions are very much decoupled from who is getting paid.
+[Tue 14:39]	<manu-db>	dlongley: All of this happens before you having to talk to every payswarm authority out there... you just publish the listing, If people want the listing, and the payswarm authority wants to process the listing - you will get paid.
+[Tue 14:39]	<manu-db>	dlongley: We're trying to take a decentralized, free-market approach to this. There are no centralized parties controlling this stuff.
+[Tue 14:40]	<dlongley>	manu: this also allows people to set up a rogue payswarm authority that says "oh yeah, a person paid for this" to trick software into giving people access that shouldn't have access, however, there is a protection against this built into the system
+[Tue 14:40]	<dlongley>	manu: you, as a vendor/merchant, specifically say which authorities you trust
+[Tue 14:41]	<dlongley>	manu: and you can use a whitelist for this (only trust authorities A, B, C) or just blacklist those that you think are misbehaving
+[Tue 14:41]	<dlongley>	manu: we expect there to be a whitelist
+[Tue 14:42]	<manu-db>	dlongley: We have to make sure where we avoid problems in the future where PaySwarm Authorities get shut out... if somebody wants to start a new payswarm authority, if they're legit and acting in good faith, they need to get on that list.
+[Tue 14:42]	<dlongley>	manu: and that whitelist could be centralized and well known
+[Tue 14:42]	<manu-db>	dlongley: We don't want the case where good PAs are not allowed onto the list.
+[Tue 14:42]	<dlongley>	manu: and managed automatically similar to how browsers deal with certificate authorities
+[Tue 14:43]	<dlongley>	manu: one way we could deal with payswarm authorities getting shut out could be by having the w3c manage the white list ... such that if you pass a test suite and pass some good "karma" system you'd get onto the whitelist automatically
+[Tue 14:43]	<dlongley>	so payees say who gets paid and payee rules say what restrictions apply to additional payees
+[Tue 14:43]	<manu-db>	https://github.com/digitalbazaar/payswarm.js/blob/master/examples/publish-asset-for-sale.js#L127
+[Tue 14:43]	<dlongley>	manu: in this demo we can see that there is just one payee and the destination is the account of the person digitally signing the listing (the vendor/merchant)
+[Tue 14:44]	<dlongley>	manu: the rate is the price that was set earlier in the program and the rate type is a flat amount
+[Tue 14:44]	<dlongley>	manu: the rate is $0.05 here, so that's what the payee will get on sale
+[Tue 14:44]	<manu-db>	https://github.com/digitalbazaar/payswarm.js/blob/master/examples/publish-asset-for-sale.js#L136
+[Tue 14:44]	<dlongley>	manu: the payee comment just displays some test information
+[Tue 14:44]	<dlongley>	manu: the payee rule places limitations on additional payees
+[Tue 14:45]	<dlongley>	manu: this particular rule says that a payswarm authority can take up to 10% of your sale if they want to for processing it
+[Tue 14:45]	<dlongley>	manu: this assumes that payswarm authorities must not run this transaction through and take 12%
+[Tue 14:45]	<dlongley>	manu: they must limit themselves to be a valid payswarm authority (and to get onto that whitelist)
+[Tue 14:46]	<dlongley>	manu: the payswarm authority must be a trusted party
+[Tue 14:46]	<dlongley>	manu: the listing next says what the asset is and then what the license is
+[Tue 14:46]	<dlongley>	manu: the license can say all kinds of things (it's text) and say "you can do X things with this asset Y times" or whatever you'd like
+[Tue 14:46]	<dlongley>	manu: it can simply say it's a direct ownership change, etc.
+[Tue 14:46]	<dlongley>	manu: the license hash works the same way as the asset hash
+[Tue 14:46]	<dlongley>	manu: to ensure that you're linking to the license you think you are
+[Tue 14:47]	<manu-db>	https://github.com/digitalbazaar/payswarm.js/blob/master/examples/publish-asset-for-sale.js#L151
+[Tue 14:47]	<dlongley>	manu: then the listing is signed, just like the asset was
+[Tue 14:47]	<manu-db>	dlongley: In case anybody has a question about what happens when a PaySwarm Authority looks up the license and the hash?
+[Tue 14:48]	<manu-db>	dlongley: The PA will report that it's a bad listing if the licenseHash doesn't match the license.
+[Tue 14:48]	<dlongley>	manu: right, if any of the hashes dont' match, a purchase process will be aborted
+[Tue 14:49]	<manu-db>	https://github.com/digitalbazaar/payswarm.js/blob/master/examples/publish-asset-for-sale.js#L159
+[Tue 14:50]	<manu-db>	dlongley: http://listings.dev.payswarm.com/ exists for demo purposes, and the final step registers the asset/listing combo there. However, you can publish to anywhere on the Web that you have write access to.
+[Tue 14:50]	<dlongley>	manu: we support both RDFa and JSON-LD
+[Tue 14:51]	<manu-db>	dlongley: We will want to say that at a minimum, you'll want to support RDFa and maybe JSON-LD. Other PAs could support stuff like XML, but they won't be inter-operable.
+[Tue 14:51]	<dlongley>	manu: so here we just post the asset and the listing to a URL where they'll be published
+[Tue 14:52]	<dlongley>	manu: keep in mind that this is a non-HTTPS site, it's just HTTP
+[Tue 14:52]	<dlongley>	manu: and the nice thing about payswarm is that this isn't an issue because the asset and listing are digitally signed
+[Tue 14:52]	<dlongley>	manu: so they can't be forged here and still result in a valid purchase
+[Tue 14:55]	<manu-db>	dlongley: The way this could be mitigated is that the vendor could just revoke their key... then all listings signed using the key would become invalidated.
+[Tue 14:55]	<dlongley>	manu: if a vendor mis-signs an listing with a very low price for say, a long validity period like a year
+[Tue 14:56]	<manu-db>	dlongley: Yes, key revocation is the best solution for this.
+[Tue 14:57]	<dlongley>	manu: so once you've published your asset/listing to a webpage, that's it
+[Tue 14:57]	<dlongley>	manu: and that covers the process for making something available for sale
+[Tue 14:58]	<dlongley>	manu: the actual code to do this is pretty minimal (we've got some other stuff in there to make the demo run nicely, etc)
+[Tue 14:58]	<dlongley>	manu: you don't need much knowledge to do this either
+[Tue 14:59]	<manu-db>	dlongley: Yes, so pretty simple process - generate asset, generate listing, digitally sign them, publish them to the Web... then you're selling via PaySwarm.
+[Tue 14:59]	<voip-ps>	Manu Sporny (SIP/6000-0000003b) has left the conference.
+[Tue 14:59]	<voip-ps>	Dave Longley (SIP/6002-0000003c) has left the conference.
+[Tue 14:59]	<voip-ps>	Dave Lehn (SIP/6003-0000003d) has left the conference.
