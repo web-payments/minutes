@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+      class="wf-adelle1adelle2-n6-active wf-active"> 
+ 
+<head> 
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+  <title>PaySwarm - Teleconferences</title> 
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ 
+  <link rel="stylesheet" href="../../css/1140.css" type="text/css" media="screen" /> 
+  <!--[if lte IE 9]>
+  <link rel="stylesheet" href="../css/ie.css" type="text/css" media="screen" />
+  <![endif]--> 
+  <link rel="stylesheet" href="../../css/typeimg.css" type="text/css" media="screen" /> 
+  <link rel="stylesheet" href="../../css/smallerscreen.css" media="only screen and (max-width: 1023px)" /> 
+  <link rel="stylesheet" href="../../css/mobile.css" media="handheld, only screen and (max-width: 767px)" /> 
+  <link rel="stylesheet" href="../../css/layout.css" type="text/css" media="screen" /> 
+  <link rel="shortcut icon" type="image/png" href="../../images/payswarm-icon.png" /> 
+  
+<style type="text/css">
+h1 {
+   margin-top: 24px;
+   margin-bottom: 14px;
+}
+
+.header {
+   margin-top: 0px;
+   margin-bottom: 14px;
+}
+
+ol {
+   margin-bottom: 0em;
+}
+
+li {
+   margin-left: 1.5em;
+   margin-bottom: 0em;
+}
+#content {
+   margin-left: 15%;
+   margin-right: 15%;
+}
+
+.summary {
+   margin-left: 10%
+   margin-right: 10%
+}
+
+.name {
+   font-weight: bold;
+}
+
+.information {
+   font-style: italic;
+}  
+
+.comment-continuation {
+   margin-left: 2em;
+}
+
+dt {
+   font-style: oblique;
+}
+
+dd {
+   margin-left: 20px;
+}
+
+  </style>
+  
+</head> 
+<body> 
+ 
+<div class="titlebar"> 
+   <h1 class="header">PaySwarm</h1> 
+</div> 
+
+  <div id="content"> 
+ 
+  <div class="row"> 
+    <div class="twelvecol last"> 
+
+<h1>Web Payments Community Group Telecon</h1>
+<h2>Minutes for 2012-09-04</h2>
+<div class="summary">
+<dl>
+<dt>Agenda</dt><dd><a href="http://lists.w3.org/Archives/Public/public-webpayments/2012Sep/0000.html">http://lists.w3.org/Archives/Public/public-webpayments/2012Sep/0000.html</a></dd>
+<dt>Topics</dt><dd><ol><li><a href="#topic-1">Transparent Donations for Occupy Wall Street (OWS)</a><li><a href="#topic-2">Financial Autonomy for OWS Working Groups</a><li><a href="#topic-3">OWS Alternative Currencies</a><li><a href="#topic-4">Expected Implementation Timeline for Software</a></ol></dd><dt>Chair</dt><dd>Manu Sporny</dd>
+<dt>Scribe</dt><dd>Dave Longley</dd>
+<dt>Present</dt><dd>Dave Longley, Nick Person, Manu Sporny, David I. Lehn</dd>
+<dt>Audio Log</dt><dd><div><a href="audio.ogg">audio.ogg</a></div>
+<div><audio controls="controls" preload="none">
+<source src="audio.ogg" type="audio/ogg" />Warning: Your browser does not support the HTML5 audio element, please upgrade.</div></dd>
+<div class="information">Dave Longley is scribing.</div>
+<h1 id="topic-1" class="topic">Topic: Transparent Donations for Occupy Wall Street (OWS)</h1>
+<div class="comment"><span class="name">Nick Person</span>:  one use case that people are agreeing on is that ... people love transaction histories and getting some element of granularity case by case would be good, hypothetically working groups are different but we'd like to expose what's going on a little more publically</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we have transaction histories in payswarm now if you've seen that</div>
+<div class="comment"><span class="name">Nick Person</span>:  yes</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we have the ability to make an account public -- which means you can see the account and its label, etc. -- but not its transaction history</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  however, we've been discussing how to make that information public as well if its desirable</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we want to be able to do anonymous transactions (not bitcoin anonymous) where you can see that money is being exchanged but you can't see who is sending/receiving the funds</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we tie transactions to an "identity", which isn't necessarily a person</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  a person can have multiple different identities on the web, examples are: your business identity, your personal identity, one you use to make political donations, etc.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  in each one of these cases the payswarm authority you use, per the legal requirements, needs to understand what your actual citizenshipidentity/banking/ drivers license info but they don't need to expose that to the outside world</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  you get to choose who your payswarm authority is and you get to trust who knows your identity</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  just like with your bank today, so the payswarm authority knows its doing business with a real person, but you don't have to expose that to other people you don't want to</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so we've put a lot of thought into privacy when doing transactions, identities, etc.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so maybe an OWS wants transparency but maybe someone who is putting money into a working group doens't want people to know who they are (or only that that are a certain identity)</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so it provides for pseudo anonymous transactions</div>
+<div class="comment"><span class="name">Nick Person</span>:  when i try to imagine the concept of conversion of bank accounts to/from payswarm authorities, i've been trying to figure out how this would work, and i've been discussing w/our accounting people some of these questions</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  yes, we'd be interested in talking more with the OWS accounting folks to figure out what we can do</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we can definitely do the automatic splitting of amounts for working groups</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we can split up payments between 3, 10, 100, 150 groups, etc.</div>
+<div class="comment"><span class="name">Nick Person</span>:  sure, as far as transparency issues, i know one thing that has come up is the concept of reimbursement</div>
+<div class="comment"><span class="name">Nick Person</span>:  people want to be reimbursed for something when it's unclear who they were because the movement wasn't really going yet</div>
+<div class="comment"><span class="name">Nick Person</span>:  how would digital listings work with physical items or how would we apply digital receipts to track cash, etc</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  what we could do .... the assets that are described are digital, we're sticking with those because it's less risky in terms of reversing transactions, w/digital we can revoke access more easily, once a physical property is transferred we can't undo that so easily</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  it's also hairy w/returns when physical things break</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we're staying out of physical things now, but that doens't mean you can't describe a physical asset in a listing</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  you can track that a sale happens on a physical asset even though its just a digital description</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  suppose you were selling posterboard and markers and we were selling them for $25 or something</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  when you do the purchase that receipt of sale goes to the person that bought it</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  to reimburse them they can show you that digital receipt so you know they made that purchase</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  if you trust them that they used the markers and posterboard appropriately then you could reimburse them</div>
+<div class="comment"><span class="name">Nick Person</span>:  right, we can't guarantee what happens in the physical world, but you could use that data to sort things out</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  right, it makes it easier if its verifiable, if what they bought is verifiable, if you have pictures of them using that thing, ... but there are ways of gaming the system</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  because someone could make up fake assets for themselves and buy it</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  and then go for a reimbursement from the working group</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  and they take that $25 without ever actually having spent it on anything</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  the only thing the payswarm authority can tell you is whether or not money moved</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  and it can tell you what the purpose of the transaction was</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  if the buyer and vendor were in cahoots w/each other then they can pretend that money was exchanged for something when it really wasn't ... if they then want to be reimbursed</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  the other thing that you could do is that, if the working group has a way of tracking, saying "here's some money we expect you to spend on X, Y, Z", then if they don't show up with the money/goods then you know not to trust them (sort of a prebuy type of trust test system)</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  the working group could deposit funds into members' accounts</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  another way is to have members show up with the physical good and then do the transfer when they are present with it</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  there are many different ways to do the reimbursement model, we just need to discuss how</div>
+<div class="comment"><span class="name">Nick Person</span>:  having a really easy way to generate the meta data so if there's a problem we can look at it and connect it with other semantic web communities, etc. is useful</div>
+<div class="comment"><span class="name">Nick Person</span>:  a public rating system could also be used</div>
+<div class="comment"><span class="name">Nick Person</span>:  Yes, we've been thinking of a public rating system as well.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  using the identities you could keep track of positive/negative transactions and link them to identities</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  and keep track of "karma" (etc) to help people decide who they want to do business with</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we were thinking of having a publically accessible database to keep track of this to help payswarm authorities use a public rating system to help figure out who to trust, etc.</div>
+<div class="comment"><span class="name">Nick Person</span>:  i'm hearing some good things like transaction history, etc. we had a couple of meetings where there were open books, no photographs, etc., but any of this that can make the accountants job easier -- i'm just concerned about what all the difficulties might be there -- so i'll ask more people to figure out what we need, etc. for use cases</div>
+<div class="comment"><span class="name">Nick Person</span>:  i'm always happy to know what aspects of payswarm you think would be novel over systems i don't know or may not be using or that others may already be using, etc.</div>
+<div class="comment"><span class="name">Nick Person</span>:  so if you could help explain how payswarm is better than other choices, etc that would be good</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  one of the biggest selling points for payswarm is that its a fully programmable financial system, whatever you need to automate, it's really easy to do that, the standard is open and published/being published</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  and because it's open and a standard, you aren't locked into any given provider</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  it's just like how we have multiple different browser companies out there right now</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  and the reason those exist and smaller browser manufacturers exist is because of open standards</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so payswarm has that same advantage</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  also this is all REST-based to make an easy API for interacting with the financial system (good for tech people to understand)</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  for non-techies it's good to know that the system is very flexible and you have access to the raw data/financial system so you can build whatever you want on top of it</div>
+<div class="comment"><span class="name">Dave Longley</span>:  There are a couple of other things that aren't available with other financial systems - for example, PaySwarm supports micropayments - we support up to seven digits of precision. So, $0.0000001 [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Nick Person</span>:  Is this available anywhere? [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  No, I think PaySwarm is the only one that is accurate to $0.0000001 [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Nick Person</span>:  why isn't this supported elsewhere?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  paypal and companies like them don't see the money in it</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  is my best guess</div>
+<div class="comment"><span class="name">Nick Person</span>:  so it's like y2k bug</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  it could be, if we built a system today we wouldn't have that system the limits are pushed much further</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  before 2000 it didn't really make sense to make micropayments</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  there was no system that could do that many financial transactions to make it profitable</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  today we have the web and more scalable systems</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we want to get longtail micropayment business models w/payswarm</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we want to capture both macro and micro payments</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so the payswarm system should support the full range</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  if you look at a 2-percent surcharge on that transaction it doesn't even register, so you'd have to do hundreds of thousands of those transactions to make money off of it</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  storing those transactions on disk would cost more money than the transaction itself</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  which would be cost prohibitive</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we're starting from the point "let's build a really flexible system" and see what they do with it</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we want that option out there and hopefully someone surprises us building a business with it</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  does that explain why we support it?</div>
+<div class="comment"><span class="name">Nick Person</span>:  yes, i was curious about that for a while</div>
+<h1 id="topic-2" class="topic">Topic: Financial Autonomy for OWS Working Groups</h1>
+<div class="comment"><span class="name">Nick Person</span>:  we may need to do a paper demo in front of large groups of people</div>
+<div class="comment"><span class="name">Nick Person</span>:  and if its not accepted at the GA that's fine, it could still be world changing</div>
+<div class="comment"><span class="name">Nick Person</span>:  what if we use sliders like simcity, etc., so let's programmatically allow people to distribute money that way to allow more flexible control</div>
+<div class="comment"><span class="name">Nick Person</span>:  maybe when you donate to a working group you could hear about what they've been doing lately, etc.</div>
+<div class="comment"><span class="name">Nick Person</span>:  there are a lot of user interfaces that we'd like to build to tie this data together</div>
+<div class="comment"><span class="name">Nick Person</span>:  we'd like to have an app for working groups that have payswarm accounts that mesh well/play well with this system, if they are distributing money within a working group we want them to have some ability there so long as they generate meta data (...)</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we support that today using the architecture we have</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  the slider thing could work like this: there's a set of sliders for say, $25, and they could select one of the working groups and give 100% to them or add another one and move the sliders around and divvy up where the money goes</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  at the end of that they would say "accept" (yeah, this is who i want to donate money to) and then the site could generate an asset/listing for who is getting paid</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so you could on-demand generate who gets what and when they click the pay button, the money would go to those chosen people</div>
+<div class="comment"><span class="name">David I. Lehn</span>: there are examples of this slider idea out there. it's not running a deal right now, but the www.humblebundle.com site does this. they offer up a handful of apps for any price you want. you give them $X and can split it up between software authors, charities, and the humblebundle site owners. and they have live stats showing up too while the deals run.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  you could do that today</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  you could have the GA basically say that we think the percentages should be X way because of how they think the money needs to be distributed</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  maybe in different locations they don't need as much money and the percentage gets agreed upon</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Yes, you can get as custom as you want with your listings. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so a static fixed asset/listing could work that way, people could give as much as they wanted but it would break up using percentages</div>
+<div class="comment"><span class="name">Nick Person</span>:  we also want to use recurring budgets</div>
+<div class="comment"><span class="name">Nick Person</span>:  say maybe let someone set $1/month that they want to give</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  yes, we have budgets now</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  you can set up a budget, for instance, to allow a GA to pull up to $5/month from someone (but not over that)</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  the GA could dynamically pull the money from any person with that budget set</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  it could be done whenever they want (the money could be pulled in a recurring way, or when necessary)</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so you could have a "line of grant" where people have previously agreed to allow $X from their accounts</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  and with this pull based model people just agree ahead of time</div>
+<div class="comment"><span class="name">Nick Person</span>:  is this like a payment intent?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  a payment intent is slightly different</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  where you say: "We need $X by october 15th, if we dont' get it, you get your money back"</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  the model i'm talking about is "we need a line of grant from people who want to support our cause"</div>
+<div class="information">(different from a line of credit)</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so each person can say "i'm willing to give up to $25"</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  and it isn't a payment intent, it's a "we need to have a line of grant open for $25,000 and we don't know when/if we'll need to use the money, but if we do we'll pull it from your account at that time"</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  and people can allow people to do that as needed</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  a person can say "I allow the nyc GA to pull up to $5/month"</div>
+<div class="comment"><span class="name">Nick Person</span>:  makes sense</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  budgets are supported today, but payment intents are not implemented yet</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  but they will be, but the budget mechanism is pretty powerful</div>
+<div class="comment"><span class="name">Nick Person</span>:  i'm curious if this is supported/will be supported: what about crazy/custom budgets</div>
+<div class="comment"><span class="name">Nick Person</span>:  like i want 75% of money in this account to be in the budget... we could do that in our own software i guess, it wouldn't necessarily be all transparent either</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  this goes back to flexibility, for instance, once a month you could pull money from a budget and then send 25% to X and 75% to Y you could do that</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  and that would all show up in the transaction log</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  you would just write the custom software to do that</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  does that make sense?</div>
+<div class="comment"><span class="name">Nick Person</span>:  let me find a different way to ask, could we trust someone to set up an account and then we'd be able to verify certain things that they are distributing funds in a certain way, could we look at an account and see things like that</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  let's try to clarify terminology: a budget is strictly a spending limit that you set</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  a vendor is someone you're going to pay for an asset</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  you could set a spending limit with a vendor or say, 5 different vendors, that is a budget</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  if you set a $50/month budget and assigned 5 vendors</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  you could spend up to $50 a month and it wouldn't go over on any combination of assets from those vendors</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  i think what you're talking about is a business rule or a triggered payment of some kind</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we don't have a plan right now for setting up payment triggers</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so right now, it would have to be implemented in custom software</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  that said, it should be pretty simple to do some REST calls to do that</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so you could do a GET on an account and then a couple of POSTs to transfer money to two other accounts</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so that would be like 3-HTTP calls to transfer money around</div>
+<div class="comment"><span class="name">Nick Person</span>:  ok, makes sense, this is sort of out of left field and not crucial, i was just curious</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  our hope is that people will write interesting apps on top of this system, it's an open standard and we want people to write open source software on top of it to really innovate a lot</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  maybe someone completely unrelated to OWS would write some open source stuff that does what you guys want, we really would like to see that happen</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we want to see code reuse and innovation</div>
+<div class="comment"><span class="name">Nick Person</span>:  makes perfect sense to me</div>
+<h1 id="topic-3" class="topic">Topic: OWS Alternative Currencies</h1>
+<div class="comment"><span class="name">Manu Sporny</span>:  we take alternative currencies seriously but we're not going to be able to get them implemented very soon</div>
+<div class="comment"><span class="name">Nick Person</span>:  OWS is the same way</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  the core protocol today has a currency string so you can say "USD/EUR" or whatever currency you have</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  the unit is separate from the unit, so you can model chickens and eggs or dollars</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so we have a concept of a currency mint which would allow anyone to mint new currency</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  if you can own a URL online and you have a server/etc something online, you could issue your own currency</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  and a payswarm authority should be able to just interact with that currency mint</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so when we design stuff we keep alternative currencies in mind, we just haven't spec'd everything out yet</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we need to set up exchanges for bitcoin/ven/things like that</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we're sort of waiting for someone to say that they really really want to use alternative currencies before we devote a lot of time to implementation</div>
+<div class="comment"><span class="name">Nick Person</span>:  there are a lot of OWS people that are kicking around alternative currency ideas, and i'm sure it will take some time but use cases will begin to crop up</div>
+<div class="comment"><span class="name">Nick Person</span>:  i heard on previous calls (the payswar minutes) i heard about other ways of exchanging alternative currencies offline</div>
+<div class="comment"><span class="name">Nick Person</span>:  i liked the idea though i realize that trust was an issue that was mentioned on the calls</div>
+<div class="comment"><span class="name">Nick Person</span>:  there's potential there for those use cases</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we're trying to provide some halfway implementation between bitcoin and current monetary systems</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we want to support offline exchanges as much as possible</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we just have to focus in certain areas</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  the future will be more an more internet connectivity, not less</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so those use cases/solutions might become more fringe as time goes by</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  there are still legitimate uses for being completely offline and being able to exchange funds</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  the main thing i wanted to discuss was that OWS didn't have short term needs for alt currencies</div>
+<div class="comment"><span class="name">Nick Person</span>:  nope</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  if there's a big need for something we might jump at that opportunity</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  if something changes in the future where other use cases pop up we'll focus more on it</div>
+<div class="comment"><span class="name">Nick Person</span>:  i know a lot of people who are very excited about alt currencies and i see payswarm being a potentially easy framework to implement these things into -- and if i hear that people are trying to do things i'll definitely recommend that they let you guys know</div>
+<h1 id="topic-4" class="topic">Topic: Expected Implementation Timeline for Software</h1>
+<div class="comment"><span class="name">Manu Sporny</span>:  most of things discussed today are done...</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we talked about transparent donations, we have a concept of public accounts, anonymous identities, right now if there's a transaction the only people who can view it are those that sold/bought the asset</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we can extend this to show others (if desirable) to show money going into/out of accounts w/out showing the identities involved</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  the last step is showing fully public transactions</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  the only thing that is keeping us from doing that are the privacy implications</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  technically it's easy, we just need to make sure to be careful w/privacy</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we might need something like a flag that says "i don't ever want to show up on a public transaction log"</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we'll need to talk more about your use case i think</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  do we only need to know who is getting money or do we also need to know who is sending it, etc.?</div>
+<div class="comment"><span class="name">Nick Person</span>:  i'll try to clarify this with as many people as possible, we want to be as transparent and anonymous as possible</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  yeah, it's a sliding scale</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we can always go from very anonymous to less anonymous, it's fairly safe</div>
+<div class="comment"><span class="name">Nick Person</span>:  yeah, not so much the other way</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  transparent donations are technically easy for us to do, but privacy issues have to be figured out</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we could easily implement it and spec it out once we figure that out</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  doing the line of grant stuff, customizing listings, etc. that can all be done today, the custom software to generate the listings from whatever UIs just have to be written</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  alt currencies -- the protocol supports it, but not really a strong case to implement now</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  i'd say OWS could achieve a decent number of its tasks today using the existing system</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we could help explain how to integrate some of the things like slider/bar-based donations, etc.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  i think you also tried out the demo and wordpress plugin</div>
+<div class="comment"><span class="name">Nick Person</span>:  yes, it worked well</div>
+<div class="comment"><span class="name">Nick Person</span>:  i'd like to work on some node/express clever stuff too</div>
+<div class="comment"><span class="name">Nick Person</span>:  the potential for this is ridiculously insane</div>
+<div class="comment"><span class="name">Nick Person</span>:  that summarizes my feelings</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we'll try and create some simple nodejs server (or maybe php) that does split donations so you guys can see how that's done</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  and let you hack on that after that</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  thanks for your time, nick</div>
+<div class="comment"><span class="name">Nick Person</span>:  sounds great</div>
+<div class="comment"><span class="name">Nick Person</span>:  thank you guys</div>
+       </div>
+  </div>
+
+<div class="container vspacing"> 
+  <div class="row"> 
+    <div class="threecol"> 
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a> 
+    </div> 
+    <div class="ninecol last"> 
+      <p>&copy; 2010-2011 Digital Bazaar, Inc. 
+Website CSS created by <a href="http://cssgrid.net/">@andytlr</a> 
+and is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/au/"> 
+Creative Commons Attribution-ShareAlike 3.0 Australia License</a>. All other
+website content is licensed under a
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"> 
+Creative Commons Attribution-ShareAlike 3.0 License</a>
+</p> 
+    </div> 
+  </div> 
+</div> 
+ 
+<script type="text/javascript"> 
+ 
+  var _gaq = _gaq || [];
+  _gaq.push(["_setAccount", "UA-1539674-7"]);
+  _gaq.push(["_trackPageview"]);
+
+  (function() {
+    var ga = document.createElement("script"); ga.type = "text/javascript"; ga.async = true;
+    ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";
+    (document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]).appendChild(ga);
+  })();
+ 
+</script>
+
+</body>
+</html>

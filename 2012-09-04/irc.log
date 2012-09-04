@@ -1,0 +1,198 @@
+[Tue 14:13]	<manu1>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2012Sep/0000.html
+[Tue 14:14]	<manu1>	scribe: dlongley
+[Tue 14:15]	<manu1>	Topic: Transparent Donations for Occupy Wall Street (OWS)
+[Tue 14:16]	<dlongley>	nick: one use case that people are agreeing on is that ... people love transaction histories and getting some element of granularity case by case would be good, hypothetically working groups are different but we'd like to expose what's going on a little more publically
+[Tue 14:16]	<dlongley>	manu: we have transaction histories in payswarm now if you've seen that
+[Tue 14:16]	<dlongley>	nick: yes
+[Tue 14:16]	<dlongley>	manu: we have the ability to make an account public -- which means you can see the account and its label, etc. -- but not its transaction history
+[Tue 14:17]	<dlongley>	manu: however, we've been discussing how to make that information public as well if its desirable
+[Tue 14:17]	<dlongley>	manu: we want to be able to do anonymous transactions (not bitcoin anonymous) where you can see that money is being exchanged but you can't see who is sending/receiving the funds
+[Tue 14:17]	<dlongley>	manu: we tie transactions to an "identity", which isn't necessarily a person
+[Tue 14:18]	<dlongley>	manu: a person can have multiple different identities on the web, examples are: your business identity, your personal identity, one you use to make political donations, etc.
+[Tue 14:18]	<dlongley>	manu: in each one of these cases the payswarm authority you use, per the legal requirements, needs to understand what your actual citizenshipidentity/banking/ drivers license info but they don't need to expose that to the outside world
+[Tue 14:19]	<dlongley>	manu: you get to choose who your payswarm authority is and you get to trust who knows your identity
+[Tue 14:19]	<dlongley>	manu: just like with your bank today, so the payswarm authority knows its doing business with a real person, but you don't have to expose that to other people you don't want to
+[Tue 14:19]	<dlongley>	manu: so we've put a lot of thought into privacy when doing transactions, identities, etc.
+[Tue 14:20]	<dlongley>	manu: so maybe an OWS wants transparency but maybe someone who is putting money into a working group doens't want people to know who they are (or only that that are a certain identity)
+[Tue 14:20]	<dlongley>	manu: so it provides for pseudo anonymous transactions
+[Tue 14:21]	<dlongley>	nick: when i try to imagine the concept of conversion of bank accounts to/from payswarm authorities, i've been trying to figure out how this would work, and i've been discussing w/our accounting people some of these questions
+[Tue 14:21]	<dlongley>	manu: yes, we'd be interested in talking more with the OWS accounting folks to figure out what we can do
+[Tue 14:22]	<dlongley>	manu: we can definitely do the automatic splitting of amounts for working groups
+[Tue 14:22]	<dlongley>	manu: we can split up payments between 3, 10, 100, 150 groups, etc.
+[Tue 14:22]	<dlongley>	nick: sure, as far as transparency issues, i know one thing that has come up is the concept of reimbursement
+[Tue 14:22]	<dlongley>	nick: people want to be reimbursed for something when it's unclear who they were because the movement wasn't really going yet
+[Tue 14:23]	<dlongley>	nick: how would digital listings work with physical items or how would we apply digital receipts to track cash, etc
+[Tue 14:24]	<dlongley>	manu: what we could do .... the assets that are described are digital, we're sticking with those because it's less risky in terms of reversing transactions, w/digital we can revoke access more easily, once a physical property is transferred we can't undo that so easily
+[Tue 14:24]	<dlongley>	manu: it's also hairy w/returns when physical things break
+[Tue 14:24]	<dlongley>	manu: we're staying out of physical things now, but that doens't mean you can't describe a physical asset in a listing
+[Tue 14:24]	<dlongley>	manu: you can track that a sale happens on a physical asset even though its just a digital description
+[Tue 14:25]	<dlongley>	manu: suppose you were selling posterboard and markers and we were selling them for $25 or something
+[Tue 14:25]	<dlongley>	manu: when you do the purchase that receipt of sale goes to the person that bought it
+[Tue 14:25]	<dlongley>	manu: to reimburse them they can show you that digital receipt so you know they made that purchase
+[Tue 14:25]	<dlongley>	manu: if you trust them that they used the markers and posterboard appropriately then you could reimburse them
+[Tue 14:26]	<dlongley>	nick: right, we can't guarantee what happens in the physical world, but you could use that data to sort things out
+[Tue 14:26]	<dlongley>	manu: right, it makes it easier if its verifiable, if what they bought is verifiable, if you have pictures of them using that thing, ... but there are ways of gaming the system
+[Tue 14:26]	<dlongley>	manu: because someone could make up fake assets for themselves and buy it
+[Tue 14:26]	<dlongley>	manu: and then go for a reimbursement from the working group
+[Tue 14:27]	<dlongley>	manu: and they take that $25 without ever actually having spent it on anything
+[Tue 14:27]	<dlongley>	manu: the only thing the payswarm authority can tell you is whether or not money moved
+[Tue 14:27]	<dlongley>	manu: and it can tell you what the purpose of the transaction was
+[Tue 14:27]	<dlongley>	manu: if the buyer and vendor were in cahoots w/each other then they can pretend that money was exchanged for something when it really wasn't ... if they then want to be reimbursed
+[Tue 14:28]	<dlongley>	manu: the other thing that you could do is that, if the working group has a way of tracking, saying "here's some money we expect you to spend on X, Y, Z", then if they don't show up with the money/goods then you know not to trust them (sort of a prebuy type of trust test system)
+[Tue 14:28]	<dlongley>	manu: the working group could deposit funds into members' accounts
+[Tue 14:29]	<dlongley>	manu: another way is to have members show up with the physical good and then do the transfer when they are present with it
+[Tue 14:29]	|<--	futuresoon has left freenode (Ping timeout: 260 seconds)
+[Tue 14:29]	<dlongley>	manu: there are many different ways to do the reimbursement model, we just need to discuss how
+[Tue 14:30]	<dlongley>	nick: having a really easy way to generate the meta data so if there's a problem we can look at it and connect it with other semantic web communities, etc. is useful
+[Tue 14:30]	<dlongley>	nick: a public rating system could also be used
+[Tue 14:30]	<dlongley>	nick: Yes, we've been thinking of a public rating system as well.
+[Tue 14:30]	<dlongley>	manu: using the identities you could keep track of positive/negative transactions and link them to identities
+[Tue 14:31]	<dlongley>	manu: and keep track of "karma" (etc) to help people decide who they want to do business with
+[Tue 14:31]	<dlongley>	manu: we were thinking of having a publically accessible database to keep track of this to help payswarm authorities use a public rating system to help figure out who to trust, etc.
+[Tue 14:33]	<dlongley>	nick: i'm hearing some good things like transaction history, etc. we had a couple of meetings where there were open books, no photographs, etc., but any of this that can make the accountants job easier -- i'm just concerned about what all the difficulties might be there -- so i'll ask more people to figure out what we need, etc. for use cases
+[Tue 14:33]	<dlongley>	nick: i'm always happy to know what aspects of payswarm you think would be novel over systems i don't know or may not be using or that others may already be using, etc.
+[Tue 14:34]	<dlongley>	nick: so if you could help explain how payswarm is better than other choices, etc that would be good
+[Tue 14:34]	<dlongley>	manu: one of the biggest selling points for payswarm is that its a fully programmable financial system, whatever you need to automate, it's really easy to do that, the standard is open and published/being published
+[Tue 14:34]	<dlongley>	manu: and because it's open and a standard, you aren't locked into any given provider
+[Tue 14:34]	<dlongley>	manu: it's just like how we have multiple different browser companies out there right now
+[Tue 14:35]	<dlongley>	manu: and the reason those exist and smaller browser manufacturers exist is because of open standards
+[Tue 14:35]	<dlongley>	manu: so payswarm has that same advantage
+[Tue 14:35]	<dlongley>	manu: also this is all REST-based to make an easy API for interacting with the financial system (good for tech people to understand)
+[Tue 14:36]	<dlongley>	manu: for non-techies it's good to know that the system is very flexible and you have access to the raw data/financial system so you can build whatever you want on top of it
+[Tue 14:37]	<manu1>	dlongley: There are a couple of other things that aren't available with other financial systems - for example, PaySwarm supports micropayments - we support up to seven digits of precision. So, $0.0000001
+[Tue 14:37]	<manu1>	nick: Is this available anywhere?
+[Tue 14:37]	<manu1>	dlongley: No, I think PaySwarm is the only one that is accurate to $0.0000001
+[Tue 14:38]	<dlongley>	nick: why isn't this supported elsewhere?
+[Tue 14:38]	<dlongley>	manu: paypal and companies like them don't see the money in it
+[Tue 14:38]	<dlongley>	manu: is my best guess
+[Tue 14:38]	<dlongley>	nick: so it's like y2k bug
+[Tue 14:38]	<dlongley>	manu: it could be, if we built a system today we wouldn't have that system the limits are pushed much further
+[Tue 14:39]	<dlongley>	manu: before 2000 it didn't really make sense to make micropayments
+[Tue 14:39]	<dlongley>	manu: there was no system that could do that many financial transactions to make it profitable
+[Tue 14:39]	<dlongley>	manu: today we have the web and more scalable systems
+[Tue 14:39]	<dlongley>	manu: we want to get longtail micropayment business models w/payswarm
+[Tue 14:40]	<dlongley>	manu: we want to capture both macro and micro payments
+[Tue 14:40]	<dlongley>	manu: so the payswarm system should support the full range
+[Tue 14:41]	<dlongley>	manu: if you look at a 2-percent surcharge on that transaction it doesn't even register, so you'd have to do hundreds of thousands of those transactions to make money off of it
+[Tue 14:41]	<dlongley>	manu: storing those transactions on disk would cost more money than the transaction itself
+[Tue 14:41]	<dlongley>	manu: which would be cost prohibitive
+[Tue 14:41]	<dlongley>	manu: we're starting from the point "let's build a really flexible system" and see what they do with it
+[Tue 14:41]	<dlongley>	manu: we want that option out there and hopefully someone surprises us building a business with it
+[Tue 14:42]	<dlongley>	manu: does that explain why we support it?
+[Tue 14:42]	<dlongley>	nick: yes, i was curious about that for a while
+[Tue 14:42]	<manu1>	Topic: Financial Autonomy for OWS Working Groups
+[Tue 14:42]	<dlongley>	nick: we may need to do a paper demo in front of large groups of people
+[Tue 14:43]	<dlongley>	nick: and if its not accepted at the GA that's fine, it could still be world changing
+[Tue 14:44]	<dlongley>	nick: what if we use sliders like simcity, etc., so let's programmatically allow people to distribute money that way to allow more flexible control
+[Tue 14:44]	<dlongley>	nick: maybe when you donate to a working group you could hear about what they've been doing lately, etc.
+[Tue 14:44]	<dlongley>	nick: there are a lot of user interfaces that we'd like to build to tie this data together
+[Tue 14:45]	<dlongley>	nick: we'd like to have an app for working groups that have payswarm accounts that mesh well/play well with this system, if they are distributing money within a working group we want them to have some ability there so long as they generate meta data (...)
+[Tue 14:45]	<dlongley>	manu: we support that today using the architecture we have
+[Tue 14:46]	<dlongley>	manu: the slider thing could work like this: there's a set of sliders for say, $25, and they could select one of the working groups and give 100% to them or add another one and move the sliders around and divvy up where the money goes
+[Tue 14:46]	<dlongley>	manu: at the end of that they would say "accept" (yeah, this is who i want to donate money to) and then the site could generate an asset/listing for who is getting paid
+[Tue 14:47]	<dlongley>	manu: so you could on-demand generate who gets what and when they click the pay button, the money would go to those chosen people
+[Tue 14:47]	<taaz>	there are examples of this slider idea out there. it's not running a deal right now, but the www.humblebundle.com site does this. they offer up a handful of apps for any price you want. you give them $X and can split it up between software authors, charities, and the humblebundle site owners. and they have live stats showing up too while the deals run.
+[Tue 14:47]	<dlongley>	manu: you could do that today
+[Tue 14:47]	<dlongley>	manu: you could have the GA basically say that we think the percentages should be X way because of how they think the money needs to be distributed
+[Tue 14:48]	<dlongley>	manu: maybe in different locations they don't need as much money and the percentage gets agreed upon
+[Tue 14:49]	<manu1>	dlongley: Yes, you can get as custom as you want with your listings.
+[Tue 14:49]	<dlongley>	manu: so a static fixed asset/listing could work that way, people could give as much as they wanted but it would break up using percentages
+[Tue 14:49]	<dlongley>	nick: we also want to use recurring budgets
+[Tue 14:49]	<dlongley>	nick: say maybe let someone set $1/month that they want to give
+[Tue 14:49]	<dlongley>	manu: yes, we have budgets now
+[Tue 14:50]	<dlongley>	manu: you can set up a budget, for instance, to allow a GA to pull up to $5/month from someone (but not over that)
+[Tue 14:50]	<dlongley>	manu: the GA could dynamically pull the money from any person with that budget set
+[Tue 14:50]	<dlongley>	manu: it could be done whenever they want (the money could be pulled in a recurring way, or when necessary)
+[Tue 14:51]	<dlongley>	manu: so you could have a "line of grant" where people have previously agreed to allow $X from their accounts
+[Tue 14:51]	<dlongley>	manu: and with this pull based model people just agree ahead of time
+[Tue 14:51]	<dlongley>	nick: is this like a payment intent?
+[Tue 14:51]	<dlongley>	manu: a payment intent is slightly different
+[Tue 14:52]	<dlongley>	manu: where you say: "We need $X by october 15th, if we dont' get it, you get your money back"
+[Tue 14:52]	<dlongley>	manu: the model i'm talking about is "we need a line of grant from people who want to support our cause"
+[Tue 14:52]	<dlongley>	(different from a line of credit)
+[Tue 14:52]	<dlongley>	manu: so each person can say "i'm willing to give up to $25"
+[Tue 14:53]	<dlongley>	manu: and it isn't a payment intent, it's a "we need to have a line of grant open for $25,000 and we don't know when/if we'll need to use the money, but if we do we'll pull it from your account at that time"
+[Tue 14:53]	<dlongley>	manu: and people can allow people to do that as needed
+[Tue 14:53]	<dlongley>	manu: a person can say "I allow the nyc GA to pull up to $5/month"
+[Tue 14:53]	<dlongley>	nick: makes sense
+[Tue 14:54]	<dlongley>	manu: budgets are supported today, but payment intents are not implemented yet
+[Tue 14:54]	<dlongley>	manu: but they will be, but the budget mechanism is pretty powerful
+[Tue 14:54]	<dlongley>	nick: i'm curious if this is supported/will be supported: what about crazy/custom budgets
+[Tue 14:55]	<dlongley>	nick: like i want 75% of money in this account to be in the budget... we could do that in our own software i guess, it wouldn't necessarily be all transparent either
+[Tue 14:56]	<dlongley>	manu: this goes back to flexibility, for instance, once a month you could pull money from a budget and then send 25% to X and 75% to Y you could do that
+[Tue 14:56]	<dlongley>	manu: and that would all show up in the transaction log
+[Tue 14:56]	<dlongley>	manu: you would just write the custom software to do that
+[Tue 14:56]	<dlongley>	manu: does that make sense?
+[Tue 14:57]	<dlongley>	nick: let me find a different way to ask, could we trust someone to set up an account and then we'd be able to verify certain things that they are distributing funds in a certain way, could we look at an account and see things like that
+[Tue 14:57]	<dlongley>	manu: let's try to clarify terminology: a budget is strictly a spending limit that you set
+[Tue 14:58]	<dlongley>	manu: a vendor is someone you're going to pay for an asset
+[Tue 14:58]	<dlongley>	manu: you could set a spending limit with a vendor or say, 5 different vendors, that is a budget
+[Tue 14:58]	<dlongley>	manu: if you set a $50/month budget and assigned 5 vendors
+[Tue 14:58]	<dlongley>	manu: you could spend up to $50 a month and it wouldn't go over on any combination of assets from those vendors
+[Tue 14:59]	<dlongley>	manu: i think what you're talking about is a business rule or a triggered payment of some kind
+[Tue 14:59]	<dlongley>	manu: we don't have a plan right now for setting up payment triggers
+[Tue 14:59]	<dlongley>	manu: so right now, it would have to be implemented in custom software
+[Tue 14:59]	<dlongley>	manu: that said, it should be pretty simple to do some REST calls to do that
+[Tue 14:59]	<dlongley>	manu: so you could do a GET on an account and then a couple of POSTs to transfer money to two other accounts
+[Tue 15:00]	<dlongley>	manu: so that would be like 3-HTTP calls to transfer money around
+[Tue 15:00]	<dlongley>	nick: ok, makes sense, this is sort of out of left field and not crucial, i was just curious
+[Tue 15:01]	<dlongley>	manu: our hope is that people will write interesting apps on top of this system, it's an open standard and we want people to write open source software on top of it to really innovate a lot
+[Tue 15:01]	<dlongley>	manu: maybe someone completely unrelated to OWS would write some open source stuff that does what you guys want, we really would like to see that happen
+[Tue 15:01]	<dlongley>	manu: we want to see code reuse and innovation
+[Tue 15:01]	<dlongley>	nick: makes perfect sense to me
+[Tue 15:02]	<manu1>	Topic: OWS Alternative Currencies
+[Tue 15:02]	<dlongley>	manu: we take alternative currencies seriously but we're not going to be able to get them implemented very soon
+[Tue 15:02]	<dlongley>	nick: OWS is the same way
+[Tue 15:02]	<dlongley>	manu: the core protocol today has a currency string so you can say "USD/EUR" or whatever currency you have
+[Tue 15:03]	<dlongley>	manu: the unit is separate from the unit, so you can model chickens and eggs or dollars
+[Tue 15:03]	<dlongley>	manu: so we have a concept of a currency mint which would allow anyone to mint new currency
+[Tue 15:03]	<dlongley>	manu: if you can own a URL online and you have a server/etc something online, you could issue your own currency
+[Tue 15:03]	<dlongley>	manu: and a payswarm authority should be able to just interact with that currency mint
+[Tue 15:03]	<dlongley>	manu: so when we design stuff we keep alternative currencies in mind, we just haven't spec'd everything out yet
+[Tue 15:04]	<dlongley>	manu: we need to set up exchanges for bitcoin/ven/things like that
+[Tue 15:04]	<dlongley>	manu: we're sort of waiting for someone to say that they really really want to use alternative currencies before we devote a lot of time to implementation
+[Tue 15:04]	<dlongley>	nick: there are a lot of OWS people that are kicking around alternative currency ideas, and i'm sure it will take some time but use cases will begin to crop up
+[Tue 15:05]	<dlongley>	nick: i heard on previous calls (the payswar minutes) i heard about other ways of exchanging alternative currencies offline
+[Tue 15:05]	<dlongley>	nick: i liked the idea though i realize that trust was an issue that was mentioned on the calls
+[Tue 15:05]	<dlongley>	nick: there's potential there for those use cases
+[Tue 15:06]	<dlongley>	manu: we're trying to provide some halfway implementation between bitcoin and current monetary systems
+[Tue 15:06]	<dlongley>	manu: we want to support offline exchanges as much as possible
+[Tue 15:06]	<dlongley>	manu: we just have to focus in certain areas
+[Tue 15:06]	<dlongley>	manu: the future will be more an more internet connectivity, not less
+[Tue 15:06]	<dlongley>	manu: so those use cases/solutions might become more fringe as time goes by
+[Tue 15:06]	<dlongley>	manu: there are still legitimate uses for being completely offline and being able to exchange funds
+[Tue 15:07]	<dlongley>	manu: the main thing i wanted to discuss was that OWS didn't have short term needs for alt currencies
+[Tue 15:07]	<dlongley>	nick: nope
+[Tue 15:07]	<dlongley>	manu: if there's a big need for something we might jump at that opportunity
+[Tue 15:07]	<dlongley>	manu: if something changes in the future where other use cases pop up we'll focus more on it
+[Tue 15:09]	<dlongley>	nick: i know a lot of people who are very excited about alt currencies and i see payswarm being a potentially easy framework to implement these things into -- and if i hear that people are trying to do things i'll definitely recommend that they let you guys know
+[Tue 15:09]	<manu1>	Topic: Expected Implementation Timeline for Software
+[Tue 15:09]	<dlongley>	manu: most of things discussed today are done...
+[Tue 15:10]	<dlongley>	manu: we talked about transparent donations, we have a concept of public accounts, anonymous identities, right now if there's a transaction the only people who can view it are those that sold/bought the asset
+[Tue 15:10]	<dlongley>	manu: we can extend this to show others (if desirable) to show money going into/out of accounts w/out showing the identities involved
+[Tue 15:10]	<dlongley>	manu: the last step is showing fully public transactions
+[Tue 15:11]	<dlongley>	manu: the only thing that is keeping us from doing that are the privacy implications
+[Tue 15:11]	<dlongley>	manu: technically it's easy, we just need to make sure to be careful w/privacy
+[Tue 15:11]	<dlongley>	manu: we might need something like a flag that says "i don't ever want to show up on a public transaction log"
+[Tue 15:11]	<dlongley>	manu: we'll need to talk more about your use case i think
+[Tue 15:12]	<dlongley>	manu: do we only need to know who is getting money or do we also need to know who is sending it, etc.?
+[Tue 15:12]	<dlongley>	nick: i'll try to clarify this with as many people as possible, we want to be as transparent and anonymous as possible
+[Tue 15:12]	<dlongley>	manu: yeah, it's a sliding scale
+[Tue 15:13]	<dlongley>	manu: we can always go from very anonymous to less anonymous, it's fairly safe
+[Tue 15:13]	<dlongley>	nick: yeah, not so much the other way
+[Tue 15:13]	<dlongley>	manu: transparent donations are technically easy for us to do, but privacy issues have to be figured out
+[Tue 15:13]	<dlongley>	manu: we could easily implement it and spec it out once we figure that out
+[Tue 15:14]	<dlongley>	manu: doing the line of grant stuff, customizing listings, etc. that can all be done today, the custom software to generate the listings from whatever UIs just have to be written
+[Tue 15:15]	<dlongley>	manu: alt currencies -- the protocol supports it, but not really a strong case to implement now
+[Tue 15:15]	<dlongley>	manu: i'd say OWS could achieve a decent number of its tasks today using the existing system
+[Tue 15:15]	<dlongley>	manu: we could help explain how to integrate some of the things like slider/bar-based donations, etc.
+[Tue 15:16]	<dlongley>	manu: i think you also tried out the demo and wordpress plugin
+[Tue 15:16]	<dlongley>	nick: yes, it worked well
+[Tue 15:16]	<dlongley>	nick: i'd like to work on some node/express clever stuff too
+[Tue 15:16]	<dlongley>	nick: the potential for this is ridiculously insane
+[Tue 15:16]	<dlongley>	nick: that summarizes my feelings
+[Tue 15:17]	<dlongley>	manu: we'll try and create some simple nodejs server (or maybe php) that does split donations so you guys can see how that's done
+[Tue 15:17]	<dlongley>	manu: and let you hack on that after that
+[Tue 15:17]	<dlongley>	manu: thanks for your time, nick
+[Tue 15:17]	<dlongley>	nick: sounds great
+[Tue 15:17]	<dlongley>	nick: thank you guys

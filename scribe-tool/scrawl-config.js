@@ -31,6 +31,10 @@
       {
          "alias": ["dln"]
       },
+      "Nick Person":
+      {
+         "alias": ["futuresoon"]
+      },
       "Manu Sporny":
       {
          "alias": ["manu-db", "manu1", "manu`"],
