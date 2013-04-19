@@ -45,8 +45,8 @@ print <<< htmlcode
       <p class="largeprint">All Web Payments teleconferences are open to the public. Anyone may join and participate in the discussion. All teleconferences are announced at least 24 hours in advance on the <a href="http://lists.w3.org/Archives/Public/public-webpayments/">Web Payments mailing list</a>.</p>
 
       <ul class="largeprint">
-        <li><strong>When:</strong> Every two weeks on Tuesdays</li>
-        <li><strong>Time:</strong> 1600 UTC, 11am San Francisco, 2pm Boston, 7pm London</li>
+        <li><strong>When:</strong> Every two weeks</li>
+        <li><strong>Time:</strong> TBD</li>
         <li><strong>Where:</strong> Digital Bazaar PaySwarm Telecon Bridge, SIP: <a href="sip:payswarm@digitalbazaar.com">payswarm@digitalbazaar.com</a>.</li>
         <li><strong>IRC:</strong> <a href="irc://freenode.net/#payswarm">irc://freenode.net/#payswarm</a>
         <li><strong>Duration:</strong> 60 minutes
