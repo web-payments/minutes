@@ -198,10 +198,10 @@
 '<div class="container vspacing"> \n' +
 '  <div class="row"> \n' +
 '    <div class="threecol"> \n' +
-'      <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a> \n' +
+'      <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a> \n' +
 '    </div> \n' +
 '    <div class="ninecol last"> \n' +
-'      <p>&copy; 2010-2011 Digital Bazaar, Inc. \n' +
+'      <p>&copy; 2013 Digital Bazaar, Inc. \n' +
 'Website CSS created by <a href="http://cssgrid.net/">@andytlr</a> \n' +
 'and is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/au/"> \n' +
 'Creative Commons Attribution-ShareAlike 3.0 Australia License</a>. All other\n' +
