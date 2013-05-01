@@ -1,0 +1,229 @@
+[Wed 09:48]	<schuki>	Manu, I might need to just attend on IRC - big meeting happening here at GSMA today, but I will be paying attention!
+[Wed 10:15]	<manu-db>	ok Natasha, thanks for the update - we'll be recording the audio for the call, so you can always listen to it later (or just read the minutes)
+[Wed 11:00]	<voip-ps>	Manu Sporny (SIP/6000-00000187) has joined the conference.
+[Wed 11:00]	<voip-ps>	Dave Longley (SIP/6002-00000188) has joined the conference.
+[Wed 11:01]	<voip-ps>	Dave Lehn (SIP/6003-00000189) has joined the conference.
+[Wed 11:01]	<voip-ps>	<unknown> (IAX2/diamondcard-8680) has joined the conference.
+[Wed 11:01]	<manu-db>	voip: 8680 is bshambaugh
+[Wed 11:01]	<voip-ps>	bshambaugh is now associated with IAX2/diamondcard-8680.
+[Wed 11:03]	<manu-db>	scribe: dlongley
+[Wed 11:03]	<manu-db>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2013Apr/0100.html
+[Wed 11:04]	<dlongley>	manu: today is basically going to be a review of everything that has been going on in the past month/month and a half
+[Wed 11:04]	<voip-ps>	<unknown> (IAX2/diamondcard-9851) has joined the conference.
+[Wed 11:04]	<dlongley>	manu: and an update for each one of the projects
+[Wed 11:04]	<dlongley>	bshambaugh: does web payments collaboration go into what's going on in various groups, etc.?
+[Wed 11:04]	<dlongley>	manu: yes, and we'll put down a timeline for what's going on in the future
+[Wed 11:05]	<voip-ps>	<unknown> (IAX2/diamondcard-135) has joined the conference.
+[Wed 11:05]	<manu-db>	voip: 9851 is mcavage
+[Wed 11:05]	<voip-ps>	mcavage is now associated with IAX2/diamondcard-9851.
+[Wed 11:05]	<manu-db>	voip: 135 is john
+[Wed 11:05]	<voip-ps>	john is now associated with IAX2/diamondcard-135.
+[Wed 11:05]	<voip-ps>	<unknown> (SIP/sip.linphone.org-0000018a) has joined the conference.
+[Wed 11:06]	<manu-db>	voip: mute john
+[Wed 11:06]	<voip-ps>	john has been muted.
+[Wed 11:06]	<manu-db>	voip: mute mcavage
+[Wed 11:06]	<voip-ps>	mcavage has been muted.
+[Wed 11:06]	-->|	mcavage (~mcavage@c-76-121-137-102.hsd1.wa.comcast.net) has joined #payswarm
+[Wed 11:06]	<dlongley>	manu-db: are there any updates/changes to the agenda?
+[Wed 11:07]	<manu-db>	voip: unmute john
+[Wed 11:07]	<voip-ps>	john has been unmuted.
+[Wed 11:07]	<manu-db>	voip: mute john
+[Wed 11:07]	<voip-ps>	john has been muted.
+[Wed 11:07]	<manu-db>	voip: unmute mcavage
+[Wed 11:07]	<voip-ps>	mcavage has been unmuted.
+[Wed 11:07]	<taaz>	if we have time we could talk about the recent rise of crypto currencies in the public and how that fits into this work
+[Wed 11:07]	<manu-db>	voip: mute mcavage
+[Wed 11:07]	<voip-ps>	mcavage has been muted.
+[Wed 11:08]	<dlongley>	Topic: Introductions
+[Wed 11:08]	<dlongley>	manu-db: my name is Manu Sporny. I'm currently the chair of RDFa, JSON-LD, and web payments groups at W3C. Also CEO of Digital Bazaar, our primary interest is in figuring out a way to build payments into the core architecture of the Web.
+[Wed 11:08]	<manu-db>	dlongley: my name is Dave Longley - co-founder and CTO of Digital Bazaar. Spend most of my time doing software/spec design and implementation for PaySwarm.
+[Wed 11:08]	<manu-db>	taaz: Work on PaySwarm specs/work and commercial implementations of it.
+[Wed 11:08]	<manu-db>	voip: unmute mcavage
+[Wed 11:08]	<voip-ps>	mcavage has been unmuted.
+[Wed 11:09]	<manu-db>	voip: unmute john
+[Wed 11:09]	<voip-ps>	john has been unmuted.
+[Wed 11:09]	<dlongley>	mcavage: I'm Mark Cavage. I'm a software engineer at Joyent and was also in charge of a group that did identity/authentication at Amazon Web Services. I wrote the http-signature spec we'll be discussing later.
+[Wed 11:09]	<manu-db>	voip: mute mcavage
+[Wed 11:09]	<voip-ps>	mcavage has been muted.
+[Wed 11:09]	<manu-db>	voip: mute john
+[Wed 11:09]	<voip-ps>	john has been muted.
+[Wed 11:09]	<dlongley>	john: Good morning, my name is John Foliot. I'm a member of various W3C groups and task forces. I work for JP Morgan Chase, this caught my interest, I'm looking to see what's going on in this area. Pesonal interest, not representing my employer.
+[Wed 11:09]	<dlongley>	Ian: Hi, my name is Ian Myles from JP Morgan Chase - John Foliot let me know about this, here as an observer, not representing my employer in any way.
+[Wed 11:10]	<dlongley>	bshambaugh: i'm Brent Shambaugh. I'm looking into Web Payments, it's kind of a long story, i began looking into this with online web economies. Melvin Carvalho directed me here. I'm working on the MNDF distributed economy project http://bshambaugh.org/MNDF_Project.html . I'm interested in web payments in a more holistic view of how it would all work
+[Wed 11:11]	<manu-db>	voip: 18a is pindar
+[Wed 11:11]	<voip-ps>	pindar is now associated with SIP/sip.linphone.org-0000018a.
+[Wed 11:11]	<dlongley>	natasha: I'm Natasha Rooney from the GSM Association. We represent 800 mobile operators in over 220 different countries. I run the w3c stuff from within the GSMA and we're interested in web payments there because we like things that work with money (joke)
+[Wed 11:11]	<dlongley>	pindar: Hi, this is Pindar Wong from Creative Commons / Asia-Pacific Internet Association. Based out of Hong Kong. I've been interested in financial topography for several years. I've been following the group for a while, I'm interested in financial policy, etc. and relation to taxes/banking and sales of digital assets and intellectual property.
+[Wed 11:12]	<manu-db>	voip: unmute mcavage
+[Wed 11:12]	<voip-ps>	mcavage has been unmuted.
+[Wed 11:12]	<dlongley>	manu-db: Mozilla, and Telefonica in the EU, send in their regrets for today. A few other companies are waiting for clearance from their legal departments to join us on these calls. The next call is may 15 and they may join then.
+[Wed 11:13]	<manu-db>	voip: mute mcavage
+[Wed 11:13]	<voip-ps>	mcavage has been muted.
+[Wed 11:13]	<manu-db>	voip: unmute mcavage
+[Wed 11:13]	<voip-ps>	mcavage has been unmuted.
+[Wed 11:13]	<manu-db>	voip: mute mcavage
+[Wed 11:13]	<voip-ps>	mcavage has been muted.
+[Wed 11:13]	<manu-db>	voip: unmute mcavage
+[Wed 11:13]	<voip-ps>	mcavage has been unmuted.
+[Wed 11:13]	<manu-db>	voip: mute mcavage
+[Wed 11:13]	<voip-ps>	mcavage has been muted.
+[Wed 11:13]	<manu-db>	voip: unmute john
+[Wed 11:13]	<voip-ps>	john has been unmuted.
+[Wed 11:14]	<manu-db>	Topic: Web Payments - Collaborating Organizations
+[Wed 11:14]	<manu-db>	voip: mute john
+[Wed 11:14]	<voip-ps>	john has been muted.
+[Wed 11:15]	<dlongley>	manu-db: There have been multiple companies that have shown interest now in participating. Mozilla working on the mozPay() API. Digital Bazaar working on PaySwarm. Telefonica (Mozilla's partner for mozPay API and Firefox OS). We have the IETF HTTP 2.0 WG, specifically the HTTP Auth Working Group. Some participants from the WebCrypto API group at W3C and some members from the standards body for GSM mobile devices (GSMA).
+[Wed 11:15]	<dlongley>	manu-db: they are based out of the EU, and we also have some other people interested from various smaller companies.
+[Wed 11:16]	<dlongley>	manu-db: any questions about the companies/people interested in participating in the web payments work?
+[Wed 11:16]	<dlongley>	manu-db: the goal is to try and get more and more companies involved, specifically more browser vendors, over the next couple of months, and then banking and financial companies.
+[Wed 11:16]	<dlongley>	manu-db: That's one of the reasons I'm glad you joined the call, John (Foliot) for that reason
+[Wed 11:16]	<dlongley>	manu-db: Let's move on to the timeline for Web Payments Work
+[Wed 11:16]	<dlongley>	Topic: Web Payments - Collaboration Timeline
+[Wed 11:17]	<dlongley>	manu-db: the idea here is that we're trying to get the web payments work kicked off at the w3c and we're trying to figure out which set of specifications will be the first in the pipe at w3c
+[Wed 11:17]	-->|	JF_ (~chatzilla@c-67-188-80-147.hsd1.ca.comcast.net) has joined #payswarm
+[Wed 11:17]	<dlongley>	manu-db: and how to coordinate with a number of the aforementioned companies
+[Wed 11:17]	<dlongley>	manu-db: in may we're trying to work with mozilla to get the mozPay API formatted into a w3c spec
+[Wed 11:18]	<dlongley>	manu-db: right now it's on the mozilla wiki, we'll transition that to w3c
+[Wed 11:18]	<JF_>	Need to be 100% clear that I am here as an interested individual, and not representing my employer. *VERY IMPORTANT*!
+[Wed 11:18]	<dlongley>	manu-db: in june there's a w3c advisory committee meeting, there's currently a headlights program at w3c that is trying to figure out if web payments should be a big part of the late 2013-2014 big plans
+[Wed 11:18]	<dlongley>	manu-db: if enough companies/people say web payments are a priority, then the hope is that a working group will be created around web payments
+[Wed 11:19]	<manu-db>	voip: unmute john
+[Wed 11:19]	<voip-ps>	john has been unmuted.
+[Wed 11:19]	<dlongley>	manu-db: that's happening in june, we're trying to get support from w3c companies to get the web payments stuff started
+[Wed 11:19]	<manu-db>	voip: unmute mcavage
+[Wed 11:19]	<voip-ps>	mcavage has been unmuted.
+[Wed 11:20]	<manu-db>	voip: mute john
+[Wed 11:20]	<voip-ps>	john has been muted.
+[Wed 11:20]	<manu-db>	voip: mute mcavage
+[Wed 11:20]	<voip-ps>	mcavage has been muted.
+[Wed 11:20]	<dlongley>	bshambaugh: if you follow the bitcoin forums, it would be an interesting thing to watch to see people associating urls with payments, etc.
+[Wed 11:21]	<dlongley>	manu-db: we want bitcoin to be able to work with the specs we created, either via the mozPay api or via the payswarm specs, we want to keep our eyes on that over the next year
+[Wed 11:21]	<dlongley>	manu-db: earlier in the year we talked with some core bitcoin developers and they were very interested in the web payments work
+[Wed 11:22]	<dlongley>	manu-db: we have been talking with the ietf on how to standardize the spec that mark cavage wrote (http-signatures)
+[Wed 11:22]	<dlongley>	manu-db: we hope to get something published very quickly (by july) via IETF on http-signatures
+[Wed 11:22]	<manu-db>	voip: unmute mcavage
+[Wed 11:22]	<voip-ps>	mcavage has been unmuted.
+[Wed 11:22]	<mcavage>	voip: unmute mcavage
+[Wed 11:23]	<voip-ps>	<unknown> (IAX2/diamondcard-14659) has joined the conference.
+[Wed 11:23]	<dlongley>	mcavage: i think that's great, i hope that one of the things you get out of this call is figuring out exactly what that work entails, i haven't done an IETF spec before, but i know that Dave Longley has been lookign at the spec and reviewing it (and David Lehn has been making some code changes to the implementation)
+[Wed 11:24]	<manu-db>	voip: mute mcavage
+[Wed 11:24]	<voip-ps>	mcavage has been muted.
+[Wed 11:24]	<dlongley>	mcavage: i know there are perl and python implementations as well, we'll have to look at the deltas there (and get things synced up)
+[Wed 11:24]	<manu-db>	voip: 14659 is ian_myles
+[Wed 11:24]	<voip-ps>	ian_myles is now associated with IAX2/diamondcard-14659.
+[Wed 11:24]	<dlongley>	manu-db: so that's july the ietf http-signatures spec
+[Wed 11:25]	<dlongley>	manu-db: i've been invited to speak at sibos by peter who runs innotribe, etc. and swift and they are interested in web payments and they'd like to be involved in that work in some way
+[Wed 11:25]	<dlongley>	manu-db: that's happening in september
+[Wed 11:25]	<dlongley>	manu-db: in october of this year i'm hoping to figure out some way of going to the internet governments forum
+[Wed 11:25]	<dlongley>	manu-db: pindar do you have anything to say about that?
+[Wed 11:26]	<dlongley>	pindar: a lot of these issues bring together payments, taxation, intellectual property, and Internet Governance. I'm hoping that you'll be able to go to Bali, Indonesia for a high level meeting with *a number* of delegates and discuss Web Payments.
+[Wed 11:26]	<dlongley>	manu-db: The Internet Identity Workshop and the Internet Governance Forum in Bali happen at the same time
+[Wed 11:27]	<dlongley>	manu-db: so we're trying to get someone else from web payments go to the identity work shop so i can go to bali
+[Wed 11:27]	<dlongley>	manu-db: We plan to, in the november/december timeframe, have a workshop on web payments via W3C.
+[Wed 11:27]	<dlongley>	manu-db: so it's going to be a very full year related to web payments
+[Wed 11:27]	<dlongley>	manu-db: this year the interest is very strong
+[Wed 11:28]	<dlongley>	manu-db: any questions about the timeline before we move on?
+[Wed 11:28]	<JF_>	Manu, is that schedule/calendar posted anywhere?
+[Wed 11:28]	<dlongley>	manu-db: no the schedule is not posted yet, i'll be sending it to the web payments mailing list, does that work?
+[Wed 11:28]	<JF_>	yes
+[Wed 11:28]	<manu-db>	Topic: PaySwarm / Mozilla's Payment mozPay() API
+[Wed 11:28]	<manu-db>	Introduction to the Mozilla Payments API: https://hacks.mozilla.org/2013/04/introducing-navigator-mozpay-for-web-payments/
+[Wed 11:29]	<dlongley>	manu-db: mozilla's mozPay api was introduced in April of this year, just last month, there's a link to a post about it in IRC. It's about being able to do payment in the browser whilst being agnostic to the payment network, the idea is to support multiple payment methods all through one payment API
+[Wed 11:29]	<dlongley>	manu-db: They are launching this on the telefonica phones that the firefox os will be running on
+[Wed 11:30]	<manu-db>	PaySwarm also had a commercial release in April of this year - http://blog.meritora.com/launch/
+[Wed 11:30]	<dlongley>	manu-db: we need to get that mozPay api into a w3c spec and figure out how the various systems will integrate
+[Wed 11:30]	<dlongley>	manu-db: there is a commercial implementation of PaySwarm that launched in April
+[Wed 11:30]	<manu-db>	More details here about the identity system for PaySwarm: https://hacks.mozilla.org/2013/04/web-payments-with-payswarm-identity-part-1-of-3/
+[Wed 11:30]	<manu-db>	Products for sale on the web via PaySwarm: https://hacks.mozilla.org/2013/04/payswarm-part-2/
+[Wed 11:31]	<manu-db>	and how to do a purchase via PaySwarm: https://hacks.mozilla.org/2013/04/web-payments-with-payswarm-purchasing-part-3-of-3/
+[Wed 11:31]	<dlongley>	manu-db: the specs we've been working on for the past 2 years now have a commercial implementation behind them, the launch is just in the US for now, and uses US dollars, but we cover identity online and how to link payments and identity, how to mark up products for sale on the web, and how to do an actual purchase using PaySwarm
+[Wed 11:31]	<dlongley>	manu: all of these are talked about in a 3-part series on a mozilla hacks post
+[Wed 11:31]	<dlongley>	manu-db: the number one goal is to make the payments API in the browser payment-network agnostic
+[Wed 11:32]	<dlongley>	manu-db: the idea here is that multiple different vendors could come in and provide various different methods of payment mechanism through the browser
+[Wed 11:32]	<dlongley>	manu-db: and all of these things play into figuring out how we make all of these things happen in the web payments group
+[Wed 11:32]	<dlongley>	manu-db: any questions on mozilla's payments API at this point?
+[Wed 11:32]	<dlongley>	bshambaugh: there's a lot of stuff going on, we're interested in figuring out where we come into all this
+[Wed 11:33]	<dlongley>	manu-db: there is a lot of work in front of us so the more people we have involved in the CG and the WG the better off we'll be
+[Wed 11:33]	<dlongley>	manu-db: the more people that are heavily involved in the CG the better because when the WG starts up, we'll be able to transition those people over to the WG and we won't have to spend time trying to figure out who is working on what
+[Wed 11:33]	<dlongley>	manu-db: any comments or questions on the mozPay api/PaySwarm specs?
+[Wed 11:33]	<manu-db>	Topic: Persona / Web Keys
+[Wed 11:34]	<manu-db>	Persona beta 2 just launched earlier this month: https://hacks.mozilla.org/2013/04/persona-beta-2-launch/
+[Wed 11:34]	<dlongley>	manu-db: the set of PaySwarm specifications specify its own identity mechanism that overlaps slightly with Mozilla's Persona
+[Wed 11:34]	<dlongley>	manu-db: persona is about a single sign-on mechanism for the web
+[Wed 11:34]	<dlongley>	manu-db: that link talks about what identity on the web means, and is about making sign on more secure by getting rid of passwords, etc.
+[Wed 11:34]	<manu-db>	PaySwarm also has an identity mechanism that overlaps by a fairly sizeable amount: https://hacks.mozilla.org/2013/04/web-payments-with-payswarm-identity-part-1-of-3/
+[Wed 11:35]	<dlongley>	manu-db: we also have an identity solution in payswarm that is a bit different
+[Wed 11:35]	<manu-db>	It's based off of this public keys for the Web spec: https://payswarm.com/specs/source/web-keys/
+[Wed 11:35]	<dlongley>	manu-db: we have something called a web keys specification that turns the web into a public key infrastructure system
+[Wed 11:35]	<dlongley>	manu-db: the idea here is to figure out a way to get web keys and persona to work together
+[Wed 11:35]	<dlongley>	manu-db: so we don't end up with two different identity mechanisms
+[Wed 11:35]	<dlongley>	manu-db: where you'd use persona to log into the web and the web keys stuff to do payments
+[Wed 11:35]	<dlongley>	manu-db: hopefully we can merge them
+[Wed 11:36]	<dlongley>	manu-db: it would be a big failure to standardize if we can't figure that out
+[Wed 11:36]	<dlongley>	manu-db: we're in contact with ben adida, lloyd, dan calahan in the person community
+[Wed 11:36]	<dlongley>	manu-db: i worked closely with ben adida on rdfa, they are interested in making web keys and persona work together
+[Wed 11:36]	<dlongley>	manu-db: any questions about persona/web keys?
+[Wed 11:36]	<voip-ps>	<unknown> (IAX2/diamondcard-14352) has joined the conference.
+[Wed 11:36]	<manu-db>	Topic: Web Keys / IETF HTTP Signatures
+[Wed 11:37]	<manu-db>	voip: 14352 is schuki
+[Wed 11:37]	<voip-ps>	schuki is now associated with IAX2/diamondcard-14352.
+[Wed 11:37]	<manu-db>	Web Keys is introduced here: https://hacks.mozilla.org/2013/04/web-payments-with-payswarm-identity-part-1-of-3/
+[Wed 11:37]	<manu-db>	The Web Keys spec is here: https://payswarm.com/specs/source/web-keys/
+[Wed 11:37]	<manu-db>	The HTTP Signatures spec is here: https://github.com/joyent/node-http-signature/blob/master/http_signing.md
+[Wed 11:38]	<dlongley>	manu-db: we (Digital Bazaar) had created a Web Keys spec to sign JSON blobs, and we also wanted the ability to sign HTTP requests (at a lower level) but do it in a way that allowed people publish keys anywhere on the web
+[Wed 11:38]	<mcavage>	voip: unmute mcavagae
+[Wed 11:38]	<voip-ps>	mcavagae is not associated with an audio channel. You may specify the first or last name of a person's Caller ID. You may also specify the last 2 or more digits of the audio channel name. You can also map an IRC nickname to an audio channel. Use 'voip-ps: <CHANNEL> is me' to map yourself to an audio channel. Use 'voip-ps: <CHANNEL> is <NICK>' to map someone else to an audio channel.
+[Wed 11:39]	<dlongley>	manu-db: so this is about allowing http requests (for authentication) to be signed using a PKI that lives on the web
+[Wed 11:39]	<mcavage>	voip: unmute mcavage
+[Wed 11:39]	<voip-ps>	mcavage has been unmuted.
+[Wed 11:39]	<manu-db>	voip: unmute mcavage
+[Wed 11:39]	<voip-ps>	john (IAX2/diamondcard-135) has left the conference.
+[Wed 11:40]	<dlongley>	mcavage: for context, i am one of the lead software engineers at joyent and we have a slew of REST apis, before this i was the lead engineer at the amazon web services team, so i've been working with authenticated REST APIs for quite a while, there really is no ope nspec that solves this problem nicely, i think, most of what is out there was based on HMAC, and having done things with HMAC i have no interest in doing symmetric key management again because it's a nightmare, when i wrote this most of the talk was coming out of the oauth spec which is basically hmac/a cookie
+[Wed 11:40]	<dlongley>	mcavage: so that's sort of the motivation for having written it, to avoid HMAC and have something that works
+[Wed 11:40]	<dlongley>	mcavage: one of the nice properties of what we did is ultimately that we just use our customer's ssh keys
+[Wed 11:41]	<dlongley>	mcavage: certainly technical power users are able to reuse that key management system
+[Wed 11:41]	<dlongley>	mcavage: longer term one of the things that we wanted with the spec was to use smart card technology and have people maintain their keys on that
+[Wed 11:41]	<dlongley>	mcavage: i personally at joyent am very delighted that you guys have picked this up
+[Wed 11:41]	<dlongley>	mcavage: we're very interested in getting this pushed through at IETF/W3c
+[Wed 11:42]	<dlongley>	mcavage: that's the background for where it came from and where it exists and right now there's no real alternative, still, that i see
+[Wed 11:42]	<manu-db>	voip: mute mcavage
+[Wed 11:42]	<voip-ps>	mcavage has been muted.
+[Wed 11:43]	<dlongley>	manu-db: to fill in the other side of it, we came across mark's spec (dave lehn did) and saw that it fits in really nicely with web keys and that it belongs at the IETF, etc. and it integrated cleanly and nicely
+[Wed 11:43]	<dlongley>	manu-db: we're in a lot of agreement with mark w/hmac, etc. and the approach this spec took
+[Wed 11:43]	<dlongley>	manu-db: there was some initial push back at the IETF http authentication group
+[Wed 11:43]	<dlongley>	manu-db: but that's because there's a lot of other work going on there
+[Wed 11:43]	<dlongley>	manu-db: and some of it has to do with creating sessions ,etc. and we're not interested in sessions for REST APIs, etc.
+[Wed 11:44]	<dlongley>	manu-db: and the http-signature spec is clean and simple to use and build on top of, so i think we can see some progress getting it through
+[Wed 11:44]	<dlongley>	manu-db: one of the questions mark had was how does the process work to getting an RFC out
+[Wed 11:44]	<dlongley>	manu-db: i talked to the technical lead on this at IETF and we just need to put the http-signature spec into an RFC format and publish it anywhere on the web
+[Wed 11:45]	<dlongley>	manu-db: we'll probably publish it on the payswarm website first and then through the http auth IETF working group
+[Wed 11:45]	<dlongley>	manu-db: anyone can publish an experimental spec there
+[Wed 11:45]	<dlongley>	manu-db: and then we'll have a long slew of arguments about the benefits and drawbacks of http signatures over HOBA and multifactor authentication, etc.
+[Wed 11:45]	<dlongley>	manu-db: there are several other specs in the running and we'll see if http signatures can stand on its own or get absorbed into another one
+[Wed 11:46]	<dlongley>	manu-db: i feel that a large amount of the technical work is done at this point, unless we find some kind of security vulnerability with it
+[Wed 11:46]	<mcavage>	voip: unmute mcavage
+[Wed 11:46]	<voip-ps>	mcavage has been unmuted.
+[Wed 11:46]	<dlongley>	manu-db: do you agree with that general summary and approach, Mark?
+[Wed 11:46]	<dlongley>	mcavage: yes, i don't see any problems with that, and wherever it ends up, as its own standalone spec, or absorbed into another spec, anything would be better than how it is alone now
+[Wed 11:47]	<dlongley>	manu-db: any other comments on the http-signature stuff, etc.?
+[Wed 11:48]	<manu-db>	Topic: Next Telecon
+[Wed 11:48]	<manu-db>	voip: mute mcavage
+[Wed 11:48]	<voip-ps>	mcavage has been muted.
+[Wed 11:49]	<dlongley>	manu-db: the purpose of the q/a on the next telecon will be about figuring out how to get persona/payswarm/mozpay to work together, etc. and what the long term goals are to integrate, etc.
+[Wed 11:50]	<dlongley>	manu-db: it should be a very interesting call because it will be about the main driver behind the web payments work
+[Wed 11:50]	<dlongley>	natasha: i will be on a flight during that next call
+[Wed 11:50]	<dlongley>	manu-db: we'll see if other people want to move the call, but it's always difficult to get everyone together at a particular time
+[Wed 11:51]	<dlongley>	manu-db: we make announcements about all of these calls and the technical discussion on the web payments mailing list
+[Wed 11:52]	<manu-db>	dlongley: I think we should also mention that there are two public webpayments mailing lists.
+[Wed 11:52]	<dlongley>	manu: Yes, this group operates on public-webpayments@w3.org - see http://lists.w3.org/Archives/Public/public-webpayments/ 
+[Wed 11:53]	<dlongley>	manu-db: next call will be May 15th, thanks everyone!
+[Wed 11:53]	<voip-ps>	ian_myles (IAX2/diamondcard-14659) has left the conference.
+[Wed 11:53]	<voip-ps>	schuki (IAX2/diamondcard-14352) has left the conference.
+[Wed 11:53]	<voip-ps>	Manu Sporny (SIP/6000-00000187) has left the conference.
+[Wed 11:53]	<voip-ps>	mcavage (IAX2/diamondcard-9851) has left the conference.
+[Wed 11:53]	<voip-ps>	Dave Longley (SIP/6002-00000188) has left the conference.
+[Wed 11:53]	<voip-ps>	bshambaugh (IAX2/diamondcard-8680) has left the conference.
+[Wed 11:53]	<voip-ps>	Dave Lehn (SIP/6003-00000189) has left the conference.
+[Wed 11:53]	<manu-db>	voip: connections?
+[Wed 11:53]	<voip-ps>	Conference connections: <unknown> (pindar) [SIP/sip.linphone.org-0000018a]
+[Wed 11:53]	<voip-ps>	pindar (SIP/sip.linphone.org-0000018a) has left the conference.
