@@ -69,6 +69,36 @@
          "alias": ["genjix"],
          "homepage": "http://en.wikipedia.org/wiki/Amir_Taaki"
       },
+      "Natasha Rooney":
+      {
+         "alias": ["schuki"],
+         "homepage": "http://uk.linkedin.com/pub/natasha-rooney/9/a7b/560"
+      },
+      "Mark Cavage":
+      {
+         "alias": ["mcavage"],
+         "homepage": "https://github.com/mcavage"
+      },
+      "John Foliot":
+      {
+         "alias": ["JF_"],
+         "homepage": "http://john.foliot.ca/"
+      },
+      "Brent Shambaugh":
+      {
+         "alias": ["bshambaugh"],
+         "homepage": "http://adistributedeconomy.blogspot.com/"
+      },
+      "Ian Myles":
+      {
+         "alias": ["imyles"],
+         "homepage": "http://www.linkedin.com/pub/ian-myles/4/154/405"
+      },
+      "Pindar Wong":
+      {
+         "alias": ["pindar"],
+         "homepage": "http://www.icann.org/en/groups/board/wong.htm"
+      },
       "Ted Thibodeau Jr.":
       {
          "alias": ["macted"],
