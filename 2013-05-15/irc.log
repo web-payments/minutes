@@ -1,0 +1,130 @@
+[Wed 11:07]	<manu-db>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2013May/0041.html
+[Wed 11:07]	<manu-db>	scribe: manu-db
+[Wed 11:07]	<manu-db>	manu: Today's telecon is going to focus mostly on the mozPay API by Mozilla and Telefonica. We'll do introductions first, then get a brief overview of the API from Kumar and Fernando, then move on to Q/A. Any questions about or additions to the Agenda?
+[Wed 11:07]	<manu-db>	Topic: Introductions
+[Wed 11:04]	<manu-db>	Iulian: I'm interested in helping the Web Payments work - specifically helping with PaySwarm. I've wanted to try something like this for several years now. I'm inclined to support the work you're doing here.
+[Wed 11:05]	<manu-db>	Iulian: I think you're involved with a number of things that are aligned with my goals.
+[Wed 11:07]	<manu-db>	pindar: This is Pindar from Hong Kong - Creative Commons - interested in payments and intellectual property (digital content sales).
+[Wed 11:08]	<manu-db>	kumar: Hi, Kumar from Mozilla - worked on mozPay API that is going to ship in FirefoxOS phones this summer - doing mostly the server-side compontent, some client stuff.
+[Wed 11:08]	<manu-db>	fernando: Fernando from Telefonica - working on mozPay API - client side.
+[Wed 11:09]	<manu-db>	Iulian: Service provider - experienced w/ payments - interested in startups that bring global services to bear on problems like payments.
+[Wed 11:09]	<manu-db>	Elliott: Hi Elliott from Google - working on Request Autocomplete spec - different approach for payments on the Web.
+[Wed 11:09]	<manu-db>	Brent: Thinking about the MNDS project - decentralized payments for projects, funding people in a automatic/decentralized way.
+[Wed 11:09]	<manu-db>	chaals: Charles Nevile from Yandex, been involved in standards for a long time, just listening in.
+[Wed 11:10]	<manu-db>	voip: connections?
+[Wed 11:10]	<voip-ps>	Conference connections: IAX2/diamondcard-6164, <unknown> (esprehn) [IAX2/diamondcard-3003], Fernando Jiménez [SIP/sip2sip.info-000001a3], Iulian Dumitrascu [SIP/sip2sip.info-000001a2], Dave Lehn [SIP/6003-000001a5], <unknown> (kumar) [IAX2/diamondcard-10944], SIP/107.196.150.130-000001a9, Manu Sporny [SIP/6000-000001a4]
+[Wed 11:10]	<manu-db>	dlehn: Dave Lehn - work at Digital Bazaar on PaySwarm.
+[Wed 11:11]	<taaz>	manu-db: Manu - I'm the current chair of Web Payments at W3C. I also chair the RDFa and JSON-LD groups at W3C. HTTP Auth Working Group member. Heavily involved in standards. I work at Digital Bazaar on the PaySwarm standards.
+[Wed 11:11]	<manu-db>	Topic: Browser Payments Overview
+[Wed 11:11]	<manu-db>	kumar: I can give a brief intro - probably better to keep it short and then go into questions.
+[Wed 11:11]	<manu-db>	kumar: The short view of mozPay is that Mozilla wants to have this sort of native apps ecosystem - we want it to shift to the Web for developers - mainly because it's easier to develop using web technologies.
+[Wed 11:12]	<manu-db>	kumar: We hope that mozPay will bring commerce to the FirefoxOS ecosystem. It's built into the phone, it's easy for developers to use, we want the user side to be really easy. Making a payment is going to be super-simple... once you do it once, if you use mozPay, it'll be really simple to do repeat payments.
+[Wed 11:12]	<manu-db>	kumar: So, that's the short FirefoxOS view - it could apply to desktop in the future.
+[Wed 11:13]	<manu-db>	fernando: The idea for Telefonica was to build this w/ carrier billing capabilities - credit card and other payment methods. We also wanted the API to be as open as possible, we wanted to introduce a different marketplace as well - we wanted to use the same API for all marketplaces... not just the Telefonica one.
+[Wed 11:13]	<taaz>	manu-db: what's the timeline on the rollout of mozPay API?
+[Wed 11:14]	<manu-db>	kumar: right now, developers can do simulated payments - pass a flag through JSON web token that will bypass any real payment to help them integrate w/ the client-side via callbacks and server-side via posts.
+[Wed 11:14]	<manu-db>	kumar: It's not live yet, it's only possible to do simulations. The timeline is a bit hard to pin down - it's in the hands of our partners - like Telefonica... they're going to be shipping some phones soon.
+[Wed 11:14]	<manu-db>	kumar: As far as our other partners - possibly any day now.
+[Wed 11:15]	<manu-db>	fernando: We are thinking perhaps this summer - most of the pieces of the mozPay API are completed. A simulation for developers is working as well.
+[Wed 11:16]	<taaz>	manu-db: at a high level does anyone have questions? we wanted to spend call on questions about mozPay api
+[Wed 11:16]	<manu-db>	Elliott: What are the perceived advantages of building this into the browser? We were discussing this at Google - very similar to Wallet API - you can do this w/ standard JavaScript libs, so why the browser? What's the advantages of building this into the Web platform?
+[Wed 11:17]	<manu-db>	kumar: One thing that I do want to stress is that Mozilla is shipping FirefoxOS and is very focused on building an open mobile alternative - so, in the very simplest case - we want the API to ship on the phone so that developers have an easy integrated payment solution. You don't have to think about what shim to use, what library to use, optimize it for mobile networks (to load fast, etc.), you just use the mozPay API because it's on the phone.
+[Wed 11:18]	<manu-db>	q+ to explain why PaySwarm is intereested in browser-integrated solutions.
+[Wed 11:18]	<voip-ps>	Added manu-db to the speaker queue: manu-db
+[Wed 11:18]	<manu-db>	kumar: So, if we can get a standard way of doing payments, it'll be easier for everyone to participate in payments. It's not totally clear that building this into the client makes it easier/better/more open, so that's future work that needs to be done. In the shortterm it's important that developers can build apps and build a business around it.
+[Wed 11:19]	<manu-db>	Elliott: Currently, the API is focused on digital goods - is there a plan to extend it to physical goods?
+[Wed 11:19]	<manu-db>	kumar: physical goods is a bit of an issue for legal reason. The API doesn't prevent it from being used for physical goods - we might want to move that "restriction" out of the spec.
+[Wed 11:19]	<manu-db>	kumar: If anyone were to implement shippable goods on that API, it would work just the same.
+[Wed 11:20]	<taaz>	manu-db: From a PaySwarm perspective, we have a set of specs for doing decentralized payments on the Web... credit card phishing is a big issue on the Web currently.
+[Wed 11:20]	<taaz>	manu-db: one reason for building it into browser is to mitigate many of these phishing attacks
+[Wed 11:21]	<taaz>	manu-db: typical attack: you get links in email and see popups with dialogs for phishing site that says PayPal (or similar) and can get your card numbers stolen.
+[Wed 11:21]	<taaz>	manu-db: Benefit of payments built into browser helps with financial attacks that are current today, like fake 'credit card input' forms from phishers.
+[Wed 11:21]	<taaz>	manu-db: developers can just do navigator.pay and money will transfer, no need to ask for credit card numbers. That's the future, payments built into the browser.
+[Wed 11:22]	<taaz>	manu-db: if it's in browser, the browser chrome can show a standard payment dialog that will never ask for CC numbers.
+[Wed 11:22]	<taaz>	manu-db: important part of that buy flow is customers never have to enter credit card numbers ..
+[Wed 11:23]	<taaz>	manu-db: advantages in browser: ease of use, less attacks, more interesting payment ui ..
+[Wed 11:23]	<taaz>	manu-db: currently payswarm implemented with a popup, but that's phishable - we'd rather use a standard chrome checkout UI.
+[Wed 11:24]	<manu-db>	kumar: Before we move on from the phishing discussion. You don't have to enter your credit card into every site - that is also a motivation for the mozPay API - it's a bit more tricky on mobile devices. I think we don't solve phishing on mobile devices yet - there will be malicious apps that may be used to phish - hard problem to solve, even on android - so that's on our minds, but is an unsolved problem.
+[Wed 11:27]	<manu-db>	fernando: For this specific FirefoxOS case - we have a problem with payment frames - we don't have the idea of chrome/window that is owned only by the browser. In FirefoxOS, everything that the user sees on the screen is web content - we couldn't give any impression of security to the user. Implementing this payment flow that opened a single window via window.open() is what we did? We didn't do a chrome frame because everything in FirefoxOS is web content - even the status bar is a web page. Any application w/ fullscreen capabilities oculd emulate a window w/ a URL bar. So, phishing is possible.
+[Wed 11:27]	<manu-db>	fernando: Embedding the payment flow in a window is something that any application could simulate. We have a dialog on top that lets the user see part of his own screen. That is something that any other application cannot do.
+[Wed 11:28]	<manu-db>	kumar: The design is that the window is floated on the home screen - hard for an attacker to simulate that window. There is some debate on that point, that was the intention of the design of FirefoxOS window - it looks different from any other app.
+[Wed 11:28]	<kumar>	the mozPay() api uses a Trusted UI on Firefox OS to mitigate phishing risks
+[Wed 11:29]	<manu-db>	Topic: Browser Payments API
+[Wed 11:29]	<manu-db>	http://web-payments.github.io/browser-payments/
+[Wed 11:29]	<taaz>	manu-db: a couple days ago had a chat with Kumar on how to move spec into W3C.
+[Wed 11:30]	<taaz>	manu-db: as web payments chair I want to get this to move forward this year. People want to see this happen. Wanted to get the spec out for people to see, it helps when you have a spec to point to and talk about.
+[Wed 11:30]	<taaz>	manu-db: The W3C Browser Payments spec is almost a direct port of mozPay spec
+[Wed 11:30]	<taaz>	manu-db: temporary title and it may change
+[Wed 11:31]	<taaz>	manu-db: spec is fairly straightforward. intro, signin, various details, basic browser api
+[Wed 11:32]	<taaz>	manu-db: this is one of the specs the web payments group is working on. browser payments, http signatures spec with the IETF which will be used with PaySwarm, maybe be used with other specs.
+[Wed 11:32]	<taaz>	manu-db: something still up for discussion is identity and if it belongs in the specs and how to not force one identity solution
+[Wed 11:33]	<taaz>	manu-db: hoping to work on spec over next few months so when w3c working group starts work on payments they will have a spec to start with. good to start with a spec that has had work on it versus just a bunch of ideas.
+[Wed 11:33]	<taaz>	manu-db: firefox os, mozpay api, and payswarm are good signal to start a working group
+[Wed 11:34]	<taaz>	manu-db: any questions on spec or what we want to do with it?
+[Wed 11:36]	<manu-db>	kumar: To follow-up on the spec - what Mozilla wants to do is propose the smallest amount of navigator.pay() API that works. So, that's where we are right now. There are lots of parts of it that are missing - identity being one of them. We wanted to get some of the easy problems spec'd. We feel that some of them are simple, having an API that they can initiate a payment with is pretty straight forward.
+[Wed 11:36]	<manu-db>	kumar: Developer registration/sign up - some of that stuff is in the spec just for reference, but I think ultimately we'll need to remove that stuff from the spec - it's not clear, it's an implementation detail. The payment processor can figure that stuff out.
+[Wed 11:37]	<manu-db>	Topic: Browser Payments Questions, Answers, and Issues
+[Wed 11:37]	<manu-db>	https://github.com/web-payments/browser-payments/issues
+[Wed 11:37]	<taaz>	manu-db: number of issues logged. Kumar raised one, I added more.
+[Wed 11:37]	|<--	chaals has left freenode (Ping timeout: 250 seconds)
+[Wed 11:37]	-->|	melvster (~melvster@ip-94-112-34-93.net.upcbroadband.cz) has joined #payswarm
+[Wed 11:37]	-->|	melvster2 (~melvin@ip-94-112-34-93.net.upcbroadband.cz) has joined #payswarm
+[Wed 11:37]	<manu-db>	Brent: Was talking to a network security guy - he was concerned about web payments from the standpoint that if his computer got stolen, he was worried that folks would use it to spend money.
+[Wed 11:38]	|<--	melvster2 has left freenode (Read error: Connection reset by peer)
+[Wed 11:38]	<manu-db>	kumar: Yeah, so that has been a security concern from the very beginning - it's especially important w/ mobile phones. Some south american countries have a high rate of phones being stolen.
+[Wed 11:38]	<manu-db>	kumar: We are trying to strike a balance between payments being easy to use, and also secure. Hard balance to strike.
+[Wed 11:39]	<manu-db>	kumar: There are things that are not specified yet in the mozPay API - when the window pops open to make a payment, you are logged in w/ a Persona e-mail account (email based identity solution)
+[Wed 11:39]	<manu-db>	kumar: Once you're logged into your phone, you're logged in forever. Your identity is on your phone, it's "sticky".
+[Wed 11:39]	<manu-db>	kumar: When you make repeat payments, you don't have to re-login - but you have to enter a basic PIN.
+[Wed 11:40]	<manu-db>	kumar: If the phone gets stolen, you can't just guess a pin - it's server-based, if you stole a phone, you'd also need to know the PIN.
+[Wed 11:40]	-->|	melvster2 (~melvin@ip-94-112-34-93.net.upcbroadband.cz) has joined #payswarm
+[Wed 11:40]	<manu-db>	kumar: There is no way to turn the PIN off - some partners want more security than a PIN, so we might introduce something greater.
+[Wed 11:40]	<--|	melvster2 has left #payswarm
+[Wed 11:41]	<manu-db>	kumar: There is also the general "child problem" - kids buy things all the time when you don't have a PIN.
+[Wed 11:42]	<taaz>	manu-db: There's a minimum whitelist now, payment providers approved now, how do other companies get on that list, how can this be decentralized
+[Wed 11:44]	<manu-db>	kumar: So, to sumarize - when a developer sets up payments for an app - they register w/ a provider to process payments. When a user goes to pay, they don't really have a choice - they choose what the developer has prescribed, it makes sense because the developer needs a payout. So the people that can process the payments are hardcoded on the FirefoxOS phone, so in order to get on that list, the vendor who ships the phone will have to honor that in their build.
+[Wed 11:45]	<manu-db>	kumar: So, that process is still not totally clear - but Mozilla isn't really happy w/ that approach. For v1, I think it's going to be good enough. What Mozilla will want to do is add enough payment providers to that list to make it competitive for developers and users - no one is being gouged, healthy amount of competition. There are people that are not going to be on that list, and they're not going to be happy about not being on that list.
+[Wed 11:45]	<manu-db>	kumar: That's not going to be solved for version 1, everyone wants to solve that, but the first approach is to not solve that hard problem.
+[Wed 11:46]	<taaz>	manu-db: Question if chargebacks and refunds are out of scope for the API. They are specific to a credit card buy flow.
+[Wed 11:46]	<taaz>	manu-db: Is the API going to be just payments or include other features like chargebacks, refunds, and crowdfunding.
+[Wed 11:47]	<manu-db>	kumar: The thing that's a bit weird about this API is that it has both a client-side and server-side component. There aren't a lot of APIs that have both client and server-side. We might just want to standardize the client-side and push that through since it's easier. However, in order for a payment to be secure, there is a signed JSON web token. So the developer needs to verify the signature. It must happen on the server-side, it can't happen on the client-side.
+[Wed 11:48]	<manu-db>	kumar: We'll need to keep the postback for the charge-back - that's how you are guaranteed that you got paid. Future work - we do want to add refunds through the API. Fernando has done a lot of thinking on that. Refunds are sort of happening in a separate process, someone wants to get a refund for an app. Someone wants to go through Mozilla's marketplace, they get refunds through the mozilla marketplace.
+[Wed 11:49]	<manu-db>	fernando: You can create a JSON Web Token for a refund, for v1, there is no server-side that supports that sort of token. In terms of the API, there is more work to do to verify that a request is a refund. In terms of API, it'll only need to modify the JSON web token.
+[Wed 11:50]	<taaz>	manu-db: How do you see PaySwarm, Bitcoin, or other standards integrating with this API?
+[Wed 11:51]	<manu-db>	kumar: I don't think a lot of people at Mozilla know about the PaySwarm work. As far as I know, PaySwarm is the only attempt at an open, decentralized payment problem. So, that's interesting to me personally, I don't think mozPay has any solution for that. FOr example, the whitelist on the phone isn't great. We could have a registration built into the API - maybe a user-flow on the API so they can opt-in to payment providers. So, that's open and it sounds like PaySwarm and Mozilla have similar goals - we both believe that anyone should be able to participate in the payment flow.
+[Wed 11:51]	<manu-db>	kumar: You want people to be able to participate on either side, as a customer as a merchant provider, etc.
+[Wed 11:52]	<taaz>	manu-db: Elliott, interested in what you're doing, and how this overlaps with PaySwarm and other web payments group work.
+[Wed 11:53]	<manu-db>	Elliott: So, the request auto-complete spec has a slightly different goal - it's not specific to payments, it is mostly about filling out form information.
+[Wed 11:53]	<manu-db>	Elliott: We can have payment profiles, and give a person a good way to select a payment solution. Our goal was on how to take existing payment flows and make them completely hassle-free but without requiring a payment processor on the background.
+[Wed 11:55]	<manu-db>	Elliott: There is an auto-complete attribute on all form attributes - shipping/billing addresses, credit cards, etc. The Request Autocomplete spec is generalizable - you could use it on the form and the browser could provide an UI to do selection.
+[Wed 11:56]	<manu-db>	kumar: I was curious - looked into this a little bit. It's a convenience for the user, is it still correct that they post an actual credit card number to the site?
+[Wed 11:56]	<manu-db>	Elliott: Yes, they still post it to the site.
+[Wed 11:56]	<manu-db>	dlehn: Who is controlling how that information gets populated into the form.
+[Wed 11:57]	<manu-db>	Elliott: The spec is vague about this - it's a browser-provided user UI flow. So, the sheet would come out of the address bar... or on mobile, they can provide a dialog on the user's home screen. On that dialog, they could select what the information they want to select is.
+[Wed 11:58]	<manu-db>	Topic: Browser Payments Timeline
+[Wed 11:58]	<manu-db>	manu: What do you want to see out of this group?
+[Wed 11:58]	<manu-db>	Kumar: What Mozilla's interested in is getting more Web device vendors interested in helping us on the spec. We want to do something that's good for the ecosystem.
+[Wed 11:59]	<manu-db>	Kumar: So, I don't know how best to use these meetings, but I want to help w/ that discussion. Still working on the spec, we'll be shipping that - focus on shipping the product.
+[Wed 11:59]	<manu-db>	Kumar: Elliott, do you know if the Wallet folks know about the mozPay API since it's based a lot on what Google Wallet did?
+[Wed 12:00]	<manu-db>	Elliott: So, wallet is based on Request Autocomplete - it's our protection implementation, so processing is done on the backend - we generate a one-time creditcard number, that is tied to a wallet account.
+[Wed 12:00]	<manu-db>	elliott: Not sure if they've looked at mozPay. There are concerns about how to evolve the client-side experience, because this is baked into the browser, that whitelist is concerning.
+[Wed 12:01]	<manu-db>	Elliott: Committing to be a payment provider requires you to commit to be a long-term payment provider. If it's baked into the platform, then that's a different thing.
+[Wed 12:01]	<manu-db>	Kumar: Yes, that came up for us as well. One of our first implementations was a polyfill similar to Google Wallet.
+[Wed 12:01]	<manu-db>	Elliott: Don't know what the Wallet team things, they're focused on request auto-complete.
+[Wed 12:02]	<taaz>	manu-db: Sounds like we need Wallet group on the call. Tried to get Safari on call, haven't reached out to Microsoft yet.
+[Wed 12:02]	<taaz>	manu-db: Some browser vendors might not want to converge on a soltuion yet until they know what buy flow is.
+[Wed 12:03]	<taaz>	manu-db: Try to get Wallet, Safari, Opera, Microsoft on call.
+[Wed 12:03]	<manu-db>	Elliott: Yeah, I'll reach out to the Wallet team - I'll see what they can do. They've been very busy w/ I/O this week.
+[Wed 12:03]	<taaz>	manu-db: Calls only twice a month. Should be plenty of warning.
+[Wed 12:04]	<taaz>	manu-db: Thanks to everyone. Minutes should be up soon.
+[Wed 12:04]	<voip-ps>	Manu Sporny (SIP/6000-000001a4) has left the conference.
+[Wed 12:04]	<voip-ps>	Fernando Jiménez (SIP/sip2sip.info-000001a3) has left the conference.
+[Wed 12:04]	<voip-ps>	esprehn (IAX2/diamondcard-3003) has left the conference.
+[Wed 12:04]	<voip-ps>	kumar (IAX2/diamondcard-10944) has left the conference.
+[Wed 12:04]	<voip-ps>	<unknown> (IAX2/diamondcard-6164) has left the conference.
+[Wed 12:04]	<voip-ps>	<unknown> (SIP/107.196.150.130-000001a9) has left the conference.
+[Wed 12:04]	<voip-ps>	Dave Lehn (SIP/6003-000001a5) has left the conference.
+[Wed 12:05]	<manu-db>	voip: connections?
+[Wed 12:05]	<voip-ps>	Conference connections: Iulian Dumitrascu [SIP/sip2sip.info-000001a2]
+[Wed 12:05]	<manu-db>	voip: disconnect Iulian
+[Wed 12:05]	<voip-ps>	Iulian Dumitrascu (SIP/sip2sip.info-000001a2) has left the conference.

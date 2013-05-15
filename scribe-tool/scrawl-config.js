@@ -94,6 +94,31 @@
          "alias": ["imyles"],
          "homepage": "http://www.linkedin.com/pub/ian-myles/4/154/405"
       },
+      "Kumar McMillan":
+      {
+         "alias": ["kumar"],
+         "homepage": "http://farmdev.com/about/",
+      },
+      "Fernando Jiménez Moreno":
+      {
+         "alias": ["fernando"],
+         "homepage": "https://github.com/ferjm",
+      },
+      "Iulian Dumitraşcu":
+      {
+         "alias": ["iulian"],
+         "homepage": "Iulian Dumitraşcu",
+      },
+      "Charles (McCathieNevile) Nevile":
+      {
+         "alias": ["chaals"],
+         "homepage": "http://www.linkedin.com/in/chaals",
+      },
+      "Elliott Sprehn":
+      {
+         "alias": ["esprehn"],
+         "homepage": "http://www.elliottsprehn.com/blog/about/",
+      },
       "Pindar Wong":
       {
          "alias": ["pindar"],
