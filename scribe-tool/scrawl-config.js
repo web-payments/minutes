@@ -133,8 +133,8 @@
 
    var htmlHeader = '<?xml version="1.0" encoding="UTF-8"?>\n' +
 '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"\n' +
-'   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> \n' +
-'<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"\n' +
+'   "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> \n' +
+'<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"\n' +
 '      class="wf-adelle1adelle2-n6-active wf-active"> \n' +
 ' \n' +
 '<head> \n' +

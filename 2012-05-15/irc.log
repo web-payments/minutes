@@ -8,7 +8,7 @@
 [Tue 14:04]	<dlongley>	manu: any updates/changes to the agenda?
 [Tue 14:04]	<dlongley>	dlongley: nope
 [Tue 14:04]	<manu1>	Topic: Web Intents for Payment
-[Tue 14:04]	<manu1>	http://www.w3.org/wiki/Payments_Task_Force#Payments_and_Web_Intents
+[Tue 14:04]	<manu1>	https://www.w3.org/wiki/Payments_Task_Force#Payments_and_Web_Intents
 [Tue 14:04]	<dlongley>	manu: first, the most "dangerous" thing that dave raggett hinted at in his email
 [Tue 14:04]	<dlongley>	manu: this is for web intents for payment
 [Tue 14:05]	<dlongley>	manu: it seems a lot of people in the w3c think web intents would go a far way in handling webpayments
@@ -46,7 +46,7 @@
 [Tue 14:19]	<dlongley>	manu: anything else before moving on?
 [Tue 14:19]	<dlongley>	manu: ok, moving on
 [Tue 14:19]	<manu1>	Topic: State of the Art Review of Payments
-[Tue 14:19]	<manu1>	http://www.w3.org/wiki/Payments_Task_Force#Brief_survey_of_existing_payment_services
+[Tue 14:19]	<manu1>	https://www.w3.org/wiki/Payments_Task_Force#Brief_survey_of_existing_payment_services
 [Tue 14:20]	<dlongley>	manu: typically the w3c creates an exploratory group to see how/if they want to tackle a problem on the web and they review all the existing relevant technologies
 [Tue 14:20]	<dlongley>	manu: the group generates a report that indicates the problems the standard can address and can't address ,etc.
 [Tue 14:21]	<dlongley>	manu: so what i think dave raggett wanted is for a list of payment providers to be created and then we'd search for a common thread for standardizing between them.

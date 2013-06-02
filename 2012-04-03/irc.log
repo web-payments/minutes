@@ -53,8 +53,8 @@
 [Tue 14:19]	<manu-db>	dlongley: We don't want to make this too complicated - not combine "expirationMonth" and "expirtaitonYear" to "expiration"
 [Tue 14:19]	<manu-db>	dlongley: We want a good balance.
 [Tue 14:20]	<dlongley>	manu: if we're using JSON-LD we could just use the number 11 in JSON, etc.
-[Tue 14:20]	<taaz>	http://www.w3.org/TR/xmlschema-2/#gYear
-[Tue 14:20]	<taaz>	http://www.w3.org/TR/xmlschema-2/#gMonth
+[Tue 14:20]	<taaz>	https://www.w3.org/TR/xmlschema-2/#gYear
+[Tue 14:20]	<taaz>	https://www.w3.org/TR/xmlschema-2/#gMonth
 [Tue 14:21]	<manu-db>	dlongley: We want to use numbers in the JSON, and put the year/month typing into the @context.
 [Tue 14:21]	<dlongley>	dlongley: if we could just mark this up in the JSON-LD context and use numbers in the JSON that would be best
 [Tue 14:21]	<dlongley>	manu: we'll just do that for now, try and make that work.

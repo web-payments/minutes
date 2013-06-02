@@ -29,7 +29,7 @@
 [Fri 12:18] <voip-ps> Failed to associate mjohnson_db with an audio channel ending in '3984'
 [Fri 12:19] <manu`> Topic: Resources
 [Fri 12:19] <voip-ps> mjohnson_db is now associated with IAX2/diamondcard-3894.
-[Fri 12:19] <manu`> http://www.w3.org/community/webpayments/
+[Fri 12:19] <manu`> https://www.w3.org/community/webpayments/
 [Fri 12:20] <manu`> q+
 [Fri 12:20] <voip-ps> Added manu` to the speaker queue: manu`
 [Fri 12:21] <manu`> ack manu`
@@ -176,7 +176,7 @@
 [Fri 12:58] Seems like the standard could easily fail if we don't take into consideration legality, intellectual property issues, etc.
 [Fri 12:58] <manu`> Jeff: I think digital contracts need to be a part of this system - it's how you pull it off - that's the question. You want an automated offer acceptance process. It needs to be a part of the overall transaction... there's always a type of acceptance.
 [Fri 12:58] <manu`> Jeff: There is some implicit acceptance by wielding a credit card... there needs to be something similar to that.
-[Fri 12:59] <dlongley> http://www.w3.org/wiki/WebID
+[Fri 12:59] <dlongley> https://www.w3.org/wiki/WebID
 [Fri 12:59] <manu`> Manu: WebID is there...
 [Fri 12:59] <taaz> manu`: Underlying identity mechanism in PaySwarm is based off of WebID. You have an IRI to your id, you have public id associated with it, a number of accounts associated with it, which may be public or private. Not full WebID stack.
 [Fri 12:59] <manu`> Jeff: BrowserID could be a part of it.
