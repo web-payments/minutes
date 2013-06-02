@@ -46,7 +46,7 @@ print <<< htmlcode
 
       <ul class="largeprint">
         <li><strong>When:</strong> Every two weeks</li>
-        <li><strong>Time:</strong> TBD</li>
+        <li><strong>Time:</strong> 1500 UTC / 8am San Francisco / 11am Boston / 4pm London</li>
         <li><strong>Where:</strong> Digital Bazaar PaySwarm Telecon Bridge, SIP: <a href="sip:payswarm@digitalbazaar.com">payswarm@digitalbazaar.com</a>.</li>
         <li><strong>IRC:</strong> <a href="irc://freenode.net/#payswarm">irc://freenode.net/#payswarm</a>
         <li><strong>Duration:</strong> 60 minutes
