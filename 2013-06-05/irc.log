@@ -1,0 +1,161 @@
+[Wed 11:03]	<m4nu>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2013Jun/0001.html
+[Wed 11:04]	<m4nu>	manu: Any updates to the agenda?
+[Wed 11:04]	<m4nu>	Topic: Introduction to Andrei Opera
+[Wed 11:05]	<dlongley>	m4nu: andrei is one of the GSoC people that submitted a GSoC application (but we didn't get enough slots to select him)
+[Wed 11:05]	<dlongley>	m4nu: andrei, could you give us a brief intro?
+[Wed 11:05]	<m4nu>	andrei: I'm a 7th year CS student, interested in working on Web Payments, did a GSoC application.
+[Wed 11:05]	<m4nu>	andrei: I want to create an application for Web App store.
+[Wed 11:06]	<m4nu>	andrei: I want to have publishers submit their apps for sale, and an API that allows them to integrate into the web app store.
+[Wed 11:06]	<m4nu>	andrei: Publishing assets on application, you can integrate it w/ your web app, not restricted to the store.
+[Wed 11:06]	<m4nu>	andrei: if time permits, I want to extend on this idea, and implement in Firefox OS using mozPay API.
+[Wed 11:08]	<dlongley>	m4nu: we are currently also working with a couple of other communities to figure out how to do web payments in an open, decentralized way, we're working with the W3C in the web apps group, etc. and we'll want to introduce you to those people and we're also working with the GNURadio group to find out how to dynamically buy and sell radio spectrum to allow people to buy extra bandwidth in certain areas to watch/download high
+[Wed 11:08]	<dlongley>	-bandwidth videos etc
+[Wed 11:08]	<dlongley>	m4nu: as far as publishing the code will you be working with github?
+[Wed 11:08]	<m4nu>	andrei: Yes, I want to expand upon payswarm.js library - on github.
+[Wed 11:08]	<dlongley>	m4nu: for hosting, would you like us to host your app somewhere so you have a VM somewhere so you can have it live all the time?
+[Wed 11:09]	<dlongley>	m4nu: if you'd like us to host it for you, let us know, but if you have a better hosting solution, that's fine too
+[Wed 11:09]	<dlongley>	m4nu: whatever solution you pick we want to ensure it's up and running all the time so we can point people at it and understand the work you're doing, etc.
+[Wed 11:09]	<dlongley>	m4nu: no need to decide to today
+[Wed 11:09]	<dlongley>	m4nu: if you have any concerns or issues or questions, we'd love to help, so ask us, this IRC channel is a good way to do that
+[Wed 11:09]	<dlongley>	m4nu: any other questions on how things will run?
+[Wed 11:10]	<m4nu>	Topic: ISSUE-7: HTTP Signatures Security Review Process
+[Wed 11:10]	<m4nu>	https://github.com/web-payments/payswarm.com/issues/7
+[Wed 11:10]	<dlongley>	m4nu: there's a desire from the IETF for us to do a security review of the HTTP signatures spec, typically it's the WG that does this, but it could take multiple months if we just rely on them, so we'd like to kickstart things and start the analysis to help move things along
+[Wed 11:11]	<dlongley>	m4nu: i'm expecting that mark cavage can help out with what some of the possible attacks/etc. are against the spec
+[Wed 11:11]	<dlongley>	http://en.wikipedia.org/wiki/STRIDE_(security)
+[Wed 11:11]	<m4nu>	We're using this document as a starting point: http://tools.ietf.org/html/rfc3552
+[Wed 11:11]	<mcavage>	http://msdn.microsoft.com/en-us/library/ee823878(v=cs.20).aspx
+[Wed 11:11]	<dlongley>	m4nu: we'll be using the STRIDE security model
+[Wed 11:12]	<dlongley>	m4nu: we'll probably break the analysis into two parts, one for HTTP and one for HTTPS because the models are different
+[Wed 11:12]	<dlongley>	m4nu: we could avoid doing HTTP by saying this is only good for HTTPS, but i'd like us to do something for both HTTP and HTTPS
+[Wed 11:12]	<dlongley>	m4nu: mark, thoughts?
+[Wed 11:12]	<m4nu>	mcavage: yes, HTTP and HTTPS is good.
+[Wed 11:12]	<m4nu>	mcavage: HTTPS will be short/sweet - we want to cover both so people understand the tradeoffs.
+[Wed 11:13]	<m4nu>	Topic: Passive Attacks - Confidentiality Violations
+[Wed 11:14]	<m4nu>	http://tools.ietf.org/html/rfc3552#section-3.2.1
+[Wed 11:14]	<voip-ps>	<unknown> (SIP/172.0.220.116-00000203) has joined the conference.
+[Wed 11:15]	<dlongley>	m4nu: we'll start with the RFC and go through it point by point because it models the doc we'll have to write, then we'll go over STRIDE
+[Wed 11:15]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-000001fe) has left the conference.
+[Wed 11:15]	<dlongley>	m4nu: to start, we'll look at passive attacks, where an attacker reads packets off the network but doesn't write them, 3.2 Passive Attacks
+[Wed 11:16]	<dlongley>	m4nu: with HTTP you can sniff anything
+[Wed 11:16]	<m4nu>	mcavage: I don't know if this is specific to the HTTP Authorization header.
+[Wed 11:16]	<m4nu>	mcavage: The obvious thing here is that over HTTP, someone can steal the authorization header and replay the attack.
+[Wed 11:16]	<dlongley>	m4nu: our solution to a possible replay attack here would be some kind of nonce
+[Wed 11:17]	<m4nu>	mcavage: Yeah, that's the implementation we have today.
+[Wed 11:17]	<dlongley>	m4nu: it would likely be a time-based nonce where the server and client would have to have their clocks reasonably in sync
+[Wed 11:17]	<m4nu>	mcavage: (time-based nonce)
+[Wed 11:17]	<m4nu>	mcavage: besides replay - there are no secret data, but your key information (identity) can be leaked.
+[Wed 11:18]	<m4nu>	mcavage: There's a spear-fishing attack here.
+[Wed 11:19]	<m4nu>	dlongley: You may also be able to collect general information that may be private - you can look at the request, cookies, etc. This also falls under passive attack.
+[Wed 11:19]	<voip-ps>	Amr Fahmy (SIP/sip2sip.info-00000204) has joined the conference.
+[Wed 11:19]	<dlongley>	m4nu: right, and all of these things are known attacks against HTTP, we're not creating anything new here
+[Wed 11:19]	<dlongley>	voip-ps: mute 204
+[Wed 11:19]	<voip-ps>	SIP/sip2sip.info-00000204 has been muted.
+[Wed 11:21]	<dlongley>	m4nu: my concern would be that someone could use the authorization headers and other information to reduce the brute force attack area of the private key being used
+[Wed 11:21]	<m4nu>	mcavage: This is kinda the "security boogeyman" issue - if you gather enough statistical information, you /might/ be able to break it.
+[Wed 11:22]	<m4nu>	mcavage: There may not be enough random entropy in the beginning, so that might be an issue... for HTTP Signatures, it's not quite random - it's the HTTP signature string. maybe random noise in front of signing string.
+[Wed 11:22]	<m4nu>	mcavage: In terms of cryptanalysis, not a big piece of data you're signing, the string isn't starting with random entropy. That said, the risk of that is incredibly low.
+[Wed 11:24]	<m4nu>	dlongley: Biggest concern might be what's safe to send over HTTP or HTTPS. We aren't creating new holes here, but people might think that we're proposing a mechanism to secure data over HTTP, which HTTP Signatures is not.
+[Wed 11:25]	|<--	andreio has left freenode (Ping timeout: 256 seconds)
+[Wed 11:25]	<m4nu>	dlongley: We might want to say that doing over HTTPS is not good enough for people - for example OAuth2 - people misconfiguring their HTTPS servers all the time. So we might tell people that they want to put random information or nonce-like data in the headers that are signed. It may not be as simple as saying "We'll just use HTTPS".
+[Wed 11:25]	<m4nu>	mcavage: I'm agreeing, but we should just say what the properties are. I wouldn't actually change the spec to accomodate this cryptanalysis attack. If someone has a provable/not theoretical exploit of this, we'll jump to the next crypto algorithm.
+[Wed 11:26]	<m4nu>	mcavage: There are theoretical attacks, but there are low risks that those theoretical attacks would happen.
+[Wed 11:26]	<m4nu>	dlongley: Yeah, we really need to not change the spec, just outline the issues.
+[Wed 11:26]	<m4nu>	mcavage: Yes, section on nonces is important.
+[Wed 11:26]	<dlongley>	dlongley: really need to have a clear best practices section
+[Wed 11:27]	<dlongley>	m4nu: for 3.2.1 Confidentiality Violations, there's nothing really new here for HTTP, all the attacks that exist for HTTP exist here -- plus there may be a statistical attack that one could mount against the http signatures header that lets you do some cryptoanalysis on it to reduce a brute force attack, but we know of none
+[Wed 11:28]	<m4nu>	dlongley: Yeah, that's probably fair - what we're doing w/ signatures is what everybody else does with that. It's the same thing that would happen if signing data and sending it over cleartext.
+[Wed 11:29]	<dlongley>	m4nu: for HTTPS the same applies, the danger that exists is the same as OAuth2, misconfigured servers or maybe not having enough random bytes/long enough signature string, etc.
+[Wed 11:29]	<dlongley>	m4nu: all the attacks are theoretical, it's about breaking digital signatures and/or TLS
+[Wed 11:30]	<m4nu>	Topic: Passive Attacks - Password Sniffing
+[Wed 11:30]	<dlongley>	m4nu: there are no passwords
+[Wed 11:30]	<m4nu>	http://tools.ietf.org/html/rfc3552#section-3.2.2
+[Wed 11:30]	<m4nu>	mcavage: Yeah, leaking a password is not possible here - no passwords.
+[Wed 11:30]	<m4nu>	Group agrees.
+[Wed 11:31]	<m4nu>	dlehn: Is there a problem with people not understanding public/private keys?
+[Wed 11:31]	<m4nu>	dlehn: What if spear fishers ask for a private key?
+[Wed 11:31]	<m4nu>	dlehn: It's an education problem.
+[Wed 11:32]	<m4nu>	dlongley: yeah, education problem.
+[Wed 11:32]	<m4nu>	mcavage: I think this is a problem for HMAC
+[Wed 11:32]	<m4nu>	mcavage: the -----BEGIN PRIVATE KEY---- thing works pretty well.
+[Wed 11:33]	<m4nu>	mcavage: to help people understand that they shouldn't be sharing it.
+[Wed 11:33]	<m4nu>	mcavage: HMAC keys are shared publicly more often than private keys, based on what I've seen.
+[Wed 11:33]	<m4nu>	dlongley: Yeah, we can educate at the application level, not the protocol level.
+[Wed 11:35]	<dlongley>	m4nu: is HMAC something we want to put into the spec or not?
+[Wed 11:35]	<dlongley>	m4nu: HMAC may be more likely to be shared accidentally by end users, it's less clear that HMAC keys are private
+[Wed 11:35]	<dlongley>	m4nu: should we keep HMAC in or take it out?
+[Wed 11:36]	<m4nu>	mcavage: We might just take it out of the examples... we could insert whatever algorithm you want, the spec is open about that.
+[Wed 11:36]	<m4nu>	mcavage: People could still put HMAC in... don't have strong feelings about taking it out/ putting HMAC in. I agree, I don't ever want to use HMAC again, there's concerns about performance, etc.
+[Wed 11:38]	<dlongley>	m4nu: there's a debate about listing every kind of crypto algorithm that works with a spec, the downside is that everyone has to implement all of those algorithms but when interoperating you have to ensure both sides support what you want to use, so we might have to give a few algorithms that have to be supported, it can't be as openended as it is right now
+[Wed 11:38]	<m4nu>	mcavage: if somebody is going to demand HMAC in, we should put one form of it in.
+[Wed 11:39]	<dlongley>	m4nu: i think if we are going to put HMAC in we should only put one in as a requirement
+[Wed 11:39]	<dlongley>	m4nu: if it gets broken, we'll have another spec ready to go
+[Wed 11:39]	<dlongley>	m4nu: the spec text can say other things can be supported and give some instructions on how to write a spec defining the other algorithm(s) etc
+[Wed 11:40]	<m4nu>	dlongley: I think we should say RSA, SHA1 and SHA256 are supported - that's the minimum... then we can say you can implement whatever you want, give them instructions on how to do it.
+[Wed 11:41]	<dlongley>	m4nu: so we could do that and leave out HMAC for now and wait for people to come along and request it to be added
+[Wed 11:41]	<m4nu>	mcavage: I'm ok with that - MUST support RSA SHA1 / SHA256 - you MAY support other things like HMAC.
+[Wed 11:41]	<m4nu>	dlongley: Sounds good to me.
+[Wed 11:42]	<m4nu>	Group agreement.
+[Wed 11:42]	<dlongley>	m4nu: we were on password sniffing and HMAC sort of falls into that category (sort of) ... secret key being analogous to password, if you use RSA there are no passwords
+[Wed 11:43]	<m4nu>	mcavage: Let's just not mention HMAC, thus password sniffing is not possible.
+[Wed 11:43]	<m4nu>	Topic: Passive Attacks - Offline Cryptographic Attacks
+[Wed 11:43]	<m4nu>	http://tools.ietf.org/html/rfc3552#section-3.2.3
+[Wed 11:44]	<dlongley>	m4nu: easier to attack over HTTP vs. HTTPS, primary attack vector may be not enough randomness to the signature string or we create some kind of mechanism that allows statistical analysis to reduce brute force attack space
+[Wed 11:44]	<dlongley>	m4nu: if you break HTTPS the attack is the same as HTTP
+[Wed 11:44]	<dlongley>	m4nu: otherwise as safe as HTTPS (TLS)
+[Wed 11:45]	<dlongley>	m4nu: we can just point people at the offline attacks for RSA and SHA1/SHA256
+[Wed 11:45]	<m4nu>	Topic: Active Attacks - Replay
+[Wed 11:45]	<m4nu>	http://tools.ietf.org/html/rfc3552#section-3.3.1
+[Wed 11:46]	<dlongley>	m4nu: so the replay attacks we're concerned about (there are two classes), the first is replay over HTTP which is fairly trivial and replay over HTTPS where you send a message over HTTPS to a proxy and the proxy replays it to someone else
+[Wed 11:47]	<m4nu>	dlongley: Does the spec currently say you have to sign the host header.
+[Wed 11:47]	<m4nu>	mcavage: The spec should say you MUST sign request line, host header, and content MD5.
+[Wed 11:47]	<m4nu>	dlongley: There are HTTP proxy issues - rewriting of headers.
+[Wed 11:48]	<m4nu>	mcavage: We should come back to that one - that's a different issue - http proxies.
+[Wed 11:48]	|<--	mcavage has left freenode (Read error: Connection reset by peer)
+[Wed 11:48]	<m4nu>	mcavage: HTTP should be MUST for request line, host header, should we have nonces?
+[Wed 11:48]	-->|	mcavage (~mcavage@c-76-121-137-102.hsd1.wa.comcast.net) has joined #payswarm
+[Wed 11:48]	|<--	kumar_ has left freenode (Ping timeout: 264 seconds)
+[Wed 11:48]	<m4nu>	dlongley: We should say how to do this w/ chunked transfer encoding - you may not want to use content-md5, may want to do this in a trailer.
+[Wed 11:49]	<m4nu>	dlongley: It would allow you to send content bodies where you don't know the length.
+[Wed 11:49]	<m4nu>	mcavage: The problem with trailers, is that the implementation sucks. Ruby doesn't deal w/ them, etc.
+[Wed 11:49]	-->|	kumar_ (~kumar@c-98-220-12-84.hsd1.in.comcast.net) has joined #payswarm
+[Wed 11:49]	<m4nu>	mcavage: It's a miracle when you find a stack that does - I'm of two minds. I agree w/ what the RFC says, but based on reality, half the stuff out there doesn't work with it.
+[Wed 11:50]	<dlongley>	m4nu: this requirement comes from a previous product in our company that was built on a streaming architecture
+[Wed 11:50]	<dlongley>	m4nu: you could do digital signatures on the streams (as long as the implementatino does it correctly and there are plenty that aren't) and it was a fairly nice way to make things work
+[Wed 11:51]	<dlongley>	m4nu: we don't have to make it a requirement to support trailers but implementations are not required to implement it
+[Wed 11:51]	<dlongley>	m4nu: that would reflect reality but allow support
+[Wed 11:52]	-->|	kumar___ (~kumar@c-98-220-12-84.hsd1.in.comcast.net) has joined #payswarm
+[Wed 11:52]	<m4nu>	mcavage: So what you're saying is if you want to do this, digitally sign the header, then do continue.
+[Wed 11:52]	<m4nu>	mcavage: Then attach signatures on the trailer.
+[Wed 11:53]	<m4nu>	dlongley: If you want to do chunked-transfer encoding, you can do a second signature on the body. I want to make sure we don't lock people out of using the spec if they want to use it in a certain way.
+[Wed 11:53]	|<--	kumar_ has left freenode (Read error: Connection reset by peer)
+[Wed 11:54]	<m4nu>	mcavage: Not disagreeing, I buy it. I think saying "put the authorization header at the end" doesn't help. It might open up a Denial of Service attack. We could say "if you want to sign the body and use streaming uploads, you do it in two steps".
+[Wed 11:55]	<m4nu>	dlongley: If there are people that have these sorts of interfaces, where they try to simplify things and don't want to implement buffering on one end, they have to do buffering anyway to do content-md5.
+[Wed 11:55]	<m4nu>	dlongley: I'd like to prevent solutions that require either end to buffer the entire streaming content.
+[Wed 11:56]	<m4nu>	mcavage: These aren't mutually exclusive.
+[Wed 11:56]	<dlongley>	m4nu: let's just make a general issue for how to do chunked transfer encoding w/signatures
+[Wed 11:57]	<dlongley>	m4nu: so... for replay attacks we'll need to figure out what to do about nonces
+[Wed 11:57]	|<--	voip-ps has left freenode (*.net *.split)
+[Wed 11:57]	|<--	dlongley-db has left freenode (*.net *.split)
+[Wed 11:57]	<dlongley>	m4nu: some people feel that implementations become far more difficult when you require nonces (which is true) we want to ensure that these implementations are easy so they don't have to remember nonces forever, etc.
+[Wed 11:57]	<dlongley>	m4nu: so that's one reason for discussing time-based nonces
+[Wed 11:58]	<dlongley>	m4nu: we'll have to argue against others who simply say nonces will never work and are never implemented properly, etc.
+[Wed 11:58]	<dlongley>	m4nu: do we want to try and tackle the nonce problem?
+[Wed 11:58]	<dlongley>	m4nu: it sounds like (from the discussion at the beginning of the call) we want to try and tackle the problem because we'd like this spec to work over HTTP
+[Wed 11:58]	<dlongley>	m4nu: so we'll probably be looking at time-based nonces
+[Wed 11:59]	<m4nu>	mcavage: Are nonces MUST or MAY?
+[Wed 11:59]	<dlongley>	m4nu: it seems like the HTTP signature spec will be blamed if we don't make a it a MUST
+[Wed 12:00]	*christel*	[Global Notice] Welcome to Splitville, Population: Shrinking -- as you may have noticed the network is suffering under the strain of yet another DDoS attack, we are working with our sponsors to try curb what we can and apologise for the inconvenience.
+[Wed 12:00]	<dlongley>	m4nu: do you feel the same way, mark?
+[Wed 12:01]	<m4nu>	mcavage: The security purist in me totally agrees with you, but I don't think many people get it right. We're setting ourselves up to fail because of nonces.
+[Wed 12:01]	<m4nu>	mcavage: I don't have an answer, I'm torn.
+[Wed 12:01]	<dlongley>	m4nu: we could look at history (since it's been bad) and just do the opposite
+[Wed 12:02]	<dlongley>	m4nu: or it could just be that nonces really just need to be required and it has to be implemented properly
+[Wed 12:02]	<m4nu>	mcavage: There are 2-3 implementations of SSL, there may be many more clients that implement this.
+[Wed 12:03]	<m4nu>	mcavage: There are a lot of implementation concerns here - same hellhole, how do you run this thing at scale.
+[Wed 12:03]	<m4nu>	mcavage: If they're optional, nobody is going to do it. If they are not, we're going to get criticized for getting it wrong.
+[Wed 12:04]	<bshambaugh>	<unknown> (SIP/172.0.220.116-00000203 ==> bshambaugh .... listening, no comment now
+[Wed 12:04]	<dlongley>	m4nu: so we're still split on what should be done for nonces, we agree that we should specify something but we dont' know if it should be MUST or MAY
+[Wed 12:04]	<m4nu>	mcavage: Yes, we should have a section on nonces, and decide MUST vs. MAY later on.
+[Wed 12:05]	<m4nu>	Topic: Telecon frequency
+[Wed 12:05]	<dlongley>	m4nu: ok, let's do it once a week
