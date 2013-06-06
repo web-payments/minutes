@@ -37,7 +37,7 @@
       },
       "Manu Sporny":
       {
-         "alias": ["manu-db", "manu1", "manu`"],
+         "alias": ["manu-db", "manu1", "manu`", "m4nu"],
          "homepage": "http://manu.sporny.org/about"
       },
       "Pelle Braendgaard":
@@ -118,6 +118,16 @@
       {
          "alias": ["esprehn"],
          "homepage": "http://www.elliottsprehn.com/blog/about/",
+      },
+      "Andrei Oprea":
+      {
+         "alias": ["andreio"],
+         "homepage": "https://github.com/piatra"
+      },
+      "Amr Fahmy":
+      {
+         "alias": ["amrf"],
+         "homepage": "https://plus.google.com/114459538812845425714/posts"
       },
       "Pindar Wong":
       {
