@@ -1,0 +1,126 @@
+[Wed 11:03]	<manu-db>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2013Jun/0021.html
+[Wed 11:03]	<taaz>	scribe: taaz
+[Wed 11:03]	<taaz>	manu-db: Any updates to agenda?
+[Wed 11:03]	<manu-db>	Topic: Security Considerations for HTTP Signatures
+[Wed 11:03]	<manu-db>	https://payswarm.com/specs/source/http-signatures-audit/
+[Wed 11:04]	<taaz>	manu-db: I've started the security considerations document, going to update as we go through attacks.
+[Wed 11:04]	<taaz>	manu-db: New attack on message insertion. Not a big deal, and don't need to change spec, but need to let people now.
+[Wed 11:05]	<manu-db>	Topic: Nonces and Trailers
+[Wed 11:05]	<taaz>	mcavage: Should touch on nonces and trailers.
+[Wed 11:05]	<taaz>	mcavage: Don't want to require nonces. Make the optional and not MUST. Too difficult for wide adoption.
+[Wed 11:06]	<taaz>	manu-db: Seemed like consensus, have nonces but make them optional.
+[Wed 11:06]	<taaz>	mcavage: For general spec it seems like too much, for payments it may be appropriate.
+[Wed 11:07]	<taaz>	manu-db: Personal applications may not require nonces.
+[Wed 11:07]	<taaz>	manu-db: What do people think?
+[Wed 11:08]	<manu-db>	PROPOSAL: Add a section on nonces to the HTTP Signatures specification, but make them an optional feature.
+[Wed 11:08]	<voip-ps>	Amr Fahmy (SIP/sip2sip.info-00000219) has joined the conference.
+[Wed 11:08]	<manu-db>	+1
+[Wed 11:08]	<dlongley>	+1
+[Wed 11:08]	<taaz>	+1
+[Wed 11:08]	<mcavage>	+1
+[Wed 11:09]	<manu-db>	RESOLVED: Add a section on nonces to the HTTP Signatures specification, but make them an optional feature.
+[Wed 11:09]	<taaz>	dlongley: Can detail drawbacks for not implementing nonces
+[Wed 11:09]	<taaz>	manu-db: Let's talk about signatures in trailers.
+[Wed 11:10]	<taaz>	mcavage: Can you send authorization twice? once in header and once in trailer
+[Wed 11:10]	<taaz>	manu-db: How to sign content? mcavage using Content-MD5 in spec but it's being deprecated in HTTP 2.
+[Wed 11:11]	<taaz>	manu-db: Might need to use another header (Content-SHA256) or similar
+[Wed 11:11]	<taaz>	mcavage: Why is the HTTPbis WG removing it?
+[Wed 11:11]	<taaz>	manu-db: Issues with proxies and partial content. Was a brittle feature. Not sure what replacement is.
+[Wed 11:11]	<dlongley>	http://tools.ietf.org/html/rfc3230
+[Wed 11:12]	<dlongley>	Digest: md5=HUXZLQLMuI/KZ5KDcJPcOA==
+[Wed 11:12]	<dlongley>	Digest: SHA=thvDyvhfIqlvFe+A9MYgxAfm1q5=,unixsum=30637
+[Wed 11:12]	<taaz>	manu-db: Bring it up since you could put sig/hash in trailer
+[Wed 11:12]	<taaz>	mcavage: Right way to do this is checksum the body and sign the checksum.
+[Wed 11:13]	<taaz>	dlongley: Replace Content-MD5 with generic Digest header and you can set algorithm and params
+[Wed 11:14]	<taaz>	manu-db: We will need some form of Digest
+[Wed 11:14]	<taaz>	mcavage: No problem using some other method vs Content-MD5
+[Wed 11:14]	<taaz>	manu-db: Want to use trailers?
+[Wed 11:15]	<taaz>	mcavage: May need to buffer contents to do this, should spec it out.
+[Wed 11:16]	<taaz>	manu-db: Do we do one signature for the headers, then another one for the trailer (with just the Digest?)
+[Wed 11:16]	<taaz>	dlongley: We would want one signature for the headers, then another one in the trailer that includes all the header signature fields. That would be the most secure way of doing it.
+[Wed 11:16]	<manu-db>	Topic: Amr Fahmy and Summer of Code
+[Wed 11:17]	<taaz>	manu-db: Get an idea of what Amr will work on. Amr: Give a quick intro and what you need.
+[Wed 11:19]	<taaz>	Amr: Computer science student in Egypt, want to work on mobile PaySwarm APIs. Very excited to be a part of this work.
+[Wed 11:20]	<taaz>	Amr: started with web keys, finishing registration process
+[Wed 11:23]	<taaz>	Amr: Currently stuck on issue with getting registration to work on different systems.
+[Wed 11:23]	<taaz>	manu-db: Might be browser, IP, cache, CORS, or similar.
+[Wed 11:23]	<taaz>	manu-db: We'll debug this after the call.
+[Wed 11:24]	<taaz>	manu-db: Planning to work on this to get web keys registration done, then publish asset and listing for sale?
+[Wed 11:24]	<taaz>	Amr: correct
+[Wed 11:24]	<taaz>	manu-db: Any trouble looking at javascript code?
+[Wed 11:25]	<taaz>	Amr: Mozilla PaySwarm tutorials were enough to get it working.
+[Wed 11:26]	<taaz>	Amr: Do you need web api done before mobile api?
+[Wed 11:26]	<taaz>	manu-db: Probably should get python api working and build on top of that knowledge for the mobile API.
+[Wed 11:27]	<taaz>	manu-db: Thanks for showing interest and let us know how we can help!
+[Wed 11:28]	<manu-db>	Topic: Active Attacks - Message Insertion
+[Wed 11:28]	<taaz>	manu-db: Back to HTTP Signatures
+[Wed 11:28]	<manu-db>	http://tools.ietf.org/html/rfc3552#section-3.3.2
+[Wed 11:28]	<taaz>	manu-db: Message insertion has to do with forging a message and inserting it in the network.
+[Wed 11:29]	<taaz>	manu-db: difficult to do when digital signatures are used.
+[Wed 11:29]	<taaz>	mcavage: For https this is covered by TLS. For http you should be advised to sign everything.
+[Wed 11:32]	<taaz>	manu-db: There's attack over https with comprimised certificate with MITM attack. For a monetary transfer the MITM could fake a rejection, trick victim to send request again, MITM queues up requests and sends them later.
+[Wed 11:32]	<taaz>	manu-db: Attacker could just replay messages, not forge them.
+[Wed 11:34]	<taaz>	mcavage: Basically issue of what to do when TLS channel not trusted.
+[Wed 11:35]	<taaz>	mcavage: If you just sign Date header then attacker could do anything in this case.
+[Wed 11:35]	<bshambaugh>	neurons firing: mitm ... Ettercap ... http://linux.die.net/man/8/ettercap
+[Wed 11:35]	<taaz>	manu-db: This is really an issue at the application layer, but we do want to warn people about that possibility.
+[Wed 11:36]	<taaz>	dlongley: Yeah, you could solve this by having a challenge-response, or encrypting information in the channel as well as signing.
+[Wed 11:36]	<taaz>	mcavage: Might need another side channel, like an additional key different from HTTPS.
+[Wed 11:37]	<taaz>	manu-db: Could add other headers that are not signed. Applications should only trust signed headers.
+[Wed 11:37]	<taaz>	dlongley: Might need to authorize responses too.
+[Wed 11:38]	<taaz>	dlongley: We have no security authorization on responses. Not sure if Authorization header is allowed in responses.
+[Wed 11:38]	<taaz>	manu-db: If doing this over HTTP use nonces and do digital signatures on response, good low-cost way to implement something that 'works'
+[Wed 11:39]	<taaz>	manu-db: This devolves into implementing TLS over HTTP.
+[Wed 11:39]	<taaz>	mcavage: You could copy semantics for response and make it optional depending if it's needed.
+[Wed 11:39]	<taaz>	mcavage: Way to look at this is if you're not using TLS then you're off the rails.
+[Wed 11:40]	<taaz>	dlongley: Need to spec out something so if you can use HTTP - it needs to work.
+[Wed 11:41]	<taaz>	bshambaugh: Mentioning ettercap when hearing of MITM
+[Wed 11:42]	<taaz>	manu-db: Might be good to use for auding
+[Wed 11:42]	<manu-db>	Topic: Active Attacks - Message Deletion / Modification
+[Wed 11:42]	<manu-db>	http://tools.ietf.org/html/rfc3552#section-3.3.3
+[Wed 11:43]	<taaz>	manu-db: Message insertion, modification, deletion fall under same category. Usually why sequence numbers are used, to make deletion difficult.
+[Wed 11:44]	<taaz>	mcavage: This heads towards IPSec / TLS over http.
+[Wed 11:44]	<taaz>	mcavage: All related to MITM. Any of these things possible in the case where HTTPS/Certificate Authorities are broken.
+[Wed 11:45]	<taaz>	mcavage: If you are MITM you can completely modify messages, hard to stop deletion in this spec.
+[Wed 11:46]	<taaz>	manu-db: Deletion possible, modifiction difficult.
+[Wed 11:46]	<taaz>	mcavage: If you sign everything you are covered on modification.
+[Wed 11:47]	<taaz>	dlongley: attacking identity vs message itself
+[Wed 11:47]	<taaz>	mcavage: As long as you sign everything, you would need to break RSA to break the stream.
+[Wed 11:48]	<taaz>	dlongley: This is the same thing as attacking RSA for message inseration, deletion, and modification.
+[Wed 11:48]	<taaz>	mcavage: This spec seems more aimed towards IP instead application level.
+[Wed 11:50]	<taaz>	dlongley: Need to mention all these issues in a MITM section.
+[Wed 11:50]	<taaz>	dlongley: Modification is going to fall under breaking RSA.
+[Wed 11:50]	<taaz>	dlongley: Anything not signed you could change since there's no protection.
+[Wed 11:51]	<taaz>	manu-db: No state tracking. Could attack state of server, harder to attack client state.
+[Wed 11:51]	<taaz>	manu-db: No traditional security handshaking, just a signed message.
+[Wed 11:51]	<taaz>	manu-db: May be attacks at application level but not http signatures level.
+[Wed 11:52]	<taaz>	dlongley: Might want to define a message as anything signed according to the spec. Anything that is a message is protected and the security considerations become the same ones for RSA (in that, you have to break RSA).
+[Wed 11:52]	<taaz>	dlongley: Anything not considered a message is vulnerable to attack.
+[Wed 11:52]	<manu-db>	Topic: Active Attacks - Man-In-The-Middle
+[Wed 11:52]	<voip-ps>	Amr Fahmy (SIP/sip2sip.info-00000219) has left the conference.
+[Wed 11:52]	<manu-db>	http://tools.ietf.org/html/rfc3552#section-3.3.5
+[Wed 11:53]	<taaz>	manu-db: HTTP can always have MITM attack, sign the stuff you don't want modified. You can still have deletion issues. Any headers that aren't signed should be assumed to have been modified.
+[Wed 11:54]	<taaz>	manu-db: This is basically a re-cap of what we discussed. HTTP is wide open to MiTM. HTTP Signatures used with HTTP protects the information that is signed from insertion/modification, but not deletion. HTTPS protects against all of these attacks, unless HTTPS is broken. In the event that HTTPS is broken, the security is no better than HTTP with HTTP Signatures (which is better than just plain 'ol HTTP).
+[Wed 11:54]	<manu-db>	Topic: On-path / Off-path Attacks
+[Wed 11:56]	<taaz>	manu-db: On-path attacks are basically everything that we've covered to this point. Somebody inbetween has tampered with the message. Off-path is done a bit lower in the networking stack, TCP/IP layer. HTTP Signatures really don't care about the network topology, they just care about sender/receiver and protecting the data that is signed.
+[Wed 11:58]	<taaz>	dlongley: Our messages are protected by RSA. To break HTTP Signatures, you have to break RSA.
+[Wed 11:59]	<taaz>	dlongley: origins don't matter for our messages
+[Wed 12:00]	<taaz>	manu-db: Anything else for on-path, off-path, link-local?
+[Wed 12:00]	<taaz>	Topic: Next Steps
+[Wed 12:00]	<taaz>	manu-db: What's the next step?
+[Wed 12:00]	<taaz>	manu-db: Can do STRIDE analysis on spec? Is that useful or do we have enough of an audit to put spec up for public review?
+[Wed 12:01]	<taaz>	mcavage: We're going to add more verbage and prose but basic spec hasn't changed.
+[Wed 12:01]	<taaz>	mcavage: Add nonces, trailer support. Is STRIDE going to add anything? Probably thinking along those lines anyway.
+[Wed 12:02]	<taaz>	manu-db: Can only do so much here, good to point people to security review.
+[Wed 12:03]	<taaz>	manu-db: Goal next week for nonces, server signatures, and so on. Then put it up for review to see what other people say.
+[Wed 12:03]	<taaz>	mcavage: Should we split work up?
+[Wed 12:04]	<taaz>	manu-db: I started security consideration section, can work on it today, mcavage can you work on nonces, ...
+[Wed 12:04]	<taaz>	mcavage: Will try to work on it this week.
+[Wed 12:05]	<taaz>	manu-db: We'll have another telecon next week to talk about nonces and server signatures or pick up mozpay navigator api.
+[Wed 12:05]	<taaz>	manu-db: Thanks!
+[Wed 12:05]	<voip-ps>	Dave Longley (SIP/6002-00000215) has left the conference.
+[Wed 12:05]	<voip-ps>	Manu Sporny (SIP/6000-00000214) has left the conference.
+[Wed 12:05]	<voip-ps>	mcavage (IAX2/diamondcard-8921) has left the conference.
+[Wed 12:05]	<voip-ps>	Dave Lehn (SIP/6003-00000218) has left the conference.
+[Wed 12:05]	<manu-db>	voip: connections?
+[Wed 12:05]	<voip-ps>	bshambaugh (SIP/172.0.220.116-00000217) has left the conference.

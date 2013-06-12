@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+      class="wf-adelle1adelle2-n6-active wf-active"> 
+ 
+<head> 
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+  <title>PaySwarm - Teleconferences</title> 
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ 
+  <link rel="stylesheet" href="../../css/1140.css" type="text/css" media="screen" /> 
+  <!--[if lte IE 9]>
+  <link rel="stylesheet" href="../css/ie.css" type="text/css" media="screen" />
+  <![endif]--> 
+  <link rel="stylesheet" href="../../css/typeimg.css" type="text/css" media="screen" /> 
+  <link rel="stylesheet" href="../../css/smallerscreen.css" media="only screen and (max-width: 1023px)" /> 
+  <link rel="stylesheet" href="../../css/mobile.css" media="handheld, only screen and (max-width: 767px)" /> 
+  <link rel="stylesheet" href="../../css/layout.css" type="text/css" media="screen" /> 
+  <link rel="shortcut icon" type="image/png" href="../../images/payswarm-icon.png" /> 
+  
+<style type="text/css">
+h1 {
+   margin-top: 24px;
+   margin-bottom: 14px;
+}
+
+.header {
+   margin-top: 0px;
+   margin-bottom: 14px;
+}
+
+ol {
+   margin-bottom: 0em;
+}
+
+li {
+   margin-left: 1.5em;
+   margin-bottom: 0em;
+}
+#content {
+   margin-left: 15%;
+   margin-right: 15%;
+}
+
+.summary {
+   margin-left: 10%
+   margin-right: 10%
+}
+
+.name {
+   font-weight: bold;
+}
+
+.information {
+   font-style: italic;
+}  
+
+.comment-continuation {
+   margin-left: 2em;
+}
+
+dt {
+   font-style: oblique;
+}
+
+dd {
+   margin-left: 20px;
+}
+
+  </style>
+  
+</head> 
+<body> 
+ 
+<div class="titlebar"> 
+   <h1 class="header">PaySwarm</h1> 
+</div> 
+
+  <div id="content"> 
+ 
+  <div class="row"> 
+    <div class="twelvecol last"> 
+
+<h1>Web Payments Community Group Telecon</h1>
+<h2>Minutes for 2013-06-12</h2>
+<div class="summary">
+<dl>
+<dt>Agenda</dt><dd><a href="http://lists.w3.org/Archives/Public/public-webpayments/2013Jun/0021.html">http://lists.w3.org/Archives/Public/public-webpayments/2013Jun/0021.html</a></dd>
+<dt>Topics</dt><dd><ol><li><a href="#topic-1">Security Considerations for HTTP Signatures</a><li><a href="#topic-2">Nonces and Trailers</a><li><a href="#topic-3">Amr Fahmy and Summer of Code</a><li><a href="#topic-4">Active Attacks - Message Insertion</a><li><a href="#topic-5">Active Attacks - Message Deletion / Modification</a><li><a href="#topic-6">Active Attacks - Man-In-The-Middle</a><li><a href="#topic-7">On-path / Off-path Attacks</a><li><a href="#topic-8">Next Steps</a></ol></dd><dt>Resolutions</dt><dd><ol><li><a href="#resolution-1">Add a section on nonces to the HTTP Signatures specification, but make them an optional feature.</a></ol></dd><dt>Chair</dt><dd>Manu Sporny</dd>
+<dt>Scribe</dt><dd>David I. Lehn</dd>
+<dt>Present</dt><dd>David I. Lehn, Manu Sporny, Mark Cavage, Dave Longley, Amr Fahmy, Brent Shambaugh</dd>
+<dt>Audio Log</dt><dd><div><a href="audio.ogg">audio.ogg</a></div>
+<div><audio controls="controls" preload="none">
+<source src="audio.ogg" type="audio/ogg" />Warning: Your browser does not support the HTML5 audio element, please upgrade.</div></dd>
+<div class="information">David I. Lehn is scribing.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Any updates to agenda?</div>
+<h1 id="topic-1" class="topic">Topic: Security Considerations for HTTP Signatures</h1>
+<div class="comment"><span class="name">Manu Sporny</span>: <a href="https://payswarm.com/specs/source/http-signatures-audit/">https://payswarm.com/specs/source/http-signatures-audit/</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>:  I've started the security considerations document, going to update as we go through attacks.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  New attack on message insertion. Not a big deal, and don't need to change spec, but need to let people now.</div>
+<h1 id="topic-2" class="topic">Topic: Nonces and Trailers</h1>
+<div class="comment"><span class="name">Mark Cavage</span>:  Should touch on nonces and trailers.</div>
+<div class="comment"><span class="name">Mark Cavage</span>:  Don't want to require nonces. Make the optional and not MUST. Too difficult for wide adoption.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Seemed like consensus, have nonces but make them optional.</div>
+<div class="comment"><span class="name">Mark Cavage</span>:  For general spec it seems like too much, for payments it may be appropriate.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Personal applications may not require nonces.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  What do people think?</div>
+<div class="proposal"><strong>PROPOSAL:</strong>  Add a section on nonces to the HTTP Signatures specification, but make them an optional feature.</div>
+<div class="comment"><span class="name">Manu Sporny</span>: +1</div>
+<div class="comment"><span class="name">Dave Longley</span>: +1</div>
+<div class="comment"><span class="name">David I. Lehn</span>: +1</div>
+<div class="comment"><span class="name">Mark Cavage</span>: +1</div>
+<div id="resolution-1" class="resolution"><strong>RESOLUTION:</strong> Add a section on nonces to the HTTP Signatures specification, but make them an optional feature.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Can detail drawbacks for not implementing nonces</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Let's talk about signatures in trailers.</div>
+<div class="comment"><span class="name">Mark Cavage</span>:  Can you send authorization twice? once in header and once in trailer</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  How to sign content? mcavage using Content-MD5 in spec but it's being deprecated in HTTP 2.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Might need to use another header (Content-SHA256) or similar</div>
+<div class="comment"><span class="name">Mark Cavage</span>:  Why is the HTTPbis WG removing it?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Issues with proxies and partial content. Was a brittle feature. Not sure what replacement is.</div>
+<div class="comment"><span class="name">Dave Longley</span>: <a href="http://tools.ietf.org/html/rfc3230">http://tools.ietf.org/html/rfc3230</a></div>
+<div class="comment"><span class="name">Dave Longley</span>: Digest: md5=HUXZLQLMuI/KZ5KDcJPcOA==</div>
+<div class="comment"><span class="name">Dave Longley</span>: Digest: SHA=thvDyvhfIqlvFe+A9MYgxAfm1q5=,unixsum=30637</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Bring it up since you could put sig/hash in trailer</div>
+<div class="comment"><span class="name">Mark Cavage</span>:  Right way to do this is checksum the body and sign the checksum.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Replace Content-MD5 with generic Digest header and you can set algorithm and params</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We will need some form of Digest</div>
+<div class="comment"><span class="name">Mark Cavage</span>:  No problem using some other method vs Content-MD5</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Want to use trailers?</div>
+<div class="comment"><span class="name">Mark Cavage</span>:  May need to buffer contents to do this, should spec it out.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Do we do one signature for the headers, then another one for the trailer (with just the Digest?)</div>
+<div class="comment"><span class="name">Dave Longley</span>:  We would want one signature for the headers, then another one in the trailer that includes all the header signature fields. That would be the most secure way of doing it.</div>
+<h1 id="topic-3" class="topic">Topic: Amr Fahmy and Summer of Code</h1>
+<div class="comment"><span class="name">Manu Sporny</span>:  Get an idea of what Amr will work on. Amr: Give a quick intro and what you need.</div>
+<div class="comment"><span class="name">Amr Fahmy</span>:  Computer science student in Egypt, want to work on mobile PaySwarm APIs. Very excited to be a part of this work.</div>
+<div class="comment"><span class="name">Amr Fahmy</span>:  started with web keys, finishing registration process</div>
+<div class="comment"><span class="name">Amr Fahmy</span>:  Currently stuck on issue with getting registration to work on different systems.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Might be browser, IP, cache, CORS, or similar.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We'll debug this after the call.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Planning to work on this to get web keys registration done, then publish asset and listing for sale?</div>
+<div class="comment"><span class="name">Amr Fahmy</span>:  correct</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Any trouble looking at javascript code?</div>
+<div class="comment"><span class="name">Amr Fahmy</span>:  Mozilla PaySwarm tutorials were enough to get it working.</div>
+<div class="comment"><span class="name">Amr Fahmy</span>:  Do you need web api done before mobile api?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Probably should get python api working and build on top of that knowledge for the mobile API.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Thanks for showing interest and let us know how we can help!</div>
+<h1 id="topic-4" class="topic">Topic: Active Attacks - Message Insertion</h1>
+<div class="comment"><span class="name">Manu Sporny</span>:  Back to HTTP Signatures</div>
+<div class="comment"><span class="name">Manu Sporny</span>: <a href="http://tools.ietf.org/html/rfc3552#section-3.3.2">http://tools.ietf.org/html/rfc3552#section-3.3.2</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Message insertion has to do with forging a message and inserting it in the network.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  difficult to do when digital signatures are used.</div>
+<div class="comment"><span class="name">Mark Cavage</span>:  For https this is covered by TLS. For http you should be advised to sign everything.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  There's attack over https with comprimised certificate with MITM attack. For a monetary transfer the MITM could fake a rejection, trick victim to send request again, MITM queues up requests and sends them later.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Attacker could just replay messages, not forge them.</div>
+<div class="comment"><span class="name">Mark Cavage</span>:  Basically issue of what to do when TLS channel not trusted.</div>
+<div class="comment"><span class="name">Mark Cavage</span>:  If you just sign Date header then attacker could do anything in this case.</div>
+<div class="comment"><span class="name">Brent Shambaugh</span>: neurons firing: mitm ... Ettercap ... <a href="http://linux.die.net/man/8/ettercap">http://linux.die.net/man/8/ettercap</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>:  This is really an issue at the application layer, but we do want to warn people about that possibility.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Yeah, you could solve this by having a challenge-response, or encrypting information in the channel as well as signing.</div>
+<div class="comment"><span class="name">Mark Cavage</span>:  Might need another side channel, like an additional key different from HTTPS.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Could add other headers that are not signed. Applications should only trust signed headers.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Might need to authorize responses too.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  We have no security authorization on responses. Not sure if Authorization header is allowed in responses.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  If doing this over HTTP use nonces and do digital signatures on response, good low-cost way to implement something that 'works'</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  This devolves into implementing TLS over HTTP.</div>
+<div class="comment"><span class="name">Mark Cavage</span>:  You could copy semantics for response and make it optional depending if it's needed.</div>
+<div class="comment"><span class="name">Mark Cavage</span>:  Way to look at this is if you're not using TLS then you're off the rails.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Need to spec out something so if you can use HTTP - it needs to work.</div>
+<div class="comment"><span class="name">Brent Shambaugh</span>:  Mentioning ettercap when hearing of MITM</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Might be good to use for auding</div>
+<h1 id="topic-5" class="topic">Topic: Active Attacks - Message Deletion / Modification</h1>
+<div class="comment"><span class="name">Manu Sporny</span>: <a href="http://tools.ietf.org/html/rfc3552#section-3.3.3">http://tools.ietf.org/html/rfc3552#section-3.3.3</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Message insertion, modification, deletion fall under same category. Usually why sequence numbers are used, to make deletion difficult.</div>
+<div class="comment"><span class="name">Mark Cavage</span>:  This heads towards IPSec / TLS over http.</div>
+<div class="comment"><span class="name">Mark Cavage</span>:  All related to MITM. Any of these things possible in the case where HTTPS/Certificate Authorities are broken.</div>
+<div class="comment"><span class="name">Mark Cavage</span>:  If you are MITM you can completely modify messages, hard to stop deletion in this spec.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Deletion possible, modifiction difficult.</div>
+<div class="comment"><span class="name">Mark Cavage</span>:  If you sign everything you are covered on modification.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  attacking identity vs message itself</div>
+<div class="comment"><span class="name">Mark Cavage</span>:  As long as you sign everything, you would need to break RSA to break the stream.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  This is the same thing as attacking RSA for message inseration, deletion, and modification.</div>
+<div class="comment"><span class="name">Mark Cavage</span>:  This spec seems more aimed towards IP instead application level.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Need to mention all these issues in a MITM section.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Modification is going to fall under breaking RSA.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Anything not signed you could change since there's no protection.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  No state tracking. Could attack state of server, harder to attack client state.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  No traditional security handshaking, just a signed message.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  May be attacks at application level but not http signatures level.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Might want to define a message as anything signed according to the spec. Anything that is a message is protected and the security considerations become the same ones for RSA (in that, you have to break RSA).</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Anything not considered a message is vulnerable to attack.</div>
+<h1 id="topic-6" class="topic">Topic: Active Attacks - Man-In-The-Middle</h1>
+<div class="comment"><span class="name">Manu Sporny</span>: <a href="http://tools.ietf.org/html/rfc3552#section-3.3.5">http://tools.ietf.org/html/rfc3552#section-3.3.5</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>:  HTTP can always have MITM attack, sign the stuff you don't want modified. You can still have deletion issues. Any headers that aren't signed should be assumed to have been modified.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  This is basically a re-cap of what we discussed. HTTP is wide open to MiTM. HTTP Signatures used with HTTP protects the information that is signed from insertion/modification, but not deletion. HTTPS protects against all of these attacks, unless HTTPS is broken. In the event that HTTPS is broken, the security is no better than HTTP with HTTP Signatures (which is better than just plain 'ol HTTP).</div>
+<h1 id="topic-7" class="topic">Topic: On-path / Off-path Attacks</h1>
+<div class="comment"><span class="name">Manu Sporny</span>:  On-path attacks are basically everything that we've covered to this point. Somebody inbetween has tampered with the message. Off-path is done a bit lower in the networking stack, TCP/IP layer. HTTP Signatures really don't care about the network topology, they just care about sender/receiver and protecting the data that is signed.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Our messages are protected by RSA. To break HTTP Signatures, you have to break RSA.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  origins don't matter for our messages</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Anything else for on-path, off-path, link-local?</div>
+<h1 id="topic-8" class="topic">Topic: Next Steps</h1>
+<div class="comment"><span class="name">Manu Sporny</span>:  What's the next step?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Can do STRIDE analysis on spec? Is that useful or do we have enough of an audit to put spec up for public review?</div>
+<div class="comment"><span class="name">Mark Cavage</span>:  We're going to add more verbage and prose but basic spec hasn't changed.</div>
+<div class="comment"><span class="name">Mark Cavage</span>:  Add nonces, trailer support. Is STRIDE going to add anything? Probably thinking along those lines anyway.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Can only do so much here, good to point people to security review.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Goal next week for nonces, server signatures, and so on. Then put it up for review to see what other people say.</div>
+<div class="comment"><span class="name">Mark Cavage</span>:  Should we split work up?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  I started security consideration section, can work on it today, mcavage can you work on nonces, ...</div>
+<div class="comment"><span class="name">Mark Cavage</span>:  Will try to work on it this week.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We'll have another telecon next week to talk about nonces and server signatures or pick up mozpay navigator api.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Thanks!</div>
+       </div>
+  </div>
+
+<div class="container vspacing"> 
+  <div class="row"> 
+    <div class="threecol"> 
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a> 
+    </div> 
+    <div class="ninecol last"> 
+      <p>&copy; 2013 Digital Bazaar, Inc. 
+Website CSS created by <a href="http://cssgrid.net/">@andytlr</a> 
+and is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/au/"> 
+Creative Commons Attribution-ShareAlike 3.0 Australia License</a>. All other
+website content is licensed under a
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"> 
+Creative Commons Attribution-ShareAlike 3.0 License</a>
+</p> 
+    </div> 
+  </div> 
+</div> 
+ 
+<script type="text/javascript"> 
+ 
+  var _gaq = _gaq || [];
+  _gaq.push(["_setAccount", "UA-1539674-7"]);
+  _gaq.push(["_trackPageview"]);
+
+  (function() {
+    var ga = document.createElement("script"); ga.type = "text/javascript"; ga.async = true;
+    ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";
+    (document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]).appendChild(ga);
+  })();
+ 
+</script>
+
+</body>
+</html>
