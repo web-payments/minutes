@@ -1,0 +1,137 @@
+[Wed 11:00]	<voip-ps>	bshambaugh (SIP/172.0.220.116-00000225) is in the conference.
+[Wed 11:00]	<voip-ps>	bshambaugh (SIP/172.0.220.116-00000225) has joined the conference.
+[Wed 11:01]	<voip-ps>	Dave Lehn (SIP/6003-00000226) has joined the conference.
+[Wed 11:01]	<voip-ps>	Manu Sporny (SIP/6000-00000227) has joined the conference.
+[Wed 11:02]	<voip-ps>	Dave Longley (SIP/6002-00000228) has joined the conference.
+[Wed 11:04]	<manu-db>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2013Jun/0025.html
+[Wed 11:05]	<dlongley>	scribe: dlongley
+[Wed 11:05]	<dlongley>	manu: Mark Cavage is not going to be able to join today, but we need to get through the nonce/trailer stuff since next week will be the Payment API. Any updates or changes to the Agenda? 
+[Wed 11:05]	<manu-db>	Topic: HTTP Signatures - Nonce Support
+[Wed 11:06]	<dlongley>	manu-db: we've been alluding to dealing with nonces in the last few calls and what we've been focusing on is looking at time-based (time-window) nonce
+[Wed 11:06]	<dlongley>	manu-db: we're expecting that the nonce will have some kind of client id/some kind of rule for the nonce to be incremented
+[Wed 11:07]	<dlongley>	manu-db: nonces could be used for both HTTP and HTTPS (if you want extra protection)
+[Wed 11:07]	<dlongley>	manu-db: nonces are specifically designed in this spec to handle replay attacks over HTTP
+[Wed 11:07]	|<--	andreio1 has left freenode (Remote host closed the connection)
+[Wed 11:08]	<dlongley>	manu-db: the basic parameters are the nonces are generated and must always increment, if a nonce is used the date field must be included in the digital signature, if nonce is there, you must include a nonce parameter and the date field but it's currently unknown where the client ID will be placed
+[Wed 11:08]	<manu-db>	dlongley: I don't know if we dramatically simplify server implementations by having a client-ID. If it just keeps track of every nonce that comes in over a time window.
+[Wed 11:08]	<manu-db>	dlongley: Having a client ID doesn't simplify the server, I don't think.
+[Wed 11:09]	<manu-db>	dlongley: The way the client generates a client ID is not necessary.
+[Wed 11:09]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-00000229) has joined the conference.
+[Wed 11:09]	<manu-db>	dlongley: it can just be a random value.
+[Wed 11:09]	<manu-db>	manu: Isn't the random value a client ID.
+[Wed 11:09]	<dlongley>	manu-db: i didn't intend for this to mean that it's a session
+[Wed 11:10]	<manu-db>	dlongley: The nonce is an opaque value to the server.
+[Wed 11:10]	<dlongley>	manu-db: what i'm trying to address here is what if you have two pieces of software on your phone from the same IP address, how the server know which incrementing nonce is which
+[Wed 11:10]	-->|	andreio (~Adium@193.105.140.132) has joined #payswarm
+[Wed 11:11]	<manu-db>	dlongley: It's true that a session ID + a counting nonce results in a smaller memory usage.
+[Wed 11:12]	<manu-db>	dlongley: The client generates a random value that is sufficiently long enough that there will be no clashes. The server looks for the next nonce to be higher than the previous nonce.
+[Wed 11:12]	<manu-db>	dlongley: emphasis is on incrementing, not necessarily by 1, it just needs to be higher than the previous one.
+[Wed 11:13]	<manu-db>	manu: What exactly does the signature string look like now?
+[Wed 11:13]	<dlongley>	dlongley: I think we want something like this: clientId=abce7de767eebf, nonce=abac8ec6e7cece
+[Wed 11:13]	<dlongley>	dlongley: Perhaps this instead, nonce=1
+[Wed 11:14]	<dlongley>	manu-db: we should be very clear and explicit about how to implement nonces in the spec
+[Wed 11:14]	<dlongley>	manu-db: instead of just letting it be a grab bag of options
+[Wed 11:14]	<dlongley>	manu-db: to make things simpler for implementers
+[Wed 11:15]	<manu-db>	dlongley: Let's just make the nonce a 32-bit integer, it counts up. Hopefully you won't make 4 billion requests in a 5 minute time window. If you do, generate a new clientId. The ClientID should be sufficiently long over a 5 minute window.
+[Wed 11:16]	<manu-db>	manu: We could do it by IP address.
+[Wed 11:16]	<manu-db>	dlongley: I think it starts becoming more complicated in that sense... let's just make it sufficiently long enough - how many bytes, hex-encoded, placed into the signature as a signature parameter.
+[Wed 11:17]	<manu-db>	manu: So how long is long enough?
+[Wed 11:17]	<manu-db>	dlongley: 128 bits - 16 bytes.
+[Wed 11:17]	<manu-db>	dlongley: nonce starts at 1 and counts up
+[Wed 11:17]	<manu-db>	dlongley: 32-bit number
+[Wed 11:18]	<manu-db>	dlongley: not hex-encoded
+[Wed 11:18]	<taaz>	thinks these rules might be too arbitrary for a spec
+[Wed 11:19]	<manu-db>	taaz: You're picking numbers and those numbers might not work for everyone.
+[Wed 11:20]	<manu-db>	dlongley: We're picking 128-bit because we want to pick something that will probably not clash.
+[Wed 11:20]	<manu-db>	dlongley: We could be more specific about talking about this stuff - we have a 5 minute time window, how many clients will connect over that timeframe.
+[Wed 11:21]	<dlongley>	manu-db: we could look at the number of requests for google+ and see if you generated a random number if there would be a clash
+[Wed 11:22]	<dlongley>	manu-db: if we wanted to support a billion simultaneous clients, etc. we could see what the chance is for two clients picking the same ID
+[Wed 11:22]	<dlongley>	manu-db: we think 128 bit would make it very unlikely for a clash even for the next 10 years, etc.
+[Wed 11:22]	<bshambaugh>	I found this while trying to learn more. Frame of reference? Nonces in Bitcoin: https://en.bitcoin.it/wiki/Nonce (32 bit)
+[Wed 11:22]	<manu-db>	dlongley: Also, the time window matters - we aren't necessarily setting it.
+[Wed 11:23]	<manu-db>	dlongley: IPv6 addresses are 128-bit as well - it's not too large to put into an HTTP header... we don't need anything larger than that, really. number of unique addresses.
+[Wed 11:24]	<dlongley>	manu-db: if the numbers we picked are wrong, reviewers will complain loudly
+[Wed 11:24]	<dlongley>	manu-db: we can also add a note to fix these limits later as needed
+[Wed 11:25]	<dlongley>	dlehn: it seems like everyone should just be using HTTPS, i don't understand the use case for HTTP
+[Wed 11:25]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-00000229) has left the conference.
+[Wed 11:25]	<dlongley>	dlehn: are people actually going to use this protocol at all in the non-secure case?
+[Wed 11:25]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-0000022a) has joined the conference.
+[Wed 11:26]	<dlongley>	manu-db: are you arguing to remove nonces from the spec and HTTP support?
+[Wed 11:26]	<dlongley>	dlehn: i just know it's complicated and wonder if we need to put the extra effort in for this
+[Wed 11:26]	<dlongley>	manu-db: if we don't put nonces in here it removes a class of applications that just wants to use HTTP
+[Wed 11:27]	<dlongley>	dlehn: i just think these issues will double the size of the spec or more, it will be added complexity that people will have to try and understand before using this
+[Wed 11:27]	<dlongley>	manu-db: before trying to run it over HTTP
+[Wed 11:27]	<dlongley>	dlehn: if half of the spec is optional it seems kind of silly to me
+[Wed 11:27]	<dlongley>	dlehn: we'll have to consider that clients will have to be buffering things
+[Wed 11:28]	<dlongley>	manu-db: well, it's much easier on the client because the client only needs to store one server session ID
+[Wed 11:28]	<dlongley>	manu-db: you generate a random number for the client ID and initialize the nonce to 1 and then count up, that should be it for sending requests
+[Wed 11:29]	<dlongley>	manu-db: for the server, you just store client IDs and then make sure the nonce is incrementing
+[Wed 11:29]	<dlongley>	dlehn: well, it's just more complicated than not having to do any of that
+[Wed 11:29]	<dlongley>	manu-db: well, yeah, but if someone wants to use HTTP this is what has to be done to prevent against replay attacks
+[Wed 11:29]	<dlongley>	manu-db: i agree that it's more complicated, but if we do want to support this over HTTP we have to do this
+[Wed 11:30]	<dlongley>	dlongley: btw, we shouldn't call it client ID because the server might want to use it in responses
+[Wed 11:30]	<manu-db>	dlongley: I think we include the request line, host and date.
+[Wed 11:30]	<dlongley>	manu-db: should we always include the date?
+[Wed 11:31]	<manu-db>	dlehn: The implementation in PaySwarm does that by default, but the spec itself just does the date. We're more strict.
+[Wed 11:31]	<manu-db>	dlongley: What do we do?
+[Wed 11:32]	<manu-db>	dlongley: We sign the request line, host and date - it's going to be broken if you don't do that.
+[Wed 11:34]	<manu-db>	manu: When you sign you have to include the sessionId and the nonce value?
+[Wed 11:35]	<manu-db>	dlongley: We could call it nonce and the other thing be the counter.
+[Wed 11:35]	<manu-db>	dlongley: We can mess around with the names later.
+[Wed 11:36]	<manu-db>	manu: Seems strange - nonce stands for "only once"
+[Wed 11:36]	<manu-db>	dlongley: Let's not re-use that, I haven't looked that closely in Digest Access Auth, we should come up with another name.
+[Wed 11:37]	<manu-db>	manu: Where does it go? At the front of the signature?
+[Wed 11:37]	<manu-db>	dlongley: Yeah, at the front, helps with randomness...
+[Wed 11:38]	<manu-db>	manu: So place the clientID and then the nonce at the beginning as they're encoded in the message. 
+[Wed 11:38]	<manu-db>	dlongley: There is no reason we need to decode them. Consider both a string.
+[Wed 11:38]	<manu-db>	dlongley: ASCII string since it's over HTTP.
+[Wed 11:38]	<manu-db>	dlongley: Once it's Base64 encoded, it's ASCII, just use that value.
+[Wed 11:39]	<manu-db>	Brent: wasn't really familiar with nonces, started looking at Bitcoin, proof of work.
+[Wed 11:41]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-0000022a) has left the conference.
+[Wed 11:41]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-0000022b) has joined the conference.
+[Wed 11:42]	<manu-db>	manu: I don't know how useful proof of work is - definitely not for the server, maybe for the client?
+[Wed 11:43]	<manu-db>	dlongley: Don't know how useful it is for what we're trying to do here.
+[Wed 11:43]	<manu-db>	Topic: Update on GSoC Student Progress
+[Wed 11:43]	<dlongley>	andreio: what i've done this week is implement a really basic website
+[Wed 11:44]	<dlongley>	andreio: i've managed to public/private key pair and register with payswarm using the JS module
+[Wed 11:44]	<dlongley>	manu-db: do you have the site running publically some where?
+[Wed 11:44]	<dlongley>	andreio: not yet, i'll do that
+[Wed 11:44]	<andreio>	https://github.com/piatra/webpayments-marketplace
+[Wed 11:44]	<dlongley>	andreio: i wanted to get listings working sometime this week
+[Wed 11:45]	<dlongley>	andreio: i wanted to give a rough idea of what's going on and have some people try it out
+[Wed 11:45]	<dlongley>	manu-db: any questions?
+[Wed 11:45]	<dlongley>	andreio: so far things have gone well, i've been following along with the blog posts manu wrote and no questions so far
+[Wed 11:46]	<dlongley>	manu-db: yeah, we're interested in seeing how persona will work out, getting it integrated w/web payments
+[Wed 11:47]	<dlongley>	manu-db: ok, great job, andrei
+[Wed 11:47]	<manu-db>	Topic: HTTP Signatures - Trailer Support
+[Wed 11:48]	<dlongley>	manu-db: so the main question here is what will be in the trailer's authentication header
+[Wed 11:49]	<manu-db>	manu: We will want to sign the header, and then sign the trailer (including all headers in the header)
+[Wed 11:49]	<manu-db>	dlongley: I think most servers can store all the headers that came across... trying to simplify processing of trailers authentication header. Could you just process the previous authentication header and then add whatever trailers you wanted?
+[Wed 11:49]	<manu-db>	dlongley: Would that work? Or would that looks strange?
+[Wed 11:50]	<manu-db>	dlongley: It would look like it's listing itself... if you authenticated other stuff previously, maybe that would be sufficient.
+[Wed 11:52]	<manu-db>	Authorization: Signature
+[Wed 11:52]	<manu-db>	https://payswarm.com/specs/source/http-signatures/
+[Wed 11:52]	<manu-db>	Authorization: Signature keyId="Test",algorithm="rsa-sha256",headers="request-line host date content-type content-md5 content-length",
+[Wed 11:52]	<manu-db>	dlongley: That's what it would look like, minus the content-md5
+[Wed 11:52]	<dlongley>	Authorization: Signature keyId="Test",algorithm="rsa-sha256",headers="request-line host date content-type"
+[Wed 11:52]	<manu-db>	dlongley: ^^ that would be in the request header.
+[Wed 11:53]	<dlongley>	Authorization: Signature keyId="Test",algorithm="rsa-sha256",headers="authorization content-md5 x-my-trailer"
+[Wed 11:53]	<manu-db>	dlongley: In the trailer, you would get this ^^
+[Wed 11:53]	<manu-db>	dlongley: It may seem circular to people.
+[Wed 11:53]	<dlongley>	dlongley: it isn't ... you are supposed to use the value from the header
+[Wed 11:54]	<manu-db>	manu: We might want to be more clear than just using 'authorization'
+[Wed 11:54]	<manu-db>	dlongley: We could make both suggestions, maybe Mark has an opinion.
+[Wed 11:55]	<manu-db>	dlongley: Other than that, it doesn't seem like there is a limitation in the trailers for what we could put in there.
+[Wed 11:55]	<manu-db>	dlongley: You can't have another trailers header in trailers. We could repeat the authorization header, it's just how implementations will deal with that and we still don't know how many implementations deal with it correctly anyway.
+[Wed 11:56]	<manu-db>	dlongley: We don't know how implementations deal w/ repeated headers... which authorization header? Trailer or Header?
+[Wed 11:56]	<manu-db>	dlongley: Our decision might depend on what we think other implementations might do - the problem with this idea is that it's not well implemented (trailers)
+[Wed 11:57]	<dlongley>	dlongley: sort of have a catch-22 here, we want to spec out what to do with trailers just in case anyone implements them, but we need to know how they implement them to get a good idea of how to specify this
+[Wed 11:57]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-0000022b) has left the conference.
+[Wed 11:58]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-0000022c) has joined the conference.
+[Wed 11:58]	<dlongley>	manu-db: ok, next week we're going to be talking about whitelists
+[Wed 11:58]	<dlongley>	manu-db: with respect to payment APIs
+[Wed 11:58]	<voip-ps>	bshambaugh (SIP/172.0.220.116-00000225) has left the conference.
+[Wed 11:58]	<voip-ps>	Manu Sporny (SIP/6000-00000227) has left the conference.
+[Wed 11:58]	<voip-ps>	Dave Longley (SIP/6002-00000228) has left the conference.
+[Wed 11:58]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-0000022c) has left the conference.
+[Wed 11:58]	<voip-ps>	Dave Lehn (SIP/6003-00000226) has left the conference.
