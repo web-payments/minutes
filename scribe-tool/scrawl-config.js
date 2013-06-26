@@ -124,6 +124,11 @@
          "alias": ["andreio"],
          "homepage": "https://github.com/piatra"
       },
+      "Travis Choma":
+      {
+         "alias": ["tchoma"],
+         "homepage": "http://www.linkedin.com/in/travischoma"
+      },
       "Amr Fahmy":
       {
          "alias": ["amrf"],
