@@ -1,0 +1,125 @@
+[Wed 11:08]	<manu>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2013Jul/0006.html
+[Wed 11:09]	<manu>	scribe: taaz
+[Wed 11:09]	<taaz>	Manu gives overview of agenda - mostly browser Payments work today.
+[Wed 11:10]	<taaz>	manu: Let's get an update from Andrei 
+[Wed 11:10]	<manu>	Topic: Update on GSoC Student Progress
+[Wed 11:10]	<taaz>	andreio: code able to produce listings and assets
+[Wed 11:10]	<taaz>	andreio: now working on making a purchase and a marketplace
+[Wed 11:10]	<voip-ps>	<unknown> (IAX2/diamondcard-12932) has joined the conference.
+[Wed 11:11]	<taaz>	andreio: filed an issue with current payswarm.js module
+[Wed 11:11]	<manu>	voip: 12932 is andreio
+[Wed 11:11]	<voip-ps>	andreio is now associated with IAX2/diamondcard-12932.
+[Wed 11:11]	<manu>	voip: 12932 is kumar
+[Wed 11:11]	<voip-ps>	kumar is now associated with IAX2/diamondcard-12932.
+[Wed 11:11]	<taaz>	andreio: when you try to install it there's a issue between payswarm.js and jsonld.js versions
+[Wed 11:12]	*	chaals (~chaals@95.61.112.100) has joined #payswarm
+[Wed 11:12]	<taaz>	dlongley: should work.  we'll look into it.
+[Wed 11:12]	<taaz>	andreio: issue is on github
+[Wed 11:13]	<taaz>	andreio: create asset and digitally sign it.  also create listing and associate asset with listing.  do you have to sign the whole listing?
+[Wed 11:13]	<taaz>	dlongley: yes, you have to sign asset and listing
+[Wed 11:13]	<taaz>	dlongley: reason you have to sign listing is so the terms you add in listing can't be changed
+[Wed 11:14]	<taaz>	andreio: any restrictions to licensing?  what license should you use?
+[Wed 11:14]	<taaz>	dlongley: look at demo we have.  you can use any license.  you can look at license we use.  there's a certain format but you can use any text you want.
+[Wed 11:15]	*	mcavage (~mcavage@c-76-121-137-102.hsd1.wa.comcast.net) has joined #payswarm
+[Wed 11:15]	<taaz>	andreio: what currency can you use?
+[Wed 11:15]	<manu>	taaz: We have a w3id.org currency thing that is setup for USD, USD maps to some IRI. Other currencies would be added to it when needed.
+[Wed 11:16]	<voip-ps>	<unknown> (IAX2/diamondcard-8817) has joined the conference.
+[Wed 11:16]	<manu>	taaz: At present, we only support USD, but we will add more support in the future.
+[Wed 11:16]	<manu>	andreio: You have support for many currencies, even Bitcoin.
+[Wed 11:16]	<manu>	voip: 8817 is mcavage
+[Wed 11:16]	<voip-ps>	mcavage is now associated with IAX2/diamondcard-8817.
+[Wed 11:16]	<manu>	taaz: If you have other currencies you want to support, let us know.
+[Wed 11:17]	<manu>	dlongley: We will support others in the future, for now, just keep it simple w/ USD.
+[Wed 11:17]	<taaz>	andreio: besides publishing assets and making purchases, how would you resell an asset?
+[Wed 11:18]	<taaz>	andreio: this is after you buy something and want to resell it
+[Wed 11:18]	<taaz>	dlongley: you can handle this with asset listing restrictions.  don't put any restrictions on who can sell the asset.
+[Wed 11:19]	<taaz>	dlongley: can also use payee rules.  anyone can resell the asset as long as they comply with all the listing restrictions
+[Wed 11:19]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-00000264) has left the conference.
+[Wed 11:20]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-00000265) has joined the conference.
+[Wed 11:20]	<taaz>	manu: use cases that are things like company that wants to let you resell music.  don't put restrictions on who can resell as long as certain amount goes to artist or label.
+[Wed 11:21]	<taaz>	manu: also a app marketplace where you allow any other marketplace to also sell app as long as certain amount goes back to author
+[Wed 11:21]	<taaz>	dlongley: allows a decentralized way to control assets
+[Wed 11:22]	<taaz>	andreio: asset contains link to content you get in the end.  not sure how this works.  if you go to that url, do you have to provide a receipt to get product?
+[Wed 11:22]	<taaz>	dlongley: yes, that's typically how it works.  that url has to have mechanism to handle receipt.  this may be via a POSTed receipt that the server checks.
+[Wed 11:22]	<taaz>	manu: Mark, any HTTP Signature stuff we need to discuss today?
+[Wed 11:22]	<taaz>	mcavage: Just lurking today, no need to discuss HTTP Signatures.
+[Wed 11:23]	<manu>	Topic: ISSUE-12: Registering preferred payment providers
+[Wed 11:24]	<manu>	https://github.com/web-payments/browser-payments/issues/12
+[Wed 11:24]	<manu>	http://lists.w3.org/Archives/Public/public-webpayments/2013Jul/0000.html
+[Wed 11:24]	<taaz>	manu: have updated the spec to have a rough cut of this api
+[Wed 11:24]	<taaz>	manu: has been discussion on that issue
+[Wed 11:25]	<taaz>	manu: new api registerProvider.   takes object with identity of provider, uri to find out more about payment provider.  all up for discussion.
+[Wed 11:25]	<manu>	https://github.com/web-payments/browser-payments/commit/a0885d71abbc90efad5743752f67b014f7143b26
+[Wed 11:26]	<taaz>	manu: some discission on the commit
+[Wed 11:26]	<taaz>	kumar: want to get rid of getproviders.  no reason to expose to client.
+[Wed 11:27]	<taaz>	manu: agree we don't want api call to be spamy.  ...
+[Wed 11:28]	<taaz>	manu: need to see how other specs do this to show it's a user initiated thing
+[Wed 11:28]	<taaz>	manu: spec isn't what mozPay uses right now
+[Wed 11:30]	<taaz>	manu: There are two main options. The first is specifying a 'start the buyflow' URL value and passing it directly to the call. The second is using /.well-known/something and listing service URLs in that file. PaySwarm uses the latter approach.
+[Wed 11:31]	<taaz>	kumar: I like the .well-known approach.  mozPay just has single url at start of buy flow.
+[Wed 11:31]	<taaz>	kumar: good to move into a .well-known.  mozPay provider could move to this.  client can cache this.
+[Wed 11:31]	<taaz>	dlongley: client will have one request that can be cached
+[Wed 11:32]	<taaz>	manu: don't need to fetch that document that often.  probably not at the start of every transaction.  might be a session based thing.  fall back to HTTP caching semantics and let browser deal with it.
+[Wed 11:32]	<taaz>	manu: other questions in spec, what the .well-known name should be.
+[Wed 11:33]	<taaz>	manu: should it be .well-known/payments or transactions?  it's where you start the buy flow.
+[Wed 11:34]	<taaz>	manu: it could be .well-known/payswarm, and we condense a whole bunch of this stuff there.
+[Wed 11:34]	<taaz>	manu: could work like how PaySwarm works with Web Keys, we put service URLs in both locations.
+[Wed 11:35]	<taaz>	kumar: names are hard.  in a couple versions of firefox os could include a register url.
+[Wed 11:36]	<taaz>	kumar: Let's start with .well-known/payments and go from there.
+[Wed 11:36]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-00000265) has left the conference.
+[Wed 11:36]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-00000266) has joined the conference.
+[Wed 11:36]	<taaz>	dlongley: what do you send to urls? What's the protocol? it's different between what payswarm and mozilla are doing
+[Wed 11:37]	<taaz>	manu: will start with .well-known/payments with an entry to start the buy flow
+[Wed 11:38]	<taaz>	dlongley: browser needs to know what protocol to speak to the endpoints it finds
+[Wed 11:38]	<taaz>	manu: Doesn't the client know the protocol based on the JSON-LD key that is used?
+[Wed 11:39]	<taaz>	dlongley: need to know what to do if everything looks the same, like start of buyflow.
+[Wed 11:39]	<taaz>	manu: if these are JSON-LD documents we can specify what to do as extra properties on the URL.
+[Wed 11:40]	<taaz>	kumar: we have type specified.  that let's you know what protocol to use.  might need to be more strict and put version of spec.
+[Wed 11:40]	<taaz>	manu: This is good enough for a first pass. Will go through several iterations of this.  can add markers and fix up through later passes of the spec.
+[Wed 11:40]	<manu>	Topic: ISSUE-3: Using multiple payment providers
+[Wed 11:41]	<manu>	https://github.com/web-payments/browser-payments/issues/3
+[Wed 11:41]	<manu>	https://github.com/web-payments/browser-payments/commit/a0885d71abbc90efad5743752f67b014f7143b26#L0R662
+[Wed 11:42]	<taaz>	manu: concern was to match what customer and vendor support for payment providers.
+[Wed 11:42]	<dlongley>	more discussion here: https://github.com/web-payments/browser-payments/commit/a0885d71abbc90efad5743752f67b014f7143b26#L0R735
+[Wed 11:42]	<taaz>	manu: didn't want to leak info to merchant
+[Wed 11:43]	<taaz>	manu: kumar raised issue we probably don't need to expose providers to merchant
+[Wed 11:43]	<taaz>	manu: customer would go off register many providers.  at merchant they click buy button, merchant says what providers it supports, client would select which provider they want to use based on that list, if there's a match buy flow starts, else register flow starts
+[Wed 11:44]	<taaz>	kumar: there's nascar problem with this but for our sanity should ignore that for now since it's hard to solve.
+[Wed 11:46]	<taaz>	manu: don't have nascar problem now.  you get list of providers merchant accepts, user has list of preferred providers, client would select automatically.  chrome could show option to add new provider.
+[Wed 11:46]	<taaz>	kumar: correct.  in best case, user won't have to do anything since system will select provider automatically.
+[Wed 11:47]	<taaz>	kumar: case where you may have big list of providers still will have nascar issue with lots of icons
+[Wed 11:48]	<taaz>	dlongley: all vendor has to do is send ordered list of payment providers, browsers can handle it or show all the options if they like.
+[Wed 11:49]	<taaz>	dlongley: in the future payswarm case it may all work automatically and you don't have to choose anything
+[Wed 11:49]	<taaz>	manu: I like Dave Longley's approach.  client handles provider selection.
+[Wed 11:50]	<taaz>	dlongley: want to handle automatic purchases in the future
+[Wed 11:50]	<taaz>	manu: sounds like we can remove getProviders from the spec
+[Wed 11:52]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-00000266) has left the conference.
+[Wed 11:52]	<taaz>	kumar: issue with user registering provider that the merchant doesn't support.  don't want to allow user to do that.
+[Wed 11:52]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-00000267) has joined the conference.
+[Wed 11:53]	<taaz>	dlongley: you could perhaps have a middleman 3rd party payment agency that would transfer bitcoins to google wallet.
+[Wed 11:54]	<taaz>	dlongley: merchant could only allow google wallet, but another provider could expose itself as google wallet proxy that does the exchage for the user
+[Wed 11:54]	<taaz>	kumar: in the future would be a good differentiating feature
+[Wed 11:56]	<taaz>	manu: I don't know how important the differentiating feature is - then again, having a merchant that only accepts PayPal be able to accept Bitcoin via a 3rd party w/o knowing about it would be pretty powerful. Those that wanted to only pay in Bitcoin could do so via 3rd party escrow.
+[Wed 11:57]	<manu>	Topic: ISSUE-2: Pure chrome-based buyflow
+[Wed 11:58]	<taaz>	manu: This issue is mostly about how to do in-app purchases where the app does one of two things. The first is a purchase where the receipt is shown. The second is a purchase where the receipt is not shown. Kumar, what's Mozillas thinking about this as related to single click purchases? Is single-click purchasing a use case Mozilla wants to support?
+[Wed 11:59]	<taaz>	kumar: Yes, interesting use cases. Use case with no window shown is trickier.  need some UI feedback.
+[Wed 12:00]	<taaz>	dlongley: in the case of an automatic purchase payswarm has the concept of a budget to authorize a certain amount of funds.  the buyer previously authorized that.  can trust site to provide a UI for it.
+[Wed 12:00]	<taaz>	kumar: need to address spoofability of this.  window floats over your home screen icons.
+[Wed 12:00]	<taaz>	kumar: in practice you could put up home screen icons.
+[Wed 12:01]	<taaz>	kumar: not sure how other platforms solve this.  issues on android and ios too.  maybe better on ios.
+[Wed 12:01]	*	esprehn (uid10445@gateway/web/irccloud.com/x-oszscacnyylduvys) has joined #payswarm
+[Wed 12:01]	<taaz>	dlongley: could you show users picture of themselves?  harder to spoof.
+[Wed 12:02]	<taaz>	kumar: early proposal to do this.  by the time you do that you've lost the user.
+[Wed 12:02]	<taaz>	kumar: savy users may want to do this to lock it down themselves.
+[Wed 12:02]	<taaz>	manu: We're thinking about this because we want to do one click purchases
+[Wed 12:03]	<taaz>	manu: It's an important use case
+[Wed 12:03]	<taaz>	kumar: good time for an iteration of the spec and start a new discussion
+[Wed 12:03]	<taaz>	manu: thanks everyone.  will try to rev spec over the next week and put up new agenda with new issues.
+[Wed 12:03]	<voip-ps>	mcavage (IAX2/diamondcard-8817) has left the conference.
+[Wed 12:03]	<voip-ps>	msporny (SIP/192.168.2.4-00000261) has left the conference.
+[Wed 12:03]	<voip-ps>	Dave Longley (SIP/6002-00000262) has left the conference.
+[Wed 12:03]	<voip-ps>	kumar (IAX2/diamondcard-12932) has left the conference.
+[Wed 12:03]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-00000267) has left the conference.
+[Wed 12:03]	<voip-ps>	Dave Lehn (SIP/6003-00000263) has left the conference.
+[Wed 12:04]	<manu>	voip: connections?
+[Wed 12:04]	<voip-ps>	There are currently no conference connections.
