@@ -1,0 +1,196 @@
+[Wed 11:04]	<m4nu>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2013Jul/0013.html
+[Wed 11:04]	<dlongley>	scribe: dlongley
+[Wed 11:04]	<dlongley>	m4nu: Agenda today is covering Andrei's progress, some discussion about upcoming conferences about web payments, spec updates, browser payments single-click purchasing.
+[Wed 11:05]	<m4nu>	Topic: Update on GSoC Student Progress
+[Wed 11:05]	<dlongley>	andreio: currently i'm trying to purchases available in my marketplace example, you can make listings but i've run into some problems that i'm trying to fix with purchases
+[Wed 11:06]	<dlongley>	andreio: afterwards i'd like to focus on more options like reselling (make that available in the marketplace)
+[Wed 11:06]	<dlongley>	andreio: and add validation for the data because currently anything typed in is accepted
+[Wed 11:06]	<dlongley>	m4nu: we've been trying to help with issues on IRC ... is there anything else you want to cover on the call today?
+[Wed 11:07]	<voip-ps>	Dave Lehn (SIP/6003-0000029d) has joined the conference.
+[Wed 11:07]	<dlongley>	andreio: one question i have is about the listing ... it has fields like "destination" and "payee" and all of those aren't quite clear to me
+[Wed 11:07]	<dlongley>	andreio: there are identities that you have to fill in
+[Wed 11:07]	<dlongley>	andreio: so.. destination is where the money is going, who is going to receive the money
+[Wed 11:07]	<dlongley>	m4nu: yes, that's correct, if a purchase occurs that's where the money should go
+[Wed 11:08]	<dlongley>	andreio: is the vendor is marketplace or the person who created the asset/is selling it
+[Wed 11:08]	-->|	rossk (~rossk@c-98-236-180-127.hsd1.pa.comcast.net) has joined #payswarm
+[Wed 11:09]	<dlongley>	m4nu: it can be either, it depends on the use case, for a large music provider they might allow fans to sell their music but for each sale they want 80% of the sale, sony would create the asset and describe some restrictions there, but a fan could then list (create a listing for the asset) on their blog and talk about it
+[Wed 11:09]	<voip-ps>	<unknown> (IAX2/diamondcard-921) has joined the conference.
+[Wed 11:09]	<dlongley>	m4nu: and in this case the assetProvider would be the music provider (eg: Sony) and vendor would be the fan selling
+[Wed 11:10]	<m4nu>	dlongley: Before we go further, I want to clarify - the vendor is going to be the marketplace in your use case.
+[Wed 11:11]	<m4nu>	dlongley: The use cases Manu just described probably don't apply to you. If you want to make assets in the marketplace available for sale on other websites, you can do that, but the vendor would have to sign that listing, not the marketplace.
+[Wed 11:11]	<dlongley>	andreio: so my last question was about the assetHash/licenseHash
+[Wed 11:11]	<m4nu>	dlongley: What is the license hash?
+[Wed 11:12]	<m4nu>	dlongley: In PaySwarm, since you're putting things out on the Web, when you retrieve the URL you might get content back that's different from day to day. In order to deal with that problem, we hash the contents to make sure that the contents are what are expected.
+[Wed 11:12]	<m4nu>	dlongley: The license hash is a hash of all of the data about the license. So if someone goes out and retrieves all of the information, the PA will go out and check to make sure the hash is the same thing.
+[Wed 11:13]	<m4nu>	dlongley: We have to ensure that everyone in this process sees the same license. It's a way of verifying that the information has not changed.
+[Wed 11:13]	<m4nu>	m4nu: Andrei asked how the hash is generated.
+[Wed 11:14]	<m4nu>	dlongley: The license page has to have a syntax that can be converted into RDF - either JSON-LD or RDFa right now. We retrieve all of the information from a web page, we normalize the RDF, and the stream of bytes is sent through a hashing algorithm.
+[Wed 11:14]	<m4nu>	dlongley: You can put a license up as RDFa or JSON-LD, either one.
+[Wed 11:14]	<m4nu>	m4nu: There is a utility in payswarm.js that helps you generate hashes.
+[Wed 11:15]	-->|	tchoma (~Adium@v-1045.fw1.sfo1.mozilla.net) has joined #payswarm
+[Wed 11:15]	<m4nu>	dlongley: You can just use the API calls to generate a hash, and there is a tool that can give you the hash bundled with payswarm.js.
+[Wed 11:16]	<tchoma>	hi guys, was stuck in traffic. dialed in now.
+[Wed 11:16]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-00000298) has left the conference.
+[Wed 11:17]	<dlongley>	m4nu: kumar have you guys dealt with associating licenses with purchases, etc?
+[Wed 11:17]	|<--	rossk has left zoe-fn (Read error: Connection reset by peer)
+[Wed 11:17]	<dlongley>	kumar: we don't have anything like that specified, it's up to the app that does the sale right now
+[Wed 11:17]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-0000029e) has joined the conference.
+[Wed 11:17]	-->|	rossk (~rossk@c-98-236-180-127.hsd1.pa.comcast.net) has joined #payswarm
+[Wed 11:17]	<m4nu>	voip: 921 is tchoma
+[Wed 11:17]	<voip-ps>	tchoma is now associated with IAX2/diamondcard-921.
+[Wed 11:17]	<dlongley>	kumar: so an app will get a receipt to make sure something was paid for, but it's all in their hands to manage [licenses, etc]
+[Wed 11:18]	<m4nu>	Topic: Conference Presentations for Web Payments
+[Wed 11:18]	<dlongley>	m4nu: so the first conference will be Inside Bitcoins: http://www.mediabistro.com/insidebitcoins/
+[Wed 11:18]	<dlongley>	m4nu: so we're going to talk about how the browser payments API and the payswarm protocol will be used to support bitcoin
+[Wed 11:19]	<dlongley>	m4nu: i'm going to try and recruit folks there, we're going to have some core bitcoin software developers there and we're going to try to get them involved in this group so we can get some inputs on how to process bitcoin payments so we can talk about how to properly do it in the browser.
+[Wed 11:19]	<dlongley>	m4nu: the other thing that might come out of this is that payswarm is currency agnostic and bitcoin is one of the features that's next on our timeline (hopefully within the next year) and we want to get people involved from that community
+[Wed 11:20]	<dlongley>	m4nu: kumar, anything w/respect to mozilla you'd like me to mention?
+[Wed 11:20]	<dlongley>	kumar: i'd like to know if it would be possible to use navigator.mozPay() to do a bitcoin purchase without any intermediate server whatsoever
+[Wed 11:21]	<dlongley>	kumar: i know there are ways to generate a bitcoin wallet in JS (generate the keys on the client, etc) but i don't know about sending the payment to another party, i think there needs to be servers involved somewhere, but it would be cool if not
+[Wed 11:21]	<dlongley>	m4nu: the biggest thing working against bitcoin payments like that is the time it takes to verify payments on the network (it can take up to 30-90 minutes), so the idea that you can get instant access to stuff is kinda shaky
+[Wed 11:22]	<dlongley>	m4nu: but new services are providing short term credits to people so that people can buy things instantaneously online without the transaction going through immediately
+[Wed 11:22]	<dlongley>	m4nu: and that's kind of the way payswarm was going to work with bitcoin here -- the biggest blocker is that you can't get a receipt back immediately, you have to wait for stuff to get integrated into the blockchain
+[Wed 11:23]	<dlongley>	m4nu: but i'd like to be able to say mozilla's really interested in getting this to work so who can we work with, who is interested in joining us to make this happen
+[Wed 11:23]	<dlongley>	tchoma: if we can find a proof of concept that makes sense for the minimal use case that would be great, i'm sure we can find some resources as mozilla to help out too
+[Wed 11:24]	<dlongley>	m4nu: with payswarm the vendor could sign something and give it back to you and you could submit it
+[Wed 11:25]	<dlongley>	m4nu: there are a lot of offline use cases in payswarm that could apply here to bitcoin as well
+[Wed 11:25]	<dlongley>	tchoma: is the 30-90 minute window a fixed window?
+[Wed 11:25]	<dlongley>	m4nu: it's been increasing because the number of txns has been going up, it depends on the number of txns on the network/hashes to verify/etc.
+[Wed 11:25]	<dlongley>	m4nu: there are fees you can pay to move things into a block that's sooner vs. later, etc.
+[Wed 11:26]	<dlongley>	m4nu: most importantly, it's probably not ever going to go down below 10 minutes, at least that's what a lot of people think
+[Wed 11:26]	<dlongley>	m4nu: unless you allow the miners to take high fees out of the txn
+[Wed 11:26]	<dlongley>	m4nu: there are all kinds of trade offs when dealing with bitcoins, but the idea that it would be instantaneous won't work with the traditional model (there are some forks trying to work on this)
+[Wed 11:27]	<dlongley>	m4nu: if you trust the entity doing the purchase you can always essentially extend credit for that period of time
+[Wed 11:27]	<dlongley>	m4nu: but i dont' see people like NYT, apple, larger companies taking on that much risk, etc.
+[Wed 11:27]	<dlongley>	m4nu: so that's inside bitcoin, and i'll tell them we really want to work with them to make browser bitcoin work
+[Wed 11:27]	<dlongley>	m4nu: next is SIBOS 2013: http://www.sibos.com/sibos_2013_dubai.page
+[Wed 11:27]	<dlongley>	m4nu: this is when all the member banking companies involved with swift meet up
+[Wed 11:28]	<dlongley>	m4nu: i'm giving 5 talks, one on financial standards, i'll be talking about payswarm, mozPay, JSON-LD and data about financial info, and how all this changes the way people deal with money, etc.
+[Wed 11:28]	<dlongley>	m4nu: and tchoma, kumar, you want me to reach out the same way there?
+[Wed 11:28]	<dlongley>	kumar: yeah, i think so
+[Wed 11:28]	<dlongley>	kumar: if there's anyone that wants to work on the spec that would be a good place to pitch that
+[Wed 11:29]	<dlongley>	m4nu: there's a workshop too, some of that has to do with payments in the browser, i'm trying to get 30-60 minutes and maybe get someone from mozilla there
+[Wed 11:29]	<dlongley>	m4nu: i've arranged so that it would be paid for, but it's more of a time thing
+[Wed 11:29]	<dlongley>	m4nu: it's in dubai, so it's kinda a long trip
+[Wed 11:29]	<dlongley>	tchoma: we can discuss offline, sure
+[Wed 11:30]	<dlongley>	kumar: there's an email floating around but no definitive responses yet
+[Wed 11:30]	<dlongley>	m4nu: after that are a couple of talks in LA
+[Wed 11:30]	<dlongley>	m4nu: mostly the same approach about payswarm mozPay, etc. payments in browser -- come join us if interested
+[Wed 11:31]	<dlongley>	m4nu: then the united nations internet goverence forum: http://www.intgovforum.org/cms/aboutigf
+[Wed 11:31]	<dlongley>	m4nu: they are interested in IP dissemination and having standards for doing that on the web, so it's a lot about payswarm, but i'll try to also cover payments in the browser
+[Wed 11:31]	<dlongley>	m4nu: then onto W3C TPAC in china: http://www.w3.org/2013/11/TPAC/
+[Wed 11:31]	<dlongley>	m4nu: anyone from mozilla?
+[Wed 11:31]	<dlongley>	kumar: i'm not sure, not that i know of
+[Wed 11:32]	<dlongley>	m4nu: we'd like to try and get more W3C member companies to join web payments, chrome team, apple, MS, to participate in payswarm browser API work , etc
+[Wed 11:32]	<dlongley>	m4nu: let's get a working group started, get some W3C staff assigned, etc. -- to get stuff moving faster than we're able to do by ourselves, do a workshop there to try and get interest
+[Wed 11:32]	<dlongley>	kumar: yeah, sounds like a good idea
+[Wed 11:33]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-0000029e) has left the conference.
+[Wed 11:33]	<dlongley>	m4nu: there's Edge too: http://edgeconf.com/
+[Wed 11:33]	<dlongley>	m4nu: I'll meet you there, Kumar - we'll focus on browser payments and PaySwarm.
+[Wed 11:33]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-0000029f) has joined the conference.
+[Wed 11:33]	<m4nu>	Topic: Browser Payments Updates
+[Wed 11:34]	<m4nu>	https://github.com/web-payments/browser-payments/commit/4ab74174b6440697b0f08a2279b4cdbecb18fb8a
+[Wed 11:34]	<dlongley>	m4nu: so i updated the browser payments spec, made a fairly simple set of commits, mostly what we discussed on the call last week
+[Wed 11:34]	<m4nu>	http://web-payments.github.io/browser-payments/
+[Wed 11:34]	<dlongley>	m4nu: i know you had some questions in there that i haven't been able to look at in there
+[Wed 11:34]	<dlongley>	kumar: the only main question was that we were going to just specify the .well-known path and the fields needed
+[Wed 11:35]	<dlongley>	m4nu: ok, i wasn't sure we agreed to that, i can take a pass and just put it in there
+[Wed 11:35]	<dlongley>	m4nu: so right now they specify an ID and a services URL which is going to be that .well-known path, i didn't know if we wanted to keep the ID for the service provider separate from the path used to look up the information
+[Wed 11:35]	<dlongley>	m4nu: about the service, because you could provide different services, there could be a payswarm URL and a browser payments URL ,etc
+[Wed 11:36]	<dlongley>	m4nu: there are two ways to do things, could just have an ID and based on the type of provider they would know what suffix to put onto .well-known
+[Wed 11:36]	<dlongley>	m4nu: is that what you were thinking?
+[Wed 11:37]	<dlongley>	kumar: it seemed like we have a need to declare a registration URL and for mozPay we already need a URL for the beginning of the payment flow, so i figured that since there are 2 URLs already we could start the .well-known spec now and add more things later, otherwise we're going to clutter up the object
+[Wed 11:37]	<dlongley>	m4nu: yeah, exactly, i'll go ahead and add .well-known/payments for now
+[Wed 11:37]	<dlongley>	kumar: maybe /transact
+[Wed 11:38]	<dlongley>	dlongley: yeah, it's more generic but not too generic for what we want
+[Wed 11:38]	<dlongley>	kumar: i think transact is better than payments
+[Wed 11:38]	<m4nu>	dlongley: also, donations - people might not consider them payments.
+[Wed 11:38]	<m4nu>	taaz: Is 'transact' the right form? 'transactions'
+[Wed 11:39]	|<--	rossk has left zoe-fn (Remote host closed the connection)
+[Wed 11:40]	<dlongley>	dlongley: let's look at what other people have done for naming and figure out the details of what we want later
+[Wed 11:40]	<dlongley>	m4nu: the other question that came up is whether or not refund should be a different call
+[Wed 11:40]	<m4nu>	should we have navigator.transaction.refund()?
+[Wed 11:40]	<m4nu>	should we have navigator.transact.refund()?
+[Wed 11:40]	<m4nu>	should we have navigator.transact.donate()?
+[Wed 11:40]	<m4nu>	should we have navigator.transact.crowdfund()?
+[Wed 11:41]	<m4nu>	dlongley: We should talk about JWT vs. JSON-LD first.
+[Wed 11:41]	<dlongley>	m4nu: my preference is to use an object because it's more extensible
+[Wed 11:41]	<dlongley>	dlongley: i agree for the same reason
+[Wed 11:41]	<dlongley>	kumar: i agree
+[Wed 11:42]	<m4nu>	Topic: ISSUE-2: Pure chrome-based buyflow
+[Wed 11:42]	<m4nu>	https://github.com/web-payments/browser-payments/issues/2
+[Wed 11:42]	<m4nu>	https://github.com/web-payments/browser-payments/commit/a0885d71abbc90efad5743752f67b014f7143b26#L0R735
+[Wed 11:43]	<dlongley>	m4nu: two high-level use cases to support, 1. in-app payments where customer clicks buy and automatic budget/authorization so that when they click payment just goes through automatically
+[Wed 11:43]	<dlongley>	m4nu: 2. where a customer doesn't have a budget set up and they click buy and see a receipt
+[Wed 11:43]	<dlongley>	m4nu: any other main uses caseS?
+[Wed 11:44]	<dlongley>	kumar: no, makes sense to me, we should call that out in the spec as something that's required of the user-agent, the one-click payment might require a slightly different implementation, some memory to store something to make repeat payments
+[Wed 11:44]	<dlongley>	kumar: maybe there would be prefetching of a URL to check for authorization for one-clicks, etc.
+[Wed 11:45]	<dlongley>	m4nu: the flows would be different for providers, for payswarm, the customer would click the button and the browser itself would digitally sign the contract to make a purchase
+[Wed 11:45]	<dlongley>	m4nu: for google wallet it would require a different kind of flow
+[Wed 11:46]	<dlongley>	m4nu: i'm wondering if we need something in the spec to say a one-click purchase has been started and the vendor has to implement some part of it, so having a callback where the browser is going to contact the payment provider, etc.
+[Wed 11:47]	<dlongley>	kumar: i think it's very possible to make it work generically so it's about making things route properly
+[Wed 11:47]	<m4nu>	dlongley: I'm not sure that this is even required for the PaySwarm case. The vendor knows if payments are pre-authorized.
+[Wed 11:48]	<m4nu>	dlongley: In the PaySwarm case, the vendor doesn't even need to use this API.
+[Wed 11:48]	<m4nu>	manu: What about the non-preauthorized case?
+[Wed 11:48]	<m4nu>	dlongley: That's a different use case.
+[Wed 11:49]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-0000029f) has left the conference.
+[Wed 11:49]	<m4nu>	tchoma: In the case of pre-authorized cases, this could be a zero-click purchase... payments made by regular use of website.
+[Wed 11:49]	<dlongley>	dlongley: yeah, it doesn't matter at all for pre-authorization, it could be a subscription, etc. no user input
+[Wed 11:49]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-000002a0) has joined the conference.
+[Wed 11:50]	<dlongley>	m4nu: so maybe one-click is a red-herring, we're talking about payments that need authorization vs. ones that don't
+[Wed 11:51]	<dlongley>	kumar: i agree, but i dont' think we need to make any changes to the spec, we just need to call things out in the spec because it may require changes to how navigator.pay is implemented in the user agent, because, for instance, it's implemented right now so that a window is always opened which we wouldn't want in some cases
+[Wed 11:51]	<dlongley>	kumar: we might need to add something like the register call that says "set a preference" to remember one-click payments
+[Wed 11:51]	|<--	melvster_ has left zoe-fn (Remote host closed the connection)
+[Wed 11:52]	<dlongley>	m4nu: yeah maybe just a set of prefs that says if the payment is under X then don't ask me, etc.
+[Wed 11:52]	<dlongley>	m4nu: for this vendor, etc.
+[Wed 11:53]	-->|	melvster (~melvster@89.176.108.70) has joined #payswarm
+[Wed 11:53]	<dlongley>	kumar: mozilla is very interested in one-click payments, so it's on our radar next, we haven't put any thought into it yet because we're always showing a pin before the user can make a purchase
+[Wed 11:53]	<dlongley>	m4nu: maybe what we need is to suggest that the browser/user agent implement a set of preferences that are associated with each website
+[Wed 11:53]	<dlongley>	m4nu: those preferences could allow payments to be done automatically, could allow receipts to always been shown after purchases, etc.
+[Wed 11:54]	<dlongley>	m4nu: in addition to the API ... when a purchase is done they could add something to indicate that something has been preauthorized
+[Wed 11:54]	<dlongley>	kumar: we need to be able to set a preference on the device
+[Wed 11:55]	<dlongley>	m4nu: so there is going to be a section of the spec for preferences for user agents to implement
+[Wed 11:55]	<dlongley>	kumar: maybe just saying that the user-agent needs to support one-click payments
+[Wed 11:56]	<dlongley>	m4nu: ok, i'll take a cut at some text for this
+[Wed 11:56]	<m4nu>	Topic: Application-specific data in a JWT
+[Wed 11:56]	<dlongley>	m4nu: kumar, could you outline what the thought process was for selecting JWT?
+[Wed 11:57]	<dlongley>	m4nu: and where mozilla would like to see things go in the future
+[Wed 11:57]	<dlongley>	kumar: JWT was just selected so we could verify a signature ... and it seemed straightforward, we looked at google wallet and wanted to keep parity with their format, we could change if there are some good arguments, it's not a big deal
+[Wed 11:57]	<dlongley>	kumar: we want it to be as simple as possible as devs will have to deal with this
+[Wed 11:58]	<dlongley>	kumar: there are probably good arguments to this
+[Wed 11:58]	<dlongley>	kumar: but it definitely seems to add a little bit of complexity
+[Wed 11:58]	<dlongley>	kumar: i've looked at some of how MS's payment API works and it's pretty complex with a lot of types and restrictions, some sort of XML format and i don't think it has to be that complex, we want to avoid complexity it's a goal
+[Wed 11:59]	<dlongley>	m4nu: so the goal behind JSON-LD was to make something familiar to JSON devs without adding too much complex
+[Wed 11:59]	<dlongley>	m4nu: there's complexity in the background but it's hidden by just using a library
+[Wed 11:59]	-->|	tchoma1 (~Adium@v-1045.fw1.sfo1.mozilla.net) has joined #payswarm
+[Wed 11:59]	<dlongley>	m4nu: the reason we're using JSON-LD -- the primary reason -- is to support decentralized extensibility, we want people to be able to provide more information in digital contracts that they can't do otherwise
+[Wed 12:00]	|<--	tchoma has left zoe-fn (Read error: Connection reset by peer)
+[Wed 12:00]	<dlongley>	m4nu: say like you buy things at home depot, could home depot embed data that is very specific to home depot into that digital contract to the customer and then keep that data as the data for the sale, is it possible for the vendor to extend the data in there
+[Wed 12:01]	<dlongley>	m4nu: if we can do the same sort of thing with JWT that's great, but the downside of JWT is that there are two different signature stacks for JSON-LD vs. JWT
+[Wed 12:01]	<dlongley>	m4nu: i think the goals are aligned, in that we're trying to reduce complexity as much as possible, we don't want to get into a situation where we are at MS-XML format level
+[Wed 12:01]	<dlongley>	m4nu: i was going to try and sit down and do a comparison between them
+[Wed 12:01]	<dlongley>	m4nu: of JWT and JSON-LD
+[Wed 12:02]	<m4nu>	dlongley: I think that we may find that JSON-LD has features that you don't /have/ to use. The JSON will probably not look very different from what the JWT already looks like.
+[Wed 12:03]	<dlongley>	m4nu: yeah, i already went through and saw that we could use the same format with JWT as JSON-LD
+[Wed 12:03]	<m4nu>	dlongley: JSON-LD would be used for decentralization.
+[Wed 12:04]	<dlongley>	m4nu: does mozilla use a JS JWT lib?
+[Wed 12:04]	<dlongley>	kumar: we do it on the server, so it's python
+[Wed 12:04]	<dlongley>	m4nu: for JSON-LD we have python, JS, php, ruby
+[Wed 12:04]	<dlongley>	m4nu: would you need anything in C++ for the client?
+[Wed 12:04]	<dlongley>	kumar: i don't know, we could ship that i guess
+[Wed 12:05]	<dlongley>	kumar: we're just doing stuff on the server now for signatures, etc.
+[Wed 12:05]	<dlongley>	m4nu: we can do that stuff in JS now, we have https://github.com/digitalbazaar/forge
+[Wed 12:05]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-000002a0) has left the conference.
+[Wed 12:05]	<dlongley>	kumar: yeah, right, it can be done, but from a security standpoint there's no good way to store a private key yet
+[Wed 12:05]	<dlongley>	kumar: on the client
+[Wed 12:05]	<dlongley>	m4nu: right
+[Wed 12:05]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-000002a1) has joined the conference.
+[Wed 12:06]	<dlongley>	kumar: i think that calling things out with JWT like it isn't very extensible because it just has a string field for 255 chars of user data
+[Wed 12:06]	<dlongley>	kumar: would be helpful
+[Wed 12:06]	<dlongley>	m4nu: ok, makes sense
+[Wed 12:07]	<voip-ps>	Manu Sporny (SIP/6000-0000029c) has left the conference.
+[Wed 12:07]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-000002a1) has left the conference.
+[Wed 12:07]	<voip-ps>	tchoma (IAX2/diamondcard-921) has left the conference.
+[Wed 12:07]	<voip-ps>	Dave Longley (SIP/6002-0000029b) has left the conference.
+[Wed 12:07]	<voip-ps>	kumar (IAX2/diamondcard-7923) has left the conference.
+[Wed 12:07]	<voip-ps>	Dave Lehn (SIP/6003-0000029d) has left the conference.
