@@ -119,6 +119,11 @@
          "alias": ["esprehn"],
          "homepage": "http://www.elliottsprehn.com/blog/about/",
       },
+      "David Bialer":
+      {
+         "alias": ["dbialer_"],
+         "homepage": "http://www.linkedin.com/in/davidbialer",
+      },
       "Andrei Oprea":
       {
          "alias": ["andreio"],
