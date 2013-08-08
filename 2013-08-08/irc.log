@@ -1,0 +1,126 @@
+[Thu 11:02]	<m4nu>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2013Aug/0005.html
+[Thu 11:03]	<m4nu>	scribe: taaz
+[Thu 11:03]	<taaz>	m4nu: Any updates or changes to the agenda?
+[Thu 11:03]	<taaz>	m4nu: adding update to Inside Bitcoins conference
+[Thu 11:03]	<m4nu>	Topic: Inside Bitcoins Review
+[Thu 11:04]	<taaz>	m4nu: Inside Bitcoins conference was really neat. I wasn't sure what to expect, thought there might be lots of hobbyists, not many professionals, but it was quite the opposite. There were solid technology companies there. They had their head screwed on straight about regulations and technical concerns. Not what you might expect if you just get your news from the Web. 
+[Thu 11:04]	<m4nu>	http://lists.w3.org/Archives/Public/public-webpayments/2013Aug/0000.html
+[Thu 11:05]	<taaz>	m4nu: The talk went really well, standing room only with 300+ people. Lots of excitment about web payments. Still catching up with email. A number of people might be joining the group.
+[Thu 11:05]	<taaz>	m4nu: Got some good press coverage for the work we're doing. Some more coming up in the next few weeks - IEEE Spectrum, etc.
+[Thu 11:05]	<m4nu>	Topic: Update on GSoC Student Progress
+[Thu 11:06]	<taaz>	andreio: Have enabled payments in the marketplace. For instance in the recipies example. Checking user preferences about budgets. Direct purchase should work.
+[Thu 11:06]	<taaz>	andreio: Adding parts of a regular marketplace. Can upload files, can select previews. Still working on how to do previews for audio or video.
+[Thu 11:07]	<andreio>	https://github.com/digitalbazaar/payswarm.js/issues/5
+[Thu 11:07]	<taaz>	m4nu: Ok, so what you're implementing right now is in-app payments. Any other support needed?
+[Thu 11:08]	<taaz>	andreio: url should take you to payment page. method not there for nonces. 
+[Thu 11:09]	<taaz>	dlongley: Need to implement that hook yourself to handle nonces. It will get called for you.
+[Thu 11:10]	<taaz>	m4nu: The reason we use nonces is to deal with sites without SSL certificates. You can handle low value transactions using this method.
+[Thu 11:10]	<taaz>	m4nu: You can still sniff the traffic but it does let you use the system.
+[Thu 11:11]	<taaz>	dlongley: Manu talking about protecting credentials like cookies.
+[Thu 11:11]	<taaz>	andreio: Still a few bugs to fix but it is a functional prototype.
+[Thu 11:11]	<taaz>	m4nu: Got a link?
+[Thu 11:12]	<taaz>	andreio: Dealing with a hosting issue for live site, but it's on github. There's an issue needing public access to listings and assets.
+[Thu 11:12]	<taaz>	m4nu: We'll set up a VM to run the demo for you.
+[Thu 11:13]	<m4nu>	Topic: Continuing Analysis of MozPay API message format
+[Thu 11:13]	<m4nu>	http://manu.sporny.org/2013/mozpay-analysis/
+[Thu 11:13]	<taaz>	m4nu: Almost done with discussion on MozPay API. Only a few more items to go.
+[Thu 11:14]	<taaz>	m4nu: Kumar, Mozilla in position of needing to adjust price points.
+[Thu 11:14]	<taaz>	kumar: Currency might need to change per region and per carrier for direct payment.
+[Thu 11:15]	<taaz>	tchoma: Price points might take days or weeks to change.
+[Thu 11:15]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-00000014) has left the conference.
+[Thu 11:15]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-00000018) has joined the conference.
+[Thu 11:15]	<taaz>	dlongley: What's the problem with two operators using price point X?
+[Thu 11:15]	<taaz>	tchoma: Like app store, there are various reasons to pick different price points.
+[Thu 11:16]	<taaz>	dlongley: With payswarm you could setup multiple listings with restrictions for each region. When you select listing to buy just need to match up with your region.
+[Thu 11:18]	<taaz>	kumar: The reason we have price points is to make it easier to decouple how the carriers change prices for items being purchased. From what I'm reading about PaySwarm, you digitally sign the asset, but what happens if you need to change the price?
+[Thu 11:18]	<taaz>	dlongley: You can put an expiration on an asset.
+[Thu 11:19]	<taaz>	kumar: An expiration might be a nice way to solve this.
+[Thu 11:19]	<taaz>	kumar: When developer says price point 10, and price can vary, that sucks for developer.
+[Thu 11:19]	<taaz>	kumar: Might be a grace period for a price to be valid.
+[Thu 11:20]	<taaz>	dlongley: The recipes data is resigned each day and valid for a day. So if you have old asset you can still buy it for a day, even though new price is available.
+[Thu 11:21]	<taaz>	m4nu: Wanted to make sure asset and listing are valid even though you might not have network activity. You could still sign it and give it to someone who does have network access.
+[Thu 11:21]	<taaz>	dlongley: The validity time period is up to the owner.
+[Thu 11:22]	<taaz>	tchoma: The UX is also important. Might be nice to set per region pricing but daunting to do it. This is why you just set a point and all the prices and currencies are setup for you on current app stores.
+[Thu 11:22]	<taaz>	dlongley: Yeah, but you can decouple UX from prices in an asset. You can still ask them to set the price using a price point, but the asset itself would have the actual prices across all regions/carriers.
+[Thu 11:23]	<taaz>	kumar: Want to understand how prices vary between listings. If you own an asset who would sign the listing?
+[Thu 11:24]	<taaz>	dlongley: Whoever is selling can sign it, it this case the marketplace. 
+[Thu 11:24]	<taaz>	kumar: Yeah, that might be a better solution. Allow the marketplace to generate pricing information for the asset based on price point, set it to expire within a day.
+[Thu 11:25]	<taaz>	m4nu: Important to note this is a UX issue as Travis said.
+[Thu 11:25]	<taaz>	m4nu: The developer can still pick a price tier and then the marketplace could pick the prices across every region the asset is sold in.
+[Thu 11:26]	<taaz>	m4nu: Conclusion is we could support price point mechanism, but it sounds like setting prices on a per region basis would be better.
+[Thu 11:26]	<taaz>	dlongley: Marketplace can calculate prices for you to simplify things.
+[Thu 11:27]	<taaz>	kumar: Like this, it's more explicit to the developer. They don't have look up prices.
+[Thu 11:27]	<m4nu>	Topic: Icons
+[Thu 11:28]	<taaz>	m4nu: How to model this data, just a 64x64 icon. JSON-LD could model this. We could also model it using an array that contains objects describing each icon. Might be better using the latter approach.
+[Thu 11:29]	<taaz>	kumar: Using array of objects makes sense. Using hash since that's how app manifest works. Has been discussed on dev list and others were unhappy about that.
+[Thu 11:29]	<m4nu>	Topic: Product Data
+[Thu 11:29]	<taaz>	kumar: This format lets a merchant look up information about the purchase internally.
+[Thu 11:30]	<taaz>	m4nu: This is an internal product identifier?
+[Thu 11:30]	<taaz>	kumar: Yes.
+[Thu 11:30]	<taaz>	m4nu: When this was discussed in the past with respect to PaySwarm, we wanted a richer way for users to markup store or vendor specific information.
+[Thu 11:31]	<taaz>	m4nu: Example is home improvement store is using digital receipt format, they want to list out detail meta data about item. Like an asset description. Have weight, time, item count, etc that would help in the future.
+[Thu 11:32]	<taaz>	m4nu: With receipt store could use that internally for analytics.
+[Thu 11:33]	<taaz>	dlongley: Users could have 3rd party analysis on your own data.
+[Thu 11:33]	<taaz>	dlongley: Don't have to come up with exact use cases but let people innovate with this data.
+[Thu 11:33]	<taaz>	kumar: Product data is specific use case, not to deal with product data, but reconcilliation.
+[Thu 11:34]	<taaz>	kumar: Nothing to do with sharing data with customers.
+[Thu 11:36]	<taaz>	m4nu: Is product data a string or deeply nestable object? No harm in using object since you can still put a string as a key/value in the object.
+[Thu 11:37]	<taaz>	dlongley: The point with JSON-LD is you can put in any data you want. Marketplace can put anything in they want without stomping on other data.
+[Thu 11:37]	<m4nu>	Topic: Postback URL
+[Thu 11:38]	<taaz>	m4nu: PaySwarm uses it. MozPay uses it. It's needed.
+[Thu 11:38]	<taaz>	kumar: We'd like to allow developers to do in-app payments without their own server. Haven't figured out how to do it without a server at all.
+[Thu 11:38]	<taaz>	kumar: Only solution we've found is hosting a verification service for developers.
+[Thu 11:39]	<taaz>	kumar: Want to make it easy for developers. If we could get rid of postback URL would be easier to use.
+[Thu 11:39]	<taaz>	m4nu: PaySwarm has budget concept that supports associating vendors.
+[Thu 11:40]	<taaz>	m4nu: When you go to buy something a payment is pre-authorized. You can run a request and get back a pre-authorization.
+[Thu 11:40]	<taaz>	m4nu: That's how we do subscriptions and in-app payments.
+[Thu 11:40]	<taaz>	dlongley: To clarify, first payment would be posted back to your server.
+[Thu 11:41]	<taaz>	dlongley: You get back note that customer has a budget.
+[Thu 11:41]	<taaz>	dlongley: You could get user to go setup budget.
+[Thu 11:41]	<m4nu>	taaz: This is assuming that you don't need to have authorization for every request.
+[Thu 11:42]	<m4nu>	taaz: There is still a case where if you needed to have confirmation on every purchase, you need to have a server.
+[Thu 11:43]	<taaz>	dlongley: Yes, you may need to ask user to go and update their budget.
+[Thu 11:44]	<m4nu>	Topic: Chargeback URL
+[Thu 11:44]	<taaz>	m4nu: The chargeback URL is interesting, PaySwarm doesn't have it yet. Could you give us some background, Kumar?
+[Thu 11:46]	<taaz>	kumar: Chargeback URL is catchall system for money being taken away. This may cover strange fraud, refunds, and other issues.
+[Thu 11:46]	<taaz>	kumar: Lots of functionality in here. This is mostly a notice for developers to handle their state.
+[Thu 11:47]	<taaz>	m4nu: For PaySwarm we talked about putting all messages to same postback URL.
+[Thu 11:48]	<taaz>	dlongley: For long term issues like 30 days later might have other authority specific mechanisms. 
+[Thu 11:49]	<taaz>	m4nu: We don't have a chargeback message right now. Probably should.
+[Thu 11:50]	<taaz>	m4nu: Refunds and chargebacks are different. Notification of fraud might be important. May be chargeback due to fraud.
+[Thu 11:50]	<taaz>	m4nu: Challenge is what messages to do in postbacks.
+[Thu 11:50]	<taaz>	m4nu: Purchase successful, chargeback, or refund occurred.
+[Thu 11:51]	<taaz>	dlongley: May not be able to rely on URL. Might change over long period of time. As vendor need to be aware of this.
+[Thu 11:51]	<taaz>	kumar: Having long delayed reversal message is theoretical. We haven't seen anything where we had to do that.
+[Thu 11:52]	<taaz>	kumar: Not even sure our system sends chargebacks. Haven't implemented automatic refunds. Done manually now.
+[Thu 11:52]	<taaz>	m4nu: Authority required to back all transactions on the network. Refunds on PaySwarm are exceptionally rare.
+[Thu 11:52]	<taaz>	m4nu: Delays in their now due to current financial systems and consumer protections.
+[Thu 11:54]	<taaz>	m4nu: Some transactions might be so high value that authority can't absord chargebacks and needs to pass on to vendor.
+[Thu 11:54]	<taaz>	kumar: Does payswarm support refunds?
+[Thu 11:54]	<taaz>	m4nu: All the data is available to do refunds, to reverse a transaction. We just haven't implemented it in the live system yet.
+[Thu 11:55]	<taaz>	kumar: We don't want to turn on refunds for in-app purchases. Apps might not want to support refunds. For instance a game where you unlocked a level, how do you handle that?
+[Thu 11:55]	<taaz>	kumar: Refunds would have to be opt-in. Need to be able to test it's handled properly or users will be angry.
+[Thu 11:56]	<taaz>	m4nu: Need to think more of chargebacks. Need to figure out problem due to consumer protections.
+[Thu 11:56]	<taaz>	kumar: One URL makes sense to handle this. We didn't have strong typing system.
+[Thu 11:57]	<taaz>	m4nu: JSON-LD types will let you do this differentiation.
+[Thu 11:57]	<m4nu>	Topic: Analysis of JOSE specifications wrt. Web Commerce API
+[Thu 11:57]	<m4nu>	http://manu.sporny.org/2013/sm-vs-jose/
+[Thu 11:57]	<taaz>	m4nu: Analyzed HTTP Keys vs JOSE stack.
+[Thu 11:58]	<taaz>	m4nu: A number of JOSE specs used to do crypto. Post tries to analyze those vs the secure messaging spec.
+[Thu 11:59]	<taaz>	m4nu: Post is rough, some points are weak, may go back and update.
+[Thu 11:59]	<taaz>	kumar: Good discussion on the mailing list about post.
+[Thu 11:59]	<taaz>	kumar: More library support for JWT since it's been around longer.
+[Thu 12:00]	<taaz>	kumar: Can build missing libraries.
+[Thu 12:00]	<tchoma>	I need to drop off for another meeting, see you next week guys. cheers!
+[Thu 12:00]	<voip-ps>	tchoma (SIP/10.0.1.3-00000013) has left the conference.
+[Thu 12:00]	<taaz>	m4nu: Libraries missing now are Ruby and Java. [work being done to address that]
+[Thu 12:00]	<dlongley>	https://github.com/jsonld-java/jsonld-java
+[Thu 12:01]	<taaz>	m4nu: Should be quick job for someone who knows what they are doing.
+[Thu 12:01]	<taaz>	m4nu: Next week we'll take a deeper look at this. Figure out what mix of JSON, JSON-LD, etc we want to use.
+[Thu 12:02]	<taaz>	kumar: Right now Mozilla is the only implementation. Can sunset features right now. Firefox OS features can change.
+[Thu 12:03]	<voip-ps>	Manu Sporny (SIP/6000-00000015) has left the conference.
+[Thu 12:03]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-00000018) has left the conference.
+[Thu 12:03]	<voip-ps>	Dave Longley (SIP/6002-00000017) has left the conference.
+[Thu 12:03]	<voip-ps>	kumar (IAX2/diamondcard-3321) has left the conference.
+[Thu 12:03]	<taaz>	m4nu: Anything else? Thanks, will chat again next Wednesday
+[Thu 12:03]	<voip-ps>	Dave Lehn (SIP/6003-00000016) has left the conference.
