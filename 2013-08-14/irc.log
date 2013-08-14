@@ -11,6 +11,7 @@
 [Wed 11:11]	<dlongley>	andreio: i've successfully made in-app purchases, i've run into some issues, one would be that when making an in-app purchase i got an error saying that there was no receipt, but the purchase did go through, so i can see it as a successful purchase
 [Wed 11:12]	<dlongley>	andreio: i wanted to ask how to sell something that isn't music/book/etc something like that, if it's a service, what should the user receive
 [Wed 11:12]	<andreio>	 https://gist.github.com/piatra/6230793/raw/85143f38877552989bdc8ab912c74f93a1ccb5f4/error.js
+[Wed 11:13]	<m4nu>	taaz: We'll need more debugging info on this.
 [Wed 11:13]	<m4nu>	dlongley: let's take this offline, it may take some debugging. callbcks are only through web interface.
 [Wed 11:13]	<dlongley>	m4nu: as far as marking things up for sale for services, say, a dog walking service, the asset is just a block of time for services for an hour, etc.
 [Wed 11:13]	<dlongley>	m4nu: invoices will be modeled as assets as well
