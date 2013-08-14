@@ -35,6 +35,16 @@
       {
          "alias": ["futuresoon"]
       },
+      "Adam B. Levine":
+      {
+         "alias": ["AdamBLevine"],
+         "homepage": "http://letstalkbitcoin.com/bio/adam"
+      },
+      "Anders Rundgren":
+      {
+         "alias": ["AndersR"],
+         "homepage": "http://se.linkedin.com/in/andersrundgren"
+      },
       "Manu Sporny":
       {
          "alias": ["manu-db", "manu1", "manu`", "m4nu"],
