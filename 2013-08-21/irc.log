@@ -1,0 +1,223 @@
+[Wed 11:05]	<m4nu>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2013Aug/0040.html
+[Wed 11:05]	<m4nu>	scribe: dlongley
+[Wed 11:06]	<dlongley>	voip-ps: 15033 is kumar
+[Wed 11:06]	<voip-ps>	kumar is now associated with IAX2/diamondcard-15033.
+[Wed 11:06]	<m4nu>	m4nu: Our agenda today is an update on project statuses in Bitcoin, Mozilla payments, GSoC, and then on to the analysis of Secure Messaging vs. JOSE encryption and digital signature stacks.
+[Wed 11:07]	<m4nu>	Topic: Updates from Bitcoin Community
+[Wed 11:07]	<dlongley>	m4nu: i've been talking to a number of people in the Bitocin community and at the Bitcoin foundation
+[Wed 11:08]	<dlongley>	m4nu: i've been talking to the education subgroup there, they're are trying to legitimize bitcoin. General community is trying to take on regulatory hurdles, etc., there's a lot of movement in the bitcoin community you just can't really see it, they are fairly insular, they are very focused on the bitcoin community not the larger web or how to get this integrated into the browsers, etc, but the people i've been speaking to have been very interested in trying to get bitcoin into the browser
+[Wed 11:08]	|<--	bshambaugh has left zoe-fn (Ping timeout: 264 seconds)
+[Wed 11:08]	<dlongley>	m4nu: Been talking to several CEOs of bitcoin companies, people doing processing of bitcoins, bitcoin developers, a nice representation of the full spectrum of what's needed to make Bitcoin viable long-term.
+[Wed 11:09]	<dlongley>	m4nu: about 30% of those I'm speaking to are dabbling in bitcoin but very interested in the web payments work
+[Wed 11:09]	<dlongley>	m4nu: the inside bitcoin conference led to a lot of good press and got them informed on what we're doing here. I'm getting a lot of private emails and having a number of private conversations with people who want to join in the work here
+[Wed 11:09]	<m4nu>	Topic: Update from Mozilla Payments Meeting
+[Wed 11:10]	<m4nu>	kumar: Basically a meeting to focus on FirefoxOS payments implementation for Firefox Marketplace.
+[Wed 11:10]	<m4nu>	kumar: Very much focused on short term stuff that we're doing - expanding to some new payment providers, Latin America, what it means for our own system wrt. multiple backends. Not anything more than that. If you're in one country, we need to use a different operator billing method, stuff like that.
+[Wed 11:11]	<m4nu>	kumar: Focused on our product, UX review. Since we had engineers and designers in the same room, not a lot to report. What's interesting to this group is API related stuff, we didn't focus on that that much.
+[Wed 11:11]	<m4nu>	kumar: More people at Mozilla are now looped in on what we're doing here in the Web Payments group, not a lot to share right now, but might have some changes coming down the pipeline when they develop.
+[Wed 11:12]	<dlongley>	m4nu: we've been put in touch with the folks at the open badges work at mozilla (chris macavoy)
+[Wed 11:12]	<dlongley>	m4nu: they said they were interested in JSON-LD and the digital signatures stuff, and i think you may have been the one that prompted them to start thinking about it
+[Wed 11:12]	<dlongley>	m4nu: i've got a call with them later today about all this
+[Wed 11:12]	<dlongley>	m4nu: i've been talking to the identity people about signatures as well
+[Wed 11:13]	<dlongley>	m4nu: but they are a bit busy at the moment
+[Wed 11:13]	<m4nu>	Topic: Update on GSoC Student Progress
+[Wed 11:13]	<dlongley>	m4nu: any updates andrei?
+[Wed 11:13]	<m4nu>	andrei: The demo is ready to go online now. I'm going to start tracking my progress via github issues. I need to allow modifying the assets. Have the assets resigned.
+[Wed 11:13]	<m4nu>	andrei: I have some things to fix with sessions and cookies.
+[Wed 11:14]	<m4nu>	andrei: When you get the callback from the marketplace, I need to update stuff.
+[Wed 11:14]	<m4nu>	manu: we'll get you setup on a VM here.
+[Wed 11:14]	<m4nu>	andrei: Sounds good, once a day updates would be good.
+[Wed 11:15]	<m4nu>	Topic: Secure Messaging vs. Javascript Object Signing and Encryption
+[Wed 11:15]	<dlongley>	m4nu: i tried to be as thorough as i could, outlining all the things that i think are issues with the JOSE spec and the advantages Secure Messaging/HTTP Keys spec gives us
+[Wed 11:15]	<dlongley>	m4nu: so this is a discussion about where the web commerce api should go
+[Wed 11:15]	<dlongley>	m4nu: do we want to continue using the jwk/signature stuff or go with the JSON-LD signature stuff
+[Wed 11:16]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-00000059) has left the conference.
+[Wed 11:16]	<dlongley>	m4nu: so the conversation has a bit to do with JSON-LD and we've been talking about moving closer to using JSON-LD at least by using URLs in the data/messages, etc.
+[Wed 11:16]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-0000005d) has joined the conference.
+[Wed 11:16]	<dlongley>	m4nu: is there any particular way to go through this, top-down through the blog post or do you want to discuss particular things?
+[Wed 11:17]	<m4nu>	http://manu.sporny.org/2013/sm-vs-jose/
+[Wed 11:17]	<dlongley>	kumar: no preference from me, just looking back over the post
+[Wed 11:18]	<dlongley>	kumar: my main summary is that i just had some questions about the signature/encryption algorithms and those were answered and i just liked the advantages that JSON-LD provides around URLs there are definitely concrete problems in the current implementation that JSON-LD solves
+[Wed 11:19]	<dlongley>	kumar: it would be helpful for other people on the call to go through
+[Wed 11:19]	<m4nu>	Topic: JSON Web Algorithms (JWA)
+[Wed 11:19]	<dlongley>	m4nu: the main difference between --- at a very high level i think the JOSE group is trying to create a flexible way of expressing cryptography parameters and the use of them in JSON, it's kind of the kitchen sink approach, to support everything in common use today, which is one approach
+[Wed 11:19]	<dlongley>	m4nu: the other major approach is what the Secure Messaging spec does
+[Wed 11:20]	<dlongley>	m4nu: it tries to boil everything that's out there down to best practices
+[Wed 11:20]	<dlongley>	m4nu: while also understanding that those will have to change in the future
+[Wed 11:20]	<dlongley>	m4nu: cryptography is a constant battle of creating schemes that get broken and creating new ones
+[Wed 11:20]	<dlongley>	m4nu: whatever we're doing now will be broken in a few years
+[Wed 11:20]	<dlongley>	m4nu: we're trying to balance that against implementation complexity
+[Wed 11:21]	<dlongley>	m4nu: one of the things with JWT and the JOSE stack is that it requires you to implement quite a few cryptographic mechanisms, which isn't too technically difficult, dave longley has implemented a crypto suite in javascript in http://github.com/digitalbazaar/forge, it has pkcs, symmetric, asymmetric crypto, etc. it takes a lot of time and expertise
+[Wed 11:22]	<dlongley>	m4nu: we don't want to push off a lot of this complexity to implementers because the more there is, the more you have to implement, the more complexity, etc.
+[Wed 11:22]	<dlongley>	m4nu: rather than us just saying you need this hash and this digital signature type
+[Wed 11:23]	<dlongley>	m4nu: and leaving it at that, so the main difference is that the Secure Messaging stack tries to be simpler in providing best practices while still allowing algorithmic agility for switching in the future
+[Wed 11:23]	<dlongley>	m4nu: the JOSE stack does the kitchen sink approach and so there's a lot of complexity all at once
+[Wed 11:23]	<m4nu>	Topic: JSON-LD Advantages over JSON
+[Wed 11:24]	<m4nu>	Advantages for JSON-LD:
+[Wed 11:24]	<m4nu>	A universal identifier mechanism for JSON objects via the use of URLs.
+[Wed 11:24]	<m4nu>	A way to disambiguate JSON keys shared among different JSON documents by mapping them to URLs via a context.
+[Wed 11:24]	<m4nu>	A standard mechanism in which a value in a JSON object may refer to a JSON object on a different document or site on the Web.
+[Wed 11:24]	<m4nu>	A way to associate datatypes with values such as dates and times.
+[Wed 11:24]	<m4nu>	The ability to annotate strings with their language. For example, the word ‘chat’ means something different in English and French and it helps to know which language was used when expressing the text.
+[Wed 11:24]	<m4nu>	A facility to express one or more directed graphs, such as a social network, in a single document. Graphs are the native data structure of the Web.
+[Wed 11:24]	<m4nu>	A standard way to map external JSON application data to your application data domain.
+[Wed 11:24]	<m4nu>	A deterministic way to generate a hash on JSON data, which is helpful when attempting to figure out if two data sources are expressing the same information.
+[Wed 11:24]	<m4nu>	A standard way to digitally sign JSON data.
+[Wed 11:24]	<m4nu>	A deterministic way to merge JSON data from multiple data sources.
+[Wed 11:26]	<dlongley>	m4nu: an asset being combined with a listing from two separate sites and combining them together is something that JSON-LD can do natively
+[Wed 11:27]	<dlongley>	m4nu: you can convert JSON documents and apply compaction/expansion and get data into a format your application will understand, so you don't have to write code to map things by hand
+[Wed 11:27]	<dlongley>	m4nu: if someone publishes a JSON-LD context for twitter and someone publishes a context for the activity streams work, then converting from one to the other is a matter of a API calls
+[Wed 11:27]	<m4nu>	dlongley: To clarify - to map one thing to another, it's just an API call.
+[Wed 11:28]	<dlongley>	m4nu: JSON-LD provides ways to transform data to get it into a format you want that people have found useful
+[Wed 11:28]	<dlongley>	m4nu: compaction, expansion, flattening, etc
+[Wed 11:29]	<m4nu>	dlongley: The hashing mechanism is important because JSON-LD allows you to markup data in a variety of different ways, normalization allows you to take documents that may be the same and do a comparison to see if they are actually the same.
+[Wed 11:29]	<dlongley>	m4nu: it's a comparison of the data in the document, not the layout of the document
+[Wed 11:29]	<dlongley>	m4nu: it checks to see if the information in the documents is the same, which is a pretty big advance
+[Wed 11:29]	<voip-ps>	bshambaugh (SIP/192.168.1.64-0000005e) has joined the conference.
+[Wed 11:30]	<dlongley>	m4nu: you could use JSON-LD with the JOSE stack, but because there's a digital signature mechanism in there, the end result is that whenever you pass information from one website to another, you don't have to pass the serialized form of that information
+[Wed 11:31]	<dlongley>	m4nu: if you look at a JWT they base64 encode the data being signed, and the reason they may have done that is to avoid the hard normalization problem
+[Wed 11:31]	<dlongley>	m4nu: because its' a very complex problem, and we thought it was worth addressing that problem, because it means you can do digital signatures on the information itself and the syntax that you use to express that data doesn't matter
+[Wed 11:32]	<dlongley>	m4nu: using JSON-LD you can generate a digital signature for that data and then express the information in another way elsewhere
+[Wed 11:32]	<dlongley>	m4nu: use RDFa for instance, on a web page to express data that is expressed as JSON-LD in another way (or maybe microdata, etc)
+[Wed 11:32]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-0000005d) has left the conference.
+[Wed 11:32]	<dlongley>	m4nu: if we're wrong about a particular format/syntax we can change it later and the digital signatures will still wrok
+[Wed 11:32]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-0000005f) has joined the conference.
+[Wed 11:33]	<dlongley>	m4nu: with JWT the requirement to transmit the data is always there
+[Wed 11:33]	<dlongley>	m4nu: Does that make sense, Kumar?
+[Wed 11:33]	<dlongley>	kumar: yes, i could follow that, i've been following your posts and it makes sense to me
+[Wed 11:34]	|<--	bshambaugh has left zoe-fn (Ping timeout: 256 seconds)
+[Wed 11:34]	<m4nu>	dlongley: It also helps because different clients may request different types of data from that URL. If a client only reads JSON-LD, or RDFa, different clients can get the data in different ways.
+[Wed 11:35]	<m4nu>	dlongley: It's also worth pointing out that we have multiple implementations for this now. It works in the PaySwarm developers site, meritora, PHP, JavaScript, and Python implementations of the JSON-LD digital signature stuff.
+[Wed 11:35]	<m4nu>	dlongley: We also have an older C++ implementation of this stuff that we could update if needed.
+[Wed 11:37]	<m4nu>	Topic: JSON Web Key (JWK)
+[Wed 11:37]	<dlongley>	m4nu: so the JWA stuff is a bad of cryptographic primitives that the JOSE stuff needs that the Secure Messaging approach doesn't need
+[Wed 11:37]	<dlongley>	m4nu: (different approaches)
+[Wed 11:37]	<dlongley>	m4nu: so JWK is a way of expressing keys in JSON
+[Wed 11:37]	<m4nu>	JOSE JWK key format: {
+[Wed 11:37]	<m4nu>	"keys": [{
+[Wed 11:37]	<m4nu>	"kty":"RSA",
+[Wed 11:37]	<m4nu>	"n": "0vx7agoe ... DKgw",
+[Wed 11:37]	<m4nu>	"e":"AQAB",
+[Wed 11:37]	<m4nu>	"alg":"RS256",
+[Wed 11:37]	<m4nu>	"kid":"2011-04-29"
+[Wed 11:37]	<m4nu>	}]
+[Wed 11:37]	<m4nu>	}
+[Wed 11:38]	<dlongley>	m4nu: the information is broken down into its components
+[Wed 11:38]	<dlongley>	m4nu: this is an RSA key
+[Wed 11:38]	<m4nu>	Secure Messaging key format: {
+[Wed 11:38]	<m4nu>	"@context": "https://w3id.org/security/v1",
+[Wed 11:38]	<m4nu>	"@id": "https://example.com/i/bob/keys/1",
+[Wed 11:38]	<m4nu>	"@type": "Key",
+[Wed 11:38]	<m4nu>	"owner": "https://example.com/i/bob",
+[Wed 11:38]	<m4nu>	"publicKeyPem": "-----BEGIN PRIVATE KEY-----\nMIIBG0BA...OClDQAB\n-----END PRIVATE KEY-----\n"
+[Wed 11:38]	<m4nu>	}
+[Wed 11:39]	<dlongley>	m4nu: Secure Messaging deviates from JWK in a few ways, first there's a URL that identifies the key so you can always find out which key people are talking about (you can use UUID if you want to etc, any IRI, but URL is best practice)
+[Wed 11:39]	<dlongley>	m4nu: the other thing specified is an identity associated with the key, also a URL right now, maybe email addresses could be used in the future
+[Wed 11:40]	<dlongley>	m4nu: the key idea is that you can find out who the owner of the key is
+[Wed 11:40]	<dlongley>	m4nu: you should be able to go to a URL that also asserts that bob owns the key
+[Wed 11:40]	<dlongley>	m4nu: once there is a two-way association is set up you can be sure the key is owned by the identity
+[Wed 11:41]	<dlongley>	kumar: to clarify, the persona idea is something is at a domain, so it could be a phone number at a domain, etc.
+[Wed 11:41]	<m4nu>	kumar: To clarify, the Persona approach can be something@domain.com - so 555-555-5555@tmobile.com
+[Wed 11:41]	<dlongley>	kumar: it's really about the domain in persona
+[Wed 11:41]	<dlongley>	m4nu: we talked with some of the persona folks and they asked if we were interested in using persona for identity, for example could you just do login with persona on websites, and we could so long as we could attach other information to the identity assertion
+[Wed 11:42]	<dlongley>	m4nu: we would like to be able to include things like home address/shipping address, etc.
+[Wed 11:42]	<dlongley>	m4nu: the payswarm identity spec lets you associated arbitrary data and we need some info for the payment process in payswarm
+[Wed 11:42]	<dlongley>	m4nu: and we don't know if persona can support that
+[Wed 11:42]	<dlongley>	m4nu: right now we're using URLs instead of emails because it's much easier to just dereference to get more info (and assert key ownership)
+[Wed 11:43]	<dlongley>	kumar: the persona idea will be that the domain has .well-known with extra information, but that's separate from storing preferences, so the idea behind storing preferences for payment/identity is something that persona is addressing right now because they are pretty close to landing what is code named PICL
+[Wed 11:44]	<dlongley>	kumar: which is a way to sync profile data, which will start with firefox profile data, which is something they are actively working on now, so you can associate arbitrary data with an identity, i know it's pretty experimental right now, still in the works for a wihle
+[Wed 11:44]	<dlongley>	m4nu: so that's something that we're trying to coordinate with the identity team at mozilla but it's been kind of difficult, it didn't seem like a priority for them 3-6 months ago, we'll try and ping them again
+[Wed 11:45]	<dlongley>	kumar: 3-6 months ago, yeah, that was on the horizon, syncing profile data is a priority now, i've seen a full working prototype of it, i've seen people using firefox syncing things with persona servers and it's in implemtnation for production stage now
+[Wed 11:45]	<dlongley>	m4nu: so when you log in i guess what you do is say you're ok with sharing your home address/whatever with the site in question?
+[Wed 11:46]	<dlongley>	kumar: i don't know if they are working on the exchange between identity providers yet, i think they may be working at protocol level right now, there's no use case for syncing profile data for sharing with an identity provider i don't think yet
+[Wed 11:46]	<dlongley>	m4nu: the other approach that we're thinking of here is ... the web payments work will require getting shipping addresses to merchants at some point ... the other idea we were talking about was having the vendor say, hey i need a shipping address, and when someone goes to buy the window for the purchase would say the vendor needs the shipping address and the buyer has to consent or change their shipping address or cancel the purchase
+[Wed 11:47]	<dlongley>	m4nu: at that point the shipping address might be embedded into the contract to get it to the vendor
+[Wed 11:47]	<dlongley>	m4nu: that might be better because there's not a requirement for persona to deal with that information
+[Wed 11:47]	<dlongley>	kumar: i don't know if persona is going to get involved in being a gatekeeper of that information, btu one thing that's getting a lot of interest, there's pressure on mozilla to implement request auto-complete
+[Wed 11:48]	<dlongley>	kumar: i don't know if it will happen in its current form but it sounds like this might be a perfect tool for that to happen
+[Wed 11:48]	<dlongley>	kumar: where someone asks for a shipping address and you already have it in your browser on your client, that is a little different because you're putting it into a contract and you can't take it from a browser and put it into a contract because there's no URL
+[Wed 11:48]	<dlongley>	m4nu: ok that's one of those issues floating out there we'll have to deal with at some point
+[Wed 11:48]	<dlongley>	m4nu: going back to the key format, there's publicKeyPem
+[Wed 11:48]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-0000005f) has left the conference.
+[Wed 11:48]	<dlongley>	m4nu: the JWK approach breaks out the parameters for the key, we took a different approach
+[Wed 11:49]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-00000060) has joined the conference.
+[Wed 11:49]	<voip-ps>	bshambaugh (SIP/192.168.1.64-00000061) has joined the conference.
+[Wed 11:49]	<dlongley>	m4nu: it's difficult for developers to understand what those parameters are and they'd rather cut and paste data
+[Wed 11:49]	<dlongley>	m4nu: and pem is something every crypto library uses
+[Wed 11:49]	<dlongley>	m4nu: instead of having to understand all the parameters, point on a curve, etc. which is what JWA does, instead it's in PEM format and we just expose stuff as PEM data on the web and you don't have to worry about you've copied the right information, left something out, etc.
+[Wed 11:50]	<dlongley>	m4nu: that approach was seen as controversial in the WebID community because they thought that the most raw cryptographic form should be used, but we don't think that's developer friendly, we think copying info around as a blog with a clear beginning and end is better
+[Wed 11:51]	<dlongley>	m4nu: ultimately the Secure Messing key format is simpler to understand and publish and you can put it on the web and another app/client can come along and do key discovery on it, key retrieval, verification, etc. all via that simple key format, it's just a doc on the web and you can do everything you need to using just a doc on the web following links in the doc
+[Wed 11:51]	<dlongley>	m4nu: any questions?
+[Wed 11:51]	<dlongley>	m4nu: next is JWT
+[Wed 11:51]	<m4nu>	Topic: JSON Web Tokens (JWT) vs. Secure Messaging
+[Wed 11:51]	<dlongley>	m4nu: JWT is basically what most of mozilla uses right now to do digital signatures
+[Wed 11:52]	<dlongley>	m4nu: it's a container format that you put claims into and then you digitally sign those tokens using the JWS spec
+[Wed 11:52]	<dlongley>	m4nu: let me get an example
+[Wed 11:52]	<m4nu>	JWTs look like this: {
+[Wed 11:52]	<m4nu>	"iss": "joe",
+[Wed 11:52]	<m4nu>	"exp": 1300819380,
+[Wed 11:52]	<m4nu>	"http://example.com/is_root": true
+[Wed 11:52]	<m4nu>	}
+[Wed 11:52]	<m4nu>	and Secure Messaging messages look like this: {
+[Wed 11:52]	<m4nu>	"@context": "http://json-ld.org/contexts/person",
+[Wed 11:52]	<m4nu>	"@type": "Person",
+[Wed 11:52]	<m4nu>	"name": "Manu Sporny",
+[Wed 11:52]	<m4nu>	"gender": "male",
+[Wed 11:52]	<m4nu>	"homepage": "http://manu.sporny.org/"
+[Wed 11:52]	<m4nu>	}
+[Wed 11:53]	<dlongley>	m4nu: the big difference between JWT and Secure Messaging is that JWT is a container format, and Secure Messaging doesn't need a container format, you just have information, digitally sign it, and include the signature in the data you're signing
+[Wed 11:53]	<dlongley>	m4nu: the core argument against JWT is that it's unnecessary with Secure Messaging
+[Wed 11:53]	|<--	bshambaugh has left zoe-fn (Ping timeout: 246 seconds)
+[Wed 11:53]	<dlongley>	m4nu: at this point, the Secure Messaging approach eliminates JWA (it doesn't need to be a 70 page spec at least), it doesn't need something like JWT, it just uses the JSON data using JSON-LD and includes the signature in the data
+[Wed 11:54]	<dlongley>	m4nu: so the last two bits are JWE and JWS
+[Wed 11:54]	<m4nu>	Topic: JSON Web Encryption (JWE) vs. Secure Messaging
+[Wed 11:54]	<m4nu>	JWE Encrypted JSON looks like this: {
+[Wed 11:54]	<m4nu>	"protected": "eyJlbmMiOiJBMTI4Q0JDLUhTMjU2In0",
+[Wed 11:54]	<m4nu>	"unprotected": {"jku": "https://server.example.com/keys.jwks"},
+[Wed 11:54]	<m4nu>	"recipients": [{
+[Wed 11:54]	<m4nu>	"header": {
+[Wed 11:54]	<m4nu>	"alg":"RSA1_5"
+[Wed 11:54]	<m4nu>	"kid":"2011-04-29",
+[Wed 11:54]	<m4nu>	"enc":"A128CBC-HS256",
+[Wed 11:54]	<m4nu>	"jku":"https://server.example.com/keys.jwks"
+[Wed 11:54]	<m4nu>	},
+[Wed 11:54]	<m4nu>	"encrypted_key": "UGhIOgu ... MR4gp_A"
+[Wed 11:54]	<m4nu>	}]
+[Wed 11:54]	<m4nu>	}],
+[Wed 11:54]	<m4nu>	"iv": "AxY8DCtDaGlsbGljb3RoZQ",
+[Wed 11:54]	<m4nu>	"ciphertext": "KDlTtXchhZTGufMYmOYGS4HffxPSUrfmqCHXaI9wOGY",
+[Wed 11:54]	<m4nu>	"tag": "Mz-VPPyU4RlcuYv1IwIvzw"
+[Wed 11:54]	<m4nu>	}
+[Wed 11:55]	<m4nu>	for comparison this is what a Secure Messaging encrypted message looks like: {
+[Wed 11:55]	<m4nu>	"@context": "https://w3id.org/security/v1",
+[Wed 11:55]	<m4nu>	"@type": "EncryptedMessage2012",
+[Wed 11:55]	<m4nu>	"data": "VTJGc2RH ... Fb009Cg==",
+[Wed 11:55]	<m4nu>	"encryptionKey": "uATte ... HExjXQE=",
+[Wed 11:55]	<m4nu>	"iv": "vcDU1eWTy8vVGhNOszREhSblFVqVnGpBUm0zMTRmcWtMrRX==",
+[Wed 11:55]	<m4nu>	"publicKey": "https://example.com/people/john/keys/23"
+[Wed 11:55]	<m4nu>	}
+[Wed 11:55]	<dlongley>	m4nu: the parameters aren't that different, you've got encryption key, iv, cipher text, the key difference here is that the Secure Messaging is much simpler, in that you just have base64-encoded data
+[Wed 11:56]	<dlongley>	m4nu: with JWE you have headers, the keys expressed within the data, you've got unprotected keys outside of the message, etc.
+[Wed 11:56]	<dlongley>	m4nu: it seems really hard(er) to work with
+[Wed 11:56]	<dlongley>	m4nu: whereas with the Secure Messaging data you've just got data that is encrypted and one decryption mechanism that you apply to the encrypted data to get at it
+[Wed 11:57]	<dlongley>	m4nu: at a high-level the difference is in how the JWE expresses the encryption parameters, because they dont' go with the "best practices" approach, there's more complexity, so you need headers that are like email headers and they can get complex, and the Secure Messaging spec says there's just one best practice mechanism for these things and then you don't have protected/unprotected info either
+[Wed 11:58]	<dlongley>	m4nu: JWE lets you use lots of different types of encryption, but it's not really clear what that really buys you for the added complexity
+[Wed 11:58]	<dlongley>	kumar: just to clarify, if someone did want to make their own algorithm or a new one, they'd just make a custom context and host that at a URL
+[Wed 11:58]	<m4nu>	Yeah, this is basically the only change you'd have to make: "@type": "http://mycrypto.com/algorithms/MySpecialAlgorithm"
+[Wed 11:58]	<dlongley>	m4nu: they wouldn't even have to create a custom context at a URL if they didn't want to, they could just embed it
+[Wed 11:59]	<m4nu>	dlongley: If someone adds another one, and it becomes popular, then we just integrate it.
+[Wed 11:59]	<dlongley>	kumar: right, i definitely think that highlights a major advantage, i guess that's JSON-LD that provides that advantage
+[Wed 11:59]	<m4nu>	kumar: With JWE, they have to incorporate a new algorithm in the spec for anyone to be able to use it.
+[Wed 11:59]	<dlongley>	kumar: with JWE they would *have* to incorporate a new algorithm into the spec
+[Wed 11:59]	<m4nu>	taaz: Those types can have their own description as well.
+[Wed 12:00]	<dlongley>	m4nu: if you got to the security spec if you look up the type identifiers for GraphSignature2012 or EncryptedMessage2013/2012 (whatever it is) it breaks down the algorithms in use for you
+[Wed 12:00]	<dlongley>	m4nu: if you use a JSON-LD agent to go to a URL you can extract the exact parameters you need
+[Wed 12:00]	<dlongley>	m4nu: from the document
+[Wed 12:00]	<dlongley>	m4nu: most people will just hard code it, which is fine
+[Wed 12:00]	<bshambaugh>	bye
+[Wed 12:01]	<voip-ps>	Manu Sporny (SIP/6000-00000058) has left the conference.
+[Wed 12:01]	<voip-ps>	kumar (IAX2/diamondcard-15033) has left the conference.
+[Wed 12:01]	<voip-ps>	Dave Longley (SIP/6002-0000005b) has left the conference.
+[Wed 12:01]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-00000060) has left the conference.
+[Wed 12:01]	<voip-ps>	Dave Lehn (SIP/6003-0000005a) has left the conference.
+
