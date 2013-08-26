@@ -45,9 +45,21 @@ print <<< htmlcode
       <p class="largeprint">All Web Payments teleconferences are open to the public. Anyone may join and participate in the discussion. All teleconferences are announced at least 24 hours in advance on the <a href="http://lists.w3.org/Archives/Public/public-webpayments/">Web Payments mailing list</a>.</p>
 
       <ul class="largeprint">
-        <li><strong>When:</strong> Every two weeks</li>
+        <li><strong>When:</strong> 
+htmlcode;
+if(date('l', strtotime('today')) === 'Wednesday')
+{
+   print date('l, F jS (Y-m-d)', strtotime('today'));
+}
+else
+{
+   print date('l, F jS (Y-m-d)', strtotime('next Wednesday'));
+}
+
+print <<< htmlcode
+</li>
         <li><strong>Time:</strong> 1500 UTC / 8am San Francisco / 11am Boston / 4pm London</li>
-        <li><strong>Where:</strong> Digital Bazaar PaySwarm Telecon Bridge, SIP: <a href="sip:payswarm@digitalbazaar.com">payswarm@digitalbazaar.com</a>.</li>
+        <li><strong>Where:</strong> sip:<a href="sip:payswarm@digitalbazaar.com">payswarm@digitalbazaar.com</a> or land-line: +1.540.961.4469 x6300</li>
         <li><strong>IRC:</strong> <a href="irc://freenode.net/#payswarm">irc://freenode.net/#payswarm</a>
         <li><strong>Duration:</strong> 60 minutes
       </ul>
@@ -58,32 +70,74 @@ print <<< htmlcode
 
   <div class="container onblack"> 
     <div class="row"> 
-      <div class="sixcol"> 
+      <div class="twelvecol"> 
   
       <h2>Text and Audio Logs</h2>
       <p class="largeprint">Audio and text logs of all calls are kept to 
         ensure transparency throughout the entire design and 
         development process.</p>
 
-      <ul>
 htmlcode;
 
-$allMinutes = scandir('.');
-rsort($allMinutes);
+// Generate the minutes summary cache
+$mscfilename = "minutes-summary-cache.html";
+$mtime = filemtime($mscfilename);
 
-foreach($allMinutes as $minutes)
+// refresh the cache on demand, every hour
+$mcache = fopen($mscfilename, "c+");
+if(!file_exists($mscfilename) or ((time() - $mtime) > 0)) // 3600
 {
-   if(preg_match("/201[0-9]-[0-9]{2,2}-[0-9]{2,2}/", $minutes))
+   $allMinutes = array_reverse(scandir('.'));
+   fwrite($mcache, "<ul>\n");
+   foreach($allMinutes as $minutes)
    {
-     print("                 <li><a href=\"$minutes/\">$minutes</a></li>");
+      if(preg_match("/201[0-9]-[0-9]{2,2}-[0-9]{2,2}/", $minutes))
+      {
+         fwrite($mcache, "   <li><a href=\"$minutes/\">Text and Audio Minutes for $minutes</a>\n");
+
+         // open the IRC log file
+         $irclogfilename = $minutes . "/irc.log";
+         $irclog = file($irclogfilename, 
+            FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+         $topic = 1;
+
+         // process the raw IRC log and output the topics
+         fwrite($mcache, "      <ol>\n");
+         foreach($irclog as $line_num => $line)
+         {
+            if(preg_match("/.*Topic: (.*)/", $line, $matches))
+            {
+               // link to each topic in the HTML minutes
+               fwrite($mcache, 
+                  "         <li style=\"padding: clear;\">" .
+                  htmlspecialchars($matches[1]) . 
+                  " [<a href=\"$minutes/#topic-$topic\">" .
+                  "permalink</a>]</li>\n");
+               $topic += 1;
+            }
+         }
+         fwrite($mcache, "      </ol></li>");
+      }
    }
+   fwrite($mcache, "</ul>\n");
+   
+   fseek($mcache, 0);
+   print fread($mcache, 65536);
 }
+else
+{
+   print fread($mcache, 65536);
+}
+fclose($mcache);
 
 print <<< htmlcode
       </ul>
       </div>
-    
-      <div class="sixcol last"> 
+    </div>
+  </div>
+  <div class="row"> 
+    <div class="twelvecol last"> 
+      <div class="twelvecol"> 
       <h2>Tools</h2>
       
       <p class="largeprint">A number of tools are available to those that
