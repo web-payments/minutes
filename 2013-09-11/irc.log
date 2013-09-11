@@ -1,0 +1,174 @@
+[Wed 11:06]	<m4nu>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2013Sep/0031.html
+[Wed 11:06]	<dlongley>	voip-ps: 9b is andreio
+[Wed 11:06]	<voip-ps>	andreio is now associated with SIP/10.16.3.110-0000009b.
+[Wed 11:07]	<m4nu>	scribe: tchoma
+[Wed 11:07]	<m4nu>	Topic: Introduction of New Members
+[Wed 11:07]	<tchoma>	erik: Here from Bloomberg LP http://www.bloomberg.com/company/ . I've been involved in tech for 25 years, lots of engineering work, gov, nasa, startups, 7 years at bloomberg,
+[Wed 11:08]	<tchoma>	erik: finance is taking a different turn over the next decade
+[Wed 11:08]	<tchoma>	erik: interested in micropayments, and new technologies in finance, driving governments as well.
+[Wed 11:08]	<tchoma>	erik: here to listen in and contribute
+[Wed 11:09]	<tchoma>	evan: From Ripple - http://ripple.com , listening in, have very similar goals
+[Wed 11:09]	<tchoma>	evan: web payments as an arch of the internet, and easy to send money, ripple is a decentralized payment network in any currency
+[Wed 11:10]	<tchoma>	evan: immediately with no fees
+[Wed 11:10]	<tchoma>	evan: ripple does have a digital currency, emphasis is on the payment network, not the currency. The xrp ripple currency is meant as a bridge.
+[Wed 11:11]	<tchoma>	evan: facilitates exchanges between unusual currency pairs.
+[Wed 11:11]	<tchoma>	m4nu: agrees there are a lot of parallels between ripple and this group
+[Wed 11:11]	<tchoma>	m4nu: welcomes erik and evan
+[Wed 11:12]	<m4nu>	Topic: Internet Governance Forum
+[Wed 11:12]	<tchoma>	m4nu: internet governance coming up
+[Wed 11:12]	<tchoma>	pindar: UN meeting, 1000+ participants
+[Wed 11:13]	<tchoma>	pindar: meet to talk about challenges in their respective economies
+[Wed 11:13]	<tchoma>	pindar: issues are raised to manage expectations of policy makers.
+[Wed 11:13]	-->|	DreadKnight (~dread@unaffiliated/dreadknight) has joined #payswarm
+[Wed 11:13]	<tchoma>	pindar: what could a universal payment system for the web could enable?
+[Wed 11:14]	<tchoma>	pindar: this process is a selection process, pindar's proposal was selected, one objective is to provide tech info for policy makers
+[Wed 11:15]	<tchoma>	pindar: this is a kind of recruitment exercise, bringing new payments topics to traditional payment areas
+[Wed 11:15]	<tchoma>	pindar: it's not about financial network, or virtual currencies, but about discussing the nature of trade
+[Wed 11:16]	<tchoma>	pindar: looking at trading of virtual goods in gaming environs and dealing with policy issues that arise from this
+[Wed 11:16]	<tchoma>	pindar: the next 200 years will be dominated with the trade in virtual goods.
+[Wed 11:17]	<tchoma>	m4nu: I'll be joining pindar in Bali
+[Wed 11:17]	<tchoma>	m4nu: promoting the work of this group
+[Wed 11:17]	<tchoma>	m4nu: any questions on the IGF?
+[Wed 11:18]	<tchoma>	pindar: where might the universal payment system for the web be most welcome?
+[Wed 11:18]	<tchoma>	pindar: it's important to involve the international community
+[Wed 11:19]	<tchoma>	m4nu: if other nations have a correct regulatory environ, it could be positive for launching some of this financial tech
+[Wed 11:19]	<tchoma>	pindar: this is definitely a mobile focused effort as well
+[Wed 11:19]	-->|	PaulCapestany (~PaulCapes@204.28.124.82) has joined #payswarm
+[Wed 11:20]	<tchoma>	m4nu: this is why FxOS work is so important
+[Wed 11:20]	<tchoma>	m4nu: we need open payment standards for the web
+[Wed 11:20]	<tchoma>	m4nu: that said, many details need to be worked out
+[Wed 11:20]	<tchoma>	erik: I 2nd everything pindar said
+[Wed 11:21]	<tchoma>	erik: I know folks that are going abroad to work in more open environments
+[Wed 11:21]	<tchoma>	erik: hopefully government regulations in America wont get in the way
+[Wed 11:21]	<m4nu>	Topic: Web Payment Conference Schedule
+[Wed 11:21]	<m4nu>	http://lists.w3.org/Archives/Public/public-webpayments/2013Sep/0030.html
+[Wed 11:21]	<tchoma>	m4nu: 4 of speaking engagements, presenting web payments at SIBOS
+[Wed 11:21]	<tchoma>	m4nu: happening next week in Dubai
+[Wed 11:22]	<tchoma>	m4nu: giving 4 presentations and 1 workshop
+[Wed 11:22]	<tchoma>	m4nu: workshop is 2 hours, talking about payswarm, ripple, FirefoxOS
+[Wed 11:22]	<tchoma>	m4nu: lot of opportunity to get the word out with banks and financial institutes
+[Wed 11:23]	<tchoma>	m4nu: edge conference in NYC, with Kumar the following week
+[Wed 11:23]	<tchoma>	m4nu: also going to FT, getty, and Bloomberg
+[Wed 11:23]	<tchoma>	m4nu: to discuss impact on publishing industry
+[Wed 11:23]	<tchoma>	m4nu: will discuss price stability and using bitcoin on the web
+[Wed 11:23]	<tchoma>	m4nu: 6-8 presentations in the next month on web payments
+[Wed 11:24]	<tchoma>	m4nu: Oct will be IGF in Bali
+[Wed 11:24]	<tchoma>	m4nu: any questions on the speaking engagements?
+[Wed 11:24]	<tchoma>	m4nu: will be in Menlo Park in Oct to talk with Google and Mozilla
+[Wed 11:25]	-->|	bshambaugh (~brent@adsl-172-0-220-107.dsl.okcyok.sbcglobal.net) has joined #payswarm
+[Wed 11:25]	<m4nu>	Topic: Update on Web Payments Summer of Code Progress
+[Wed 11:25]	<voip-ps>	<unknown> (IAX2/diamondcard-10239) has left the conference.
+[Wed 11:26]	<tchoma>	andreio: my update is I added possibility to delete assets
+[Wed 11:26]	<tchoma>	andreio: deleting and updating assets has been added to marketplace
+[Wed 11:26]	<tchoma>	andreio: resigning the process and making it valid
+[Wed 11:26]	<m4nu>	http://appstoredemo.payswarm.com/
+[Wed 11:27]	<tchoma>	andreio: appstore demo is working for me
+[Wed 11:27]	<taaz>	has an issue logging into the demo
+[Wed 11:27]	<tchoma>	andreio: as long as it's updated with my pull requests
+[Wed 11:27]	<tchoma>	m4nu: issues with the demo, will deal with it later
+[Wed 11:28]	<tchoma>	andreio: question regarding the payee field in the assets
+[Wed 11:28]	<tchoma>	andreio: destination is set to the marketplace
+[Wed 11:28]	<tchoma>	andreio: actually it should be the user, do I add another entry with account info of the user?
+[Wed 11:28]	<tchoma>	m4nu: correct
+[Wed 11:29]	<tchoma>	m4nu: you can set up sale so marketplace takes a cut
+[Wed 11:29]	<tchoma>	m4nu: if that app sold for a dollar, so you can make it inclusive or exclusive in terms of marketplace fee
+[Wed 11:30]	<tchoma>	m4nu: unlimited payees can be added
+[Wed 11:30]	|<--	bshambaugh has left zoe-fn (Ping timeout: 264 seconds)
+[Wed 11:30]	<tchoma>	m4nu: all the money will be split on purchase
+[Wed 11:30]	<tchoma>	andreio: how is it split evenly?
+[Wed 11:31]	<tchoma>	m4nu: can be split on % or flat fee
+[Wed 11:31]	<tchoma>	m4nu: very flexible
+[Wed 11:31]	<tchoma>	m4nu: can program splits that make sense for the developer
+[Wed 11:32]	<voip-ps>	<unknown> (IAX2/diamondcard-4735) has joined the conference.
+[Wed 11:32]	<tchoma>	m4nu: the end user just sees a price
+[Wed 11:32]	<tchoma>	dlongley: it's called payee rate type i believe
+[Wed 11:32]	<tchoma>	m4nu: fantastic work andreio
+[Wed 11:33]	<m4nu>	Topic: Simplifying the Web Commerce API
+[Wed 11:33]	<tchoma>	m4nu: some discussion that came out of payments workshop
+[Wed 11:33]	<m4nu>	http://lists.w3.org/Archives/Public/public-webpayments/2013Sep/0019.html
+[Wed 11:33]	<tchoma>	m4nu: kumar has made a proposal
+[Wed 11:34]	<tchoma>	kumar: what moz has shipped on FxOS is an api called navigator.mozPay()
+[Wed 11:34]	<tchoma>	kumar: the goal was to use what existed on the web and add things that were missing
+[Wed 11:34]	<tchoma>	kumar: new concept of mobile OS built on the web, had to add things like battery API, and other things that access the phone
+[Wed 11:35]	<tchoma>	kumar: payments functionality was more elusive at the time, need a secure way to enter credentials, and work with carrier billing in addition to paying with a CC
+[Wed 11:35]	<tchoma>	kumar: we were also considering a federated payment system, not sure exactly what that would mean in practice
+[Wed 11:36]	<tchoma>	kumar: persona is a federated login, but that doesn't translate to the payments space, experimentation happened but it didn't go anywhere in this area
+[Wed 11:37]	<tchoma>	kumar: the first goal of mozPay was to fill in the gaps for payments functionality that doesn't exist today, the second goal would be federated payments on the web.
+[Wed 11:37]	<tchoma>	kumar: it's just a proposal, not a decision.
+[Wed 11:37]	<tchoma>	kumar: the crux is, mozPay() is hard to integrate for folks that already have their own payment flow
+[Wed 11:38]	<tchoma>	kumar: paypal for example
+[Wed 11:38]	<tchoma>	kumar: what we wanted to do now, is pull out some of the new functionality we've added to the web, i.e. carrier billing, network information
+[Wed 11:39]	<tchoma>	kumar: all these things could be used by developers in there own way, pull out this functionality and expose it
+[Wed 11:39]	<tchoma>	kumar: maybe you want the ability to send a silent API to your short code service to set up carrier billing
+[Wed 11:40]	<tchoma>	kumar: there is not a lot that we've identified on the web that you can't already do, so these pieces are pretty minimal
+[Wed 11:40]	<tchoma>	kumar: zong is paypal's carrier billing, it works already on the web
+[Wed 11:41]	<tchoma>	kumar: I have a theory that the payswarm protocol works on the web today
+[Wed 11:41]	<tchoma>	m4nu: that's correct
+[Wed 11:41]	<tchoma>	m4nu: interesting usecases could be enabled if it was built into the browser
+[Wed 11:43]	<tchoma>	m4nu: concerned about mozilla's focus, wants moz to think about a decentralized model of payments for the web
+[Wed 11:43]	<tchoma>	m4nu: at a high level, is there a desire at mozilla to see things like ripple and bitcoin continue to mature, is that interesting to mozilla's core mission?
+[Wed 11:44]	<tchoma>	kumar: for sure, this is just an open discussion
+[Wed 11:44]	<tchoma>	kumar: we work out in the open, and we are working it out
+[Wed 11:44]	<tchoma>	kumar: but we don't want to impose the JWT handshake if it's not going to get used or be useful
+[Wed 11:45]	<tchoma>	kumar: maybe a better way emerges via bitcoin. would be great if that can be given a chance to be tested by the market
+[Wed 11:45]	<tchoma>	kumar: the web doesn't need anything new for those protocols to be tested
+[Wed 11:46]	<tchoma>	kumar: this can be done through agreement to use a given protocol
+[Wed 11:46]	<tchoma>	kumar: maybe vendors don't need to add things to the platform for this, and it becomes more a question of promoting a protocol
+[Wed 11:47]	<tchoma>	kumar: we are not dealing with PCI compliance right now
+[Wed 11:47]	<tchoma>	kumar: it's unclear how mozilla would push decentralized payments forward given it's not a financial institution
+[Wed 11:47]	<tchoma>	m4nu: I understand that, and those are very good points
+[Wed 11:48]	<tchoma>	kumar: we shouldn't impose a standard that hasn't been well tested, could slow down other efforts. putting it on the platform takes time to update devices with future versions
+[Wed 11:49]	<tchoma>	m4nu: payswarm does follow design principles of Persona, must be implementable via shims, but over time we could build web apis into the browser
+[Wed 11:50]	<tchoma>	m4nu: payswarm is built this way to allow quick iteration
+[Wed 11:51]	<tchoma>	m4nu: there is a way forward here without browser integration, want to make sure mozilla is still interested in participating in open payment platform discussions.
+[Wed 11:51]	<tchoma>	m4nu: hopes Mozilla can be a champion for decentralized payments
+[Wed 11:51]	<m4nu>	tchoma: Yeah, that makes sense. I think a lot of the questions here are what we're dealing with short term, vs. the long term vision.
+[Wed 11:53]	<tchoma>	m4nu: the idea that the browser could execute a payment, with key for signing purchase request, one approach would be to fall back to web crypto api
+[Wed 11:54]	<tchoma>	m4nu: the other thing is that you can store the digital receipts in your browser, purchase history within the browser
+[Wed 11:54]	<tchoma>	m4nu: browser could access parts of ecommerce sites based on transmitting receipts
+[Wed 11:55]	<tchoma>	m4nu: avoids payment processors tracking purchasing behavior across sites
+[Wed 11:55]	-->|	bshambaugh (~brent@adsl-172-0-221-16.dsl.okcyok.sbcglobal.net) has joined #payswarm
+[Wed 11:55]	<voip-ps>	bshambaugh (SIP/71.150.146.187-000000a4) has joined the conference.
+[Wed 11:55]	<voip-ps>	bshambaugh (SIP/71.150.146.187-000000a4) has left the conference.
+[Wed 11:56]	<tchoma>	m4nu: would be good to have digital receipts cached in the browser
+[Wed 11:56]	<voip-ps>	bshambaugh (SIP/71.150.146.187-000000a5) has joined the conference.
+[Wed 11:56]	<voip-ps>	bshambaugh (SIP/71.150.146.187-000000a5) has left the conference.
+[Wed 11:56]	<tchoma>	m4nu: payment tech in the browser deals with proof of purchase
+[Wed 11:57]	<tchoma>	kumar: in order for that to work, what is needed, is some sort of private key on the device, in FxOS and mobile devices is a usecase beyond payments, NFC as well. need a secure element in sims to enable private keys on the device
+[Wed 11:58]	<tchoma>	kumar: client side behavior should be possible with secure element
+[Wed 11:58]	<tchoma>	m4nu: there are multiple ways to solve this problem
+[Wed 11:59]	<tchoma>	m4nu: doesn't know if the secure element is enough to address the proof of purchase mechanism
+[Wed 12:00]	<tchoma>	m4nu: might need a web api to fetch from a remote receipt store
+[Wed 12:00]	|<--	bshambaugh has left zoe-fn (Ping timeout: 248 seconds)
+[Wed 12:00]	<tchoma>	kumar: there is a more general purpose web api that is neeeded potentially for storing things securely on devices beyond payments
+[Wed 12:01]	<tchoma>	kumar: might need to be a user permission
+[Wed 12:01]	<tchoma>	m4nu: perhaps a generic local object store, receipts, virtual goods, etc
+[Wed 12:01]	<tchoma>	m4nu: hand waving territory, but the discussion is good
+[Wed 12:02]	<voip-ps>	<unknown> (IAX2/diamondcard-2304) has left the conference.
+[Wed 12:02]	<tchoma>	m4nu: the other major category is doing a purchase without internet connectivity, buy from vending machine over NFC
+[Wed 12:03]	<tchoma>	m4nu: the idea is the vending machine would have a local web server, and the mobile phone would get the proof of purchase and deliver it to the vending machine
+[Wed 12:04]	<tchoma>	kumar: getting into bitcoin territory
+[Wed 12:04]	<tchoma>	m4nu: being able to do transactions offline and join the network later and reconcile
+[Wed 12:07]	<tchoma>	m4nu: we need to make sure we address the usecases
+[Wed 12:07]	<tchoma>	m4nu: your point still stands, maybe we don't need this in the browser at the moment
+[Wed 12:07]	<tchoma>	m4nu: we want this generic as possible, so new innovations can happen outside of payments as well
+[Wed 12:08]	-->|	melvster (~melvster@89.176.108.70) has joined #payswarm
+[Wed 12:08]	<tchoma>	erik: hi, back on the call, I have a background in crypto, happy to discuss offline
+[Wed 12:08]	<tchoma>	erik: you can try QR codes
+[Wed 12:09]	<tchoma>	kumar: those require some sort of server, but that's fine, storing things on device is dangerous, agreed.
+[Wed 12:10]	<tchoma>	erik: you need proof not only of receipt but also of identity
+[Wed 12:10]	<tchoma>	m4nu: happy to discuss it online
+[Wed 12:11]	<tchoma>	m4nu: hope to have a call next week, will be calling into Dubai
+[Wed 12:11]	<tchoma>	m4nu: last questions?
+[Wed 12:11]	<tchoma>	kumar: thanks for the clarifications of usecases
+[Wed 12:12]	<tchoma>	evan: interested in talking about private key on device or in the browser
+[Wed 12:12]	<tchoma>	m4nu: talking with the w3c about some of this at W3C TPAC
+[Wed 12:13]	<tchoma>	m4nu: thanks all, let's chat next week.
+[Wed 12:13]	<voip-ps>	kumar (IAX2/diamondcard-3787) has left the conference.
+[Wed 12:13]	<voip-ps>	<unknown> (IAX2/diamondcard-4735) has left the conference.
+[Wed 12:13]	<voip-ps>	Dave Longley (SIP/6002-0000009e) has left the conference.
+[Wed 12:13]	<voip-ps>	<unknown> (IAX2/diamondcard-5753) has left the conference.
+[Wed 12:13]	<voip-ps>	m4nu (IAX2/diamondcard-8377) has left the conference.
+[Wed 12:13]	<voip-ps>	andreio (SIP/10.16.3.110-0000009b) has left the conference.
+[Wed 12:13]	<voip-ps>	Dave Lehn (SIP/6003-0000009f) has left the conference.
+[Wed 12:13]	<voip-ps>	tchoma (SIP/10.0.1.8-00000099) has left the conference.

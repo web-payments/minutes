@@ -23,6 +23,16 @@
          "alias": ["taaz", "dil", "dlehn"],
          "homepage": "http://dil.lehn.org/"
       },
+      "Evan Schwartz": 
+      {
+         "alias": ["eschwartz"],
+         "homepage": "http://www.linkedin.com/in/evanmarkschwartz"
+      },
+      "Erik Anderson":
+      {
+         "alias": ["eschwartz"],
+         "homepage": "http://www.linkedin.com/in/erikanderson"
+      },
       "Dave Longley":
       {
          "alias": ["dlongley", "dlongley-db"]
