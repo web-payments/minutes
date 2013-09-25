@@ -1,0 +1,193 @@
+[Wed 11:06]	<m4nu>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2013Sep/0126.html
+[Wed 11:07]	<m4nu>	scribe: taaz
+[Wed 11:07]	<m4nu>	Topic: Update on GSoC Student Progress
+[Wed 11:07]	<m4nu>	andrei: Things that I worked on the past two weeks consisted in improvements to the login system, adding gravatar image support for users and adding multiple payees that can be added to receive payment when you create the asset (I had a question about this: I have 3 fields for this, price, currency and payswarm accout, how should this last information, the accout, be made accesible/publicly-known? Is it acceptable to presume its known such as an email address?
+[Wed 11:07]	<taaz>	m4nu: Yes, financial account URLs can be publicly known just like email addresses.
+[Wed 11:07]	<m4nu>	andrei: The commits will be online by the end of the week.
+[Wed 11:07]	-->|	kumar__ (~kumar@c-98-220-12-84.hsd1.in.comcast.net) has joined #payswarm
+[Wed 11:08]	<m4nu>	voip: connections?
+[Wed 11:08]	<voip-ps>	Conference connections: Dave Lehn [SIP/6003-000000aa], Manu Sporny [SIP/6000-000000ab], Dave Longley [SIP/6002-000000ac], <unknown> (bshambaugh) [SIP/70.164.64.51-000000ad], <no name> (evan) [IAX2/diamondcard-7999]
+[Wed 11:08]	<m4nu>	Topic: Updates to HTTP Signatures spec
+[Wed 11:09]	<m4nu>	https://payswarm.com/specs/source/http-signatures/
+[Wed 11:09]	<m4nu>	https://payswarm.com/specs/source/http-signatures-audit/
+[Wed 11:09]	<taaz>	m4nu: been doing traveling, updated http signature spec in spare time
+[Wed 11:09]	<taaz>	m4nu: discussing if we wanted to take http sig spec to ietf with nonces and trailers
+[Wed 11:10]	<taaz>	m4nu: Want to keep the HTTP Signatures spec simple. We moved nonces and trailers into other specs:
+[Wed 11:10]	<m4nu>	https://payswarm.com/specs/source/http-signature-nonces
+[Wed 11:10]	<m4nu>	https://payswarm.com/specs/source/http-signature-trailers
+[Wed 11:11]	<taaz>	m4nu: Greatly simplifies core spec. IETF going to wrap up work soon, wanted to get this into their work pipeline soon.
+[Wed 11:11]	<taaz>	m4nu: HTTP Signatures spec needs examples updated.
+[Wed 11:12]	<m4nu>	taaz: One of the examples I made in one of the implementations have the values from the spec in there. So, we should be able to generate that stuff easily.
+[Wed 11:12]	<taaz>	taaz: What changed in the examples?
+[Wed 11:13]	<taaz>	m4nu: Took out nonces and http trailer support. Also require request line, host, and date are now required to be signed.
+[Wed 11:14]	<taaz>	m4nu: Did a pass and looks like gramatical things are ok. Security audit document took longer, but is good enough to submit at this point.
+[Wed 11:14]	<m4nu>	Topic: Postmortem: World Banking Conference (SIBOS)
+[Wed 11:15]	<taaz>	m4nu: Spent last week at world banking conference in Dubai.
+[Wed 11:15]	<taaz>	m4nu: Introduce PaySwarm, Ripple, etc to people.
+[Wed 11:15]	-->|	PaulCapestany (~PaulCapes@204.28.124.82) has joined #payswarm
+[Wed 11:16]	<taaz>	m4nu: Spent time with lots of bankers, Bitcoin's chief legal counsel, Director of product strategy from OpenCoin/Ripple.
+[Wed 11:16]	<voip-ps>	<unknown> (IAX2/diamondcard-1360) has joined the conference.
+[Wed 11:07]	<dlongley>	scribe: dlongley
+[Wed 11:18]	<dlongley>	m4nu: Basically found out that it would be very difficult to switch production banking systems to new tech, old systems written in cobol/fortran from the 80s, they'd have to probably run side-by-side for a decade or two.
+[Wed 11:18]	<dlongley>	m4nu: there were 100-140 banking technology people in the room for the Web Payments presentation. Will have video from that later in the week.
+[Wed 11:18]	<dlongley>	m4nu: SWIFT is an international standards org for banks, so like w3c is to the web, SWIFT is to banks
+[Wed 11:19]	<dlongley>	m4nu: SWIFT doesn't create open source tech for banks, they just define the standards, ISO20022
+[Wed 11:19]	<dlongley>	m4nu: they have 2000 pages long standard about messages banks communicate with each other. SWIFT is many times larger than w3c.
+[Wed 11:20]	<dlongley>	m4nu: SWIFT message was that banks are very conservative when it comes to this tech, and because of this they are one of the last groups to adopt new tech
+[Wed 11:20]	<dlongley>	m4nu: people from payswarm/bitcoin/ripple have hard time communicating with banks because the main threat is for them to even think about integrating tech ... because of how archaic their current architectures are, there's a potential business threat too, but the new tech is the bigger barrier
+[Wed 11:21]	<dlongley>	m4nu: SWIFT wants to participate though
+[Wed 11:21]	<dlongley>	m4nu: they are very open to new tech, and want to get involved with w3c
+[Wed 11:21]	<dlongley>	m4nu: they know that banks will have to deal with these new techs and their standards group believes that they need to at least participate in this work so they can tell banks how to integrate payswarm/ripple/bitcoin into the banking infrastructure when the time comes
+[Wed 11:21]	<dlongley>	m4nu: really good news for us since they want to participate in the standards setting work.
+[Wed 11:21]	<m4nu>	Topic: Postmortem: EDGE Conference and Financial Times
+[Wed 11:21]	<dlongley>	m4nu: yesterday, i was at EDGE, there was an hour long panel on Web Payments: http://www.youtube.com/watch?v=Al3SEbeK61s&t=3h20m5s
+[Wed 11:22]	<dlongley>	m4nu: EDGE was really interesting in that it was one of the first times we had a number of people from the web payments group on the stage
+[Wed 11:22]	<dlongley>	m4nu: and a lot of tech people in the audience, lots of big names in the Web industry like John Resig (jQuery), Paul Irish (Modernizr), Jake Archibald (Google Chrome), Alex Russel (IE Chrome Frame), etc.
+[Wed 11:22]	<dlongley>	m4nu: talking at the conference a lot of people didn't know the web payments work was going on and we had a number of people join the group as a result
+[Wed 11:22]	<dlongley>	m4nu: we had people from stripe join, got some google wallet contacts, people from the audience excited about payswarm, bitcoin, ripple, etc.
+[Wed 11:23]	<dlongley>	m4nu: people from google wallet, etc. still pushing their proprietary stacks but also promoting movement toward something btter.
+[Wed 11:23]	<dlongley>	m4nu: payment startups more interested in the new open standard work
+[Wed 11:23]	<dlongley>	m4nu: google/etc. have a proprietary silo and lots of customers there and don't necessarily want to have to compete with others in the area
+[Wed 11:23]	<dlongley>	m4nu: but they are interested in new payment standards, etc.
+[Wed 11:23]	<m4nu>	Here's video of the EDGE Conference Panel on Payments: http://www.youtube.com/watch?v=Al3SEbeK61s&t=3h20m5s
+[Wed 11:24]	<dlongley>	m4nu: we were also talking to New York Times, Getty, Associated Press, and International Press Telecommunications Council yesterday at financial times talking about how to get rid of large amount of money spending on proprietary systems.
+[Wed 11:24]	<dlongley>	m4nu: people at all orgs interested in the web payments work as well as an identity solution for their customers.
+[Wed 11:25]	<dlongley>	m4nu: they are pushing us up to their technology teams to take a deeper look at what we're doing, and showing interest in joining us, bloomberg already in the group and very interested/supportive of what we're doing
+[Wed 11:25]	<dlongley>	m4nu: it was a great trip, we got lots of interest in various different verticals, etc.
+[Wed 11:25]	<m4nu>	voip: connection?
+[Wed 11:25]	<dlongley>	voip-ps: connections?
+[Wed 11:25]	<voip-ps>	Conference connections: Dave Lehn [SIP/6003-000000aa], <unknown> (bshambaugh) [SIP/70.164.64.51-000000ad], Manu Sporny [SIP/6000-000000ab], IAX2/diamondcard-1360, <no name> (evan) [IAX2/diamondcard-7999], Dave Longley [SIP/6002-000000ac]
+[Wed 11:26]	<m4nu>	voip: 1360 is madhu
+[Wed 11:26]	<voip-ps>	madhu is now associated with IAX2/diamondcard-1360.
+[Wed 11:26]	<dlongley>	madhu: having worked in the banking industry for a long time (JP Morgan Chase, Royal Bank of Scotland, etc.), you'd be surprised at how brittle their systems are, so much is spend just on testing, there is often production code running and there's no documentation and the source code is not available
+[Wed 11:26]	<dlongley>	m4nu: that's scary
+[Wed 11:27]	<dlongley>	madhu: yes, it's very very difficult, for people working in this environment, etc.
+[Wed 11:27]	<melvster>	following conversation on IRC, interesting stuff.
+[Wed 11:27]	<dlongley>	m4nu: i was having discussions about this with [... banks] and people don't want to touch these systems because they "work", they were built in the 1980s and are still part of their core business and in production
+[Wed 11:28]	<dlongley>	m4nu: anyone who had any idea about web tech were slim, only people in core tech teams in SWIFT, etc. if you talk to the bank technologists, they are still in cobol/fortran land, they are talking about private financial networks, only a very high-level (heard of it) understanding of bitcoin
+[Wed 11:28]	<dlongley>	madhu: these are the people i talk to every day, and one of the banks i was with, and they were working on a part of the infrastructure and it was so old and interesting that a historic museum wanted a piece
+[Wed 11:29]	<dlongley>	m4nu: yeah, that's why it's so difficult for SWIFT to change anything, they have an IBANN[sp?] number
+[Wed 11:29]	<dlongley>	m4nu: and changing one digit in that number would cost banks to spend between 5-10 million to deal with that change
+[Wed 11:29]	<dlongley>	m4nu: because some banks were using that number to decide whether or not banks could use faxes to send money, etc.
+[Wed 11:30]	<dlongley>	m4nu: the banks are very focused on keeping that old infrastructure up and running, they dont' have resources to focus on anything new
+[Wed 11:30]	<dlongley>	m4nu: no one is working on this stuff ,SWIFT said this was the first time they saw anyone working on open next gen banking technology and they were very excited to hear about it; hopefully we can get some of the SWIFT people on the calls in the future. It was interesting because they said that their hands are tied, they can only really work on stuff that the banks need in the immediate term and no bank wants large disruptive changes, even if they end up with a system that is far better than the one we currently have.
+[Wed 11:31]	<dlongley>	m4nu: the nice thing about SWIFT is that they have so much knowledge about how these financial systems work,e tc.
+[Wed 11:31]	<dlongley>	m4nu: they were impressed with payswarm and ripple and bitcoin
+[Wed 11:31]	<dlongley>	m4nu: we've got a very good dialogue going with them and we hope to continue that dialog.
+[Wed 11:31]	<m4nu>	Topic: Identity and Payments
+[Wed 11:32]	<dlongley>	m4nu: so while talking with the banking industry ... one thing became very apparent, there has been a big pain point w/banks for a long time, they don't have an identity solution that works on a banking level
+[Wed 11:32]	<dlongley>	m4nu: this idea that you could do KYC (know your customer)
+[Wed 11:32]	|<--	rossk_ has left zoe-fn (Remote host closed the connection)
+[Wed 11:32]	<dlongley>	m4nu: on a customer and then that customer could get a line of credit at a different bank or a new account at a new bank
+[Wed 11:32]	<dlongley>	m4nu: or use that identity to do some other financial activity...
+[Wed 11:32]	<dlongley>	m4nu: you just can't do that today
+[Wed 11:32]	<dlongley>	m4nu: i've also been talking to bitcoin community and they have been having to do KYC
+[Wed 11:32]	-->|	rossk (~rossk@static-173-73-3-108.washdc.fios.verizon.net) has joined #payswarm
+[Wed 11:33]	<dlongley>	m4nu: and they have to go through the same process that the banks have to go through
+[Wed 11:33]	<dlongley>	m4nu: and when you are doign any kind of financial thing you have to go through that mechanism
+[Wed 11:33]	<dlongley>	m4nu: there are some startups now that are doing just KYC for the banks
+[Wed 11:33]	<dlongley>	m4nu: all of them kind of have the same problem, there is no mechanism to express identity information, verified addresses ,social security, etc.
+[Wed 11:33]	<dlongley>	m4nu: there's no container format for it
+[Wed 11:34]	<dlongley>	m4nu: and we've been talking to them and payswarm has a mechanism that would work for all of these banking/financial institutations/organizations
+[Wed 11:34]	<dlongley>	m4nu: we have something that's based on crypto that would let these orgs do identity
+[Wed 11:34]	<dlongley>	m4nu: and verify etc
+[Wed 11:34]	<dlongley>	m4nu: we're trying to figure out a way to work with the mozilla persona people to see if there's an identity solution ... if we can use persona, and the payswarm-based identity solution to address some of these issues for banks and bitcoin-based financial services
+[Wed 11:34]	<m4nu>	http://lists.w3.org/Archives/Public/public-webpayments/2013Sep/0127.html
+[Wed 11:34]	<dlongley>	m4nu: we've had a decent bit of high level discussion about it on the mailing list
+[Wed 11:35]	<dlongley>	m4nu: some of the discussion went off topic
+[Wed 11:35]	<dlongley>	m4nu: some of it is based on ricardo's (from telefonica) and he thinks we're proposing some e-mail based solution, we're not... that's a red herring, so we need to make sure that people understand that we're not being simplistic about this.
+[Wed 11:35]	<dlongley>	m4nu: so i was wondering, madhu, what you were thinking about what banks could pick up in 2-3 years or 7-10 years if we standardized today on the web
+[Wed 11:36]	<dlongley>	m4nu: could you do a quick intro on identity as it relates to banking and we'll go from there?
+[Wed 11:36]	<dlongley>	madhu: real quick, it may be worth it to delve into this in more far more depth on a different call. Here's a high-level overview -
+[Wed 11:36]	<dlongley>	madhu: today, banks do identity checking as a routine every day process
+[Wed 11:36]	<dlongley>	madhu: what is essential, and i don't see this changing, is that an identity be govt endorsed, they always want drivers license or passport, etc.
+[Wed 11:36]	<dlongley>	madhu: that is a fundamental building block
+[Wed 11:37]	<dlongley>	madhu: they are required by law to know who they do business with
+[Wed 11:37]	<dlongley>	madhu: they need to know who they do business with, banking secrecy act, etc. layers on additional requirements
+[Wed 11:37]	<dlongley>	madhu: it is done in a different way by different banks, and sometimes worse it is different per product
+[Wed 11:37]	<dlongley>	madhu: if you understand where banking has come from, some countries have 4-5 huge banks, others, they have 4-5 big ones and then 7000 smaller banks
+[Wed 11:38]	<dlongley>	madhu: banks grew up by combining different banks together and diff products
+[Wed 11:38]	<dlongley>	madhu: if a customer applies for a credit card vs. checking account, KYC is often different between the two
+[Wed 11:38]	<dlongley>	madhu: even within a single institution
+[Wed 11:38]	<dlongley>	madhu: it's being done today and in a way that's expensive, it's seen as a significant risk driver, all it takes is 10-20 large accounts or even small ones that fall into the wrong hands and it's a huge issue for the banks
+[Wed 11:39]	<dlongley>	madhu: if a bank cannot establish your identity, they will and should refuse to do business with you
+[Wed 11:39]	<dlongley>	madhu: so govt issue is important
+[Wed 11:39]	<dlongley>	madhu: the problem is coming sideways at me ... if someone said "wouldn't it be a nice thing if you could share identity?"
+[Wed 11:39]	<dlongley>	madhu: i haven't heard that from the banks
+[Wed 11:40]	<dlongley>	madhu: the systems are largely closed today as are the protocols for establishing identity and it works quite fast
+[Wed 11:40]	<dlongley>	madhu: identity can be established in a few seconds
+[Wed 11:40]	<dlongley>	madhu: there are proprietary stacks to establish identity today and how much is it worth for us to create an open standard for establishing identity? That's the question we should be asking.
+[Wed 11:41]	<dlongley>	madhu: establishing an open standard for payments will require some identity, but maybe not KYC identity
+[Wed 11:41]	<dlongley>	madhu: one more point, there is a kind of identity required to KYC, there's another kind to require to authorize transactions
+[Wed 11:41]	<dlongley>	madhu: today auth and identity are conflated in the banking world
+[Wed 11:41]	<dlongley>	madhu: establishing that you are manu when you open an account is different from using your payment card
+[Wed 11:41]	<dlongley>	madhu: identity, authorization are conflated, permission to use, if you will
+[Wed 11:42]	<dlongley>	madhu: there's a presumed identity there, for example, if you gave me your card, the institutions presume the identity
+[Wed 11:42]	<dlongley>	madhu: they presume it's you using it, but that's not always true
+[Wed 11:42]	<dlongley>	madhu: there's a nuance there, things are conflated and that's a problem
+[Wed 11:42]	<dlongley>	madhu: so that's a different issue, what the system is authorizing is the number ... are there good funds behind it that hasn't been complained about, it isn't establishing that it's actually you spending the funds
+[Wed 11:43]	<dlongley>	madhu: it was not possible when the system was invented 30 years ago that there were two things separately in an efficient way, we were using signatures and photo ids , etc
+[Wed 11:43]	<dlongley>	madhu: but that has gone away, we could achieve this today
+[Wed 11:43]	<dlongley>	madhu: but doing that, it may be a value-add to the system if we can focus our efforts on that
+[Wed 11:43]	<dlongley>	m4nu: we are using a lot of public key/cryptography with payswarm and bitcoin/ripple
+[Wed 11:44]	<dlongley>	m4nu: there are passwords you could place on your wallet so you need more than the account itself to do a transaction
+[Wed 11:44]	<dlongley>	m4nu: when you do a digital signature your key may be locked in some way so a smart card or something else holds your key that you must unlock to do a payment. Like a PIN on a chip/pin card.
+[Wed 11:44]	<dlongley>	m4nu: so you have to be the actual owner
+[Wed 11:44]	<dlongley>	madhu: i could see a scenario today where it's far less likely to give someone your atm card to use it vs. a credit card
+[Wed 11:45]	<dlongley>	madhu: i think it's very valuable to establish the difference/support what people want here
+[Wed 11:45]	<dlongley>	madhu: the fraud rate is very different for pin-based products (lower fraud)
+[Wed 11:45]	<dlongley>	m4nu: yeah, whenever you have a token it helps lower fraud
+[Wed 11:45]	<dlongley>	m4nu: i dont' think whatever identity solution we come up with be used by the banks right away, it will take time. In fact, the banks may be the last organizations adopting it.
+[Wed 11:46]	<dlongley>	m4nu: if we don't support what they already need then our new tech won't be a good replacement for what they have today
+[Wed 11:46]	<dlongley>	m4nu: they make proprietary calls out to services to do KYC and it would be great if those banks didn't have to pay for that
+[Wed 11:47]	<dlongley>	m4nu: obviously some orgs wouldn't like that but a lot of other orgs that need to verify shipping addresses, etc could all use this system, so it's not just about banks and easier log in on the web, it's about both and more, and making sure we have a solution that can scale to address both of those use case needs
+[Wed 11:47]	<dlongley>	m4nu: do you think that's worth pursuing, madhu?
+[Wed 11:47]	<dlongley>	madhu: yes, i think it makes sense; if you want to do anything in the world of payments, establishing identity is an essential part of it, if we want to evolve and change the payments world and make it more friendly on the web
+[Wed 11:48]	<dlongley>	madhu: you always need identity at the very least the identity solution must do as well as the banks now and it's great if it's better and we can advertise that business proposition across different ways
+[Wed 11:48]	<m4nu>	Right now, In PaySwarm, we have identities that look like this (public identity information): https://dev.payswarm.com/i/manu
+[Wed 11:48]	<dlongley>	madhu: we need identity for payments, since we need it, how do we craft something, or use existing mechanisms, that are already available or make it applicable to a wider audience
+[Wed 11:49]	<dlongley>	m4nu: so we have the core of that already in payswarm, the idea here is that you have a URL for your identity in payswarm, at that URL is a whole bunch of machine readable data, in order to get to other stuff there's an ACL, you have to provide access to the person who wants the info
+[Wed 11:49]	<dlongley>	m4nu: an ideal use case would be going to a financial site to log in with persona and then persona would give your identity URL to the bank
+[Wed 11:50]	<dlongley>	m4nu: once the bank has that, it can then start querying that URL to complete its KYC process
+[Wed 11:50]	<dlongley>	m4nu: like, what is the physical mailing address, are they a citizen, etc, all that can be stored in an external identity and queried by the bank and then the banks don't need to pay as much, and the bank doesn't have to keep those processes inside the bank, they can just query this external identity
+[Wed 11:50]	<dlongley>	m4nu: the question is how to trust that information
+[Wed 11:51]	<dlongley>	m4nu: anyone could put whatever they want at that URL, well, what we can do is ... there are companies that already do KYC clearing for customers, instead they can assert some information and digitally sign it, then write it to that identity URL
+[Wed 11:52]	<dlongley>	m4nu: by doing that, as long as the bank trusts the entity doing KYC, if there's a signature on their info at the identity URL from that KYC provider institution, and the customer says "yes, i agree to release this info to the bank i'm signing up for" this seems like a fairly workable solution
+[Wed 11:52]	<dlongley>	m4nu: instead of making these proprietary calls they could just make an open call, and it's really simple and the person is automatically in and the bank doesn't have to pay for KYC'ing the customer.
+[Wed 11:52]	<dlongley>	m4nu: the person just gives access to the bank if they want to and they don't have to fill out any forms, etc.
+[Wed 11:52]	<dlongley>	m4nu: and they just share whatever info they want with the bank and that gets them their account there
+[Wed 11:53]	<dlongley>	m4nu: other companies, vendors, etc. would adopt this first before banks would, to get shipping info, etc.
+[Wed 11:53]	<dlongley>	m4nu: do you think that could work for banks in the future?
+[Wed 11:53]	<dlongley>	madhu: i think so, in many ways it replicates the work flow of today, which is great, it's a good thing, that's what companies do today that process that's new and different here, is that the customer is giving permission
+[Wed 11:53]	<dlongley>	madhu: today this information isn't necessarily in the customer's control
+[Wed 11:54]	<dlongley>	madhu: bureaus currently control it
+[Wed 11:54]	<dlongley>	madhu: but right now that's exactly what happens now when opening accounts at the bank, we go check the KYC institutions, i trust someone who trusts someone else, etc.
+[Wed 11:54]	<dlongley>	madhu: and the information flows and ... this new idea works, i think it makes sense
+[Wed 11:54]	<dlongley>	m4nu: this would require just a small set of tweaks to the existing identity solution we have
+[Wed 11:55]	<dlongley>	m4nu: with payswarm
+[Wed 11:55]	<dlongley>	m4nu: the idea here would be that you can write to an identity by posting some JSON to it
+[Wed 11:55]	<dlongley>	m4nu: and the customer could say yes or no
+[Wed 11:55]	<dlongley>	m4nu: and the other thing would be so-and-so institution wants info X, customer says yes or no
+[Wed 11:56]	<dlongley>	m4nu: so that's almost the exact same thing as we do for the PaySwarm buy flow right now
+[Wed 11:56]	<m4nu>	dlongley: I don't think you missed anything, that's more or less what we were looking at doing in the future anyway.
+[Wed 11:56]	<m4nu>	dlongley: We would have to look at all the details of how to do the "writing to your identity" portion, but what you outlined is the high-level of what would work.
+[Wed 11:57]	<dlongley>	taaz: could this work in the background?
+[Wed 11:57]	<dlongley>	m4nu: it could work like our budgeting feature right now
+[Wed 11:57]	<dlongley>	m4nu: to grant continuous access to certain institutions,
+[Wed 11:58]	<dlongley>	m4nu: then they could pull when you wanted
+[Wed 11:58]	<dlongley>	m4nu: this would allow them to pull the info whenever they needed to use it
+[Wed 11:58]	<dlongley>	m4nu: that may be a version 2.0 thing, we dont' necessarily need it in the first cut
+[Wed 11:58]	<dlongley>	m4nu: we also need to figure out how to integrate this with persona and the larger identity sphere
+[Wed 11:59]	<dlongley>	m4nu: persona can already clear 700 million+ email addresses so that's a good start/place to get this integrated
+[Wed 11:59]	<dlongley>	m4nu: i'm hoping next week we can get the mozilla persona folks here to discuss this stuff
+[Wed 11:59]	<dlongley>	m4nu: that's the last bit, we can do everything else
+[Wed 11:59]	<dlongley>	m4nu: we just need the persona folks to tell us how to tie an identity URL to a login
+[Wed 11:59]	<dlongley>	m4nu: any other comments or questions?
+[Wed 12:00]	<dlongley>	m4nu: if that's a fairly easy technical solution then we just need to do the specs, etc.
+[Wed 12:00]	<dlongley>	m4nu: thanks all
+[Wed 12:00]	<dlongley>	evan: bye
+[Wed 12:00]	<voip-ps>	madhu (IAX2/diamondcard-1360) has left the conference.
+[Wed 12:00]	<voip-ps>	Manu Sporny (SIP/6000-000000ab) has left the conference.
+[Wed 12:00]	<voip-ps>	Dave Longley (SIP/6002-000000ac) has left the conference.
+[Wed 12:00]	<voip-ps>	Dave Lehn (SIP/6003-000000aa) has left the conference.
+[Wed 12:00]	<voip-ps>	evan (IAX2/diamondcard-7999) has left the conference.

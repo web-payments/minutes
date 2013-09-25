@@ -45,6 +45,11 @@
       {
          "alias": ["futuresoon"]
       },
+      "Madhu Nott":
+      {
+         "alias": ["futuresoon"],
+         "homepage": "http://www.linkedin.com/profile/view?id=1568433"
+      },
       "Adam B. Levine":
       {
          "alias": ["AdamBLevine"],
