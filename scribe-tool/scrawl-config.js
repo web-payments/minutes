@@ -41,6 +41,11 @@
       {
          "alias": ["dln"]
       },
+      "Lloyd Hilaiel":
+      {
+         "alias": ["lloyd|mozilla"],
+         "homepage": "http://lloyd.io/"
+      },
       "Nick Person":
       {
          "alias": ["futuresoon"]

@@ -1,0 +1,85 @@
+[Wed 09:04]	<voip-ps>	Manu Sporny (SIP/6000-000000cf) is in the conference.
+[Wed 09:04]	<voip-ps>	Manu Sporny (SIP/6000-000000cf) has joined the conference.
+[Wed 09:05]	<m4nu>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2013Oct/0026.html
+[Wed 09:05]	<m4nu>	To be clear, the part of the Agenda that this call is about is item #4: Identity and Payments
+[Wed 09:05]	<m4nu>	scribe: m4nu
+[Wed 09:05]	<m4nu>	Topic: Persona, Identity, and Payments
+[Wed 09:06]	<voip-ps>	<unknown> (IAX2/diamondcard-1735) has joined the conference.
+[Wed 09:06]	<m4nu>	voip: 1735 is lloyd
+[Wed 09:06]	<voip-ps>	lloyd is now associated with IAX2/diamondcard-1735.
+[Wed 09:10]	<m4nu>	manu: Thanks for taking the time to talk about Persona / Financial Identity. Would you like some background before we start?
+[Wed 09:10]	<m4nu>	lloyd: High-level background would be great.
+[Wed 09:10]	<m4nu>	manu: I just spent a considerable amount of time at world banking conference. it gathers all 6,900 international banks under one roof to talk about issues. One of those is bank standardization. Banks have an issue with identity standardization right now, it's expensive, not standardized at all, etc. Know Your Customer verification covers government issued ID, you're not on terrorist watchlist, etc. When someone walks into a bank branch, they keep having to verify people and pay for it. 
+[Wed 09:10]	<m4nu>	manu: It would be better to have a bring your own identity mechanism - get an assertion from the government that says they're a citizen or live at a particular address, when they need to prove that, they can just provide that assertion to the service. We'd like to figure out a way to extend Persona in a way that is simple, but provides richer identity mechanisms for banks and financial institutions.
+[Wed 09:10]	<m4nu>	manu: We have a way that Persona could provide a bootstrapped mechanism into this, but we need to know if what we need to do is do-able.
+[Wed 09:10]	<m4nu>	manu: What we were going to do was to say that the financial institution should become a Persona identity provider. The financial institution gives them an e-mail address, like lloyd@paypal.com.
+[Wed 09:10]	<m4nu>	manu: When you go to login to a site that you want to buy something, or prove that you have a particular shipping address or govt. ID, you'd login w/ Persona and the assertion provided by the bank would include extra data. For example, an identity URL that is compatible with the Web Payments standards. It could contain a bitcoin address, etc. The question we have is - is that in the persona design? Could an identity provider include other information that the identity consumer could use to bootstrap a discovery process.
+[Wed 09:10]	<m4nu>	lloyd: I think the answer is yes.
+[Wed 09:10]	<m4nu>	lloyd: Let's be clear. This would be data in the certificate asserted by PayPal. 
+[Wed 09:10]	<m4nu>	manu: Yes, they could also be endorsements by a 3rd party, but let's keep it simple for now and say that only PayPal is making the assertions.
+[Wed 09:10]	<m4nu>	lloyd: Yeah, you could include other data signed by other people.
+[Wed 09:10]	<m4nu>	lloyd: There is a concern here about information leakage.
+[Wed 09:10]	<m4nu>	manu: Yes, we're concerned about information leakage. For example, in PaySwarm you can have multiple identities and each one of those identities is going to have information that you want to share and information that you don't want to share. In some cases you want people to know your shipping address, in other cases, you don't want people to know your shipping address.
+[Wed 09:10]	<m4nu>	lloyd: So, shipping address is something that might be in some certs and not in others.
+[Wed 09:10]	<m4nu>	manu: Yes, but let's not go that far. All we want to do is provide some sort of bootstrapping mechanism. So, the only thing we're talking about emedding in the Persona assertion is a URL. If they want to find out more information, they go through something like an OAuth token request to get the shipping address or govt ID number. Whoever owns the identity is going to make that decision.
+[Wed 09:10]	<m4nu>	manu: That won't be part of the Persona process. All we need Persona to do is to assert a payment processor identity URL. So, to answer your question, we're not going to put any information in there that could leak personal details about that person (into the Persona certificate).
+[Wed 09:10]	<m4nu>	lloyd: One could imagine extensions to Persona to allow other data to be embedded in the certificate. Identity providers need to make sure that they don't leak information. Maybe they can select between multiple certificates.
+[Wed 09:10]	<m4nu>	lloyd: In the beginning, if there is information that the identity provider is comfortable embedding in the certificate, then I think we're talking about a very small change to add extended attributes to Persona. I thought that already existed in Persona. 
+[Wed 09:10]	<m4nu>	lloyd: The only thing you need is extended attributes in Persona assertions... is that correct?
+[Wed 09:10]	<m4nu>	manu: yeah, that's all we'd need. The line we're talking about adding looks like this: paymentIdentity: "https://dev.payswarm.com/i/manu"
+[Wed 09:10]	<m4nu>	lloyd: We need to refresh our JWT implementation and conform w/ the latest version of JWT, it would be interesting to understand the ext parameter to view expected attributes.
+[Wed 09:10]	<m4nu>	manu: I think that was pulled out, but maybe I'm mis-remembering. 
+[Wed 09:10]	<m4nu>	lloyd: As a follow-up, let's look at JWCrypto to see how difficult it would be to add it (if it's not already there). Then we can just let a thousand flowers bloom. 
+[Wed 09:10]	<m4nu>	lloyd: There is an interesting related use case, we're using Persona internally at Mozilla, our identity provider ensures that only people that should be able to see data can see it. Our systems require canonical email, so that could be extra information added to the payload as far as Mozilla is concerned. That would be a good test.
+[Wed 09:10]	<m4nu>	lloyd: There is a line here that you have to walk, you could cause users to expose information that they never wanted to expose.
+[Wed 09:10]	<m4nu>	manu: Yes, we have the same sort of issue in the Web Payments world. For example, we have anonymous identities that only the identity provider and the customer know about. Someone outside the system wouldn't be able to track that anonymous identity back to the person. To be clear, we still follow the letter of the law, you can be a government and demand to know who the anonymous identity is, but only a legal mechanism can extract that information. So putting the anonymous identity and a real-world identity together in a Persona assertion would be a terrible thing.
+[Wed 09:10]	<m4nu>	manu: Yes, so information leakage is a big issue, which is why we only want to do, at most, one extra line in the Persona assertion. The more information you add, the more combinatorial information leakage issues you face.
+[Wed 09:10]	<m4nu>	lloyd: This brings up another issue. We would like to encourage identity providers that use site-specific pseudoanonymous identifiers that you can choose to eliminate and remove from your own identity. In order to enable this, Persona would need to give the site a deterministic, user-specific, site-specific string/token so that they could reliably generate a site. That's one case where leaking/fingerprinting that the identity provider can't track where you can go on the Web. It's a tension that we haven't been able to figure out. You may want to do a deal with your identity provider to give you information to specific sites.
+[Wed 09:10]	<m4nu>	lloyd: A specific certificate that is specific to a particular target origin, that's a tricky call.
+[Wed 09:10]	<m4nu>	manu: Some identity providers are going to provide that functionality because it eases the whole experience.
+[Wed 09:10]	<m4nu>	manu: Look at payments on the web. There are many cases where people don't want to be bothered w/ typing out their shipping address. In the Web Payments case, Amazon.com could make a request to an identity URL to pull shipping information. It's like giving them an OAuth token to get your address information. So, the shipping address assertion wouldn't live in the Persona assertion, it would live in another database/process outside of Persona. Then Amazon.com could ask for the shipping address by making a direct query against the identity provider, and if they're in the access control list, the identity provider gives the information to Amazon.
+[Wed 09:10]	<m4nu>	manu: Specifically, in the web payments case, that is going to be the norm. The person that has the identity and the identity provider, they will authorize certain sites to get data w/o their continouous authorization.
+[Wed 09:10]	<m4nu>	manu: There are other things that come into play wrt. what sort of information it can give out and/or protect. This is all really complicated and specific to the use cases. Either Persona is going to take all of these use cases into account, or you're going to have to push these features into another spec that deals w/ this sort of stuff.
+[Wed 09:10]	<m4nu>	manu: There are many organizations that require an identity mechanism that can contain SSNs and government ID numbers. 
+[Wed 09:10]	<m4nu>	manu: My assumption to this point is that Persona team is primarily focused on the basic login problem.
+[Wed 09:10]	<m4nu>	lloyd: As of today, yes, that's correct. We don't want to blow up the Persona spec, we want to layer stuff on top. We want to solve the login/auth problem in a way that's forwards compatible. Let's solve the 80% case, a simple protocol that can be built into browsers.
+[Wed 09:10]	<m4nu>	lloyd: I think this boils down to being able to have extensions in the Persona assertion, it allows freedom to experiment.
+[Wed 09:10]	<m4nu>	manu: So, I think that we can be a canary in the mine as far as extended attributes are concerned. We'd really like to use Persona for the identity mechanism. it doesn't make sense for us to do something ourselves. We're going to push Persona and we'll try to add the extended attribute stuff. Seems like you're saying that there is a desire to work on that sort of thing in the future. If it's a simple mechanism, like using extended attributes in a JWT, then problem solved. It also shows that Persona can be extended to handle the more complex identity use cases.
+[Wed 09:10]	<m4nu>	lloyd: Yes, I'm going to look at the code.
+[Wed 09:10]	<m4nu>	Topic: JSON-LD vs. JOSE
+[Wed 09:10]	<m4nu>	manu: the other thing I wanted to discuss was the use of the JOSE stack vs. JSON-LD: http://manu.sporny.org/2013/sm-vs-jose/
+[Wed 09:10]	<m4nu>	manu: That's going to be a much more difficult discussion, because it could result in a lot of work for you guys.
+[Wed 09:10]	<m4nu>	manu: We've been working w/ the Mozilla Badge team about JSON-LD. JSON-LD has gotten a good bit of pickup - Google is using it in Gmail, IBM is using it for Activity Streams. There are ways of doing digitally assigned assertions that is better than the way it's done in JOSE. JSON-LD could express Persona assertions and other things that we've been talking about, express it more simply, etc. 
+[Wed 09:10]	<m4nu>	manu: We're also talking w/ Kumar at MozPay, I think we convinced them to switch to JSON-LD right before they decided to drop MozPay in preference of a secure frame. We have a pretty decent track record of approaching people using JOSE and talking about benefits of JSON-LD over JOSE. The ability to add arbitrary data into Persona assertions would be a big benefit. Now, the downside is ripping out JWT and putting in JSON-LD could be a considerable amount of effort. One potential option here is that we support JWT and JSON-LD in the Web Payments Persona identity solutions. We're using JSON-LD for all of the other messaging on the network, if we could provide the assertions in JSON-LD, then that would be great for the Web Payments stuff.
+[Wed 09:10]	<m4nu>	manu: Even if its the Web Payments based websites use JSON-LD version of Persona.
+[Wed 09:10]	<m4nu>	lloyd: I'm skimming your blog post right now, the comparison looks very thorough. For us, there are some format changes we want to make in the coming months. Stuff like hex in some places, base-64 in some places. Being able to have multiple keys as an Identity Provider, you can do key revocation and change keys in a way that has no user impact. 
+[Wed 09:10]	<m4nu>	lloyd: If you have a breach, then pull the key, you're good.
+[Wed 09:10]	<m4nu>	manu: yes, and that's the sort of thing you can do in JSON-LD easily. We have a Web-based PKI mechanism which is really nice.
+[Wed 09:10]	<m4nu>	manu: When you digitally sign something, you use web-based key, so for example: https://dev.payswarm.com/i/manu/keys/4
+[Wed 09:10]	<m4nu>	manu: So, JSON-LD is very web-based, more than JOSE.
+[Wed 09:10]	<m4nu>	manu: I just wanted to make sure that we could at least have a discussion about it.
+[Wed 09:10]	<m4nu>	lloyd: Is anyone else on Persona team aware of this?
+[Wed 09:10]	<m4nu>	manu: I posted the link once, but I don't think anyone read it because you guys are pretty busy.
+[Wed 09:10]	<m4nu>	lloyd: Ok, I'll take two actions - look at extended attributes, and look at JSON-LD. We want something more formal by the end of the year. Now is a great time to read the blog post and consider what this would look like.
+[Wed 09:10]	<m4nu>	manu: If you need any details, JSON-LD community would be happy to help.
+[Wed 09:10]	<m4nu>	manu: That's pretty much all I had for today. Extended attributes can be done. JSON-LD/JOSE discussion can be pushed off until you guys are ready to talk about it.
+[Wed 09:10]	<m4nu>	manu: Thanks so much for taking the time to chat about this stuff.
+[Wed 09:10]	<m4nu>	lloyd: Sorry that it took so long to sync up.
+[Wed 09:10]	<m4nu>	manu: You guys are doing an absolutely fantastic job w/ Persona, we're really impressed with it. Keep up the great work!
+[Wed 09:10]	<m4nu>	lloyd: Thanks!
+[Wed 09:10]	<m4nu>	manu: I'll go back to the Web Payments group, tell them the plan to use Persona. We'll devise the technical details of how we're going to do this, and then we'll implement Persona as the login mechanism for the Web Payments stuff.
+[Wed 09:10]	<m4nu>	lloyd: Great, we're here to support you, just let us know how we can help.
+[Wed 09:40]	<voip-ps>	Manu Sporny (SIP/6000-000000cf) has left the conference.
+[Wed 09:40]	<voip-ps>	lloyd (IAX2/diamondcard-1735) has left the conference.
+[Wed 09:46]	<lloyd>	Topic: JWT support for Extended Attributes.
+[Wed 09:46]	<lloyd>	so Manu, when I look at the jwt spec, it seems like the provision for extensions are discussed here:http://tools.ietf.org/html/draft-ietf-oauth-json-web-token-12#section-4.2
+[Wed 09:47]	<lloyd>	so if an IdP were to embed additional properties in a jwt "certificate", those would be additional claims.
+[Wed 09:48]	<lloyd>	if our code were not hostile to such claims, then it seems like the mechanisms required are present
+[Wed 09:48]	<lloyd>	does my read sound right to you?
+[Wed 09:49]	<m4nu>	manu: ah, yes... now I remember reading that when I did the review. thanks! So, in the very worst case, we'd register a new Public Claim Name in the JSON Web Token Claims Registry for a payment identity URL, which could then be used to boostrap deeper identity claims (like govt. issued ID numbers, address information, etc.)
+[Wed 09:50]	<lloyd>	yes, and you would have 3 chars to make that claim discoverable
+[Wed 09:50]	<m4nu>	manu: Lloyd, I think you're read is correct... we'll keep going down that path until something blows up on us.
+[Wed 09:50]	<lloyd>	Manu, ok, when it blows up, ping me.
+[Wed 09:51]	<m4nu>	manu: Will do.
+[Wed 09:51]	<m4nu>	manu: Thanks a ton lloyd - we have what we need to make progress now.
+[Wed 09:51]	<lloyd>	my pleasure!
