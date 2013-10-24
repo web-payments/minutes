@@ -1,0 +1,121 @@
+[Wed 11:05]	<m4nu>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2013Oct/0094.html
+[Wed 11:05]	<m4nu>	scribe: taaz
+[Wed 11:07]	<m4nu>	Topic: Upcoming meetings in Hong Kong and China
+[Wed 11:07]	<taaz>	manu: We have a number of public events coming up in Hong Kong and Shenzen, China over the next 3 weeks that deal with Web Payments, Linked Data, and the work we're doing here:
+[Wed 11:07]	<m4nu>	Tuesday October 29, Open Data and Creative Commons
+[Wed 11:07]	<m4nu>	https://plus.google.com/events/cncsnn9d574bpip88d2pbp1drn8?authkey=CLHs296f_OexCw
+[Wed 11:07]	<m4nu>	Finance Innovation Forum 2013, Nov 5, 11.00 HKT
+[Wed 11:07]	<m4nu>	Keynote 4: The rise of web payments and implications for banks and Hong Kong
+[Wed 11:07]	<m4nu>	http://financeinnovation.questexevents.net/2013/hk/agenda
+[Wed 11:08]	<taaz>	pindar: Two public meetings being circulated.  One that is directly web payments related on the 5th of November, the Financial Innovation Forum.  Manu is keynoting on that.  This is going to be the highlight as far as I'm concerned.  Manu is going to meet with members working on open data to talk about JSON-LD on Tuesday October the 29th.  Those are the public meetings.  We'll be there for two weeks so there will be private meetings.  If you know of anyone interested we'd love to meet up face to face.
+[Wed 11:08]	<taaz>	pindar: Publicize this where relevant.  The effort at IGF and Hong Kong is to manage expectations and solicit talent into the group where talent is needed.
+[Wed 11:08]	<taaz>	m4nu: Another thing we'll try to do while in Honk Kong is try to get local banking community involved in these meetings.  We have two public meetings where banks could attend anonymously or pseudo-anonymously and learn more about the work we're doing. 
+[Wed 11:09]	<taaz>	m4nu: This is a follow up from talking with many of the international banks at SIBOS 2013. World banks we met with in Dubai may be interested in these meetings. We're going to be talking about Yuan liberalization and the part that Web Payments may play in that strategy.  Hong Kong is big financial center.  Have a number of international banks we talked to at SIBOS are based in Hong Kong.  Trying to meet up with Hong Kong counterparts to continue to conversation.
+[Wed 11:09]	<voip-ps>	Madhu Nott (SIP/callcentric.com-000000fc) has joined the conference.
+[Wed 11:10]	<taaz>	m4nu: After meetings in Hong Kong next two weeks is the W3C TPAC and I'll be attending and doing talks on web payments.
+[Wed 11:10]	<dsr>	TPAC web site http://www.w3.org/2013/11/TPAC/
+[Wed 11:10]	<taaz>	m4nu: This week is meeting in Bali with Internet Governance Forum (IGF), part of United Nations, next two weeks in Hong Kong talking to world banks, creative commons, and open data initiatives, the following week is the W3C TPAC.
+[Wed 11:11]	<taaz>	Topic: Web Payments at W3C Technical Plenary
+[Wed 11:11]	<taaz>	m4nu: Need to plan for W3C web payments workshop coming up in 2014 in Paris.  Dave Raggett could you give background and where we are on that meeting?
+[Wed 11:11]	* dlongley dsr is dave raggett
+[Wed 11:12]	<taaz>	dsr: Sure.  First off, I'm a member of the W3C staff and have worked with them since about the beginning of the W3C.  I'm organizing this workshop and it's slipped a month from February to late March.  It will be held in the old stock exchange in Paris.  We're in the process of sorting out the details now.
+[Wed 11:13]	<voip-ps>	dlehn (SIP/192.168.1.178:5060-000000f9) has left the conference.
+[Wed 11:13]	<voip-ps>	dlehn (SIP/192.168.1.178:5060-000000fd) has joined the conference.
+[Wed 11:13]	<dlongley>	m4nu: Is the idea that we're trying to get as many government organizations, banks, payment companies, (broad constituency) into the workshop and then decide what the charter will be after that fact?
+[Wed 11:14]	<dlongley>	m4nu: Or is it more general from a W3C perspective, more like a meeting where we see if there's interest at all and figure out the charter at a later point?
+[Wed 11:14]	<dlongley>	dsr: I think it's about general interest and look for momentum and consensus to get something done, we have to have a broad enough constituency and we need key players to make sure it's well deployed
+[Wed 11:15]	* dlongley scribe assist off :)
+[Wed 11:15]	<taaz>	m4nu: Is venue and date nailed down?
+[Wed 11:15]	<taaz>	dsr: February fell through, may be last week of March.
+[Wed 11:17]	<taaz>	m4nu: Please send out details once we know them, a number of large banks and technology companies are asking for a venue and date so that they can schedule their folks to attend.
+[Wed 11:17]	<taaz>	dsr: Will do that.
+[Wed 11:17]	<taaz>	dsr: Who's going to TPAC?
+[Wed 11:18]	<taaz>	m4nu: I'll be there, not sure who else will be. TPAC is pretty W3C specific *and* it's in China. Many of the banking and payment communities have no reason to attend, or if they do, it's hard for them to do so.  We'll try to have a breakout session if there is enough interest in Web Payments. There will be a number of presentations on Web Payments and Linked Data. I'll be meeting face-to-face w/ other groups whose work we depend on (Web Crypto, Sys Apps (NFC), Web Apps (Request Autocomplete), etc)
+[Wed 11:19]	<m4nu>	Topic: Web Payments in Silicon Valley (last week)
+[Wed 11:20]	<taaz>	m4nu: Met with a number of large tech companies, about 8 of them. Won't say who because most of them don't want to be on record as being interested.
+[Wed 11:20]	<taaz>	m4nu: These are companies that are involved in payments work or online finance initiatives.  Lots of interest in web payments work.
+[Wed 11:21]	<taaz>	m4nu: I went through though our specs with them and each one pointed out which specs are of interest to them. Those are what's in the charter proposal we'll discuss later in the call. interest in new specific specs.
+[Wed 11:21]	<taaz>	m4nu: Companies are interested in joining web payments group, or have already done so anonymously.
+[Wed 11:22]	<taaz>	m4nu: Companies might want to provide letters of support vs coming to workshops.
+[Wed 11:22]	<taaz>	dsr: Better if companies come to workshop to engage in discussion, but other support is helpful.
+[Wed 11:23]	<taaz>	m4nu: How much support is needed?
+[Wed 11:23]	<taaz>	dsr: We can support about a hundred people for the workshop.  It's not just about numbers but commitment.
+[Wed 11:24]	<taaz>	dsr: For instance, for a browser API to be successful, we'd need browser vendors commitment.
+[Wed 11:25]	<voip-ps>	Madhu Nott (SIP/callcentric.com-000000fc) has left the conference.
+[Wed 11:26]	<taaz>	Topic: Web Payments at United Nations / IGF 2013
+[Wed 11:26]	<taaz>	m4nu: I've been at the Internet Governance Forum this week presenting on Web Payments. The IGF is a group chartered by the United Nations to figure out regulatory and policy issues around the Internet, human rights, financial equiality, etc.  Web payments work received well.  Met with many government representatives.  Good interest.  They want to get our work into emerging nations and I've been approached by key figures at the World Bank, large international banks, and emerging nation governments. Web Payments has been on many of the agendas at the conference and people's eyes light up when I say that we're with the W3C and we're working on a universal standard for payment on the Web.
+[Wed 11:26]	<voip-ps>	Madhu Nott (SIP/callcentric.com-000000fe) has joined the conference.
+[Wed 11:27]	<taaz>	m4nu: There is a lack of standards for managing value exchange via the Web.  There's a need for web payments, and these governments know it. It's a pain point for them, so that we're coming in with a solution is being very well received.
+[Wed 11:27]	<taaz>	m4nu: I'm trying to get many of these people to the Web Payments workshop during the last week of March in Paris in 2014.
+[Wed 11:28]	<m4nu>	Topic: Web Payments WG Charter Proposal
+[Wed 11:28]	<taaz>	m4nu: We need to narrow work this group can effectively address. We have a number of specs that we could feed into an official W3C Web Payments WG.
+[Wed 11:28]	<taaz>	m4nu: I sent an email to the group about all the work we've been working on.
+[Wed 11:29]	<m4nu>	http://lists.w3.org/Archives/Public/public-webpayments/2013Oct/0090.html
+[Wed 11:29]	<taaz>	m4nu: The specs are broken into 3 categories: specs that are almost done, specs that could be published as a first public working draft soon, and specs that need lots of work to be considered for inclusion.
+[Wed 11:30]	<taaz>	m4nu: kumar, talked about Secure Frame, do we want to add that to charter?
+[Wed 11:30]	<taaz>	kumar: Secure Frame doesn't have clear owner at Mozilla
+[Wed 11:31]	<taaz>	kumar: Of all work we've done on payments, we have the least experience with it
+[Wed 11:31]	<taaz>	m4nu: Ok, so we might want to wait on that, but we have some time to make the decision.
+[Wed 11:32]	<taaz>	kumar: Might be premature to propose anything now (4-5 mo).  Can advise on what didn't work.  Can offer insight into carrier billing.  That is turning into most concrete web platform.  Things like initiating SMS for carrier billing.
+[Wed 11:33]	<taaz>	m4nu: So, Mozilla might want to contribute SMS carrier billing work, but that's about it?
+[Wed 11:33]	<taaz>	kumar: Yes, might get geo location, device interaction work
+[Wed 11:34]	<taaz>	m4nu: Ok, let's talk about the 'specs that are almost done'
+[Wed 11:35]	<taaz>	m4nu: [overview of rdfa 1.1].  RDFa basically done along with associated specs.  Not much else that needs to be done for payments group to express products and items for sale.
+[Wed 11:36]	<taaz>	m4nu: [overview of JSON-LD] JSON-LD going through final spec process as we speak.  Should be finalized soon.
+[Wed 11:36]	<taaz>	m4nu: believe that will be web standard by the end of the year
+[Wed 11:38]	<taaz>	m4nu: [overview of HTTP Signatures]  Using for payswarm work, publishing via IETF, may not make it through this cycle of IETF spec publications.
+[Wed 11:39]	<taaz>	m4nu: Will try to push through if possible.  May also try to use a W3C web payments charter to do the work here. That's kinda how HTTP 2.0 is being developed.
+[Wed 11:39]	<taaz>	m4nu: Those specs are mostly done with high possibility of success without a web payments charter.
+[Wed 11:39]	<taaz>	m4nu: Let's now discuss 'Specs that could be drafts'
+[Wed 11:40]	<taaz>	m4nu: These are specs that could be published as first pubic working drafts by mid next year.
+[Wed 11:40]	<taaz>	m4nu: [overview of HTTP Keys]  About doing secure messing via json-ld.
+[Wed 11:41]	<taaz>	m4nu: Makes web into decentralized key infrastrucure. Implementations available, needs some work to be publishable and the spec needs a new name.
+[Wed 11:43]	<taaz>	m4nu: [overview of RequestAutocomplete]  First use is filling out credit card and address info.  Google is pushing this through the Web Apps WG, so they probably wouldn't want to put it in Web Payments WG.
+[Wed 11:44]	<taaz>	m4nu: [overview of web payments, web commerce specs].  specs out of date, but implementations exist like dev.payswarm.com.
+[Wed 11:44]	<taaz>	m4nu: all these previously discussed specs come together in the web payments and web commerce specs, it's the reason RDFa, JSON-LD, Secure Messaging/HTTP Keys, etc. exist.
+[Wed 11:45]	<taaz>	m4nu: Are there other specs that we could get into the work for near term publication?
+[Wed 11:45]	<taaz>	dlongley: We might want to get RDF graph nomalization spec in there.
+[Wed 11:46]	<taaz>	m4nu: Need that to normalize data to digitally sign for payswarm work.
+[Wed 11:46]	<taaz>	m4nu: It's a highly technical spec, need to make sure it is technically correct.
+[Wed 11:46]	<taaz>	dlongley: new algorithm is simpler than older one, may be easier to update.
+[Wed 11:46]	<taaz>	m4nu: Other specs to put in here?  Carrier billing spec from Mozilla?
+[Wed 11:46]	<taaz>	kumar: Didn't mention it since we might not have enough time. Don't think we could get something done in 2 months.
+[Wed 11:48]	<taaz>	m4nu: Doesn't have to be two months but we need an idea of who is working on these specs.  Need editors and commitments on specs to see it through publication.  Without commitment we won't put it in the charter.  Need at least one and ideally two implementors.
+[Wed 11:48]	<taaz>	m4nu: There's time to discuss if things get in the charter, we still have a few months of wiggle room.
+[Wed 11:49]	<taaz>	m4nu: Let's discuss the 'Specs we need to create'
+[Wed 11:50]	<taaz>	m4nu: [payment intents overview].  There has been innovation on crowdfunding since this spec was written.  May need to look at other solutions from groups such as bitcoin and ripple communities.
+[Wed 11:51]	<taaz>	m4nu: Need to talk to Ripple Labs to see how we can collaborate.
+[Wed 11:51]	<taaz>	evan: Yes, we need to have conversation about how we can collaborate on this stuff. The programmable contracts stuff is something that's key to Ripple and we'd like to find a way to leverage that in the Web Payments group.
+[Wed 11:52]	<taaz>	m4nu: May have higher level developer specs that tie into backend Ripple network that does heavy lifting.
+[Wed 11:53]	<taaz>	m4nu: [rdf graph normalization overview].  Not sure if we have time and resources for this, but it's improtant for digital signatures on JSON-LD data.
+[Wed 11:54]	<taaz>	m4nu: [web identity overview].  We want to hook into Mozilla Persona.  Spec not written yet.  Lots of initiatives for web identity.
+[Wed 11:54]	<taaz>	m4nu: resources spread thin, may not be able to work on this, which would be a shame because I think we have a solid solution to the problem of Know Your Customer.
+[Wed 11:55]	<taaz>	m4nu: [secure frame spec]. requirements are too loose now, may take work to get it to spec state.
+[Wed 11:58]	<taaz>	m4nu: [external payment initiation overview].
+[Wed 11:58]	<taaz>	taaz: What's different between payments intents?
+[Wed 11:58]	<taaz>	dlongley: name is confusing, external payments initiation closer to web intents, payment intents more about crowdfunding and similar.
+[Wed 11:59]	<taaz>	m4nu: payments initiation allows callout to external application and response back to browser. Folks like Bitcoin or Ripple could use it to initiate and carry out a payment. no spec or editor yet.
+[Wed 12:00]	<taaz>	m4nu: That was a rundown of all the specs we've been involved in.
+[Wed 12:00]	<taaz>	m4nu: Some feedback that group is working on too much at once.
+[Wed 12:01]	<taaz>	kumar: Comment on external payments initiation.  People working on NFC payments.  Similar to Secure Element work in SIM cards.  They have Web NFC API now.
+[Wed 12:02]	<taaz>	dsr: W3C has NFC working group about to publish a draft.  Has a payments use case. Work in other groups relevant to this group.
+[Wed 12:02]	<taaz>	m4nu: I was not aware the NFC stuff was that far along.
+[Wed 12:03]	<taaz>	dsr: Should be out in a few days. Lots of this stuff, including payments, may need browser buy-in.
+[Wed 12:04]	<taaz>	m4nu: We have designed the Web Payments stuff to not need any browser buy-in. We wanted to have APIs not require browser buy-in.  But get advantages if browser are involved.
+[Wed 12:06]	<taaz>	m4nu: Does this path look right or wrong?  Do we want to proceed down this path?
+[Wed 12:06]	<taaz>	No objections from group to current direction.
+[Wed 12:06]	<kumar>	m4nu: thanks for the summary. I need to drop off for another meeting.
+[Wed 12:06]	<taaz>	madhu: I'd like clarification on why these specs were chosen.
+[Wed 12:06]	<voip-ps>	<unknown> (IAX2/diamondcard-10632) has left the conference.
+[Wed 12:07]	<taaz>	m4nu: Before the community group was started some of these specs were being worked on.  Minimum bar is having editors and interest to work on each spec and carrying them through the W3C Process, which can take 3-4 years. The specs that are being considered have developer commitments, implementations, and editors.
+[Wed 12:08]	<taaz>	m4nu: Other comments on the direction of the group?
+[Wed 12:08]	<taaz>	No comments from the group.
+[Wed 12:08]	<taaz>	m4nu: Ok, then we'll try to use this as a basis for a charter for the group.  Won't be set in stone for a very long while.  Even after workshop in 2014, we can make changes.
+[Wed 12:09]	<taaz>	m4nu: The next step will be to formulate the charter. Let the group know if you have any issues with the direction as you think of issues. Thanks for the call everyone, we'll chat next week.
+[Wed 12:09]	<voip-ps>	Madhu Nott (SIP/callcentric.com-000000fe) has left the conference.
+[Wed 12:09]	<voip-ps>	<unknown> (IAX2/diamondcard-2551) has left the conference.
+[Wed 12:09]	<voip-ps>	<unknown> (IAX2/diamondcard-15406) has left the conference.
+[Wed 12:09]	<voip-ps>	Dave Longley (SIP/6002-000000fa) has left the conference.
+[Wed 12:09]	<voip-ps>	msporny (SIP/10.128.151.18-000000fb) has left the conference.
+[Wed 12:09]	<voip-ps>	dlehn (SIP/192.168.1.178:5060-000000fd) has left the conference.
+
