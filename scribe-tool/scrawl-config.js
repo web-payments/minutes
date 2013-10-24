@@ -23,6 +23,11 @@
          "alias": ["taaz", "dil", "dlehn"],
          "homepage": "http://dil.lehn.org/"
       },
+      "Dave Raggett":
+      {
+         "alias": ["dsr"],
+         "homepage": "http://www.w3.org/People/Raggett/"
+      },
       "Evan Schwartz": 
       {
          "alias": ["eschwartz"],
