@@ -1,0 +1,163 @@
+[Wed 11:00]	-!- voip-ps [~voip-ps@216.252.204.51] has joined #payswarm
+[Wed 11:00]	<voip-ps>	Dave Lehn (SIP/6003-00000105) is in the conference.
+[Wed 11:00]	<voip-ps>	Dave Lehn (SIP/6003-00000105) has joined the conference.
+[Wed 11:00]	<voip-ps>	msporny (SIP/192.168.10.106-00000106) has joined the conference.
+[Wed 11:01]	<voip-ps>	Dave Longley (SIP/6002-00000107) has joined the conference.
+[Wed 11:01]	<voip-ps>	<unknown> (IAX2/diamondcard-2346) has joined the conference.
+[Wed 11:02]	-!- dlongley_ is now known as dlongley
+[Wed 11:03]	<dlongley>	scribe: dlongley
+[Wed 11:03]	<taaz>	http://lists.w3.org/Archives/Public/public-webpayments/2013Nov/0013.html
+[Wed 11:04]	<dlongley>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2013Nov/0013.html
+[Wed 11:04]	<dlongley>	m4nu: i'm in HK for the last two weeks, i've been talking to a number of multinational banks and govt's and other types of folks over the past 4 weeks at the united nations igf, etc.
+[Wed 11:04]	-!- joecascio [~joecascio@c-71-232-206-41.hsd1.ct.comcast.net] has joined #payswarm
+[Wed 11:05]	<dlongley>	m4nu: we need to cover financial innovation forum in HK talk, and talk about the US Federal Reserve Payments Improvements paper submission
+[Wed 11:06]	<dlongley>	voip-ps: 2346 is joecascio 
+[Wed 11:06]	<voip-ps>	joecascio is now associated with IAX2/diamondcard-2346.
+[Wed 11:06]	<dlongley>	joecascio: i read with great interest the use cases, that you put out from the working group, and it would be a great help for me at some point, maybe not during the call, to understand some more of the background and assumptions that went into the payswarm use cases document
+[Wed 11:06]	<dlongley>	m4nu: yeah we can cover that at some point in the future
+[Wed 11:07]	<dlongley>	m4nu: if you have any questions you can send them to the mailing list and we can get back to you asynchronously... and everyone will see them as well, these calls are better for planning and technical discussion
+[Wed 11:08]	<dlongley>	m4nu: we'll be looking more into KYC and getting info like that into web payments and persona, etc. that stuff is deeply rooted in all the financial stuff we're doing, lots of banks interested in that, UN and govts and banks interested
+[Wed 11:08]	<dlongley>	m4nu: banks are playing a lot of money right now for KYC clearing so they're really interested
+[Wed 11:08]	<m4nu>	Topic: Finance Innovation Forum 2013
+[Wed 11:08]	<taaz>	http://financeinnovation.questexevents.net/2013/hk/agenda
+[Wed 11:10]	<dlongley>	m4nu: forum happened yesterday, i gave a talk on web payments and the technology we're creating here, mainly focused on getting the message out to the financial community in HK about the existence of a group composed of people from payswarm, bitcoin, and ripple communities and from w3c to get payments built into the core arch of the web
+[Wed 11:10]	<dlongley>	m4nu: many people surprised this was even happening and lots of interested from major banks in the work
+[Wed 11:10]	<dlongley>	m4nu: can't say which ones because they don't want to be identified yet, looking on with great interest
+[Wed 11:10]	<dlongley>	m4nu: HK is rated as the #1 financial system in teh world out of 62 for ease of trade
+[Wed 11:11]	<dlongley>	m4nu: HK is a huge financial center, gateway into china, africa, india, US
+[Wed 11:11]	<dlongley>	m4nu: all these major banks operating out of HK because of access it gives multinational banks and financial institutions that operate out of the area
+[Wed 11:11]	<dlongley>	m4nu: all the major players here, place called central that holds almost all banks in the world all right next to each other (in buildings)
+[Wed 11:12]	<dlongley>	m4nu: the people here are very interested in payswarm, the web payments work because it's an area they could lead in, they could do things like internationalization of the yuan, making it a competitor to the US dollar, and leading payments on the internet, the ability to do trade of the internet, when you execute a trade between companies, not only doing the payment immediately but having a manifest and all the tax info everything included in the txn is all really interesting to the financial communnity and the govt's in the area, that do txns through HK
+[Wed 11:13]	<dlongley>	m4nu: the meeting went really well, i've had meetings every single day with various groups/players around the world
+[Wed 11:13]	<dlongley>	m4nu: any questions on the financial innovation forum?
+[Wed 11:13]	<dlongley>	joecascio: did you get any sense of what their interest was in bitcoin and how that might change the equation because one of the things that i noticed or thought i noticed in the payswarm use cases was this sort of built in tacit presumption that there's always a third party involved in making payments
+[Wed 11:14]	<dlongley>	joecascio: and in the case of bitcoin that's just not true anymore
+[Wed 11:14]	<dlongley>	joecascio: did you get a sense of what their sensitivity was towards bitcoin?
+[Wed 11:15]	<dlongley>	m4nu: yeah, it's interesting, we were in SIBOS (world banking conference) a month and a half ago, the talk i gave there had 130 international banking corps in the same room, and patrick was there giving a talk, bitcoin was interesting but such a small thing right now, they weren't really that interested in looking into it in an any depth; the main thought i got was if you look bitcoin's marketcap now it's the same as what these international banks makes in an hour
+[Wed 11:15]	<dlongley>	m4nu: because it's so small now, they're not really paying attention to it
+[Wed 11:16]	<dlongley>	m4nu: so when you say bitcoin is a transformative tech because you don't need govt's or banks to do the exchanges, one of the first questions is "but where does the money settle?" and its the question/conversation that has shut down new ideas, banks are getting as "who is going to run the bitcoin exchanges when this gets big?" "how do you get the money out at the end of the day?" so the idea that there doesn't have to be a third party isn't necessarily true
+[Wed 11:16]	<dlongley>	m4nu: the average customer would have to shift their local currency into bitcoin over the next 20 years
+[Wed 11:16]	<dlongley>	m4nu: but if bitcoin becomes the standard way of exchanging in commerce
+[Wed 11:17]	<dlongley>	m4nu: the banks haven't gotten there yet
+[Wed 11:17]	<dlongley>	m4nu: their focus is the next 2-5 years, not 20 years
+[Wed 11:17]	<dlongley>	m4nu: other players like Ripple are coming in, that actually do this third party getting money into/out of the system in fiat currency and they do it much better than bitcoin, etc.
+[Wed 11:18]	<dlongley>	m4nu: to answer your question much more directly, the banks are interested in bitcoin as a curiosity, it's not a threat to them right now, and i kind of agree with that right now, in a number of years it may change, you still need to figure out how to get money into/out of the system, people still want fiat currency
+[Wed 11:18]	<dlongley>	joecascio: yeah, that certainly makes sense from where they are sitting
+[Wed 11:18]	<dlongley>	m4nu: and it changes where you are
+[Wed 11:19]	<dlongley>	m4nu: that was the answer at SIBOS, at HK they point at china  and say look what china is doing with bitcoin and say we need to get involved, they look at thailand and say that they have to avoid making bitcoin illegal
+[Wed 11:19]	<dlongley>	m4nu: so it's interesting how each country, it seems to be on a country/country basis, not bank to bank, how they respond to it, it's very regulation driven
+[Wed 11:19]	<dlongley>	m4nu: banks in thailand say regulations prohibit bitcoin so they aren't going to do it
+[Wed 11:19]	<dlongley>	m4nu: different story elsewhere
+[Wed 11:20]	<dlongley>	m4nu: we talked to many bank, 50-60 in one-on-one discussions and that has been the overarchign respond
+[Wed 11:20]	<dlongley>	response
+[Wed 11:20]	<dlongley>	m4nu: any other questions?
+[Wed 11:20]	<dlongley>	joecascio: nope
+[Wed 11:21]	<m4nu>	Topic: Federal Reserve Call for Papers
+[Wed 11:21]	<taaz>	http://fedpaymentsimprovement.org/
+[Wed 11:22]	<dlongley>	m4nu: the US Fed put out a call for papers this year in september, and they were at SIBOS but basically hardly anyone knew that they had put a call out for this, most of the banks i talked to didn't even know, they did something interesting (the fed) and said payments arent advancing fast enough in the US, they need to be faster, need alternative mechanisms, need to wrok on the web, etc.
+[Wed 11:22]	<dlongley>	m4nu: there are issues with banks not taking bitcoin and other currencies more seriously, etc
+[Wed 11:22]	<taaz>	http://fedpaymentsimprovement.org/wp-content/uploads/2013/09/Payment_System_Improvement-Public_Consultation_Paper.pdf
+[Wed 11:23]	<dlongley>	m4nu: the main point that the US Fed is making ... through their paper, is that, "yeah we have a bunch of proprietary solutiosn that are very bank-specific, and there is lot of fragmentation so there won't be any ubiquitous solutions and that's a problem"
+[Wed 11:23]	<dlongley>	m4nu: so that's huge, that's really great
+[Wed 11:23]	<dlongley>	m4nu: first time US fed has said that
+[Wed 11:24]	<dlongley>	m4nu: so this is really important because the stuff that they outline in the paper is exactly what we're working on in the web payments group, so the timing on this is perfect because it's right before we're going to have a workshop on this and this group needs to position itself to get the US fed coming in march and we get an invitation to come presnet this stuff in DC
+[Wed 11:24]	<joecascio>	Is there a link to the responses that have been filed?
+[Wed 11:24]	<dlongley>	m4nu: when the time comes to review the paper, so there are two opportunities, one is to present to the US Fed and the other is to get the US Fed to participate in the work we're doign in the web payments group
+[Wed 11:25]	<taaz>	http://fedpaymentsimprovement.org/user-submissions/
+[Wed 11:25]	<dlongley>	m4nu: so we have a pretty big opportunity to shine here, mainly because we have solid answers backed with working technology to many of the questions they ask
+[Wed 11:25]	<dlongley>	m4nu: read the paper it's only like 4 pages (the meat of the questions)
+[Wed 11:25]	<dlongley>	m4nu: any questions about what the US Fed is asking
+[Wed 11:26]	<dlongley>	joecascio: do you have a sense of what the thrust of response from this group should be?
+[Wed 11:26]	<dlongley>	joecascio: this group is going to be dealing with basically protocol issues, internet communication issues, which is critical, but not everything
+[Wed 11:27]	<dlongley>	joecascio: all the ancillary information that has to go along with these you brought up earlier, so this group is going to be in a particularly strategic place to comment here because it comes from a standards point of view, at the same time it's not the whole problem, but often the technology leads or is the lead idea for solving the problem
+[Wed 11:27]	<dlongley>	m4nu: so are you talking about policy issues as well, like identity, money service licenses, cross-border currency transfers, etc.
+[Wed 11:28]	<dlongley>	joecascio: i was thinking more about like earlier in the call you talked to the banks about doing payments ... the invoice, any taxes, conveyances that have to be done as part of whatever they are doing
+[Wed 11:28]	<dlongley>	joecascio: all of the other stuff
+[Wed 11:28]	<dlongley>	joecascio: who knows, maybe the fed needs to just narrow it to the payments
+[Wed 11:28]	<dlongley>	joecascio: when you say payment to a banker what are all those other things that pop up in their head
+[Wed 11:29]	<dlongley>	m4nu: the terms that bankers tend to use .... there's b2b transfers where things like bitcoin and ripple could come in, there are the commercial banking mechanisms, like giving loans to large companies, there are digital contracts, there are straightforward customer payments to vendors (payswarm is mostly about this), there are cross-border issues, regulation issues, so payments are a fairly complicated series of transactions based on the environment in which you are doing the txn
+[Wed 11:30]	<dlongley>	m4nu: a payment from one org to another, brings about a whole completely new type of requirements based on the entities doing the txn
+[Wed 11:30]	<dlongley>	m4nu: you're absolutely right that there's more to it than just the payment aspect of it
+[Wed 11:30]	<dlongley>	m4nu: and i think we're well positioned to comment on it because we're not just payments, we talk about taxes, mark up for products, technical solutions for all these things
+[Wed 11:31]	<dlongley>	m4nu: for instance the fed paper talks about paper checks being made, billions per year, when we could be using electronic payment and what cna we do to switch businesses over to accept via electronic means
+[Wed 11:31]	<dlongley>	m4nu: they've gone so far to say "maybe we should tax paper checks" to make people switch
+[Wed 11:32]	<dlongley>	m4nu: people don't understand electronic payments are available, some businesses are just fine with paper and are ok with current system, but current system is slow paper causes delays
+[Wed 11:32]	<dlongley>	m4nu: do they want input on invoicing and things of that nature? you're syaing ... and i still think this group is well positioned to make comments on that
+[Wed 11:32]	-!- rossk [~rossk@64-142-88-9.dedicated.static.sonic.net] has joined #payswarm
+[Wed 11:33]	<dlongley>	joecascio: yeah, it was just kind of a general question, what you just mentioned about slow electronic payment adoption... my own experience is that people are comfortable with checks because they know what they have to do, it's always the same process regardless of the bank, the problem a lot of people i think have with electronic payments is that they are all different, etc.
+[Wed 11:33]	<dlongley>	joecascio: i think that's one area where this group could make a huge difference with standardization
+[Wed 11:33]	<dlongley>	joecascio: so you know what's involved with doing it, you don't have to that groan and figure out how *this* works, etc.
+[Wed 11:34]	<dlongley>	joecascio: this could provide some real help here because you could say "here's how you do it and it works for everybody" no matter what bank you go to you could use this
+[Wed 11:34]	<dlongley>	m4nu: i absolutely agree, so the thing that we're proposing here is a world standard for doing this stuff, and the problem you point out is that every bank has their own way... 
+[Wed 11:34]	<dlongley>	m4nu: and the fed paper points out because of this there is no ubiquitous solution
+[Wed 11:35]	<dlongley>	m4nu: and the banks are saying "we're already working on it" and the problem with that is that the banks aren't working on a universal solution, they are all working on a proprietary solution and hoping to get an advantage
+[Wed 11:35]	<dlongley>	m4nu: and you don't wind up with interoperability, which is what we want and what we're doing here from a standards group
+[Wed 11:35]	<dlongley>	m4nu: i think, especially because where coming from w3c, we are really well positioned, w3c has standards that apply to 2.4 billion people, etc.
+[Wed 11:35]	<dlongley>	m4nu: banking standards only apply to 9000 member banks, etc.
+[Wed 11:35]	<dlongley>	joecascio: not to mention separate corporate systems like paypal
+[Wed 11:36]	<dlongley>	m4nu: yes, if we can create an open version of paypal that is a huge advantage to businesses everywhere, the fed, it's a huge reduction of costs for bill payment, no money spent on proprietary stuff, use solution that's provided, etc.
+[Wed 11:36]	<dlongley>	m4nu: anything else on this before jumping into going down the list of questions ... at least the high level ones?
+[Wed 11:36]	<dlongley>	m4nu: in the fed paper
+[Wed 11:37]	<m4nu>	Topic: Web Payments Response to Federal Reserve RFP
+[Wed 11:37]	<taaz>	http://www.w3.org/community/webpayments/wiki/2013FedPaymentsImprovements
+[Wed 11:38]	<dlongley>	m4nu: the paper lists the problems and the desired outcomes
+[Wed 11:38]	<joecascio>	Desired outcome 1: Key improvements for the future state of the payment systemhave been 
+[Wed 11:38]	<joecascio>	collectively identified and embraced by payment participants, and material progress has been 
+[Wed 11:38]	<joecascio>	made in implementing them.
+[Wed 11:38]	<dlongley>	m4nu: specifically, there are a large number of questions at the bottom of the paper that they want people to answer
+[Wed 11:38]	<dlongley>	m4nu: pindar had a very good set of input, which boils down to, let's not answer every single question but give answers where we have specific input
+[Wed 11:38]	<dlongley>	m4nu: pindar's focuses more on IP trading on the web
+[Wed 11:39]	<dlongley>	m4nu: couple of other folks have contacted me offline on what our responses should be that have to do with payment arch more than IP trading, etc.
+[Wed 11:39]	<joecascio>	Desired outcome 2: A ubiquitous electronic solution(s) for making retail payments exists that does not require the sender to know the bank account number of the recipient. Confirmation of good funds will be made at the initiation of the payment. The sender and receiver will receive timely notification that the payment has been made. Funds will be debited from the payer and made available in near real time to the payee.
+[Wed 11:39]	<dlongley>	m4nu: our response to the fed won't be complete because everyone wants something different to be said, we're going to basically say, yes, we're working on this stuff, and give them links to read about it
+[Wed 11:39]	<dlongley>	m4nu: and we'd love to come present to the US Fed to show it to you
+[Wed 11:40]	<joecascio>	Desired outcome 3: Over the long run, greater electronification and process improvements have reduced the average end-to-end (societal) costs of payment transactions and resulted in innovative payment services that deliver improved value to consumers, businesses, and governments
+[Wed 11:40]	<dlongley>	m4nu: the blocker for desired outcome 1 is that without a universal standard it just won't happen
+[Wed 11:40]	<joecascio>	Desired outcome 4: Consumers and businesses have better choice in making convenient, costeffective, and timely cross-border paymentsfrom and to the United States.
+[Wed 11:40]	<dlongley>	m4nu: so the main point we want to make about #1 is that without a universal standard and support for it, it won't happen, the US Fed has been hoping private industry will get together and do that it its own, but private industry is designed to create silos so the incentive is completely misaligned with the goal
+[Wed 11:41]	<dlongley>	m4nu: some banks even view their network as their fundamental value add
+[Wed 11:41]	<dlongley>	m4nu: when that's not really what it is
+[Wed 11:41]	<joecascio>	Desired outcome 5: The Federal Reserve Banks have collaborated, as appropriate, with the industry to promote the security of the payment system from end-to-end amid a rapidly evolving technology and threat environment. In addition, public confidence in the security of Federal Reserve financial services has remained high.
+[Wed 11:42]	<dlongley>	m4nu: the system used is very old designed in the 60s, doesn't work on the web, a new system is required that bridges with the old systems, tech like what we're doing in the web payments group and bitcoin is the future, stuff that uses an open standard is the future not these proprietary solutions
+[Wed 11:42]	<dlongley>	m4nu: point #2 has more to do with security and confirmation of funds, and has to do with better mechanisms to communicate between sender and receiver of money
+[Wed 11:43]	<dlongley>	m4nu: again, this aligns very clearly with the web payments stuffw e're doing here, so the idea that a bank account number is a secret (or a CC number) is bad security and we need to do away with both of those things, bitcoin and payswarm both get rid of it, so does ripple, there are no shared secrets that are detriment to  you
+[Wed 11:43]	<dlongley>	m4nu: the other thing is that the recipients account numbers can be sent in an email without a downside
+[Wed 11:43]	<dlongley>	m4nu: confirmation of funds available ... all happens in realtime with payswarm/ripple
+[Wed 11:43]	<dlongley>	m4nu: so you always know that funds exist
+[Wed 11:43]	<dlongley>	m4nu: not always true with paper checks (which is what that's about)
+[Wed 11:43]	<dlongley>	m4nu: sending and receiver getting timely notification about payments being made, payments are made immediately
+[Wed 11:44]	<dlongley>	m4nu: stuff happening in near realtime is all fundamental to the way these new systems operate... could argue bitcoin could be slower since it takes a little time to confirm, but layers could make it realtime
+[Wed 11:44]	<dlongley>	m4nu: for desired outcome #3, "greater electronicification of payments"
+[Wed 11:45]	<dlongley>	m4nu: the goal the US Fed has here is to reduce the overall societal costs of payments, which is what we've been calling frictionless or reduced friction payments, we want to make it easier to transmit money around the world, it shouldn't take days, it shouldn't cost a small fortune to do it, it should be fast and low fees
+[Wed 11:46]	<dlongley>	m4nu: the goal there is to reduce the payment network cost so you cna have innovative payment services built on top of it, microtransactions, subscriptions, assigning budgets to vendors, etc. we have very good ansewrs and technical solutions that work today
+[Wed 11:46]	<dlongley>	m4nu: you go down this list and it's everything we've been working on for the past few years
+[Wed 11:47]	<dlongley>	m4nu: they are very concerned in the paper about giving the US a competitive advantage over other countries and this could backfire for us because what we're working is a global standard and what they are talking about is a US standard, although they do say in the paper they realize a global solution would be a big benefit to payments in the united states, it's something they want to accomplish, but it's not something that the US fed has any power over
+[Wed 11:48]	<dlongley>	m4nu: so they are saying it would be nice to have a global standard but what we're working on doesn't have to be global just US, so i think they would react positively to use saying the US could use this but it could also be a global standard, the onyl way to achieve desired outcome #4 is with a global standard
+[Wed 11:48]	<dlongley>	m4nu: and that global standards hould be built on top of the web
+[Wed 11:49]	<dlongley>	joecascio: i think you could read this two ways, to me, it reflects a desire not to put the US at a disadvantage, that's how i read it, with timely cross-border payments to/from the US, it shows a sensitivity to the fact that if you make it difficult to do business with you you're at a disadvantage an di think you could take that from it too
+[Wed 11:49]	<dlongley>	m4nu: yeah, that is an excellent point and our experience in HK and china is showing that
+[Wed 11:50]	<dlongley>	m4nu: a lot of the people in HK and china have said "if we are serious about yuan internationalization" they want that instead of US dollars, they have to make it easier to do trade outside of the united states, for example if africa and china want to do trade, they will each use their own currency ... which is different from today where both have to go through the US dollar
+[Wed 11:50]	<dlongley>	m4nu: they want native currencies to be used without the US dollar tax
+[Wed 11:51]	<dlongley>	m4nu: the interesting thing here and the argument we could maek to the US fed ... is that the rest of the world is trying to get past the US dollar and they implement a standard that doesn't require the US dollar it puts the US at a disadvantage
+[Wed 11:51]	<dlongley>	joecascio: well, i don't know, to me, it says to me that we lose the advantage that we currently have
+[Wed 11:51]	<dlongley>	joecascio: it puts us on par with everyone else
+[Wed 11:52]	<dlongley>	joecascio: this is another area where bitcoin is extremely interesting because it's kind of an alien currency that no one feels threatened by using, it's not like if you're using the US dollar you're politically cowtialing to the US... otherwise it's not a political thing and everyone just trades bitcoin you don't worry about all the other exchange rates
+[Wed 11:53]	<dlongley>	m4nu: the question here is: "is the US fed concerned about other countries adopting tech that will allow them to more easily more away from the US dollar"
+[Wed 11:53]	<dlongley>	m4nu: if they decide to not adopt a global standard it will accelerate that process
+[Wed 11:53]	<dlongley>	m4nu: if they do ... its a level playing field and the US can use its other advantages
+[Wed 11:54]	<dlongley>	m4nu: the US has a number of advantages that countries around the world don't have to stabilize and provide good value to the currency, etc.
+[Wed 11:54]	<dlongley>	m4nu: the current financial crisis being one of the first times it's really seen any destabilization
+[Wed 11:55]	<dlongley>	m4nu: answering that one is tricky because we don't to make it seem as if this an easy path for everyone in the world to move away from the US dollar as a reserve currency, that's not the point we're making, if the US falls behind in adopting it, and some other country uses this tech before the US and then it's easier to do trade with that country and the US is stuck in the old world and the new ones are moving on
+[Wed 11:56]	<dlongley>	m4nu: desired outcome #5, the US federal reserve did a great job ... kind of patting themselveso n the back for doing the right thing, they are very concerned about the end-to-end secuirty of the payment system and they are concerned about public confidence in the Fed and they want to look good because they supported this brave new way of doing payments, internationalized standardized fast payments
+[Wed 11:57]	<dlongley>	m4nu: our argument in that area is that the federal reserve needs to get behind a global standard and they need to make sure it's not proprietary and not patent-encumbered, it's an open standards mechanism like the w3c provides, and honestly no other tech out there fits their criteria (no tech other than what we're doing in webpayments with payswarm ,etc.)
+[Wed 11:57]	<dlongley>	m4nu: even if you look at swift you have you have pay a lot of money
+[Wed 11:58]	<dlongley>	m4nu: if you want to operate on the web/internet and all you have to do is implement the standard, that doesn't mean everyone will choose to interop with you, but as far as core basic interop is concerned it's baked into the protocol, tis' there you can do it
+[Wed 11:58]	<dlongley>	m4nu: i think we have great solutions/answers here, we could just focus on the desired outcomes and point them to the wiki page and detail the response toe very question there by pointing at tech we've created or to specs
+[Wed 11:59]	<dlongley>	m4nu: to indicate that we're not just pointificating, we've got tech and specs and solutions
+[Wed 11:59]	<dlongley>	m4nu: any questions about how we should respond?
+[Wed 11:59]	<dlongley>	m4nu: do we want to just talk about what's happened here on the call or go into detail
+[Wed 11:59]	<dlongley>	joecascio: there are a lot of bullet points here on these questions
+[Wed 12:00]	<dlongley>	m4nu: this isn't for the call, just to get a general feeling for how to respond and then work on answers to the questions, circulate to the mailing list and then submit our response finally when it's time
+[Wed 12:00]	<dlongley>	m4nu: we'd take some of the best answers from the wiki and mailing list and put them in a high level paper to respond
+[Wed 12:00]	<dlongley>	http://www.w3.org/community/webpayments/wiki/2013FedPaymentsImprovements
+[Wed 12:02]	<dlongley>	dlongley: yes, the paper we should submit ought to be somewhat of a primer that indicates that we have solutions for all of the desired outcomes and if they want to get the details they can see our wiki and we'd also love to present to them
