@@ -29,8 +29,8 @@ li {
 }
 
 #content {
-   margin-left: 15%;
-   margin-right: 15%;
+   margin-left: 20%;
+   margin-right: 20%;
 }
 
 .summary {
@@ -44,7 +44,12 @@ li {
 
 .information {
    font-style: italic;
-}  
+}
+
+.comment {
+   padding-left: 1.5em;
+   text-indent: -1.5em;
+}
 
 .comment-continuation {
    margin-left: 2em;
@@ -65,11 +70,6 @@ dd {
    position: fixed;
    width: 100%;
    z-index: 1000;
-}
-
-.content {
-   margin-left:20%;
-   margin-right:20%;
 }
 
 .left-column {
@@ -97,18 +97,6 @@ dd {
    width:95%;
    height:200px !important;
    min-height:200px !important;
-}
-
-.name {
-   font-weight: bold;
-}
-
-.information {
-   font-style: italic;
-}
-
-.comment-continuation {
-   margin-left: 2em;
 }
 
 .proposal {
