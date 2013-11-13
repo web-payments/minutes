@@ -127,3 +127,7 @@ dd {
    padding: 1em 1em 1em 1em;
 }
 
+.error {
+   border: thin solid #f00;
+   padding: 0.5em;
+}
