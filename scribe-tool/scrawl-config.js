@@ -277,6 +277,11 @@
 '   font-style: italic;\n' +
 '}  \n' +
 '\n' +
+'.comment {\n' +
+'   padding-left: 1.5em;\n' +
+'   text-indent: -1.5em;\n' +
+'}\n' +
+'\n' +
 '.comment-continuation {\n' +
 '   margin-left: 2em;\n' +
 '}\n' +
