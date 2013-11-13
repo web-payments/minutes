@@ -28,7 +28,7 @@ li {
    margin-bottom: 0em;
 }
 
-#content {
+#content, .content {
    margin-left: 20%;
    margin-right: 20%;
 }
