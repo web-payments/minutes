@@ -18,6 +18,34 @@
       {
          "alias": ["mjohnson", "mjohnson_db"]
       },
+      "Virginie Galindo":
+      {
+         "alias": ["virginie"]
+      },
+      "Daniel Austin":
+      {
+         "alias": ["daustin"]
+      },
+      "Mete Balci":
+      {
+         "alias": ["Mete"]
+      },
+      "David Ezell":
+      {
+         "alias": ["dezell"]
+      },
+      "Michael Hutchinson":
+      {
+         "alias": ["MichaelHutchinson"]
+      },
+      "Christian Fuhrhop":
+      {
+         "alias": ["ChristianFuhrhop"]
+      },
+      "Mountie Lee":
+      {
+         "alias": ["mountie"]
+      },
       "David I. Lehn":
       {
          "alias": ["taaz", "dil", "dlehn"],
