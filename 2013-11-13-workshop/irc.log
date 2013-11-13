@@ -1,0 +1,117 @@
+[13:57:48]	<m4nu>	Agenda: http://www.w3.org/wiki/TPAC2013/session-web-payments
+[13:57:48]	<m4nu>	scribe: ChristianFuhrhop
+[13:58:16]	<ChristianFuhrhop>	You can find out more about this session here: http://www.w3.org/wiki/TPAC2013/session-web-payments
+[13:58:35]	<ChristianFuhrhop>	The session start will be at 14:05 to make sure people can make it from the dining hall to here.
+[14:00:12]	<ChristianFuhrhop>	Manu asks for introductions of all participants while we're waiting.
+[14:06:19]	<ChristianFuhrhop>	Introductions done, 21 participants with a few more trickling in. There is a mix of electronics manufacturers (Toshiba, Samsung, LG, Nokia), payment processors (PayPal, PayGate, Positron), mobile operators (Telefonica, Orange), television/broadcasters/media companies (TBS, WOWOW), and security companies (Gemalto)
+[14:06:55]	<ChristianFuhrhop>	Outline for the break-out session is 15 minutes introduction, 45 minutes planned for discussion
+[14:06:55]	<ChristianFuhrhop>	Topic: Introduction
+[14:07:15]	<ChristianFuhrhop>	manu: Here's the introductory slide deck: https://payswarm.com/slides/2013/w3ctpac-web-payments/
+[14:07:15]	<ChristianFuhrhop>	manu: Elevator pitch for Web Payments - payments should be in the core architecture of the Web.
+[14:07:37]	<ChristianFuhrhop>	manu: Aim is one click payment across every single web site,
+[14:08:22]	<ChristianFuhrhop>	manu: That's the high level, but that's a lot of handwaving involved, so we need to go into the tricky details as well.
+[14:08:47]	<ChristianFuhrhop>	manu: The Web Payments CG does lots of development around payments/security/identity.
+[14:09:02]	<ChristianFuhrhop>	manu: All needed for open payment standard on the web.
+[14:09:23]	<ChristianFuhrhop>	manu: In general, traditional financial architecture does not scale well to the web.
+[14:09:47]	<ChristianFuhrhop>	manu: Proprietary, slow, insecure, hostile to innovation.
+[14:10:21]	<ChristianFuhrhop>	manu: Most payment today built on 1970's technology - credit cards, bank transfer.
+[14:10:37]	<ChristianFuhrhop>	manu: Real problem - financial sector does not understand the web.
+[14:11:03]	<ChristianFuhrhop>	manu: Don't have the expertise to really address the problem, even though it is core business for them.
+[14:11:30]	<ChristianFuhrhop>	manu: All systems are still dependent on arcane underlying banking architecture.
+[14:11:52]	<ChristianFuhrhop>	manu: Goal: Browser native payments.
+[14:12:12]	<ChristianFuhrhop>	manu: With W3C principles - open, patent and royalty-free
+[14:13:22]	<ChristianFuhrhop>	manu: PaySwarm as example, not a destination, but a starting point for the work. The expectation is that everyone here will rip it apart and come up with something better. Let's take a look at the sorts of things we want out of a Web-based payment solution.
+[14:13:57]	<ChristianFuhrhop>	manu: Decentralized identity, cryptography-based, deep identity data, fraud-resistant
+[14:14:20]	<ChristianFuhrhop>	manu: Also things like age verification or proof of nationality.
+[14:15:20]	<ChristianFuhrhop>	manu: Close to 100 billion dollars 'worth' of fraud. Fraud-resistant is important.
+[14:15:54]	<ChristianFuhrhop>	manu: Payment information (item price, currency) should be handled
+[14:16:13]	<ChristianFuhrhop>	manu: Use of digitally signed receipts
+[14:16:25]	<ChristianFuhrhop>	manu: including product information
+[14:16:39]	<ChristianFuhrhop>	manu: Should be machine readable and portable
+[14:16:53]	<ChristianFuhrhop>	manu: payment processor agnostic
+[14:17:24]	<ChristianFuhrhop>	manu: Example implementation in PaySwarm and FirefoxOS
+[14:17:40]	<ChristianFuhrhop>	manu: Other companies have their own implementations as well that solve bits and pieces of these problems.
+[14:18:10]	<ChristianFuhrhop>	manu: We currently involve technology companies, finance, governments
+[14:18:34]	<ChristianFuhrhop>	manu: Government interested because of international purchases tax issues
+[14:18:53]	<ChristianFuhrhop>	manu: Workshop planned in Paris on 24th/25th of March
+[14:19:21]	<ChristianFuhrhop>	manu: Goal of the workshop is to identify basic problems.
+[14:19:42]	<ChristianFuhrhop>	Topic: Plan for Workshop
+[14:19:42]	<ArtB>	When will the Call for Papers be published?
+[14:19:42]	<manu>	Hopefully by the end of the month, it'll probably only be a call for position statements with those that want to present having papers.
+[14:19:47]	<ChristianFuhrhop>	manu: Creating a flexible architecture at the workshop would be a welcome bonus.
+[14:20:09]	<ChristianFuhrhop>	manu: But more likely will be shifted to a follow-up workshop three months later.
+[14:20:48]	<ChristianFuhrhop>	Slides on the web, linked from the web page - see earlier link in minutes.
+[14:22:01]	<ChristianFuhrhop>	manu presents list of suggested topics from here: http://www.w3.org/wiki/TPAC2013/session-web-payments
+[14:24:07]	<ChristianFuhrhop>	virginie: Difficult to comment as the presentation refered to known solution that many here do not know in detail.
+[14:24:30]	<ChristianFuhrhop>	manu: Trying to avoid the "Where do you start?" problem, what's presented is just a starting point.
+[14:24:54]	<ChristianFuhrhop>	manu: So there has been an initial  suggestion made by a fairly small group, we need all of you to refine it, tear it apart, replace it, etc.
+[14:26:03]	<ChristianFuhrhop>	manu: Lots of players who don't want to standardize need to be considered by the group.
+[14:26:43]	<ChristianFuhrhop>	manu: Need to do well defined areas of where proprietary solutions might be required,
+[14:27:02]	<ChristianFuhrhop>	manu: even though the approach is generally frowned upon by W3C.
+[14:27:22]	<ChristianFuhrhop>	manu: Also currently missing are issues like ripple and bitcoin topics, detailed identity solution, crowdfunding solutions, how this integrates w/ Secure Element API or NFC API, etc.
+[14:28:21]	<ChristianFuhrhop>	manu: Existing elements that can be used almost right out of the box: RDFa 1,1, JSON-LD, HTTP Signatures... they're already standards or are going to be standards very soon.
+[14:28:35]	<ChristianFuhrhop>	manu: Just core architecture, co-used with many other web aspects,
+[14:29:02]	<ChristianFuhrhop>	Topic: Open Discussion / Debate
+[14:29:02]	<ChristianFuhrhop>	Daniel: Hi, Daniel Austen from eBay / PayPal.
+[14:29:02]	<ChristianFuhrhop>	Daniel: I don't think Paypal is the problem.
+[14:29:02]	<manu>	To clarify, I didn't say they were the problem. I said that PayPal depends on problematic old and proprietary banking architecture and it harms their ability to innovate.
+[14:29:43]	<ChristianFuhrhop>	Daniel: I want to talk about things we would want and not want.
+[14:30:12]	<ChristianFuhrhop>	Daniel: We want a level playing field for everyone, an equal standard
+[14:30:52]	<ChristianFuhrhop>	Daniel: No discrimination by the browser vendors.
+[14:31:13]	<ChristianFuhrhop>	Daniel: Our web payment vision is much larger. Large intersection between payment and offline/retail payments.
+[14:31:53]	<ChristianFuhrhop>	Daniel: Payment on automobiles, vending machines, in-flight entertainment system, payments throughout commercial organization
+[14:32:33]	<ChristianFuhrhop>	Daniel: Scaling across device technologies needed.
+[14:33:06]	<ChristianFuhrhop>	Daniel: Scale with payment size. There are limits on smallness of payments due to fixed transaction fees.
+[14:33:33]	<ChristianFuhrhop>	Daniel: Also need to be able to handle large transactions, also across national boundaries... cross-border payments.
+[14:34:27]	<ChristianFuhrhop>	Daniel: Apple is a system of en proprietary system, anything that doesn't work with them is a non-starter. Similar for Samsung or LG.
+[14:34:51]	<ChristianFuhrhop>	Daniel: We want to use existing security and identity specs and initiatives. (example OAuth)
+[14:35:15]	<ChristianFuhrhop>	Daniel: Also FIDO Alliance for identification
+[14:36:44]	<ChristianFuhrhop>	manu: Most of the vision for Web Payments matches the vision you outlined. I don't see any large conflicts at this time, which is good.
+[14:37:32]	<ChristianFuhrhop>	virginie: How to provision special information to find the right processor/institution from the point of the user? How does the browser know which payment processor to contact?
+[14:37:56]	<ChristianFuhrhop>	virginie: Also what is the business model, who are the actors?
+[14:38:39]	<ChristianFuhrhop>	manu: Ultimately, there will be friction, as there will be browser involvement, but the hooks involved shouldn't give the browser vendors undue advantages.
+[14:39:08]	<ChristianFuhrhop>	manu: Ideally the browser would understand which payment processor you want to use.
+[14:39:40]	<ChristianFuhrhop>	manu: If we want to be able to smooth it out, the user presses the button and the payment standard figures the payment processor out based on user selection (which is cached)
+[14:40:15]	<ChristianFuhrhop>	manu: For now the solution is JavaScript and the Mozilla Persona Approach, based on local storage and centralized system that is designed to go decentralized ASAP.
+[14:40:50]	<ChristianFuhrhop>	manu: Currently it's a stop-gap approach, need to see in mid-range what else comes up.
+[14:41:25]	<ChristianFuhrhop>	Daniel: Contact between user and us is mediated by the browser. That is not acceptable to PayPal.
+[14:41:49]	<ChristianFuhrhop>	Daniel: Data from transaction is valuable and we would miss out of that.
+[14:42:19]	<ChristianFuhrhop>	Daniel: Mozilla could sell transaction data to MasterCard while we get charged extra as we can't pass the info on.
+[14:42:51]	<ChristianFuhrhop>	Manu: That's not what I said. I was talking about selection box for payment processor - similar like user selection of search provider, but without a default. Let me re-iterate that we don't want to do something that gives undue advantage to any player in this environment. We are not disintermediating PayPal by giving the browser the ability to route around PayPal. It is the customer's decision on which payment provider they want to use.
+[14:43:28]	<ChristianFuhrhop>	manu: What do we need to make the process smooth without overstepping? That's a question that we need to constantly ask ourselves as we develop this technology.
+[14:44:41]	<ChristianFuhrhop>	Daniel: Unsecured POS system would probably not work for us.
+[14:44:41]	<manu>	To be clear, an unsecured POS-like system is typically how most of the credit card transactions are processed today, so it's unclear to me what we mean by "unsecured POS".
+[14:45:18]	<ChristianFuhrhop>	MichaelHutchinson: Do you have a table where the gaps in the specs are?
+[14:45:59]	<ChristianFuhrhop>	manu: Unfortunately, nothing detailed. However, we have something very basic (on the wiki page listed above).
+[14:46:29]	<ChristianFuhrhop>	MichaelHutchinson: If there are gaps, how do you have a full workable solution?
+[14:47:02]	<ChristianFuhrhop>	manu: Some open source implementations work or parts were written by us, but the specs trail the implementations in some areas.
+[14:47:24]	<ChristianFuhrhop>	MichaelHutchinson: Which is not unusual (actually pretty standard) in W3C.
+[14:48:30]	<mountie>	I'd like to talk a bit more about my proposal for an ecommerce interoperability standard: http://www.w3.org/wiki/Electronic_Commerce_Interoperability_Standard
+[14:49:10]	<ChristianFuhrhop>	mountie: Needed for interoperation with(in?) micropayment groups.
+[14:49:25]	<ChristianFuhrhop>	mountie: Many small providers have issues in initiating payment.
+[14:50:03]	<ChristianFuhrhop>	mountie: Current service providers need standards for interoperation.
+[14:50:18]	<ChristianFuhrhop>	mountie: Do not touch existing benefits of players.
+[14:51:31]	<ChristianFuhrhop>	manu: We don't have enough time to go through your document right now, but I did personally read it when you sent it out to the mailing list. There is lots of overlap with what the group wants and some of the technologies that we've already developed.
+[14:51:41]	<ChristianFuhrhop>	manu: So, you've come to the right place. The right place to discuss your proposal is here, in the Web Payments group.
+[14:52:09]	<ChristianFuhrhop>	Mete: Hard for me to understand what we are trying to work on, it seems like the problem space is too big.
+[14:52:31]	<ChristianFuhrhop>	Mete: Talking about standardizing service provider to payment processor, payment processor to bank, bank to bank, user interface
+[14:53:11]	<ChristianFuhrhop>	Mete: And bitcoin is in list. Are we talking of it as a different currency or a different money model?
+[14:53:26]	<ChristianFuhrhop>	Mete: We need clear boundaries to be able to go forward.
+[14:53:51]	<ChristianFuhrhop>	Mete: Regarding question about business model - not sure how much that needs to be integrated into spec.
+[14:54:26]	<ChristianFuhrhop>	Mete: Suggest something more related to Mounties request. Want to be able to add apple/telco/banks interfaces easily.
+[14:54:34]	<ChristianFuhrhop>	Mete: That is more practical to do now.
+[14:54:54]	<ChristianFuhrhop>	manu: Yes, you're absolutely right. We need to be careful about the scope - make sure not to overscope the group. We'll fail if we take too many things on. Part of the problem is that for payments to work well on the Web, lots of missing pieces need to be there.
+[14:55:17]	<ChristianFuhrhop>	manu: We need a very narrow scope in the beginning. Have to be careful on what to pick. That's the purpose of the upcoming workshops. We need to make sure to identify the problem areas and then identify which ones we're going to try to address.
+[14:55:31]	<ChristianFuhrhop>	manu: Task of the workshop - identify problems, narrow down the scope.
+[14:55:46]	<ChristianFuhrhop>	manu: We need to get buy-in from members on a scope that seems plausible.
+[14:56:13]	<ChristianFuhrhop>	manu: We won't know until the end of the workshop. But we will surely fail if we try everything as once.
+[14:56:46]	<ChristianFuhrhop>	dezell: Hi, I'm from the National Association of Convenience Stores. Payment interchange is a big problem for us.
+[14:57:33]	<ChristianFuhrhop>	dezell: Things to think about: Lot of interesting ideas killed by the banks already, as they make good money with current model. If you scare them, they'll crush this work through litigation.
+[14:57:45]	<ChristianFuhrhop>	dezell: Steep slope we need to ascend.
+[14:58:10]	<ChristianFuhrhop>	dezell: Get banking groups involved. How do we do the direct marketing to the consumer?
+[14:58:38]	<ChristianFuhrhop>	dezell: Popular with consumers since merchants take up the bill, thus easy to sell to consumers.
+[14:59:10]	<ChristianFuhrhop>	dezell: Traditionally there is a difference between personal device and using these to handle other people's money.
+[14:59:43]	<ChristianFuhrhop>	dezell: Today changing one line of C-Code in payment app is a $4,000,000 bill in recertification effort.
+[15:00:11]	<ChristianFuhrhop>	manu: Great questions. We are actively talking with the banks and (in general) they see this as an opportunity. However, many of your other questions, we haven't raised that in the group, since retailers have hardly been involved to date.
+[15:00:22]	<ChristianFuhrhop>	manu: So, I'm glad you showed up because we need more input from the retail community. Ok, we're out of time.
+[15:00:22]	<ChristianFuhrhop>	manu: Thanks for the great discussion today, we look forward to seeing all 25 of you at the Web Payments workshop in Paris in late March 2014!
