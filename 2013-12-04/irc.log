@@ -1,0 +1,126 @@
+[Wed 11:00]	<m4nu>	scribe: dlongley
+[Wed 11:00]	<m4nu>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2013Dec/0000.html
+[Wed 11:01]	|<--	amiller has left zoe-fn (Excess Flood)
+[Wed 11:01]	<dlongley>	m4nu: any changes to the agenda?
+[Wed 11:01]	<dlongley>	taaz: we should discuss the fed call for papers
+[Wed 11:01]	<dlongley>	manu: right, we'll add that to the agenda after the Web Payments at the African Union discussion.
+[Wed 11:02]	<m4nu>	Topic: Web Payments at the African Union
+[Wed 11:02]	-->|	Guest15832 (~socrates1@li175-104.members.linode.com) has joined #payswarm
+[Wed 11:02]	<dlongley>	m4nu: we can do that as the item before web payments workshop since it's time sensitive
+[Wed 11:03]	<dlongley>	pindar: Manu presented in Bali at the Internet Governance Forum 2013. In about 19 hours african union  50th anniversary celebration will kick off. It relates to ICT week and web payments group will be speaking in about 19 hours, linking some of the great work andd tech and policy they've done with mobile payments, we'd like to invite them to join the work of this group, most importantly from the policy level. A big shout out to Mozilla for giving me a Firefox OS phone to show to the AU at the meeting. Myself and Manu will be on that call, hopefully the outreach and dialog will be good.
+[Wed 11:03]	<voip-ps>	Joseph Potvin (SIP/getonsip.com-0000012c) has joined the conference.
+[Wed 11:04]	<dlongley>	m4nu: the dates for the workshop will be march 24th-25th, we can tell them the date and the location (Paris).
+[Wed 11:04]	<dlongley>	pindar: A lot of very important people will be there for this planning meeting. If you look down the list all the names are preceded by "His Eminance/Her Eminance", great follow up from the IGF, hope it will lead to more participation in this group on policy, we'll be opening our fifth IP trading platform in about 9 hours from now as well.
+[Wed 11:05]	<dlongley>	pindar: here's a link to the African Union their Information Technology and Communication Strategy (ICT) slide deck: https://payswarm.com/slides/2013/au-ict-strategy/
+[Wed 11:05]	<dlongley>	manu: here's a link to the African Union and Web Payments slide deck: https://payswarm.com/slides/2013/au-webpayments/
+[Wed 11:05]	<dlongley>	m4nu: thanks pindar!
+[Wed 11:05]	<voip-ps>	pindar (IAX2/diamondcard-925) has left the conference.
+[Wed 11:06]	<m4nu>	ACTION: Manu to post slides for African Union presentation.
+[Wed 11:06]	<dlongley>	m4nu: we need to discuss the fed reserve call for papers next
+[Wed 11:06]	<m4nu>	Topic: Federal Reserve Call for Papers
+[Wed 11:07]	<dlongley>	m4nu: as dave lehn pointed out on the mailing list, fed has put out a call for papers, due in 9 days, we haven't done much work on them, we need to get this done and in there, i'm going to take an action to write a position paper based on some of the stuff we've been writing for mozilla and some other stuff, it will be a recap, and we'll point the fed at the web payments work and ask for their input and participation
+[Wed 11:07]	<dlongley>	m4nu: i expect it to be 2-4 pages fairly high-level, important to get on their radar and get a contact from them
+[Wed 11:07]	<m4nu>	Dave Lehn sent this out to remind us about the Fed paper submission: http://lists.w3.org/Archives/Public/public-webpayments/2013Dec/0001.html
+[Wed 11:07]	<dlongley>	joseph: currently, i'm looking at the wiki right now, the sections haven't been fleshed out yet
+[Wed 11:07]	<dlongley>	m4nu: yeah, really our response is only supposed to answer some of those questions, and with all the travel, etc. we haven't had time to work on it
+[Wed 11:08]	<voip-ps>	bshambaugh (SIP/172.16.42.2-0000012d) has joined the conference.
+[Wed 11:08]	<dlongley>	m4nu: it's mainly a prompt for responses, we'll go ahead and say what we've been working on, summarizing all the work, price indexing, payments protocol, ripple, bitcoin, etc. and say there's a group working on all the things you've identified as issues and we'd like the fed to take part in that work and follow up with them later on in the yera
+[Wed 11:08]	<voip-ps>	bshambaugh (SIP/172.16.42.2-0000012d) has left the conference.
+[Wed 11:08]	<dlongley>	joseph: i'll arrange to commit some time over the ... what's our deadline?
+[Wed 11:08]	<dlongley>	taaz: next friday
+[Wed 11:09]	<dlongley>	m4nu: i'm hoping to have something to send by upcoming monday
+[Wed 11:09]	<dlongley>	m4nu: hopefully you can add your thoughts to it after that and then i'll send it in
+[Wed 11:09]	<dlongley>	joseph: ok
+[Wed 11:09]	<m4nu>	Topic: ISSUE-9: Choice of Price Index
+[Wed 11:09]	<m4nu>	scribe: m4nu
+[Wed 11:09]	<m4nu>	https://github.com/web-payments/payswarm.com/issues/9
+[Wed 11:12]	<voip-ps>	bshambaugh (SIP/172.16.42.2-0000012e) has joined the conference.
+[Wed 11:12]	<voip-ps>	bshambaugh (SIP/172.16.42.2-0000012e) has left the conference.
+[Wed 11:13]	<m4nu>	joseph: On the discussion on github, I think Dave and I worked out a scenario on how this could be implemented, from a big picture point of view, by providing a choice of indexes, it creates an open market for producers of indexes. Most wont, some will.
+[Wed 11:13]	<m4nu>	joseph: Classes of vendors who are similarly impacted by certain forces in the market will tend toward one or another index. So trust models can be created around certain index providers. It's a different scenario from autonomous providers like Bitcoin. It's a different sort of financial instrument - the price index.
+[Wed 11:14]	-->|	melvster (~melvster@89.176.108.70) has joined #payswarm
+[Wed 11:14]	<m4nu>	joseph: From a legal point of view, in terms of language and the way it's implemented, it's significant that the indexes are provided as alternative exchange rates, a whole bunch of different laws come in. if it's just algorithmic pricing, that's just in contract law and things are simpler. There is a deep principle that buyers and sellers can negotiate prices in that way, we should refer to...
+[Wed 11:15]	<m4nu>	...it in that manner.
+[Wed 11:15]	<m4nu>	dlongley: I think we're on the same page on the goals, I think the discussion was around how the technology would work. I think we sort of came to an agreement that we can break this thing up into its respective parts. Make sure payment providers don't have to implement things they don't need to implement. We should only make the people that need this feature implement it.
+[Wed 11:16]	<m4nu>	dlongley: So the core ecommerce protocol would deal w/ listings. Listings could include price index information, but customer sites wouldn't have to do that. Sites can provide this feature, not the core protocol.
+[Wed 11:17]	<m4nu>	dlongley: I think we more or less came to a good conclusion on how we could do this. We need to have a spec for how price indexing should work, but not require payment processors to implement it.
+[Wed 11:18]	<m4nu>	dlongley: We could have payment processors support other things - like currency conversion. It allows them to provide value-add services.
+[Wed 11:18]	<m4nu>	joseph: First, on the documentation side. Where should we document this?
+[Wed 11:18]	<m4nu>	dlongley: We have a number of different specs. We have Web Identity specs, we have Web COmmerce specs, HTTP Signatures. What we're looking at is another spec on how you do price indexing.
+[Wed 11:19]	<m4nu>	dlongley: We can talk about how a listing is generated if you want to use price indexing. What the spec would say is: If you take these inputs from a vendor, you can generate this final price listing output. We could also define the protocol for communicating w/ the price indexing services.
+[Wed 11:19]	<m4nu>	joseph: Who will initiate writing the spec?
+[Wed 11:19]	<m4nu>	dlongley: I think we should present this to the group as another spec and be clear how this could be another thing that could fall under the charter.
+[Wed 11:20]	<m4nu>	joseph: What are the things to do between now and March.
+[Wed 11:20]	<m4nu>	dlongley: We need to spec out what an API for a price indexing service would look like. What the inputs and outputs are.
+[Wed 11:20]	<m4nu>	dlongley: We need to describe the purpose of this. How people could implement their own or how payment processors could implement this as a service.
+[Wed 11:21]	<m4nu>	dlongley: If you are a vendor and you want to use price indexing, you would do XYZ.
+[Wed 11:25]	<m4nu>	manu: Here are the actual steps: 1) Create a skeleton spec for Joseph and his team to fill out on payswarm.com, 2) Flesh out the spec to explain the basic protocol (vendor contacts price index, uses that information to generate listing, JSON-LD messages sent back and forth, etc.), 3) Publish a paper for the Web Payments workshop on price indexing, 4) pick the price indexing stuff up as a working group item.
+[Wed 11:28]	<m4nu>	manu: I still do have concerns that Dave Longley and Joseph are slightly out of alignment. We have to tread a fine line here. Price indexing is important, and it's completely foreign to Web Developers. If we put it in the core protocol, we run the risk of the entire thing not being implemented because it's too complicated. If we don't put it in the core protocol, we run the risk of price indexing not being implemented at all because it's an optional feature. I think there is another option that hasn't been discussed, and that's to include the price index and a price variability amount. So, if the price varies too much, then the payment processors will mark the listing as invalid. The upside to this is that it doesn't complicate the core protocol too much, but still allows listings to be invalidated if the price index shows that the price has been too volatile (such as in the Bitcoin case).
+[Wed 11:29]	<m4nu>	joseph: Having vendors choose their price index - many people are not expecting to have the right to choose. There is going to be a fear of freedom. There will be FUD. It's not my intention to not to try to impose the use of this, but I do want to make sure that we don't block it out. So, as long as that choice is there, there can be a slow multiyear realization that it puts a lot more power into peoples hands.
+[Wed 11:30]	<m4nu>	joseph: They can still trust third parties.
+[Wed 11:30]	<voip-ps>	bshambaugh (SIP/172.16.42.2-0000012f) has joined the conference.
+[Wed 11:31]	<voip-ps>	bshambaugh (SIP/172.16.42.2-0000012f) has left the conference.
+[Wed 11:33]	<m4nu>	dlongley: My concern is hitting every price point for every currency that would be available over a 5 minute period.
+[Wed 11:34]	<dlongley>	dlongley: for every vendor
+[Wed 11:34]	<m4nu>	joseph: How this would play out is hard to know at the moment. That is, what direction things will go is going to be hard to determine. The speculator intent, like volatility, the goods and services industry hates volatility. So indexes that offer good price stability don't have to be updated on an hourly/daily basis. So, where the predominant market demand for these indices will go, we'll have to see.
+[Wed 11:36]	-->|	bshambaugh (~brent@cpe-23-243-52-148.socal.res.rr.com) has joined #payswarm
+[Wed 11:39]	<m4nu>	manu:I don't buy the whole scalability problem. We have tons of services on the Web that are hit more frequently than a price indexing service would be hit. We can design these things so that payment processors don't bear the brunt of the processing here. For example, the difference w/ the proposal I'm making is that the price information can be evaluated and cached by the vendor, payment processors are completely out of the loop until the time of purchase. Then, at the time of purchase, the payment processor just needs to check w/ the price index once per refresh cycle, we can depend on HTTP Cache headers for most of this. Very few indexes are going to fluctuate as wildly as Bitcoin is, and even in that case, a 10 minute window between Bitcoin price refreshes wouldn't be a terrible concession. As a result, the payment processors and the payment price index servers don't really have to do that much extra work. Now the question is, what happens when the price deviates from the price index by more than 5%? Reject the listing and notify the vendor? Or allow the payment processor to modify the price? I don't have a strong opinion either way, but the first one would be easier to implement.
+[Wed 11:39]	<m4nu>	dlongley: We'll have to be careful w/ that. Version 1 might just be to reject it by sending it back to the vendor. This is important, because this is going to happen w/ other things.
+[Wed 11:40]	<m4nu>	joseph: So we could give the option of 1) reject, or 2) revise the listing.
+[Wed 11:41]	<m4nu>	dlongley: These are minor changes, so I'm fine w/ what Manu's proposed because it seems like it scales and doesn't put undue burden on payment processors.
+[Wed 11:41]	<m4nu>	dlongley: Once we get a skeleton up there, I can spend a little time about how we communicate w/ a price indexing service.
+[Wed 11:43]	<m4nu>	joseph: To be clear, what my colleagues are doing here - we're going to lead documentation and lead source code generation. I'm also collaborating w/ 5+ price index providers, so there will be work from those areas.
+[Wed 11:43]	<m4nu>	manu: Yes, very important to get others into this group. External parties that want to implement the spec are important.
+[Wed 11:43]	<voip-ps>	<unknown> (SIP/sip.linphone.org-00000133) has joined the conference.
+[Wed 11:44]	<voip-ps>	<unknown> (SIP/sip.linphone.org-00000133) has left the conference.
+[Wed 11:45]	<m4nu>	joseph: I need to convince them that it's good to make this information semi-public
+[Wed 11:45]	<m4nu>	manu: Index providers don't really have to make this open data. The price indexing server is more or less an oracle - you ask it a question, it gives you an answer.
+[Wed 11:46]	<m4nu>	dlongley: There might be something we can figure out where we can express more information about the index. Getting an implementation done will go a long way to showing people how this works.
+[Wed 11:47]	<m4nu>	joseph: What specs should I look at to get an idea of what needs to be written?
+[Wed 11:47]	<m4nu>	manu: These are the specs that you can look at as an example: https://github.com/web-payments/payswarm.com/tree/master/specs/source
+[Wed 11:47]	<m4nu>	manu: https://github.com/web-payments/payswarm.com/tree/master/specs/source/http-keys
+[Wed 11:47]	<m4nu>	manu: https://payswarm.com/specs/source/http-keys/
+[Wed 11:47]	<m4nu>	ACTION: Manu to create skeleton Web Price Indexing specification.
+[Wed 11:47]	-->|	amahon (~andrew@38.117.157.37) has joined #payswarm
+[Wed 11:48]	<m4nu>	Topic: March 2014 Web Payments Workshop Call For Participation
+[Wed 11:49]	<dlongley>	scribe: dlongley
+[Wed 11:49]	<m4nu>	This is the preview for the Web Payments workshop call for participation. It's a draft, DO NOT CIRCULATE IT: http://www.w3.org/2013/10/payments/
+[Wed 11:49]	<m4nu>	24-25 March 2014, Paris, France
+[Wed 11:49]	<dlongley>	m4nu: the landing page for the workshop is done, it gives background on what we're trying to achieve, the types of orgs we expect to show up to the workshop in paris, march 24-25 2014
+[Wed 11:49]	<m4nu>	Palais Brongniart (La Bourse)
+[Wed 11:49]	<dlongley>	m4nu: it's in the the old Paris trading floor
+[Wed 11:50]	<dlongley>	m4nu: we have probably around 13 program committee members, we want to get 20-25
+[Wed 11:50]	<dlongley>	m4nu: once we have the program committee together, we have chairs in place, we hope to make an announcement soon
+[Wed 11:51]	<dlongley>	m4nu: i told dave raggett we would simplify the goals and scope of the workshop page, right now it's kind of a wall of text
+[Wed 11:51]	<dlongley>	m4nu: getting the rest of the program committee members on board is important, we'll do that in parallel with the announcement
+[Wed 11:51]	<dlongley>	m4nu: we want to get it out early in december because it will take people some to get spun back up next year (and holidays, etc)
+[Wed 11:51]	<dlongley>	m4nu: and it will take some time for us to review it, papers, etc.
+[Wed 11:51]	<dlongley>	m4nu: we can't delay publication of this too much longer than we already have before doing the official call.
+[Wed 11:52]	<dlongley>	joseph: i'll get back to you offline with specific thoughts about the agenda
+[Wed 11:52]	<m4nu>	Topic: Web Identity
+[Wed 11:52]	<m4nu>	http://lists.w3.org/Archives/Public/public-webpayments/2013Nov/0104.html
+[Wed 11:53]	<dlongley>	m4nu: while in HK i put together a quick Web Identity spec because it's something that we've been talking about for a while without having a spec, we do have an implementation or some version of this for payswarm
+[Wed 11:53]	<m4nu>	https://payswarm.com/specs/source/web-identity/
+[Wed 11:54]	<dlongley>	m4nu: it is it pretty specific, the way we're going to do identities on the web is... you can have multiple identities, a url associated with each one, you or orgs can read/write to that URL (placed into that identity), validation of your citizenship (US/canadian/chinese/whatever) can be digitally-signed and added to your identity so you can have a mechanism for proving your citizenship on the web
+[Wed 11:54]	<dlongley>	m4nu: or other data, this is important for KYC for banking
+[Wed 11:54]	<dlongley>	m4nu: we're hoping this information can be used to very easily do KYC online
+[Wed 11:55]	<dlongley>	m4nu: security is also key, so access control lists are important, creator of the identity is in ultimate control, you give people right/revoke the privilege of others to read/write specific piece of information
+[Wed 11:55]	<dlongley>	m4nu: you could share your citizenship with your bank but only your email address with some other website, etc.
+[Wed 11:55]	<dlongley>	m4nu: you could give access to allow services to get the latest version of your information
+[Wed 11:55]	<dlongley>	m4nu: most of the pieces of information that are important to validate you can associate a digital signature with
+[Wed 11:56]	<dlongley>	m4nu: the gov't can associate DS with your citizenship info
+[Wed 11:56]	<dlongley>	m4nu: only gov't can then make that assertion
+[Wed 11:56]	<dlongley>	m4nu: you can DS your own information so only you can make that assertion
+[Wed 11:56]	<dlongley>	m4nu: prevents forgery
+[Wed 11:56]	<dlongley>	m4nu: so the spec is about how to store/show identity and read/write info
+[Wed 11:57]	<dlongley>	m4nu: one more thing, kingsley and some others who are part of the RWW group that we're trying to collaborate with, and there's another similar initiative called WebID at w3c that has been going on for many years now, what we're proposing is similar but has important differences, we've already done an analysis of WebID and it seems like it's not something we could use very easily
+[Wed 11:58]	<bshambaugh>	So you can't use a WebID URI?
+[Wed 11:58]	<m4nu>	You can use a WebID URL, but the information at that URL and how you access that URL may not be quite aligned. It is possible to have something that conforms to both the WebID and Web Identity specifications.
+[Wed 11:58]	<dlongley>	joseph: what's the criteria for putting something on the mailing list vs. over at github?
+[Wed 11:58]	<dlongley>	m4nu: we like to keep general discussions on the mailing list, specific technical stuff that's nitpicky happens on the github tracker. It's hard to differentiate one from the other sometimes.
+[Wed 11:58]	<dlongley>	joseph: can i point to github when writing to the mailing list?
+[Wed 11:59]	<dlongley>	m4nu: yeah that's good, technical details on github, high level design on mailing list
+[Wed 12:00]	<voip-ps>	Manu Sporny (SIP/6000-00000129) has left the conference.
+[Wed 12:00]	<voip-ps>	Dave Longley (SIP/6002-0000012a) has left the conference.
+[Wed 12:00]	<voip-ps>	Dave Lehn (SIP/6003-0000012b) has left the conference.
+[Wed 12:00]	<voip-ps>	Joseph Potvin (SIP/getonsip.com-0000012c) has left the conference.

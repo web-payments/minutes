@@ -70,6 +70,11 @@
       {
          "alias": ["dlongley", "dlongley-db"]
       },
+      "Joseph Potvin":
+      {
+         "alias": ["joe"],
+         "homepage": "http://ca.linkedin.com/pub/joseph-potvin/2/148/423"
+      },
       "David Nicol":
       {
          "alias": ["dln"]
