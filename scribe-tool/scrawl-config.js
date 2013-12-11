@@ -63,7 +63,6 @@
       },
       "Erik Anderson":
       {
-         "alias": ["eschwartz"],
          "homepage": "http://www.linkedin.com/in/erikanderson"
       },
       "Dave Longley":
@@ -177,7 +176,7 @@
          "alias": ["iulian"],
          "homepage": "Iulian Dumitraşcu",
       },
-      "Charles (McCathieNevile) Nevile":
+      "Charles McCathie Nevile":
       {
          "alias": ["chaals"],
          "homepage": "http://www.linkedin.com/in/chaals",
