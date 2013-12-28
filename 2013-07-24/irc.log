@@ -1,0 +1,158 @@
+[Wed 11:04]	<m4nu>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2013Jul/0019.html
+[Wed 11:05]	<m4nu>	scribe: m4nu
+[Wed 11:05]	<m4nu>	manu: Any updates or changes to the Agenda?
+[Wed 11:05]	<dlongley>	m4nu: we have a new participant, David Bialer
+[Wed 11:05]	<m4nu>	Topic: Introduction - David Bialer
+[Wed 11:05]	<dlongley>	m4nu: can you give us a quick intro?
+[Wed 11:06]	<m4nu>	bialer: Product manager for Firefox marketplace - work with Kumar and Travis. I'm very product focused. Been reading the notes of this group for a while
+[Wed 11:06]	<m4nu>	bialer: My interest - Payments 2.0, looking at things that we'd like to be doing over the next year in payments.
+[Wed 11:07]	<m4nu>	bialer: We're doing operator billing today, but don't think that's necessarily the way to go in the future. After doing integrations, we've noticed lots of warts/bumps. MozPay, future spec, would like to see some things that can deal with the realities of how systems work today. Especially in the international world of currency exchange and emerging markets.
+[Wed 11:08]	<dlongley>	m4nu: you're in the right place, this group is all about finding solutions for those areas and writing specs for them
+[Wed 11:08]	<m4nu>	kumar: To follow up, as developers we're down in the weeds more than David - he has an idea of what we're doing long-term with payments.
+[Wed 11:09]	<m4nu>	Topic: GSoC Student Progress
+[Wed 11:09]	<dlongley>	m4nu: next up is andrei's progress on the open marketplace he's building using payswarm
+[Wed 11:10]	<m4nu>	andrei: I had issues w/ the asset hash not generating, the date format was changed when saving in the database, I've fixed that. Dave Longley helped me out w/ the payments stuff. I can now do a payment for the web app.
+[Wed 11:10]	<m4nu>	manu: Very good progress, Andrei. So you have publishing an asset, publishing a listing, digitally signing both, and performing a purchase working now.
+[Wed 11:11]	<m4nu>	andrei: Yes, I'm doing the purchase via a pop-up. Next, I'd like to make purchasing available via the payswarm module so that you don't have to navigate away from the website (budget-based purchases). Having issues w/ vendor and accounts that's listing the item for sale. The purchase was unsuccessful, had to switch to the pop-up mechanism.
+[Wed 11:12]	-->|	dbialer_ (~chatzilla@76.14.44.157) has joined #payswarm
+[Wed 11:12]	<m4nu>	manu: You're making good progress, keep up the great work. :)
+[Wed 11:13]	<dlongley>	m4nu: Keep working on IRC with Dave Longley on that if you need help
+[Wed 11:12]	<m4nu>	Topic: Analysis of MozPay API message format
+[Wed 11:13]	<dlongley>	m4nu: i did a really quick analysis on the message format for what's in the API spec, i started looking at JWT and the whole JOSE stack of specs and decided that it's not really helpful to talk about those if we're not aligned on what we want (the types of information) in the message blob
+[Wed 11:14]	<dlongley>	m4nu: in the link in IRC i compare and contrast against payswarm messages
+[Wed 11:14]	<dlongley>	m4nu: soon i'll compare and contrast against between JWT and JSON-LD and talk about advantages/drawbacks for both, and we can talk about whether we should be using JWT or JSON-LD for the mozPay use cases, etc.
+[Wed 11:14]	<dlongley>	m4nu: i saw kumar responded a bit and we'll go through each point
+[Wed 11:14]	<kumar>	http://manu.sporny.org/2013/mozpay-analysis/
+[Wed 11:15]	<dlongley>	m4nu: so we'll go through the blog post top down ... there's just a quick intro to start
+[Wed 11:15]	<dlongley>	m4nu: so we've got a purchase request to buy a magical unicorn
+[Wed 11:15]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-000002ae) has left the conference.
+[Wed 11:15]	<dlongley>	m4nu: scrolling down a bit to the first subheading "Unnecessarily Cryptic JSON Keys"
+[Wed 11:15]	<dlongley>	Topic: Unnecessarily Cryptic JSON Keys
+[Wed 11:16]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-000002b2) has joined the conference.
+[Wed 11:16]	<dlongley>	m4nu: so this first issue is about a side effect of the JOSE stack, JOSE uses 3-letter IDs for all of the things that are JOSE and JWT-specific
+[Wed 11:16]	<dlongley>	m4nu: maybe kumar knows more about their decision process here, but to me it seems like a 1980's protocol design to save bits on the wire and it just makes the messages less human readable and is unnecessary
+[Wed 11:17]	<dlongley>	m4nu: you end up having to read much more about things to figure out what's going on instead of getting some idea of what's going on and what keys are about ... payswarm keys tend to spell things out to avoid that problem
+[Wed 11:17]	<dlongley>	m4nu: if we use JWT and JOSE we can't change this ... going with payswarm/JSON-LD would allow us to do that
+[Wed 11:18]	<m4nu>	kumar: Yeah, agree with all that mostly. It makes our code/docs pretty complicated when we have to document all of these things. We did it because it was part of the spec. It would be great to have more readable identifiers. The main things that I think JWT buys us, that we need to retain, is the issued at time and expiration time to prevent against replay attacks.
+[Wed 11:19]	<m4nu>	kumar: Seems like we can do that until validFrom and validUntil. Issuer is important because it's the key we validate against.
+[Wed 11:19]	<m4nu>	kumar: audience isn't really all that important.
+[Wed 11:19]	<dlongley>	m4nu: payswarm has a concept of an issuer, payswarm has a key or hmac that a digital signature is created from, that key has a URL which identifies it, the key is owned by an identity which also has a URL
+[Wed 11:20]	<dlongley>	m4nu: there's a half-way point where we could just use a URL for the issuer ... we can get to this in a bit
+[Wed 11:20]	<dlongley>	m4nu: this issue is about keys payswarm specifically tries to use human readable keys, it was a design decision to make this as human readable and friendly as possible
+[Wed 11:20]	<dlongley>	m4nu: but there's agreement here so we can move on
+[Wed 11:20]	<m4nu>	Topic: iss and APPLICATION_KEY
+[Wed 11:21]	<dlongley>	m4nu: it wasn't clear to me what the APPLICATION_KEY was or what format it's in, kumar can you describe it?
+[Wed 11:21]	<m4nu>	kumar: Yeah, application key is some sort of public key or ID, some unique string that is unique across all merchants in the firefox marketplace. It's pretty much randomly generated. Developers will need to put it in their code, similar to how you'd use an amazon identifier and secret. Moving it to a URL sounds fine.
+[Wed 11:22]	<m4nu>	kumar: Right now, we have hosted apps, apps can do payments. An app doesn't necessarily have a hosted domain. It could be a packaged app that's not hosted. It may not make sense to put a URL on it.
+[Wed 11:22]	<m4nu>	kumar: We could move it to a URL, definitely doable. There are things we're doing because we didn't try to make everything decentralized. Wasn't a need to use a URL, but I think we should add as much as we can to make things decentralized. URLs for lots of stuff is a good idea.
+[Wed 11:23]	<dlongley>	tchoma: what would the URL point to?
+[Wed 11:24]	<dlongley>	m4nu: if we're talking about the person that owns the asset being sold, it would point to a description of that entity... so it could be sony music, the person that created the asset, the marketplace/whatever ... it depends on what the issuer does
+[Wed 11:24]	<dlongley>	m4nu: it's still cloudy to me what the issuer does
+[Wed 11:25]	<m4nu>	kumar: Right now an issuer can sell products inside the app. They use that key to issue JWTs. The JWT is currently only a purchase for a single product. The issuer is a merchant and they can create as many products as they want, and they can sell anything. JWT is just asking for a price and exchanging goods. It's really abstract in that sense.
+[Wed 11:25]	<dlongley>	m4nu: so that's almost equivalent to an assetProvider in payswarm
+[Wed 11:25]	<m4nu>	m4nu: For example, this is an identifier for my identity on the Development PaySwarm Authority: https://dev.payswarm.com/i/manu
+[Wed 11:26]	<dlongley>	m4nu: you can get the public keys associated with that identity, any public financial accounts, etc. a whole bunch of information about that identity
+[Wed 11:26]	<dlongley>	m4nu: in payswarm we make a distinction between the vendor and the asset
+[Wed 11:27]	<m4nu>	dlongley: In PaySwarm, we have a distinction between asset provider and vendor, often they're the same, but they don't need to be.
+[Wed 11:27]	<m4nu>	dlongley: In marketplace cases, they tend to be the same thing. But PaySwarm supports wider set of use cases.
+[Wed 11:28]	<m4nu>	bialer: I think we care who the original creator is, it's about the merchant in this case.
+[Wed 11:28]	<m4nu>	kumar: yeah, in our case, the asset provider is almost always the vendor in our case.
+[Wed 11:28]	<dlongley>	m4nu: that is what we were expecting, one of the use cases we try to support in payswarm is where a company like mozilla is selling apps on behalf of someone else
+[Wed 11:29]	<dlongley>	m4nu: where you don't want to deal with all of the decentralized aspects of what's going on, you just want to deal with putting up assets and receiving payments
+[Wed 11:30]	<dlongley>	m4nu: the use case where vendors and assets are different came from the music industry where there are people interested in saying "here's the newest rihanna album, you (anyone) can sell this on the web so long as we get 70% of the profits"
+[Wed 11:30]	<dlongley>	m4nu: sony could publish that asset and a blogger could come along and sell that on their blog
+[Wed 11:30]	<dlongley>	m4nu: so the blogger would add their own markup
+[Wed 11:30]	<dlongley>	m4nu: so that's an example of a company being able to publish assets so they can be sold anywhere
+[Wed 11:31]	<dlongley>	m4nu: it's kind of a decentralized affiliate model
+[Wed 11:31]	-->|	PaulCapestany (~PaulCapes@204.28.124.82) has joined #payswarm
+[Wed 11:31]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-000002b2) has left the conference.
+[Wed 11:31]	<dlongley>	m4nu: so it sounds like we can use URLs and everything would work out well for the mozilla marketplace
+[Wed 11:32]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-000002b3) has joined the conference.
+[Wed 11:33]	<m4nu>	kumar: Yeah, using URLs is fine... today, we're interested in both scenarios. Merchant selling product (in-app payment), but marketplace does already sell apps on behalfs of other merchants. This has made things a bit tricky. In our case, who is the issuer? Is it the marketplace, or is it the app? We settled on making it the marketplace. That doesn't always make sense. There is edge-case code to see if you are a firefox marketplace. Firefox marketplace is selling this, it's on behalf of this developer -maybe we need to check the key of the developer and not the marketplace.
+[Wed 11:33]	<m4nu>	kumar: For us, for security, one issuer for all of marketplace.
+[Wed 11:33]	<m4nu>	dlongley: What happens in PaySwarm, when you specify the people being paid, you specify URL to financial account of person being paid. It's very clear where funds are going in PaySwarm. Funds are not going to just marketplace, but to the app owner.
+[Wed 11:34]	<m4nu>	kumar: Yeah, that's another thing that's really beneficial, nothing in the system that publicly specifies how someone is getting paid. If someone wants to sell something in Marketplace, if they want to sell it through some other marketplace that supports open web protocols, they have to fill in all their info again.
+[Wed 11:34]	<m4nu>	dlongley: Yeah, with payswarm they can just avoid that. THey just need to publish the asset, they can say restrict sale of asset through certain number of marketplace places or all marketplaces.
+[Wed 11:35]	<m4nu>	bialer: Does the owner of the asset issue the merchant keys?
+[Wed 11:35]	<m4nu>	dlongley: If you're publishing the asset your self, you publish your own key and publish your asset. URL to the key is inside the asset, you can check the signature like that. you can also have the Marketplace act as a delegate. The marketplace provides the key.
+[Wed 11:36]	<dlongley>	m4nu: one of the primary design goals behind payswarm was to get rid of the need to login to a site to buy something and the need to log into an affiliate site to have things be resold there
+[Wed 11:36]	<m4nu>	dlongley: Right, so you give people a link and then they can put that link in the listing they create and sign it. You just give people a listing URL to buy something.
+[Wed 11:37]	<dlongley>	kumar: so how does the money get around?
+[Wed 11:37]	<dlongley>	m4nu: so in payswarm, there is an asset (description for the thing being sold), and then there's the listing which indicates the asset being sold the license, the payees, etc -- everything about the purchase
+[Wed 11:38]	<dlongley>	m4nu: if i were creating an asset i'd put a payee with my account in it with a restriction of "i want a $1"
+[Wed 11:39]	<dlongley>	kumar: that makes sense, how does the money actually move?
+[Wed 11:39]	<dlongley>	m4nu: if you're a payswarm authority you must be able to send money to from PAs
+[Wed 11:39]	<dlongley>	m4nu: PAs are like a big book keeping operation, similar to what banks do
+[Wed 11:40]	<dlongley>	m4nu: my PA might do direct deposit [missed some details]
+[Wed 11:40]	<m4nu>	bialer: Are there any guarantees in that system? Is there a guarantee that's negotiated?
+[Wed 11:41]	<dlongley>	m4nu: Yes, there are gurantees between PAs to move money. PAs must have legal agreements with one another, money moves from one PA (buyer) to another (vendor and asset provider). Actual money moving between bank accounts is out of scope for the PaySwarm protocol, but it's usually the PaySwarm authorities that do the final move of the money into your bank account via direct deposit, checks, etc.
+[Wed 11:43]	<dlongley>	m4nu: For example, people that you list for payment in the asset probably all understand that you must support Bitcoin, for instance, if a listing comes in and someone doesn't support bitcoin, the transaction will fail because the PA doesn't support bitcoin.
+[Wed 11:43]	<m4nu>	dlongley: Some of the discoverable information about the financial accounts is the type of currency they use. When you put payees in an asset or listing, you can state the currency associated with an financial account.
+[Wed 11:44]	<m4nu>	dlongley: So, you can find out what currency is expected from the listing immediately, so you can make sure the right thing happens.
+[Wed 11:44]	<m4nu>	dlongley: The decentralized payswarm authority stuff happens - the PA that performs the purchase is whatever PA that the buyer is doing business with. The buyer PA initiates and deals w/ the purchase, then that PA communicates the payment to the seller's PA.
+[Wed 11:44]	<m4nu>	dlongley: There have to be legal agreements between PAs to ensure funds move around appropriately.
+[Wed 11:45]	<dlongley>	m4nu: one of the things we're talking about right now is a block chain to help mitigate the legal barriers between PAs
+[Wed 11:46]	<dlongley>	m4nu: to give some background, there's an organization called SWIFT that makes sure there's enough money between PAs, other assurances, that banks must be part of ... we're trying to create something decentralized and similar that would use a blockchain that might be able to help alleviate some needs for certain legal agreements between PAs. 
+[Wed 11:46]	<dlongley>	m4nu: This would enable  smaller PAs into the market. We're very concerned about big financial institutions and companies locking smaller PAs out of the market by demanding minimum account balances of hundreds of millions of dollars, for instance.
+[Wed 11:46]	<dlongley>	m4nu: we were talking about issuer and application key and the consensus is that we should be able to use a URL for this, so that's good.
+[Wed 11:47]	<m4nu>	Topic: Audience
+[Wed 11:47]	<dlongley>	m4nu: kumar, i think you said audience is only used right now to check for a mismatch in the string and if so, the purchase is rejected
+[Wed 11:48]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-000002b3) has left the conference.
+[Wed 11:48]	<m4nu>	kumar: Audience isn't really all that useful. If some merchant sends a JSON Web Token, we reject it if the audience is different. That check isn't really that useful. If there are multiple receivers of JWTs, maybe it would be useful where someone can intercept JWTs?
+[Wed 11:48]	<m4nu>	kumar: That may have been the original intent for audience, don't know for sure.
+[Wed 11:48]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-000002b4) has joined the conference.
+[Wed 11:49]	<dlongley>	m4nu: payswarm doesn't specify an audience ... if you want to restrict the people that can sell an asset you put that in the listingRestrictions in the asset
+[Wed 11:49]	<dlongley>	m4nu: you could say only person X and the mozilla marketplace can resell my asset
+[Wed 11:49]	<m4nu>	Topic: Issued At and Expiration Time
+[Wed 11:49]	<m4nu>	m4nu: MozPay API uses seconds since Jan 1st, 1970 for this value. PaySwarm currently uses human-readable dates and times - 2013-11-05T13:15:30Z
+[Wed 11:49]	<dlongley>	m4nu: keys aren't easy to read, we have "validFrom" and "validUntil" in payswarm, we also make the encoded time string more human readable
+[Wed 11:50]	<dlongley>	m4nu: instead of number of seconds since epoc (1970), which is unreadable
+[Wed 11:50]	<m4nu>	kumar: Making this more readable makes more sense. Dates and times are tricky because of time zones. Issued At and Expires is always a universal timestamp. Might make sense if it's a readable timestamp to make it in universal time?
+[Wed 11:51]	<m4nu>	dlongley: I think we've implemented UTC, let's just do it that way.
+[Wed 11:52]	<m4nu>	Topic: The Request
+[Wed 11:52]	<dlongley>	m4nu: yes, general agreement to use UTC, but human readable strings
+[Wed 11:52]	<dlongley>	m4nu: it seems like the request in the mozPay API is equivalent to the asset description in the payswarm protocol
+[Wed 11:52]	<dlongley>	m4nu: basically it describes the item that is being transacted
+[Wed 11:53]	<dlongley>	m4nu: is that right or is it something else?
+[Wed 11:53]	<m4nu>	kumar: I think for how we're using it so far, you could replace "request" with "product". Historically, we were trying to keep it on par with the Google Wallet spec. Maybe it's because it might always be a product for sale, maybe it would be a refund. Either way, I think it makes more sense to think of it as a product with a price a name and description.
+[Wed 11:54]	<dlongley>	m4nu: ok, if we think of it like that then it aligns 1:1 with payswarm
+[Wed 11:54]	<m4nu>	Topic: Request ID
+[Wed 11:54]	<dlongley>	m4nu: we use URLs in payswarm so you can discover more about the item being sold so there's machine readable data being at the URL
+[Wed 11:55]	<dlongley>	m4nu: the nice thing about having the URL is that people can also do linked data type reviews so you can say: "I'm talking about this URL and it should get 3/5 stars" and submit that in a decentralized way then someone like google can come along and aggregate that stuff from the web
+[Wed 11:55]	<dlongley>	m4nu: having a URL allows talking about something using linked data in a decentralized way possible
+[Wed 11:56]	<m4nu>	kumar: A URL sounds like a better idea for this. It allows for discovery of assets. When an app sells an in-app product in a game, it would be great to expose that. Some merchants might not want to expose it. As far as the idea is used by us - it's not really, reserved for the merchant. The merchant can have an ID and link it to their product ID.
+[Wed 11:56]	<m4nu>	kumar: Making it a URL makes a lot of sense.
+[Wed 11:57]	<m4nu>	dlongley: We have two things in PaySwarm - a URL that uniquely identifies the asset. Merchants can use a referenceID, a local identifier private to them, that they can put an ID on it that allows them to resell the same asset twice.
+[Wed 11:57]	<m4nu>	dlongley: You can increment the reference ID or change it to sell the same asset twice. We have both ideas in PaySwarm.
+[Wed 11:58]	<m4nu>	kumar: One thing that might be good to keep in mind is ... I think it would be nice... to support the case where an app is completely offline. It sells products that it's not hosting on any URL. It would make it simpler for developers. The solution might be that someone like Firefox Marketplace might provide all of the URLs. It makes it easy, they don't have to install the website.
+[Wed 11:58]	<m4nu>	bialer: I think all of these URLs makes things less secure?
+[Wed 11:59]	<m4nu>	taaz: We have hashes for all of these assets, you can package all of this stuff up ... you can work with this stuff offline.
+[Wed 11:59]	<m4nu>	dlongley: Mozilla could easily generate URls for people that want to have apps w/ no website.
+[Wed 12:00]	<dlongley>	m4nu: mozilla could easily provide a listing service or just generate URLs for assets, we provide this service: http://listings.dev.payswarm.com/
+[Wed 12:00]	<m4nu>	m4nu: Another option is to do something like this, which is also valid - urn:uuid:ce070d99-9260-4d13-92bf-57e92cd0ab06 - so merchants could still use UUIDs if they wanted to.
+[Wed 12:00]	<dlongley>	m4nu: you could also use urns for true offline use cases
+[Wed 12:01]	<dlongley>	m4nu: another related offline thing is budgets ... so a customer can set a budget for a vendor and then that vendor can keep track of what the customer buys offline and then charge the user all at once using the budget they've pre-authorized at a later time
+[Wed 12:01]	<m4nu>	Topic: Price Point
+[Wed 12:01]	<m4nu>	m4nu: Kumar, I know you were interested in a PaySwarm example for pricing, here's how we encode prices in PaySwarm: { "amount": "5.40", "currency": "USD" }
+[Wed 12:02]	<m4nu>	m4nu: The string "USD" expands to https://w3id.org/currencies/USD when you process the JSON-LD.
+[Wed 12:02]	<m4nu>	m4nu: This allows you to do stuff like list prices like this: { "amount": "1.2", "currency": "http://example.org/currencies/chickens" } - in virtual chickens :P
+[Wed 12:03]	<m4nu>	kumar: How does the conversion happen? The reason I'm really interested in this, when we say pricePoint: 1, it's really cryptic. They have to look up in the documentation, look at current exchange rates.
+[Wed 12:04]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-000002b4) has left the conference.
+[Wed 12:04]	<m4nu>	kumar: If we can make it a URL, that solves a major problem... is the amount in colombian pesos, two weeks later, that value is no longer valid, how does that asset still be sold if old amount is. How do you delist something for sale at a particular price point?
+[Wed 12:04]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-000002b5) has joined the conference.
+[Wed 12:08]	<m4nu>	dlongley: In PaySwarm, you can reneg on the asset by revoking your key.
+[Wed 12:08]	<m4nu>	dlongley: Did you mean, change the price because of a massive fluctuation in their currency?
+[Wed 12:09]	<m4nu>	kumar: We're in a unique position w/ carrier billing - fixed operator price points, we don't know how price points for apps will change in the future. $0.99, $0.89 in Euro, the values for that price point might fluctuate a bit.
+[Wed 12:09]	<m4nu>	kumar: It would still be $0.99 in USD, but might fluctuate in pesos.
+[Wed 12:10]	<m4nu>	bialer: We're doing this manually now... because you have taxation, you have compliance, so price points might move... operators don't always support the same prices... subject to different amount of taxes... based on their own desire to add things to it, regional tax rates.
+[Wed 12:10]	|<--	tchoma has left zoe-fn (Quit: My MacBook has gone to sleep. ZZZzzz…)
+[Wed 12:10]	<m4nu>	bialer: You need to present the right price to the customer, by law. We hit a lot of pain points that we didn't expect, but now understand some of those constraints. System has to understand it's not a simple world out there.
+[Wed 12:11]	<m4nu>	kumar: Seeing an amount and a currency might not be enough to address that specific price point problem. Sucks for users, they might try to buy something, but it might be higher when they go to checkout.
+[Wed 12:12]	<m4nu>	dlongley: Same thing with taxes, based on where the buyer is, the locality might have rules to add taxes where they're buying.
+[Wed 12:13]	<m4nu>	m4nu: Great call today, we'll try to meet next week if I'm back in time from the Inside Bitcoins conference, and if not, we'll meet the week after.
+[Wed 12:13]	<voip-ps>	kumar (IAX2/diamondcard-316) has left the conference.
+[Wed 12:13]	<voip-ps>	Dave Longley (SIP/6002-000002b0) has left the conference.
+[Wed 12:13]	<voip-ps>	Manu Sporny (SIP/6000-000002af) has left the conference.
+[Wed 12:13]	<voip-ps>	dbialer (IAX2/diamondcard-14648) has left the conference.
+[Wed 12:13]	<voip-ps>	Dave Lehn (SIP/6003-000002b1) has left the conference.
+[Wed 12:13]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-000002b5) has left the conference.

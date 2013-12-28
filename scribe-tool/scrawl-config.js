@@ -18,26 +18,93 @@
       {
          "alias": ["mjohnson", "mjohnson_db"]
       },
+      "Virginie Galindo":
+      {
+         "alias": ["virginie"]
+      },
+      "Daniel Austin":
+      {
+         "alias": ["daustin"]
+      },
+      "Mete Balci":
+      {
+         "alias": ["Mete"]
+      },
+      "David Ezell":
+      {
+         "alias": ["dezell"]
+      },
+      "Michael Hutchinson":
+      {
+         "alias": ["MichaelHutchinson"]
+      },
+      "Christian Fuhrhop":
+      {
+         "alias": ["ChristianFuhrhop"]
+      },
+      "Mountie Lee":
+      {
+         "alias": ["mountie"]
+      },
       "David I. Lehn":
       {
          "alias": ["taaz", "dil", "dlehn"],
          "homepage": "http://dil.lehn.org/"
       },
+      "Dave Raggett":
+      {
+         "alias": ["dsr"],
+         "homepage": "http://www.w3.org/People/Raggett/"
+      },
+      "Evan Schwartz": 
+      {
+         "alias": ["eschwartz"],
+         "homepage": "http://www.linkedin.com/in/evanmarkschwartz"
+      },
+      "Erik Anderson":
+      {
+         "homepage": "http://www.linkedin.com/in/erikanderson"
+      },
       "Dave Longley":
       {
          "alias": ["dlongley", "dlongley-db"]
+      },
+      "Joseph Potvin":
+      {
+         "alias": ["joe"],
+         "homepage": "http://ca.linkedin.com/pub/joseph-potvin/2/148/423"
       },
       "David Nicol":
       {
          "alias": ["dln"]
       },
+      "Lloyd Hilaiel":
+      {
+         "alias": ["lloyd|mozilla"],
+         "homepage": "http://lloyd.io/"
+      },
       "Nick Person":
       {
          "alias": ["futuresoon"]
       },
+      "Madhu Nott":
+      {
+         "alias": ["futuresoon"],
+         "homepage": "http://www.linkedin.com/profile/view?id=1568433"
+      },
+      "Adam B. Levine":
+      {
+         "alias": ["AdamBLevine"],
+         "homepage": "http://letstalkbitcoin.com/bio/adam"
+      },
+      "Anders Rundgren":
+      {
+         "alias": ["AndersR"],
+         "homepage": "http://se.linkedin.com/in/andersrundgren"
+      },
       "Manu Sporny":
       {
-         "alias": ["manu-db", "manu1", "manu`"],
+         "alias": ["manu-db", "manu1", "manu`", "m4nu"],
          "homepage": "http://manu.sporny.org/about"
       },
       "Pelle Braendgaard":
@@ -109,7 +176,7 @@
          "alias": ["iulian"],
          "homepage": "Iulian Dumitraşcu",
       },
-      "Charles (McCathieNevile) Nevile":
+      "Charles McCathie Nevile":
       {
          "alias": ["chaals"],
          "homepage": "http://www.linkedin.com/in/chaals",
@@ -118,6 +185,26 @@
       {
          "alias": ["esprehn"],
          "homepage": "http://www.elliottsprehn.com/blog/about/",
+      },
+      "David Bialer":
+      {
+         "alias": ["dbialer_"],
+         "homepage": "http://www.linkedin.com/in/davidbialer",
+      },
+      "Andrei Oprea":
+      {
+         "alias": ["andreio"],
+         "homepage": "https://github.com/piatra"
+      },
+      "Travis Choma":
+      {
+         "alias": ["tchoma"],
+         "homepage": "http://www.linkedin.com/in/travischoma"
+      },
+      "Amr Fahmy":
+      {
+         "alias": ["amrf"],
+         "homepage": "https://plus.google.com/114459538812845425714/posts"
       },
       "Pindar Wong":
       {
@@ -128,6 +215,10 @@
       {
          "alias": ["macted"],
          "homepage": "http://www.linkedin.com/in/macted"
+      },
+      "Joe Cascio":
+      {
+         "alias": ["joecascio"]
       }
    };
 
@@ -189,6 +280,11 @@
 '.information {\n' +
 '   font-style: italic;\n' +
 '}  \n' +
+'\n' +
+'.comment {\n' +
+'   padding-left: 1.5em;\n' +
+'   text-indent: -1.5em;\n' +
+'}\n' +
 '\n' +
 '.comment-continuation {\n' +
 '   margin-left: 2em;\n' +

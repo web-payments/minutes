@@ -1,0 +1,157 @@
+[Wed 11:06]	<manu-db>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2013Jun/0033.html
+[Wed 11:07]	<manu-db>	scribe: manu-db
+[Wed 11:07]	<manu-db>	manu: Today on the agenda, we're covering Andrei's progress on the open Web Apps marketplace. Discussing getting rid of the whitelist for payments API for mozPay and issues surrounding that.
+[Wed 11:07]	<manu-db>	manu: Any updates or changes to the agenda?
+[Wed 11:07]	<manu-db>	Topic: Update on GSoC Student Progress
+[Wed 11:08]	<manu-db>	andreio: Since the last time, I was able to complete Web Keys registration process for PaySwarm. The site is up here:
+[Wed 11:08]	<andreio>	http://webpayments.jit.su/
+[Wed 11:08]	<manu-db>	andreio: There is still an issue w/ registration process, but that should be fixed today
+[Wed 11:08]	<manu-db>	andreio: Next goal is to get asset and listings working. I have a question regarding that.
+[Wed 11:09]	<manu-db>	andreio: Asset and listing may be decentralized, does that mean that after I create an asset/listing for a good/service - should the user receive a digital receipt?
+[Wed 11:09]	<manu-db>	andreio: Does the asset and listing only remain on the website where they were created?
+[Wed 11:11]	<manu-db>	manu: In PaySwarm, assets and listings are decentralized. They are digitally signed by the content creator or vendor and they have a validity period associated with them. This means that they can be taken and placed anywhere on the Web and they'll still work.  For your demo, you will have the asset and listing on the marketplace website.
+[Wed 11:11]	<manu-db>	andreio: Does an asset have a public URL just as the PaySwarm identity?
+[Wed 11:13]	<manu-db>	dlongley: asset and listing should have their own URLs, public is good practice.
+[Wed 11:13]	<manu-db>	manu: it's also possible to have private assets and listings - basically, assets and listings that transact a unique good where the asset and listing are unique to the transaction. So, for example, buying an asset that has a very particular serial number.
+[Wed 11:14]	<manu-db>	manu: Website looks good, you're using both Persona and Web Keys, right?
+[Wed 11:14]	<manu-db>	andreio: Yes, you sign in w/ Persona... you need to register with payswarm authority as well. When the vendor registers, they get public/private keypair.
+[Wed 11:16]	<manu-db>	manu: where are you storing the private key? Is it only for the marketplace?
+[Wed 11:16]	<manu-db>	andreio: Yes
+[Wed 11:17]	<voip-ps>	kumar has been unmuted.
+[Wed 11:17]	<manu-db>	manu: ok, good. We don't want to get into a security situation where you're managing thousands of private keys. That would be disastrous if there was ever a security break-in.
+[Wed 11:17]	<manu-db>	manu: So, this is a problem for this particular use case. People have to sign in with Persona, and then they have to basically do the same things by signing in via a PaySwarm Authority. It's duplication of effort. It would be much easier to assign who your preferred providers are via Persona.
+[Wed 11:17]	<manu-db>	kumar: Not sure how to fully address that - not many people have tried to tie data to e-mails.
+[Wed 11:18]	<voip-ps>	kumar has been muted.
+[Wed 11:18]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-00000241) has left the conference.
+[Wed 11:18]	<voip-ps>	kumar has been unmuted.
+[Wed 11:18]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-00000243) has joined the conference.
+[Wed 11:19]	<manu-db>	kumar: A lot of sites already tie information to Persona - they say "login with Persona", then they say "We need to complete your registration". They may need you to set a username. That might be an easy approach. "Now complete your registration".
+[Wed 11:19]	<voip-ps>	kumar has been muted.
+[Wed 11:21]	<manu-db>	manu: That's not an ideal experience... if that's the future of the Web, I don't think Persona does enough. We want to be able to auto-fill registration information when you sign up to a website. We don't want you to have to go through a 2 or 3 stage registration process.
+[Wed 11:21]	<manu-db>	tchoma: There is a connected project, PiCL - you can store profile information in there... we are going to be looking at it for storing receipts.
+[Wed 11:21]	<manu-db>	manu: Are you involved in that project?
+[Wed 11:21]	<manu-db>	tchoma: Not directly, but here's the link to that: https://github.com/mozilla/picl-server
+[Wed 11:22]	<manu-db>	manu: Yes, the site looks good that Andrei is working on.
+[Wed 11:24]	<manu-db>	andreio: How would developers associate their PaySwarm identity with the account.
+[Wed 11:25]	<manu-db>	manu: So, for the time being you're going to have to log in via Persona and then do a registration where you "log in" via PaySwarm. The resulting object when you "log in" will be an identity and financial account where deposits should be made. That'll be good enough for the first cut of the marketplace.
+[Wed 11:26]	<manu-db>	Topic: ISSUE-12: Registering preferred payment providers
+[Wed 11:26]	<manu-db>	https://github.com/web-payments/browser-payments/issues/12
+[Wed 11:26]	<voip-ps>	kumar has been unmuted.
+[Wed 11:27]	<manu-db>	kumar: Real fast, before we jump into the whitelist - let's circle back for some context. Something that came up on the last payments call and discussions elsewhere.
+[Wed 11:27]	<manu-db>	kumar: People are asking why the mozPay API is different... why not just have a hosted buyflow?
+[Wed 11:28]	<manu-db>	kumar: The main difference is that it pings this central server when the merchant includes the shim. The user doesn't have any say in that. They can't say that they don't want to use the merchant use paypal or checkout.
+[Wed 11:28]	<manu-db>	kumar: We want device-centric selection of payment provider.
+[Wed 11:28]	<manu-db>	kumar: User can pay w/ bitcoin where merchant doesn't take bitcoin. It's up to the payment provider to do the translation.
+[Wed 11:29]	<manu-db>	kumar: MozPay is a dumb router to some servers (the mozPay API). It's a dumb pipe, not much more than that. We have a whitelist that restricts what payment providers merchants can use.
+[Wed 11:29]	<manu-db>	kumar: The first Firefox OS will support Mozilla's payment provider - we'll also whitelist some other providers, maybe not in the first version, we do want competition.
+[Wed 11:29]	<manu-db>	kumar: Whitelist is in there because it was the easiest way to ship 1.0.
+[Wed 11:30]	<manu-db>	kumar: We also wanted whitelist to address some security concerns. If any payment provider could show itself to the user, it could spoof mozilla payment provider. There is not a really easy way to trust that a payment provider is going to do good. Not just take money and disappear from the Internet.
+[Wed 11:30]	<manu-db>	kumar: What it comes down to to solve this problem, I think, is let the user decide who can be on the whitelist.
+[Wed 11:31]	<manu-db>	kumar: Some UI to accept/reject new users. We can put that trust in the user's hands, not in Mozilla or operator's hands who is running the device.
+[Wed 11:31]	<voip-ps>	kumar has been muted.
+[Wed 11:32]	<manu-db>	manu: Ultimately, this is exactly what we want - put the power to decide in the customer's hands. If we give this decision power to the payment providers, there will be collusion. If we give it to the operators, there will be collusion. Even if we give it to Mozilla, that's centralization and we don't want Mozilla picking winners and losers. At the same time, we need to protect customers from bad actors. There's a balance here that we have to hit - choice + reasonable protection.
+[Wed 11:33]	<manu-db>	dlongley: Maybe we can use Web Intents to make some navigator call to register the user as a valid payment provider?
+[Wed 11:33]	<voip-ps>	kumar has been unmuted.
+[Wed 11:33]	<manu-db>	dlongley: Maybe they would show up in the list or as a default or as a choice among many?
+[Wed 11:33]	<manu-db>	kumar: Yeah, Web Intents is based on Android Intents, You are on a website and click a share button, instead of having Twitter hardcoded onto the site, the device asks you how you want to share this.
+[Wed 11:34]	<manu-db>	kumar: So, I don't know if there is a way to fit it directly into payment processing part. It could in that a user could say he wants to use bitcoin app?
+[Wed 11:34]	<manu-db>	kumar: It could use a web intent to ask how you want to pay. Since Bitcoin has registered itself, it could be selected.
+[Wed 11:34]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-00000243) has left the conference.
+[Wed 11:35]	<manu-db>	kumar: Registering w/ a new payment provider is interesting, we should explore that. Maybe we can use intents to register a new payment provider and establish trust.
+[Wed 11:35]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-00000244) has joined the conference.
+[Wed 11:35]	<manu-db>	kumar: There is a delicate balance here - we want to give user choice, but Mozilla is also in a unique position to provide security to users who are not savvy. It was easy to solve w/ a whitelist, not ideal though.
+[Wed 11:36]	<manu-db>	kumar: We want to retain ability to blacklist or filter out malicious intents. Maybe we can establish trust / revoke trust in some kind of trusted way.
+[Wed 11:36]	<voip-ps>	kumar has been muted.
+[Wed 11:37]	<voip-ps>	kumar has been unmuted.
+[Wed 11:37]	<voip-ps>	kumar has been muted.
+[Wed 11:37]	<voip-ps>	kumar has been unmuted.
+[Wed 11:37]	<manu-db>	manu: We've been kicking around an idea for a while that we'd have a whitelist registry for PaySwarm. This registry would require fairly testable criteria: 1) Is the company a business and 2) Are they running software that passes the test suite? That could be a first cut. The second stage would be public trust metrics, like "Has any other payment provider asserted that this payment provider owes them money?". This concept could be extended to vendors and buyers as well. Having a trust system in place would make it easier to determine bad players in a decentralized fashion.
+[Wed 11:38]	<manu-db>	kumar: Is this a centralized solution, or a decentralized service?
+[Wed 11:38]	<manu-db>	manu: Ideally decentralized, because if we centralize it and it's not under the control of an independent 3rd party, then there is a risk of collusion. Does that answer the question?
+[Wed 11:38]	<voip-ps>	kumar has been muted.
+[Wed 11:39]	<kumar>	yes, thanks
+[Wed 11:40]	<manu-db>	tchoma: If a verification is verifying the address - maybe we can show the user the address when they associate the payment provider. That would be another thing we could do to help prevent phishing.
+[Wed 11:40]	<manu-db>	dlongley: If a merchant and a buyer have two different payment providers, both payment providers must trust each other in order to exchange money. If a payment provider isn't on that list, it's going to be a big barrier.
+[Wed 11:44]	<manu-db>	dlongley: We may want to require that payment providers on the whitelist do business w/ others on the whitelist.
+[Wed 11:44]	<dlongley>	dlongley: if a payment provider meets a basic reputation level or other parameters
+[Wed 11:44]	<voip-ps>	kumar has been unmuted.
+[Wed 11:45]	<voip-ps>	kumar has been muted.
+[Wed 11:45]	<voip-ps>	kumar has been unmuted.
+[Wed 11:45]	<voip-ps>	kumar has been muted.
+[Wed 11:46]	<voip-ps>	kumar has been unmuted.
+[Wed 11:46]	<manu-db>	kumar: So, to clarify - you do want to get rid of the whitelist?
+[Wed 11:46]	<manu-db>	manu: Yes, user prompt first, then centralized whitelist/blacklist, then decentralized trust metrics.
+[Wed 11:46]	<manu-db>	kumar: We could allow users to add whatever they wanted, but we could switch to a blacklist model.
+[Wed 11:46]	<voip-ps>	kumar has been muted.
+[Wed 11:47]	<manu-db>	kumar: That's the way firefox addons work - there are some pretty vicious addons. It's not an ideal end-game solution, maybe we can begin to build a trust model that would replace the centralized blacklist.
+[Wed 11:48]	<voip-ps>	kumar has been unmuted.
+[Wed 11:48]	<manu-db>	manu: Concerned about blacklist - there are millions of sites out there that could be blacklisted. The problem is that it's easy to setup a domain and make the payment provider registration call.
+[Wed 11:48]	<manu-db>	kumar: Yeah, it's a concern. It does provide some protection.
+[Wed 11:48]	<voip-ps>	kumar has been muted.
+[Wed 11:48]	<manu-db>	manu: Ok, so to put out a strawman proposal, we're talking about an API call that looks like this: navigator.payments.register()
+[Wed 11:49]	<manu-db>	dlongley: Yes, when you go to a payment provider, that provider should be able to register itself with payment provider.
+[Wed 11:49]	<voip-ps>	kumar has been unmuted.
+[Wed 11:50]	<voip-ps>	kumar has been muted.
+[Wed 11:50]	<manu-db>	Topic: Merchant Payment Provider Choice
+[Wed 11:50]	<manu-db>	tchoma: I was going to add - question - if there is a register call, the user would be prompted if they would want to use payment provider?
+[Wed 11:50]	<manu-db>	tchoma: Can the merchant choose which payment provider the user can use? We've talked about customer choice, what about the merchant?
+[Wed 11:50]	<voip-ps>	kumar has been unmuted.
+[Wed 11:50]	<voip-ps>	kumar has been muted.
+[Wed 11:50]	<voip-ps>	kumar has been unmuted.
+[Wed 11:50]	<manu-db>	tchoma: Different payment providers may clear funds at a different rate, can merchants choose?
+[Wed 11:50]	<manu-db>	taaz: Yes, this is important for PaySwarm, certainly. Choice for both the buyer and vendor side.
+[Wed 11:51]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-00000244) has left the conference.
+[Wed 11:51]	<manu-db>	kumar: We only did customer choice here - easier problem than merchant choice. In order to use a payment provider, they have to trust that they're going to get paid. otherwise going to get scammed.
+[Wed 11:51]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-00000245) has joined the conference.
+[Wed 11:51]	<manu-db>	kumar: Whitelist is a very user-centric problem. In the initial stage, we can't tackle solving the merchant whitelist.
+[Wed 11:52]	<manu-db>	kumar: Merchant would have their own trusted providers. If they're using Wallet, customer can only use wallet.
+[Wed 11:52]	<voip-ps>	kumar has been muted.
+[Wed 11:52]	<manu-db>	kumar: PaySwarm could solve that problem, it's separate from user whitelist issue.
+[Wed 11:52]	<manu-db>	dlongley: With PaySwarm, merchant and buyer can use different payment providers.
+[Wed 11:52]	<manu-db>	dlongley: effectively what would happen, though, is that they'd be interoperable and it would just work.
+[Wed 11:53]	<manu-db>	dlongley: Merchant's choice is still there to pick a payment provider that they trust. Money would always just flow. In a different system, where you have to pick same provider between merchant and user, you may need to have something where merchant states what their preferences are.
+[Wed 11:53]	<manu-db>	dlongley: Everyone uses the payswarm protocol, everyone gets paid, that's one of the big benefits of PaySwarm. If they're using something like PayPal or Amazon Payments, then both the customer and the merchant are forced to use the same system. If PayPal or Amazon Payments implements PaySwarm, then there is interoperability between those two services.
+[Wed 11:54]	<manu-db>	manu: We can provide a way for merchants to limit payment processor choice via navigator.payments.getProviders() - which would return a list of payment providers that the customer has.
+[Wed 11:54]	<manu-db>	dlongley: You could have a restricted list that user can choose from based on who merchant uses for payment provisioning. So, if customer has Meritora, PayPal, and Amazon Payments, and merchant only accepts PayPal, then PayPal is negotiated.
+[Wed 11:55]	<voip-ps>	kumar has been unmuted.
+[Wed 11:55]	<manu-db>	Topic: Polyfills for the Payment API
+[Wed 11:55]	<manu-db>	manu: I think polyfills are going to be very important to getting adoption. We plan to support this, right?
+[Wed 11:55]	<manu-db>	kumar: There's been a lot of pushback against polyfills at Mozilla... not sure exactly why.
+[Wed 11:56]	<manu-db>	kumar: We could polyfill API to get Android up and running, they wanted to implement native Android API.
+[Wed 11:56]	<manu-db>	kumar: So, I don't know if this pushback is for Mozilla's case.
+[Wed 11:56]	<manu-db>	kumar: I think polyfills are essential for adoption.
+[Wed 11:56]	<manu-db>	kumar: I don't see a way around it - a lot of the concerns against the polyfill come from security concerns - phishing case. They want to show a native chrome window.
+[Wed 11:57]	<voip-ps>	kumar has been muted.
+[Wed 11:57]	<manu-db>	kumar: Sounds like polyfill is a last resort for Mozilla. Then again, Google Wallet is a polyfill.
+[Wed 11:57]	<tchoma>	Kumar, I agree re your point on polyfilling.
+[Wed 11:57]	<voip-ps>	tchoma (IAX2/diamondcard-4410) has left the conference.
+[Wed 11:58]	<manu-db>	manu: Yeah, we just need to not prevent polyfills in the API
+[Wed 11:59]	<manu-db>	dlongley: There are other things we can do - payment providers show custom images to users where sensitive information is displayed. There are solutions for some of the phishing cases.
+[Wed 12:00]	<voip-ps>	kumar has been unmuted.
+[Wed 12:00]	<manu-db>	manu: Ok, so it sounds like we have consensus on this.
+[Wed 12:00]	<voip-ps>	kumar has been muted.
+[Wed 12:02]	<manu-db>	kumar: Registration idea is straight forward, sounds like a decent approach.
+[Wed 12:02]	<voip-ps>	kumar has been unmuted.
+[Wed 12:02]	<manu-db>	kumar: How is getProviders() going to work, again?
+[Wed 12:02]	<voip-ps>	kumar has been muted.
+[Wed 12:03]	<manu-db>	kumar: If you have an idea for the spec, maybe you can write it up in the spec...
+[Wed 12:03]	<manu-db>	dlongley: I think early on, if a merchant doesn't see a provider they trust, they have to tell the user.
+[Wed 12:03]	<voip-ps>	kumar has been unmuted.
+[Wed 12:03]	<manu-db>	manu: navigator.payment.getProviders() will probably return a list of providers that the customer has. It would be taken from the list populated by the navigator.payments.register() call. The vendor would then create a UI that would allow purchases to be initiated with any one of the ones in the getProviders() list that they support.
+[Wed 12:04]	<voip-ps>	kumar has been muted.
+[Wed 12:04]	<manu-db>	kumar: Maybe we can provide some way for the merchant to figure out trending payment providers as well? It would be good to know how many sales have been lost due to a failure to use a particular payment provider.
+[Wed 12:04]	<manu-db>	dlongley: They could keep track of who is in that list, it would be a fairly clean way to collect that data.
+[Wed 12:06]	<manu-db>	manu: There is a security concern with this. You wouldn't want any website to be able to get the list of payment providers you have. It would be like allowing anyone to take a look in your wallet to see what sorts of credit cards you have. We would probably have to change getProviders() to take a list that the vendor supports. This isn't an issue for PaySwarm, but it is an issue for PayPal, Google Wallet, etc.
+[Wed 12:06]	<manu-db>	dlongley: Merchant could give list of restricted providers they accept. Then browser responds, then site can put up information. That way we are not leaking information and they can tell when they've lost a sale to someone that doesn't have the same payment provider that they do.
+[Wed 12:07]	<voip-ps>	kumar has been unmuted.
+[Wed 12:07]	<voip-ps>	kumar has been muted.
+[Wed 12:07]	<voip-ps>	kumar has been unmuted.
+[Wed 12:07]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-00000245) has left the conference.
+[Wed 12:07]	<voip-ps>	kumar has been muted.
+[Wed 12:07]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-00000246) has joined the conference.
+[Wed 12:07]	<kumar>	thanks all for the call, chat with all of you next week.
+[Wed 12:07]	<voip-ps>	Manu Sporny (SIP/6000-00000242) has left the conference.
+[Wed 12:07]	<voip-ps>	Dave Longley (SIP/6002-00000240) has left the conference.
+[Wed 12:07]	<voip-ps>	kumar (IAX2/diamondcard-7711) has left the conference.
+[Wed 12:08]	<voip-ps>	Andrei Oprea (SIP/sip.freecall.com-00000246) has left the conference.
+[Wed 12:08]	<voip-ps>	Dave Lehn (SIP/6003-0000023f) has left the conference.

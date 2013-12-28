@@ -58,7 +58,7 @@
 [Wed 11:24]	<m4nu>	A way to disambiguate JSON keys shared among different JSON documents by mapping them to URLs via a context.
 [Wed 11:24]	<m4nu>	A standard mechanism in which a value in a JSON object may refer to a JSON object on a different document or site on the Web.
 [Wed 11:24]	<m4nu>	A way to associate datatypes with values such as dates and times.
-[Wed 11:24]	<m4nu>	The ability to annotate strings with their language. For example, the word âchatâ means something different in English and French and it helps to know which language was used when expressing the text.
+[Wed 11:24]	<m4nu>	The ability to annotate strings with their language. For example, the word ‘chat’ means something different in English and French and it helps to know which language was used when expressing the text.
 [Wed 11:24]	<m4nu>	A facility to express one or more directed graphs, such as a social network, in a single document. Graphs are the native data structure of the Web.
 [Wed 11:24]	<m4nu>	A standard way to map external JSON application data to your application data domain.
 [Wed 11:24]	<m4nu>	A deterministic way to generate a hash on JSON data, which is helpful when attempting to figure out if two data sources are expressing the same information.

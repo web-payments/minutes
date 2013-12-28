@@ -1,0 +1,67 @@
+[11:16]	<manu1>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2013Nov/0034.html
+[11:16]	<manu1>	scribe: dlehn
+[11:16]	<manu1>	Topic: Update from W3C TPAC
+[11:17]	<manu1>	Ok, so we've been getting a ton of exposure at W3C TPAC 2013.
+[11:17]	<manu1>	I've been going around to the various Working Groups that are working on stuff related to what we're doing and have been introducing the work we're doing in the Web Payments group.
+[11:18]	<manu1>	There have been a number of people from large organizations that have come up to me to talk about where we are and where we expect the work to go. All good interactions for the most part.
+[11:19]	<manu1>	The first group I presented at was the Broadcast Interest Group, which is a group of broadcasters that are interested in the Web as a delivery mechanism. They were interested because they want to sell broadcast content over the Web. I invited them to the breakout session we had today and a number of them came.
+[11:21]	<manu1>	The second group was the Digital Publishing Interest Group, who basically give input to other Working Groups to tell them what they need to work on to make digital publishing more prevalent using Web technologies. They care about selling eBooks and digital written content, so they were interested in the Web Payments work. It was mild interest because most of what the group does has to do w/ 
+[11:21]	<manu1>	display of eBooks using Web browsers.
+[11:22]	<manu1>	The third group was the Systems Applications Working Group, who are working on the Secure Element API. We're interested in their work because there are a number of hardware devices that are capable of doing digital signatures and identity authentication using the Secure Element API (either via contact pin/chip chards or contactless NFC).
+[11:23]	<manu1>	I also spent time talking w/ Mark Nottingham (Chair of HTTPbis Working Group) about HTTP/2.0 and the HTTP Security spec, and hope to follow up with him on that later this week.
+[11:24]	<manu1>	I had a meeting with W3C Management to coordinate how we're going to run the upcoming workshop on Web Payments next March, during the last week of that month in Paris.
+[11:25]	<manu1>	Topic: W3C TPAC Breakout Session on Web Payments
+[11:25]	<manu1>	Most of the time on Monday and Tuesday was spent trying to build support for the Web Payments Breakout session today.
+[11:25]	<manu1>	I was expecting only around 7-10 people to come to the workshop. We had 25 people show up, with around another 8 that wanted to make it but couldn't due to conflicts.
+[11:25]	<manu1>	The minutes for that meeting can be found here: https://payswarm.com/minutes/2013-11-13-workshop/
+[11:28]	<manu1>	So, the workshop went fairly well.
+[11:29]	<manu1>	We had good attendance, I did a quick 15 minute-ish overview and then opened the floor up to questions.
+[11:29]	<manu1>	There was a mix of electronics manufacturers (Toshiba, Samsung, LG, Nokia), payment processors (PayPal, PayGate, Positron), mobile operators (Telefonica, Orange), television/broadcasters/media companies (TBS, WOWOW), and security companies (Gemalto)
+[11:30]	<manu1>	there was also someone from the National Association of Convenience Stores, who process lots and lots of credit cards.
+[11:30]	<manu1>	So, we had almost every group that we'd want to have in a Working Group in the room. The only people we were missing were people from government, but W3C is fairly light in that area.
+[11:31]	<manu1>	There was a lot to cover and not enough time, but we got some very good discussion done in the time we had. Most of the concern was around creating a solution that didn't disadvantage or advantage any particular player.
+[11:32]	<manu1>	For example, PayPal was very concerned about the browser vendors being unfairly advantaged. They were also concerned about mobile operators being advantaged.
+[11:33]	<manu1>	There was concern around there being a full stack (PaySwarm) proposed instead of a discussion before the fact. I tried to make it clear that PaySwarm is just a proposal and emboidies the type of stuff we'd like to do in the group. However, it's just meant as a starting point and we'd modify the specs to pull in other technologies, or if another member has a better technology, we'd use that 
+[11:33]	<manu1>	instead.
+[11:34]	<manu1>	The end result was a clear demonstration of support for the Workshop in Paris, so that was a really good outcome.
+[11:34]	<manu1>	Any questions on this before we move on?
+[11:34]	<dlongley>	nope
+[11:35]	<manu1>	Topic: Web Payments Workshop
+[11:35]	<manu1>	Ok, so I had a number of discussions with Dave Raggett, who has been assigned by W3C to make the Workshop in Paris happen.
+[11:36]	<manu1>	He's pretty thinly spread at the moment, so we need to help him if we don't want to risk the workshop slipping more than it has already.
+[11:37]	<manu1>	This means getting two chairs for the workshop as well as a program committee together.
+[11:37]	<manu1>	We have already secured the primary chair for the workshop as of this past Tuesday. He just needs to get clearance from his company's management and we'll be able to announce who he is shortly.
+[11:39]	<manu1>	We have contacted two other organizations to send a chair and someone for the program committee.
+[11:39]	<manu1>	We should hear something back by the end of this week.
+[11:39]	<manu1>	The chairs are responsible for ensuring that the agenda runs smoothly for the workshop during the 1.5 days of the workshop.
+[11:40]	<manu1>	The program committee is responsible for reviewing paper submissions and getting their colleagues at other institutions to attend the workshop.
+[11:41]	<manu1>	It's very important to strike the right balance when it comes to program committee participants. We need people from each segment of industry that we've identified - electronics, payment processors, mobile operators, television, security, and retail.
+[11:41]	<manu1>	We will need around 15-20 people on the program committee.
+[11:41]	-!- PaulCapestany [~PaulCapes@204.28.124.82] has quit [Quit: Computer has gone to sleep.]
+[11:42]	<manu1>	and we need to have that done by the end of this month (November 2013). We already have 7 people on the program committee. We'll need to get the rest in place by end of November and we'll need to send out the Call for Papers/Positions by early December.
+[11:43]	<manu1>	The reason we're in a rush is that we need to provide at least two months for people to get papers together.
+[11:43]	<manu1>	and with the holidays fast approaching, those weeks aren't going to be enough for people to write papers, arrange travel, and invite colleagues.
+[11:44]	<manu1>	We have a space for 100 people max. We need to get at least 30-50 to demonstrate any sort of legitimacy wrt. creating a Working Group at W3C.
+[11:44]	<manu1>	That we were able to get so many people into a breakout session is a good sign, now we need to build on that momentum.
+[11:44]	<manu1>	Any questions on any of this?
+[11:44]	<dlongley>	not from me
+[11:45]	<manu1>	Topic: The Rest of W3C TPAC
+[11:46]	<manu1>	For the next two days, I'll be meeting w/ the rest of the Working Groups that are affected by our work, or whose work we'll depend on. These include the Near-Field Communication Working Group, the Web Crypto Working Group, and the Web and Mobile Interest Group.
+[11:48]	<manu1>	There are also around 10 other people that have requested private meetings or hallway discussions related to Web Payments and how it affects their organizations.
+[11:49]	<manu1>	So, I'll also be talking with those folks in an attempt to get them folded into the group.
+[11:49]	<manu1>	Alright, that's all I have as far as an update is concerned. I probably missed a few discussions, but the general take-away is that people are responding very well to the goals of this group and how we're approaching the problem.
+[11:49]	<manu1>	Any questions? If not, let's adjourn.
+[11:50]	<dlongley>	nope
+[11:50]	<manu1>	ok, good 'cause it's 1am here and I want to go to sleep :P
+[11:50]	<dlongley>	:)
+[11:50]	<taaz> too busy scribing to have questions :)
+[11:50]	<manu1> no doubt.
+[11:52]	<manu1>	bye bye, see you guys in 5-ish days!
+[11:52]	<dlongley>	yes, looking forward to it
+[11:53]	<taaz>	As you are talking to all these people, might want to ask how they want to participate.  Showing up to these sorts of telecons doesn't seem to be what they want to do.  Should more stuff be done on the mailing list?
+[11:54]	<manu1>	It's a bit early to ask them  how they want to participate... they're just trying to get their mind wrapped around the stuff we're doing.
+[11:54]	<manu1>	I did meet Mountie Lee and Anders Rudgren in person here.
+[11:55]	<manu1>	Both said that they'd like to participate in more telecons.
+[11:56]	<taaz>	Ok.  It's understandable if it's difficult to show up to these things.  I was just wondering what other communication methods we could use.
+[11:58]	<manu1>	We're using the standard methods that most other groups use.
+[11:58]	<manu1>	The problem at this point seems to be one of: 1) people don't know we exist and 2) when they do find out about us, they don't know if it affects them, and 3) if it does affect them, they don't know what they can contribute to.

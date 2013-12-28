@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+      class="wf-adelle1adelle2-n6-active wf-active"> 
+ 
+<head> 
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+  <title>PaySwarm - Teleconferences</title> 
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ 
+  <link rel="stylesheet" href="../../css/1140.css" type="text/css" media="screen" /> 
+  <!--[if lte IE 9]>
+  <link rel="stylesheet" href="../css/ie.css" type="text/css" media="screen" />
+  <![endif]--> 
+  <link rel="stylesheet" href="../../css/typeimg.css" type="text/css" media="screen" /> 
+  <link rel="stylesheet" href="../../css/smallerscreen.css" media="only screen and (max-width: 1023px)" /> 
+  <link rel="stylesheet" href="../../css/mobile.css" media="handheld, only screen and (max-width: 767px)" /> 
+  <link rel="stylesheet" href="../../css/layout.css" type="text/css" media="screen" /> 
+  <link rel="shortcut icon" type="image/png" href="../../images/payswarm-icon.png" /> 
+  
+<style type="text/css">
+h1 {
+   margin-top: 24px;
+   margin-bottom: 14px;
+}
+
+.header {
+   margin-top: 0px;
+   margin-bottom: 14px;
+}
+
+ol {
+   margin-bottom: 0em;
+}
+
+li {
+   margin-left: 1.5em;
+   margin-bottom: 0em;
+}
+#content {
+   margin-left: 15%;
+   margin-right: 15%;
+}
+
+.summary {
+   margin-left: 10%
+   margin-right: 10%
+}
+
+.name {
+   font-weight: bold;
+}
+
+.information {
+   font-style: italic;
+}  
+
+.comment-continuation {
+   margin-left: 2em;
+}
+
+dt {
+   font-style: oblique;
+}
+
+dd {
+   margin-left: 20px;
+}
+
+  </style>
+  
+</head> 
+<body> 
+ 
+<div class="titlebar"> 
+   <h1 class="header">PaySwarm</h1> 
+</div> 
+
+  <div id="content"> 
+ 
+  <div class="row"> 
+    <div class="twelvecol last"> 
+
+<h1>Web Payments Community Group Telecon</h1>
+<h2>Minutes for 2013-08-14</h2>
+<div class="summary">
+<dl>
+<dt>Agenda</dt><dd><a href="http://lists.w3.org/Archives/Public/public-webpayments/2013Aug/0032.html">http://lists.w3.org/Archives/Public/public-webpayments/2013Aug/0032.html</a></dd>
+<dt>Topics</dt><dd><ol><li><a href="#topic-1">Introductions to Adam B. Levine and Anders</a><li><a href="#topic-2">Update from Andrei on PaySwarm Marketplace Demo</a><li><a href="#topic-3">Project Watershed</a><li><a href="#topic-4">Crypto Key Storage in the Browser</a></ol></dd><dt>Chair</dt><dd>Manu Sporny</dd>
+<dt>Scribe</dt><dd>Dave Longley</dd>
+<dt>Present</dt><dd>Dave Longley, Manu Sporny, Adam B. Levine, Anders Rundgren, Andrei Oprea, David I. Lehn</dd>
+<dt>Audio Log</dt><dd><div><a href="audio.ogg">audio.ogg</a></div>
+<div><audio controls="controls" preload="none">
+<source src="audio.ogg" type="audio/ogg" />Warning: Your browser does not support the HTML5 audio element, please upgrade.</div></dd>
+<div class="information">Dave Longley is scribing.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  before we get started let's do some introductions</div>
+<h1 id="topic-1" class="topic">Topic: Introductions to Adam B. Levine and Anders</h1>
+<div class="comment"><span class="name">Adam B. Levine</span>:  my name is Adam B Levine, my background is with bitcoin, i've been involved for ~2 years, i do a show let's talk bitcoin, i'm really interested in micropayments to figure out barrier to entry for purchases, txns, commerce of all kinds on the web, bitcoin accomplishes the goal of low overhead and it's very inclusive and it's been very difficult for me to monetize the shows i do and bitcoin has made that much easier (internationally), i'm working on project watershed right now and i'm trying to figure out if i'm putting it aside for a bit because there are some for-profit outfits trying to do the same thing now, so i'm trying to figure out how to devote my time because i don't have enough of it</div>
+<div class="comment"><span class="name">Anders Rundgren</span>:  i'm Anders Rundgren, i work on [security solutions] for about 10 years, RSA security,etc. and my interest is in payments from the authentication side, i think that payments technologies should be more close than they are today, i want to see some standards/open source used to accomplish this goal</div>
+<div class="comment"><span class="name">Anders Rundgren</span>:  i've also worked with a small PKI provider for passports and stuff like that</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  ok, sounds good, content distribution, identity, and payments go hand in hand</div>
+<h1 id="topic-2" class="topic">Topic: Update from Andrei on PaySwarm Marketplace Demo</h1>
+<div class="comment"><span class="name">Manu Sporny</span>:  Andrei is going to give us a quick update on his progress on the payswarm marketplace stuff he's been doing</div>
+<div class="comment"><span class="name">Andrei Oprea</span>:  i've successfully made in-app purchases, i've run into some issues, one would be that when making an in-app purchase i got an error saying that there was no receipt, but the purchase did go through, so i can see it as a successful purchase</div>
+<div class="comment"><span class="name">Andrei Oprea</span>:  i wanted to ask how to sell something that isn't music/book/etc something like that, if it's a service, what should the user receive</div>
+<div class="comment"><span class="name">Andrei Oprea</span>: <a href="https://gist.github.com/piatra/6230793/raw/85143f38877552989bdc8ab912c74f93a1ccb5f4/error.js">https://gist.github.com/piatra/6230793/raw/85143f38877552989bdc8ab912c74f93a1ccb5f4/error.js</a></div>
+<div class="comment"><span class="name">David I. Lehn</span>:  We'll need more debugging info on this. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  let's take this offline, it may take some debugging. callbcks are only through web interface. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  as far as marking things up for sale for services, say, a dog walking service, the asset is just a block of time for services for an hour, etc.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  invoices will be modeled as assets as well</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  when you want to sell something, the asset always encapsulates what you're selling, it's as broad as possible, if there's something that doesn't quite fit into the asset model we should discuss it, but we tried to make it cover as much as we could (be really generic)</div>
+<div class="comment"><span class="name">Andrei Oprea</span>:  if someone purchases a dog walking service what do i give them?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  typically an invoice would be produced that described what services were used (it would be an asset) and there would line items in the asset</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we could change things so that a service could be used instead of an asset</div>
+<div class="comment"><span class="name">Dave Longley</span>:  I don't think we'd necessarily want to do that - an additional type for an Asset can be a service. We're trying to find the correct vocabulary terms for what you're trying to model, to properly markup what you want. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Finding the right vocabulary for what you want to sell is important. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  You may want to look online for some other vocabularies. You may add additional types to the asset that gives more information about what it is... you could have DogWalkingService in there if that's a part of a vocvabulary. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>: You might take a look at the Product Ontology - <a href="http://www.productontology.org/">http://www.productontology.org/</a> which has stuff like: pto:WebPage pto:Shovel pto:CinderBlock lots of things you could augment Asset with.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  ok, great progress andrei, we can discuss after the call getting stuff onto the VM, etc.</div>
+<h1 id="topic-3" class="topic">Topic: Project Watershed</h1>
+<div class="comment"><span class="name">Manu Sporny</span>: <a href="https://docs.google.com/document/d/18blKvUX5t-lBNCsbgnsJQsFCZi-76-I-cWcwO1_atUg/edit?usp=sharing">https://docs.google.com/document/d/18blKvUX5t-lBNCsbgnsJQsFCZi-76-I-cWcwO1_atUg/edit?usp=sharing</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so Adam sent an email to the web payments mailing list about project watershed and gave a talk at the bitcoin conf about it, so give us an overview</div>
+<div class="comment"><span class="name">Adam B. Levine</span>:  the basics ... the point of what i'm trying to do is to build an open source and free platform that is agnostic in the way a wordpress install would be, but i would build on top of crypto stuff for frictionless payments, where lots of other currencies (non-bitcoins) require you to go through a lot of hoops to buy things, bitcoin doesn't require that</div>
+<div class="comment"><span class="name">Adam B. Levine</span>:  with bitcoin you can just generate new addresses for every purpose you want</div>
+<div class="comment"><span class="name">Adam B. Levine</span>:  we're looking at tech for a hierarchical key management to fix some of the technical problems here</div>
+<div class="comment"><span class="name">Adam B. Levine</span>:  instead of having a banner on a webpage/billboard on side of the road, the process in order to buy something by clicking on something like this ... if you're on a webpage to consume content you are much less likely to use one of the advertisers there simply because it's asking you to click somewhere and leave, it's a disruptive act, so sites where you were already planning to leave get more success from this method, but if you didn't want to leave you're less likely to use this.</div>
+<div class="comment"><span class="name">Adam B. Levine</span>:  you can do purchases/subscriptions using this new tech by clicking on ads without disruption so the ads function more like vending machines</div>
+<div class="comment"><span class="name">Adam B. Levine</span>:  my focus with this project is to find better ways to monetize content and work with communities, once you get critical mass everything's ok, but before that it's difficult, it's an enormous cost to deal with the same issues prior to critical mass (issues are same between small and big sites, but only big sites can fix them)</div>
+<div class="comment"><span class="name">Adam B. Levine</span>:  bitcoin has a problem right now, 6 cents USD for txns, but compared to the size of donations, it's not as good as it could be, the solution that bitcoin community is coming from is off-chain txns, so you keep track of small off-chain txns and then at some point if someone wants to cash in you make the conversion at that point so the txn cost makes more since for $3 (in aggregate) vs. 25 cents</div>
+<div class="comment"><span class="name">Adam B. Levine</span>:  so with this system you can incentivize content creation</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we're 100% on board with what you want to do here, specifically, DB, the people that created payswarm, our background was in monetizing content, we had ~1 million independent songs we were selling, we had a p2p network where fans could make money off of selling content (in addition to artists) as distributions on the p2p network</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we absolutely believe that what you're doing is a problem with solving</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  as far as the tech used to solve the problem, you're coming from bitcoin blockchain side, we're coming from a web perspective, the talk i gave recently was about a huge community on the web 2.5 billion people, our goal is to slightly tweak the web so that payments are integrated into the core of the web</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  bitcoin has a lot of advantages over the current financial system, and we also want to use feature sof the web to enhance current financial system</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  payswarm has the ability to give an address for every single thing for sale on the web, we use a URL</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we use URLs to identify assets, things for sale, people that are selling it</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  just like bitcoin has one address per use per user, instead of doing that, we use a URL for that txn and each txn gets its own URL and it creates a nice decentralized system that already has a fairly large community (the web) using it</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  the other part of that is that bitcoin has a number of adv. and disadv. txns cost around $0.06 which can make things difficult, on meritora the txn fee is 2% which can go down over time and that applies over time the minimum fee we charge for doing that is like 0.0002</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  with payswarm only USD is supported right now but one of the next things on the roadmap is building bitcoin into it</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  you know how you kept track of bitcoin txns offline and then cash out, that's essentially what we're implementing in payswarm</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  and once that's there you can send a couple of shitoshi's to someone and not have it all eaten up in txn fees</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  the other thing is txns are immediate, etc. and you dont' have to wait for the block chain to settle</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  that's where we are, so i think the goals here are completely aligned</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we definitely want to help people create content on the web, we are content agnostic and currency agnostic, the system is designed that way, we're interested in achieving the same goals</div>
+<div class="comment"><span class="name">Adam B. Levine</span>:  yeah, i listened to your calls and i agree, i think it's great, and that's the ultimate solution, especially that payswarm is currency-agnostic</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we also think the number of the currencies in use will explode over time</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  even with bitcoin there are all kinds of tiny tweaks you can do, like forking it and introducing inflation, that's a new currency, any of these things changes the dynamic of how the block chain is operated, etc.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we've talked about creating a fiat currency on a block chain</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  clearly there are people that don't like that ide,a but if we can move fiat currency over to a block chain like mechanism that could address some fraud related issues we have today</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  there is a lot of room for currencies to grow here and chain, etc.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  no reason to focus on one particular currency</div>
+<div class="comment"><span class="name">Adam B. Levine</span>:  i totally agree, the other point of watershed is to break the media model we have right now, that's my other passion</div>
+<div class="comment"><span class="name">Adam B. Levine</span>:  i don't really enjoy doing the out in public and journalism stuff, i probably should, and i feel like very few people are doing this enough, not that i'm great at it, part of this is how we fund media, microtransactions lower the barrier for the audience to be in charge of media</div>
+<div class="comment"><span class="name">Adam B. Levine</span>:  i want a platform where the advertisers and creators of media are more separate, one side is audience+content creators who care about the content, the platform advertisers are looking at it from a 1000 ft level at money, etc.</div>
+<div class="comment"><span class="name">Adam B. Levine</span>:  right now the payments don't flow directly, the advertiser gets paid, who pays the platform, who pays the creator, etc.</div>
+<div class="comment"><span class="name">Manu Sporny</span>: Web Payments use cases: <a href="https://payswarm.com/specs/source/use-cases/">https://payswarm.com/specs/source/use-cases/</a></div>
+<div class="comment"><span class="name">Adam B. Levine</span>:  i think it should be the audience that is consuming the content should be giving direct feedback by judging the quality of the content, etc.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  yes, a number of the things you're talking about are in the use cases in the payswarm spec</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  again, our background is in media, talking about artists/scientists/content creators, whomever, we want them to have access to capital from their fans, we want kickstarter to exist without the high fees, etc.</div>
+<div class="comment"><span class="name">Adam B. Levine</span>:  yes, so we're very aligned</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so, the question is where do we go from here, so we're very involved in the technical side of things, free and open standard, etc. and we're talking with browser manufacturers, these are our strengths, we can build the tech and commercialize it and we have contacts for getting things into web browsers, and we haev some contacts in the finance community to lean on, so where do you see collaboration opportunities here</div>
+<div class="comment"><span class="name">Adam B. Levine</span>:  my plan from here has been finishing development on laying out the vision and then handing it off to a developer to implement, his estimate was $15k for 2-3 months of develop, i don't think it's terribly difficult/expensive to implement, i just want this to exist, i don't care who pays for it or whatever, i just want it to happen</div>
+<div class="comment"><span class="name">Adam B. Levine</span>:  if this is something you want to throw time at, it doesn't have to be project watershed, i just want these tools to exist</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  have you seen the payswarm wordpress demo?</div>
+<div class="comment"><span class="name">Manu Sporny</span>: PaySwarm Sandbox: <a href="https://dev.payswarm.com/">https://dev.payswarm.com/</a></div>
+<div class="comment"><span class="name">Adam B. Levine</span>:  no, there's bitcredit.io and bitwall.io, two recent start ups without a product yet but maybe in 2 weeks, i'm trying out business model with one and with another, i'd be happy to try things out</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so right now we have a wordpress plugin and you click buy on an article and you pay a very small fraction of what you'd pay now and get access to an article, etc.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we can also add crowd funding,etc. to that plugin</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  this has been done and out there for multiple months now, we're looking to see if people want to adopt it, and we want to add bitcoin support</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  i think the place to start would be if you could look at it and tell us what's missing from the vision you want and we could reprioritize based on your feedback</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  eventually you'll have a technical implementation based on payswarm creating what you want</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so you can look at that and we can go from there</div>
+<div class="comment"><span class="name">Adam B. Levine</span>:  ok, that sounds good, yeah, i'll look at that and we can talk about moving forward on that</div>
+<div class="comment"><span class="name">Adam B. Levine</span>:  this works with USD?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  the demo site uses fake money, but there is a real version too</div>
+<div class="comment"><span class="name">Manu Sporny</span>: <a href="http://blog.meritora.com/launch/">http://blog.meritora.com/launch/</a></div>
+<div class="comment"><span class="name">Adam B. Levine</span>:  can you do multiple currnecies?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  now no, in the future, yes, you could say "we access USD and bitcoins" for instance.</div>
+<h1 id="topic-4" class="topic">Topic: Crypto Key Storage in the Browser</h1>
+<div class="comment"><span class="name">Manu Sporny</span>:  ok, we're very aligned and let's collaborate more in the future.</div>
+<div class="comment"><span class="name">Manu Sporny</span>: <a href="http://lists.w3.org/Archives/Public/public-webpayments/2013Aug/0001.html">http://lists.w3.org/Archives/Public/public-webpayments/2013Aug/0001.html</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so you had posted things about crypto key storage in the browser</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  i had a chance to look through all three of the documents you had sent out and could you go over it a bit more?</div>
+<div class="comment"><span class="name">Anders Rundgren</span>:  you were talking about a number of things that were quite interesting, like plugins and extensions to the browser and this is all related</div>
+<div class="comment"><span class="name">Anders Rundgren</span>:  on the first document, i wrote about why i started this project back in 2006, i was concerned with 2 factor auth not working properly, they do their own clients and not use a browser client, for many reasons, still happens today with android, banks use their own solution, they don't use the built in android solution, anyway, the inspiration is this</div>
+<div class="comment"><span class="name">Anders Rundgren</span>:  i started looking at protocols for key provisions to try and solve this problem.</div>
+<div class="comment"><span class="name">Anders Rundgren</span>:  i found that i needed to match the keystore and a protocol to go with that for each keystore type, etc.</div>
+<div class="comment"><span class="name">Anders Rundgren</span>:  i'm a lurker with web crypto API, not a member, and it's great tech, but it has no connection to system keystores</div>
+<div class="comment"><span class="name">Anders Rundgren</span>:  i started playing with extensions to tie together new keystores and old ones</div>
+<div class="comment"><span class="name">Anders Rundgren</span>:  and i have a document that talks about payments with respect to this which is how i got here</div>
+<div class="comment"><span class="name">Manu Sporny</span>: "Executive Level" description of the SKS/KeyGen2 concept: <a href="http://webpki.org/papers/SKS-KeyGen2-Project.pdf">http://webpki.org/papers/SKS-KeyGen2-Project.pdf</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>: The WebCrypto/SKS combination: <a href="http://webpki.org/papers/PKI/pki-webcrypto.pdf">http://webpki.org/papers/PKI/pki-webcrypto.pdf</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>: SKS API architecture: <a href="https://openkeystore.googlecode.com/svn/resources/trunk/docs/sks-api-arch.pdf">https://openkeystore.googlecode.com/svn/resources/trunk/docs/sks-api-arch.pdf</a></div>
+<div class="comment"><span class="name">Anders Rundgren</span>:  The mozpay has predefined trusted UI, which is fine, there's a problem with that because payment systems can be very different, what i'd like to have is a trusted UI that is adaptable that is programmable, it's very hard to combine a programmable system that is also trusted</div>
+<div class="comment"><span class="name">Anders Rundgren</span>:  so i have talked about a trust model based on a key that signs code, each payment provider has their own protocol and ui that may or may not be standardized but the trusted part is only valid for certain pieces of software, instead of something that is universal i think that's another way to solve the problem that's what i've come up with recently</div>
+<div class="comment"><span class="name">Anders Rundgren</span>:  it is very complicated to have a dialog because of things that must be cleared before discussion, etc.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we operate must more transparently than that, so i've got some comments on that</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  on crypto in the browser, we're definitely focused here, as are you, the idea here is to create crypto keys and keep them in the browser and specify exactly what the keys can or can't be used for, keeping permissions for them,e tc.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  the idea here is not to do it through an extension to the browser but to use existing tech (browser native)</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so there's no installation</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so your idea is to sign code and transmit signatures via postMessage(), that's how persona works, that's how they do their digital signatures</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  but persona is server-side, but your solution would use keys stored on the client</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so we're really interested in this approach for the web payments tuff</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  currently w/payswarm, you delegate all the digital signature stuff to your payment processor, because of browser client-side limitations</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  eventually we want the customer to be in charge of all the signatures on the receipts, etc. in order to do that you have to have keys in the browser/device, so you need a secure way of doing this via the browser, so this approach using domain-locked keys and the web crypto API for the signature and using postMessage() to send the signature is great</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  i want to have a high level discussion with you and figure out how to utilize this tech, outside of persona i haven't seen too many people working on this, and it's the approach we like</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  if you look at the solution you're proposing in your documents it may not just be stop-gap it may be the way to do things</div>
+<div class="comment"><span class="name">Anders Rundgren</span>:  Yes, anonymizing stuff is important.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we use a URL to identify customers to the merchants right now (not necessarily personal info there at all)</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  in bitcoin only you are in control of your private keys, etc.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  with payswarm your payment processor has some control over that</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we want to empower the customer more</div>
+<div class="comment"><span class="name">Anders Rundgren</span>:  what about the browser vendor support for what you're doing?</div>
+<div class="comment"><span class="name">Anders Rundgren</span>:  does this require an extension in the browser?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we don't want to depend on the browser vendors to innovate</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  the approach we're taking right now doesn't need a browser extension, the downside is that we can't do customer-based digital signatures</div>
+<div class="comment"><span class="name">Anders Rundgren</span>:  i don't know exactly what the role will be, i'm thinking of working with device vendors, because they have a large market that is super advanced rather than going through the</div>
+<div class="comment"><span class="name">Anders Rundgren</span>:  it takes a very long time to get anything done there</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  i think you could get a certain implementation of the system you have right now, these payswarm payment processors could be interested in implementing that stuff so long as it's kept on the payment processors, they are more ok with doing crypto hacks to get a more secure system</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  it's not a priority for the browser vendors to implement this sort of stuff, they have other things on their plate.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we want to stay in touch and work with you as well, the best approach would be, perhaps, to build a JS library that you can put on the server to show people how to use this system and then once it's out there it could probably be integrated pretty easily</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  i'll try and send something out there to the mailing list to see if we can get some of the tech you described into the web payments work</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  i'll talk to the persona team as well</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  and their marketplace team</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  if you can respond to that once i get that message out there to keep the discussion going</div>
+<div class="comment"><span class="name">Adam B. Levine</span>:  is there a reason not to use a browser extension here?</div>
+<div class="comment"><span class="name">Adam B. Levine</span>:  what [Joe] has implemented here is a browser extension that allows a meta login via your bitcoin address</div>
+<div class="comment"><span class="name">Adam B. Levine</span>:  why is a browser extension not good?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Joe's system is really good, that's not the issue, the browser extension is, you can't scale to 2 b/million people by making them install extensions</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  the only really successful extension like that is flash which as we know is being killed off</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  you don't know what browser extenisons are doing, there's a security issue, etc. but you also want the tech to be accessible to anyone... the # of people using the web vs. using extensions is much greater</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we can't build the blockchain into the browser (having gb of data lying around)</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  until you get 1 billion people using bitcoin they aren't going to be interested in building that tech into the browser</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  the other idea is to push the identity in the block chain solution off to a third party that people trust to hold onto their bitcoin wallets but as soon as you do that you lose control over your identity</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  if the NSA/prism comes in and wants coinbase to digitally sign things on your behalf +gag order, it happens and you don't know about it</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  this is why the approach that anders is talking about is an interesting approach</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so you get the best of both worlds while you get to</div>
+<div class="comment"><span class="name">Dave Longley</span>:  I'm pretty sure that the approach that Anders is talking about allows the service to sign stuff as well. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  What we're talking about w/ Anders system is the ability to integrate w/ existing keystores and sign code and have it run in other places. It doesn't remove the ability for the provisioner to use the keys for something else. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  With Anders solution, you get access to keystores that are more native on the device. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Anders Rundgren</span>:  yes, you've understood it completely</div>
+<div class="comment"><span class="name">Anders Rundgren</span>:  you can combine more traditional models with web crypto API</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Not every browser extension operates the same way, so it costs a lot more to write the code vs. something that natively ran in the browser. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Anders Rundgren</span>:  it's very complicated to do browser extensions</div>
+<div class="comment"><span class="name">Adam B. Levine</span>:  i'm looking at this as, how do we solve this problem with crypto currencies</div>
+<div class="comment"><span class="name">Adam B. Levine</span>:  doing the decentralized thing without trusted stake holders is difficult</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  the ideal case here is for everyone to be in control of your own finances</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  with bitcoin you can do that, but then you don't have some of the other commerce stuff</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  now the US has said bitcoin is a currency so there may be regulation coming</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we've got people coming from the fiat side and people from the crypto currency (bitcoin) side</div>
+<div class="comment"><span class="name">Dave Longley</span>:  What this comes down to is that when you use crypto currencies, you end up gaining advantages and losing some advantages. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  You want to make sure that people can control their own finances between the two. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Adam B. Levine</span>:  right, one size fits all doesn't work</div>
+<div class="comment"><span class="name">Adam B. Levine</span>:  the payswarm approach makes a lot of sense.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  ok, let's figure out more ways to collaborate in the future, we're all very aligned</div>
+<div class="comment"><span class="name">Adam B. Levine</span>:  manu, your talk is going up on episode 32 of let's talk bitcoin - <a href="https://soundcloud.com/mindtomatter/ltbep032">https://soundcloud.com/mindtomatter/ltbep032</a></div>
+       </div>
+  </div>
+
+<div class="container vspacing"> 
+  <div class="row"> 
+    <div class="threecol"> 
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a> 
+    </div> 
+    <div class="ninecol last"> 
+      <p>&copy; 2013 Digital Bazaar, Inc. 
+Website CSS created by <a href="http://cssgrid.net/">@andytlr</a> 
+and is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/au/"> 
+Creative Commons Attribution-ShareAlike 3.0 Australia License</a>. All other
+website content is licensed under a
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"> 
+Creative Commons Attribution-ShareAlike 3.0 License</a>
+</p> 
+    </div> 
+  </div> 
+</div> 
+ 
+<script type="text/javascript"> 
+ 
+  var _gaq = _gaq || [];
+  _gaq.push(["_setAccount", "UA-1539674-7"]);
+  _gaq.push(["_trackPageview"]);
+
+  (function() {
+    var ga = document.createElement("script"); ga.type = "text/javascript"; ga.async = true;
+    ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";
+    (document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]).appendChild(ga);
+  })();
+ 
+</script>
+
+</body>
+</html>
