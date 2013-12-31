@@ -528,7 +528,7 @@
          '<div><audio controls="controls" preload="none">\n' + 
          '<source src="' + audio + '" type="audio/ogg" />' +
          'Warning: Your browser does not support the HTML5 audio element, ' +
-         'please upgrade.</div></dd>\n';
+         'please upgrade.</audio></div></dd></dl>\n';
     }
     else
     {
