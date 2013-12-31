@@ -1,104 +1,90 @@
-<?xml version="1.0" encoding="UTF-8"?> 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-   "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
-<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
-      class="wf-adelle1adelle2-n6-active wf-active"> 
- 
-<head> 
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
-  <title>PaySwarm - Teleconferences</title> 
- 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
- 
-  <link rel="stylesheet" href="../../css/1140.css" type="text/css" media="screen" /> 
-  <!--[if lte IE 9]>
-  <link rel="stylesheet" href="../css/ie.css" type="text/css" media="screen" />
-  <![endif]--> 
-  <link rel="stylesheet" href="../../css/typeimg.css" type="text/css" media="screen" /> 
-  <link rel="stylesheet" href="../../css/smallerscreen.css" media="only screen and (max-width: 1023px)" /> 
-  <link rel="stylesheet" href="../../css/mobile.css" media="handheld, only screen and (max-width: 767px)" /> 
-  <link rel="stylesheet" href="../../css/layout.css" type="text/css" media="screen" /> 
-  <link rel="shortcut icon" type="image/png" href="../../images/payswarm-icon.png" /> 
-  
-<style type="text/css">
-#content {
-   margin-left: 15%;
-   margin-right: 15%;
-}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web Payments">
+    <meta name="author" content="Manu Sporny">
+    <link rel="shortcut icon" href="assets/ico/favicon.png">
 
-.summary {
-   margin-left: 10%
-   margin-right: 10%
-}
+    <title>Web Payments</title>
 
-.name {
-   font-weight: bold;
-}
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="../../assets/css/bootstrap.css">
 
-.information {
-   font-style: italic;
-}  
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/icomoon.css">
+    <link rel="stylesheet" href="../../assets/css/animate-custom.css">
 
-.comment-continuation {
-   margin-left: 2em;
-}
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' type='text/css'>
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Raleway:400,300,700' type='text/css'>
 
-dt {
-   font-style: oblique;
-}
-
-dd {
-   margin-left: 20px;
-}
-
-  </style>
-  
-</head> 
-<body> 
- 
-<div class="titlebar"> 
-   <h1>PaySwarm</h1> 
-</div> 
-
-  <div id="content"> 
- 
-  <div class="row"> 
-    <div class="twelvecol last"> 
+    <script src="../../assets/js/jquery.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/modernizr.custom.js"></script>
     
-<h1>Web Payments Telecon</h1>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+      <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body data-target="#navbar-nav" data-spy="scroll">
+
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon icon-arrow-down" style="font-size:30px; color:#1abc9c;"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../#home" class="smoothScroll">Home</a></li>
+            <li> <a href="../../#about" class="smoothScroll"> About</a></li>
+            <li> <a href="../../#specs" class="smoothScroll"> Specs</a></li>
+            <li> <a href="../../#participate" class="smoothScroll"> Participate</a></li>
+            <li> <a href="../../#contact" class="smoothScroll"> Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+
+<section><div class="container"><div class="row white"><br><div class="col-lg-offset-2 col-lg-8"><h1>Web Payments Community Group Telecon</h1>
 <h2>Minutes for 2011-09-02</h2>
 <div class="summary">
 <dl>
 <dt>Agenda</dt><dd><a href="http://lists.w3.org/Archives/Public/public-webpayments/2011Aug/0030.html">http://lists.w3.org/Archives/Public/public-webpayments/2011Aug/0030.html</a></dd>
-<dt>Chair</dt><dd>Manu Sporny</dd>
+<dt>Topics</dt><dd><ol><li><a href="#topic-1">Introductions</a><li><a href="#topic-2">Resources</a><li><a href="#topic-3">Web Payment Goals</a><li><a href="#topic-4">Meetings</a></ol></dd><dt>Chair</dt><dd>Manu Sporny</dd>
 <dt>Scribe</dt><dd>Manu Sporny</dd>
-<dt>Present</dt><dd>Manu Sporny, Dmitry Gorilovsky, Jeff Sayre, Pelle Braendgaard, Dave Longley, David I. Lehn, Michael Johnson</dd>
-<dt>Audio Log</dt><dd><div><a href=""></a></div>
+<dt>Present</dt><dd>Manu Sporny, Dmitry Gorilovsky, Jeff Sayre, Pelle Braendgaard, Dave Longley, David I. Lehn, Mike Johnson</dd>
+<dt>Audio Log</dt><dd><div><a href="audio.ogg">audio.ogg</a></div>
 <div><audio controls="controls" preload="none">
-<source src="audio.ogg" type="audio/ogg" />Warning: Your browser does not support the HTML5 audio element, please upgrade.</div></dd>
-</dl>
-</div>
-<div class="information">Note: Manu Sporny is scribing.</div>
-<div class="comment"><span class="name">Dmitry Gorilovsky</span>:  I'd like discuss additional P2P monetary transaction resources.</div>
+<source src="audio.ogg" type="audio/ogg" />Warning: Your browser does not support the HTML5 audio element, please upgrade.</audio></div></dd></dl>
+<div class="information">Manu Sporny is scribing.</div>
+<div class="comment"><span class="name">Dmitry Gorilovsky</span>:  I&apos;d like discuss additional P2P monetary transaction resources.</div>
 <div class="comment"><span class="name">Dmitry Gorilovsky</span>:  We should discuss when to have monthly meetings.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Every two weeks was intent.</div>
-<h1 id=topic-1 class="topic">Topic: Introductions</h1>
+<h1 id="topic-1" class="topic">Topic: Introductions</h1>
 <div class="comment"><span class="name">Jeff Sayre</span>:  My name is Jeff Sayre, involved in Open Source tech for a number of years, been interested in federated social web</div>
-<div class="comment-continuation">... very interested in privacy, WebID - interested in Web Payments... written a number of articles on payments. Newest push is differentiating Web 2.0 startups from Web 3.0 "Smartups".</div>
+<div class="comment-continuation">... very interested in privacy, WebID - interested in Web Payments... written a number of articles on payments. Newest push is differentiating Web 2.0 startups from Web 3.0 &quot;Smartups&quot;.</div>
 <div class="comment-continuation">... very interested in pushing an open web payment standards.</div>
 <div class="comment"><span class="name">Jeff Sayre</span>: <a href="http://jeffsayre.com/">http://jeffsayre.com/</a></div>
-<div class="comment"><span class="name">Pelle Braendgaard</span>:  Hi I'm Pelle Brandengard, one of the main guys behind OpenTransact... been working on payments for over 12 years. My startup is PicoMoney - service provider for creating virtual currencies.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  Hi I&apos;m Pelle Brandengard, one of the main guys behind OpenTransact... been working on payments for over 12 years. My startup is PicoMoney - service provider for creating virtual currencies.</div>
 <div class="comment"><span class="name">Pelle Braendgaard</span>:  Been working on standards w/ exactly same purpose as PaySwarm - we need some standards on this stuff. We need something at a lower level than PaySwarm, want a really simple basic standard for every single type of payment you can imagine.</div>
 <div class="comment"><span class="name">Pelle Braendgaard</span>:  Very important to not just look at individual use cases - think holistically.</div>
 <div class="comment"><span class="name">Dmitry Gorilovsky</span>:  I am from Dmitry Gorilovsky from Aintsys corporation based in Russia. We are focused on monetary technologies, transactions protocols for P2P money.</div>
 <div class="comment"><span class="name">Dmitry Gorilovsky</span>:  Very helpful for companies that want digital P2P currencies for everyone.</div>
 <div class="comment"><span class="name">Dave Longley</span>: no mic</div>
 <div class="comment"><span class="name">David I. Lehn</span>:  I work at Digital Bazaar, been here working on Bitmunk (P2P music) - working on various bits and pieces to PaySwarm.</div>
-<div class="comment"><span class="name">Dave Longley</span>: I'm the CTO of Digital Bazaar, been working on decentralized/P2P distribution of digital goods, culminating in PaySwarm work.</div>
+<div class="comment"><span class="name">Dave Longley</span>: I&apos;m the CTO of Digital Bazaar, been working on decentralized/P2P distribution of digital goods, culminating in PaySwarm work.</div>
 <div class="comment"><span class="name">Dave Longley</span>: been working with manu for about 7 years or so.</div>
 <div class="comment"><span class="name">Dave Longley</span>: also do some work in semantic web, eg: JSON-LD.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Manu Sporny, founder of Digital Bazaar. Company purpose to help people buy and sell digital goods over the web. Focused on putting financial technology in peoples hands. Worked with P2P payments in the past. Involved in semantic web technologies: RDF, JSON-LD, RDFa. Need to use those for listing assets. Look at problems holistically. Very interested in creating patent and royalty free standards. [scribe assist by David I. Lehn]</div>
-<h1 id=topic-2 class="topic">Topic: Resources</h1>
+<h1 id="topic-2" class="topic">Topic: Resources</h1>
 <div class="information"><a href="https://www.w3.org/community/webpayments/">https://www.w3.org/community/webpayments/</a></div>
 <div class="information">Manu explains the voip bridge/IRC bot.</div>
 <div class="information"><a href="https://github.com/web-payments/">https://github.com/web-payments/</a></div>
@@ -116,65 +102,65 @@ dd {
 <div class="comment"><span class="name">Manu Sporny</span>:  Advantage of W3C tracker is that issues are automatically linked in mailing list archives. [scribe assist by David I. Lehn]</div>
 <div class="comment"><span class="name">Jeff Sayre</span>:  Github is my preference as well.</div>
 <div class="comment"><span class="name">Dave Longley</span>: +1 github</div>
-<div class="comment"><span class="name">Michael Johnson</span>: +1 github</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  Ok, looks like we'll use github for issue tracking.</div>
-<h1 id=topic-3 class="topic">Topic: Web Payment Goals</h1>
-<div class="information">Let's use the following as discussion points:</div>
+<div class="comment"><span class="name">Mike Johnson</span>: +1 github</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Ok, looks like we&apos;ll use github for issue tracking.</div>
+<h1 id="topic-3" class="topic">Topic: Web Payment Goals</h1>
+<div class="information">Let&apos;s use the following as discussion points:</div>
 <div class="information">Value transfer (core payment)</div>
 <div class="information">Discoverability of assets and payment methods</div>
 <div class="information">Offer creation and discoverability</div>
 <div class="information">Offer acceptance / Digital Contracts / Proof of Purchase</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Asks Pelle to talk about value transfer due to work on OpenTransact and bare minimum to build on. [scribe assist by David I. Lehn]</div>
-<div class="comment"><span class="name">Pelle Braendgaard</span>:  Really, the issue is simply - paying someone something. It doesn't have to be a dollar amount, it can also be transferring an asset to someone.</div>
-<div class="comment"><span class="name">Pelle Braendgaard</span>:  We wanted to base it on HTTP - look at resources - look at URIs as assets - post to that w/ a couple of parameters and that's value transfer.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  Really, the issue is simply - paying someone something. It doesn&apos;t have to be a dollar amount, it can also be transferring an asset to someone.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  We wanted to base it on HTTP - look at resources - look at URIs as assets - post to that w/ a couple of parameters and that&apos;s value transfer.</div>
 <div class="comment"><span class="name">Pelle Braendgaard</span>:  This is the core underlying payment in any of these use cases.</div>
 <div class="comment"><span class="name">Pelle Braendgaard</span>:  I see a standard like this to be able to replace just about any other payment-related system that are used right now in banking.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  So you would like to see us reduce this down to minimum so other more complex systems can be built on top. Approach from simplicity instead of a gigantic system. [scribe assist by David I. Lehn]</div>
 <div class="comment"><span class="name">Pelle Braendgaard</span>:  All of these things should be usable on their own - for example, certain applications will not have a need for discoverability... but all of them will need value transfer.</div>
-<div class="comment"><span class="name">Dmitry Gorilovsky</span>:  We're talking about agreements - whole system needs - money emissions - we should be able to manage small payments between peers.</div>
+<div class="comment"><span class="name">Dmitry Gorilovsky</span>:  We&apos;re talking about agreements - whole system needs - money emissions - we should be able to manage small payments between peers.</div>
 <div class="comment"><span class="name">Dmitry Gorilovsky</span>:  We need to understand peer-to-peer aspect of it.</div>
-<div class="comment"><span class="name">Jeff Sayre</span>:  I think that makes sense - I'd like to explore PaySwarm spec as it currently exists - see which parts are applicable to the overall group. There is a lot of it that is pretty simple already - need to look more into OpenTransact.</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  I think that makes sense - I&apos;d like to explore PaySwarm spec as it currently exists - see which parts are applicable to the overall group. There is a lot of it that is pretty simple already - need to look more into OpenTransact.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  We want to pull in other folks from Bitcoin, Ben and RipplePay, and meta currency folks. Want to do due diligence on other payment systems to make sure we cover as many use cases as we can without over complicating the spec.</div>
 <div class="comment"><span class="name">Jeff Sayre</span>:  We may want to look at the current alternatives - we want to discuss this - lets see where the commonalities exist between PaySwarm and the alternatives. We should have a good understanding after we start doing those types of comparison.</div>
 <div class="comment"><span class="name">Dmitry Gorilovsky</span>:  We should talk about common standard for P2P payment standards like Bitcoin... do a quick presentation on this stuff. P2P payments - will cover that. Prospective directions.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  We absolutely need to understand these technologies in depth before proposing a solution that we say covers something when we don't. [scribe assist by David I. Lehn]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We absolutely need to understand these technologies in depth before proposing a solution that we say covers something when we don&apos;t. [scribe assist by David I. Lehn]</div>
 <div class="comment"><span class="name">Pelle Braendgaard</span>:  Peer-to-peer is very, very important.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  We've been using the word "decentralized" so as not to push complexity of P2P systems on to the clients. Ability to have a decentralized system is important. [scribe assist by David I. Lehn]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We&apos;ve been using the word &quot;decentralized&quot; so as not to push complexity of P2P systems on to the clients. Ability to have a decentralized system is important. [scribe assist by David I. Lehn]</div>
 <div class="comment"><span class="name">Pelle Braendgaard</span>:  P2P is person-to-person, not specifically a peer-to-peer transfer - PayPal could be defined as peer-to-peer / person-to-person.</div>
-<div class="comment"><span class="name">Dmitry Gorilovsky</span>:  Ah, yes - "pure" P2P is not required, but is nice.</div>
+<div class="comment"><span class="name">Dmitry Gorilovsky</span>:  Ah, yes - &quot;pure&quot; P2P is not required, but is nice.</div>
 <div class="comment"><span class="name">Dave Longley</span>: There will still be authorities that can enforce contracts, but they will be decentralized, which means person-to-person will interact with some kind of decentralized authority. In person-to-person there will be 3 parties, not just 2.</div>
-<div class="comment"><span class="name">Jeff Sayre</span>:  Yes, that clarifies the issue for me - we should model the payment standard off of the way the Web is modeled - decentralized. If P2P means person-to-person that's good.</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  Yes, that clarifies the issue for me - we should model the payment standard off of the way the Web is modeled - decentralized. If P2P means person-to-person that&apos;s good.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Security and other issues with Bitcoin. Not necessarily a standard Digital Bazaar is working towards. [scribe assist by David I. Lehn]</div>
 <div class="comment"><span class="name">Dave Longley</span>: (Not to mention all kinds of government and taxation issues)</div>
-<div class="comment"><span class="name">Jeff Sayre</span>:  Yes, I think that makes sense - I agree with that. We shouldn't make assumptions and form opinions on things beyond community scope. There are economic issues w/ the bitcoin monetary supply. We should figure out a way to allow alternative currencies to interface in an appropriate way.</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  Yes, I think that makes sense - I agree with that. We shouldn&apos;t make assumptions and form opinions on things beyond community scope. There are economic issues w/ the bitcoin monetary supply. We should figure out a way to allow alternative currencies to interface in an appropriate way.</div>
 <div class="comment"><span class="name">Dave Longley</span>: We should avoid that as much as possible.</div>
-<div class="comment"><span class="name">Dave Longley</span>: The standard shouldn't force particular currencies, it should be able to be used with any viable currency.</div>
+<div class="comment"><span class="name">Dave Longley</span>: The standard shouldn&apos;t force particular currencies, it should be able to be used with any viable currency.</div>
 <div class="comment"><span class="name">Jeff Sayre</span>:  via modules - you could tie in and offer/extend the payment standard to allow alternative currencies. Supporting infrastructure is there - but we would not want it in base protocol (bitcoin in core protocol). You need to make sure that this is open to other alternatives - not integrate directly.</div>
 <div class="comment"><span class="name">Dave Longley</span>: but implementing a currency should not be part of the standard.</div>
-<div class="comment"><span class="name">Pelle Braendgaard</span>:  I agree completely. Bitcoin itself is not HTTP - it's not Web at it's core. However, the core value transfer of Bitcoin MtGox could implement PaySwarm. We're not talking about underlying economic principles here. Since this is a Web Payment - we're talking about the Web.</div>
-<div class="comment"><span class="name">Dmitry Gorilovsky</span>:  Yes, I think that's fine, probably - I'll add some comments later on - next call. I don't want to discuss Bitcoin on the first call - it's a big topic. Not a topic we want to get into on the first call. We shouldn't get into it today.</div>
-<div class="comment"><span class="name">Jeff Sayre</span>:  I think that we should clarify - the payment standard is a "Web" payment standard... the "Mobile" based Internet is not two separate things. We need to clarify: Are we speaking specifically from a technical standpoint - is this Web-only, or is it Internet-only.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  I agree completely. Bitcoin itself is not HTTP - it&apos;s not Web at it&apos;s core. However, the core value transfer of Bitcoin MtGox could implement PaySwarm. We&apos;re not talking about underlying economic principles here. Since this is a Web Payment - we&apos;re talking about the Web.</div>
+<div class="comment"><span class="name">Dmitry Gorilovsky</span>:  Yes, I think that&apos;s fine, probably - I&apos;ll add some comments later on - next call. I don&apos;t want to discuss Bitcoin on the first call - it&apos;s a big topic. Not a topic we want to get into on the first call. We shouldn&apos;t get into it today.</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  I think that we should clarify - the payment standard is a &quot;Web&quot; payment standard... the &quot;Mobile&quot; based Internet is not two separate things. We need to clarify: Are we speaking specifically from a technical standpoint - is this Web-only, or is it Internet-only.</div>
 <div class="comment"><span class="name">Pelle Braendgaard</span>:  When I say Web, I mean the underlying technology - mobile Web is a part of that.</div>
-<div class="comment"><span class="name">Jeff Sayre</span>:  Yes, that's the same way I think about it.</div>
-<div class="comment"><span class="name">Pelle Braendgaard</span>:  We don't need a new transport protocol.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  When we talk web we mean HTTP, not CSS, JS, etc. We are talking an Internet standard that tends to use web standards. Using RDFa to specify listings but could just use JSON-LD. Ben Laurie asked why we are we doing this through W3C vs IETF. Doing it in W3C because community groups makes the process easy and we are using a number of web technologies: IRI, HTML, RDFa, JSON-LD in the future. Don't need a web browser for this, can use command line or script. [scribe assist by David I. Lehn]</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  Yes, that&apos;s the same way I think about it.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  We don&apos;t need a new transport protocol.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  When we talk web we mean HTTP, not CSS, JS, etc. We are talking an Internet standard that tends to use web standards. Using RDFa to specify listings but could just use JSON-LD. Ben Laurie asked why we are we doing this through W3C vs IETF. Doing it in W3C because community groups makes the process easy and we are using a number of web technologies: IRI, HTML, RDFa, JSON-LD in the future. Don&apos;t need a web browser for this, can use command line or script. [scribe assist by David I. Lehn]</div>
 <div class="comment"><span class="name">Dave Longley</span>: No new transport protocol, use HTTP/S.</div>
 <div class="comment"><span class="name">Dave Longley</span>: Ben Laurie works with Google.</div>
 <div class="comment"><span class="name">Dave Longley</span>: <a href="http://en.wikipedia.org/wiki/Ben_Laurie">http://en.wikipedia.org/wiki/Ben_Laurie</a></div>
 <div class="comment"><span class="name">Dave Longley</span>: Is founding director of Apache project</div>
-<div class="comment"><span class="name">Michael Johnson</span>: Sorry, I don't have voice so I can't hear where the discussion is gone. Just wanted to make a point about the decentralized structure being similar to how banks operate currently. There is overall regulation on the banks, but each can act independently and is able to communicate money transfers between each other.Basically an authority in the future might just be a bank, with a web status from running the authority software.</div>
-<div class="comment"><span class="name">Dmitry Gorilovsky</span>:  We don't need to implement new protocols - we can rely on existing technologies.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  Sounds like we are all in agreement. Agreement on a number of core principles. Good sign we're all under same delusion or on the right path. [scribe assist by David I. Lehn]</div>
+<div class="comment"><span class="name">Mike Johnson</span>: Sorry, I don&apos;t have voice so I can&apos;t hear where the discussion is gone. Just wanted to make a point about the decentralized structure being similar to how banks operate currently. There is overall regulation on the banks, but each can act independently and is able to communicate money transfers between each other.Basically an authority in the future might just be a bank, with a web status from running the authority software.</div>
+<div class="comment"><span class="name">Dmitry Gorilovsky</span>:  We don&apos;t need to implement new protocols - we can rely on existing technologies.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Sounds like we are all in agreement. Agreement on a number of core principles. Good sign we&apos;re all under same delusion or on the right path. [scribe assist by David I. Lehn]</div>
 <div class="information">* Offer creation and discoverability</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  PaySwarm calls offers "listings" but is the same concept. People should be able to express what they want to sell in a decentralized way on the web. Someone else should be able to come to that resource and say the want to buy this without going through a central intermediary. Dmitry, might be a part of your P2P model. PaySwarm came out of a pure P2P network. Two people should be able to come to website and exchange something without a centralized listing service. That is a failure due to giving power to a single entity on the web. Is offer creation and discoverability in scope? [scribe assist by David I. Lehn]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  PaySwarm calls offers &quot;listings&quot; but is the same concept. People should be able to express what they want to sell in a decentralized way on the web. Someone else should be able to come to that resource and say the want to buy this without going through a central intermediary. Dmitry, might be a part of your P2P model. PaySwarm came out of a pure P2P network. Two people should be able to come to website and exchange something without a centralized listing service. That is a failure due to giving power to a single entity on the web. Is offer creation and discoverability in scope? [scribe assist by David I. Lehn]</div>
 <div class="comment"><span class="name">Dave Longley</span>: +1</div>
 <div class="comment"><span class="name">Pelle Braendgaard</span>: +1</div>
 <div class="comment"><span class="name">Jeff Sayre</span>: +1</div>
-<div class="comment"><span class="name">Michael Johnson</span>: what is the vote for?</div>
+<div class="comment"><span class="name">Mike Johnson</span>: what is the vote for?</div>
 <div class="comment"><span class="name">Dave Longley</span>: whether or not offer creation/discoverability is in scope</div>
-<div class="comment"><span class="name">Michael Johnson</span>: +1</div>
+<div class="comment"><span class="name">Mike Johnson</span>: +1</div>
 <div class="comment"><span class="name">Dave Longley</span>: (listings in payswarm)</div>
-<div class="comment"><span class="name">Michael Johnson</span>: yes</div>
+<div class="comment"><span class="name">Mike Johnson</span>: yes</div>
 <div class="comment"><span class="name">David I. Lehn</span>: +1</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  do people feel that offer/listing creation/discoverability (in a decentralized manner) are in scope for this group? [scribe assist by Dave Longley]</div>
 <div class="comment"><span class="name">Dmitry Gorilovsky</span>:  Yes, offer creation/acceptance should be a part of this group.</div>
@@ -182,76 +168,68 @@ dd {
 <div class="comment"><span class="name">Manu Sporny</span>:  if a listing service is centralized, we will have failed, we usually want power like this to be decentralized on the web. [scribe assist by Dave Longley]</div>
 <div class="comment"><span class="name">Pelle Braendgaard</span>:  How do you take an offer and execute it.</div>
 <div class="comment"><span class="name">Dave Longley</span>: Offer acceptance sounds like digital contract.</div>
-<div class="comment"><span class="name">Pelle Braendgaard</span>:  Let's say you see a Listing for something and you want to purchase it - it should be a fairly simple part of this.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  Let&apos;s say you see a Listing for something and you want to purchase it - it should be a fairly simple part of this.</div>
 <div class="comment"><span class="name">Dave Longley</span>: well, digital contract is also important because there is some measure of enforceability/proof of purchase.</div>
-<div class="comment"><span class="name">Michael Johnson</span>: If that is not part of the process, then there was simply a money transfer</div>
-<div class="comment"><span class="name">Michael Johnson</span>: not necessarily a purchase</div>
+<div class="comment"><span class="name">Mike Johnson</span>: If that is not part of the process, then there was simply a money transfer</div>
+<div class="comment"><span class="name">Mike Johnson</span>: not necessarily a purchase</div>
 <div class="comment"><span class="name">Dave Longley</span>: yes, not a transfer of asset.</div>
-<div class="comment"><span class="name">Michael Johnson</span>: a purchase implies a receipt</div>
+<div class="comment"><span class="name">Mike Johnson</span>: a purchase implies a receipt</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Yes, we need a digital receipt and contract/proof of purchase for transferring an asset, which is different from a simple money transfer. [scribe assist by Dave Longley]</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Proof of purchase/digital contract important part of the system? [scribe assist by Dave Longley]</div>
 <div class="information">Is proof of purchase or a digital contract a part of this system?</div>
-<div class="comment"><span class="name">Pelle Braendgaard</span>:  I don't think a contract is necessary for the basic transfer - but for the higher-level (for offers) it should be a part of it.</div>
-<div class="comment"><span class="name">Dave Longley</span>: i think it's very important, at a minimum, because of legal issues. copyright, etc.</div>
-<div class="comment"><span class="name">Pelle Braendgaard</span>:  I'm not certain if digital signatures are required, but they probably are.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  I don&apos;t think a contract is necessary for the basic transfer - but for the higher-level (for offers) it should be a part of it.</div>
+<div class="comment"><span class="name">Dave Longley</span>: i think it&apos;s very important, at a minimum, because of legal issues. copyright, etc.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  I&apos;m not certain if digital signatures are required, but they probably are.</div>
 <div class="comment"><span class="name">Dave Longley</span>: proving that you have access to a particular asset.</div>
-<div class="comment"><span class="name">Jeff Sayre</span>:  I think digital contracts need to be a part of this system - it's how you pull it off - that's the question. You want an automated offer acceptance process. It needs to be a part of the overall transaction... there's always a type of acceptance.</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  I think digital contracts need to be a part of this system - it&apos;s how you pull it off - that&apos;s the question. You want an automated offer acceptance process. It needs to be a part of the overall transaction... there&apos;s always a type of acceptance.</div>
 <div class="comment"><span class="name">Jeff Sayre</span>:  There is some implicit acceptance by wielding a credit card... there needs to be something similar to that.</div>
 <div class="comment"><span class="name">Dave Longley</span>: <a href="https://www.w3.org/wiki/WebID">https://www.w3.org/wiki/WebID</a></div>
 <div class="comment"><span class="name">Manu Sporny</span>:  WebID is there...</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Underlying identity mechanism in PaySwarm is based off of WebID. You have an IRI to your id, you have public id associated with it, a number of accounts associated with it, which may be public or private. Not full WebID stack. [scribe assist by David I. Lehn]</div>
 <div class="comment"><span class="name">Jeff Sayre</span>:  BrowserID could be a part of it.</div>
-<div class="comment"><span class="name">Pelle Braendgaard</span>:  On authentication protocols, I think that if it is complex in any way - it may not be a necessary core part of it. We could say it's recommended.</div>
-<div class="comment"><span class="name">Michael Johnson</span>: But we are not going to be focused on the identity part, correct? That is out of scope of this group. I ask because I cannot hear the conversation.</div>
-<div class="comment"><span class="name">Dave Longley</span>: identity and authentication are important, but we shouldn't necessarily say: "you must use this"</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  On authentication protocols, I think that if it is complex in any way - it may not be a necessary core part of it. We could say it&apos;s recommended.</div>
+<div class="comment"><span class="name">Mike Johnson</span>: But we are not going to be focused on the identity part, correct? That is out of scope of this group. I ask because I cannot hear the conversation.</div>
+<div class="comment"><span class="name">Dave Longley</span>: identity and authentication are important, but we shouldn&apos;t necessarily say: &quot;you must use this&quot;</div>
 <div class="comment"><span class="name">Dave Longley</span>: but instead make recommendations</div>
-<div class="comment"><span class="name">Jeff Sayre</span>:  That might be in keeping w/ what we said about 3rd party developers - point people to an IRI and let people decide whether it's WebID or BrowserID.</div>
-<h1 id=topic-4 class="topic">Topic: Meetings</h1>
-<div class="comment"><span class="name">Manu Sporny</span>:  Can do many things on mailing list, don't want to overload people with meetings. [scribe assist by David I. Lehn]</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  That might be in keeping w/ what we said about 3rd party developers - point people to an IRI and let people decide whether it&apos;s WebID or BrowserID.</div>
+<h1 id="topic-4" class="topic">Topic: Meetings</h1>
+<div class="comment"><span class="name">Manu Sporny</span>:  Can do many things on mailing list, don&apos;t want to overload people with meetings. [scribe assist by David I. Lehn]</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  How does every other week sound?</div>
 <div class="comment"><span class="name">Pelle Braendgaard</span>: +1</div>
 <div class="comment"><span class="name">Dmitry Gorilovsky</span>: +1</div>
 <div class="comment"><span class="name">Jeff Sayre</span>: +1</div>
 <div class="comment"><span class="name">Dave Longley</span>: +1</div>
 <div class="comment"><span class="name">Jeff Sayre</span>: Good convo.</div>
-<div class="comment"><span class="name">Michael Johnson</span>: +1</div>
-
-
+<div class="comment"><span class="name">Mike Johnson</span>: +1</div>
+</div></div></div></section>
+    <div id="footerwrap">
+      <div class="container">
+        <h4>Created by the <a href="http://www.w3.org/community/webpayments/">Web Payments Community Group</a>. Shared with love under a <a href="http://creativecommons.org/licenses/by/4.0/">CC-BY</a> license.</h4>
+      </div>
     </div>
-  </div>
 
-<div class="container vspacing onblack"> 
-  <div class="row"> 
-    <div class="threecol"> 
-      <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a> 
-    </div> 
-    <div class="ninecol last"> 
-      <p>&copy; 2010-2011 Digital Bazaar, Inc. 
-Website CSS created by <a href="http://cssgrid.net/">@andytlr</a> 
-and is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/au/"> 
-Creative Commons Attribution-ShareAlike 3.0 Australia License</a>. All other
-website content is licensed under a 
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"> 
-Creative Commons Attribution-ShareAlike 3.0 License</a> 
-</p> 
-    </div> 
-  </div> 
-</div> 
- 
-<script type="text/javascript"> 
- 
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+
+  <script type="text/javascript" src="../../assets/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/retina.js"></script>
+  <script type="text/javascript" src="../../assets/js/jquery.easing.1.3.js"></script>
+  <script type="text/javascript" src="../../assets/js/smoothscroll.js"></script> 
+    
+  <script type="text/javascript">
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-1539674-7']);
   _gaq.push(['_trackPageview']);
- 
+
   (function() {
     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
   })();
- 
-</script> 
-  
-</body>
+  </script>
+    
+  </body>
 </html>
 

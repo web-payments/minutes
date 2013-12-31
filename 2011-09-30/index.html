@@ -1,118 +1,99 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-   "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
-<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
-      class="wf-adelle1adelle2-n6-active wf-active"> 
- 
-<head> 
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
-  <title>PaySwarm - Teleconferences</title> 
- 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
- 
-  <link rel="stylesheet" href="../../css/1140.css" type="text/css" media="screen" /> 
-  <!--[if lte IE 9]>
-  <link rel="stylesheet" href="../css/ie.css" type="text/css" media="screen" />
-  <![endif]--> 
-  <link rel="stylesheet" href="../../css/typeimg.css" type="text/css" media="screen" /> 
-  <link rel="stylesheet" href="../../css/smallerscreen.css" media="only screen and (max-width: 1023px)" /> 
-  <link rel="stylesheet" href="../../css/mobile.css" media="handheld, only screen and (max-width: 767px)" /> 
-  <link rel="stylesheet" href="../../css/layout.css" type="text/css" media="screen" /> 
-  <link rel="shortcut icon" type="image/png" href="../../images/payswarm-icon.png" /> 
-  
-<style type="text/css">
-h1 {
-   margin-top: 24px;
-   margin-bottom: 14px;
-}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web Payments">
+    <meta name="author" content="Manu Sporny">
+    <link rel="shortcut icon" href="assets/ico/favicon.png">
 
-#content {
-   margin-left: 15%;
-   margin-right: 15%;
-}
+    <title>Web Payments</title>
 
-.summary {
-   margin-left: 10%
-   margin-right: 10%
-}
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="../../assets/css/bootstrap.css">
 
-.name {
-   font-weight: bold;
-}
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/icomoon.css">
+    <link rel="stylesheet" href="../../assets/css/animate-custom.css">
 
-.information {
-   font-style: italic;
-}  
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' type='text/css'>
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Raleway:400,300,700' type='text/css'>
 
-.comment-continuation {
-   margin-left: 2em;
-}
+    <script src="../../assets/js/jquery.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/modernizr.custom.js"></script>
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+      <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
 
-dt {
-   font-style: oblique;
-}
+  <body data-target="#navbar-nav" data-spy="scroll">
 
-dd {
-   margin-left: 20px;
-}
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon icon-arrow-down" style="font-size:30px; color:#1abc9c;"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../#home" class="smoothScroll">Home</a></li>
+            <li> <a href="../../#about" class="smoothScroll"> About</a></li>
+            <li> <a href="../../#specs" class="smoothScroll"> Specs</a></li>
+            <li> <a href="../../#participate" class="smoothScroll"> Participate</a></li>
+            <li> <a href="../../#contact" class="smoothScroll"> Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
 
-  </style>
-  
-</head> 
-<body> 
- 
-<div class="titlebar"> 
-   <h1>PaySwarm</h1> 
-</div> 
 
-  <div id="content"> 
- 
-  <div class="row"> 
-    <div class="twelvecol last"> 
-
-<h1>Web Payments Community Group Telecon</h1>
+<section><div class="container"><div class="row white"><br><div class="col-lg-offset-2 col-lg-8"><h1>Web Payments Community Group Telecon</h1>
 <h2>Minutes for 2011-09-30</h2>
 <div class="summary">
 <dl>
 <dt>Agenda</dt><dd><a href="http://lists.w3.org/Archives/Public/public-webpayments/2011Sep/0012.html">http://lists.w3.org/Archives/Public/public-webpayments/2011Sep/0012.html</a></dd>
-<dt>Chair</dt><dd>Manu Sporny</dd>
+<dt>Topics</dt><dd><ol><li><a href="#topic-1">Web Payments Base Technology Platform</a><li><a href="#topic-2">Quick update on PaySwarm spec</a><li><a href="#topic-3">Standardizing Payment Links</a><li><a href="#topic-4">Steven Rowat Use Case Review (continued)</a><li><a href="#topic-5">Anonymous, Free Content</a><li><a href="#topic-6">Conditional Re-Distribution</a><li><a href="#topic-7">Publishing with Per-Country Prices</a><li><a href="#topic-8">Picking a Chair</a></ol></dd><dt>Chair</dt><dd>Manu Sporny</dd>
 <dt>Scribe</dt><dd>Mike Johnson</dd>
 <dt>Present</dt><dd>Pelle Braendgaard, Manu Sporny, David I. Lehn, Jeff Sayre, Mike Johnson, Jose 'Manny' De Loera</dd>
 <dt>Audio Log</dt><dd><div><a href="audio.ogg">audio.ogg</a></div>
 <div><audio controls="controls" preload="none">
-<source src="audio.ogg" type="audio/ogg" />Warning: Your browser does not support the HTML5 audio element, please upgrade.</div></dd>
-</dl>
-</div>
+<source src="audio.ogg" type="audio/ogg" />Warning: Your browser does not support the HTML5 audio element, please upgrade.</audio></div></dd></dl>
 <div class="information">Pelle Braendgaard is scribing.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  We have Payment Links and use cases on the Agenda today, any additions to the Agenda?</div>
-<div class="comment"><span class="name">Pelle Braendgaard</span>:  I'd like to discuss the base technology platform for this work - because it sounds like it is PaySwarm?</div>
-<h1 id=topic-1 class="topic">Topic: Web Payments Base Technology Platform</h1>
-<div class="comment"><span class="name">Manu Sporny</span>:  We need a base standard to work from, we don't want this work to devolve into philosophical discussion.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  I&apos;d like to discuss the base technology platform for this work - because it sounds like it is PaySwarm?</div>
+<h1 id="topic-1" class="topic">Topic: Web Payments Base Technology Platform</h1>
+<div class="comment"><span class="name">Manu Sporny</span>:  We need a base standard to work from, we don&apos;t want this work to devolve into philosophical discussion.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  We are proposing PaySwarm as the base technology because it seems to fit the use cases discussed thus far the best. However, it is not a fully baked specification, it is undergoing heavy change - specifically, the change from OAuth 1.0a to digitally signed messages.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  We need to bring ideas and technical concepts in from Bitcoin and Open Transact and Open Transactions. We need to support as much as possible without overly complicating the specification.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  We need to create something simple... and do it quickly.</div>
 <div class="comment"><span class="name">Pelle Braendgaard</span>:  I think that we need to have discussions about the basics... use cases are important. [scribe assist by Manu Sporny]</div>
-<div class="comment"><span class="name">Pelle Braendgaard</span>:  However, I do think PaySwarm, as it is is too complex - it's too wide - it wants to do too many things. It would be easier if we split it into smaller pieces. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  However, I do think PaySwarm, as it is is too complex - it&apos;s too wide - it wants to do too many things. It would be easier if we split it into smaller pieces. [scribe assist by Manu Sporny]</div>
 <div class="comment"><span class="name">Pelle Braendgaard</span>:  I find it difficult to see how it could take off in its current level of complexity. [scribe assist by Manu Sporny]</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  Typically the way standards associations works is that we need to work out the use cases, then settle on requirements, then dive into the technical discussion. That's what we're attempting to do here.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Typically the way standards associations works is that we need to work out the use cases, then settle on requirements, then dive into the technical discussion. That&apos;s what we&apos;re attempting to do here.</div>
 <div class="comment"><span class="name">David I. Lehn</span>: Also, please feel free to send messages to mailing list with concerns about the direction of Payswarm.</div>
-<div class="comment"><span class="name">Manu Sporny</span>: Yes, let's please have this discussion sooner than later. On the mailing list would be great because we want to have a record of this conversation and the reasons that we are making the decisions that we're making.</div>
-<h1 id=topic-2 class="topic">Topic: Quick update on PaySwarm spec</h1>
+<div class="comment"><span class="name">Manu Sporny</span>: Yes, let&apos;s please have this discussion sooner than later. On the mailing list would be great because we want to have a record of this conversation and the reasons that we are making the decisions that we&apos;re making.</div>
+<h1 id="topic-2" class="topic">Topic: Quick update on PaySwarm spec</h1>
 <div class="comment"><span class="name">Manu Sporny</span>:  PaySwarm spec is being simplified. The latest release uses digital signatures instead of OAuth 1.0a.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  We needed to implement nonces as we moved away from OAuth 1.0a, which also uses nonces. The nonce's didn't scale for Twitter, Facebook etc, but is needed for small publishers if we are not going to use OAuth 1.0a. We found a more elegant solution than nonces, but we're still working on it.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  We use a form of asymmetric message encryption. PaySwarm Authorities that are required to use SSL, which means that asynchronous messages coming back can be encrypted in a different way and delivered over regular HTTP. This means that publishers can use plain HTTP - they don't need to buy an expensive security certificate every year to be able to sell content via their website. So, we have removed the need for nonces, which makes the technology scale, while protecting against replay attacks and ensuring that Web Publishers don't need an SSL certificate in order to sell things via the Web.</div>
-<h1 id=topic-3 class="topic">Topic: Standardizing Payment Links</h1>
+<div class="comment"><span class="name">Manu Sporny</span>:  We needed to implement nonces as we moved away from OAuth 1.0a, which also uses nonces. The nonce&apos;s didn&apos;t scale for Twitter, Facebook etc, but is needed for small publishers if we are not going to use OAuth 1.0a. We found a more elegant solution than nonces, but we&apos;re still working on it.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We use a form of asymmetric message encryption. PaySwarm Authorities that are required to use SSL, which means that asynchronous messages coming back can be encrypted in a different way and delivered over regular HTTP. This means that publishers can use plain HTTP - they don&apos;t need to buy an expensive security certificate every year to be able to sell content via their website. So, we have removed the need for nonces, which makes the technology scale, while protecting against replay attacks and ensuring that Web Publishers don&apos;t need an SSL certificate in order to sell things via the Web.</div>
+<h1 id="topic-3" class="topic">Topic: Standardizing Payment Links</h1>
 <div class="comment"><span class="name">Manu Sporny</span>: <a href="http://manu.sporny.org/2011/payment-links/">http://manu.sporny.org/2011/payment-links/</a></div>
-<div class="comment"><span class="name">Manu Sporny</span>:  I wrote this article last week <a href="http://manu.sporny.org/2011/payment-links/">http://manu.sporny.org/2011/payment-links/</a> in response to the bitcoin community's desire for a payment link.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  I wrote this article last week <a href="http://manu.sporny.org/2011/payment-links/">http://manu.sporny.org/2011/payment-links/</a> in response to the bitcoin community&apos;s desire for a payment link.</div>
 <div class="comment"><span class="name">Jeff Sayre</span>:  The article questions whether or not we need a standard way of expressing payment links on the web? [scribe assist by Manu Sporny]</div>
 <div class="comment"><span class="name">Jeff Sayre</span>:  In the post, Manu suggests how Payment Links could be implemented, but questions whether or not they should be implemented - what use cases they solve. [scribe assist by Manu Sporny]</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Just having a payment link without describing what is being payed is insufficient - people like paying for refined goods, they have more of a problem buying unrefined goods and Payment Links seem to be associated with unrefined goods (tipjars, donations, etc.). Gregory Rader has a good series of posts on this topic</div>
 <div class="information"><a href="http://onthespiral.com/navigating-four-economies">http://onthespiral.com/navigating-four-economies</a> </div>
 <div class="information"><a href="http://onthespiral.com/abundance-scarcity-four-quadrant-value-universe">http://onthespiral.com/abundance-scarcity-four-quadrant-value-universe</a></div>
-<div class="comment"><span class="name">Manu Sporny</span>:  You don't know what you are paying for and who you are paying - it's not tied in with the purchase process - that's problematic for pure Payment Links.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  You don&apos;t know what you are paying for and who you are paying - it&apos;s not tied in with the purchase process - that&apos;s problematic for pure Payment Links.</div>
 <div class="comment"><span class="name">Pelle Braendgaard</span>:  So, I think very differently on this - I think a simple payment link is a great idea. [scribe assist by Manu Sporny]</div>
-<div class="comment"><span class="name">Pelle Braendgaard</span>:  We can't model everything out - whatever you are buying - it's out of the scope of a Web standard. I think the bitcoin standard link is a good idea - but for web-based systems - it should be a URL with some parameters on the end of it. It really doesn't have to be more complex than that. I think it'll be an error if we get more complex than that. [scribe assist by Manu Sporny]</div>
-<div class="comment"><span class="name">Jeff Sayre</span>:  I agree. We don't want to be in a situation where there needs to be a new IRI for every new payment scheme that comes up. We need to be sufficiently generalized. There are issues with payment links - bitcoin example in Manu's article is good. We want something more generalized - that gets around the uniqueness of each currency. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  We can&apos;t model everything out - whatever you are buying - it&apos;s out of the scope of a Web standard. I think the bitcoin standard link is a good idea - but for web-based systems - it should be a URL with some parameters on the end of it. It really doesn&apos;t have to be more complex than that. I think it&apos;ll be an error if we get more complex than that. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  I agree. We don&apos;t want to be in a situation where there needs to be a new IRI for every new payment scheme that comes up. We need to be sufficiently generalized. There are issues with payment links - bitcoin example in Manu&apos;s article is good. We want something more generalized - that gets around the uniqueness of each currency. [scribe assist by Manu Sporny]</div>
 <div class="information">Mike Johnson is scribing.</div>
 <div class="comment"><span class="name">Pelle Braendgaard</span>:  99.9% payments are done without digital sigs, fully legal. Legal system does not care about digital signatures and RDF. Courts care about email, HTML, and logs. Engineers over-complicate, payment links will fail if they turn it into something complex.</div>
 <div class="comment"><span class="name">Pelle Braendgaard</span>:  No need for standard, PayPal just uses https links. It can be good to add some details, but there is no need for a payer field or bitcoin accounts to draw from.</div>
@@ -121,11 +102,11 @@ dd {
 <div class="comment"><span class="name">Manu Sporny</span>:  If you take the oversimplification approach, that does nothing to standardize the payment process.</div>
 <div class="comment"><span class="name">Pelle Braendgaard</span>:  Take only one thing to standardize, payment link would be a lowest common denominator.</div>
 <div class="comment"><span class="name">Pelle Braendgaard</span>:  Payment links now have an asset as well. Payment provider builds something based off the link information.</div>
-<div class="comment"><span class="name">Pelle Braendgaard</span>:  I'm worried about over-complicating.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  I'm lost as to the direction Pelle wants the group to head in... what is actionable from what Pelle is saying?</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  I&apos;m worried about over-complicating.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  I&apos;m lost as to the direction Pelle wants the group to head in... what is actionable from what Pelle is saying?</div>
 <div class="comment"><span class="name">Pelle Braendgaard</span>:  Payment link is just one of the really basic things, a starting point.</div>
-<div class="comment"><span class="name">Pelle Braendgaard</span>:  Have a link on your homepage with your banking details exposed for payment, don't destroy implicitness of link. Links should have some parameters that are standardized, rest is just the web.</div>
-<div class="comment"><span class="name">Pelle Braendgaard</span>:  Bitcoins don't need to understand assets. Bitcoin just handles the payment part.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  Have a link on your homepage with your banking details exposed for payment, don&apos;t destroy implicitness of link. Links should have some parameters that are standardized, rest is just the web.</div>
+<div class="comment"><span class="name">Pelle Braendgaard</span>:  Bitcoins don&apos;t need to understand assets. Bitcoin just handles the payment part.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Pelle wants just a generic payment link, parameters are just standardized.</div>
 <div class="comment"><span class="name">Pelle Braendgaard</span>:  Just a link, not even attributes. Something you could put in an email and someone could follow to do payment.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Why would that need to be standardized at all, parameters are part of HTTP - people can do this today.</div>
@@ -137,33 +118,33 @@ dd {
 <div class="comment"><span class="name">Pelle Braendgaard</span>:  The person has to have that account, PayPal, Bitcoin, etc.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Yes, but then you have the NASCAR problem - sites plastered with all sorts of payment buttons.</div>
 <div class="comment"><span class="name">Pelle Braendgaard</span>:  Yes, but that is a different issue.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  Let's discuss this on the mailing list - it would be good to understand the exact proposal.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Let&apos;s discuss this on the mailing list - it would be good to understand the exact proposal.</div>
 <div class="information">Pelle will write up a proposal and send to mailing list.</div>
-<h1 id=topic-4 class="topic">Topic: Steven Rowat Use Case Review (continued)</h1>
+<h1 id="topic-4" class="topic">Topic: Steven Rowat Use Case Review (continued)</h1>
 <div class="comment"><span class="name">Manu Sporny</span>: <a href="http://lists.w3.org/Archives/Public/www-tag/2009Sep/0055.html">http://lists.w3.org/Archives/Public/www-tag/2009Sep/0055.html</a></div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Most of these use cases are addressed by discussing the licenses associated with the asset. That conveys most of the information necessary.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  We addressed case 1 last week, we will start with 2.</div>
-<h1 id=topic-5 class="topic">Topic: Anonymous, Free Content</h1>
-<div class="information">A journalist in Africa with an ogg or mp4 video of atrocities in an ongoing war.	She specifies: anonymity; no content modification; free; no downstream commercializing.</div>
+<h1 id="topic-5" class="topic">Topic: Anonymous, Free Content</h1>
+<div class="information">A journalist in Africa with an ogg or mp4 video of atrocities in an ongoing war.&#9;She specifies: anonymity; no content modification; free; no downstream commercializing.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Probably associate CC no-derivs license with the work. Distribute for free, no downstream commercializing.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  2 seems not to be a use case we have to cover, Creative Commons handles this use case completely.</div>
 <div class="comment"><span class="name">Mike Johnson</span>: Mike: +1</div>
 <div class="information">Group chooses to pass on use case 2 - it is handled by Creative Commons</div>
-<h1 id=topic-6 class="topic">Topic: Conditional Re-Distribution</h1>
+<h1 id="topic-6" class="topic">Topic: Conditional Re-Distribution</h1>
 <div class="information">A writer with a complete novel in pdf, doc, html, and other text formats. He specifies: authorship as pseudonym; no content modification; payment per download; downstream commercializing allowed with constraints of: no advertising (direct sale only); payment of 20% of gross per copy re-sold; any additional commercial rights for other media must obtain agreement of the original author.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Downstream commercialization, direct sale only and no advertising.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  PaySwarm listings allow a variety of terms to limit resale rules.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  No other rights are conveyed unless they are specified.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Standard copyright practice for no content modification and requirement for additional commercial rights to be cleared by the author.</div>
-<div class="comment"><span class="name">Jeff Sayre</span>:  I agree that this falls under payment - it's a use case we care about.</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  I agree that this falls under payment - it&apos;s a use case we care about.</div>
 <div class="comment"><span class="name">Jeff Sayre</span>:  My company, PubPie, would benefit from this.</div>
 <div class="comment"><span class="name">Jeff Sayre</span>:  Resale would help, gets around copyright and DRM issues, has social incentive.</div>
-<div class="comment"><span class="name">Jose 'Manny' De Loera</span>:  Very benefitial, expands distribution ability for authors while maintaining control.</div>
+<div class="comment"><span class="name">Jose &apos;Manny&apos; De Loera</span>:  Very benefitial, expands distribution ability for authors while maintaining control.</div>
 <div class="comment"><span class="name">Pelle Braendgaard</span>: +1</div>
 <div class="comment"><span class="name">Mike Johnson</span>: +1</div>
 <div class="information">Group accepts conditional redistribution use case.</div>
-<h1 id=topic-7 class="topic">Topic: Publishing with Per-Country Prices</h1>
-<div class="information">A folk-musician in Siberia who records local throat-singing into mp3 or ogg vorbis files. He specifies: authorship; no content modification; free streaming of first 10% of content online; payment per download at sliding scale proportional to user-country's average yearly income per person; no downstream commercializing.</div>
+<h1 id="topic-7" class="topic">Topic: Publishing with Per-Country Prices</h1>
+<div class="information">A folk-musician in Siberia who records local throat-singing into mp3 or ogg vorbis files. He specifies: authorship; no content modification; free streaming of first 10% of content online; payment per download at sliding scale proportional to user-country&apos;s average yearly income per person; no downstream commercializing.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  This use case basically allows a 10% sample and per-capita income price adjustment. No downstream commercializing.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Free streaming might make sense if other people just stream 10% from their websites.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  First and last requirements fall out due to being address by standard copyright.</div>
@@ -175,17 +156,17 @@ dd {
 <div class="comment"><span class="name">Jeff Sayre</span>:  What scale and what unit? Books sold, country sold in, etc.</div>
 <div class="comment"><span class="name">Jeff Sayre</span>:  What you are talking about - how are payments split.</div>
 <div class="comment"><span class="name">Mike Johnson</span>:  This is how the movie industry does things too - they have a bunch of different regions - Region 2, Region 1 - publishers may still be interested in locking down content to different regions. [scribe assist by Manu Sporny]</div>
-<div class="comment"><span class="name">Jose 'Manny' De Loera</span>:  This happened to me the other day too, downloading a Kindle book and was denied because not in US.</div>
-<div class="comment"><span class="name">Mike Johnson</span>:  We still need to understand whether or not the PaySwarm Authority needs to enforce these criteria - maybe this should be PA specific - maybe it doesn't need to apply to all PAs? [scribe assist by Manu Sporny]</div>
-<div class="comment"><span class="name">Jose 'Manny' De Loera</span>:  Odd to happen with books.</div>
+<div class="comment"><span class="name">Jose &apos;Manny&apos; De Loera</span>:  This happened to me the other day too, downloading a Kindle book and was denied because not in US.</div>
+<div class="comment"><span class="name">Mike Johnson</span>:  We still need to understand whether or not the PaySwarm Authority needs to enforce these criteria - maybe this should be PA specific - maybe it doesn&apos;t need to apply to all PAs? [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Jose &apos;Manny&apos; De Loera</span>:  Odd to happen with books.</div>
 <div class="comment"><span class="name">Jeff Sayre</span>:  Can get around using anonymizer sites, but those are often prevented.</div>
-<div class="comment"><span class="name">Jose 'Manny' De Loera</span>:  In this particular case, how would someone using an IP masker be able to prove they are not in a specific region.</div>
+<div class="comment"><span class="name">Jose &apos;Manny&apos; De Loera</span>:  In this particular case, how would someone using an IP masker be able to prove they are not in a specific region.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Do we even want to support this to start, because it often works against publishers (and customers!) when people cannot access content in their region.</div>
 <div class="comment"><span class="name">Jeff Sayre</span>:  With a publisher, an author might have US rights only contract, or Aussie, etc.</div>
 <div class="comment"><span class="name">Jeff Sayre</span>:  Most get world rights now, but there might be specific cases.</div>
-<div class="comment"><span class="name">Mike Johnson</span>:  There is a huge legacy to music licensing here as well - you can't distribute outside of country it was created in... lots of cases where this is applicable. Hard to say if we need to address it in PaySwarm 1.0 - do we create a mechanism, but don't directly address this use case right now? [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Mike Johnson</span>:  There is a huge legacy to music licensing here as well - you can&apos;t distribute outside of country it was created in... lots of cases where this is applicable. Hard to say if we need to address it in PaySwarm 1.0 - do we create a mechanism, but don&apos;t directly address this use case right now? [scribe assist by Manu Sporny]</div>
 <div class="comment"><span class="name">Jeff Sayre</span>:  Maybe this is something we can push to 2.0?</div>
-<div class="comment"><span class="name">Jose 'Manny' De Loera</span>:  Yes, this does seem to be very complex.</div>
+<div class="comment"><span class="name">Jose &apos;Manny&apos; De Loera</span>:  Yes, this does seem to be very complex.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  We do have legacy issues, and some publishers without the ability to limit might be in big trouble unless we are able to support this.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  The standard definitely needs to address this, and though we may push it off to 2.0 we need to not limit this from happening in the future in the 1.0 spec.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  We should add to 1.0, but I do not feel strongly about this.</div>
@@ -195,52 +176,47 @@ dd {
 <div class="comment"><span class="name">Manu Sporny</span>:  This use case is complex, not just on country of origin, was on GDP and such.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Making listings for every country might be wasteful, complex.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Another way to address the issue would be a payment formula.</div>
-<div class="comment"><span class="name">Mike Johnson</span>:  Since each authority may be run by a different company, maybe some would allow certain types of transactions and others wouldn't. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Mike Johnson</span>:  Since each authority may be run by a different company, maybe some would allow certain types of transactions and others wouldn&apos;t. [scribe assist by Manu Sporny]</div>
 <div class="comment"><span class="name">Pelle Braendgaard</span>:  This is a competitive implementation detail - all the standard might need is plain english explaining how to apply the general process, but the more specific stuff in an external specification. [scribe assist by Manu Sporny]</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  We may want to address in PaySwarm 1.0, but not address all business rules.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  Let's push to 2.0, but be willing to address in 1.0 if we feel we need to have it sooner.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Let&apos;s push to 2.0, but be willing to address in 1.0 if we feel we need to have it sooner.</div>
 <div class="comment"><span class="name">Mike Johnson</span>: +1</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  We're out of time for this call. Thanks for everyone's contributions.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  Let's do another call next week, use cases take time but we are making good progress.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We&apos;re out of time for this call. Thanks for everyone&apos;s contributions.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Let&apos;s do another call next week, use cases take time but we are making good progress.</div>
 <div class="comment"><span class="name">Jeff Sayre</span>:  I maybe absent next two weeks - traveling.</div>
-<h1 id=topic-8 class="topic">Topic: Picking a Chair</h1>
-<div class="comment"><span class="name">Manu Sporny</span>:  We might not pick a chair for right now, operating fine without one. Need more people in group so it's not just the few of us picking from a select few.</div>
+<h1 id="topic-8" class="topic">Topic: Picking a Chair</h1>
+<div class="comment"><span class="name">Manu Sporny</span>:  We might not pick a chair for right now, operating fine without one. Need more people in group so it&apos;s not just the few of us picking from a select few.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  We will need the chair more once have more members and more paperwork, until then, I can do all the paperwork as I have been doing these past several months.</div>
 <div class="information">The group agrees to operate without chair for now.</div>
-       </div>
-  </div>
+</div></div></div></section>
+    <div id="footerwrap">
+      <div class="container">
+        <h4>Created by the <a href="http://www.w3.org/community/webpayments/">Web Payments Community Group</a>. Shared with love under a <a href="http://creativecommons.org/licenses/by/4.0/">CC-BY</a> license.</h4>
+      </div>
+    </div>
 
-<div class="container vspacing onblack"> 
-  <div class="row"> 
-    <div class="threecol"> 
-      <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a> 
-    </div> 
-    <div class="ninecol last"> 
-      <p>&copy; 2010-2011 Digital Bazaar, Inc. 
-Website CSS created by <a href="http://cssgrid.net/">@andytlr</a> 
-and is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/au/"> 
-Creative Commons Attribution-ShareAlike 3.0 Australia License</a>. All other
-website content is licensed under a
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"> 
-Creative Commons Attribution-ShareAlike 3.0 License</a>
-</p> 
-    </div> 
-  </div> 
-</div> 
- 
-<script type="text/javascript"> 
- 
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+
+  <script type="text/javascript" src="../../assets/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/retina.js"></script>
+  <script type="text/javascript" src="../../assets/js/jquery.easing.1.3.js"></script>
+  <script type="text/javascript" src="../../assets/js/smoothscroll.js"></script> 
+    
+  <script type="text/javascript">
   var _gaq = _gaq || [];
-  _gaq.push(["_setAccount", "UA-1539674-7"]);
-  _gaq.push(["_trackPageview"]);
+  _gaq.push(['_setAccount', 'UA-1539674-7']);
+  _gaq.push(['_trackPageview']);
 
   (function() {
-    var ga = document.createElement("script"); ga.type = "text/javascript"; ga.async = true;
-    ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";
-    (document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]).appendChild(ga);
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
   })();
- 
-</script>
-
-</body>
+  </script>
+    
+  </body>
 </html>
+

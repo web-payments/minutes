@@ -1,185 +1,161 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-   "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
-<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
-      class="wf-adelle1adelle2-n6-active wf-active"> 
- 
-<head> 
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
-  <title>PaySwarm - Teleconferences</title> 
- 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
- 
-  <link rel="stylesheet" href="../../css/1140.css" type="text/css" media="screen" /> 
-  <!--[if lte IE 9]>
-  <link rel="stylesheet" href="../css/ie.css" type="text/css" media="screen" />
-  <![endif]--> 
-  <link rel="stylesheet" href="../../css/typeimg.css" type="text/css" media="screen" /> 
-  <link rel="stylesheet" href="../../css/smallerscreen.css" media="only screen and (max-width: 1023px)" /> 
-  <link rel="stylesheet" href="../../css/mobile.css" media="handheld, only screen and (max-width: 767px)" /> 
-  <link rel="stylesheet" href="../../css/layout.css" type="text/css" media="screen" /> 
-  <link rel="shortcut icon" type="image/png" href="../../images/payswarm-icon.png" /> 
-  
-<style type="text/css">
-h1 {
-   margin-top: 24px;
-   margin-bottom: 14px;
-}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web Payments">
+    <meta name="author" content="Manu Sporny">
+    <link rel="shortcut icon" href="assets/ico/favicon.png">
 
-#content {
-   margin-left: 15%;
-   margin-right: 15%;
-}
+    <title>Web Payments</title>
 
-.summary {
-   margin-left: 10%
-   margin-right: 10%
-}
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="../../assets/css/bootstrap.css">
 
-.name {
-   font-weight: bold;
-}
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/icomoon.css">
+    <link rel="stylesheet" href="../../assets/css/animate-custom.css">
 
-.information {
-   font-style: italic;
-}  
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' type='text/css'>
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Raleway:400,300,700' type='text/css'>
 
-.comment-continuation {
-   margin-left: 2em;
-}
+    <script src="../../assets/js/jquery.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/modernizr.custom.js"></script>
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+      <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
 
-dt {
-   font-style: oblique;
-}
+  <body data-target="#navbar-nav" data-spy="scroll">
 
-dd {
-   margin-left: 20px;
-}
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon icon-arrow-down" style="font-size:30px; color:#1abc9c;"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../#home" class="smoothScroll">Home</a></li>
+            <li> <a href="../../#about" class="smoothScroll"> About</a></li>
+            <li> <a href="../../#specs" class="smoothScroll"> Specs</a></li>
+            <li> <a href="../../#participate" class="smoothScroll"> Participate</a></li>
+            <li> <a href="../../#contact" class="smoothScroll"> Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
 
-  </style>
-  
-</head> 
-<body> 
- 
-<div class="titlebar"> 
-   <h1>PaySwarm</h1> 
-</div> 
 
-  <div id="content"> 
- 
-  <div class="row"> 
-    <div class="twelvecol last"> 
-
-<h1>Web Payments Community Group Telecon</h1>
+<section><div class="container"><div class="row white"><br><div class="col-lg-offset-2 col-lg-8"><h1>Web Payments Community Group Telecon</h1>
 <h2>Minutes for 2011-09-16</h2>
 <div class="summary">
 <dl>
 <dt>Agenda</dt><dd><a href="http://lists.w3.org/Archives/Public/public-webpayments/2011Sep/0001.html">http://lists.w3.org/Archives/Public/public-webpayments/2011Sep/0001.html</a></dd>
-<dt>Chair</dt><dd>Manu Sporny</dd>
+<dt>Topics</dt><dd><ol><li><a href="#topic-1">Introductions</a><li><a href="#topic-2">PaySwarm Use Cases Review</a><li><a href="#topic-3">For-profit Content Redistribution</a><li><a href="#topic-4">Crowd-sourcing Digital Distribution</a><li><a href="#topic-5">Streaming Content Payments</a><li><a href="#topic-6">Ad-based Content Payments/Incentives</a></ol></dd><dt>Chair</dt><dd>Manu Sporny</dd>
 <dt>Scribe</dt><dd>Jeff Sayre</dd>
 <dt>Present</dt><dd>Jeff Sayre, Manu Sporny, Jose 'Manny' De Loera, David I. Lehn</dd>
 <dt>Audio Log</dt><dd><div><a href="audio.ogg">audio.ogg</a></div>
 <div><audio controls="controls" preload="none">
-<source src="audio.ogg" type="audio/ogg" />Warning: Your browser does not support the HTML5 audio element, please upgrade.</div></dd>
-</dl>
-</div>
+<source src="audio.ogg" type="audio/ogg" />Warning: Your browser does not support the HTML5 audio element, please upgrade.</audio></div></dd></dl>
 <div class="information">Jeff Sayre is scribing.</div>
-<div class="information">Today's agenda: Use cases (in scope/out of scope); familiarize members in web payments techs</div>
-<h1 id=topic-1 class="topic">Topic: Introductions</h1>
+<div class="information">Today&apos;s agenda: Use cases (in scope/out of scope); familiarize members in web payments techs</div>
+<h1 id="topic-1" class="topic">Topic: Introductions</h1>
 <div class="comment"><span class="name">Manu Sporny</span>: We have a new participant - would you mind introducing yourself, Manny?</div>
-<div class="comment"><span class="name">Jose 'Manny' De Loera</span>:  Hi my name is Jose De Loera, but most people call me Manny. Recent grad of DeVry - technical management - have a big interest in technology, saw Web Payments stuff pop up online, wanted to get involved.</div>
+<div class="comment"><span class="name">Jose &apos;Manny&apos; De Loera</span>:  Hi my name is Jose De Loera, but most people call me Manny. Recent grad of DeVry - technical management - have a big interest in technology, saw Web Payments stuff pop up online, wanted to get involved.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Great to have you here, Manny.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  Agenda today is to try and cover use cases - we want to ground the discussion - focus on what we're working on. We want to get everyone familiar w/ various technologies applied to these problems. Let's go ahead an jump into first topic.</div>
-<h1 id=topic-2 class="topic">Topic: PaySwarm Use Cases Review</h1>
+<div class="comment"><span class="name">Manu Sporny</span>:  Agenda today is to try and cover use cases - we want to ground the discussion - focus on what we&apos;re working on. We want to get everyone familiar w/ various technologies applied to these problems. Let&apos;s go ahead an jump into first topic.</div>
+<h1 id="topic-2" class="topic">Topic: PaySwarm Use Cases Review</h1>
 <div class="comment"><span class="name">Manu Sporny</span>: <a href="http://payswarm.com/specs/payswarm-use-cases">http://payswarm.com/specs/payswarm-use-cases</a></div>
 <div class="comment"><span class="name">Manu Sporny</span>:  PaySwarm use cases may be out of date. There are 10 initially that may be useful to consider</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  Will do quick overview of use case and get members' feelings about usefulness</div>
-<h1 id=topic-3 class="topic">Topic: For-profit Content Redistribution</h1>
+<div class="comment"><span class="name">Manu Sporny</span>:  Will do quick overview of use case and get members&apos; feelings about usefulness</div>
+<h1 id="topic-3" class="topic">Topic: For-profit Content Redistribution</h1>
 <div class="comment"><span class="name">Manu Sporny</span>: <a href="http://payswarm.com/specs/payswarm-use-cases#for-profit-content-blogging">http://payswarm.com/specs/payswarm-use-cases#for-profit-content-blogging</a></div>
-<div class="comment"><span class="name">Manu Sporny</span>:  For profit content blogging -- reviews of music, book, etc. Want to provide value in digital content artists. Point people to artists content that is available online for sale... sell other people's content directly via a blog. This is digital content sales - not necessarily access to Web pages.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  For profit content blogging -- reviews of music, book, etc. Want to provide value in digital content artists. Point people to artists content that is available online for sale... sell other people&apos;s content directly via a blog. This is digital content sales - not necessarily access to Web pages.</div>
 <div class="comment"><span class="name">Jeff Sayre</span>:  No middle man required - direct sale of item from artist to customer/fan - good use case. [scribe assist by Manu Sporny]</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  requirement separation between users who create, distribute, and consume. Content distributor has to respect license put forth by artist.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Artist may be fine with marking up content to a certain level, let prices be set independently from other distributors. But artist would get the same required fee per sale regardless of who is distributing the content.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  creator sets base royalties independent of the sale price, those are enforced by the system. Content distributor has the ability to then markup the sale price above the base fee to also make a profit - good for the artist, good for the content distributor.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Is this a good use case?</div>
 <div class="comment"><span class="name">Jeff Sayre</span>: +1</div>
-<div class="comment"><span class="name">Jose 'Manny' De Loera</span>:  I like the PaySwarm model of allowing content distributors the opportunity to set their own retail price. Brick &amp; mortar retail sales often do not allow much of a market up beyond listed, street price. This will allow digital sales sites more flexibility and content creators better chances of a sale.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  Having the widest, broadest distribution channel as possible is desirable to content creators. Good, so since there are no objections, we'll add this one to the list of requirements.</div>
+<div class="comment"><span class="name">Jose &apos;Manny&apos; De Loera</span>:  I like the PaySwarm model of allowing content distributors the opportunity to set their own retail price. Brick &amp; mortar retail sales often do not allow much of a market up beyond listed, street price. This will allow digital sales sites more flexibility and content creators better chances of a sale.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Having the widest, broadest distribution channel as possible is desirable to content creators. Good, so since there are no objections, we&apos;ll add this one to the list of requirements.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Second Use Case: crowdsourcing of digital distribution. We were able to implement this for Bitmunk - peer-to-peer collaborative distribution platform - used micropayments to reimburse digital content distributors for each part of the digital file that they provided for download. Respected copyright, distribution restrictions setup by original artist.</div>
-<h1 id=topic-4 class="topic">Topic: Crowd-sourcing Digital Distribution</h1>
+<h1 id="topic-4" class="topic">Topic: Crowd-sourcing Digital Distribution</h1>
 <div class="comment"><span class="name">Manu Sporny</span>: <a href="http://payswarm.com/specs/payswarm-use-cases#crowd-sourcing-digital-distribution">http://payswarm.com/specs/payswarm-use-cases#crowd-sourcing-digital-distribution</a></div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Bitmunk is like a BitTorrent w/ payment attached. Current PaySwarm technology supports it in theory, but this might be a little too much to focus on at this stage due to client complexity required to implement it correctly.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Example: what if every single customer of a NetFlix download could act as a data provider, piecing out fractional bits of the file to a paying customer. So, when you download from 1,000+ people, each one is remunerated for the piece of content that they provide.</div>
-<div class="comment"><span class="name">Jeff Sayre</span>:  It's an interesting model - swarming for bits of micropayments - it may be too complicated at this point. [scribe assist by Manu Sporny]</div>
-<div class="comment"><span class="name">Jose 'Manny' De Loera</span>:  Everyone having the right to swarm a NetFLix file, for example, would have to have a PaySwarm account, permission (access) to a data provider's computer, etc. The complexity and scope might be outside our initial focus.</div>
-<div class="comment"><span class="name">David I. Lehn</span>: Let's keep this (swarming) in mind for possible future implementation, but not add it to the list of use cases for PaySwarm 1.0.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  If rejected as a use case, let's not reject it as a possibility for the future.</div>
-<div class="comment"><span class="name">Jose 'Manny' De Loera</span>:  The additive benefit of allowing for swarming of content form a data provider could add up to a reasonable revenue stream over time.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  PaySwarm's swarming concept would benefit companies like NetFLix, would reduce data center loads. It could also allow new competitors to enter the market without needing to have large data centers to stream traffic.</div>
-<div class="comment"><span class="name">David I. Lehn</span>: maybe we could put these "rejected but useful" use cases into a "roadmap" document</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  We could possibly create a PaySwarm's Roadmap 2.0 and add use cases that we want to support in the future on to that doc.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  Ok, so this use case is rejected for PaySwarm 1.0, but we'll move it into a future "Road Map" document. </div>
-<h1 id=topic-5 class="topic">Topic: Streaming Content Payments</h1>
+<div class="comment"><span class="name">Jeff Sayre</span>:  It&apos;s an interesting model - swarming for bits of micropayments - it may be too complicated at this point. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Jose &apos;Manny&apos; De Loera</span>:  Everyone having the right to swarm a NetFLix file, for example, would have to have a PaySwarm account, permission (access) to a data provider&apos;s computer, etc. The complexity and scope might be outside our initial focus.</div>
+<div class="comment"><span class="name">David I. Lehn</span>: Let&apos;s keep this (swarming) in mind for possible future implementation, but not add it to the list of use cases for PaySwarm 1.0.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  If rejected as a use case, let&apos;s not reject it as a possibility for the future.</div>
+<div class="comment"><span class="name">Jose &apos;Manny&apos; De Loera</span>:  The additive benefit of allowing for swarming of content form a data provider could add up to a reasonable revenue stream over time.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  PaySwarm&apos;s swarming concept would benefit companies like NetFLix, would reduce data center loads. It could also allow new competitors to enter the market without needing to have large data centers to stream traffic.</div>
+<div class="comment"><span class="name">David I. Lehn</span>: maybe we could put these &quot;rejected but useful&quot; use cases into a &quot;roadmap&quot; document</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We could possibly create a PaySwarm&apos;s Roadmap 2.0 and add use cases that we want to support in the future on to that doc.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Ok, so this use case is rejected for PaySwarm 1.0, but we&apos;ll move it into a future &quot;Road Map&quot; document. </div>
+<h1 id="topic-5" class="topic">Topic: Streaming Content Payments</h1>
 <div class="comment"><span class="name">Manu Sporny</span>: <a href="http://payswarm.com/specs/payswarm-use-cases#streaming-content-payment">http://payswarm.com/specs/payswarm-use-cases#streaming-content-payment</a></div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Next up is Streaming Content Payment</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  In US, as an example, Internet Radio Stations have to pay a standard ephemeral broadcasting fee per song, per play, per person. This use case is a way to help address this scenario - how does one setup an Internet Radio station and easily collect broadcast royalties.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  Pick a PaySwarm provider, sign in, based on what you listen to, your account will be debited for the required fee and credited directly to the artist's account. Let's the DJ/radio station address the issue easily, helping them focus on providing good music and not the nasty bits of collecting tiny fractions of royalties. Makes expenses low and accounting very precise. Could be applied to any streaming movies and television as well. Pay $x per y time viewed or listened.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Pick a PaySwarm provider, sign in, based on what you listen to, your account will be debited for the required fee and credited directly to the artist&apos;s account. Let&apos;s the DJ/radio station address the issue easily, helping them focus on providing good music and not the nasty bits of collecting tiny fractions of royalties. Makes expenses low and accounting very precise. Could be applied to any streaming movies and television as well. Pay $x per y time viewed or listened.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  This use case works today in the PaySwarm software - so it would be easy to put into the spec. The difference between for-profit blogging is that user pays for content in one lump sum. This is a pay-as-you-go option for streaming of content.</div>
-<div class="comment"><span class="name">Jose 'Manny' De Loera</span>:  Question - say a radio station charges $15 per month for listening to all of a station's content. What does PaySwarm offer?</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  PaySwarm does allow a flat rate per payment option -- like Flattr. The fee is used up each month no matter how much content is consumed. But the pay as you go is an a la carte model. So, you might spend $15 per month, less, or more. You just need to authorize that money is pulled from your PaySwarm account with set limits put on deductions. It would be up to the person that pulled money from your PaySwarm account to disburse the $15... but that's not necessarily the same thing as pay-as-you-go.</div>
+<div class="comment"><span class="name">Jose &apos;Manny&apos; De Loera</span>:  Question - say a radio station charges $15 per month for listening to all of a station&apos;s content. What does PaySwarm offer?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  PaySwarm does allow a flat rate per payment option -- like Flattr. The fee is used up each month no matter how much content is consumed. But the pay as you go is an a la carte model. So, you might spend $15 per month, less, or more. You just need to authorize that money is pulled from your PaySwarm account with set limits put on deductions. It would be up to the person that pulled money from your PaySwarm account to disburse the $15... but that&apos;s not necessarily the same thing as pay-as-you-go.</div>
 <div class="comment"><span class="name">Jeff Sayre</span>:  I think pay-as-you-go is crucial for digital content distribution - need it for version 1.0 [scribe assist by Manu Sporny]</div>
-<div class="comment"><span class="name">Jose 'Manny' De Loera</span>:  Even though I will not necessarily use it, I agree that the pay-as-you-go use case should be in version 1.0 of the standard.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  iTunes, Spotify, Last.fm, Pandora have their own payment models. Maybe there is another market that desires a different model, that will allow others to offer competing models without worrying about how payments are done. Content creator's rights can be respected without each new content distributor having to think about what they need to do to honor licensing rights.</div>
-<div class="comment"><span class="name">David I. Lehn</span>:  Need to support this use case. May not be a big deal to add it to PaySwarm's core spec because it kind of falls out of what we already do.</div>
+<div class="comment"><span class="name">Jose &apos;Manny&apos; De Loera</span>:  Even though I will not necessarily use it, I agree that the pay-as-you-go use case should be in version 1.0 of the standard.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  iTunes, Spotify, Last.fm, Pandora have their own payment models. Maybe there is another market that desires a different model, that will allow others to offer competing models without worrying about how payments are done. Content creator&apos;s rights can be respected without each new content distributor having to think about what they need to do to honor licensing rights.</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  Need to support this use case. May not be a big deal to add it to PaySwarm&apos;s core spec because it kind of falls out of what we already do.</div>
 <div class="comment"><span class="name">David I. Lehn</span>:  It probably just requires that the appropriate ephemeral broadcasting contracts get setup.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Ok, so this use case is in there - seems like everyone likes it. Next up is Ad-based support of digital media streams - like television shows with ads to cover the cost of the show.</div>
-<h1 id=topic-6 class="topic">Topic: Ad-based Content Payments/Incentives</h1>
+<h1 id="topic-6" class="topic">Topic: Ad-based Content Payments/Incentives</h1>
 <div class="comment"><span class="name">Manu Sporny</span>: <a href="http://payswarm.com/specs/payswarm-use-cases#ad-based-content-payment">http://payswarm.com/specs/payswarm-use-cases#ad-based-content-payment</a></div>
-<div class="comment"><span class="name">Jeff Sayre</span>:  I wonder if this will also fall under some of the other basic spec stuff. An ad exec could still use PaySwarm to purchase ads, or a director could still sell ads. Should it be something we specifically target? I'm not sure. [scribe assist by Manu Sporny]</div>
-<div class="comment"><span class="name">Jeff Sayre</span>:  Ad-slots are still something you could sell... whether it's a digital file or specific ad spot - still a sale. [scribe assist by Manu Sporny]</div>
-<div class="information">This use case was inspired by Joss Whedon great shows and television execs' poor judgement. ;) This use case would allow directors/producers to support Web-based production via selling ad spots, via generating ad revenue to support Web-based video distribution</div>
-<div class="comment"><span class="name">Jeff Sayre</span>:  Producing a Web-based series or a single show... if you're going to generate all your revenue online - no studio budget. You need sponsorship through users and through advertisers. [scribe assist by Manu Sporny]</div>
-<div class="comment"><span class="name">Jeff Sayre</span>:  maybe users aren't buying the content - they're funding the content - they're crowd-funding. [scribe assist by Manu Sporny]</div>
-<div class="comment"><span class="name">Jeff Sayre</span>:  Maybe they're paying for additional shows down the road. It's a sponsorship of some sort - maybe they love the concept and want to fund it further. Maybe the advertiser wants to promote their product. [scribe assist by Manu Sporny]</div>
-<div class="comment"><span class="name">Jeff Sayre</span>:  This is basically dealing directly with the content creator - "We love this concept, move it to the web and we'll support you through PaySwarm." [scribe assist by Manu Sporny]</div>
-<div class="comment"><span class="name">Jose 'Manny' De Loera</span>:  Ratings give TV shows a type of acknowledgement and lead to a show staying on air or being canceled.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  It seems like everyone wants a crowd-funding focus. PaySwarm can support this. Let's add a crowdfunding use case</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  I wonder if this will also fall under some of the other basic spec stuff. An ad exec could still use PaySwarm to purchase ads, or a director could still sell ads. Should it be something we specifically target? I&apos;m not sure. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  Ad-slots are still something you could sell... whether it&apos;s a digital file or specific ad spot - still a sale. [scribe assist by Manu Sporny]</div>
+<div class="information">This use case was inspired by Joss Whedon great shows and television execs&apos; poor judgement. ;) This use case would allow directors/producers to support Web-based production via selling ad spots, via generating ad revenue to support Web-based video distribution</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  Producing a Web-based series or a single show... if you&apos;re going to generate all your revenue online - no studio budget. You need sponsorship through users and through advertisers. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  maybe users aren&apos;t buying the content - they&apos;re funding the content - they&apos;re crowd-funding. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  Maybe they&apos;re paying for additional shows down the road. It&apos;s a sponsorship of some sort - maybe they love the concept and want to fund it further. Maybe the advertiser wants to promote their product. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  This is basically dealing directly with the content creator - &quot;We love this concept, move it to the web and we&apos;ll support you through PaySwarm.&quot; [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Jose &apos;Manny&apos; De Loera</span>:  Ratings give TV shows a type of acknowledgement and lead to a show staying on air or being canceled.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  It seems like everyone wants a crowd-funding focus. PaySwarm can support this. Let&apos;s add a crowdfunding use case</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Ad-Based Content Payment pushed to PaySwarm 2.0 - put it in the Road Map document.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  We only covered a small part of the agenda today, which is fine - we need to understand which problems we're tackling in order to be successful at what we're doing. Let's set up another call for a week from now to continue the discussion.</div>
-       </div>
-  </div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We only covered a small part of the agenda today, which is fine - we need to understand which problems we&apos;re tackling in order to be successful at what we&apos;re doing. Let&apos;s set up another call for a week from now to continue the discussion.</div>
+</div></div></div></section>
+    <div id="footerwrap">
+      <div class="container">
+        <h4>Created by the <a href="http://www.w3.org/community/webpayments/">Web Payments Community Group</a>. Shared with love under a <a href="http://creativecommons.org/licenses/by/4.0/">CC-BY</a> license.</h4>
+      </div>
+    </div>
 
-<div class="container vspacing onblack"> 
-  <div class="row"> 
-    <div class="threecol"> 
-      <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a> 
-    </div> 
-    <div class="ninecol last"> 
-      <p>&copy; 2010-2011 Digital Bazaar, Inc. 
-Website CSS created by <a href="http://cssgrid.net/">@andytlr</a> 
-and is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/au/"> 
-Creative Commons Attribution-ShareAlike 3.0 Australia License</a>. All other
-website content is licensed under a
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"> 
-Creative Commons Attribution-ShareAlike 3.0 License</a>
-</p> 
-    </div> 
-  </div> 
-</div> 
- 
-<script type="text/javascript"> 
- 
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+
+  <script type="text/javascript" src="../../assets/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/retina.js"></script>
+  <script type="text/javascript" src="../../assets/js/jquery.easing.1.3.js"></script>
+  <script type="text/javascript" src="../../assets/js/smoothscroll.js"></script> 
+    
+  <script type="text/javascript">
   var _gaq = _gaq || [];
-  _gaq.push(["_setAccount", "UA-1539674-7"]);
-  _gaq.push(["_trackPageview"]);
+  _gaq.push(['_setAccount', 'UA-1539674-7']);
+  _gaq.push(['_trackPageview']);
 
   (function() {
-    var ga = document.createElement("script"); ga.type = "text/javascript"; ga.async = true;
-    ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";
-    (document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]).appendChild(ga);
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
   })();
- 
-</script>
-
-</body>
+  </script>
+    
+  </body>
 </html>
+

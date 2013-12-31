@@ -1,89 +1,59 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-   "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
-<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
-      class="wf-adelle1adelle2-n6-active wf-active"> 
- 
-<head> 
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
-  <title>PaySwarm - Teleconferences</title> 
- 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
- 
-  <link rel="stylesheet" href="../../css/1140.css" type="text/css" media="screen" /> 
-  <!--[if lte IE 9]>
-  <link rel="stylesheet" href="../css/ie.css" type="text/css" media="screen" />
-  <![endif]--> 
-  <link rel="stylesheet" href="../../css/typeimg.css" type="text/css" media="screen" /> 
-  <link rel="stylesheet" href="../../css/smallerscreen.css" media="only screen and (max-width: 1023px)" /> 
-  <link rel="stylesheet" href="../../css/mobile.css" media="handheld, only screen and (max-width: 767px)" /> 
-  <link rel="stylesheet" href="../../css/layout.css" type="text/css" media="screen" /> 
-  <link rel="shortcut icon" type="image/png" href="../../images/payswarm-icon.png" /> 
-  
-<style type="text/css">
-h1 {
-   margin-top: 24px;
-   margin-bottom: 14px;
-}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web Payments">
+    <meta name="author" content="Manu Sporny">
+    <link rel="shortcut icon" href="assets/ico/favicon.png">
 
-.header {
-   margin-top: 0px;
-   margin-bottom: 14px;
-}
+    <title>Web Payments</title>
 
-ol {
-   margin-bottom: 0em;
-}
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="../../assets/css/bootstrap.css">
 
-li {
-   margin-left: 1.5em;
-   margin-bottom: 0em;
-}
-#content {
-   margin-left: 15%;
-   margin-right: 15%;
-}
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/icomoon.css">
+    <link rel="stylesheet" href="../../assets/css/animate-custom.css">
 
-.summary {
-   margin-left: 10%
-   margin-right: 10%
-}
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' type='text/css'>
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Raleway:400,300,700' type='text/css'>
 
-.name {
-   font-weight: bold;
-}
+    <script src="../../assets/js/jquery.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/modernizr.custom.js"></script>
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+      <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
 
-.information {
-   font-style: italic;
-}  
+  <body data-target="#navbar-nav" data-spy="scroll">
 
-.comment-continuation {
-   margin-left: 2em;
-}
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon icon-arrow-down" style="font-size:30px; color:#1abc9c;"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../#home" class="smoothScroll">Home</a></li>
+            <li> <a href="../../#about" class="smoothScroll"> About</a></li>
+            <li> <a href="../../#specs" class="smoothScroll"> Specs</a></li>
+            <li> <a href="../../#participate" class="smoothScroll"> Participate</a></li>
+            <li> <a href="../../#contact" class="smoothScroll"> Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
 
-dt {
-   font-style: oblique;
-}
 
-dd {
-   margin-left: 20px;
-}
-
-  </style>
-  
-</head> 
-<body> 
- 
-<div class="titlebar"> 
-   <h1 class="header">PaySwarm</h1> 
-</div> 
-
-  <div id="content"> 
- 
-  <div class="row"> 
-    <div class="twelvecol last"> 
-
-<h1>Web Payments Community Group Telecon</h1>
+<section><div class="container"><div class="row white"><br><div class="col-lg-offset-2 col-lg-8"><h1>Web Payments Community Group Telecon</h1>
 <h2>Minutes for 2012-06-12</h2>
 <div class="summary">
 <dl>
@@ -93,7 +63,7 @@ dd {
 <dt>Present</dt><dd>Dave Longley, Manu Sporny, David I. Lehn</dd>
 <dt>Audio Log</dt><dd><div><a href="audio.ogg">audio.ogg</a></div>
 <div><audio controls="controls" preload="none">
-<source src="audio.ogg" type="audio/ogg" />Warning: Your browser does not support the HTML5 audio element, please upgrade.</div></dd>
+<source src="audio.ogg" type="audio/ogg" />Warning: Your browser does not support the HTML5 audio element, please upgrade.</audio></div></dd></dl>
 <div class="information">Dave Longley is scribing.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  on the agenda we have updates to the implementation (mainly switching from c++/mysql to node/mongo)</div>
 <div class="comment-continuation">... then the rest of the call will focus on updates and finalizations we need to make to the web keys specification.</div>
@@ -103,25 +73,25 @@ dd {
 <div class="comment-continuation">... development on it was going slower than we would have liked, so we switched technologies.</div>
 <div class="comment-continuation">... this way we can make more rapid progress implementing things in the spec and other technologies, etc.</div>
 <div class="comment-continuation">... dave would you mind doing a high-level overview on why we switched, etc?</div>
-<div class="comment"><span class="name">Dave Longley</span>:  Sure... in terms of performance, we weren't seeing an issue with C++ and MySQL... that implementation was performing well. [scribe assist by Manu Sporny]</div>
-<div class="comment"><span class="name">Dave Longley</span>:  However, we were pushing off the need to scale out to further down the road... scaling out would've required us to write more custom code in C++ and MySQL. [scribe assist by Manu Sporny]</div>
-<div class="comment"><span class="name">Dave Longley</span>:  It was fairly slow going when developing with C++ and MySQL... so we wanted to switch to something that's more flexible. Easier to integrate technologies and scale out with JavaScript and MongoDB. [scribe assist by Manu Sporny]</div>
-<div class="comment"><span class="name">Dave Longley</span>:  We also don't need to write sharding code for the database - use MongoDB instead. We wanted to deal with transaction processing more asynchronous. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Sure... in terms of performance, we weren&apos;t seeing an issue with C++ and MySQL... that implementation was performing well. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  However, we were pushing off the need to scale out to further down the road... scaling out would&apos;ve required us to write more custom code in C++ and MySQL. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  It was fairly slow going when developing with C++ and MySQL... so we wanted to switch to something that&apos;s more flexible. Easier to integrate technologies and scale out with JavaScript and MongoDB. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  We also don&apos;t need to write sharding code for the database - use MongoDB instead. We wanted to deal with transaction processing more asynchronous. [scribe assist by Manu Sporny]</div>
 <div class="comment"><span class="name">Dave Longley</span>:  We wanted to move to a more asynchronous transaction processing engine - works well with non-transactional engines. MongoDB is better for this use case. [scribe assist by Manu Sporny]</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  ok, thanks for the overview, for the near future we plan on using this code/technology stack?</div>
 <div class="comment"><span class="name">Dave Longley</span>:  This was mostly about accelerating development speed and ease of implementation. [scribe assist by Manu Sporny]</div>
-<div class="comment"><span class="name">Dave Longley</span>:  yes, moving forward this is what we'll be using.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  yes, moving forward this is what we&apos;ll be using.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  good work, it has sped up how quickly we can handle new things upcoming like payment intents, etc.</div>
-<div class="comment-continuation">... hopefully we'll be able to implement new ideas more quickly.</div>
+<div class="comment-continuation">... hopefully we&apos;ll be able to implement new ideas more quickly.</div>
 <div class="comment-continuation">... anything else on this before moving on? (nothing) ... so on to web keys.</div>
 <h1 id="topic-2" class="topic">Topic: Web Keys: Removing prefixes &amp; context management</h1>
 <div class="comment"><span class="name">Manu Sporny</span>: <a href="http://payswarm.com/specs/source/web-keys/">http://payswarm.com/specs/source/web-keys/</a></div>
-<div class="comment-continuation">... we'll be talking about section 2 in the spec first.</div>
+<div class="comment-continuation">... we&apos;ll be talking about section 2 in the spec first.</div>
 <div class="comment-continuation">... first we want to talk about if we want to do what we did with the payswarm spec with terms vs. prefixes/curies.</div>
 <div class="comment-continuation">... i think we want to switch over to terms here as well.</div>
 <div class="comment-continuation">... the other important thing to note is that if we go to a prefix-less mechanism we have to make sure that the payswarm context (JSON-LD) must contain the same terms defined in the web keys context</div>
 <div class="comment-continuation">... the payswarm json-ld context would become a superset of the web keys context.</div>
-<div class="comment"><span class="name">Dave Longley</span>:  yes, it's possible and we should move to terms.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  yes, it&apos;s possible and we should move to terms.</div>
 <div class="comment"><span class="name">David I. Lehn</span>:  would the payswarm spec contain more than that?</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  yes</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  we were going to have a web keys vocab (and JSON-LD context)</div>
@@ -130,14 +100,14 @@ dd {
 <div class="comment-continuation">... the payswarm context will grow considerably in size, but the trade off will be to make it easier json developers</div>
 <div class="comment-continuation">... was there a concern there, dlehn?</div>
 <div class="comment"><span class="name">David I. Lehn</span>:  maybe just maintenance if the versions are changing at different rates, etc.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  what we did with rdfa was that whenever something was added to the context it couldn't be removed, and each context was versioned along with the spec</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  what we did with rdfa was that whenever something was added to the context it couldn&apos;t be removed, and each context was versioned along with the spec</div>
 <div class="comment-continuation">... so for example we have purl.org/payswarm/v1 as the json-ld context and webkey/v1 as the web keys version</div>
 <div class="comment-continuation">... so on non-major versions you can add terms, but on major versions you could minimize things down and remove terms</div>
 <div class="comment-continuation">... and that allows a decent forward compatibility way and add new terms in an ad-hoc way</div>
 <div class="comment-continuation">... does that seem like a reasonable way to go forward?</div>
 <div class="comment"><span class="name">David I. Lehn</span>:  we should try it and see how it works</div>
 <div class="comment-continuation">... is there an issue with terms that collide with other vocabularies?</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  yes, we were concerned with that in the beginning but we haven't found anything yet</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  yes, we were concerned with that in the beginning but we haven&apos;t found anything yet</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  we will rename terms if there is a collision</div>
 <div class="comment-continuation">... for instance, title collided in the other community work we did, (title of a book, etc. title of a job), so we would use jobTitle or bookTitle instead, etc.</div>
 <div class="comment-continuation">... we would just add more specific terms as needed, but there are no known conflicts with these vocabs at the moment</div>
@@ -145,18 +115,18 @@ dd {
 <div class="comment-continuation">... the other thing we might need to do is put prefixes in there, so for web keys we might put wkey prefixes in there (in the context) just so you can use terms if you want to</div>
 <div class="comment-continuation">... so you can use prefixed terms from various vocabs if you really want to, but the terms would be preferred.</div>
 <div class="comment-continuation">... (non-prefixed terms)</div>
-<div class="comment-continuation">... so i guess we're switching to terms and dropping prefixes (other than as optional).</div>
+<div class="comment-continuation">... so i guess we&apos;re switching to terms and dropping prefixes (other than as optional).</div>
 <div class="comment-continuation">... in the contexts we use.</div>
-<div class="comment"><span class="name">Dave Longley</span>:  yes, that's the best course of action i think.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  yes, that&apos;s the best course of action i think.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  so on to the key registration process...</div>
 <h1 id="topic-3" class="topic">Topic: Web Keys: Key Registration Process</h1>
 <div class="comment"><span class="name">Manu Sporny</span>: <a href="http://payswarm.com/specs/source/web-keys/#the-key-registration-process">http://payswarm.com/specs/source/web-keys/#the-key-registration-process</a></div>
 <div class="comment"><span class="name">Manu Sporny</span>: We currently use this URL for exposing the web key registration URL - /.well-known/linked-data-services</div>
-<div class="comment-continuation">... there's a document on a server that supports web keys that tells any client application where the service end points are</div>
+<div class="comment-continuation">... there&apos;s a document on a server that supports web keys that tells any client application where the service end points are</div>
 <div class="comment"><span class="name">Manu Sporny</span>: We might try switching to this - /.well-known/web-services</div>
 <div class="comment-continuation">... we could change that to just web-services (instead of linked-data-services)</div>
-<div class="comment-continuation">... because people may not understand what "linked-data-services" means</div>
-<div class="comment-continuation">... the other concern is that the linked-data community might be confused because they don't publish linked data services in this way</div>
+<div class="comment-continuation">... because people may not understand what &quot;linked-data-services&quot; means</div>
+<div class="comment-continuation">... the other concern is that the linked-data community might be confused because they don&apos;t publish linked data services in this way</div>
 <div class="comment"><span class="name">Manu Sporny</span>: Make it specific like - /.well-known/web-keys ?</div>
 <div class="comment-continuation">... the two options are make it very specific and say web-keys or if we believe that this is a pattern that the rest of the web is going to start using more heavily we could make it more general</div>
 <div class="comment"><span class="name">Manu Sporny</span>: Make it more general - /.well-known/liked-data-services or /.well-known/web-services ?</div>
@@ -164,27 +134,27 @@ dd {
 <div class="comment"><span class="name">David I. Lehn</span>: we probably should register what we use:</div>
 <div class="comment"><span class="name">David I. Lehn</span>: <a href="http://tools.ietf.org/html/rfc5785#section-5.1">http://tools.ietf.org/html/rfc5785#section-5.1</a></div>
 <div class="comment"><span class="name">David I. Lehn</span>: <a href="http://www.iana.org/assignments/well-known-uris/well-known-uris.xml">http://www.iana.org/assignments/well-known-uris/well-known-uris.xml</a></div>
-<div class="comment"><span class="name">Manu Sporny</span>:  it's cleaner to have a monolithic file, i think, but that isn't very webby</div>
-<div class="comment-continuation">... here's the concern i have: for payswarm, we would have to have two different endpoints</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  it&apos;s cleaner to have a monolithic file, i think, but that isn&apos;t very webby</div>
+<div class="comment-continuation">... here&apos;s the concern i have: for payswarm, we would have to have two different endpoints</div>
 <div class="comment-continuation">... and two separate HTTP requests would have to be done if we take the more monolithic approach</div>
-<div class="comment-continuation">... then there's a concern that you might start stomping on other services</div>
+<div class="comment-continuation">... then there&apos;s a concern that you might start stomping on other services</div>
 <div class="comment-continuation">... do we need to figure out how each application registers with that file?</div>
 <div class="comment"><span class="name">Dave Longley</span>:  This needs some more thought and discussion before we try to make a decision. [scribe assist by Manu Sporny]</div>
-<div class="comment"><span class="name">Dave Longley</span>:  If it's all in one monolithic place - sure we cut down on the number of HTTP requests - but how often does that happen. There is a concern that you might have spec fighting if you use one file. [scribe assist by Manu Sporny]</div>
-<div class="comment"><span class="name">Dave Longley</span>:  I can see benefits and drawbacks for both... I'm not leaning toward either one. [scribe assist by Manu Sporny]</div>
-<div class="comment"><span class="name">David I. Lehn</span>:  i also don't have any strong feelings about it</div>
+<div class="comment"><span class="name">Dave Longley</span>:  If it&apos;s all in one monolithic place - sure we cut down on the number of HTTP requests - but how often does that happen. There is a concern that you might have spec fighting if you use one file. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  I can see benefits and drawbacks for both... I&apos;m not leaning toward either one. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  i also don&apos;t have any strong feelings about it</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  maybe we should ask the linked data community which way they think is a good approach</div>
 <div class="comment-continuation">... i would expect that we get the document back as key-values in JSON-LD compacted form</div>
 <div class="comment"><span class="name">Dave Longley</span>:  There is also stuff in there about whether we return relative URLs... [scribe assist by Manu Sporny]</div>
 <div class="comment"><span class="name">Dave Longley</span>:  We may want to support different URL naming schemes that URLs have w/o making it too complex. For example - individual identities have public keys. Public keys exist as a path off of an identity... you have to construct the URL. Not everybody is going to want to use a query string to pass the correct information to get back the key. [scribe assist by Manu Sporny]</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  well, the spec's URLs might just have to do with where you go to get a UI for registration for registering a key</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  well, the spec&apos;s URLs might just have to do with where you go to get a UI for registration for registering a key</div>
 <div class="information">(discussion about specifics of webkey registration, etc)</div>
 <div class="comment"><span class="name">Dave Longley</span>:  I need to go back to see what other key services we expose in PaySwarm. [scribe assist by Manu Sporny]</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  is there anything we need to change about the registration process?</div>
-<div class="comment"><span class="name">Dave Longley</span>:  I'm pretty sure this is effectively what we have going on right now. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  I&apos;m pretty sure this is effectively what we have going on right now. [scribe assist by Manu Sporny]</div>
 <h1 id="topic-4" class="topic">Topic: Web Keys - Discovery</h1>
 <div class="comment"><span class="name">Manu Sporny</span>:  we have a section in here on discovery</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  when you register a key you get an IRI back for where the key is so you can get it back (i'm guessing v1 we'll just return JSON-LD)</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  when you register a key you get an IRI back for where the key is so you can get it back (i&apos;m guessing v1 we&apos;ll just return JSON-LD)</div>
 <div class="comment-continuation">... you get back other information about the key like the owner, revocation date and time, etc.</div>
 <div class="comment-continuation">... you do a GET on the IRI and you get that information.</div>
 <div class="comment-continuation">... we have a section on verifiable messaging</div>
@@ -193,30 +163,30 @@ dd {
 <h1 id="topic-5" class="topic">Topic: Web Keys - Messaging</h1>
 <div class="comment-continuation">... a question about the messaging system is: where do we store the signatures?</div>
 <div class="comment-continuation">... JSON-LD has an @graph property where we could store the graph information and then have the signature as an attribute of that graph</div>
-<div class="comment-continuation">... but rdfa can't express that information.</div>
-<div class="comment-continuation">... we can't express the signature in named graph form</div>
+<div class="comment-continuation">... but rdfa can&apos;t express that information.</div>
+<div class="comment-continuation">... we can&apos;t express the signature in named graph form</div>
 <div class="comment-continuation">... so what we have right now may be what the digital signature stuff may have to look like.</div>
-<div class="comment-continuation">... there's an optional thing we could do is have a payswarm application go out to the web and try to discover a digital signature on an asset, that signature will have the asset (or whatever else is signed) as the subject</div>
+<div class="comment-continuation">... there&apos;s an optional thing we could do is have a payswarm application go out to the web and try to discover a digital signature on an asset, that signature will have the asset (or whatever else is signed) as the subject</div>
 <div class="comment-continuation">... what we could do in payswarm, we could translate the data and move the signature out of the data</div>
 <div class="comment-continuation">... so that when we store the JSON-LD the signature would be on the graph itself and the name of the graph would be the asset</div>
-<div class="comment-continuation">... and we'd move the signature property out</div>
-<div class="comment-continuation">... or we'd keep things as they are and just have the signature be internal to the graph.</div>
+<div class="comment-continuation">... and we&apos;d move the signature property out</div>
+<div class="comment-continuation">... or we&apos;d keep things as they are and just have the signature be internal to the graph.</div>
 <div class="comment-continuation">... and at least that way the rdfa and JSON-LD will express the same thing.</div>
 <div class="comment-continuation">... the problem is that you have to extract the signature like we do now.</div>
-<div class="comment-continuation">... if rdfa had a graph attribute it would be clear what to do, but it doesn't have one.</div>
+<div class="comment-continuation">... if rdfa had a graph attribute it would be clear what to do, but it doesn&apos;t have one.</div>
 <div class="comment-continuation">... so we have to figure out which side we want to come down on.</div>
 <div class="comment-continuation">... sandro hawke of the rdf working group thought it was fairly elegant that you could express the digital signature using triples rather than needing quads</div>
-<div class="comment-continuation">... and i thought that it was actually kind of hackish because it's a signature on the graph not on the asset.</div>
+<div class="comment-continuation">... and i thought that it was actually kind of hackish because it&apos;s a signature on the graph not on the asset.</div>
 <div class="comment-continuation">... thoughtS?</div>
-<div class="comment"><span class="name">Dave Longley</span>:  Well, given that RDFa can't really express this information right now, I think it would be more of a hack if PaySwarm applications move the property onto the graph instead of onto the asset itself. [scribe assist by Manu Sporny]</div>
-<div class="comment"><span class="name">Dave Longley</span>:  The process for verifying a digital signature is to remove the signature, normalize the graph and then check it against the signature. Since we can't do it cleanly, from both a political and technological standpoint, we should keep it as is. We can just specify that the signature algorithm removes "sec:signature" and serializes the graph. [scribe assist by Manu Sporny]</div>
-<div class="comment"><span class="name">Dave Longley</span>:  The best thing is to just remove one signature property and validate that... it's unfortunate that everything isn't in a state to use named graphs, but it doesn't sound like not everyone in the RDF community agrees with that approach. I don't think we want to start treating the data differently from other applications. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Well, given that RDFa can&apos;t really express this information right now, I think it would be more of a hack if PaySwarm applications move the property onto the graph instead of onto the asset itself. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  The process for verifying a digital signature is to remove the signature, normalize the graph and then check it against the signature. Since we can&apos;t do it cleanly, from both a political and technological standpoint, we should keep it as is. We can just specify that the signature algorithm removes &quot;sec:signature&quot; and serializes the graph. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  The best thing is to just remove one signature property and validate that... it&apos;s unfortunate that everything isn&apos;t in a state to use named graphs, but it doesn&apos;t sound like not everyone in the RDF community agrees with that approach. I don&apos;t think we want to start treating the data differently from other applications. [scribe assist by Manu Sporny]</div>
 <div class="comment"><span class="name">David I. Lehn</span>:  thoughts?</div>
 <div class="comment"><span class="name">David I. Lehn</span>:  i think dlongley summarized it pretty well, i agree</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  so we're not going to use @graph for the digital signature stuff.</div>
-<div class="comment-continuation">... we may use it internally, we'll see.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so we&apos;re not going to use @graph for the digital signature stuff.</div>
+<div class="comment-continuation">... we may use it internally, we&apos;ll see.</div>
 <div class="comment-continuation">... if rdfa were to gain a graph attribute, we would probably use it.</div>
-<div class="comment"><span class="name">Dave Longley</span>:  if that's the direction that the community wants to go, if people agree, then sure - I think that's the correct direction, and if they go that way - we'll follow. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  if that&apos;s the direction that the community wants to go, if people agree, then sure - I think that&apos;s the correct direction, and if they go that way - we&apos;ll follow. [scribe assist by Manu Sporny]</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  so the signature stays inside the object that is being signed</div>
 <div class="comment-continuation">... so next up is the permission and access rights delegation</div>
 <h1 id="topic-6" class="topic">Topic: Web Keys - Permission and Access Rights Delegation</h1>
@@ -226,7 +196,7 @@ dd {
 <h1 id="topic-7" class="topic">Topic: Web Keys - Key Revocation and Expiration</h1>
 <div class="comment-continuation">... next is key revocation</div>
 <div class="comment-continuation">... the revocationDate property allows a date to be set earlier than the expirationDate to revoke a key</div>
-<div class="comment-continuation">... the spec doesn't say how the key revocation happens</div>
+<div class="comment-continuation">... the spec doesn&apos;t say how the key revocation happens</div>
 <div class="comment-continuation">... is it a digitally signed delete message?</div>
 <div class="comment-continuation">... does the revocation need to be programmatic? or are we allowing the UI to deal with it?</div>
 <div class="comment"><span class="name">Dave Longley</span>:  Do we need to be specific about this? [scribe assist by Manu Sporny]</div>
@@ -236,49 +206,44 @@ dd {
 <div class="comment"><span class="name">Manu Sporny</span>:  however, an application probably wants to be able to revoke a key when uninstalled</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  so we might want to include a message for doing this.</div>
 <div class="comment-continuation">... is that useful or do we not want to deal with it?</div>
-<div class="comment"><span class="name">David I. Lehn</span>:  there is an issue where if you include the revocation date in the message the server needs to ensure it isn't in the past, etc.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  we can't allow people to revoke keys in the past as they could invalidate financial transactions they performed</div>
-<div class="comment-continuation">... so there's an argument that the revocation date can't be sent by the user.</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  there is an issue where if you include the revocation date in the message the server needs to ensure it isn&apos;t in the past, etc.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we can&apos;t allow people to revoke keys in the past as they could invalidate financial transactions they performed</div>
+<div class="comment-continuation">... so there&apos;s an argument that the revocation date can&apos;t be sent by the user.</div>
 <div class="comment"><span class="name">Dave Longley</span>:  We should say that in the spec - how to do revocation. [scribe assist by Manu Sporny]</div>
-<div class="comment"><span class="name">Dave Longley</span>:  It should probably be a POST since you're just updating the information for the key with a revocation date. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  It should probably be a POST since you&apos;re just updating the information for the key with a revocation date. [scribe assist by Manu Sporny]</div>
 <div class="comment"><span class="name">Dave Longley</span>:  then we should probably just define a POST message in the spec for doing revocation</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  ok, then we'll add something to the spec.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  ok, then we&apos;ll add something to the spec.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  any other concerns about the web keys spec?</div>
-<div class="comment-continuation">... alright then, that's it for the call today.</div>
-       </div>
-  </div>
+<div class="comment-continuation">... alright then, that&apos;s it for the call today.</div>
+</div></div></div></section>
+    <div id="footerwrap">
+      <div class="container">
+        <h4>Created by the <a href="http://www.w3.org/community/webpayments/">Web Payments Community Group</a>. Shared with love under a <a href="http://creativecommons.org/licenses/by/4.0/">CC-BY</a> license.</h4>
+      </div>
+    </div>
 
-<div class="container vspacing"> 
-  <div class="row"> 
-    <div class="threecol"> 
-      <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a> 
-    </div> 
-    <div class="ninecol last"> 
-      <p>&copy; 2010-2011 Digital Bazaar, Inc. 
-Website CSS created by <a href="http://cssgrid.net/">@andytlr</a> 
-and is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/au/"> 
-Creative Commons Attribution-ShareAlike 3.0 Australia License</a>. All other
-website content is licensed under a
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"> 
-Creative Commons Attribution-ShareAlike 3.0 License</a>
-</p> 
-    </div> 
-  </div> 
-</div> 
- 
-<script type="text/javascript"> 
- 
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+
+  <script type="text/javascript" src="../../assets/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/retina.js"></script>
+  <script type="text/javascript" src="../../assets/js/jquery.easing.1.3.js"></script>
+  <script type="text/javascript" src="../../assets/js/smoothscroll.js"></script> 
+    
+  <script type="text/javascript">
   var _gaq = _gaq || [];
-  _gaq.push(["_setAccount", "UA-1539674-7"]);
-  _gaq.push(["_trackPageview"]);
+  _gaq.push(['_setAccount', 'UA-1539674-7']);
+  _gaq.push(['_trackPageview']);
 
   (function() {
-    var ga = document.createElement("script"); ga.type = "text/javascript"; ga.async = true;
-    ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";
-    (document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]).appendChild(ga);
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
   })();
- 
-</script>
-
-</body>
+  </script>
+    
+  </body>
 </html>
+

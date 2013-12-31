@@ -1,103 +1,84 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-   "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
-<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
-      class="wf-adelle1adelle2-n6-active wf-active"> 
- 
-<head> 
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
-  <title>PaySwarm - Teleconferences</title> 
- 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
- 
-  <link rel="stylesheet" href="../../css/1140.css" type="text/css" media="screen" /> 
-  <!--[if lte IE 9]>
-  <link rel="stylesheet" href="../css/ie.css" type="text/css" media="screen" />
-  <![endif]--> 
-  <link rel="stylesheet" href="../../css/typeimg.css" type="text/css" media="screen" /> 
-  <link rel="stylesheet" href="../../css/smallerscreen.css" media="only screen and (max-width: 1023px)" /> 
-  <link rel="stylesheet" href="../../css/mobile.css" media="handheld, only screen and (max-width: 767px)" /> 
-  <link rel="stylesheet" href="../../css/layout.css" type="text/css" media="screen" /> 
-  <link rel="shortcut icon" type="image/png" href="../../images/payswarm-icon.png" /> 
-  
-<style type="text/css">
-h1 {
-   margin-top: 24px;
-   margin-bottom: 14px;
-}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web Payments">
+    <meta name="author" content="Manu Sporny">
+    <link rel="shortcut icon" href="assets/ico/favicon.png">
 
-#content {
-   margin-left: 15%;
-   margin-right: 15%;
-}
+    <title>Web Payments</title>
 
-.summary {
-   margin-left: 10%
-   margin-right: 10%
-}
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="../../assets/css/bootstrap.css">
 
-.name {
-   font-weight: bold;
-}
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/icomoon.css">
+    <link rel="stylesheet" href="../../assets/css/animate-custom.css">
 
-.information {
-   font-style: italic;
-}  
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' type='text/css'>
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Raleway:400,300,700' type='text/css'>
 
-.comment-continuation {
-   margin-left: 2em;
-}
+    <script src="../../assets/js/jquery.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/modernizr.custom.js"></script>
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+      <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
 
-dt {
-   font-style: oblique;
-}
+  <body data-target="#navbar-nav" data-spy="scroll">
 
-dd {
-   margin-left: 20px;
-}
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon icon-arrow-down" style="font-size:30px; color:#1abc9c;"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../#home" class="smoothScroll">Home</a></li>
+            <li> <a href="../../#about" class="smoothScroll"> About</a></li>
+            <li> <a href="../../#specs" class="smoothScroll"> Specs</a></li>
+            <li> <a href="../../#participate" class="smoothScroll"> Participate</a></li>
+            <li> <a href="../../#contact" class="smoothScroll"> Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
 
-  </style>
-  
-</head> 
-<body> 
- 
-<div class="titlebar"> 
-   <h1>PaySwarm</h1> 
-</div> 
 
-  <div id="content"> 
- 
-  <div class="row"> 
-    <div class="twelvecol last"> 
-
-<h1>Web Payments Community Group Telecon</h1>
+<section><div class="container"><div class="row white"><br><div class="col-lg-offset-2 col-lg-8"><h1>Web Payments Community Group Telecon</h1>
 <h2>Minutes for 2011-09-23</h2>
 <div class="summary">
 <dl>
 <dt>Agenda</dt><dd><a href="http://lists.w3.org/Archives/Public/public-webpayments/2011Sep/0004.html">http://lists.w3.org/Archives/Public/public-webpayments/2011Sep/0004.html</a></dd>
-<dt>Chair</dt><dd>Manu Sporny</dd>
+<dt>Topics</dt><dd><ol><li><a href="#topic-1">Introduction</a><li><a href="#topic-2">PaySwarm Use Cases Review (continued)</a><li><a href="#topic-3">Content and Payment Metadata</a><li><a href="#topic-4">Price Negotiation</a><li><a href="#topic-5">Multicast License Acquisition</a><li><a href="#topic-6">Licensing Access to Extra Content</a><li><a href="#topic-7">Batching Micropayments</a><li><a href="#topic-8">Customized Application Stores</a><li><a href="#topic-9">Steven Rowat Use Cases Review</a><li><a href="#topic-10">Limiting Commercial Redistribution</a></ol></dd><dt>Chair</dt><dd>Manu Sporny</dd>
 <dt>Scribe</dt><dd>Mike Johnson</dd>
 <dt>Present</dt><dd>Manu Sporny, Patrick Strateman, Amir Taaki, Mike Johnson, Jeff Sayre, David I. Lehn</dd>
 <dt>Audio Log</dt><dd><div><a href="audio.ogg">audio.ogg</a></div>
 <div><audio controls="controls" preload="none">
-<source src="audio.ogg" type="audio/ogg" />Warning: Your browser does not support the HTML5 audio element, please upgrade.</div></dd>
-</dl>
-</div>
-<h1 id=topic-1 class="topic">Topic: Introduction</h1>
+<source src="audio.ogg" type="audio/ogg" />Warning: Your browser does not support the HTML5 audio element, please upgrade.</audio></div></dd></dl>
+<h1 id="topic-1" class="topic">Topic: Introduction</h1>
 <div class="information">Manu Sporny is scribing.</div>
-<div class="comment"><span class="name">Patrick Strateman</span>:  Hi, I'm Patrick Strateman - I'm here on behalf of Bitcoin Consultancy</div>
+<div class="comment"><span class="name">Patrick Strateman</span>:  Hi, I&apos;m Patrick Strateman - I&apos;m here on behalf of Bitcoin Consultancy</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Amir Taaki said that bitcoin folks are interested in a URI scheme?</div>
 <div class="comment"><span class="name">Patrick Strateman</span>:  Bitcoin address is pretty simple right now, a way of opening the payment window in the bitcoin client.</div>
 <div class="comment"><span class="name">Patrick Strateman</span>:  Regular bitcoin addresses are a hash of a public key - want to make it simpler.</div>
 <div class="comment"><span class="name">Amir Taaki</span>:  Our request is here: <a href="http://privatepaste.com/648ddfd486">http://privatepaste.com/648ddfd486</a></div>
-<div class="information">permalink to Amir's request: <a href="http://lists.w3.org/Archives/Public/public-webpayments/2011Sep/0004.html">http://lists.w3.org/Archives/Public/public-webpayments/2011Sep/0004.html</a></div>
-<div class="comment"><span class="name">Manu Sporny</span>:  We are looking at bitcoin integration into PaySwarm, so we'd be happy to help author that spec or provide guidance. Glad to see interest from Bitcoin folks in W3C Web Payments / PaySwarm work.</div>
+<div class="information">permalink to Amir&apos;s request: <a href="http://lists.w3.org/Archives/Public/public-webpayments/2011Sep/0004.html">http://lists.w3.org/Archives/Public/public-webpayments/2011Sep/0004.html</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We are looking at bitcoin integration into PaySwarm, so we&apos;d be happy to help author that spec or provide guidance. Glad to see interest from Bitcoin folks in W3C Web Payments / PaySwarm work.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Any updates/changes to agenda?</div>
 <div class="information">No changes requested.</div>
-<h1 id=topic-2 class="topic">Topic: PaySwarm Use Cases Review (continued)</h1>
+<h1 id="topic-2" class="topic">Topic: PaySwarm Use Cases Review (continued)</h1>
 <div class="comment"><span class="name">Manu Sporny</span>:  We had reviewed quite a number of use cases last time: <a href="http://payswarm.com/minutes/2011-09-16/">http://payswarm.com/minutes/2011-09-16/</a></div>
-<div class="comment"><span class="name">Manu Sporny</span>:  Let's continue reviewing and accepting use cases - next up is content and payment metadata</div>
-<h1 id=topic-3 class="topic">Topic: Content and Payment Metadata</h1>
+<div class="comment"><span class="name">Manu Sporny</span>:  Let&apos;s continue reviewing and accepting use cases - next up is content and payment metadata</div>
+<h1 id="topic-3" class="topic">Topic: Content and Payment Metadata</h1>
 <div class="information"><a href="http://payswarm.com/specs/payswarm-use-cases#content-and-payment-metadata">http://payswarm.com/specs/payswarm-use-cases#content-and-payment-metadata</a></div>
 <div class="comment"><span class="name">Manu Sporny</span>:  We are trying to automate the purchase process by the browser. The basic requirement is the ability to express assets for sale via a Web page as well as listings that describe how the asset should be sold (licenses, payment amounts, etc.)</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  The end-goal is to have the purchase process both decentralized and integrated tightly with the Web browser. So, we need some sort of meta-data in HTML mechanism to do this. The current spec depends on using RDFa 1.1 to accomplish the expression of metadata in the page.</div>
@@ -106,20 +87,20 @@ dd {
 <div class="comment"><span class="name">Mike Johnson</span>: +1</div>
 <div class="comment"><span class="name">Patrick Strateman</span>:  +1 - Sounds good</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Okay, Content and Payment metadata is accepted as a use case.</div>
-<h1 id=topic-4 class="topic">Topic: Price Negotiation</h1>
+<h1 id="topic-4" class="topic">Topic: Price Negotiation</h1>
 <div class="information">Mike Johnson is scribing.</div>
 <div class="comment"><span class="name">Manu Sporny</span>: <a href="http://payswarm.com/specs/payswarm-use-cases#price-negotiation">http://payswarm.com/specs/payswarm-use-cases#price-negotiation</a></div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Price negotiation allows dynamic pricing and can help enforce good market pricing. Was used in the original Bitmunk product.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Example of price negotiation. Seller offers data for sale at a rate of 10 cents/GB. Buyer asks for 8 cents/GB versus 10 cents/GB. Seller can decide if they want to accept the lower figure based on if they have any spare bandwidth that is not being used.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Lots of work on the client-side to implement. Client would be very complex. We want to add support in future, push off for now. Suggest that we add to PaySwarm 2.0 use cases.</div>
 <div class="comment"><span class="name">Mike Johnson</span>:  Agree. Move to PaySwarm 2.0 spec.</div>
-<div class="comment"><span class="name">Jeff Sayre</span>:  Priceline example. They will want negotiation, so it's an important use case - but agree that it's not for now.</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  Priceline example. They will want negotiation, so it&apos;s an important use case - but agree that it&apos;s not for now.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Okay, this use case is deferred to PaySwarm 2.0 use cases.</div>
-<h1 id=topic-5 class="topic">Topic: Multicast License Acquisition</h1>
+<h1 id="topic-5" class="topic">Topic: Multicast License Acquisition</h1>
 <div class="comment"><span class="name">Manu Sporny</span>: <a href="http://payswarm.com/specs/payswarm-use-cases#multicast-license-acquisition">http://payswarm.com/specs/payswarm-use-cases#multicast-license-acquisition</a></div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Multicast license acquisition. This use case allows people to buy a license independently of the data. It effectively splits license acquisition from content acquisition. </div>
 <div class="comment"><span class="name">Manu Sporny</span>:  You must be able to buy a license to something from one location, but get the content from another location.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  Data stream example - I buy access to a movie from the movie studio, but have a local content distribution network provide the data stream for me because it's faster.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Data stream example - I buy access to a movie from the movie studio, but have a local content distribution network provide the data stream for me because it&apos;s faster.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Third point, enabling this via multicast, is unclear. The technology is not well defined yet for IPv6 multicast / MBONE content. Or how this works with Content-Centric Networking.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  I suggest we drop the last bullet point. Push multicast data aquisition off from PaySwarm 1.0</div>
 <div class="comment"><span class="name">Patrick Strateman</span>:  Agrees splitting license from content is a good idea.</div>
@@ -128,20 +109,20 @@ dd {
 <div class="comment"><span class="name">Jeff Sayre</span>:  Makes sense. CDN (content delivery networks) could use this mechanism. MicroCDNs would find benefit in this.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Multicast means technical multicasting. But this is too specific - we may not want to say anything about what protocols are used to deliver the content.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  We keep going back to Netflix as an example. Someone could purchase access to content from Sony Pictures, but choose their download source as Netflix.</div>
-<div class="comment"><span class="name">Mike Johnson</span>:  I was going to agree - we did build this into bitmunk - the idea of splitting license from content doesn't happen w/ physical goods, but it is possible with digital goods. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Mike Johnson</span>:  I was going to agree - we did build this into bitmunk - the idea of splitting license from content doesn&apos;t happen w/ physical goods, but it is possible with digital goods. [scribe assist by Manu Sporny]</div>
 <div class="comment"><span class="name">Mike Johnson</span>:  Buying a license from Best Buy and downloading from Netflix could be an option. [scribe assist by Manu Sporny]</div>
-<div class="information">General agreement to accept first two "Requirements" bullet points for this use case, but reject the third one. The use case should be rewritten to make a bit more sense w/o the third requirement bullet point.</div>
-<h1 id=topic-6 class="topic">Topic: Licensing Access to Extra Content</h1>
+<div class="information">General agreement to accept first two &quot;Requirements&quot; bullet points for this use case, but reject the third one. The use case should be rewritten to make a bit more sense w/o the third requirement bullet point.</div>
+<h1 id="topic-6" class="topic">Topic: Licensing Access to Extra Content</h1>
 <div class="comment"><span class="name">Manu Sporny</span>: <a href="http://payswarm.com/specs/payswarm-use-cases#licensing-access-to-extra-content">http://payswarm.com/specs/payswarm-use-cases#licensing-access-to-extra-content</a></div>
 <div class="comment"><span class="name">Manu Sporny</span>:  This use case covers the need for a verifiable digital receipt of sale. A digital receipt allows one to access value-added content from other sites.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Purchasing content via PaySwarm gives you digital receipt today, so we support this use case now.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  Indie band example - you buy their digital album and have the digital receipt for that. You provide the digital receipt to the band's website a year later and get access to their latest tour videos and backstage videos. Merely providing the receipt gives you exclusive access to value-added content.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Indie band example - you buy their digital album and have the digital receipt for that. You provide the digital receipt to the band&apos;s website a year later and get access to their latest tour videos and backstage videos. Merely providing the receipt gives you exclusive access to value-added content.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  The other important bit about the receipt is that it can be verified by a third party - which means that digital signatures are a requirement.</div>
 <div class="comment"><span class="name">Mike Johnson</span>:  This is important for consumer protection - proof of sale today is almost entirely dependent on the seller website... this goes a step further - there is a way to prove that the receipt of sale is valid without having to go back to the seller. [scribe assist by Manu Sporny]</div>
 <div class="comment"><span class="name">Jeff Sayre</span>:  I agree, this is important.</div>
 <div class="comment"><span class="name">Patrick Strateman</span>:  Digital signatures from merchants for consumer sales is very important.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Ok, then this use case is accepted. [scribe assist by Manu Sporny]</div>
-<h1 id=topic-7 class="topic">Topic: Batching Micropayments</h1>
+<h1 id="topic-7" class="topic">Topic: Batching Micropayments</h1>
 <div class="comment"><span class="name">Manu Sporny</span>: <a href="http://payswarm.com/specs/payswarm-use-cases#batching-micropayments">http://payswarm.com/specs/payswarm-use-cases#batching-micropayments</a></div>
 <div class="comment"><span class="name">Manu Sporny</span>:  This example explores a photography album that somebody puts together and sells. They want some amount to go to them and the rest to go to charities. Payments are split among the creator and charities that the creator has specified - could be 10, could be 100 different charities.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Other example, multiple artists working together on same content. Online comic artists creating a single book.</div>
@@ -149,69 +130,69 @@ dd {
 <div class="comment"><span class="name">Manu Sporny</span>:  Royalty splits are automatically handled. Micropayments (royalties) are split to each author.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Requirments of this use case are to specify arbitrary payment accounts. It could be a large number of payment accounts. No limits (10,000 people should be possible).</div>
 <div class="comment"><span class="name">Jeff Sayre</span>:  Integral to my Smartup - PubPie. I want to treat customers as 1st order payees.</div>
-<div class="comment"><span class="name">Jeff Sayre</span>:  I don't like the current Google split payment mechanism. A strong feature of PaySwarm is the ability to list multiple people.</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  I don&apos;t like the current Google split payment mechanism. A strong feature of PaySwarm is the ability to list multiple people.</div>
 <div class="comment"><span class="name">Jeff Sayre</span>:  Great from a collaborator and service provider standpoint. It removes extra accounting - all payments are direct.</div>
-<div class="comment"><span class="name">Jeff Sayre</span>:  Collaborators recognized as primaries, paid directly, not through a middle man - that's good.</div>
-<div class="comment"><span class="name">Patrick Strateman</span>:  Micropayments are good - Bitcoin's minimum is 6.5 cents.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  PaySwarm's minimum is 1/100,000 of a cent.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  You obviously don't want to do USD/Bitcoin transactions that are that small - but it becomes important for currencies with large value units - such as gold or platinum. We think that precision is good enough for all currencies in the world today.</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  Collaborators recognized as primaries, paid directly, not through a middle man - that&apos;s good.</div>
+<div class="comment"><span class="name">Patrick Strateman</span>:  Micropayments are good - Bitcoin&apos;s minimum is 6.5 cents.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  PaySwarm&apos;s minimum is 1/100,000 of a cent.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  You obviously don&apos;t want to do USD/Bitcoin transactions that are that small - but it becomes important for currencies with large value units - such as gold or platinum. We think that precision is good enough for all currencies in the world today.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Credit cards have a minimum transaction amount that is much larger. PayPal is much larger.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  Going back to Jeff's example - PaySwarm treats everyone as first class citizen when it comes to payment.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Going back to Jeff&apos;s example - PaySwarm treats everyone as first class citizen when it comes to payment.</div>
 <div class="information">Batching micropayments use case is accepted.</div>
-<h1 id=topic-8 class="topic">Topic: Customized Application Stores</h1>
+<h1 id="topic-8" class="topic">Topic: Customized Application Stores</h1>
 <div class="comment"><span class="name">Manu Sporny</span>: <a href="http://payswarm.com/specs/payswarm-use-cases#customized-application-stores">http://payswarm.com/specs/payswarm-use-cases#customized-application-stores</a></div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Example came about because of App stores (Google, Apple, Verizon, Microsoft, etc)</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  Wait, I'm wrong - that's not this use case. This use case is actually about embedding a digital contract in a binary data stream - watermarking or DRM.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Wait, I&apos;m wrong - that&apos;s not this use case. This use case is actually about embedding a digital contract in a binary data stream - watermarking or DRM.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Buying software will personalize purchases and assign those to you directly.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  This requirement came from the music industry use cases a few years ago. Watermarking purchases (music files), receipt embedded in file. Important to prevent people from uploading the content to a P2P network.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  This use case was originally vital for Bitmunk... not sure if it is vital for PaySwarm.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  I would prefer to keep it out for now.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Jeff, do you have a use case for watermarking books?</div>
 <div class="comment"><span class="name">Jeff Sayre</span>:  My company is opposed to DRM watermarking.</div>
-<div class="comment"><span class="name">Jeff Sayre</span>:  Let's not support DRM or watermarking initially.</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  Let&apos;s not support DRM or watermarking initially.</div>
 <div class="comment"><span class="name">Jeff Sayre</span>:  DRM does not protect or increase sales - studies have shown that.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Reason we had watermarks was so buyer could prove purchase.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Ties to digital receipt examples earlier - we embed the digital receipt in the file so the person can prove ownership by just providing the file. However, it is very complex to implement.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  Difficult to keep the watermarking binary up to date, it has to be a closed-source module or it won't work, keeping all of the clients in sync is very difficult as well.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Difficult to keep the watermarking binary up to date, it has to be a closed-source module or it won&apos;t work, keeping all of the clients in sync is very difficult as well.</div>
 <div class="comment"><span class="name">Jeff Sayre</span>:  Physical objects are often not regisitered that way - there is no ownership with the item. Some small examples of registered items. Example of books in personal library.</div>
 <div class="comment"><span class="name">Mike Johnson</span>:  The whole watermarking thing was done to try to appease the music industry 6-7 years ago - not a feature we need because the buyer still has access to the digital receipt via the PaySwarm Authority. [scribe assist by Manu Sporny]</div>
-<div class="comment"><span class="name">Mike Johnson</span>:  It's complex to implement and we don't need it right now. [scribe assist by Manu Sporny]</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  Jeff's example of physical goods not having a digital receipt of ownership is a good example. In the future people might buy a blueprint of an item to manufature.</div>
+<div class="comment"><span class="name">Mike Johnson</span>:  It&apos;s complex to implement and we don&apos;t need it right now. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Jeff&apos;s example of physical goods not having a digital receipt of ownership is a good example. In the future people might buy a blueprint of an item to manufature.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  3d printers will happen. People will be able to manufacture at home or locally.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Schematics might be modified to add a watermark onto the object when it is printed.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  Example of printing out a knife with physically watermarked ownership information used in a crime. It's a use case that's a bit out there - but one that has philosophical implications. Should physical objects have owners?</div>
-<div class="comment"><span class="name">Jeff Sayre</span>:  You can't practically rewatermark a physical object.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Example of printing out a knife with physically watermarked ownership information used in a crime. It&apos;s a use case that&apos;s a bit out there - but one that has philosophical implications. Should physical objects have owners?</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  You can&apos;t practically rewatermark a physical object.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  In the digital file case, when you resell, the software strips the old watermark and generates a new one.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  RFIDs could be used as programmable watermarks. Although, that is more of a digital watermark example. That way, you could have printed objects have temporary ownership - such as "This frisbee belongs to Jeff Sayre".</div>
-<div class="information">Watermarking use case is out. We probably won't save use case as nobody really likes it.</div>
-<h1 id=topic-9 class="topic">Topic: Steven Rowat Use Cases Review</h1>
+<div class="comment"><span class="name">Manu Sporny</span>:  RFIDs could be used as programmable watermarks. Although, that is more of a digital watermark example. That way, you could have printed objects have temporary ownership - such as &quot;This frisbee belongs to Jeff Sayre&quot;.</div>
+<div class="information">Watermarking use case is out. We probably won&apos;t save use case as nobody really likes it.</div>
+<h1 id="topic-9" class="topic">Topic: Steven Rowat Use Cases Review</h1>
 <div class="comment"><span class="name">Manu Sporny</span>: <a href="http://lists.w3.org/Archives/Public/www-tag/2009Sep/0055.html">http://lists.w3.org/Archives/Public/www-tag/2009Sep/0055.html</a></div>
-<div class="comment"><span class="name">Manu Sporny</span>:  Most of Steven's use cases have to do with how the license metadata is expressed in the asset or the listing. Usage of RDFa addresses most of these use cases - we can tweak what a license allows by changing a few RDFa statements. Should PaySwarm support these use cases too?</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  Most of these use cases seem to be immediately supportable with minor changes to the way the current specification works. We won't have time to go through all of these use cases today, but let's look at the first one.</div>
-<h1 id=topic-10 class="topic">Topic: Limiting Commercial Redistribution</h1>
+<div class="comment"><span class="name">Manu Sporny</span>:  Most of Steven&apos;s use cases have to do with how the license metadata is expressed in the asset or the listing. Usage of RDFa addresses most of these use cases - we can tweak what a license allows by changing a few RDFa statements. Should PaySwarm support these use cases too?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Most of these use cases seem to be immediately supportable with minor changes to the way the current specification works. We won&apos;t have time to go through all of these use cases today, but let&apos;s look at the first one.</div>
+<h1 id="topic-10" class="topic">Topic: Limiting Commercial Redistribution</h1>
 <div class="comment"><span class="name">Manu Sporny</span>: An independent medical researcher in the USA who produces a pdf report about side-effects of a new prescription drug.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  First example has no resale limitation, however the license that it's available under is a simple Creative Commons attribution, no-derivatives license... maybe just a no-derivatives license?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  First example has no resale limitation, however the license that it&apos;s available under is a simple Creative Commons attribution, no-derivatives license... maybe just a no-derivatives license?</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  This barely says anything about payments, but we can read into it a bit.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  PaySwarm would allow us to do non-downstream sales if we specify that limitation in the listing.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Jeff, does this use case seem useful to PubPie?</div>
-<div class="comment"><span class="name">Jeff Sayre</span>:  Yes. It's up to collaborative teams, but PubPie will allow a lot of flexibility and variety - this use case fits.</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  Yes. It&apos;s up to collaborative teams, but PubPie will allow a lot of flexibility and variety - this use case fits.</div>
 <div class="comment"><span class="name">Manu Sporny</span>: We already have a vocabulary in the works for specifying digital contacts here - <a href="http://purl.org/payswarm">http://purl.org/payswarm</a></div>
 <div class="comment"><span class="name">Manu Sporny</span>:  and we already have a limitation where you can state that you do not want to allow any additional payees... </div>
 <div class="comment"><span class="name">Manu Sporny</span>: <a href="http://payswarm.com/vocabs/payswarm#NoAdditionalPayees">http://payswarm.com/vocabs/payswarm#NoAdditionalPayees</a></div>
-<div class="comment"><span class="name">Jeff Sayre</span>:  That's not the same as being external data provider.</div>
-<div class="comment"><span class="name">Manu Sporny</span>: That's true, but maybe we can build off of this:</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  That&apos;s not the same as being external data provider.</div>
+<div class="comment"><span class="name">Manu Sporny</span>: That&apos;s true, but maybe we can build off of this:</div>
 <div class="comment"><span class="name">Manu Sporny</span>: <a href="http://payswarm.com/vocabs/commerce#limitation">http://payswarm.com/vocabs/commerce#limitation</a></div>
-<div class="comment"><span class="name">Manu Sporny</span>:  This use case would be if people don't want external data providers - we'd have to add something like ps:NoRedistribution.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  This use case would be if people don&apos;t want external data providers - we&apos;d have to add something like ps:NoRedistribution.</div>
 <div class="comment"><span class="name">Jeff Sayre</span>:  We also want to allow sales through other networks (Amazon, iTunes)</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Commerce vocabulary allows specifying limitations.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  People could redistribute but not add extra payees, but that doesn't quite address this use case.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  People could redistribute but not add extra payees, but that doesn&apos;t quite address this use case.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  We could add a limitation to only allow download of content from one data provider to support this use case.</div>
-<div class="comment"><span class="name">Mike Johnson</span>:  This is a left-over from pre-digital sales era - it's an old mentality - "I need to control my data". [scribe assist by Manu Sporny]</div>
-<div class="comment"><span class="name">Mike Johnson</span>:  but it's still important for us to provide this functionality - some people want to drive people to their site - these are all things that are important - we need to be able to limit who the data provider is. [scribe assist by Manu Sporny]</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  We're out of time for this call. Let's have another call next week to go through rest of Steven's use cases.</div>
+<div class="comment"><span class="name">Mike Johnson</span>:  This is a left-over from pre-digital sales era - it&apos;s an old mentality - &quot;I need to control my data&quot;. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Mike Johnson</span>:  but it&apos;s still important for us to provide this functionality - some people want to drive people to their site - these are all things that are important - we need to be able to limit who the data provider is. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We&apos;re out of time for this call. Let&apos;s have another call next week to go through rest of Steven&apos;s use cases.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  One thing that is not on the list is alternative currencies (Bitcoin) - we need a use case for that.</div>
 <div class="comment"><span class="name">Patrick Strateman</span>:  Very pro alternative currencies.</div>
-<div class="comment"><span class="name">Patrick Strateman</span>:  There is a caveat in Bitcoin in that there is a delay in the Bitcoin payment process - funds aren't available immediately.</div>
+<div class="comment"><span class="name">Patrick Strateman</span>:  There is a caveat in Bitcoin in that there is a delay in the Bitcoin payment process - funds aren&apos;t available immediately.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  PaySwarm has concept of escrow, where we may not push the contract through without verification of payment.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  It is possible to add to spec, but either way we want to support alternative currencies.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  We may not go as far as supporting automatic currency exhange, as that is complex, but adding support for one may allow us to support all currencies.</div>
@@ -219,40 +200,35 @@ dd {
 <div class="comment"><span class="name">Jeff Sayre</span>:  I agree with the need for alternative currency support. More currencies allows more exchanges, complex but healthy for the economy.</div>
 <div class="comment"><span class="name">David I. Lehn</span>: I agree - we should support alternative currencies.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Ok, we should add a use case for that.</div>
-       </div>
-  </div>
+</div></div></div></section>
+    <div id="footerwrap">
+      <div class="container">
+        <h4>Created by the <a href="http://www.w3.org/community/webpayments/">Web Payments Community Group</a>. Shared with love under a <a href="http://creativecommons.org/licenses/by/4.0/">CC-BY</a> license.</h4>
+      </div>
+    </div>
 
-<div class="container vspacing onblack"> 
-  <div class="row"> 
-    <div class="threecol"> 
-      <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a> 
-    </div> 
-    <div class="ninecol last"> 
-      <p>&copy; 2010-2011 Digital Bazaar, Inc. 
-Website CSS created by <a href="http://cssgrid.net/">@andytlr</a> 
-and is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/au/"> 
-Creative Commons Attribution-ShareAlike 3.0 Australia License</a>. All other
-website content is licensed under a
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"> 
-Creative Commons Attribution-ShareAlike 3.0 License</a>
-</p> 
-    </div> 
-  </div> 
-</div> 
- 
-<script type="text/javascript"> 
- 
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+
+  <script type="text/javascript" src="../../assets/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/retina.js"></script>
+  <script type="text/javascript" src="../../assets/js/jquery.easing.1.3.js"></script>
+  <script type="text/javascript" src="../../assets/js/smoothscroll.js"></script> 
+    
+  <script type="text/javascript">
   var _gaq = _gaq || [];
-  _gaq.push(["_setAccount", "UA-1539674-7"]);
-  _gaq.push(["_trackPageview"]);
+  _gaq.push(['_setAccount', 'UA-1539674-7']);
+  _gaq.push(['_trackPageview']);
 
   (function() {
-    var ga = document.createElement("script"); ga.type = "text/javascript"; ga.async = true;
-    ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";
-    (document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]).appendChild(ga);
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
   })();
- 
-</script>
-
-</body>
+  </script>
+    
+  </body>
 </html>
+

@@ -1,250 +1,215 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-   "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
-<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
-      class="wf-adelle1adelle2-n6-active wf-active"> 
- 
-<head> 
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
-  <title>PaySwarm - Teleconferences</title> 
- 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
- 
-  <link rel="stylesheet" href="../../css/1140.css" type="text/css" media="screen" /> 
-  <!--[if lte IE 9]>
-  <link rel="stylesheet" href="../css/ie.css" type="text/css" media="screen" />
-  <![endif]--> 
-  <link rel="stylesheet" href="../../css/typeimg.css" type="text/css" media="screen" /> 
-  <link rel="stylesheet" href="../../css/smallerscreen.css" media="only screen and (max-width: 1023px)" /> 
-  <link rel="stylesheet" href="../../css/mobile.css" media="handheld, only screen and (max-width: 767px)" /> 
-  <link rel="stylesheet" href="../../css/layout.css" type="text/css" media="screen" /> 
-  <link rel="shortcut icon" type="image/png" href="../../images/payswarm-icon.png" /> 
-  
-<style type="text/css">
-h1 {
-   margin-top: 24px;
-   margin-bottom: 14px;
-}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web Payments">
+    <meta name="author" content="Manu Sporny">
+    <link rel="shortcut icon" href="assets/ico/favicon.png">
 
-.header {
-   margin-top: 0px;
-   margin-bottom: 14px;
-}
+    <title>Web Payments</title>
 
-ol {
-   margin-bottom: 0em;
-}
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="../../assets/css/bootstrap.css">
 
-li {
-   margin-left: 1.5em;
-   margin-bottom: 0em;
-}
-#content {
-   margin-left: 15%;
-   margin-right: 15%;
-}
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/icomoon.css">
+    <link rel="stylesheet" href="../../assets/css/animate-custom.css">
 
-.summary {
-   margin-left: 10%
-   margin-right: 10%
-}
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' type='text/css'>
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Raleway:400,300,700' type='text/css'>
 
-.name {
-   font-weight: bold;
-}
+    <script src="../../assets/js/jquery.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/modernizr.custom.js"></script>
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+      <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
 
-.information {
-   font-style: italic;
-}  
+  <body data-target="#navbar-nav" data-spy="scroll">
 
-.comment-continuation {
-   margin-left: 2em;
-}
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon icon-arrow-down" style="font-size:30px; color:#1abc9c;"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../#home" class="smoothScroll">Home</a></li>
+            <li> <a href="../../#about" class="smoothScroll"> About</a></li>
+            <li> <a href="../../#specs" class="smoothScroll"> Specs</a></li>
+            <li> <a href="../../#participate" class="smoothScroll"> Participate</a></li>
+            <li> <a href="../../#contact" class="smoothScroll"> Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
 
-dt {
-   font-style: oblique;
-}
 
-dd {
-   margin-left: 20px;
-}
-
-  </style>
-  
-</head> 
-<body> 
- 
-<div class="titlebar"> 
-   <h1 class="header">PaySwarm</h1> 
-</div> 
-
-  <div id="content"> 
- 
-  <div class="row"> 
-    <div class="twelvecol last"> 
-
-<h1>Web Payments Community Group Telecon</h1>
+<section><div class="container"><div class="row white"><br><div class="col-lg-offset-2 col-lg-8"><h1>Web Payments Community Group Telecon</h1>
 <h2>Minutes for 2013-06-19</h2>
 <div class="summary">
 <dl>
 <dt>Agenda</dt><dd><a href="http://lists.w3.org/Archives/Public/public-webpayments/2013Jun/0025.html">http://lists.w3.org/Archives/Public/public-webpayments/2013Jun/0025.html</a></dd>
 <dt>Topics</dt><dd><ol><li><a href="#topic-1">HTTP Signatures - Nonce Support</a><li><a href="#topic-2">Update on GSoC Student Progress</a><li><a href="#topic-3">HTTP Signatures - Trailer Support</a></ol></dd><dt>Chair</dt><dd>Manu Sporny</dd>
-<dt>Scribe</dt><dd>Dave Longley, Manu Sporny</dd>
+<dt>Scribe</dt><dd>Dave Longley</dd>
 <dt>Present</dt><dd>Dave Longley, Manu Sporny, David I. Lehn, Brent Shambaugh, Andrei Oprea</dd>
 <dt>Audio Log</dt><dd><div><a href="audio.ogg">audio.ogg</a></div>
 <div><audio controls="controls" preload="none">
-<source src="audio.ogg" type="audio/ogg" />Warning: Your browser does not support the HTML5 audio element, please upgrade.</div></dd>
+<source src="audio.ogg" type="audio/ogg" />Warning: Your browser does not support the HTML5 audio element, please upgrade.</audio></div></dd></dl>
 <div class="information">Dave Longley is scribing.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Mark Cavage is not going to be able to join today, but we need to get through the nonce/trailer stuff since next week will be the Payment API. Any updates or changes to the Agenda? </div>
 <h1 id="topic-1" class="topic">Topic: HTTP Signatures - Nonce Support</h1>
-<div class="comment"><span class="name">Manu Sporny</span>:  we've been alluding to dealing with nonces in the last few calls and what we've been focusing on is looking at time-based (time-window) nonce</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  we're expecting that the nonce will have some kind of client id/some kind of rule for the nonce to be incremented</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we&apos;ve been alluding to dealing with nonces in the last few calls and what we&apos;ve been focusing on is looking at time-based (time-window) nonce</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we&apos;re expecting that the nonce will have some kind of client id/some kind of rule for the nonce to be incremented</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  nonces could be used for both HTTP and HTTPS (if you want extra protection)</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  nonces are specifically designed in this spec to handle replay attacks over HTTP</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  the basic parameters are the nonces are generated and must always increment, if a nonce is used the date field must be included in the digital signature, if nonce is there, you must include a nonce parameter and the date field but it's currently unknown where the client ID will be placed</div>
-<div class="comment"><span class="name">Dave Longley</span>:  I don't know if we dramatically simplify server implementations by having a client-ID. If it just keeps track of every nonce that comes in over a time window.</div>
-<div class="comment"><span class="name">Dave Longley</span>:  Having a client ID doesn't simplify the server, I don't think.</div>
-<div class="comment"><span class="name">Dave Longley</span>:  The way the client generates a client ID is not necessary.</div>
-<div class="comment"><span class="name">Dave Longley</span>:  it can just be a random value.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  Isn't the random value a client ID.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  i didn't intend for this to mean that it's a session</div>
-<div class="comment"><span class="name">Dave Longley</span>:  The nonce is an opaque value to the server.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  what i'm trying to address here is what if you have two pieces of software on your phone from the same IP address, how the server know which incrementing nonce is which</div>
-<div class="comment"><span class="name">Dave Longley</span>:  It's true that a session ID + a counting nonce results in a smaller memory usage.</div>
-<div class="comment"><span class="name">Dave Longley</span>:  The client generates a random value that is sufficiently long enough that there will be no clashes. The server looks for the next nonce to be higher than the previous nonce.</div>
-<div class="comment"><span class="name">Dave Longley</span>:  emphasis is on incrementing, not necessarily by 1, it just needs to be higher than the previous one.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  What exactly does the signature string look like now?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  the basic parameters are the nonces are generated and must always increment, if a nonce is used the date field must be included in the digital signature, if nonce is there, you must include a nonce parameter and the date field but it&apos;s currently unknown where the client ID will be placed</div>
+<div class="comment"><span class="name">Dave Longley</span>:  I don&apos;t know if we dramatically simplify server implementations by having a client-ID. If it just keeps track of every nonce that comes in over a time window. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Having a client ID doesn&apos;t simplify the server, I don&apos;t think. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  The way the client generates a client ID is not necessary. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  it can just be a random value. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Isn&apos;t the random value a client ID. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  i didn&apos;t intend for this to mean that it&apos;s a session</div>
+<div class="comment"><span class="name">Dave Longley</span>:  The nonce is an opaque value to the server. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  what i&apos;m trying to address here is what if you have two pieces of software on your phone from the same IP address, how the server know which incrementing nonce is which</div>
+<div class="comment"><span class="name">Dave Longley</span>:  It&apos;s true that a session ID + a counting nonce results in a smaller memory usage. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  The client generates a random value that is sufficiently long enough that there will be no clashes. The server looks for the next nonce to be higher than the previous nonce. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  emphasis is on incrementing, not necessarily by 1, it just needs to be higher than the previous one. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  What exactly does the signature string look like now? [scribe assist by Manu Sporny]</div>
 <div class="comment"><span class="name">Dave Longley</span>:  I think we want something like this: clientId=abce7de767eebf, nonce=abac8ec6e7cece</div>
 <div class="comment"><span class="name">Dave Longley</span>:  Perhaps this instead, nonce=1</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  we should be very clear and explicit about how to implement nonces in the spec</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  instead of just letting it be a grab bag of options</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  to make things simpler for implementers</div>
-<div class="comment"><span class="name">Dave Longley</span>:  Let's just make the nonce a 32-bit integer, it counts up. Hopefully you won't make 4 billion requests in a 5 minute time window. If you do, generate a new clientId. The ClientID should be sufficiently long over a 5 minute window.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  We could do it by IP address.</div>
-<div class="comment"><span class="name">Dave Longley</span>:  I think it starts becoming more complicated in that sense... let's just make it sufficiently long enough - how many bytes, hex-encoded, placed into the signature as a signature parameter.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  So how long is long enough?</div>
-<div class="comment"><span class="name">Dave Longley</span>:  128 bits - 16 bytes.</div>
-<div class="comment"><span class="name">Dave Longley</span>:  nonce starts at 1 and counts up</div>
-<div class="comment"><span class="name">Dave Longley</span>:  32-bit number</div>
-<div class="comment"><span class="name">Dave Longley</span>:  not hex-encoded</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Let&apos;s just make the nonce a 32-bit integer, it counts up. Hopefully you won&apos;t make 4 billion requests in a 5 minute time window. If you do, generate a new clientId. The ClientID should be sufficiently long over a 5 minute window. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We could do it by IP address. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  I think it starts becoming more complicated in that sense... let&apos;s just make it sufficiently long enough - how many bytes, hex-encoded, placed into the signature as a signature parameter. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  So how long is long enough? [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  128 bits - 16 bytes. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  nonce starts at 1 and counts up [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  32-bit number [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  not hex-encoded [scribe assist by Manu Sporny]</div>
 <div class="comment"><span class="name">David I. Lehn</span>: thinks these rules might be too arbitrary for a spec</div>
-<div class="comment"><span class="name">David I. Lehn</span>:  You're picking numbers and those numbers might not work for everyone.</div>
-<div class="comment"><span class="name">Dave Longley</span>:  We're picking 128-bit because we want to pick something that will probably not clash.</div>
-<div class="comment"><span class="name">Dave Longley</span>:  We could be more specific about talking about this stuff - we have a 5 minute time window, how many clients will connect over that timeframe.</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  You&apos;re picking numbers and those numbers might not work for everyone. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  We&apos;re picking 128-bit because we want to pick something that will probably not clash. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  We could be more specific about talking about this stuff - we have a 5 minute time window, how many clients will connect over that timeframe. [scribe assist by Manu Sporny]</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  we could look at the number of requests for google+ and see if you generated a random number if there would be a clash</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  if we wanted to support a billion simultaneous clients, etc. we could see what the chance is for two clients picking the same ID</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  we think 128 bit would make it very unlikely for a clash even for the next 10 years, etc.</div>
 <div class="comment"><span class="name">Brent Shambaugh</span>: I found this while trying to learn more. Frame of reference? Nonces in Bitcoin: <a href="https://en.bitcoin.it/wiki/Nonce">https://en.bitcoin.it/wiki/Nonce</a> (32 bit)</div>
-<div class="comment"><span class="name">Dave Longley</span>:  Also, the time window matters - we aren't necessarily setting it.</div>
-<div class="comment"><span class="name">Dave Longley</span>:  IPv6 addresses are 128-bit as well - it's not too large to put into an HTTP header... we don't need anything larger than that, really. number of unique addresses.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Also, the time window matters - we aren&apos;t necessarily setting it. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  IPv6 addresses are 128-bit as well - it&apos;s not too large to put into an HTTP header... we don&apos;t need anything larger than that, really. number of unique addresses. [scribe assist by Manu Sporny]</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  if the numbers we picked are wrong, reviewers will complain loudly</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  we can also add a note to fix these limits later as needed</div>
-<div class="comment"><span class="name">David I. Lehn</span>:  it seems like everyone should just be using HTTPS, i don't understand the use case for HTTP</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  it seems like everyone should just be using HTTPS, i don&apos;t understand the use case for HTTP</div>
 <div class="comment"><span class="name">David I. Lehn</span>:  are people actually going to use this protocol at all in the non-secure case?</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  are you arguing to remove nonces from the spec and HTTP support?</div>
-<div class="comment"><span class="name">David I. Lehn</span>:  i just know it's complicated and wonder if we need to put the extra effort in for this</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  if we don't put nonces in here it removes a class of applications that just wants to use HTTP</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  i just know it&apos;s complicated and wonder if we need to put the extra effort in for this</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  if we don&apos;t put nonces in here it removes a class of applications that just wants to use HTTP</div>
 <div class="comment"><span class="name">David I. Lehn</span>:  i just think these issues will double the size of the spec or more, it will be added complexity that people will have to try and understand before using this</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  before trying to run it over HTTP</div>
 <div class="comment"><span class="name">David I. Lehn</span>:  if half of the spec is optional it seems kind of silly to me</div>
-<div class="comment"><span class="name">David I. Lehn</span>:  we'll have to consider that clients will have to be buffering things</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  well, it's much easier on the client because the client only needs to store one server session ID</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  we&apos;ll have to consider that clients will have to be buffering things</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  well, it&apos;s much easier on the client because the client only needs to store one server session ID</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  you generate a random number for the client ID and initialize the nonce to 1 and then count up, that should be it for sending requests</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  for the server, you just store client IDs and then make sure the nonce is incrementing</div>
-<div class="comment"><span class="name">David I. Lehn</span>:  well, it's just more complicated than not having to do any of that</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  well, it&apos;s just more complicated than not having to do any of that</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  well, yeah, but if someone wants to use HTTP this is what has to be done to prevent against replay attacks</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  i agree that it's more complicated, but if we do want to support this over HTTP we have to do this</div>
-<div class="comment"><span class="name">Dave Longley</span>:  btw, we shouldn't call it client ID because the server might want to use it in responses</div>
-<div class="comment"><span class="name">Dave Longley</span>:  I think we include the request line, host and date.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  i agree that it&apos;s more complicated, but if we do want to support this over HTTP we have to do this</div>
+<div class="comment"><span class="name">Dave Longley</span>:  btw, we shouldn&apos;t call it client ID because the server might want to use it in responses</div>
+<div class="comment"><span class="name">Dave Longley</span>:  I think we include the request line, host and date. [scribe assist by Manu Sporny]</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  should we always include the date?</div>
-<div class="comment"><span class="name">David I. Lehn</span>:  The implementation in PaySwarm does that by default, but the spec itself just does the date. We're more strict.</div>
-<div class="comment"><span class="name">Dave Longley</span>:  What do we do?</div>
-<div class="comment"><span class="name">Dave Longley</span>:  We sign the request line, host and date - it's going to be broken if you don't do that.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  When you sign you have to include the sessionId and the nonce value?</div>
-<div class="comment"><span class="name">Dave Longley</span>:  We could call it nonce and the other thing be the counter.</div>
-<div class="comment"><span class="name">Dave Longley</span>:  We can mess around with the names later.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  Seems strange - nonce stands for "only once"</div>
-<div class="comment"><span class="name">Dave Longley</span>:  Let's not re-use that, I haven't looked that closely in Digest Access Auth, we should come up with another name.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  Where does it go? At the front of the signature?</div>
-<div class="comment"><span class="name">Dave Longley</span>:  Yeah, at the front, helps with randomness...</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  So place the clientID and then the nonce at the beginning as they're encoded in the message. </div>
-<div class="comment"><span class="name">Dave Longley</span>:  There is no reason we need to decode them. Consider both a string.</div>
-<div class="comment"><span class="name">Dave Longley</span>:  ASCII string since it's over HTTP.</div>
-<div class="comment"><span class="name">Dave Longley</span>:  Once it's Base64 encoded, it's ASCII, just use that value.</div>
-<div class="comment"><span class="name">Brent Shambaugh</span>:  wasn't really familiar with nonces, started looking at Bitcoin, proof of work.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  I don't know how useful proof of work is - definitely not for the server, maybe for the client?</div>
-<div class="comment"><span class="name">Dave Longley</span>:  Don't know how useful it is for what we're trying to do here.</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  The implementation in PaySwarm does that by default, but the spec itself just does the date. We&apos;re more strict. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  What do we do? [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  We sign the request line, host and date - it&apos;s going to be broken if you don&apos;t do that. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  When you sign you have to include the sessionId and the nonce value? [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  We could call it nonce and the other thing be the counter. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  We can mess around with the names later. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Seems strange - nonce stands for &quot;only once&quot; [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Let&apos;s not re-use that, I haven&apos;t looked that closely in Digest Access Auth, we should come up with another name. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Where does it go? At the front of the signature? [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Yeah, at the front, helps with randomness... [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  So place the clientID and then the nonce at the beginning as they&apos;re encoded in the message.  [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  There is no reason we need to decode them. Consider both a string. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  ASCII string since it&apos;s over HTTP. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Once it&apos;s Base64 encoded, it&apos;s ASCII, just use that value. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Brent Shambaugh</span>:  wasn&apos;t really familiar with nonces, started looking at Bitcoin, proof of work. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  I don&apos;t know how useful proof of work is - definitely not for the server, maybe for the client? [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Don&apos;t know how useful it is for what we&apos;re trying to do here. [scribe assist by Manu Sporny]</div>
 <h1 id="topic-2" class="topic">Topic: Update on GSoC Student Progress</h1>
-<div class="comment"><span class="name">Andrei Oprea</span>:  what i've done this week is implement a really basic website</div>
-<div class="comment"><span class="name">Andrei Oprea</span>:  i've managed to public/private key pair and register with payswarm using the JS module</div>
+<div class="comment"><span class="name">Andrei Oprea</span>:  what i&apos;ve done this week is implement a really basic website</div>
+<div class="comment"><span class="name">Andrei Oprea</span>:  i&apos;ve managed to public/private key pair and register with payswarm using the JS module</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  do you have the site running publically some where?</div>
-<div class="comment"><span class="name">Andrei Oprea</span>:  not yet, i'll do that</div>
+<div class="comment"><span class="name">Andrei Oprea</span>:  not yet, i&apos;ll do that</div>
 <div class="comment"><span class="name">Andrei Oprea</span>: <a href="https://github.com/piatra/webpayments-marketplace">https://github.com/piatra/webpayments-marketplace</a></div>
 <div class="comment"><span class="name">Andrei Oprea</span>:  i wanted to get listings working sometime this week</div>
-<div class="comment"><span class="name">Andrei Oprea</span>:  i wanted to give a rough idea of what's going on and have some people try it out</div>
+<div class="comment"><span class="name">Andrei Oprea</span>:  i wanted to give a rough idea of what&apos;s going on and have some people try it out</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  any questions?</div>
-<div class="comment"><span class="name">Andrei Oprea</span>:  so far things have gone well, i've been following along with the blog posts manu wrote and no questions so far</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  yeah, we're interested in seeing how persona will work out, getting it integrated w/web payments</div>
+<div class="comment"><span class="name">Andrei Oprea</span>:  so far things have gone well, i&apos;ve been following along with the blog posts manu wrote and no questions so far</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  yeah, we&apos;re interested in seeing how persona will work out, getting it integrated w/web payments</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  ok, great job, andrei</div>
 <h1 id="topic-3" class="topic">Topic: HTTP Signatures - Trailer Support</h1>
-<div class="comment"><span class="name">Manu Sporny</span>:  so the main question here is what will be in the trailer's authentication header</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  We will want to sign the header, and then sign the trailer (including all headers in the header)</div>
-<div class="comment"><span class="name">Dave Longley</span>:  I think most servers can store all the headers that came across... trying to simplify processing of trailers authentication header. Could you just process the previous authentication header and then add whatever trailers you wanted?</div>
-<div class="comment"><span class="name">Dave Longley</span>:  Would that work? Or would that looks strange?</div>
-<div class="comment"><span class="name">Dave Longley</span>:  It would look like it's listing itself... if you authenticated other stuff previously, maybe that would be sufficient.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so the main question here is what will be in the trailer&apos;s authentication header</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We will want to sign the header, and then sign the trailer (including all headers in the header) [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  I think most servers can store all the headers that came across... trying to simplify processing of trailers authentication header. Could you just process the previous authentication header and then add whatever trailers you wanted? [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Would that work? Or would that looks strange? [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  It would look like it&apos;s listing itself... if you authenticated other stuff previously, maybe that would be sufficient. [scribe assist by Manu Sporny]</div>
 <div class="comment"><span class="name">Manu Sporny</span>: Authorization: Signature</div>
 <div class="comment"><span class="name">Manu Sporny</span>: <a href="https://payswarm.com/specs/source/http-signatures/">https://payswarm.com/specs/source/http-signatures/</a></div>
-<div class="comment"><span class="name">Manu Sporny</span>: Authorization: Signature keyId="Test",algorithm="rsa-sha256",headers="request-line host date content-type content-md5 content-length",</div>
-<div class="comment"><span class="name">Dave Longley</span>:  That's what it would look like, minus the content-md5</div>
-<div class="information">Authorization: Signature keyId="Test",algorithm="rsa-sha256",headers="request-line host date content-type"</div>
-<div class="comment"><span class="name">Dave Longley</span>:  ^^ that would be in the request header.</div>
-<div class="information">Authorization: Signature keyId="Test",algorithm="rsa-sha256",headers="authorization content-md5 x-my-trailer"</div>
-<div class="comment"><span class="name">Dave Longley</span>:  In the trailer, you would get this ^^</div>
-<div class="comment"><span class="name">Dave Longley</span>:  It may seem circular to people.</div>
-<div class="comment"><span class="name">Dave Longley</span>:  it isn't ... you are supposed to use the value from the header</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  We might want to be more clear than just using 'authorization'</div>
-<div class="comment"><span class="name">Dave Longley</span>:  We could make both suggestions, maybe Mark has an opinion.</div>
-<div class="comment"><span class="name">Dave Longley</span>:  Other than that, it doesn't seem like there is a limitation in the trailers for what we could put in there.</div>
-<div class="comment"><span class="name">Dave Longley</span>:  You can't have another trailers header in trailers. We could repeat the authorization header, it's just how implementations will deal with that and we still don't know how many implementations deal with it correctly anyway.</div>
-<div class="comment"><span class="name">Dave Longley</span>:  We don't know how implementations deal w/ repeated headers... which authorization header? Trailer or Header?</div>
-<div class="comment"><span class="name">Dave Longley</span>:  Our decision might depend on what we think other implementations might do - the problem with this idea is that it's not well implemented (trailers)</div>
+<div class="comment"><span class="name">Manu Sporny</span>: Authorization: Signature keyId=&quot;Test&quot;,algorithm=&quot;rsa-sha256&quot;,headers=&quot;request-line host date content-type content-md5 content-length&quot;,</div>
+<div class="comment"><span class="name">Dave Longley</span>:  That&apos;s what it would look like, minus the content-md5 [scribe assist by Manu Sporny]</div>
+<div class="information">Authorization: Signature keyId=&quot;Test&quot;,algorithm=&quot;rsa-sha256&quot;,headers=&quot;request-line host date content-type&quot;</div>
+<div class="comment"><span class="name">Dave Longley</span>:  ^^ that would be in the request header. [scribe assist by Manu Sporny]</div>
+<div class="information">Authorization: Signature keyId=&quot;Test&quot;,algorithm=&quot;rsa-sha256&quot;,headers=&quot;authorization content-md5 x-my-trailer&quot;</div>
+<div class="comment"><span class="name">Dave Longley</span>:  In the trailer, you would get this ^^ [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  It may seem circular to people. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  it isn&apos;t ... you are supposed to use the value from the header</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We might want to be more clear than just using &apos;authorization&apos; [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  We could make both suggestions, maybe Mark has an opinion. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Other than that, it doesn&apos;t seem like there is a limitation in the trailers for what we could put in there. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  You can&apos;t have another trailers header in trailers. We could repeat the authorization header, it&apos;s just how implementations will deal with that and we still don&apos;t know how many implementations deal with it correctly anyway. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  We don&apos;t know how implementations deal w/ repeated headers... which authorization header? Trailer or Header? [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Our decision might depend on what we think other implementations might do - the problem with this idea is that it&apos;s not well implemented (trailers) [scribe assist by Manu Sporny]</div>
 <div class="comment"><span class="name">Dave Longley</span>:  sort of have a catch-22 here, we want to spec out what to do with trailers just in case anyone implements them, but we need to know how they implement them to get a good idea of how to specify this</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  ok, next week we're going to be talking about whitelists</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  ok, next week we&apos;re going to be talking about whitelists</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  with respect to payment APIs</div>
-       </div>
-  </div>
+</div></div></div></section>
+    <div id="footerwrap">
+      <div class="container">
+        <h4>Created by the <a href="http://www.w3.org/community/webpayments/">Web Payments Community Group</a>. Shared with love under a <a href="http://creativecommons.org/licenses/by/4.0/">CC-BY</a> license.</h4>
+      </div>
+    </div>
 
-<div class="container vspacing"> 
-  <div class="row"> 
-    <div class="threecol"> 
-      <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a> 
-    </div> 
-    <div class="ninecol last"> 
-      <p>&copy; 2013 Digital Bazaar, Inc. 
-Website CSS created by <a href="http://cssgrid.net/">@andytlr</a> 
-and is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/au/"> 
-Creative Commons Attribution-ShareAlike 3.0 Australia License</a>. All other
-website content is licensed under a
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"> 
-Creative Commons Attribution-ShareAlike 3.0 License</a>
-</p> 
-    </div> 
-  </div> 
-</div> 
- 
-<script type="text/javascript"> 
- 
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+
+  <script type="text/javascript" src="../../assets/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/retina.js"></script>
+  <script type="text/javascript" src="../../assets/js/jquery.easing.1.3.js"></script>
+  <script type="text/javascript" src="../../assets/js/smoothscroll.js"></script> 
+    
+  <script type="text/javascript">
   var _gaq = _gaq || [];
-  _gaq.push(["_setAccount", "UA-1539674-7"]);
-  _gaq.push(["_trackPageview"]);
+  _gaq.push(['_setAccount', 'UA-1539674-7']);
+  _gaq.push(['_trackPageview']);
 
   (function() {
-    var ga = document.createElement("script"); ga.type = "text/javascript"; ga.async = true;
-    ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";
-    (document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]).appendChild(ga);
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
   })();
- 
-</script>
-
-</body>
+  </script>
+    
+  </body>
 </html>
+

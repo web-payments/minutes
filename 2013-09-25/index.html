@@ -1,99 +1,69 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-   "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
-<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
-      class="wf-adelle1adelle2-n6-active wf-active"> 
- 
-<head> 
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
-  <title>PaySwarm - Teleconferences</title> 
- 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
- 
-  <link rel="stylesheet" href="../../css/1140.css" type="text/css" media="screen" /> 
-  <!--[if lte IE 9]>
-  <link rel="stylesheet" href="../css/ie.css" type="text/css" media="screen" />
-  <![endif]--> 
-  <link rel="stylesheet" href="../../css/typeimg.css" type="text/css" media="screen" /> 
-  <link rel="stylesheet" href="../../css/smallerscreen.css" media="only screen and (max-width: 1023px)" /> 
-  <link rel="stylesheet" href="../../css/mobile.css" media="handheld, only screen and (max-width: 767px)" /> 
-  <link rel="stylesheet" href="../../css/layout.css" type="text/css" media="screen" /> 
-  <link rel="shortcut icon" type="image/png" href="../../images/payswarm-icon.png" /> 
-  
-<style type="text/css">
-h1 {
-   margin-top: 24px;
-   margin-bottom: 14px;
-}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web Payments">
+    <meta name="author" content="Manu Sporny">
+    <link rel="shortcut icon" href="assets/ico/favicon.png">
 
-.header {
-   margin-top: 0px;
-   margin-bottom: 14px;
-}
+    <title>Web Payments</title>
 
-ol {
-   margin-bottom: 0em;
-}
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="../../assets/css/bootstrap.css">
 
-li {
-   margin-left: 1.5em;
-   margin-bottom: 0em;
-}
-#content {
-   margin-left: 15%;
-   margin-right: 15%;
-}
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/icomoon.css">
+    <link rel="stylesheet" href="../../assets/css/animate-custom.css">
 
-.summary {
-   margin-left: 10%
-   margin-right: 10%
-}
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' type='text/css'>
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Raleway:400,300,700' type='text/css'>
 
-.name {
-   font-weight: bold;
-}
+    <script src="../../assets/js/jquery.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/modernizr.custom.js"></script>
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+      <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
 
-.information {
-   font-style: italic;
-}  
+  <body data-target="#navbar-nav" data-spy="scroll">
 
-.comment-continuation {
-   margin-left: 2em;
-}
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon icon-arrow-down" style="font-size:30px; color:#1abc9c;"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../#home" class="smoothScroll">Home</a></li>
+            <li> <a href="../../#about" class="smoothScroll"> About</a></li>
+            <li> <a href="../../#specs" class="smoothScroll"> Specs</a></li>
+            <li> <a href="../../#participate" class="smoothScroll"> Participate</a></li>
+            <li> <a href="../../#contact" class="smoothScroll"> Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
 
-dt {
-   font-style: oblique;
-}
 
-dd {
-   margin-left: 20px;
-}
-
-  </style>
-  
-</head> 
-<body> 
- 
-<div class="titlebar"> 
-   <h1 class="header">PaySwarm</h1> 
-</div> 
-
-  <div id="content"> 
- 
-  <div class="row"> 
-    <div class="twelvecol last"> 
-
-<h1>Web Payments Community Group Telecon</h1>
+<section><div class="container"><div class="row white"><br><div class="col-lg-offset-2 col-lg-8"><h1>Web Payments Community Group Telecon</h1>
 <h2>Minutes for 2013-09-25</h2>
 <div class="summary">
 <dl>
 <dt>Agenda</dt><dd><a href="http://lists.w3.org/Archives/Public/public-webpayments/2013Sep/0126.html">http://lists.w3.org/Archives/Public/public-webpayments/2013Sep/0126.html</a></dd>
 <dt>Topics</dt><dd><ol><li><a href="#topic-1">Update on GSoC Student Progress</a><li><a href="#topic-2">Updates to HTTP Signatures spec</a><li><a href="#topic-3">Postmortem: World Banking Conference (SIBOS)</a><li><a href="#topic-4">Postmortem: EDGE Conference and Financial Times</a><li><a href="#topic-5">Identity and Payments</a></ol></dd><dt>Chair</dt><dd>Manu Sporny</dd>
-<dt>Scribe</dt><dd>Dave Longley, David I. Lehn</dd>
+<dt>Scribe</dt><dd>Dave Longley</dd>
 <dt>Present</dt><dd>David I. Lehn, Andrei Oprea, Manu Sporny, Dave Longley, Madhu Nott, Melvin Carvalho, Evan Schwartz</dd>
 <dt>Audio Log</dt><dd><div><a href="audio.ogg">audio.ogg</a></div>
 <div><audio controls="controls" preload="none">
-<source src="audio.ogg" type="audio/ogg" />Warning: Your browser does not support the HTML5 audio element, please upgrade.</div></dd>
+<source src="audio.ogg" type="audio/ogg" />Warning: Your browser does not support the HTML5 audio element, please upgrade.</audio></div></dd></dl>
 <div class="information">David I. Lehn is scribing.</div>
 <h1 id="topic-1" class="topic">Topic: Update on GSoC Student Progress</h1>
 <div class="comment"><span class="name">Andrei Oprea</span>:  Things that I worked on the past two weeks consisted in improvements to the login system, adding gravatar image support for users and adding multiple payees that can be added to receive payment when you create the asset (I had a question about this: I have 3 fields for this, price, currency and payswarm accout, how should this last information, the accout, be made accesible/publicly-known? Is it acceptable to presume its known such as an email address? [scribe assist by Manu Sporny]</div>
@@ -116,15 +86,15 @@ dd {
 <h1 id="topic-3" class="topic">Topic: Postmortem: World Banking Conference (SIBOS)</h1>
 <div class="comment"><span class="name">Manu Sporny</span>:  Spent last week at world banking conference in Dubai.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Introduce PaySwarm, Ripple, etc to people.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  Spent time with lots of bankers, Bitcoin's chief legal counsel, Director of product strategy from OpenCoin/Ripple.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Spent time with lots of bankers, Bitcoin&apos;s chief legal counsel, Director of product strategy from OpenCoin/Ripple.</div>
 <div class="information">Dave Longley is scribing.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  Basically found out that it would be very difficult to switch production banking systems to new tech, old systems written in cobol/fortran from the 80s, they'd have to probably run side-by-side for a decade or two.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Basically found out that it would be very difficult to switch production banking systems to new tech, old systems written in cobol/fortran from the 80s, they&apos;d have to probably run side-by-side for a decade or two.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  there were 100-140 banking technology people in the room for the Web Payments presentation. Will have video from that later in the week.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  SWIFT is an international standards org for banks, so like w3c is to the web, SWIFT is to banks</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  SWIFT doesn't create open source tech for banks, they just define the standards, ISO20022</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  SWIFT doesn&apos;t create open source tech for banks, they just define the standards, ISO20022</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  they have 2000 pages long standard about messages banks communicate with each other. SWIFT is many times larger than w3c.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  SWIFT message was that banks are very conservative when it comes to this tech, and because of this they are one of the last groups to adopt new tech</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  people from payswarm/bitcoin/ripple have hard time communicating with banks because the main threat is for them to even think about integrating tech ... because of how archaic their current architectures are, there's a potential business threat too, but the new tech is the bigger barrier</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  people from payswarm/bitcoin/ripple have hard time communicating with banks because the main threat is for them to even think about integrating tech ... because of how archaic their current architectures are, there&apos;s a potential business threat too, but the new tech is the bigger barrier</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  SWIFT wants to participate though</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  they are very open to new tech, and want to get involved with w3c</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  they know that banks will have to deal with these new techs and their standards group believes that they need to at least participate in this work so they can tell banks how to integrate payswarm/ripple/bitcoin into the banking infrastructure when the time comes</div>
@@ -133,57 +103,57 @@ dd {
 <div class="comment"><span class="name">Manu Sporny</span>:  yesterday, i was at EDGE, there was an hour long panel on Web Payments: <a href="http://www.youtube.com/watch?v=Al3SEbeK61s&amp;t=3h20m5s">http://www.youtube.com/watch?v=Al3SEbeK61s&amp;t=3h20m5s</a></div>
 <div class="comment"><span class="name">Manu Sporny</span>:  EDGE was really interesting in that it was one of the first times we had a number of people from the web payments group on the stage</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  and a lot of tech people in the audience, lots of big names in the Web industry like John Resig (jQuery), Paul Irish (Modernizr), Jake Archibald (Google Chrome), Alex Russel (IE Chrome Frame), etc.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  talking at the conference a lot of people didn't know the web payments work was going on and we had a number of people join the group as a result</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  talking at the conference a lot of people didn&apos;t know the web payments work was going on and we had a number of people join the group as a result</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  we had people from stripe join, got some google wallet contacts, people from the audience excited about payswarm, bitcoin, ripple, etc.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  people from google wallet, etc. still pushing their proprietary stacks but also promoting movement toward something btter.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  payment startups more interested in the new open standard work</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  google/etc. have a proprietary silo and lots of customers there and don't necessarily want to have to compete with others in the area</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  google/etc. have a proprietary silo and lots of customers there and don&apos;t necessarily want to have to compete with others in the area</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  but they are interested in new payment standards, etc.</div>
-<div class="comment"><span class="name">Manu Sporny</span>: Here's video of the EDGE Conference Panel on Payments: <a href="http://www.youtube.com/watch?v=Al3SEbeK61s&amp;t=3h20m5s">http://www.youtube.com/watch?v=Al3SEbeK61s&amp;t=3h20m5s</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>: Here&apos;s video of the EDGE Conference Panel on Payments: <a href="http://www.youtube.com/watch?v=Al3SEbeK61s&amp;t=3h20m5s">http://www.youtube.com/watch?v=Al3SEbeK61s&amp;t=3h20m5s</a></div>
 <div class="comment"><span class="name">Manu Sporny</span>:  we were also talking to New York Times, Getty, Associated Press, and International Press Telecommunications Council yesterday at financial times talking about how to get rid of large amount of money spending on proprietary systems.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  people at all orgs interested in the web payments work as well as an identity solution for their customers.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  they are pushing us up to their technology teams to take a deeper look at what we're doing, and showing interest in joining us, bloomberg already in the group and very interested/supportive of what we're doing</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  they are pushing us up to their technology teams to take a deeper look at what we&apos;re doing, and showing interest in joining us, bloomberg already in the group and very interested/supportive of what we&apos;re doing</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  it was a great trip, we got lots of interest in various different verticals, etc.</div>
-<div class="comment"><span class="name">Madhu Nott</span>:  having worked in the banking industry for a long time (JP Morgan Chase, Royal Bank of Scotland, etc.), you'd be surprised at how brittle their systems are, so much is spend just on testing, there is often production code running and there's no documentation and the source code is not available</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  that's scary</div>
-<div class="comment"><span class="name">Madhu Nott</span>:  yes, it's very very difficult, for people working in this environment, etc.</div>
+<div class="comment"><span class="name">Madhu Nott</span>:  having worked in the banking industry for a long time (JP Morgan Chase, Royal Bank of Scotland, etc.), you&apos;d be surprised at how brittle their systems are, so much is spend just on testing, there is often production code running and there&apos;s no documentation and the source code is not available</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  that&apos;s scary</div>
+<div class="comment"><span class="name">Madhu Nott</span>:  yes, it&apos;s very very difficult, for people working in this environment, etc.</div>
 <div class="comment"><span class="name">Melvin Carvalho</span>: following conversation on IRC, interesting stuff.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  i was having discussions about this with [... banks] and people don't want to touch these systems because they "work", they were built in the 1980s and are still part of their core business and in production</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  i was having discussions about this with [... banks] and people don&apos;t want to touch these systems because they &quot;work&quot;, they were built in the 1980s and are still part of their core business and in production</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  anyone who had any idea about web tech were slim, only people in core tech teams in SWIFT, etc. if you talk to the bank technologists, they are still in cobol/fortran land, they are talking about private financial networks, only a very high-level (heard of it) understanding of bitcoin</div>
 <div class="comment"><span class="name">Madhu Nott</span>:  these are the people i talk to every day, and one of the banks i was with, and they were working on a part of the infrastructure and it was so old and interesting that a historic museum wanted a piece</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  yeah, that's why it's so difficult for SWIFT to change anything, they have an IBANN[sp?] number</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  yeah, that&apos;s why it&apos;s so difficult for SWIFT to change anything, they have an IBANN[sp?] number</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  and changing one digit in that number would cost banks to spend between 5-10 million to deal with that change</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  because some banks were using that number to decide whether or not banks could use faxes to send money, etc.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  the banks are very focused on keeping that old infrastructure up and running, they dont' have resources to focus on anything new</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  the banks are very focused on keeping that old infrastructure up and running, they dont&apos; have resources to focus on anything new</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  no one is working on this stuff ,SWIFT said this was the first time they saw anyone working on open next gen banking technology and they were very excited to hear about it; hopefully we can get some of the SWIFT people on the calls in the future. It was interesting because they said that their hands are tied, they can only really work on stuff that the banks need in the immediate term and no bank wants large disruptive changes, even if they end up with a system that is far better than the one we currently have.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  the nice thing about SWIFT is that they have so much knowledge about how these financial systems work,e tc.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  they were impressed with payswarm and ripple and bitcoin</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  we've got a very good dialogue going with them and we hope to continue that dialog.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we&apos;ve got a very good dialogue going with them and we hope to continue that dialog.</div>
 <h1 id="topic-5" class="topic">Topic: Identity and Payments</h1>
-<div class="comment"><span class="name">Manu Sporny</span>:  so while talking with the banking industry ... one thing became very apparent, there has been a big pain point w/banks for a long time, they don't have an identity solution that works on a banking level</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so while talking with the banking industry ... one thing became very apparent, there has been a big pain point w/banks for a long time, they don&apos;t have an identity solution that works on a banking level</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  this idea that you could do KYC (know your customer)</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  on a customer and then that customer could get a line of credit at a different bank or a new account at a new bank</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  or use that identity to do some other financial activity...</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  you just can't do that today</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  i've also been talking to bitcoin community and they have been having to do KYC</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  you just can&apos;t do that today</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  i&apos;ve also been talking to bitcoin community and they have been having to do KYC</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  and they have to go through the same process that the banks have to go through</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  and when you are doign any kind of financial thing you have to go through that mechanism</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  there are some startups now that are doing just KYC for the banks</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  all of them kind of have the same problem, there is no mechanism to express identity information, verified addresses ,social security, etc.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  there's no container format for it</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  and we've been talking to them and payswarm has a mechanism that would work for all of these banking/financial institutations/organizations</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  we have something that's based on crypto that would let these orgs do identity</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  there&apos;s no container format for it</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  and we&apos;ve been talking to them and payswarm has a mechanism that would work for all of these banking/financial institutations/organizations</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we have something that&apos;s based on crypto that would let these orgs do identity</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  and verify etc</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  we're trying to figure out a way to work with the mozilla persona people to see if there's an identity solution ... if we can use persona, and the payswarm-based identity solution to address some of these issues for banks and bitcoin-based financial services</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we&apos;re trying to figure out a way to work with the mozilla persona people to see if there&apos;s an identity solution ... if we can use persona, and the payswarm-based identity solution to address some of these issues for banks and bitcoin-based financial services</div>
 <div class="comment"><span class="name">Manu Sporny</span>: <a href="http://lists.w3.org/Archives/Public/public-webpayments/2013Sep/0127.html">http://lists.w3.org/Archives/Public/public-webpayments/2013Sep/0127.html</a></div>
-<div class="comment"><span class="name">Manu Sporny</span>:  we've had a decent bit of high level discussion about it on the mailing list</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  we&apos;ve had a decent bit of high level discussion about it on the mailing list</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  some of the discussion went off topic</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  some of it is based on ricardo's (from telefonica) and he thinks we're proposing some e-mail based solution, we're not... that's a red herring, so we need to make sure that people understand that we're not being simplistic about this.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  some of it is based on ricardo&apos;s (from telefonica) and he thinks we&apos;re proposing some e-mail based solution, we&apos;re not... that&apos;s a red herring, so we need to make sure that people understand that we&apos;re not being simplistic about this.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  so i was wondering, madhu, what you were thinking about what banks could pick up in 2-3 years or 7-10 years if we standardized today on the web</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  could you do a quick intro on identity as it relates to banking and we'll go from there?</div>
-<div class="comment"><span class="name">Madhu Nott</span>:  real quick, it may be worth it to delve into this in more far more depth on a different call. Here's a high-level overview -</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  could you do a quick intro on identity as it relates to banking and we&apos;ll go from there?</div>
+<div class="comment"><span class="name">Madhu Nott</span>:  real quick, it may be worth it to delve into this in more far more depth on a different call. Here&apos;s a high-level overview -</div>
 <div class="comment"><span class="name">Madhu Nott</span>:  today, banks do identity checking as a routine every day process</div>
-<div class="comment"><span class="name">Madhu Nott</span>:  what is essential, and i don't see this changing, is that an identity be govt endorsed, they always want drivers license or passport, etc.</div>
+<div class="comment"><span class="name">Madhu Nott</span>:  what is essential, and i don&apos;t see this changing, is that an identity be govt endorsed, they always want drivers license or passport, etc.</div>
 <div class="comment"><span class="name">Madhu Nott</span>:  that is a fundamental building block</div>
 <div class="comment"><span class="name">Madhu Nott</span>:  they are required by law to know who they do business with</div>
 <div class="comment"><span class="name">Madhu Nott</span>:  they need to know who they do business with, banking secrecy act, etc. layers on additional requirements</div>
@@ -192,23 +162,23 @@ dd {
 <div class="comment"><span class="name">Madhu Nott</span>:  banks grew up by combining different banks together and diff products</div>
 <div class="comment"><span class="name">Madhu Nott</span>:  if a customer applies for a credit card vs. checking account, KYC is often different between the two</div>
 <div class="comment"><span class="name">Madhu Nott</span>:  even within a single institution</div>
-<div class="comment"><span class="name">Madhu Nott</span>:  it's being done today and in a way that's expensive, it's seen as a significant risk driver, all it takes is 10-20 large accounts or even small ones that fall into the wrong hands and it's a huge issue for the banks</div>
+<div class="comment"><span class="name">Madhu Nott</span>:  it&apos;s being done today and in a way that&apos;s expensive, it&apos;s seen as a significant risk driver, all it takes is 10-20 large accounts or even small ones that fall into the wrong hands and it&apos;s a huge issue for the banks</div>
 <div class="comment"><span class="name">Madhu Nott</span>:  if a bank cannot establish your identity, they will and should refuse to do business with you</div>
 <div class="comment"><span class="name">Madhu Nott</span>:  so govt issue is important</div>
-<div class="comment"><span class="name">Madhu Nott</span>:  the problem is coming sideways at me ... if someone said "wouldn't it be a nice thing if you could share identity?"</div>
-<div class="comment"><span class="name">Madhu Nott</span>:  i haven't heard that from the banks</div>
+<div class="comment"><span class="name">Madhu Nott</span>:  the problem is coming sideways at me ... if someone said &quot;wouldn&apos;t it be a nice thing if you could share identity?&quot;</div>
+<div class="comment"><span class="name">Madhu Nott</span>:  i haven&apos;t heard that from the banks</div>
 <div class="comment"><span class="name">Madhu Nott</span>:  the systems are largely closed today as are the protocols for establishing identity and it works quite fast</div>
 <div class="comment"><span class="name">Madhu Nott</span>:  identity can be established in a few seconds</div>
-<div class="comment"><span class="name">Madhu Nott</span>:  there are proprietary stacks to establish identity today and how much is it worth for us to create an open standard for establishing identity? That's the question we should be asking.</div>
+<div class="comment"><span class="name">Madhu Nott</span>:  there are proprietary stacks to establish identity today and how much is it worth for us to create an open standard for establishing identity? That&apos;s the question we should be asking.</div>
 <div class="comment"><span class="name">Madhu Nott</span>:  establishing an open standard for payments will require some identity, but maybe not KYC identity</div>
-<div class="comment"><span class="name">Madhu Nott</span>:  one more point, there is a kind of identity required to KYC, there's another kind to require to authorize transactions</div>
+<div class="comment"><span class="name">Madhu Nott</span>:  one more point, there is a kind of identity required to KYC, there&apos;s another kind to require to authorize transactions</div>
 <div class="comment"><span class="name">Madhu Nott</span>:  today auth and identity are conflated in the banking world</div>
 <div class="comment"><span class="name">Madhu Nott</span>:  establishing that you are manu when you open an account is different from using your payment card</div>
 <div class="comment"><span class="name">Madhu Nott</span>:  identity, authorization are conflated, permission to use, if you will</div>
-<div class="comment"><span class="name">Madhu Nott</span>:  there's a presumed identity there, for example, if you gave me your card, the institutions presume the identity</div>
-<div class="comment"><span class="name">Madhu Nott</span>:  they presume it's you using it, but that's not always true</div>
-<div class="comment"><span class="name">Madhu Nott</span>:  there's a nuance there, things are conflated and that's a problem</div>
-<div class="comment"><span class="name">Madhu Nott</span>:  so that's a different issue, what the system is authorizing is the number ... are there good funds behind it that hasn't been complained about, it isn't establishing that it's actually you spending the funds</div>
+<div class="comment"><span class="name">Madhu Nott</span>:  there&apos;s a presumed identity there, for example, if you gave me your card, the institutions presume the identity</div>
+<div class="comment"><span class="name">Madhu Nott</span>:  they presume it&apos;s you using it, but that&apos;s not always true</div>
+<div class="comment"><span class="name">Madhu Nott</span>:  there&apos;s a nuance there, things are conflated and that&apos;s a problem</div>
+<div class="comment"><span class="name">Madhu Nott</span>:  so that&apos;s a different issue, what the system is authorizing is the number ... are there good funds behind it that hasn&apos;t been complained about, it isn&apos;t establishing that it&apos;s actually you spending the funds</div>
 <div class="comment"><span class="name">Madhu Nott</span>:  it was not possible when the system was invented 30 years ago that there were two things separately in an efficient way, we were using signatures and photo ids , etc</div>
 <div class="comment"><span class="name">Madhu Nott</span>:  but that has gone away, we could achieve this today</div>
 <div class="comment"><span class="name">Madhu Nott</span>:  but doing that, it may be a value-add to the system if we can focus our efforts on that</div>
@@ -216,93 +186,88 @@ dd {
 <div class="comment"><span class="name">Manu Sporny</span>:  there are passwords you could place on your wallet so you need more than the account itself to do a transaction</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  when you do a digital signature your key may be locked in some way so a smart card or something else holds your key that you must unlock to do a payment. Like a PIN on a chip/pin card.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  so you have to be the actual owner</div>
-<div class="comment"><span class="name">Madhu Nott</span>:  i could see a scenario today where it's far less likely to give someone your atm card to use it vs. a credit card</div>
-<div class="comment"><span class="name">Madhu Nott</span>:  i think it's very valuable to establish the difference/support what people want here</div>
+<div class="comment"><span class="name">Madhu Nott</span>:  i could see a scenario today where it&apos;s far less likely to give someone your atm card to use it vs. a credit card</div>
+<div class="comment"><span class="name">Madhu Nott</span>:  i think it&apos;s very valuable to establish the difference/support what people want here</div>
 <div class="comment"><span class="name">Madhu Nott</span>:  the fraud rate is very different for pin-based products (lower fraud)</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  yeah, whenever you have a token it helps lower fraud</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  i dont' think whatever identity solution we come up with be used by the banks right away, it will take time. In fact, the banks may be the last organizations adopting it.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  if we don't support what they already need then our new tech won't be a good replacement for what they have today</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  they make proprietary calls out to services to do KYC and it would be great if those banks didn't have to pay for that</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  obviously some orgs wouldn't like that but a lot of other orgs that need to verify shipping addresses, etc could all use this system, so it's not just about banks and easier log in on the web, it's about both and more, and making sure we have a solution that can scale to address both of those use case needs</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  do you think that's worth pursuing, madhu?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  i dont&apos; think whatever identity solution we come up with be used by the banks right away, it will take time. In fact, the banks may be the last organizations adopting it.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  if we don&apos;t support what they already need then our new tech won&apos;t be a good replacement for what they have today</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  they make proprietary calls out to services to do KYC and it would be great if those banks didn&apos;t have to pay for that</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  obviously some orgs wouldn&apos;t like that but a lot of other orgs that need to verify shipping addresses, etc could all use this system, so it&apos;s not just about banks and easier log in on the web, it&apos;s about both and more, and making sure we have a solution that can scale to address both of those use case needs</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  do you think that&apos;s worth pursuing, madhu?</div>
 <div class="comment"><span class="name">Madhu Nott</span>:  yes, i think it makes sense; if you want to do anything in the world of payments, establishing identity is an essential part of it, if we want to evolve and change the payments world and make it more friendly on the web</div>
-<div class="comment"><span class="name">Madhu Nott</span>:  you always need identity at the very least the identity solution must do as well as the banks now and it's great if it's better and we can advertise that business proposition across different ways</div>
+<div class="comment"><span class="name">Madhu Nott</span>:  you always need identity at the very least the identity solution must do as well as the banks now and it&apos;s great if it&apos;s better and we can advertise that business proposition across different ways</div>
 <div class="comment"><span class="name">Manu Sporny</span>: Right now, In PaySwarm, we have identities that look like this (public identity information): <a href="https://dev.payswarm.com/i/manu">https://dev.payswarm.com/i/manu</a></div>
 <div class="comment"><span class="name">Madhu Nott</span>:  we need identity for payments, since we need it, how do we craft something, or use existing mechanisms, that are already available or make it applicable to a wider audience</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  so we have the core of that already in payswarm, the idea here is that you have a URL for your identity in payswarm, at that URL is a whole bunch of machine readable data, in order to get to other stuff there's an ACL, you have to provide access to the person who wants the info</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so we have the core of that already in payswarm, the idea here is that you have a URL for your identity in payswarm, at that URL is a whole bunch of machine readable data, in order to get to other stuff there&apos;s an ACL, you have to provide access to the person who wants the info</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  an ideal use case would be going to a financial site to log in with persona and then persona would give your identity URL to the bank</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  once the bank has that, it can then start querying that URL to complete its KYC process</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  like, what is the physical mailing address, are they a citizen, etc, all that can be stored in an external identity and queried by the bank and then the banks don't need to pay as much, and the bank doesn't have to keep those processes inside the bank, they can just query this external identity</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  like, what is the physical mailing address, are they a citizen, etc, all that can be stored in an external identity and queried by the bank and then the banks don&apos;t need to pay as much, and the bank doesn&apos;t have to keep those processes inside the bank, they can just query this external identity</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  the question is how to trust that information</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  anyone could put whatever they want at that URL, well, what we can do is ... there are companies that already do KYC clearing for customers, instead they can assert some information and digitally sign it, then write it to that identity URL</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  by doing that, as long as the bank trusts the entity doing KYC, if there's a signature on their info at the identity URL from that KYC provider institution, and the customer says "yes, i agree to release this info to the bank i'm signing up for" this seems like a fairly workable solution</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  instead of making these proprietary calls they could just make an open call, and it's really simple and the person is automatically in and the bank doesn't have to pay for KYC'ing the customer.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  the person just gives access to the bank if they want to and they don't have to fill out any forms, etc.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  by doing that, as long as the bank trusts the entity doing KYC, if there&apos;s a signature on their info at the identity URL from that KYC provider institution, and the customer says &quot;yes, i agree to release this info to the bank i&apos;m signing up for&quot; this seems like a fairly workable solution</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  instead of making these proprietary calls they could just make an open call, and it&apos;s really simple and the person is automatically in and the bank doesn&apos;t have to pay for KYC&apos;ing the customer.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  the person just gives access to the bank if they want to and they don&apos;t have to fill out any forms, etc.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  and they just share whatever info they want with the bank and that gets them their account there</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  other companies, vendors, etc. would adopt this first before banks would, to get shipping info, etc.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  do you think that could work for banks in the future?</div>
-<div class="comment"><span class="name">Madhu Nott</span>:  i think so, in many ways it replicates the work flow of today, which is great, it's a good thing, that's what companies do today that process that's new and different here, is that the customer is giving permission</div>
-<div class="comment"><span class="name">Madhu Nott</span>:  today this information isn't necessarily in the customer's control</div>
+<div class="comment"><span class="name">Madhu Nott</span>:  i think so, in many ways it replicates the work flow of today, which is great, it&apos;s a good thing, that&apos;s what companies do today that process that&apos;s new and different here, is that the customer is giving permission</div>
+<div class="comment"><span class="name">Madhu Nott</span>:  today this information isn&apos;t necessarily in the customer&apos;s control</div>
 <div class="comment"><span class="name">Madhu Nott</span>:  bureaus currently control it</div>
-<div class="comment"><span class="name">Madhu Nott</span>:  but right now that's exactly what happens now when opening accounts at the bank, we go check the KYC institutions, i trust someone who trusts someone else, etc.</div>
+<div class="comment"><span class="name">Madhu Nott</span>:  but right now that&apos;s exactly what happens now when opening accounts at the bank, we go check the KYC institutions, i trust someone who trusts someone else, etc.</div>
 <div class="comment"><span class="name">Madhu Nott</span>:  and the information flows and ... this new idea works, i think it makes sense</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  this would require just a small set of tweaks to the existing identity solution we have</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  with payswarm</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  the idea here would be that you can write to an identity by posting some JSON to it</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  and the customer could say yes or no</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  and the other thing would be so-and-so institution wants info X, customer says yes or no</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  so that's almost the exact same thing as we do for the PaySwarm buy flow right now</div>
-<div class="comment"><span class="name">Dave Longley</span>:  I don't think you missed anything, that's more or less what we were looking at doing in the future anyway. [scribe assist by Manu Sporny]</div>
-<div class="comment"><span class="name">Dave Longley</span>:  We would have to look at all the details of how to do the "writing to your identity" portion, but what you outlined is the high-level of what would work. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  so that&apos;s almost the exact same thing as we do for the PaySwarm buy flow right now</div>
+<div class="comment"><span class="name">Dave Longley</span>:  I don&apos;t think you missed anything, that&apos;s more or less what we were looking at doing in the future anyway. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  We would have to look at all the details of how to do the &quot;writing to your identity&quot; portion, but what you outlined is the high-level of what would work. [scribe assist by Manu Sporny]</div>
 <div class="comment"><span class="name">David I. Lehn</span>:  could this work in the background?</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  it could work like our budgeting feature right now</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  to grant continuous access to certain institutions,</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  then they could pull when you wanted</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  this would allow them to pull the info whenever they needed to use it</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  that may be a version 2.0 thing, we dont' necessarily need it in the first cut</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  that may be a version 2.0 thing, we dont&apos; necessarily need it in the first cut</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  we also need to figure out how to integrate this with persona and the larger identity sphere</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  persona can already clear 700 million+ email addresses so that's a good start/place to get this integrated</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  i'm hoping next week we can get the mozilla persona folks here to discuss this stuff</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  that's the last bit, we can do everything else</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  persona can already clear 700 million+ email addresses so that&apos;s a good start/place to get this integrated</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  i&apos;m hoping next week we can get the mozilla persona folks here to discuss this stuff</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  that&apos;s the last bit, we can do everything else</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  we just need the persona folks to tell us how to tie an identity URL to a login</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  any other comments or questions?</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  if that's a fairly easy technical solution then we just need to do the specs, etc.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  if that&apos;s a fairly easy technical solution then we just need to do the specs, etc.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  thanks all</div>
 <div class="comment"><span class="name">Evan Schwartz</span>:  bye</div>
-       </div>
-  </div>
+</div></div></div></section>
+    <div id="footerwrap">
+      <div class="container">
+        <h4>Created by the <a href="http://www.w3.org/community/webpayments/">Web Payments Community Group</a>. Shared with love under a <a href="http://creativecommons.org/licenses/by/4.0/">CC-BY</a> license.</h4>
+      </div>
+    </div>
 
-<div class="container vspacing"> 
-  <div class="row"> 
-    <div class="threecol"> 
-      <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a> 
-    </div> 
-    <div class="ninecol last"> 
-      <p>&copy; 2013 Digital Bazaar, Inc. 
-Website CSS created by <a href="http://cssgrid.net/">@andytlr</a> 
-and is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/au/"> 
-Creative Commons Attribution-ShareAlike 3.0 Australia License</a>. All other
-website content is licensed under a
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"> 
-Creative Commons Attribution-ShareAlike 3.0 License</a>
-</p> 
-    </div> 
-  </div> 
-</div> 
- 
-<script type="text/javascript"> 
- 
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+
+  <script type="text/javascript" src="../../assets/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/retina.js"></script>
+  <script type="text/javascript" src="../../assets/js/jquery.easing.1.3.js"></script>
+  <script type="text/javascript" src="../../assets/js/smoothscroll.js"></script> 
+    
+  <script type="text/javascript">
   var _gaq = _gaq || [];
-  _gaq.push(["_setAccount", "UA-1539674-7"]);
-  _gaq.push(["_trackPageview"]);
+  _gaq.push(['_setAccount', 'UA-1539674-7']);
+  _gaq.push(['_trackPageview']);
 
   (function() {
-    var ga = document.createElement("script"); ga.type = "text/javascript"; ga.async = true;
-    ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";
-    (document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]).appendChild(ga);
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
   })();
- 
-</script>
-
-</body>
+  </script>
+    
+  </body>
 </html>
+

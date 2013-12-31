@@ -1,92 +1,73 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-   "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
-<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
-      class="wf-adelle1adelle2-n6-active wf-active"> 
- 
-<head> 
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
-  <title>PaySwarm - Teleconferences</title> 
- 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
- 
-  <link rel="stylesheet" href="../../css/1140.css" type="text/css" media="screen" /> 
-  <!--[if lte IE 9]>
-  <link rel="stylesheet" href="../css/ie.css" type="text/css" media="screen" />
-  <![endif]--> 
-  <link rel="stylesheet" href="../../css/typeimg.css" type="text/css" media="screen" /> 
-  <link rel="stylesheet" href="../../css/smallerscreen.css" media="only screen and (max-width: 1023px)" /> 
-  <link rel="stylesheet" href="../../css/mobile.css" media="handheld, only screen and (max-width: 767px)" /> 
-  <link rel="stylesheet" href="../../css/layout.css" type="text/css" media="screen" /> 
-  <link rel="shortcut icon" type="image/png" href="../../images/payswarm-icon.png" /> 
-  
-<style type="text/css">
-h1 {
-   margin-top: 24px;
-   margin-bottom: 14px;
-}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web Payments">
+    <meta name="author" content="Manu Sporny">
+    <link rel="shortcut icon" href="assets/ico/favicon.png">
 
-#content {
-   margin-left: 15%;
-   margin-right: 15%;
-}
+    <title>Web Payments</title>
 
-.summary {
-   margin-left: 10%
-   margin-right: 10%
-}
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="../../assets/css/bootstrap.css">
 
-.name {
-   font-weight: bold;
-}
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/icomoon.css">
+    <link rel="stylesheet" href="../../assets/css/animate-custom.css">
 
-.information {
-   font-style: italic;
-}  
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' type='text/css'>
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Raleway:400,300,700' type='text/css'>
 
-.comment-continuation {
-   margin-left: 2em;
-}
+    <script src="../../assets/js/jquery.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/modernizr.custom.js"></script>
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+      <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
 
-dt {
-   font-style: oblique;
-}
+  <body data-target="#navbar-nav" data-spy="scroll">
 
-dd {
-   margin-left: 20px;
-}
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon icon-arrow-down" style="font-size:30px; color:#1abc9c;"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../#home" class="smoothScroll">Home</a></li>
+            <li> <a href="../../#about" class="smoothScroll"> About</a></li>
+            <li> <a href="../../#specs" class="smoothScroll"> Specs</a></li>
+            <li> <a href="../../#participate" class="smoothScroll"> Participate</a></li>
+            <li> <a href="../../#contact" class="smoothScroll"> Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
 
-  </style>
-  
-</head> 
-<body> 
- 
-<div class="titlebar"> 
-   <h1>PaySwarm</h1> 
-</div> 
 
-  <div id="content"> 
- 
-  <div class="row"> 
-    <div class="twelvecol last"> 
-
-<h1>Web Payments Community Group Telecon</h1>
+<section><div class="container"><div class="row white"><br><div class="col-lg-offset-2 col-lg-8"><h1>Web Payments Community Group Telecon</h1>
 <h2>Minutes for 2011-12-02</h2>
 <div class="summary">
 <dl>
 <dt>Agenda</dt><dd><a href="http://lists.w3.org/Archives/Public/public-webpayments/2011Dec/0005.html">http://lists.w3.org/Archives/Public/public-webpayments/2011Dec/0005.html</a></dd>
-<dt>Facilitator</dt><dd>Manu Sporny</dd>
+<dt>Topics</dt><dd><ol><li><a href="#topic-1">Buyer Registration</a><li><a href="#topic-2">Identity Privacy</a></ol></dd><dt>Chair</dt><dd>Manu Sporny</dd>
 <dt>Scribe</dt><dd>Jeff Sayre</dd>
 <dt>Present</dt><dd>Jeff Sayre, Manu Sporny, Mike Johnson, Jose 'Manny' De Loera, David I. Lehn</dd>
 <dt>Audio Log</dt><dd><div><a href="audio.ogg">audio.ogg</a></div>
 <div><audio controls="controls" preload="none">
-<source src="audio.ogg" type="audio/ogg" />Warning: Your browser does not support the HTML5 audio element, please upgrade.</div></dd>
-</dl>
-</div>
+<source src="audio.ogg" type="audio/ogg" />Warning: Your browser does not support the HTML5 audio element, please upgrade.</audio></div></dd></dl>
 <div class="information">Jeff Sayre is scribing.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Any updates to agenda?</div>
 <div class="information">No updates to the Agenda.</div>
-<h1 id=topic-1 class="topic">Topic: Buyer Registration</h1>
+<h1 id="topic-1" class="topic">Topic: Buyer Registration</h1>
 <div class="comment"><span class="name">Manu Sporny</span>: <a href="http://payswarm.com/specs/ED/web-api/2011-09-26/#asset-acquirer-registration">http://payswarm.com/specs/ED/web-api/2011-09-26/#asset-acquirer-registration</a></div>
 <div class="comment"><span class="name">Manu Sporny</span>:  IRI is used to identify identity (buyer)</div>
 <div class="comment"><span class="name">Manu Sporny</span>: <a href="https://example.com/people/jane">https://example.com/people/jane</a></div>
@@ -97,42 +78,42 @@ dd {
 <div class="comment"><span class="name">Mike Johnson</span>:  The language is paragraph is not too clear before the three definitions.</div>
 <div class="comment"><span class="name">Mike Johnson</span>:  Why do they need an entity/identity account?</div>
 <div class="comment"><span class="name">Mike Johnson</span>:  ...versus just having a financial account. Why an entity account in addition to financial account?</div>
-<div class="comment"><span class="name">Jose 'Manny' De Loera</span>:  This process attempts to broaden description as why these three steps are required, correct?</div>
+<div class="comment"><span class="name">Jose &apos;Manny&apos; De Loera</span>:  This process attempts to broaden description as why these three steps are required, correct?</div>
 <div class="comment"><span class="name">Mike Johnson</span>:  Financial transaction just gives identifier, it has nothing to do with actual identity (account info)</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Entity IRI was put in as the actual asset acquirer in the digital contract.</div>
 <div class="comment"><span class="name">Mike Johnson</span>:  Will system be tied to financial account or to a specific identity?</div>
 <div class="comment"><span class="name">Mike Johnson</span>:  The spec is not sufficiently clear why an entity IRI is needed</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  We should change "entity IRI" to "identity IRI", since that's what we're using internally.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We should change &quot;entity IRI&quot; to &quot;identity IRI&quot;, since that&apos;s what we&apos;re using internally.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  We have identity IRIs because we need to be able to tie specific financial accounts to specific individuals (identities), we need to tie WordPress sessions to customer IDs (which are identity IRIs), we need to be able to manage multiple financial accounts per person, and because financial accounts may not always belong to the same person through time.</div>
 <div class="comment"><span class="name">Jeff Sayre</span>:  I like the change from entity to identity</div>
 <div class="comment"><span class="name">Mike Johnson</span>:  What happend when identity is transferred?</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  This is why we have identity IRIs: tie identity to specific account. Second, identify user who goes to each site.</div>
-<div class="comment"><span class="name">Mike Johnson</span>:  We don't need to get rid of identity IRI. Instead, tie it to a financial account.</div>
+<div class="comment"><span class="name">Mike Johnson</span>:  We don&apos;t need to get rid of identity IRI. Instead, tie it to a financial account.</div>
 <div class="comment"><span class="name">Jeff Sayre</span>:  That does away with user-centric control, does it not?</div>
 <div class="comment"><span class="name">Mike Johnson</span>:  The things that owns the right to access account, is it the identity or the person behind it?</div>
 <div class="comment"><span class="name">Mike Johnson</span>:  Can we simplify all that goes into transactions by limiting the amount of identifying info in each contract?</div>
 <div class="comment"><span class="name">Mike Johnson</span>:  What happens when you sell/transfer an account? Is it tied to an identity?</div>
 <div class="comment"><span class="name">Jeff Sayre</span>:  In my view, identity is the most atomic piece of datum that any transaction needs to store. [scribe assist by Manu Sporny]</div>
-<div class="comment"><span class="name">Jeff Sayre</span>:  I think it's fundamental that identity is not only captured in an individual contract, but is also the underlying electricity in the whole transaction. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  I think it&apos;s fundamental that identity is not only captured in an individual contract, but is also the underlying electricity in the whole transaction. [scribe assist by Manu Sporny]</div>
 <div class="comment"><span class="name">Jeff Sayre</span>:  What happens when you transfer an account? An account or a series of accounts can be transferred... once it is transferred, the new identity is now the new owner. [scribe assist by Manu Sporny]</div>
 <div class="comment"><span class="name">Jeff Sayre</span>:  Identity IRIs are crucial to capturing the context. [scribe assist by Manu Sporny]</div>
 <div class="comment"><span class="name">Mike Johnson</span>:  In the current financial system identity is abstracted in financial transactions.</div>
 <div class="comment"><span class="name">Mike Johnson</span>:  How can we facilitate anonymous accounts?</div>
 <div class="comment"><span class="name">Mike Johnson</span>:  Not sure the best way to approach this, but it is important to look at info stored to protect privacy or at least more loosely tie in ID info.</div>
-<h1 id=topic-2 class="topic">Topic: Identity Privacy</h1>
+<h1 id="topic-2" class="topic">Topic: Identity Privacy</h1>
 <div class="comment"><span class="name">Mike Johnson</span>:  Does an asset buyer have to give out ID or just associate their account?</div>
 <div class="comment"><span class="name">Manu Sporny</span>: In PaySwarm, we have a Profile (usename/password), which can contain N identities, each identity can contain M financial accounts</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Some IDs can be anonymous</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  With an anon-ID, it would not be possible (at least not easily) traceable to a physical entity.</div>
-<div class="comment"><span class="name">Jeff Sayre</span>:  When I use the word identity, I use it in a different way than many folks do - online, identity is just an identifier - that's what I mean. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  When I use the word identity, I use it in a different way than many folks do - online, identity is just an identifier - that&apos;s what I mean. [scribe assist by Manu Sporny]</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  When we say identity we mean identifier - that identifier can refer to a person, organization, dog, cat, tree, etc.</div>
-<div class="comment"><span class="name">Jeff Sayre</span>:  Yes, that makes sense - we may want to use 'identifier' instead of 'identity' - but that may raise another set of arguments/confusions. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  Yes, that makes sense - we may want to use &apos;identifier&apos; instead of &apos;identity&apos; - but that may raise another set of arguments/confusions. [scribe assist by Manu Sporny]</div>
 <div class="comment"><span class="name">Mike Johnson</span>:  Even though our system is designed so that a given user can have a particular identity (name, address, etc.), it would be nice to allow purchases to be made that give the purchaser a level of abstraction, that gives them some anonymity.</div>
 <div class="comment"><span class="name">Mike Johnson</span>:  It is a subtle difference that we may not want to support in PaySwarm 1.0, but providing the option for user anonymity is an important consideration. We may want to change the spec language to be more description of what is meant.</div>
-<div class="comment"><span class="name">Jose 'Manny' De Loera</span>:  Depending on what you want to be anonymous about may be a bigger issue. How are we going to be able to deal with the consequences of questionable transactions?</div>
-<div class="comment"><span class="name">David I. Lehn</span>: Also, it's not completely anonymous. it's just the authority choosing not to share who an identity belongs to.</div>
+<div class="comment"><span class="name">Jose &apos;Manny&apos; De Loera</span>:  Depending on what you want to be anonymous about may be a bigger issue. How are we going to be able to deal with the consequences of questionable transactions?</div>
+<div class="comment"><span class="name">David I. Lehn</span>: Also, it&apos;s not completely anonymous. it&apos;s just the authority choosing not to share who an identity belongs to.</div>
 <div class="comment"><span class="name">David I. Lehn</span>: Though a totally anonymous authority working with bitcoins or something would be possible in theory, I think</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  There are limits to the kind and level of anonymity that PaySwarm will offer. The system still allows for legal authorities, when necessary, to discover true owners of anonymous accounts... however, to address Mike's question - we do deal with anonymity in the system now.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  There are limits to the kind and level of anonymity that PaySwarm will offer. The system still allows for legal authorities, when necessary, to discover true owners of anonymous accounts... however, to address Mike&apos;s question - we do deal with anonymity in the system now.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  PaySwarm is not like Bitcoin that is strongly anonymous. We need to be aware of the issues with strong anonymity and make sure that a sufficiently level of protection (both for buyers and vendors and society) is offered.</div>
 <div class="comment"><span class="name">Mike Johnson</span>:  I agree with these points. PaySwarm will be a much more powerful tool if we establish that questionable activity must be investigated by enforcement services and not the PaySwarm Authorities.</div>
 <div class="comment"><span class="name">Mike Johnson</span>:  Although a user can have multiple online IDs, they must be tied to an actual real-world entity.</div>
@@ -142,40 +123,35 @@ dd {
 <div class="comment"><span class="name">Mike Johnson</span>:  Bank transaction do not mandate an actual person be verified before a transaction is processed. All that is required is that an verifiable account is used.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  We will continue discussing the registration process on our next call.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Next call December 16, 2011.</div>
-       </div>
-  </div>
+</div></div></div></section>
+    <div id="footerwrap">
+      <div class="container">
+        <h4>Created by the <a href="http://www.w3.org/community/webpayments/">Web Payments Community Group</a>. Shared with love under a <a href="http://creativecommons.org/licenses/by/4.0/">CC-BY</a> license.</h4>
+      </div>
+    </div>
 
-<div class="container vspacing onblack"> 
-  <div class="row"> 
-    <div class="threecol"> 
-      <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a> 
-    </div> 
-    <div class="ninecol last"> 
-      <p>&copy; 2010-2011 Digital Bazaar, Inc. 
-Website CSS created by <a href="http://cssgrid.net/">@andytlr</a> 
-and is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/au/"> 
-Creative Commons Attribution-ShareAlike 3.0 Australia License</a>. All other
-website content is licensed under a
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"> 
-Creative Commons Attribution-ShareAlike 3.0 License</a>
-</p> 
-    </div> 
-  </div> 
-</div> 
- 
-<script type="text/javascript"> 
- 
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+
+  <script type="text/javascript" src="../../assets/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/retina.js"></script>
+  <script type="text/javascript" src="../../assets/js/jquery.easing.1.3.js"></script>
+  <script type="text/javascript" src="../../assets/js/smoothscroll.js"></script> 
+    
+  <script type="text/javascript">
   var _gaq = _gaq || [];
-  _gaq.push(["_setAccount", "UA-1539674-7"]);
-  _gaq.push(["_trackPageview"]);
+  _gaq.push(['_setAccount', 'UA-1539674-7']);
+  _gaq.push(['_trackPageview']);
 
   (function() {
-    var ga = document.createElement("script"); ga.type = "text/javascript"; ga.async = true;
-    ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";
-    (document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]).appendChild(ga);
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
   })();
- 
-</script>
-
-</body>
+  </script>
+    
+  </body>
 </html>
+

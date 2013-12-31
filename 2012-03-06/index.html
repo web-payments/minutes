@@ -1,151 +1,121 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-   "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
-<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
-      class="wf-adelle1adelle2-n6-active wf-active"> 
- 
-<head> 
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
-  <title>PaySwarm - Teleconferences</title> 
- 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
- 
-  <link rel="stylesheet" href="../../css/1140.css" type="text/css" media="screen" /> 
-  <!--[if lte IE 9]>
-  <link rel="stylesheet" href="../css/ie.css" type="text/css" media="screen" />
-  <![endif]--> 
-  <link rel="stylesheet" href="../../css/typeimg.css" type="text/css" media="screen" /> 
-  <link rel="stylesheet" href="../../css/smallerscreen.css" media="only screen and (max-width: 1023px)" /> 
-  <link rel="stylesheet" href="../../css/mobile.css" media="handheld, only screen and (max-width: 767px)" /> 
-  <link rel="stylesheet" href="../../css/layout.css" type="text/css" media="screen" /> 
-  <link rel="shortcut icon" type="image/png" href="../../images/payswarm-icon.png" /> 
-  
-<style type="text/css">
-h1 {
-   margin-top: 24px;
-   margin-bottom: 14px;
-}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web Payments">
+    <meta name="author" content="Manu Sporny">
+    <link rel="shortcut icon" href="assets/ico/favicon.png">
 
-.header {
-   margin-top: 0px;
-   margin-bottom: 14px;
-}
+    <title>Web Payments</title>
 
-ol {
-   margin-bottom: 0em;
-}
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="../../assets/css/bootstrap.css">
 
-li {
-   margin-left: 1.5em;
-   margin-bottom: 0em;
-}
-#content {
-   margin-left: 15%;
-   margin-right: 15%;
-}
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/icomoon.css">
+    <link rel="stylesheet" href="../../assets/css/animate-custom.css">
 
-.summary {
-   margin-left: 10%
-   margin-right: 10%
-}
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' type='text/css'>
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Raleway:400,300,700' type='text/css'>
 
-.name {
-   font-weight: bold;
-}
+    <script src="../../assets/js/jquery.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/modernizr.custom.js"></script>
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+      <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
 
-.information {
-   font-style: italic;
-}  
+  <body data-target="#navbar-nav" data-spy="scroll">
 
-.comment-continuation {
-   margin-left: 2em;
-}
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon icon-arrow-down" style="font-size:30px; color:#1abc9c;"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../#home" class="smoothScroll">Home</a></li>
+            <li> <a href="../../#about" class="smoothScroll"> About</a></li>
+            <li> <a href="../../#specs" class="smoothScroll"> Specs</a></li>
+            <li> <a href="../../#participate" class="smoothScroll"> Participate</a></li>
+            <li> <a href="../../#contact" class="smoothScroll"> Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
 
-dt {
-   font-style: oblique;
-}
 
-dd {
-   margin-left: 20px;
-}
-
-  </style>
-  
-</head> 
-<body> 
- 
-<div class="titlebar"> 
-   <h1 class="header">PaySwarm</h1> 
-</div> 
-
-  <div id="content"> 
- 
-  <div class="row"> 
-    <div class="twelvecol last"> 
-
-<h1>Web Payments Community Group Telecon</h1>
+<section><div class="container"><div class="row white"><br><div class="col-lg-offset-2 col-lg-8"><h1>Web Payments Community Group Telecon</h1>
 <h2>Minutes for 2012-03-06</h2>
 <div class="summary">
 <dl>
-<dt>Agenda</dt><dd><strong>Ad-hoc Discussion About PaySwarm Vocabulary Documents</strong></dd>
-<dt>Topics</dt><dd><ol><li><a href="#topic-1">Security Vocabulary</a><li><a href="#topic-2">Specifying Key Ownership</a><li><a href="#topic-3">Creator of a Digital Signature</a><li><a href="#topic-4">JSON-LD Signatures</a><li><a href="#topic-5">Expressing Encryption and Signature Data</a></ol></dd><dt>Resolutions</dt><dd><ol><li><a href="#resolution-1">Adopt rdfs:owner to describe ownership of a resource on the Web and use that to associate public keys with identities.</a><li><a href="#resolution-2">Use dc:creator instead of sec:signer to identify the entity that created the digital signature.</a><li><a href="#resolution-3">Change sec:JsonldSignature to sec:GraphSignature2011</a><li><a href="#resolution-4">Remove sec:XMLSignature from the Security Vocabulary. Add it back in if an application requires it.</a><li><a href="#resolution-5">Change sec:cipher to sec:cipherAlgorithm.</a></ol></dd><dt>Facilitator</dt><dd>Manu Sporny</dd>
+<dt>Agenda</dt><dd><a href="http://VOCABULARY_DISCUSSION/">http://VOCABULARY_DISCUSSION/</a></dd>
+<dt>Topics</dt><dd><ol><li><a href="#topic-1">Security Vocabulary</a><li><a href="#topic-2">Specifying Key Ownership</a><li><a href="#topic-3">Creator of a Digital Signature</a><li><a href="#topic-4">JSON-LD Signatures</a><li><a href="#topic-5">Expressing Encryption and Signature Data</a></ol></dd><dt>Resolutions</dt><dd><ol><li><a href="#resolution-1">Adopt rdfs:owner to describe ownership of a resource on the Web and use that to associate public keys with identities.</a><li><a href="#resolution-2">Use dc:creator instead of sec:signer to identify the entity that created the digital signature.</a><li><a href="#resolution-3">Change sec:JsonldSignature to sec:GraphSignature2011</a><li><a href="#resolution-4">Remove sec:XMLSignature from the Security Vocabulary. Add it back in if an application requires it.</a><li><a href="#resolution-5">Change sec:cipher to sec:cipherAlgorithm.</a></ol></dd><dt>Chair</dt><dd>Manu Sporny</dd>
 <dt>Scribe</dt><dd>Dave Longley</dd>
 <dt>Present</dt><dd>Dave Longley, Manu Sporny, David I. Lehn, Jeff Sayre</dd>
 <dt>Audio Log</dt><dd><div><a href="audio.ogg">audio.ogg</a></div>
 <div><audio controls="controls" preload="none">
-<source src="audio.ogg" type="audio/ogg" />Warning: Your browser does not support the HTML5 audio element, please upgrade.</div></dd>
+<source src="audio.ogg" type="audio/ogg" />Warning: Your browser does not support the HTML5 audio element, please upgrade.</audio></div></dd></dl>
 <div class="information">Dave Longley is scribing.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  Longley, Lehn, on the call, Jeff not sure, Pelle not present, we're going to cover some vocab issues today instead of the original agenda.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Longley, Lehn, on the call, Jeff not sure, Pelle not present, we&apos;re going to cover some vocab issues today instead of the original agenda.</div>
 <div class="comment"><span class="name">Manu Sporny</span>: We need to discuss the following vocabularies:</div>
 <div class="comment"><span class="name">Manu Sporny</span>: <a href="http://payswarm.com/vocabs/security">http://payswarm.com/vocabs/security</a> </div>
 <div class="comment"><span class="name">Manu Sporny</span>: <a href="http://payswarm.com/vocabs/commerce">http://payswarm.com/vocabs/commerce</a> </div>
 <div class="comment"><span class="name">Manu Sporny</span>: <a href="http://payswarm.com/vocabs/creditcard">http://payswarm.com/vocabs/creditcard</a> </div>
 <div class="comment"><span class="name">Manu Sporny</span>: <a href="http://payswarm.com/vocabs/payswarm">http://payswarm.com/vocabs/payswarm</a></div>
 <div class="comment"><span class="name">Manu Sporny</span>:  The first set of vocabs we need to discuss are in IRC (security, commerce, credit card, payswarm).</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  These are all tied together in PaySwarm, making up the spec. There's also the web keys vocab that has some overlap with security.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  These are all tied together in PaySwarm, making up the spec. There&apos;s also the web keys vocab that has some overlap with security.</div>
 <h1 id="topic-1" class="topic">Topic: Security Vocabulary</h1>
-<div class="comment"><span class="name">Manu Sporny</span>:  We're going to discuss the security vocab to discuss what needs to be changed/modified.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We&apos;re going to discuss the security vocab to discuss what needs to be changed/modified.</div>
 <div class="comment"><span class="name">Manu Sporny</span>: <a href="http://payswarm.com/vocabs/security">http://payswarm.com/vocabs/security</a></div>
-<div class="comment"><span class="name">Manu Sporny</span>:  Used to be called the signature vocab, we kept changing it a bit because we have needed to add cryptography, etc., so it is more appropriately named "security" because the scope is wider.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Used to be called the signature vocab, we kept changing it a bit because we have needed to add cryptography, etc., so it is more appropriately named &quot;security&quot; because the scope is wider.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  We have classes for signatures, keys, etc.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Also for encrypted messages.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  One change we need to discuss is how the security vocab and the web keys spec will work together.</div>
 <div class="comment"><span class="name">Manu Sporny</span>: <a href="http://payswarm.com/specs/source/web-keys/">http://payswarm.com/specs/source/web-keys/</a></div>
-<div class="comment"><span class="name">David I. Lehn</span>: (btw, the source security doc has fancier colorized text, not sure why that isn't in the main one)</div>
+<div class="comment"><span class="name">David I. Lehn</span>: (btw, the source security doc has fancier colorized text, not sure why that isn&apos;t in the main one)</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  The web keys spec is different in that it talks more about web-based PKI, whereas the security vocab deals with the specifics of the objects used in cryptography and signatures, etc.</div>
 <div class="comment"><span class="name">Dave Longley</span>:  From what I recall, there are a few minor property naming issues - we were mixing security terms with vocabularies like Dublin Core. [scribe assist by Manu Sporny]</div>
 <div class="comment"><span class="name">Dave Longley</span>:  With respect to conflict between security and Web Keys - they are separate concerns - the security vocabulary defines terms that the webkey spec uses. The webkey spec defines how the Web PKI will work. [scribe assist by Manu Sporny]</div>
 <div class="comment"><span class="name">Manu Sporny</span>: configuration service - A Web service that is used to publish the public Web service end-points and other public configuration information for a key listing service. A key listing service must publish this service at a top-level IRI named/.well-known/linked- data-services. The document must be available in JSON-LD compacted form and must include the <a href="http://purl.org/web-keys/v1">http://purl.org/web-keys/v1</a> JSON-LD context. The following key must be present in the published document: wkey:publicKeyService.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  The web key spec talks about publishing services that help you configure clients (like the above service).</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  Therefore, I was thinking that's why we need two different vocabs</div>
-<div class="comment"><span class="name">Dave Longley</span>:  If there is nothing else that goes in the Web Key vocabulary, then we're fine putting that in the security vocabulary. We should wait on this, no need to make a decision yet. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Therefore, I was thinking that&apos;s why we need two different vocabs</div>
+<div class="comment"><span class="name">Dave Longley</span>:  If there is nothing else that goes in the Web Key vocabulary, then we&apos;re fine putting that in the security vocabulary. We should wait on this, no need to make a decision yet. [scribe assist by Manu Sporny]</div>
 <h1 id="topic-2" class="topic">Topic: Specifying Key Ownership</h1>
-<div class="comment"><span class="name">Manu Sporny</span>: Another is is stuff like this: "ps:owner": "<a href="https://payswarm.example.com/i/bob",">https://payswarm.example.com/i/bob",</a></div>
-<div class="comment"><span class="name">Manu Sporny</span>:  Assuming payswarm doesn't exist at all, ps:owner doesn't make sense in the security vocab so it doesn't seem like it belongs there.</div>
+<div class="comment"><span class="name">Manu Sporny</span>: Another is is stuff like this: &quot;ps:owner&quot;: &quot;<a href="https://payswarm.example.com/i/bob&quot;,">https://payswarm.example.com/i/bob&quot;,</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Assuming payswarm doesn&apos;t exist at all, ps:owner doesn&apos;t make sense in the security vocab so it doesn&apos;t seem like it belongs there.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  You could claim that ownership is a security concern so it should be in there?</div>
-<div class="comment"><span class="name">Dave Longley</span>:  I think we'd be expanding the scope if we put ownership terms in the security vocabulary. I think people may find it odd to reference a security vocabulary to claim ownership over a Web resource. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  I think we&apos;d be expanding the scope if we put ownership terms in the security vocabulary. I think people may find it odd to reference a security vocabulary to claim ownership over a Web resource. [scribe assist by Manu Sporny]</div>
 <div class="comment"><span class="name">Manu Sporny</span>: <a href="http://payswarm.com/vocabs/security#Key">http://payswarm.com/vocabs/security#Key</a></div>
-<div class="comment"><span class="name">Manu Sporny</span>:  So, the question is, we have a term "ps:owner" that specifies the owner of a public key. Which spec should that be part of?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  So, the question is, we have a term &quot;ps:owner&quot; that specifies the owner of a public key. Which spec should that be part of?</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  You came across an ownership issue in the webid spec also?</div>
 <div class="comment"><span class="name">Jeff Sayre</span>:  yes we did.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Do you remember which term you used for it?</div>
-<div class="comment"><span class="name">Jeff Sayre</span>:  I'd have to go back and dig through notes, it's been a while.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  This doesn't belong in the payswarm spec because it's too specific, and it doesn't belong in the security vocab.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  There isn't a general ownership vocab for the web.</div>
-<div class="comment"><span class="name">Jeff Sayre</span>:  it's sort of a privacy issue, right?</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  I&apos;d have to go back and dig through notes, it&apos;s been a while.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  This doesn&apos;t belong in the payswarm spec because it&apos;s too specific, and it doesn&apos;t belong in the security vocab.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  There isn&apos;t a general ownership vocab for the web.</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  it&apos;s sort of a privacy issue, right?</div>
 <div class="comment"><span class="name">Jeff Sayre</span>:  identity, privacy and part of security, etc, they are all similar ideas.</div>
 <div class="comment"><span class="name">Jeff Sayre</span>:  there needs to be some vocab term for owner, whether its in the security vocab is a different issue.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  yes, we agree, but where does it go?</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Should we create a privacy vocab?</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  Larger companies are ignoring privacy/do not link/do not track/etc there's a general need for this.</div>
-<div class="comment"><span class="name">Jeff Sayre</span>:  it's hard to control your content if you don't have a stake in ownership, so it is in a sense a privacy issue, more so than security.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Larger companies are ignoring privacy/do not link/do not track/etc there&apos;s a general need for this.</div>
+<div class="comment"><span class="name">Jeff Sayre</span>:  it&apos;s hard to control your content if you don&apos;t have a stake in ownership, so it is in a sense a privacy issue, more so than security.</div>
 <div class="comment"><span class="name">Jeff Sayre</span>:  from an individual stand point, an asset that is not security claimed is a security threat to your personal ownership, not necessarily a big threat, if there are mechanisms to prevent hijacking.</div>
-<div class="comment"><span class="name">David I. Lehn</span>:  i wonder if ownership is explicit in the semantic web ... or is it more likely that you just have your identity resource point off somewhere else and point at your public key? you don't have the relationship going the other direction?</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  i wonder if ownership is explicit in the semantic web ... or is it more likely that you just have your identity resource point off somewhere else and point at your public key? you don&apos;t have the relationship going the other direction?</div>
 <div class="comment"><span class="name">David I. Lehn</span>:  maybe we only need a forward relationship and not a reverse one.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  if you go to a public key url it has to be able to say who the owner of the key is.</div>
-<div class="comment"><span class="name">Dave Longley</span>:  I agree, I don't think we should make ownership a uni-directional link. [scribe assist by Manu Sporny]</div>
-<div class="comment"><span class="name">David I. Lehn</span>:  That's fine with me, just putting it out there as an option. [scribe assist by Manu Sporny]</div>
-<div class="comment"><span class="name">Dave Longley</span>:  Also, not sure if privacy is the right term either, ownership isn't necessarily a privacy thing. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  I agree, I don&apos;t think we should make ownership a uni-directional link. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  That&apos;s fine with me, just putting it out there as an option. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Also, not sure if privacy is the right term either, ownership isn&apos;t necessarily a privacy thing. [scribe assist by Manu Sporny]</div>
 <div class="comment"><span class="name">David I. Lehn</span>:  Does this need to be a generic property? Could we use sec:keyFor? [scribe assist by Manu Sporny]</div>
 <div class="comment"><span class="name">David I. Lehn</span>:  does it have to be generic? should it be specific to each circumstance?</div>
 <div class="comment"><span class="name">David I. Lehn</span>:  instead of just a catch-all property for ownership?</div>
@@ -154,9 +124,9 @@ dd {
 <div class="comment"><span class="name">Manu Sporny</span>:  i could talk with who is in charge with the rdfs vocab (dan brickley, guha, etc).</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  maybe we can create rdfs:owner and use it and push w3c to adopt it.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  maybe in a few years they will adopt it.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  it would only stop reasoning on data, i don't think it would affect payswarm.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  it would only stop reasoning on data, i don&apos;t think it would affect payswarm.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  (to adopt rdfs:owner)</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  i am a member of the rdf working group, i'll raise this over there.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  i am a member of the rdf working group, i&apos;ll raise this over there.</div>
 <div class="proposal"><strong>PROPOSAL:</strong>  Adopt rdfs;owner to describe ownership of a resource on the Web and use that to associate public keys with identities.</div>
 <div class="comment"><span class="name">Dave Longley</span>: +1</div>
 <div class="comment"><span class="name">Manu Sporny</span>: +1</div>
@@ -166,8 +136,8 @@ dd {
 <h1 id="topic-3" class="topic">Topic: Creator of a Digital Signature</h1>
 <div class="comment"><span class="name">Dave Longley</span>:  We were thinking about trying to re-use dc:creator instead of sec:signer for signatures on a graph. I think the current implementation uses dc:creator instead of sec:signer. [scribe assist by Manu Sporny]</div>
 <div class="comment"><span class="name">Manu Sporny</span>: <a href="http://payswarm.com/vocabs/security#signer">http://payswarm.com/vocabs/security#signer</a></div>
-<div class="comment"><span class="name">Manu Sporny</span>:  i don't see a reason to create a new term for this (sec:signer) when dc:creator will do.</div>
-<div class="comment"><span class="name">Jeff Sayre</span>: There's also &lt;sioc: has_creator&gt;</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  i don&apos;t see a reason to create a new term for this (sec:signer) when dc:creator will do.</div>
+<div class="comment"><span class="name">Jeff Sayre</span>: There&apos;s also &lt;sioc: has_creator&gt;</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  also, we might try to put ownership in dublin core (as an aside)</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  unfortunately sioc:has_creator must have a range of a user account that made the resource</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  which may be too specific</div>
@@ -181,18 +151,18 @@ dd {
 <div class="comment"><span class="name">Jeff Sayre</span>:  another possibility is that it would be easier to have sioc extend that.</div>
 <div class="comment"><span class="name">Jeff Sayre</span>:  i bring that up because sioc is very targeted towards social communities online and payswarm is closely tied to that too.</div>
 <div class="comment"><span class="name">Jeff Sayre</span>:  they are heavily user-centric so there are limits to sioc now, but it might be worth considering.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  i'm leaning towards just using dc:creator, it's just a simple, base vocab.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  i&apos;m leaning towards just using dc:creator, it&apos;s just a simple, base vocab.</div>
 <div class="comment"><span class="name">Manu Sporny</span>: <a href="http://dublincore.org/documents/dcmi-terms/#terms-creator">http://dublincore.org/documents/dcmi-terms/#terms-creator</a></div>
 <div class="comment"><span class="name">Manu Sporny</span>:  sioc is very specific to online communities and since we are talking about a security vocab and who created a signature versus the specificity of sioc.</div>
 <div class="comment"><span class="name">Jeff Sayre</span>:  that makes sense.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  the documentation for dc:creator (entity primarily responsible for creating the resource) makes perfect sense.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  i'm scanning quickly to see if there is already the concept of an owner in dublin core.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  there's provenance</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  i&apos;m scanning quickly to see if there is already the concept of an owner in dublin core.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  there&apos;s provenance</div>
 <div class="information">Manu reads the description of provenance to the group:  <a href="http://dublincore.org/documents/dcmi-terms/#provenance">http://dublincore.org/documents/dcmi-terms/#provenance</a></div>
-<div class="comment"><span class="name">Manu Sporny</span>:  i can talk to tom baker and see if they'd be willing to put owner into dublin core.</div>
-<div class="comment"><span class="name">Dave Longley</span>:  they might also have a suggestion for us to use something else if what we're using is not appropriate.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  i can talk to tom baker and see if they&apos;d be willing to put owner into dublin core.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  they might also have a suggestion for us to use something else if what we&apos;re using is not appropriate.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  i will talk to the rdf group and dublin core about this.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  i think have a decision, we're going to use dc:creator.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  i think have a decision, we&apos;re going to use dc:creator.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  to replace sec:signer.</div>
 <div class="proposal"><strong>PROPOSAL:</strong>  Use dc;creator instead of sec;signer to identify the entity that created the digital signature.</div>
 <div class="comment"><span class="name">Dave Longley</span>: +1</div>
@@ -212,8 +182,8 @@ dd {
 <div class="comment"><span class="name">Manu Sporny</span>:  we really just need to change the name</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  JSON-LD normalization will be changing to operate on triples.</div>
 <div class="comment"><span class="name">Dave Longley</span>:  Maybe we want to split this out into different parameters? [scribe assist by Manu Sporny]</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  We didn't want to give people too many choices... [scribe assist by Manu Sporny]</div>
-<div class="comment"><span class="name">Dave Longley</span>:  we don't want people to mix and match and create interoperability problems.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We didn&apos;t want to give people too many choices... [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  we don&apos;t want people to mix and match and create interoperability problems.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  right, so we should have a single type that specifies all the properties.</div>
 <div class="comment"><span class="name">Manu Sporny</span>: sec:SecureGraphSignatureV1</div>
 <div class="comment"><span class="name">Dave Longley</span>:  a little redundant.</div>
@@ -231,7 +201,7 @@ dd {
 <div id="resolution-3" class="resolution"><strong>RESOLUTION:</strong> Change sec:JsonldSignature to sec:GraphSignature2011</div>
 <div class="comment"><span class="name">Manu Sporny</span>: Do we really need this: <a href="http://payswarm.com/vocabs/security#XmlSignature">http://payswarm.com/vocabs/security#XmlSignature</a></div>
 <div class="comment"><span class="name">Jeff Sayre</span>: <a href="http://purl.org/jsonld#UGNA2011">http://purl.org/jsonld#UGNA2011</a> 404s</div>
-<div class="comment"><span class="name">Manu Sporny</span>: Yeah, it isn't setup yet... :)</div>
+<div class="comment"><span class="name">Manu Sporny</span>: Yeah, it isn&apos;t setup yet... :)</div>
 <div class="comment"><span class="name">Jeff Sayre</span>: :)</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  my argument to remove XmlSignature is that no systems are using it yet. We can always add it.</div>
 <div class="proposal"><strong>PROPOSAL:</strong>  Remove sec;XMLSignature from the Security Vocabulary. Add it back in if an application requires it.</div>
@@ -255,46 +225,41 @@ dd {
 <div class="comment"><span class="name">Manu Sporny</span>:  we have vocabulary terms that are required to make the signature class self-describing</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  right now you can look up the @type for a signature and figure that out</div>
 <div class="comment"><span class="name">Dave Longley</span>:  We want to prevent people marking things up in the wrong way, we have to be able to support saying what the digest algorithm is. [scribe assist by Manu Sporny]</div>
-<div class="comment"><span class="name">Dave Longley</span>:  It's just an error to specify the signature algorithm and the digest algorithm in the same object. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  It&apos;s just an error to specify the signature algorithm and the digest algorithm in the same object. [scribe assist by Manu Sporny]</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  The digestAlgorithm term description should describe a signature algorithm, not a signature. [scribe assist by Manu Sporny]</div>
 <div class="comment"><span class="name">Dave Longley</span>:  it could be used to describe signature, but not also when @type is specified.</div>
 <div class="comment"><span class="name">Dave Longley</span>:  the example should change.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  the security vocab should be close to be being finished.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  Good call, we'll chat again in two weeks.</div>
-       </div>
-  </div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Good call, we&apos;ll chat again in two weeks.</div>
+</div></div></div></section>
+    <div id="footerwrap">
+      <div class="container">
+        <h4>Created by the <a href="http://www.w3.org/community/webpayments/">Web Payments Community Group</a>. Shared with love under a <a href="http://creativecommons.org/licenses/by/4.0/">CC-BY</a> license.</h4>
+      </div>
+    </div>
 
-<div class="container vspacing"> 
-  <div class="row"> 
-    <div class="threecol"> 
-      <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a> 
-    </div> 
-    <div class="ninecol last"> 
-      <p>&copy; 2010-2011 Digital Bazaar, Inc. 
-Website CSS created by <a href="http://cssgrid.net/">@andytlr</a> 
-and is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/au/"> 
-Creative Commons Attribution-ShareAlike 3.0 Australia License</a>. All other
-website content is licensed under a
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"> 
-Creative Commons Attribution-ShareAlike 3.0 License</a>
-</p> 
-    </div> 
-  </div> 
-</div> 
- 
-<script type="text/javascript"> 
- 
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+
+  <script type="text/javascript" src="../../assets/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/retina.js"></script>
+  <script type="text/javascript" src="../../assets/js/jquery.easing.1.3.js"></script>
+  <script type="text/javascript" src="../../assets/js/smoothscroll.js"></script> 
+    
+  <script type="text/javascript">
   var _gaq = _gaq || [];
-  _gaq.push(["_setAccount", "UA-1539674-7"]);
-  _gaq.push(["_trackPageview"]);
+  _gaq.push(['_setAccount', 'UA-1539674-7']);
+  _gaq.push(['_trackPageview']);
 
   (function() {
-    var ga = document.createElement("script"); ga.type = "text/javascript"; ga.async = true;
-    ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";
-    (document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]).appendChild(ga);
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
   })();
- 
-</script>
-
-</body>
+  </script>
+    
+  </body>
 </html>
+

@@ -1,101 +1,84 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-   "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
-<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
-      class="wf-adelle1adelle2-n6-active wf-active"> 
- 
-<head> 
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
-  <title>PaySwarm - Teleconferences</title> 
- 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
- 
-  <link rel="stylesheet" href="../../css/1140.css" type="text/css" media="screen" /> 
-  <!--[if lte IE 9]>
-  <link rel="stylesheet" href="../css/ie.css" type="text/css" media="screen" />
-  <![endif]--> 
-  <link rel="stylesheet" href="../../css/typeimg.css" type="text/css" media="screen" /> 
-  <link rel="stylesheet" href="../../css/smallerscreen.css" media="only screen and (max-width: 1023px)" /> 
-  <link rel="stylesheet" href="../../css/mobile.css" media="handheld, only screen and (max-width: 767px)" /> 
-  <link rel="stylesheet" href="../../css/layout.css" type="text/css" media="screen" /> 
-  <link rel="shortcut icon" type="image/png" href="../../images/payswarm-icon.png" /> 
-  
-<style type="text/css">
-h1 {
-   margin-top: 24px;
-   margin-bottom: 14px;
-}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web Payments">
+    <meta name="author" content="Manu Sporny">
+    <link rel="shortcut icon" href="assets/ico/favicon.png">
 
-#content {
-   margin-left: 15%;
-   margin-right: 15%;
-}
+    <title>Web Payments</title>
 
-.summary {
-   margin-left: 10%
-   margin-right: 10%
-}
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="../../assets/css/bootstrap.css">
 
-.name {
-   font-weight: bold;
-}
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/icomoon.css">
+    <link rel="stylesheet" href="../../assets/css/animate-custom.css">
 
-.information {
-   font-style: italic;
-}  
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' type='text/css'>
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Raleway:400,300,700' type='text/css'>
 
-.comment-continuation {
-   margin-left: 2em;
-}
+    <script src="../../assets/js/jquery.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/modernizr.custom.js"></script>
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+      <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
 
-dt {
-   font-style: oblique;
-}
+  <body data-target="#navbar-nav" data-spy="scroll">
 
-dd {
-   margin-left: 20px;
-}
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon icon-arrow-down" style="font-size:30px; color:#1abc9c;"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../#home" class="smoothScroll">Home</a></li>
+            <li> <a href="../../#about" class="smoothScroll"> About</a></li>
+            <li> <a href="../../#specs" class="smoothScroll"> Specs</a></li>
+            <li> <a href="../../#participate" class="smoothScroll"> Participate</a></li>
+            <li> <a href="../../#contact" class="smoothScroll"> Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
 
-  </style>
-  
-</head> 
-<body> 
- 
-<div class="titlebar"> 
-   <h1>PaySwarm</h1> 
-</div> 
 
-  <div id="content"> 
- 
-  <div class="row"> 
-    <div class="twelvecol last"> 
-
-<h1>W3C Web Payments and Bitcoin Standardization</h1>
+<section><div class="container"><div class="row white"><br><div class="col-lg-offset-2 col-lg-8"><h1>Web Payments Community Group Telecon</h1>
 <h2>Minutes for 2011-09-23</h2>
 <div class="summary">
 <dl>
+<dt>Agenda</dt><dd><a href="undefined">undefined</a></dd>
+<dt>Topics</dt><dd><ol><li><a href="#topic-1">PaySwarm and Flattr.com</a><li><a href="#topic-2">Bitcoin Criticisms</a><li><a href="#topic-3">The Rise of Bitcoin, MtGox scandal</a><li><a href="#topic-4">Standardization and the Bitcoin IRI scheme</a><li><a href="#topic-5">Standardizing at IETF</a></ol></dd><dt>Chair</dt><dd>Manu Sporny</dd>
 <dt>Scribe</dt><dd>Manu Sporny</dd>
 <dt>Present</dt><dd>Manu Sporny, Amir Taaki</dd>
 <dt>Audio Log</dt><dd><div><a href="audio.ogg">audio.ogg</a></div>
 <div><audio controls="controls" preload="none">
-<source src="audio.ogg" type="audio/ogg" />Warning: Your browser does not support the HTML5 audio element, please upgrade.</div></dd>
-</dl>
-</div>
+<source src="audio.ogg" type="audio/ogg" />Warning: Your browser does not support the HTML5 audio element, please upgrade.</audio></div></dd></dl>
 <div class="information">Manu Sporny is scribing.</div>
-<h1 id=topic-1 class="topic">Topic: PaySwarm and Flattr.com</h1>
-<div class="comment"><span class="name">Amir Taaki</span>:  I was checking out PaySwarm in the past, when I started getting involved in Bitcoin. Seems like you've been working on this standard for a while?</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  Yes, takes quite a bit of effort to get a standard off the ground. Likewise, I've been following Bitcoin for quite a while.</div>
+<h1 id="topic-1" class="topic">Topic: PaySwarm and Flattr.com</h1>
+<div class="comment"><span class="name">Amir Taaki</span>:  I was checking out PaySwarm in the past, when I started getting involved in Bitcoin. Seems like you&apos;ve been working on this standard for a while?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Yes, takes quite a bit of effort to get a standard off the ground. Likewise, I&apos;ve been following Bitcoin for quite a while.</div>
 <div class="comment"><span class="name">Amir Taaki</span>:  What do you think of Flattr?</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  Flattr is interesting - the main thing we're interested in is creating an open and patent and royalty free standard. We don't think anyone corporation should own how we reward each other on the Web. Flattr is great and is one business model that we support with the PaySwarm work, but our focus is more on enabling companies like Flattr to not have to worry about how the funds are moved around. We want the system to be decentralized, we want anyone that can implement the spec to setup a PaySwarm Authority. We also want to support multiple different types of currencies. That's why we're interested in Bitcoin right now - on people's minds. Unfortunately, don't know enough about tech to make any solid statements on support for Bitcoin.</div>
-<h1 id=topic-2 class="topic">Topic: Bitcoin Criticisms</h1>
-<div class="comment"><span class="name">Amir Taaki</span>:  Feel free to ask me anything about Bitcoin. There are people that say "Bitcoin is a Ponzi scheme" - but banks are looking at Bitcoin in a serious way. UK Exchange deals with the FSA - so far, no official statement on bitcoin. There will be a directive to classify bitcoin as a currency overlay. Banks are used as a messaging network - SWIFT - one of our guys is at the conference now talking about Bitcoin.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  That's the SIBOS / Innotribe stuff at SWIFT, right?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Flattr is interesting - the main thing we&apos;re interested in is creating an open and patent and royalty free standard. We don&apos;t think anyone corporation should own how we reward each other on the Web. Flattr is great and is one business model that we support with the PaySwarm work, but our focus is more on enabling companies like Flattr to not have to worry about how the funds are moved around. We want the system to be decentralized, we want anyone that can implement the spec to setup a PaySwarm Authority. We also want to support multiple different types of currencies. That&apos;s why we&apos;re interested in Bitcoin right now - on people&apos;s minds. Unfortunately, don&apos;t know enough about tech to make any solid statements on support for Bitcoin.</div>
+<h1 id="topic-2" class="topic">Topic: Bitcoin Criticisms</h1>
+<div class="comment"><span class="name">Amir Taaki</span>:  Feel free to ask me anything about Bitcoin. There are people that say &quot;Bitcoin is a Ponzi scheme&quot; - but banks are looking at Bitcoin in a serious way. UK Exchange deals with the FSA - so far, no official statement on bitcoin. There will be a directive to classify bitcoin as a currency overlay. Banks are used as a messaging network - SWIFT - one of our guys is at the conference now talking about Bitcoin.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  That&apos;s the SIBOS / Innotribe stuff at SWIFT, right?</div>
 <div class="comment"><span class="name">Amir Taaki</span>:  Yeah.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  I saw some of the stuff that Donald Norman had said.</div>
-<div class="comment"><span class="name">Amir Taaki</span>:  Many people talk about Bitcoin as a bank killer, a subversive thing - but many of these higher-ups are wondering how they can use it - they don't see it like that.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  That's certainly not our concern - we're more interested in the technical aspects - if there are any flaws. Any piece of technology can be used for evil.</div>
-<div class="comment"><span class="name">Amir Taaki</span>:  Right - find a technology that isn't neutral, an atom bomb - it can be used for good, it can be used to destroy entire countries. A hammer can be used to build beautiful carpentry, or it can be used to kill somebody. Blaming the technology only shifts the blame away from the perpetrators - it's an unhealthy attitude.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  That's certainly not the position we take on it. My concern is technical - have you spoken with Ben Laurie? He has some criticisms of Bitcoin - there are bits of the bitcoin algorithm that you can't switch it out. Like switching out AES-128-CBC for AES-256-CBC. So - technical concerns.</div>
+<div class="comment"><span class="name">Amir Taaki</span>:  Many people talk about Bitcoin as a bank killer, a subversive thing - but many of these higher-ups are wondering how they can use it - they don&apos;t see it like that.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  That&apos;s certainly not our concern - we&apos;re more interested in the technical aspects - if there are any flaws. Any piece of technology can be used for evil.</div>
+<div class="comment"><span class="name">Amir Taaki</span>:  Right - find a technology that isn&apos;t neutral, an atom bomb - it can be used for good, it can be used to destroy entire countries. A hammer can be used to build beautiful carpentry, or it can be used to kill somebody. Blaming the technology only shifts the blame away from the perpetrators - it&apos;s an unhealthy attitude.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  That&apos;s certainly not the position we take on it. My concern is technical - have you spoken with Ben Laurie? He has some criticisms of Bitcoin - there are bits of the bitcoin algorithm that you can&apos;t switch it out. Like switching out AES-128-CBC for AES-256-CBC. So - technical concerns.</div>
 <div class="comment"><span class="name">Amir Taaki</span>:  Is he a skeptic?</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Not as far as crypto currencies are concerned - he has been heavily involved.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  He published a number of papers critisiziing bitcoin </div>
@@ -104,108 +87,103 @@ dd {
 <div class="information"><a href="http://www.links.org/?p=1175">http://www.links.org/?p=1175</a> </div>
 <div class="information"><a href="http://www.links.org/?p=1179">http://www.links.org/?p=1179</a> </div>
 <div class="information"><a href="http://www.links.org/?p=1183">http://www.links.org/?p=1183</a> </div>
-<div class="comment"><span class="name">Amir Taaki</span>:  We have a conference in Prague, looking for people skeptical about Bitcoin - it's unhealthy to have too many people agreeing in the same room. If he is someone that's anti-bitcoin - we'd like to have him there.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  I'll ping Ben and see if he can join. He's w/ Google right now - founder of Apache Software Foundation - good guy, should have a chat with him.</div>
-<h1 id=topic-3 class="topic">Topic: The Rise of Bitcoin, MtGox scandal</h1>
+<div class="comment"><span class="name">Amir Taaki</span>:  We have a conference in Prague, looking for people skeptical about Bitcoin - it&apos;s unhealthy to have too many people agreeing in the same room. If he is someone that&apos;s anti-bitcoin - we&apos;d like to have him there.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  I&apos;ll ping Ben and see if he can join. He&apos;s w/ Google right now - founder of Apache Software Foundation - good guy, should have a chat with him.</div>
+<h1 id="topic-3" class="topic">Topic: The Rise of Bitcoin, MtGox scandal</h1>
 <div class="comment"><span class="name">Manu Sporny</span>:  Getting back to PaySwarm interest in Bitcoin stuff - interest in Bitcoin URI scheme?</div>
-<div class="comment"><span class="name">Amir Taaki</span>:  There is a sudden movement toward standardization. If you go to bittorrent.org - it's a spec. We want the same for bitcoin.org. That's the eventual direction - standardization. We need an RFC for bitcoin IRI RFC. We modeled it after Python PEP documents - We are having Bitcoin BEPs. Not sure about the names yet.</div>
+<div class="comment"><span class="name">Amir Taaki</span>:  There is a sudden movement toward standardization. If you go to bittorrent.org - it&apos;s a spec. We want the same for bitcoin.org. That&apos;s the eventual direction - standardization. We need an RFC for bitcoin IRI RFC. We modeled it after Python PEP documents - We are having Bitcoin BEPs. Not sure about the names yet.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Are you ready to go for full standardization?</div>
-<div class="comment"><span class="name">Amir Taaki</span>:  Bitcoin protocol still early days - we don't want full-blown standardization. We should start thinking about this stuff now though - multiple clients, light nodes - I'm the only person that's working on an alternative full client implementation. Once it happens, it can't be one piece of software deciding the protocol. Lots of discussion around that.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  I'm fairly involved in standards work - would be happy to help.</div>
+<div class="comment"><span class="name">Amir Taaki</span>:  Bitcoin protocol still early days - we don&apos;t want full-blown standardization. We should start thinking about this stuff now though - multiple clients, light nodes - I&apos;m the only person that&apos;s working on an alternative full client implementation. Once it happens, it can&apos;t be one piece of software deciding the protocol. Lots of discussion around that.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  I&apos;m fairly involved in standards work - would be happy to help.</div>
 <div class="comment"><span class="name">Amir Taaki</span>:  Yes, Melvin Carvalho told me about you.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Melvin is a great guy - he pings us about Bitcoin from time to time.</div>
 <div class="comment"><span class="name">Amir Taaki</span>:  He introduced me to Bitcoin some time ago - I was complaining about money and he pointed me toward it. It was shaky back then, but then looking at it closer - it was incredible.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  We had the same sort of opinion in the beginning. </div>
-<div class="comment"><span class="name">Amir Taaki</span>:  Yeah, I didn't think it was going anywhere in the beginning.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  I saw a great amount of promise for it - but had no idea that it would build into what it is today so quickly. The fact that it is trading against the USD so strongly - didn't see it happening so quickly. We want to help Bitcoin in whatever way we can. Our focus is on helping people buy and sell digital content via the Web. PaySwarm is currency agnostic - but we do try to find out how Bitcoin could be integrated. How do transactions look in pure Bitcoin?</div>
-<div class="comment"><span class="name">Amir Taaki</span>:  When I first started Bitcoin Consultancy - we had a 10 year plan - it had multiple stages. 8 years of that plan got done within 8 months - so, that was surprising - so much interest so quickly. Then this MtGox scandal happened - they got hacked. So people haven't realized that MtGox is just one private company - but people confuse it w/ Bitcoin. Interest in bitcoin has waned - gartner graph shows Bitcoin suffering in all ways - a crash. Looking at indicators on network - trading volume, price, nodes, etc. - activity in bitcoin is dropping. We are at a low point right now before we start growing slowly.</div>
+<div class="comment"><span class="name">Amir Taaki</span>:  Yeah, I didn&apos;t think it was going anywhere in the beginning.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  I saw a great amount of promise for it - but had no idea that it would build into what it is today so quickly. The fact that it is trading against the USD so strongly - didn&apos;t see it happening so quickly. We want to help Bitcoin in whatever way we can. Our focus is on helping people buy and sell digital content via the Web. PaySwarm is currency agnostic - but we do try to find out how Bitcoin could be integrated. How do transactions look in pure Bitcoin?</div>
+<div class="comment"><span class="name">Amir Taaki</span>:  When I first started Bitcoin Consultancy - we had a 10 year plan - it had multiple stages. 8 years of that plan got done within 8 months - so, that was surprising - so much interest so quickly. Then this MtGox scandal happened - they got hacked. So people haven&apos;t realized that MtGox is just one private company - but people confuse it w/ Bitcoin. Interest in bitcoin has waned - gartner graph shows Bitcoin suffering in all ways - a crash. Looking at indicators on network - trading volume, price, nodes, etc. - activity in bitcoin is dropping. We are at a low point right now before we start growing slowly.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Yes, a very typical trough of disillusionment in the standard technology cycle: <a href="http://en.wikipedia.org/wiki/Hype_cycle">http://en.wikipedia.org/wiki/Hype_cycle</a></div>
-<div class="comment"><span class="name">Amir Taaki</span>:  Look at Linux or Wikipedia or Internet - typical lifecycle is 10 years - that's how long it's going to take Bitcoin to get popular - 5% of people using it... not 100%.</div>
-<h1 id=topic-4 class="topic">Topic: Standardization and the Bitcoin IRI scheme</h1>
+<div class="comment"><span class="name">Amir Taaki</span>:  Look at Linux or Wikipedia or Internet - typical lifecycle is 10 years - that&apos;s how long it&apos;s going to take Bitcoin to get popular - 5% of people using it... not 100%.</div>
+<h1 id="topic-4" class="topic">Topic: Standardization and the Bitcoin IRI scheme</h1>
 <div class="comment"><span class="name">Manu Sporny</span>:  Is standardization a part of this growth - or do you think you can reach 5% w/o standardization?</div>
 <div class="comment"><span class="name">Amir Taaki</span>:  Standardization helps development - all these groups are doing different things - we need to cooperate. The bitcoin URI is something people have been talking about. There are competing proposals - so we should standardize early.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  You do need implementation experience. You could incubate in W3C Community Groups?</div>
-<div class="comment"><span class="name">Amir Taaki</span>:  Yes, could do that. We could try to get into HTML5 standard - a property for bitcoin. That's when I raised Bitcoin URIs.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  Currently chair of the RDFa / RDF Web Apps Working Group - markup of metadata in HTML - so we're working on this. Browser could go to a page and know that there is a payment URL in there... bitcoin URI or some other form of payment mechanism. The account name is given using a URI. Everything on the page is machine readable - lower-level protocol like Bitcoin could take over and process payment at that point. Same direction that PaySwarm is going in - ability to express payment endpoints and make it machine readable. We would be very happy to work with you on that. The Bitcoin URI seems pretty simple.</div>
-<div class="comment"><span class="name">Amir Taaki</span>:  Yes, it's pretty simple. Bitcoin destination is easy - always starts w/ 1, then account, then SHA256 checksum are the last 4 bytes - fairly easy to tell it's a Bitcoin address.</div>
-<div class="comment"><span class="name">Amir Taaki</span>:  about competing standards - there is one simple one - it can only send bitcoins and a label - the other one has options for everything. Don't know about more complex URI scheme - bitcoin is flexible - very difficult, perhaps impossible to cover everything. May want to start with something simple - need to talk with the person that created it first.</div>
+<div class="comment"><span class="name">Amir Taaki</span>:  Yes, could do that. We could try to get into HTML5 standard - a property for bitcoin. That&apos;s when I raised Bitcoin URIs.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Currently chair of the RDFa / RDF Web Apps Working Group - markup of metadata in HTML - so we&apos;re working on this. Browser could go to a page and know that there is a payment URL in there... bitcoin URI or some other form of payment mechanism. The account name is given using a URI. Everything on the page is machine readable - lower-level protocol like Bitcoin could take over and process payment at that point. Same direction that PaySwarm is going in - ability to express payment endpoints and make it machine readable. We would be very happy to work with you on that. The Bitcoin URI seems pretty simple.</div>
+<div class="comment"><span class="name">Amir Taaki</span>:  Yes, it&apos;s pretty simple. Bitcoin destination is easy - always starts w/ 1, then account, then SHA256 checksum are the last 4 bytes - fairly easy to tell it&apos;s a Bitcoin address.</div>
+<div class="comment"><span class="name">Amir Taaki</span>:  about competing standards - there is one simple one - it can only send bitcoins and a label - the other one has options for everything. Don&apos;t know about more complex URI scheme - bitcoin is flexible - very difficult, perhaps impossible to cover everything. May want to start with something simple - need to talk with the person that created it first.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  This URI is a pure P2P basis - right? There is no HTTP endpoint, there is no server sitting out there that you can depend on?</div>
 <div class="comment"><span class="name">Amir Taaki</span>:  Correct.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  The way we approached the PaySwarm stuff is that it is decentralized, but you always have an agent out there on the Web. Those endpoints can take arguments. So, supporting a bunch of different options - do it over HTTP and POST something ot the endpoint - you could extend it that way.</div>
-<div class="comment"><span class="name">Amir Taaki</span>:  That's a bit out of scope right now - bit-pay.com could do something like that. Bitcoin payments are not instant - if you want more advanced options - you go over HTTP to dedicated services. 3rd party service - bitcoin URI is something that interfaces directly with Bitcoin.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  I saw an e-mail-like scheme for Bitcoin. I know current Bitcoin address is a hash on their public key - one mechanism is more like an e-mail like scheme. Could be supported via DNS - but that's centralized. You have to be able to write records into DNS.</div>
+<div class="comment"><span class="name">Amir Taaki</span>:  That&apos;s a bit out of scope right now - bit-pay.com could do something like that. Bitcoin payments are not instant - if you want more advanced options - you go over HTTP to dedicated services. 3rd party service - bitcoin URI is something that interfaces directly with Bitcoin.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  I saw an e-mail-like scheme for Bitcoin. I know current Bitcoin address is a hash on their public key - one mechanism is more like an e-mail like scheme. Could be supported via DNS - but that&apos;s centralized. You have to be able to write records into DNS.</div>
 <div class="comment"><span class="name">Amir Taaki</span>:  Maybe the domain is the extension, but the front-part is looked up on a service?</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  This is the whole problem with decentralized identity. DOn't know if you've seen anything about BrowserID or WebID - they're trying to solve "identity on the Web". You can have pseudonyms, but having payment accounts associated with you would be helpful. </div>
+<div class="comment"><span class="name">Manu Sporny</span>:  This is the whole problem with decentralized identity. DOn&apos;t know if you&apos;ve seen anything about BrowserID or WebID - they&apos;re trying to solve &quot;identity on the Web&quot;. You can have pseudonyms, but having payment accounts associated with you would be helpful. </div>
 <div class="comment"><span class="name">Amir Taaki</span>:  Ah, I thought they were only dealing with real identities. Ok, I get it now.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  The whole PaySwarm spec right now uses public/private key for messaging - but you still have to specify who will manage your account and identity. We want it to be completely decentralized in the future - but for now, because of regulatory issues - they're not banks, money processors - but PaySwarm Authorities handle identity and accounts for people. So, paying someone using their e-mail address is doable because we have these PaySwarm Authorities that could look something up. You look up user preferences by using these HTTP URLs. Is the ability to type it in easily the main concern?</div>
-<div class="comment"><span class="name">Amir Taaki</span>:  There is an artist that I like, I want to donate to him - he accepted bitcoin donations, but it's just text on his website. You have to copy-paste. I want them to be able to click the link and it opens a link in a bitcoin client. E-mail is copy-paste - it's easy. Type an amount, put a label, contact info, etc.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  The assumption that you're making is that there is a bitcoin client that is external.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  The whole PaySwarm spec right now uses public/private key for messaging - but you still have to specify who will manage your account and identity. We want it to be completely decentralized in the future - but for now, because of regulatory issues - they&apos;re not banks, money processors - but PaySwarm Authorities handle identity and accounts for people. So, paying someone using their e-mail address is doable because we have these PaySwarm Authorities that could look something up. You look up user preferences by using these HTTP URLs. Is the ability to type it in easily the main concern?</div>
+<div class="comment"><span class="name">Amir Taaki</span>:  There is an artist that I like, I want to donate to him - he accepted bitcoin donations, but it&apos;s just text on his website. You have to copy-paste. I want them to be able to click the link and it opens a link in a bitcoin client. E-mail is copy-paste - it&apos;s easy. Type an amount, put a label, contact info, etc.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  The assumption that you&apos;re making is that there is a bitcoin client that is external.</div>
 <div class="comment"><span class="name">Amir Taaki</span>:  Same as mailto: - yes.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  have you thought about Bitcoin in the browser - pure browser-based bitcoin? You wouldn't need a URI scheme if you had that.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  have you thought about Bitcoin in the browser - pure browser-based bitcoin? You wouldn&apos;t need a URI scheme if you had that.</div>
 <div class="comment"><span class="name">Amir Taaki</span>:  Yes, but Bitcoin would need to be running already in the browser.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  What about a 3rd party site that they trust?</div>
-<div class="comment"><span class="name">Amir Taaki</span>:  People don't like that. There are some people that are doing this to offer fast micropayments. The core concept of Bitcoin is not to be locked into one vendor. You could run it in the browser - the way the protocol works - you can do a lot of stuff on initallization - load lots of blocks into memory. Or you need to have a database backend and have lots of connections - more suited for a Web server. Maybe a possibility in the future.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  So the browsers have a database mechanism built into them - our CTO has done some pretty amazing crypto stuff in the browser. Don't know details about Bitcoin - guess it's very processor intensive. </div>
-<div class="comment"><span class="name">Amir Taaki</span>:  You have to download blocks and process each block. There is a school of thought that says that a client doesn't validate the blocks - but you have to trust who you're getting the blocks from.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  You could always keep a Bitcoin tab open in your browser. I know that's what I do.</div>
+<div class="comment"><span class="name">Amir Taaki</span>:  People don&apos;t like that. There are some people that are doing this to offer fast micropayments. The core concept of Bitcoin is not to be locked into one vendor. You could run it in the browser - the way the protocol works - you can do a lot of stuff on initallization - load lots of blocks into memory. Or you need to have a database backend and have lots of connections - more suited for a Web server. Maybe a possibility in the future.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  So the browsers have a database mechanism built into them - our CTO has done some pretty amazing crypto stuff in the browser. Don&apos;t know details about Bitcoin - guess it&apos;s very processor intensive. </div>
+<div class="comment"><span class="name">Amir Taaki</span>:  You have to download blocks and process each block. There is a school of thought that says that a client doesn&apos;t validate the blocks - but you have to trust who you&apos;re getting the blocks from.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  You could always keep a Bitcoin tab open in your browser. I know that&apos;s what I do.</div>
 <div class="comment"><span class="name">Amir Taaki</span>:  Not me.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  It depends on who it is - but having a bitcoin client running in a tab - you would be able to validate blocks in-browser. I don't see a technical limitation to running a Bitcoin client in the browser today.</div>
-<div class="comment"><span class="name">Amir Taaki</span>:  if it were me, I only keep 2-10 tabs open - don't keep  browser open all the time. I'd rather have Bitcoin in the system tray.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  It depends on who it is - but having a bitcoin client running in a tab - you would be able to validate blocks in-browser. I don&apos;t see a technical limitation to running a Bitcoin client in the browser today.</div>
+<div class="comment"><span class="name">Amir Taaki</span>:  if it were me, I only keep 2-10 tabs open - don&apos;t keep  browser open all the time. I&apos;d rather have Bitcoin in the system tray.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  When you go to standardize - people are going to ask questions like this.</div>
-<div class="comment"><span class="name">Amir Taaki</span>:  Someone has already done Bitcoin in the browser - but it's a light node, written in JavaScript.</div>
-<h1 id=topic-5 class="topic">Topic: Standardizing at IETF</h1>
-<div class="comment"><span class="name">Manu Sporny</span>:  So, we're getting off-topic a bit. What support are you looking for regarding the Bitcoin IRI scheme?</div>
-<div class="comment"><span class="name">Amir Taaki</span>:  I don't know the standardization process - was going to read up on standardization process. I will ask people for input. Write the initial doc - consult with Melvin - maybe talk to IANA then?</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  Well, it depends on what you're registering.</div>
-<div class="comment"><span class="name">Amir Taaki</span>:  A simple URI scheme - leave it open-ended - maybe tack more things on later on. Don't want to make it too complex - don't want to increase the burden on people. We want a simple spec. We can expand afterward.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  You probably want to go through the IETF - that's where people create new URI schemes. Usually go through IETF. It's a protocol-level thing. It's not a Web thing, so no W3C. </div>
-<div class="comment"><span class="name">Amir Taaki</span>:  Really? It's for the browsers, right?</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  Yes, but the way that you specify the scheme is through IETF. It's a fairly straight-forward process. Here is the RFC for the mailto URI scheme: <a href="http://www.ietf.org/rfc/rfc2368.txt">http://www.ietf.org/rfc/rfc2368.txt</a> You could probably copy that almost directly.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  I could also take a quick hack at it if you'd like.</div>
+<div class="comment"><span class="name">Amir Taaki</span>:  Someone has already done Bitcoin in the browser - but it&apos;s a light node, written in JavaScript.</div>
+<h1 id="topic-5" class="topic">Topic: Standardizing at IETF</h1>
+<div class="comment"><span class="name">Manu Sporny</span>:  So, we&apos;re getting off-topic a bit. What support are you looking for regarding the Bitcoin IRI scheme?</div>
+<div class="comment"><span class="name">Amir Taaki</span>:  I don&apos;t know the standardization process - was going to read up on standardization process. I will ask people for input. Write the initial doc - consult with Melvin - maybe talk to IANA then?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Well, it depends on what you&apos;re registering.</div>
+<div class="comment"><span class="name">Amir Taaki</span>:  A simple URI scheme - leave it open-ended - maybe tack more things on later on. Don&apos;t want to make it too complex - don&apos;t want to increase the burden on people. We want a simple spec. We can expand afterward.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  You probably want to go through the IETF - that&apos;s where people create new URI schemes. Usually go through IETF. It&apos;s a protocol-level thing. It&apos;s not a Web thing, so no W3C. </div>
+<div class="comment"><span class="name">Amir Taaki</span>:  Really? It&apos;s for the browsers, right?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Yes, but the way that you specify the scheme is through IETF. It&apos;s a fairly straight-forward process. Here is the RFC for the mailto URI scheme: <a href="http://www.ietf.org/rfc/rfc2368.txt">http://www.ietf.org/rfc/rfc2368.txt</a> You could probably copy that almost directly.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  I could also take a quick hack at it if you&apos;d like.</div>
 <div class="comment"><span class="name">Amir Taaki</span>:  I want to ask both of the people working on the schemes to get their blessing.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  Ok, should be simple to spec - only 4-5 pages. There are editorial concerns, but I can edit that for you if you'd like. I know some folks at IETF that can help us - Julian Reschke - editor of HTTP spec.</div>
-<div class="comment"><span class="name">Amir Taaki</span>:  Can you e-mail - put us in touch? I'll sort this out over a week. There is a conference tomorrow - but maybe next week I can start on it? Maybe something done by next week?</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  Okay, I'll do that. I promised to get you in contact with someone else?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Ok, should be simple to spec - only 4-5 pages. There are editorial concerns, but I can edit that for you if you&apos;d like. I know some folks at IETF that can help us - Julian Reschke - editor of HTTP spec.</div>
+<div class="comment"><span class="name">Amir Taaki</span>:  Can you e-mail - put us in touch? I&apos;ll sort this out over a week. There is a conference tomorrow - but maybe next week I can start on it? Maybe something done by next week?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Okay, I&apos;ll do that. I promised to get you in contact with someone else?</div>
 <div class="comment"><span class="name">Amir Taaki</span>:  The Bitcoin skeptic?</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  Yes, Ben Laurie - I'll do a quick e-mail intro between you two.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Yes, Ben Laurie - I&apos;ll do a quick e-mail intro between you two.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Okay - feel free to e-mail/ping if you have any questions - we want to help.</div>
 <div class="comment"><span class="name">Amir Taaki</span>:  Thanks much</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  Good luck at the conference - great finally chatting with you. We'll talk soon, maybe next week or week after. Take care.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Good luck at the conference - great finally chatting with you. We&apos;ll talk soon, maybe next week or week after. Take care.</div>
 <div class="comment"><span class="name">Amir Taaki</span>:  Ciao.</div>
-       </div>
-  </div>
+</div></div></div></section>
+    <div id="footerwrap">
+      <div class="container">
+        <h4>Created by the <a href="http://www.w3.org/community/webpayments/">Web Payments Community Group</a>. Shared with love under a <a href="http://creativecommons.org/licenses/by/4.0/">CC-BY</a> license.</h4>
+      </div>
+    </div>
 
-<div class="container vspacing onblack"> 
-  <div class="row"> 
-    <div class="threecol"> 
-      <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a> 
-    </div> 
-    <div class="ninecol last"> 
-      <p>&copy; 2010-2011 Digital Bazaar, Inc. 
-Website CSS created by <a href="http://cssgrid.net/">@andytlr</a> 
-and is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/au/"> 
-Creative Commons Attribution-ShareAlike 3.0 Australia License</a>. All other
-website content is licensed under a
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"> 
-Creative Commons Attribution-ShareAlike 3.0 License</a>
-</p> 
-    </div> 
-  </div> 
-</div> 
- 
-<script type="text/javascript"> 
- 
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+
+  <script type="text/javascript" src="../../assets/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/retina.js"></script>
+  <script type="text/javascript" src="../../assets/js/jquery.easing.1.3.js"></script>
+  <script type="text/javascript" src="../../assets/js/smoothscroll.js"></script> 
+    
+  <script type="text/javascript">
   var _gaq = _gaq || [];
-  _gaq.push(["_setAccount", "UA-1539674-7"]);
-  _gaq.push(["_trackPageview"]);
+  _gaq.push(['_setAccount', 'UA-1539674-7']);
+  _gaq.push(['_trackPageview']);
 
   (function() {
-    var ga = document.createElement("script"); ga.type = "text/javascript"; ga.async = true;
-    ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";
-    (document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]).appendChild(ga);
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
   })();
- 
-</script>
-
-</body>
+  </script>
+    
+  </body>
 </html>
+

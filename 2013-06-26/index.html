@@ -1,89 +1,59 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-   "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
-<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
-      class="wf-adelle1adelle2-n6-active wf-active"> 
- 
-<head> 
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
-  <title>PaySwarm - Teleconferences</title> 
- 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
- 
-  <link rel="stylesheet" href="../../css/1140.css" type="text/css" media="screen" /> 
-  <!--[if lte IE 9]>
-  <link rel="stylesheet" href="../css/ie.css" type="text/css" media="screen" />
-  <![endif]--> 
-  <link rel="stylesheet" href="../../css/typeimg.css" type="text/css" media="screen" /> 
-  <link rel="stylesheet" href="../../css/smallerscreen.css" media="only screen and (max-width: 1023px)" /> 
-  <link rel="stylesheet" href="../../css/mobile.css" media="handheld, only screen and (max-width: 767px)" /> 
-  <link rel="stylesheet" href="../../css/layout.css" type="text/css" media="screen" /> 
-  <link rel="shortcut icon" type="image/png" href="../../images/payswarm-icon.png" /> 
-  
-<style type="text/css">
-h1 {
-   margin-top: 24px;
-   margin-bottom: 14px;
-}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web Payments">
+    <meta name="author" content="Manu Sporny">
+    <link rel="shortcut icon" href="assets/ico/favicon.png">
 
-.header {
-   margin-top: 0px;
-   margin-bottom: 14px;
-}
+    <title>Web Payments</title>
 
-ol {
-   margin-bottom: 0em;
-}
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="../../assets/css/bootstrap.css">
 
-li {
-   margin-left: 1.5em;
-   margin-bottom: 0em;
-}
-#content {
-   margin-left: 15%;
-   margin-right: 15%;
-}
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/icomoon.css">
+    <link rel="stylesheet" href="../../assets/css/animate-custom.css">
 
-.summary {
-   margin-left: 10%
-   margin-right: 10%
-}
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' type='text/css'>
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Raleway:400,300,700' type='text/css'>
 
-.name {
-   font-weight: bold;
-}
+    <script src="../../assets/js/jquery.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/modernizr.custom.js"></script>
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+      <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
 
-.information {
-   font-style: italic;
-}  
+  <body data-target="#navbar-nav" data-spy="scroll">
 
-.comment-continuation {
-   margin-left: 2em;
-}
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon icon-arrow-down" style="font-size:30px; color:#1abc9c;"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../#home" class="smoothScroll">Home</a></li>
+            <li> <a href="../../#about" class="smoothScroll"> About</a></li>
+            <li> <a href="../../#specs" class="smoothScroll"> Specs</a></li>
+            <li> <a href="../../#participate" class="smoothScroll"> Participate</a></li>
+            <li> <a href="../../#contact" class="smoothScroll"> Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
 
-dt {
-   font-style: oblique;
-}
 
-dd {
-   margin-left: 20px;
-}
-
-  </style>
-  
-</head> 
-<body> 
- 
-<div class="titlebar"> 
-   <h1 class="header">PaySwarm</h1> 
-</div> 
-
-  <div id="content"> 
- 
-  <div class="row"> 
-    <div class="twelvecol last"> 
-
-<h1>Web Payments Community Group Telecon</h1>
+<section><div class="container"><div class="row white"><br><div class="col-lg-offset-2 col-lg-8"><h1>Web Payments Community Group Telecon</h1>
 <h2>Minutes for 2013-06-26</h2>
 <div class="summary">
 <dl>
@@ -93,9 +63,9 @@ dd {
 <dt>Present</dt><dd>Manu Sporny, Andrei Oprea, Dave Longley, Kumar McMillan, Travis Choma, David I. Lehn</dd>
 <dt>Audio Log</dt><dd><div><a href="audio.ogg">audio.ogg</a></div>
 <div><audio controls="controls" preload="none">
-<source src="audio.ogg" type="audio/ogg" />Warning: Your browser does not support the HTML5 audio element, please upgrade.</div></dd>
+<source src="audio.ogg" type="audio/ogg" />Warning: Your browser does not support the HTML5 audio element, please upgrade.</audio></div></dd></dl>
 <div class="information">Manu Sporny is scribing.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  Today on the agenda, we're covering Andrei's progress on the open Web Apps marketplace. Discussing getting rid of the whitelist for payments API for mozPay and issues surrounding that.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Today on the agenda, we&apos;re covering Andrei&apos;s progress on the open Web Apps marketplace. Discussing getting rid of the whitelist for payments API for mozPay and issues surrounding that.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Any updates or changes to the agenda?</div>
 <h1 id="topic-1" class="topic">Topic: Update on GSoC Student Progress</h1>
 <div class="comment"><span class="name">Andrei Oprea</span>:  Since the last time, I was able to complete Web Keys registration process for PaySwarm. The site is up here:</div>
@@ -104,85 +74,85 @@ dd {
 <div class="comment"><span class="name">Andrei Oprea</span>:  Next goal is to get asset and listings working. I have a question regarding that.</div>
 <div class="comment"><span class="name">Andrei Oprea</span>:  Asset and listing may be decentralized, does that mean that after I create an asset/listing for a good/service - should the user receive a digital receipt?</div>
 <div class="comment"><span class="name">Andrei Oprea</span>:  Does the asset and listing only remain on the website where they were created?</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  In PaySwarm, assets and listings are decentralized. They are digitally signed by the content creator or vendor and they have a validity period associated with them. This means that they can be taken and placed anywhere on the Web and they'll still work.  For your demo, you will have the asset and listing on the marketplace website.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  In PaySwarm, assets and listings are decentralized. They are digitally signed by the content creator or vendor and they have a validity period associated with them. This means that they can be taken and placed anywhere on the Web and they&apos;ll still work.  For your demo, you will have the asset and listing on the marketplace website.</div>
 <div class="comment"><span class="name">Andrei Oprea</span>:  Does an asset have a public URL just as the PaySwarm identity?</div>
 <div class="comment"><span class="name">Dave Longley</span>:  asset and listing should have their own URLs, public is good practice.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  it's also possible to have private assets and listings - basically, assets and listings that transact a unique good where the asset and listing are unique to the transaction. So, for example, buying an asset that has a very particular serial number.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  Website looks good, you're using both Persona and Web Keys, right?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  it&apos;s also possible to have private assets and listings - basically, assets and listings that transact a unique good where the asset and listing are unique to the transaction. So, for example, buying an asset that has a very particular serial number.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Website looks good, you&apos;re using both Persona and Web Keys, right?</div>
 <div class="comment"><span class="name">Andrei Oprea</span>:  Yes, you sign in w/ Persona... you need to register with payswarm authority as well. When the vendor registers, they get public/private keypair.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  where are you storing the private key? Is it only for the marketplace?</div>
 <div class="comment"><span class="name">Andrei Oprea</span>:  Yes</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  ok, good. We don't want to get into a security situation where you're managing thousands of private keys. That would be disastrous if there was ever a security break-in.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  So, this is a problem for this particular use case. People have to sign in with Persona, and then they have to basically do the same things by signing in via a PaySwarm Authority. It's duplication of effort. It would be much easier to assign who your preferred providers are via Persona.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  ok, good. We don&apos;t want to get into a security situation where you&apos;re managing thousands of private keys. That would be disastrous if there was ever a security break-in.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  So, this is a problem for this particular use case. People have to sign in with Persona, and then they have to basically do the same things by signing in via a PaySwarm Authority. It&apos;s duplication of effort. It would be much easier to assign who your preferred providers are via Persona.</div>
 <div class="comment"><span class="name">Kumar McMillan</span>:  Not sure how to fully address that - not many people have tried to tie data to e-mails.</div>
-<div class="comment"><span class="name">Kumar McMillan</span>:  A lot of sites already tie information to Persona - they say "login with Persona", then they say "We need to complete your registration". They may need you to set a username. That might be an easy approach. "Now complete your registration".</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  That's not an ideal experience... if that's the future of the Web, I don't think Persona does enough. We want to be able to auto-fill registration information when you sign up to a website. We don't want you to have to go through a 2 or 3 stage registration process.</div>
+<div class="comment"><span class="name">Kumar McMillan</span>:  A lot of sites already tie information to Persona - they say &quot;login with Persona&quot;, then they say &quot;We need to complete your registration&quot;. They may need you to set a username. That might be an easy approach. &quot;Now complete your registration&quot;.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  That&apos;s not an ideal experience... if that&apos;s the future of the Web, I don&apos;t think Persona does enough. We want to be able to auto-fill registration information when you sign up to a website. We don&apos;t want you to have to go through a 2 or 3 stage registration process.</div>
 <div class="comment"><span class="name">Travis Choma</span>:  There is a connected project, PiCL - you can store profile information in there... we are going to be looking at it for storing receipts.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Are you involved in that project?</div>
-<div class="comment"><span class="name">Travis Choma</span>:  Not directly, but here's the link to that: <a href="https://github.com/mozilla/picl-server">https://github.com/mozilla/picl-server</a></div>
+<div class="comment"><span class="name">Travis Choma</span>:  Not directly, but here&apos;s the link to that: <a href="https://github.com/mozilla/picl-server">https://github.com/mozilla/picl-server</a></div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Yes, the site looks good that Andrei is working on.</div>
 <div class="comment"><span class="name">Andrei Oprea</span>:  How would developers associate their PaySwarm identity with the account.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  So, for the time being you're going to have to log in via Persona and then do a registration where you "log in" via PaySwarm. The resulting object when you "log in" will be an identity and financial account where deposits should be made. That'll be good enough for the first cut of the marketplace.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  So, for the time being you&apos;re going to have to log in via Persona and then do a registration where you &quot;log in&quot; via PaySwarm. The resulting object when you &quot;log in&quot; will be an identity and financial account where deposits should be made. That&apos;ll be good enough for the first cut of the marketplace.</div>
 <h1 id="topic-2" class="topic">Topic: ISSUE-12: Registering preferred payment providers</h1>
 <div class="information"><a href="https://github.com/web-payments/browser-payments/issues/12">https://github.com/web-payments/browser-payments/issues/12</a></div>
-<div class="comment"><span class="name">Kumar McMillan</span>:  Real fast, before we jump into the whitelist - let's circle back for some context. Something that came up on the last payments call and discussions elsewhere.</div>
+<div class="comment"><span class="name">Kumar McMillan</span>:  Real fast, before we jump into the whitelist - let&apos;s circle back for some context. Something that came up on the last payments call and discussions elsewhere.</div>
 <div class="comment"><span class="name">Kumar McMillan</span>:  People are asking why the mozPay API is different... why not just have a hosted buyflow?</div>
-<div class="comment"><span class="name">Kumar McMillan</span>:  The main difference is that it pings this central server when the merchant includes the shim. The user doesn't have any say in that. They can't say that they don't want to use the merchant use paypal or checkout.</div>
+<div class="comment"><span class="name">Kumar McMillan</span>:  The main difference is that it pings this central server when the merchant includes the shim. The user doesn&apos;t have any say in that. They can&apos;t say that they don&apos;t want to use the merchant use paypal or checkout.</div>
 <div class="comment"><span class="name">Kumar McMillan</span>:  We want device-centric selection of payment provider.</div>
-<div class="comment"><span class="name">Kumar McMillan</span>:  User can pay w/ bitcoin where merchant doesn't take bitcoin. It's up to the payment provider to do the translation.</div>
-<div class="comment"><span class="name">Kumar McMillan</span>:  MozPay is a dumb router to some servers (the mozPay API). It's a dumb pipe, not much more than that. We have a whitelist that restricts what payment providers merchants can use.</div>
-<div class="comment"><span class="name">Kumar McMillan</span>:  The first Firefox OS will support Mozilla's payment provider - we'll also whitelist some other providers, maybe not in the first version, we do want competition.</div>
+<div class="comment"><span class="name">Kumar McMillan</span>:  User can pay w/ bitcoin where merchant doesn&apos;t take bitcoin. It&apos;s up to the payment provider to do the translation.</div>
+<div class="comment"><span class="name">Kumar McMillan</span>:  MozPay is a dumb router to some servers (the mozPay API). It&apos;s a dumb pipe, not much more than that. We have a whitelist that restricts what payment providers merchants can use.</div>
+<div class="comment"><span class="name">Kumar McMillan</span>:  The first Firefox OS will support Mozilla&apos;s payment provider - we&apos;ll also whitelist some other providers, maybe not in the first version, we do want competition.</div>
 <div class="comment"><span class="name">Kumar McMillan</span>:  Whitelist is in there because it was the easiest way to ship 1.0.</div>
 <div class="comment"><span class="name">Kumar McMillan</span>:  We also wanted whitelist to address some security concerns. If any payment provider could show itself to the user, it could spoof mozilla payment provider. There is not a really easy way to trust that a payment provider is going to do good. Not just take money and disappear from the Internet.</div>
 <div class="comment"><span class="name">Kumar McMillan</span>:  What it comes down to to solve this problem, I think, is let the user decide who can be on the whitelist.</div>
-<div class="comment"><span class="name">Kumar McMillan</span>:  Some UI to accept/reject new users. We can put that trust in the user's hands, not in Mozilla or operator's hands who is running the device.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  Ultimately, this is exactly what we want - put the power to decide in the customer's hands. If we give this decision power to the payment providers, there will be collusion. If we give it to the operators, there will be collusion. Even if we give it to Mozilla, that's centralization and we don't want Mozilla picking winners and losers. At the same time, we need to protect customers from bad actors. There's a balance here that we have to hit - choice + reasonable protection.</div>
+<div class="comment"><span class="name">Kumar McMillan</span>:  Some UI to accept/reject new users. We can put that trust in the user&apos;s hands, not in Mozilla or operator&apos;s hands who is running the device.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Ultimately, this is exactly what we want - put the power to decide in the customer&apos;s hands. If we give this decision power to the payment providers, there will be collusion. If we give it to the operators, there will be collusion. Even if we give it to Mozilla, that&apos;s centralization and we don&apos;t want Mozilla picking winners and losers. At the same time, we need to protect customers from bad actors. There&apos;s a balance here that we have to hit - choice + reasonable protection.</div>
 <div class="comment"><span class="name">Dave Longley</span>:  Maybe we can use Web Intents to make some navigator call to register the user as a valid payment provider?</div>
 <div class="comment"><span class="name">Dave Longley</span>:  Maybe they would show up in the list or as a default or as a choice among many?</div>
 <div class="comment"><span class="name">Kumar McMillan</span>:  Yeah, Web Intents is based on Android Intents, You are on a website and click a share button, instead of having Twitter hardcoded onto the site, the device asks you how you want to share this.</div>
-<div class="comment"><span class="name">Kumar McMillan</span>:  So, I don't know if there is a way to fit it directly into payment processing part. It could in that a user could say he wants to use bitcoin app?</div>
+<div class="comment"><span class="name">Kumar McMillan</span>:  So, I don&apos;t know if there is a way to fit it directly into payment processing part. It could in that a user could say he wants to use bitcoin app?</div>
 <div class="comment"><span class="name">Kumar McMillan</span>:  It could use a web intent to ask how you want to pay. Since Bitcoin has registered itself, it could be selected.</div>
 <div class="comment"><span class="name">Kumar McMillan</span>:  Registering w/ a new payment provider is interesting, we should explore that. Maybe we can use intents to register a new payment provider and establish trust.</div>
 <div class="comment"><span class="name">Kumar McMillan</span>:  There is a delicate balance here - we want to give user choice, but Mozilla is also in a unique position to provide security to users who are not savvy. It was easy to solve w/ a whitelist, not ideal though.</div>
 <div class="comment"><span class="name">Kumar McMillan</span>:  We want to retain ability to blacklist or filter out malicious intents. Maybe we can establish trust / revoke trust in some kind of trusted way.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  We've been kicking around an idea for a while that we'd have a whitelist registry for PaySwarm. This registry would require fairly testable criteria: 1) Is the company a business and 2) Are they running software that passes the test suite? That could be a first cut. The second stage would be public trust metrics, like "Has any other payment provider asserted that this payment provider owes them money?". This concept could be extended to vendors and buyers as well. Having a trust system in place would make it easier to determine bad players in a decentralized fashion.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We&apos;ve been kicking around an idea for a while that we&apos;d have a whitelist registry for PaySwarm. This registry would require fairly testable criteria: 1) Is the company a business and 2) Are they running software that passes the test suite? That could be a first cut. The second stage would be public trust metrics, like &quot;Has any other payment provider asserted that this payment provider owes them money?&quot;. This concept could be extended to vendors and buyers as well. Having a trust system in place would make it easier to determine bad players in a decentralized fashion.</div>
 <div class="comment"><span class="name">Kumar McMillan</span>:  Is this a centralized solution, or a decentralized service?</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  Ideally decentralized, because if we centralize it and it's not under the control of an independent 3rd party, then there is a risk of collusion. Does that answer the question?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Ideally decentralized, because if we centralize it and it&apos;s not under the control of an independent 3rd party, then there is a risk of collusion. Does that answer the question?</div>
 <div class="comment"><span class="name">Kumar McMillan</span>: yes, thanks</div>
 <div class="comment"><span class="name">Travis Choma</span>:  If a verification is verifying the address - maybe we can show the user the address when they associate the payment provider. That would be another thing we could do to help prevent phishing.</div>
-<div class="comment"><span class="name">Dave Longley</span>:  If a merchant and a buyer have two different payment providers, both payment providers must trust each other in order to exchange money. If a payment provider isn't on that list, it's going to be a big barrier.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  If a merchant and a buyer have two different payment providers, both payment providers must trust each other in order to exchange money. If a payment provider isn&apos;t on that list, it&apos;s going to be a big barrier.</div>
 <div class="comment"><span class="name">Dave Longley</span>:  We may want to require that payment providers on the whitelist do business w/ others on the whitelist.</div>
 <div class="comment"><span class="name">Dave Longley</span>:  if a payment provider meets a basic reputation level or other parameters [scribe assist by Dave Longley]</div>
 <div class="comment"><span class="name">Kumar McMillan</span>:  So, to clarify - you do want to get rid of the whitelist?</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Yes, user prompt first, then centralized whitelist/blacklist, then decentralized trust metrics.</div>
 <div class="comment"><span class="name">Kumar McMillan</span>:  We could allow users to add whatever they wanted, but we could switch to a blacklist model.</div>
-<div class="comment"><span class="name">Kumar McMillan</span>:  That's the way firefox addons work - there are some pretty vicious addons. It's not an ideal end-game solution, maybe we can begin to build a trust model that would replace the centralized blacklist.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  Concerned about blacklist - there are millions of sites out there that could be blacklisted. The problem is that it's easy to setup a domain and make the payment provider registration call.</div>
-<div class="comment"><span class="name">Kumar McMillan</span>:  Yeah, it's a concern. It does provide some protection.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  Ok, so to put out a strawman proposal, we're talking about an API call that looks like this: navigator.payments.register()</div>
+<div class="comment"><span class="name">Kumar McMillan</span>:  That&apos;s the way firefox addons work - there are some pretty vicious addons. It&apos;s not an ideal end-game solution, maybe we can begin to build a trust model that would replace the centralized blacklist.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Concerned about blacklist - there are millions of sites out there that could be blacklisted. The problem is that it&apos;s easy to setup a domain and make the payment provider registration call.</div>
+<div class="comment"><span class="name">Kumar McMillan</span>:  Yeah, it&apos;s a concern. It does provide some protection.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Ok, so to put out a strawman proposal, we&apos;re talking about an API call that looks like this: navigator.payments.register()</div>
 <div class="comment"><span class="name">Dave Longley</span>:  Yes, when you go to a payment provider, that provider should be able to register itself with payment provider.</div>
 <h1 id="topic-3" class="topic">Topic: Merchant Payment Provider Choice</h1>
 <div class="comment"><span class="name">Travis Choma</span>:  I was going to add - question - if there is a register call, the user would be prompted if they would want to use payment provider?</div>
-<div class="comment"><span class="name">Travis Choma</span>:  Can the merchant choose which payment provider the user can use? We've talked about customer choice, what about the merchant?</div>
+<div class="comment"><span class="name">Travis Choma</span>:  Can the merchant choose which payment provider the user can use? We&apos;ve talked about customer choice, what about the merchant?</div>
 <div class="comment"><span class="name">Travis Choma</span>:  Different payment providers may clear funds at a different rate, can merchants choose?</div>
 <div class="comment"><span class="name">David I. Lehn</span>:  Yes, this is important for PaySwarm, certainly. Choice for both the buyer and vendor side.</div>
-<div class="comment"><span class="name">Kumar McMillan</span>:  We only did customer choice here - easier problem than merchant choice. In order to use a payment provider, they have to trust that they're going to get paid. otherwise going to get scammed.</div>
-<div class="comment"><span class="name">Kumar McMillan</span>:  Whitelist is a very user-centric problem. In the initial stage, we can't tackle solving the merchant whitelist.</div>
-<div class="comment"><span class="name">Kumar McMillan</span>:  Merchant would have their own trusted providers. If they're using Wallet, customer can only use wallet.</div>
-<div class="comment"><span class="name">Kumar McMillan</span>:  PaySwarm could solve that problem, it's separate from user whitelist issue.</div>
+<div class="comment"><span class="name">Kumar McMillan</span>:  We only did customer choice here - easier problem than merchant choice. In order to use a payment provider, they have to trust that they&apos;re going to get paid. otherwise going to get scammed.</div>
+<div class="comment"><span class="name">Kumar McMillan</span>:  Whitelist is a very user-centric problem. In the initial stage, we can&apos;t tackle solving the merchant whitelist.</div>
+<div class="comment"><span class="name">Kumar McMillan</span>:  Merchant would have their own trusted providers. If they&apos;re using Wallet, customer can only use wallet.</div>
+<div class="comment"><span class="name">Kumar McMillan</span>:  PaySwarm could solve that problem, it&apos;s separate from user whitelist issue.</div>
 <div class="comment"><span class="name">Dave Longley</span>:  With PaySwarm, merchant and buyer can use different payment providers.</div>
-<div class="comment"><span class="name">Dave Longley</span>:  effectively what would happen, though, is that they'd be interoperable and it would just work.</div>
-<div class="comment"><span class="name">Dave Longley</span>:  Merchant's choice is still there to pick a payment provider that they trust. Money would always just flow. In a different system, where you have to pick same provider between merchant and user, you may need to have something where merchant states what their preferences are.</div>
-<div class="comment"><span class="name">Dave Longley</span>:  Everyone uses the payswarm protocol, everyone gets paid, that's one of the big benefits of PaySwarm. If they're using something like PayPal or Amazon Payments, then both the customer and the merchant are forced to use the same system. If PayPal or Amazon Payments implements PaySwarm, then there is interoperability between those two services.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  effectively what would happen, though, is that they&apos;d be interoperable and it would just work.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Merchant&apos;s choice is still there to pick a payment provider that they trust. Money would always just flow. In a different system, where you have to pick same provider between merchant and user, you may need to have something where merchant states what their preferences are.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Everyone uses the payswarm protocol, everyone gets paid, that&apos;s one of the big benefits of PaySwarm. If they&apos;re using something like PayPal or Amazon Payments, then both the customer and the merchant are forced to use the same system. If PayPal or Amazon Payments implements PaySwarm, then there is interoperability between those two services.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  We can provide a way for merchants to limit payment processor choice via navigator.payments.getProviders() - which would return a list of payment providers that the customer has.</div>
 <div class="comment"><span class="name">Dave Longley</span>:  You could have a restricted list that user can choose from based on who merchant uses for payment provisioning. So, if customer has Meritora, PayPal, and Amazon Payments, and merchant only accepts PayPal, then PayPal is negotiated.</div>
 <h1 id="topic-4" class="topic">Topic: Polyfills for the Payment API</h1>
 <div class="comment"><span class="name">Manu Sporny</span>:  I think polyfills are going to be very important to getting adoption. We plan to support this, right?</div>
-<div class="comment"><span class="name">Kumar McMillan</span>:  There's been a lot of pushback against polyfills at Mozilla... not sure exactly why.</div>
+<div class="comment"><span class="name">Kumar McMillan</span>:  There&apos;s been a lot of pushback against polyfills at Mozilla... not sure exactly why.</div>
 <div class="comment"><span class="name">Kumar McMillan</span>:  We could polyfill API to get Android up and running, they wanted to implement native Android API.</div>
-<div class="comment"><span class="name">Kumar McMillan</span>:  So, I don't know if this pushback is for Mozilla's case.</div>
+<div class="comment"><span class="name">Kumar McMillan</span>:  So, I don&apos;t know if this pushback is for Mozilla&apos;s case.</div>
 <div class="comment"><span class="name">Kumar McMillan</span>:  I think polyfills are essential for adoption.</div>
-<div class="comment"><span class="name">Kumar McMillan</span>:  I don't see a way around it - a lot of the concerns against the polyfill come from security concerns - phishing case. They want to show a native chrome window.</div>
+<div class="comment"><span class="name">Kumar McMillan</span>:  I don&apos;t see a way around it - a lot of the concerns against the polyfill come from security concerns - phishing case. They want to show a native chrome window.</div>
 <div class="comment"><span class="name">Kumar McMillan</span>:  Sounds like polyfill is a last resort for Mozilla. Then again, Google Wallet is a polyfill.</div>
 <div class="comment"><span class="name">Travis Choma</span>: Kumar, I agree re your point on polyfilling.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  Yeah, we just need to not prevent polyfills in the API</div>
@@ -191,47 +161,42 @@ dd {
 <div class="comment"><span class="name">Kumar McMillan</span>:  Registration idea is straight forward, sounds like a decent approach.</div>
 <div class="comment"><span class="name">Kumar McMillan</span>:  How is getProviders() going to work, again?</div>
 <div class="comment"><span class="name">Kumar McMillan</span>:  If you have an idea for the spec, maybe you can write it up in the spec...</div>
-<div class="comment"><span class="name">Dave Longley</span>:  I think early on, if a merchant doesn't see a provider they trust, they have to tell the user.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  I think early on, if a merchant doesn&apos;t see a provider they trust, they have to tell the user.</div>
 <div class="comment"><span class="name">Manu Sporny</span>:  navigator.payment.getProviders() will probably return a list of providers that the customer has. It would be taken from the list populated by the navigator.payments.register() call. The vendor would then create a UI that would allow purchases to be initiated with any one of the ones in the getProviders() list that they support.</div>
 <div class="comment"><span class="name">Kumar McMillan</span>:  Maybe we can provide some way for the merchant to figure out trending payment providers as well? It would be good to know how many sales have been lost due to a failure to use a particular payment provider.</div>
 <div class="comment"><span class="name">Dave Longley</span>:  They could keep track of who is in that list, it would be a fairly clean way to collect that data.</div>
-<div class="comment"><span class="name">Manu Sporny</span>:  There is a security concern with this. You wouldn't want any website to be able to get the list of payment providers you have. It would be like allowing anyone to take a look in your wallet to see what sorts of credit cards you have. We would probably have to change getProviders() to take a list that the vendor supports. This isn't an issue for PaySwarm, but it is an issue for PayPal, Google Wallet, etc.</div>
-<div class="comment"><span class="name">Dave Longley</span>:  Merchant could give list of restricted providers they accept. Then browser responds, then site can put up information. That way we are not leaking information and they can tell when they've lost a sale to someone that doesn't have the same payment provider that they do.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  There is a security concern with this. You wouldn&apos;t want any website to be able to get the list of payment providers you have. It would be like allowing anyone to take a look in your wallet to see what sorts of credit cards you have. We would probably have to change getProviders() to take a list that the vendor supports. This isn&apos;t an issue for PaySwarm, but it is an issue for PayPal, Google Wallet, etc.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Merchant could give list of restricted providers they accept. Then browser responds, then site can put up information. That way we are not leaking information and they can tell when they&apos;ve lost a sale to someone that doesn&apos;t have the same payment provider that they do.</div>
 <div class="comment"><span class="name">Kumar McMillan</span>: thanks all for the call, chat with all of you next week.</div>
-       </div>
-  </div>
+</div></div></div></section>
+    <div id="footerwrap">
+      <div class="container">
+        <h4>Created by the <a href="http://www.w3.org/community/webpayments/">Web Payments Community Group</a>. Shared with love under a <a href="http://creativecommons.org/licenses/by/4.0/">CC-BY</a> license.</h4>
+      </div>
+    </div>
 
-<div class="container vspacing"> 
-  <div class="row"> 
-    <div class="threecol"> 
-      <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a> 
-    </div> 
-    <div class="ninecol last"> 
-      <p>&copy; 2013 Digital Bazaar, Inc. 
-Website CSS created by <a href="http://cssgrid.net/">@andytlr</a> 
-and is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/au/"> 
-Creative Commons Attribution-ShareAlike 3.0 Australia License</a>. All other
-website content is licensed under a
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"> 
-Creative Commons Attribution-ShareAlike 3.0 License</a>
-</p> 
-    </div> 
-  </div> 
-</div> 
- 
-<script type="text/javascript"> 
- 
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+
+  <script type="text/javascript" src="../../assets/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/retina.js"></script>
+  <script type="text/javascript" src="../../assets/js/jquery.easing.1.3.js"></script>
+  <script type="text/javascript" src="../../assets/js/smoothscroll.js"></script> 
+    
+  <script type="text/javascript">
   var _gaq = _gaq || [];
-  _gaq.push(["_setAccount", "UA-1539674-7"]);
-  _gaq.push(["_trackPageview"]);
+  _gaq.push(['_setAccount', 'UA-1539674-7']);
+  _gaq.push(['_trackPageview']);
 
   (function() {
-    var ga = document.createElement("script"); ga.type = "text/javascript"; ga.async = true;
-    ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";
-    (document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]).appendChild(ga);
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
   })();
- 
-</script>
-
-</body>
+  </script>
+    
+  </body>
 </html>
+
