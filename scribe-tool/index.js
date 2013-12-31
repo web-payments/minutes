@@ -35,7 +35,9 @@ var peopleJson = fs.readFileSync(
 htmlHeader = htmlHeader.replace(/<\?php.*\$TOP_DIR.*\?>/g, '../..');
 htmlFooter = htmlFooter.replace(/<\?php.*\$TOP_DIR.*\?>/g, '../..');
 logData = '';
-
+var gDate = path.basename(dstDir);
+gDate = gDate.replace(/-[a-z]+$/, '');
+ 
 // configure scrawl
 scrawl.group = "Web Payments Community Group";
 scrawl.people = JSON.parse(peopleJson);
@@ -50,9 +52,7 @@ function postToWordpress(username, password, content, callback) {
   });
   
   // Re-format the HTML for publication to a Wordpress blog
-  var mDate = path.basename(dstDir);
-  var mDate = mDate.replace(/-[a-z]+$/, '');
-  var datetime = new Date(mDate);
+  var datetime = new Date(gDate);
   datetime.setHours(37);
   var wpSummary = content.post_content;
   wpSummary = wpSummary.substring(
@@ -120,8 +120,8 @@ async.waterfall([ function(callback) {
     htmlHeader + 
     '<section><div class="container"><div class="row white"><br>' +
     '<div class="col-lg-offset-2 col-lg-8">' +
-    scrawl.generateMinutes(logData, 'html') + '</div></div></div></section>' + 
-    htmlFooter;
+    scrawl.generateMinutes(logData, 'html', gDate) + 
+    '</div></div></div></section>' + htmlFooter;
   callback(null, minutes);
 }, function(minutes, callback) {
   // write the index.html file to disk
@@ -139,8 +139,8 @@ async.waterfall([ function(callback) {
       console.log('scrawl: Creating new blog post.');
     }
     var content = {
-      post_title: 'Web Payments Meeting Minutes for ' + path.basename(dstDir),
-      post_content: scrawl.generateMinutes(logData, 'html')
+      post_title: 'Web Payments Meeting Minutes for ' + gDate,
+      post_content: scrawl.generateMinutes(logData, 'html', gDate)
     };
     
     if(process.env.SCRAWL_WP_USERNAME && process.env.SCRAWL_WP_PASSWORD) {

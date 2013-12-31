@@ -450,7 +450,7 @@
   scrawl.generateSummary = function(context, textMode)
   {
     var rval = '';
-    var time = new Date();
+    var time = context.date || new Date();
     var month = '' + (time.getMonth() + 1)
     var day = '' + time.getDate()
     var group = context.group;
@@ -462,6 +462,12 @@
     var resolutions = context.resolutions;
     var actions = context.actions;
     var present = Object.keys(context.present);
+
+    // modify the time if it was specified
+    if(context.date) {
+      time = new Date(context.date)
+      time.setHours(35);
+    }
 
     // zero-pad the month and day if necessary
     if(month.length == 1)
@@ -593,7 +599,7 @@
     $('#html-output').html(minutes);
   };
 
-  scrawl.generateMinutes = function(ircLog, textMode)
+  scrawl.generateMinutes = function(ircLog, textMode, date)
   {
     var rval = '';
     var minutes = '';
@@ -611,7 +617,12 @@
       'resolutions': [],
       'actions': []
     };
-
+    
+    if(date) {
+      context.date = new Date(date);
+      context.date.setHours(36);
+    }
+    
     // process each IRC log line
     for(var i = 0; i < ircLines.length; i++)
     {
