@@ -5,6 +5,7 @@ var fs = require('fs')
 var path = require('path');
 var program = require('commander');
 var scrawl = require('./scrawl');
+var Twitter = require('twitter');
 var wp = require('wporg');
 
 program
@@ -215,6 +216,54 @@ async.waterfall([ function(callback) {
           content, callback);
       });
     }
+  } else {
+    callback();
+  }
+}, function(callback) {
+  // publish the minutes to Twitter
+  if(program.twitter) {
+    if(!process.env.SCRAWL_TWITTER_CONSUMER_KEY ||
+      !process.env.SCRAWL_TWITTER_SECRET ||
+      !process.env.SCRAWL_TWITTER_TOKEN_KEY ||
+      !process.env.SCRAWL_TWITTER_TOKEN_SECRET) {
+      console.log('scrawl: You must set the following environment variables ' +
+        'for twitter\nposting to work: SCRAWL_TWITTER_CONSUMER_KEY, ' +
+        'SCRAWL_TWITTER_SECRET,\nSCRAWL_TWITTER_TOKEN_KEY, ' +
+        'SCRAWL_TWITTER_TOKEN_SECRET.');
+      return callback();
+    }
+    // create the twitter client
+    var twitter = new Twitter({
+      consumer_key: process.env.SCRAWL_TWITTER_CONSUMER_KEY,
+      consumer_secret: process.env.SCRAWL_TWITTER_SECRET,
+      access_token_key: process.env.SCRAWL_TWITTER_TOKEN_KEY,
+      access_token_secret: process.env.SCRAWL_TWITTER_TOKEN_SECRET
+    });
+
+    // get the tweet text
+    console.log('scrawl: Creating new tweet.');
+    var prompt = require('prompt');
+      prompt.start();
+      prompt.get({
+        properties: {
+          message: {
+            description: 'Enter the tweet contents (what was discussed)',
+            pattern: /^.{4,100}$/,
+            message: 'The message must be between 4-100 characters.'
+          }
+        }
+      }, function(err, results) {
+        // construct the tweet
+        var tweet = 'Web Payments group discusses ' + 
+          results.message + ': https://web-payments.org/minutes/' + 
+          gDate + '/ #w3c #webpayments';
+
+        // send the tweet
+        twitter.updateStatus(tweet, function(data) {
+          console.log('scrawl: Tweet sent:', data.text);
+          callback();
+        });
+      });
   } else {
     callback();
   }

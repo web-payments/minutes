@@ -13,6 +13,7 @@
     "mailparser": "~0.2.26",
     "mime": "~1.2.7",
     "moment": "~1.7.2",
+    "twitter": "~0.2.5",
     "underscore": "~1.5.0",
     "wporg": "~0.1.0"
   },
