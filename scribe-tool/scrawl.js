@@ -124,7 +124,7 @@
     }
     else
     {
-      rval = '\nACTION: ' + msg + '\n\n';
+      rval = '\n\n' + scrawl.wordwrap('ACTION: ' + msg, 65, '\n  ') + '\n\n';
     }
     
     return rval;
@@ -633,6 +633,9 @@
     
     // generate the meeting summary
     summary = scrawl.generateSummary(context, textMode);
+
+    // fix spacing around proposals, actions, and resolutions
+    minutes = minutes.replace(/\n\n\n/gm, '\n\n');
 
     // create the final log output
     rval = summary + minutes;

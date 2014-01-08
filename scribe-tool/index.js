@@ -1,5 +1,6 @@
 var _ = require('underscore');
 var async = require('async');
+var email = require('emailjs');
 var fs = require('fs')
 var path = require('path');
 var program = require('commander');
@@ -9,7 +10,7 @@ var wp = require('wporg');
 program
   .version('0.3.0')
   .option('-d, --directory <directory>', 'The directory to process.')
-  .option('-h, --html', 'If set, write the minutes to an index.html file')
+  .option('-m, --html', 'If set, write the minutes to an index.html file')
   .option('-w, --wordpress', 'If set, publish the minutes to the blog')
   .option('-e, --email', 'If set, publish the minutes to the mailing list')
   .option('-t, --twitter', 'If set, publish the minutes to Twitter')
@@ -34,7 +35,7 @@ var peopleJson = fs.readFileSync(
   __dirname + '/people.json', {encoding: 'utf8'});
 htmlHeader = htmlHeader.replace(/<\?php.*\$TOP_DIR.*\?>/g, '../..');
 htmlFooter = htmlFooter.replace(/<\?php.*\$TOP_DIR.*\?>/g, '../..');
-logData = '';
+gLogData = '';
 var gDate = path.basename(dstDir);
 gDate = gDate.replace(/-[a-z]+$/, '');
  
@@ -58,12 +59,12 @@ function postToWordpress(username, password, content, callback) {
   wpSummary = wpSummary.substring(
     wpSummary.indexOf('<dl>'), wpSummary.indexOf('</dl>') + 5);
   wpSummary = wpSummary.replace(/href=\"#/g, 
-    'href="http://web-payments.org/minutes/' + mDate + '/#');
+    'href="http://web-payments.org/minutes/' + gDate + '/#');
   wpSummary = wpSummary.replace(/href=\"audio/g, 
-    'href="http://web-payments.org/minutes/' + mDate + '/audio');
+    'href="http://web-payments.org/minutes/' + gDate + '/audio');
   wpSummary = wpSummary.replace(/<div><audio[\s\S]*\/audio><\/div>/g, '');
   wpSummary += '<p>Detailed minutes and recorded audio for this call are ' +
-    '<a href="https://web-payments.org/minutes/' + mDate +
+    '<a href="https://web-payments.org/minutes/' + gDate +
     '/">available in the archive</a>.</p>';
 
   // calculate the proper post date
@@ -74,7 +75,7 @@ function postToWordpress(username, password, content, callback) {
   content.post_content = wpSummary;
   content.post_date_gmt = gmtDate;
   content.terms_names = ['Meetings'];
-  content.post_name = mDate + '-minutes';
+  content.post_name = gDate + '-minutes';
   content.custom_fields = [{
     s2_meta_field: 'no'
   }];
@@ -97,6 +98,33 @@ function postToWordpress(username, password, content, callback) {
   });
 }
 
+function sendEmail(username, password, hostname, content, callback) {
+  var server  = email.server.connect({
+    //user: username,
+    //password: password,
+    host: hostname,
+    ssl: false
+  });
+
+  // send the message
+  server.send({
+    text:    content, 
+    from: 'msporny@digitalbazaar.com',
+    //from:    username + '@' + hostname,
+    to:      'Web Payments CG <public-webpayments@w3.org>',
+    subject: 'Web Payments Telecon Minutes for ' + gDate
+  }, function(err, message) { 
+    if(err) {
+      console.log('scrawl:', err);
+      return callback();
+    }
+    
+    if(!program.quiet) {
+      console.log('scrawl: Sent minutes email to public-webpayments@w3.org');
+    }
+    callback();
+  });
+};
 /*************************** Main Functionality ******************************/
 
 async.waterfall([ function(callback) {
@@ -114,13 +142,13 @@ async.waterfall([ function(callback) {
   // read the IRC log file
   fs.readFile(logFile, 'utf8', callback);
 }, function(data, callback) {
-  logData = data;
+  gLogData = data;
   // generate the index.html file
   var minutes = 
     htmlHeader + 
     '<section><div class="container"><div class="row white"><br>' +
     '<div class="col-lg-offset-2 col-lg-8">' +
-    scrawl.generateMinutes(logData, 'html', gDate) + 
+    scrawl.generateMinutes(gLogData, 'html', gDate) + 
     '</div></div></div></section>' + htmlFooter;
   callback(null, minutes);
 }, function(minutes, callback) {
@@ -134,13 +162,71 @@ async.waterfall([ function(callback) {
     callback();
   }
 }, function(callback) {
+  // send the email about the meeting
+  if(program.email) {
+    if(!program.quiet) {
+      console.log('scrawl: Sending new minutes email.');
+    }
+
+    // generate the body of the email
+    var content = scrawl.generateMinutes(gLogData, 'text', gDate)
+    var scribe = content.match(/Scribe:\n\s(.*)\n/g)[0]
+      .replace(/\n/g, '').replace('Scribe:  ', '');
+    content = 'Thanks to ' + scribe + ' for scribing this week! The minutes\n' +
+      'for this week\'s Web Payments telecon are now available:\n\n' +
+      'https://web-payments.org/minutes/'+ gDate + '/\n\n' +
+      'Full text of the discussion follows for W3C archival purposes.\n' +
+      'Audio from the meeting is available as well (link provided below).\n\n' +
+      '----------------------------------------------------------------\n' +
+      content;
+
+    if(process.env.SCRAWL_EMAIL_USERNAME && process.env.SCRAWL_EMAIL_PASSWORD &&
+      process.env.SCRAWL_EMAIL_SERVER) {
+      sendEmail(
+        process.env.SCRAWL_EMAIL_USERNAME, process.env.SCRAWL_EMAIL_PASSWORD, 
+        process.env.SCRAWL_EMAIL_SERVER, content, callback);
+    } else {
+      var prompt = require('prompt');
+      prompt.start();
+      prompt.get({
+        properties: {
+          server: {
+            description: 'Enter your email server',
+            pattern: /^.{4,}$/,
+            message: 'The server name must be at least 4 characters.',
+            'default': 'mail.digitalbazaar.com'
+          },
+          username: {
+            description: 'Enter your email login name',
+            pattern: /^.{1,}$/,
+            message: 'The username must be at least 4 characters.',
+            'default': 'msporny'
+          },
+          password: {
+            description: 'Enter your email password',
+            pattern: /^.{4,}$/,
+            message: 'The password must be at least 4 characters.',
+            hidden: true,
+            'default': 'password'
+          }
+        }
+      }, function(err, results) {
+        sendEmail(results.username, results.password, results.server, 
+          content, callback);
+      });
+    }
+  } else {
+    callback();
+  }
+}, function(callback) {
+  // publish the wordpress blog post
   if(program.wordpress) {
     if(!program.quiet) {
       console.log('scrawl: Creating new blog post.');
     }
     var content = {
       post_title: 'Web Payments Meeting Minutes for ' + gDate,
-      post_content: scrawl.generateMinutes(logData, 'html', gDate)
+      post_content: scrawl.generateMinutes(gLogData, 'html', gDate)
     };
     
     if(process.env.SCRAWL_WP_USERNAME && process.env.SCRAWL_WP_PASSWORD) {
