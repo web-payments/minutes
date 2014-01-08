@@ -1,0 +1,171 @@
+[Wed 11:02] <m4nu> Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2014Jan/0047.html
+[Wed 11:02] <dlongley> scribe: dlongley
+[Wed 11:02] <voip-ps> <unknown> (IAX2/diamondcard-12447) has joined the conference.
+[Wed 11:03] <m4nu> voip: 12447 is Evan
+[Wed 11:03] <voip-ps> Evan is now associated with IAX2/diamondcard-12447.
+[Wed 11:03] <dlongley> m4nu: Any changes to the Agenda?
+[Wed 11:04] <dlongley> evan: None
+[Wed 11:03] <m4nu> Topic: Update on Web Payments Workshop
+[Wed 11:03] <m4nu> http://www.w3.org/2013/10/payments/
+[Wed 11:04] <dlongley> m4nu: the program committee is responsible for setting the agenda for the workshop and saying which participants get to talk on which topics, we're accepting position papers from a variety of orgs, from them we will get a broad representation of the topics across industries, etc.
+[Wed 11:05] <dlongley> m4nu: from now until feb. 8th we can get in papers, typically there is a mad rush at the end to get the papers in
+[Wed 11:05] <dlongley> m4nu: the dates are on the landing page for the workshop
+[Wed 11:05] <dlongley> m4nu: workshop submissions are open now, we're taking two types, first one is an expression of interest, you can attend workshop by sending in 1-4 paragraphs with why your org wants to attend and what you want to bring to the workshop, etc.
+[Wed 11:05] <dlongley> m4nu: low barrier of entry to the workshop
+[Wed 11:06] <dlongley> m4nu: other type is submitting a position paper, 1-5 pages long, and should outline the set of problems you've identified with respect to payments, or tech/policy issues
+[Wed 11:07] <voip-ps> <unknown> (IAX2/diamondcard-3349) has joined the conference.
+[Wed 11:07] <dlongley> m4nu: at this point, the thing that we need to do as the web payments CG is to whip up interest about the workshop, get orgs to at least send expression of interest (1-4 paragraphs), if org is very involved in this space, have them submit a position paper
+[Wed 11:08] <dlongley> m4nu: we've gotten a couple of really interesting things so far, we're trying to figure out a way to make them public if we can sooner rather than later so people can see the types of papers that are being submitted
+[Wed 11:08] <dlongley> m4nu: anything else on the web payments workshop? the takeaway here is contact as many people as you can
+[Wed 11:08] <dlongley> m4nu: there are only 100 spots, all orgs are limited to sending 1 person right now, if we find out not all 100 seats are taken up we will allow more than 1 person from an org
+[Wed 11:08] <dlongley> m4nu: it can be an individual, not just an org
+[Wed 11:09] <dlongley> m4nu: we just want unique ideas brought to the tables
+[Wed 11:09] <dlongley> m4nu: if 3 papers have the same content, then the org with the most influence will likely be invited
+[Wed 11:09] <dlongley> erik: would it behoove us to have a reporter from someone who is active from the bitcoin community?
+[Wed 11:10] <dlongley> m4nu: usually the workshops are not very good venues for reporters, it may cause orgs to clam up about the things they are interested in, if the reporter wants to represent on how these new techs might effect reporting online that would be a good idea
+[Wed 11:10] <dlongley> m4nu: it's up to them, they can submit an expression of interest and then the program committee will decide
+[Wed 11:10] <dlongley> erik: ok
+[Wed 11:11] <dlongley> m4nu: we want the world to know this stuff is being worked on, but we don't want to make the orgs that attend uneasy about saying anything, so there's a balance
+[Wed 11:11] <dlongley> joseph: is it worth having a statement about the protocol for reporting, etc.?
+[Wed 11:12] <dlongley> m4nu: that's a good idea, it's hard to strike a balance, we want people to talk about it, but we want them to talk about it very accurately
+[Wed 11:12] <dlongley> erik: the problem is that everything i do is public record, this is a wide open standard, you can't control this
+[Wed 11:13] <dlongley> joseph: the protocol i'm talking about is saying you can talk about issues but not attribute them to anyone
+[Wed 11:13] <dlongley> m4nu: in general we just need to discuss it a bit more and clarify in the program committee
+[Wed 11:13] <dlongley> m4nu: personally, i agree with what eric said
+[Wed 11:13] <dlongley> m4nu: i think the concern comes from a company saying "hey that's cool" and a reporter running a line saying "google says they are going to implement web payments" when they made no such statement
+[Wed 11:14] <voip-ps> Joseph Potvin (SIP/getonsip.com-0000015d) has left the conference.
+[Wed 11:14] <m4nu> ACTION: Manu to suggest that the Web Payments Program Committee publish a protocol for journalists and live bloggers at the Web Payments Workshop.
+[Wed 11:14] <m4nu> Topic: New web-payments.org website
+[Wed 11:15] <m4nu> https://web-payments.org/
+[Wed 11:15] <dlongley> m4nu: before the holiday break we raised the possibility of rebranding payswarm to "web payments" because we didn't want the message to be incorrect
+[Wed 11:15] <voip-ps> Joseph Potvin (SIP/getonsip.com-00000161) has joined the conference.
+[Wed 11:15] <dlongley> m4nu: some people were getting the message that there's one company that owns payswarm (inaccurate) and that it was being promoted at the expense of other techs, when we really want the message to be that we're working on payment solutions in general for the web
+[Wed 11:16] <dlongley> m4nu: at the same time, we can't just be a community that talks about payment technologies instead of putting something forward, the payswarm specs are the first set of specs that have been submitted to the w3c under patent-free royalty-free licenses, etc.
+[Wed 11:16] <dlongley> m4nu: following the w3c process for turning things over to become a standard
+[Wed 11:17] <dlongley> m4nu: so far it seems that people are fairly happy with the rebranding and remessaging
+[Wed 11:17] <dlongley> joseph: the website is excellent you did a great job on it, it functions well, it's easy to find stuff, the text is great
+[Wed 11:18] <dlongley> joseph: what's up with the pig?
+[Wed 11:18] <voip-ps> Evan (IAX2/diamondcard-12447) has left the conference.
+[Wed 11:19] <dlongley> m4nu: it's meant to represent money, excesses of humanity, etc. but if that has to be explained it's a bad logo, other complaints have come in
+[Wed 11:19] <dlongley> dlongley: manu also just loves his animal logos
+[Wed 11:19] <dlongley> m4nu: i liked the universal sign for currency from joseph
+[Wed 11:21] <dlongley> joseph: there are some questions in the communities i'm involved in with price stabilization, etc. i'm wondering if there's a way we can have a subgroup under web payments for that
+[Wed 11:21] <dlongley> m4nu: i don't know, i imagine that's a question for the community
+[Wed 11:22] <dlongley> m4nu: my personal opinion is that if we get too far away from technical standards people will drop off
+[Wed 11:22] <dlongley> joseph: maybe the web payments community group could have sub groups for identity, technical, monetary issues (interaction with the fed)
+[Wed 11:23] <dlongley> m4nu: if we make multiple mailing lists things will splinter and duplicates will occur, but that being said, if this really needs to happen we can make a separate mailling list
+[Wed 11:23] <dlongley> joseph: there are a few interests that are of great interest to me and evidently not too many others on the list
+[Wed 11:24] <dlongley> joseph: i'm seeing a lot of discussion outside of this venue and this might be happening with some of the other particular interests associated here, if there was some way to link other activities into this sphere it may actually do the opposite of splintering
+[Wed 11:24] <dlongley> m4nu: a lot of the discussions do happen outside the group, the identity stuff happens across about 5 different mailing lists
+[Wed 11:24] <dlongley> m4nu: secure messaging is split across ietf and here
+[Wed 11:25] <dlongley> m4nu: if you're communicating with people and just using a big long list of email addresses, then that's a good case for creating a subgroup
+[Wed 11:26] <dlongley> joseph: an example: on different indices, i'm collaborating with a few others to coordinate their work into indices, people working on their own indexes (eg: retired from IMF, retired from UK monetary authority). We have a common interest in a venue for such indices and among us we talk about how that could be used in the web payments venue; at least there should be a way to bring others who might not be in this discussion into the group.
+[Wed 11:27] <dlongley> erik: you might want to talk with a contact in a large financial industry about indexes
+[Wed 11:27] <dlongley> m4nu: do you want me to ask w3c staff to create a mailing list for this?
+[Wed 11:28] <dlongley> joseph: does it make organizational sense for how you'd like to see web payments as a CG/WG proceed ... does it make sense to have subgroups?
+[Wed 11:28] <dlongley> m4nu: W3C has had subgroups before, you can usually identify a subgroup
+[Wed 11:28] <dlongley> m4nu: another mailing list is cheap, it's not a great cost
+[Wed 11:29] <dlongley> joseph: that would be good because i don't think there's a lot of interest for what i'm working on
+[Wed 11:29] <dlongley> joseph: in the CG, so i'd prefer to move those discussions to a subgroup
+[Wed 11:29] <dlongley> m4nu: ok, send an email to the community about this and we'll see what we can do
+[Wed 11:30] <voip-ps> <unknown> (IAX2/diamondcard-3349) has left the conference.
+[Wed 11:30] <dlongley> m4nu: as always, anyone can submit an edit to the web payments website, it's on github
+[Wed 11:30] <m4nu> https://github.com/web-payments/web-payments.org/
+[Wed 11:30] <dlongley> m4nu: i see that joseph has already used the github interface to make some edits
+[Wed 11:30] <dlongley> m4nu: it's a completely open website, anyone can submit pull requests, etc.
+[Wed 11:30] <dlongley> m4nu: we're fairly open about who can change what and when
+[Wed 11:31] <m4nu> Topic: Web Payments Workshop Position Paper
+[Wed 11:31] <m4nu> http://www.w3.org/2013/10/payments/participate.html
+[Wed 11:31] <dlongley> m4nu: in order to participate in the web payments workshop, you have to do one of two things: submit expression of interest or position paper
+[Wed 11:31] <dlongley> m4nu: by design, we didn't mention the web payments CG in the workshop body text, that allows us to then participate as the CG
+[Wed 11:32] <dlongley> m4nu: in order to do that i was thinking of writing a position paper with all of the issues we've identified over the 3+ years ... any solution for web payments on the web is going to have to look at these things, X, Y, Z
+[Wed 11:32] <dlongley> m4nu: outlining all the specs we've worked on and the reasons why we're working on them
+[Wed 11:32] <dlongley> m4nu: we can start the discussion on what the CG has done by submitting a position paper from the group
+[Wed 11:33] <dlongley> m4nu: so the question is whether or not people think that's a good idea, an alternative would be members submitting their own papers
+[Wed 11:33] <dlongley> m4nu: for instance, DB could submit a paper on payswarm and Ripple on Ripple
+[Wed 11:33] <dlongley> m4nu: we could do both of these things as well
+[Wed 11:33] <dlongley> joseph: in the way that the agenda works, if it's one position paper, does that mean it's only going to get one time slot?
+[Wed 11:34] <dlongley> m4nu: yes, one presentation time slot, we still don't know what the format for the workshop will be, the first half may be presentation, the second may be an unconference format, companies put their topics on a whiteboard and people pick what they wnat to attend
+[Wed 11:34] <dlongley> m4nu: i don't know is the short answer
+[Wed 11:34] <dlongley> m4nu: there will be multiple ways to present topics at the workshop, not just presentatino
+[Wed 11:35] <dlongley> joseph: it might be useful if a composition paper from the CG would have more than one section if they'd be submitted separately
+[Wed 11:35] <dlongley> joseph: maybe it should be done by subject not by individual companies
+[Wed 11:35] <dlongley> m4nu: what the CG could do is present "these are what we think the problems are" and we could have people provide more specific information on each of those subjects
+[Wed 11:36] <dlongley> m4nu: there's no strict format for how we get papers in there
+[Wed 11:36] <dlongley> m4nu: i just don't want the CG to write a paper that makes it difficult for CG members to attend if they want to
+[Wed 11:36] <dlongley> m4nu: eg: if we submit a position paper with a section on price indexes, then that means that you (joseph) would not be able to submit another paper with more details
+[Wed 11:37] <dlongley> m4nu: the CG paper could mention the problem but not go into details, and then let you submit another paper
+[Wed 11:37] <dlongley> joseph: would the CG constitute one org?
+[Wed 11:37] <dlongley> m4nu: yes, and that's the problem
+[Wed 11:37] <dlongley> m4nu: we don't want to shoot our members in the shoot
+[Wed 11:37] <dlongley> m4nu: we could submit a paper as DB/CG and coordinate with CG members to ensure we're not preventing them from submitting their own paper
+[Wed 11:38] <dlongley> m4nu: i think we we'll do is create a wiki page like we did with the fed paper, i expect a 40% overlap with that paper
+[Wed 11:38] <dlongley> m4nu: it will be targeted to the workshop, but we'll raise the same issues about identity, using linked data, etc.
+[Wed 11:38] <dlongley> joseph: you said the workshop is just to identify problems not the solutions?
+[Wed 11:39] <dlongley> m4nu: in general, that's the loose thought of the program committee right now, we (the workshop) want to gather consensus around what the pain points are with payments on the web today and discuss how standards can address those
+[Wed 11:39] <dlongley> m4nu: we might want to gloss over some of the techs that could be standardized to address, but this isn't a sales pitch thing, no org should try to do a sales pitch on their tech
+[Wed 11:40] <m4nu> Topic: Web Identity Updates/Concerns
+[Wed 11:40] <dlongley> m4nu: we may just say this is a subset that we think standardization can apply to
+[Wed 11:40] <m4nu> https://web-payments.org/specs/source/web-identity/
+[Wed 11:42] <dlongley> m4nu: so some of this started as a way to deal with KYC for banks, so banks could do a web request and check a digital signature on identity information and smooth the whole transaction process
+[Wed 11:42] <dlongley> m4nu: it is not trying to solve login on the web, there are other mechanisms to do that
+[Wed 11:42] <dlongley> m4nu: this should work with those other mechanisms, for example, when you use persona, one of the pieces of information that is transferred is your identity URL
+[Wed 11:42] <dlongley> m4nu: using that URL you can do discover on citizenship information/age, etc. things of that nature
+[Wed 11:42] <m4nu> https://github.com/web-payments/web-payments.org/issues?labels=web-identity
+[Wed 11:43] <dlongley> m4nu: we put the spec out in a very unfinished state because we wanted to get those ideas out there
+[Wed 11:43] <m4nu> https://plus.google.com/+ManuSporny/posts/94fooRHDb6T
+[Wed 11:43] <dlongley> m4nu: we've got some feedback already
+[Wed 11:43] <dlongley> m4nu: on google+ there has been a long discussion involving people who work on identity on the web, and there's concern there with overlap and reinventing the wheel, etc.
+[Wed 11:44] <dlongley> m4nu: we could start going over the issues in the identity tracker and try and figure out a general approach for addressing those issues
+[Wed 11:45] <dlongley> m4nu: the first issue that comes up with most people is that the web identity spec doesn't distinguish itself from existing solutions
+[Wed 11:45] <dlongley> m4nu: we need to clarify that it's not a login solution for the web, it is specifically not trying to solve that problem
+[Wed 11:45] <dlongley> m4nu: it is trying to solve the problem of transferring private information about yourself to another entity
+[Wed 11:46] <dlongley> joseph: i worked with some people with the Canadian govt with this, it's not about login, if people are in an agency that gets subsumed by another one [missed], all of this becomes an issue and a horrible mess over 5 years, etc.
+[Wed 11:47] <dlongley> joseph: the identity issue is huge, it's not an area that i know myself, if it's useful to have someone that has worked in the bowels of that issue i can perhaps track someone down to get some examples of that
+[Wed 11:47] <dlongley> m4nu: yes that would be very helpful, particularly someone from govt, we hope to be able to let govts use this to attach information to people's identity online
+[Wed 11:47] <dlongley> m4nu: you should be able to store passport information (encrypted)
+[Wed 11:47] <dlongley> m4nu: etc.
+[Wed 11:48] <dlongley> m4nu: it would be even more helpful because if we can talk to the right people in the canadian govt then we can talk to them about adopting this as the way to do identity
+[Wed 11:48] <dlongley> m4nu: this one integrates with banking so it might be a different level of interest to them (vs. existing tech)
+[Wed 11:49] <dlongley> joseph: they are the core procurement side of the govt so they're dealing with [missed] as well as individuals [missed] they expressed an interest in sharing what they've done
+[Wed 11:49] <dlongley> m4nu: it would be great to get them on a call and make sure the spec addresses their pain points
+[Wed 11:49] <dlongley> m4nu: in general, we need more elaboration on what other specs we looked at and why they didn't work well for the problem in front of us
+[Wed 11:49] <dlongley> m4nu: that's the first set of feedback that we've had
+[Wed 11:49] <dlongley> m4nu: the other set of feedback is more of a technical nature, dave longley, your feedback
+[Wed 11:50] <m4nu> https://github.com/web-payments/web-payments.org/issues/14
+[Wed 11:50] <dlongley> m4nu: so the UK wants to write something to your identity, you've logged in via persona, so they know where your identity resides, the problem is that your identity provider will have to say that "so and so is trying to write to your identity"
+[Wed 11:51] <dlongley> m4nu: the question is, how do you ensure that the person who is writing to your identity is who they say they are"
+[Wed 11:51] <m4nu> dlongley: It captures half of the concern, this is a concern with reading or writing.
+[Wed 11:51] <m4nu> dlongley: When some organization wants to access the identity for reading, you need to know who you're giving that information out to. It is a concerns with both read and write. We need to have a way to do that. We may want to make it so that people with identities will trust certain types of identitifcation methods.
+[Wed 11:52] <m4nu> dlongley: There are various ways we can approach this, maybe HTTP Signatures only?
+[Wed 11:52] <m4nu> dlongley: There needs to be some sort of trust network behind it, they've said they're the UK Government, but do I know if that's who they are?
+[Wed 11:52] <m4nu> dlongley: We could do something similar to what WebID does, piggyback over SSL certificates?
+[Wed 11:53] <m4nu> dlongley: If someone wants to read/write to the URL, they would serve the URL with SSL, if they try to read/write your identity, you verify that the public key is from that URL and that URL has a trusted certificate associated with it.
+[Wed 11:54] <m4nu> dlongley: That means that anyone that wants to read/write to your identity must have an identity themselves. If anyone wants to request your information, they should have some identity information. Some trust network needs to be tapped into, maybe the CA trust network. Some fields could be pulled from the SSL cert so that you know you can trust them.
+[Wed 11:54] <m4nu> dlongley: That entire layer is missing from the spec, so there is no way to know whether or not you should release your information.
+[Wed 11:55] <dlongley> m4nu: the current state is that none of the identity solutions verify who is doing that reading or writing
+[Wed 11:55] <dlongley> m4nu: for example, when you log in via google or twitter, it says "so and so is trying to read your information" ... the don't verify anything they just say "are you ok with someone reading this"
+[Wed 11:56] <dlongley> m4nu: if you look at the flow that people are going through it will likely make it ok in most cases
+[Wed 11:56] <dlongley> m4nu: that's not to say it's ok, it's just that there are varying degrees of information
+[Wed 11:56] <dlongley> m4nu: in the case that something isn't verified, we should throw up a big warning
+[Wed 11:57] <dlongley> m4nu: if people don't want to see warnings then people could associate public keys, etc. for other identities
+[Wed 11:57] <dlongley> joseph: is there a privacy model for this?
+[Wed 11:57] <dlongley> m4nu: the openID-connect people would say "yes", but the privacy implications of this is a piece of on going work
+[Wed 11:58] <dlongley> m4nu: there is always new data that pops up
+[Wed 11:58] <dlongley> m4nu: 5 years ago we didn't worry about the NSA snooping on everything and now we do
+[Wed 11:58] <dlongley> m4nu: so some people would say "yes", but i think the actual answer is no
+[Wed 11:58] <dlongley> m4nu: we should engage with those groups working on it
+[Wed 11:58] <dlongley> joseph: it just might be useful to point to say "our approach to privacy comes from there"
+[Wed 11:58] <dlongley> joseph: the whole area of ethics and expertise, etc.
+[Wed 11:59] <dlongley> joseph: conform the technologies with that model
+[Wed 11:59] <dlongley> m4nu: there was a privacy group that was proposed but i don't think it went anywhere...
+[Wed 11:59] <dlongley> joseph: we can take that offline, it's a hot topic of the year
+[Wed 11:59] <m4nu> http://www.w3.org/community/dntrack/
+[Wed 11:59] <m4nu> http://www.w3.org/Security/
+[Wed 12:00] <m4nu> http://www.w3.org/2011/07/security-ig-charter.html
+[Wed 12:00] <m4nu> taaz: Also, this: http://tools.ietf.org/wg/websec/
+[Wed 12:00] <dlongley> m4nu: unfortunately, there's no one place to point to this stuff
+[Wed 12:01] <dlongley> m4nu: this became clear at the w3c technical plenary this year, we realized 5-7 different groups were having this discussion
+[Wed 12:01] <dlongley> joseph: just in terms of identifying requirements to work towards
+[Wed 12:02] <m4nu> http://www.w3.org/community/custexpdata/
+[Wed 12:02] <dlongley> joseph: it could be that the privacy model is over there, but when doing digital payments, there is no privacy, there is no model for privacy assurance, that could be an answer, but it would at least make a clear statement about what the model is, etc.
