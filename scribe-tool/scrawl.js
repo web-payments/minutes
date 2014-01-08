@@ -3,7 +3,8 @@
  * up for public consumption. It takes an IRC log as input and generates a
  * nice, stand-alone HTML page from the input.
  */
-(function($) {
+(function() {
+  var $ = (typeof jQuery !== 'undefined') ? jQuery : undefined;
   /* Standard regular expressions to use when matching lines */
   var commentRx = /^\[(.*)\]\s+\<(.*)\>\s+(.*)$/;
   var scribeRx = /^scribe:.*$/i;
@@ -258,7 +259,6 @@
     if(person != undefined)
     {
       context.present[person] = true;
-console.log("CPRES", context.present);
     }
   };
 
@@ -639,4 +639,4 @@ console.log("CPRES", context.present);
     
     return rval;
   }  
-})(jQuery);
+})();
