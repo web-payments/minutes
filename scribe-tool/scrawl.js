@@ -186,6 +186,13 @@
   scrawl.scribe = function(msg, textMode, person, assist)
   {
     var rval = '';
+
+    // capitalize the first letter of the message if it doesn't start with http
+    if(!(/^\shttp:\/\//.test(msg))) {
+      msg = msg.replace(/(\s)([a-zA-Z])/, function(firstLetter) {
+        return firstLetter.toUpperCase();
+      });
+    }
     
     if(textMode == 'html')
     {
@@ -251,6 +258,7 @@
     if(person != undefined)
     {
       context.present[person] = true;
+console.log("CPRES", context.present);
     }
   };
 
@@ -591,14 +599,6 @@
     return rval;
   };
 
-  scrawl.displayMinutes = function()
-  {
-    var ircLog = $('#irc-log').val()
-    minutes = scrawl.generateMinutes(ircLog, 'html');
-
-    $('#html-output').html(minutes);
-  };
-
   scrawl.generateMinutes = function(ircLog, textMode, date)
   {
     var rval = '';
@@ -638,62 +638,5 @@
     rval = summary + minutes;
     
     return rval;
-  }
-
-  scrawl.updateMinutes = function(event)
-  {
-    if(event)
-    {
-      scrawl.updateCounter = 1;
-    }
-    else
-    {
-      scrawl.updateCounter--;
-    }
-    
-    if(scrawl.updateCounter <= 0)
-    {
-      scrawl.displayMinutes();
-    }
-    else
-    {
-      if(scrawl.updateCounterTimeout)
-      {
-        clearTimeout(scrawl.updateCounterTimeout);
-      }
-      scrawl.updateCounterTimeout = 
-        setTimeout(scrawl.updateMinutes, 1000);
-    }
-  };
-
-  scrawl.showMarkup = function(type)
-  {
-    // Display the appropriate markup text area based on the 'type'
-    if(type == 'html')
-    {
-      var html = scrawl.htmlHeader + scrawl.generateMinutes('html') + 
-        scrawl.htmlFooter;
-
-      $('#irc-log').hide();
-      $('#text-markup').hide();
-      $('#html-markup').val(html);
-      $('#html-markup').show();
-    }
-    else if(type == 'text')
-    {
-      var text = scrawl.generateMinutes(type)
-
-      $('#html-markup').hide();
-      $('#irc-log').hide();
-      $('#text-markup').val(text);
-      $('#text-markup').show();
-    }
-    else
-    {
-      $('#text-markup').hide();
-      $('#html-markup').hide();
-      $('#irc-log').show();
-    }
-  }
-  
-})();
+  }  
+})(jQuery);
