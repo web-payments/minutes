@@ -39,7 +39,7 @@ htmlFooter = htmlFooter.replace(/<\?php.*\$TOP_DIR.*\?>/g, '../..');
 gLogData = '';
 var gDate = path.basename(dstDir);
 gDate = gDate.replace(/-[a-z]+$/, '');
- 
+
 // configure scrawl
 scrawl.group = "Web Payments Community Group";
 scrawl.people = JSON.parse(peopleJson);
@@ -52,16 +52,16 @@ function postToWordpress(username, password, content, callback) {
     url: 'https://www.w3.org/community/webpayments/xmlrpc.php'
 //    url: 'https://manu.sporny.org/xmlrpc.php'
   });
-  
+
   // Re-format the HTML for publication to a Wordpress blog
   var datetime = new Date(gDate);
   datetime.setHours(37);
   var wpSummary = content.post_content;
   wpSummary = wpSummary.substring(
     wpSummary.indexOf('<dl>'), wpSummary.indexOf('</dl>') + 5);
-  wpSummary = wpSummary.replace(/href=\"#/g, 
+  wpSummary = wpSummary.replace(/href=\"#/g,
     'href="http://web-payments.org/minutes/' + gDate + '/#');
-  wpSummary = wpSummary.replace(/href=\"audio/g, 
+  wpSummary = wpSummary.replace(/href=\"audio/g,
     'href="http://web-payments.org/minutes/' + gDate + '/audio');
   wpSummary = wpSummary.replace(/<div><audio[\s\S]*\/audio><\/div>/g, '');
   wpSummary += '<p>Detailed minutes and recorded audio for this call are ' +
@@ -72,7 +72,7 @@ function postToWordpress(username, password, content, callback) {
   gmtDate = datetime.toISOString();
   gmtDate = gmtDate.replace('T', ' ');
   gmtDate = gmtDate.replace(/\.[0-9]*Z/, '');
-  
+
   content.post_content = wpSummary;
   content.post_date_gmt = gmtDate;
   content.terms_names = ['Meetings'];
@@ -84,9 +84,9 @@ function postToWordpress(username, password, content, callback) {
   client.newPost(content, function(err, data) {
     if(err) {
       console.log(err);
-      
+
       console.log('scrawl: You may have to add this information manually:');
-      
+
       console.log('Title:\n' + content.post_title);
       console.log('Content:\n' + content.post_content);
       console.log('Slug:\n' + content.post_name);
@@ -109,17 +109,17 @@ function sendEmail(username, password, hostname, content, callback) {
 
   // send the message
   server.send({
-    text:    content, 
+    text:    content,
     from: 'msporny@digitalbazaar.com',
     //from:    username + '@' + hostname,
     to:      'Web Payments CG <public-webpayments@w3.org>',
     subject: 'Web Payments Telecon Minutes for ' + gDate
-  }, function(err, message) { 
+  }, function(err, message) {
     if(err) {
       console.log('scrawl:', err);
       return callback();
     }
-    
+
     if(!program.quiet) {
       console.log('scrawl: Sent minutes email to public-webpayments@w3.org');
     }
@@ -135,7 +135,7 @@ async.waterfall([ function(callback) {
     if(exists) {
       callback();
     } else {
-      callback('Error: ' + logFile + 
+      callback('Error: ' + logFile +
         ' does not exist, required for processing.');
     }
   });
@@ -145,11 +145,11 @@ async.waterfall([ function(callback) {
 }, function(data, callback) {
   gLogData = data;
   // generate the index.html file
-  var minutes = 
-    htmlHeader + 
+  var minutes =
+    htmlHeader +
     '<section><div class="container"><div class="row white"><br>' +
     '<div class="col-lg-offset-2 col-lg-8">' +
-    scrawl.generateMinutes(gLogData, 'html', gDate) + 
+    scrawl.generateMinutes(gLogData, 'html', gDate) +
     '</div></div></div></section>' + htmlFooter;
   callback(null, minutes);
 }, function(minutes, callback) {
@@ -184,7 +184,7 @@ async.waterfall([ function(callback) {
     if(process.env.SCRAWL_EMAIL_USERNAME && process.env.SCRAWL_EMAIL_PASSWORD &&
       process.env.SCRAWL_EMAIL_SERVER) {
       sendEmail(
-        process.env.SCRAWL_EMAIL_USERNAME, process.env.SCRAWL_EMAIL_PASSWORD, 
+        process.env.SCRAWL_EMAIL_USERNAME, process.env.SCRAWL_EMAIL_PASSWORD,
         process.env.SCRAWL_EMAIL_SERVER, content, callback);
     } else {
       var prompt = require('prompt');
@@ -212,7 +212,7 @@ async.waterfall([ function(callback) {
           }
         }
       }, function(err, results) {
-        sendEmail(results.username, results.password, results.server, 
+        sendEmail(results.username, results.password, results.server,
           content, callback);
       });
     }
@@ -244,8 +244,8 @@ async.waterfall([ function(callback) {
        formattedItems += items[i].replace(/[0-9]{1,2}\. /, '').toLowerCase();
     }
 
-    // format in a way that is readable on G+ 
-    content = '*Web Payments Community Group Meeting Summary for ' + gDate + '*\n\n' + 
+    // format in a way that is readable on G+
+    content = '*Web Payments Community Group Meeting Summary for ' + gDate + '*\n\n' +
       'We discussed ' + formattedItems + '.\n\n' +
       content + '\nFull transcript and audio logs are available here:\n\n' +
       'https://web-payments.org/minutes/' + gDate + '/\n\n' +
@@ -292,8 +292,8 @@ async.waterfall([ function(callback) {
         }
       }, function(err, results) {
         // construct the tweet
-        var tweet = 'Web Payments group discusses ' + 
-          results.message + ': https://web-payments.org/minutes/' + 
+        var tweet = 'Web Payments group discusses ' +
+          results.message + ': https://web-payments.org/minutes/' +
           gDate + '/ #w3c #webpayments';
 
         // send the tweet
@@ -315,10 +315,10 @@ async.waterfall([ function(callback) {
       post_title: 'Web Payments Meeting Minutes for ' + gDate,
       post_content: scrawl.generateMinutes(gLogData, 'html', gDate)
     };
-    
+
     if(process.env.SCRAWL_WP_USERNAME && process.env.SCRAWL_WP_PASSWORD) {
       postToWordpress(
-        process.env.SCRAWL_WP_USERNAME, process.env.SCRAWL_WP_PASSWORD, 
+        process.env.SCRAWL_WP_USERNAME, process.env.SCRAWL_WP_PASSWORD,
         content, callback);
     } else {
       var prompt = require('prompt');
