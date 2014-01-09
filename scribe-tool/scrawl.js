@@ -591,7 +591,7 @@
       rval += 'Scribe:\n  ' + scribe + '\n';
       rval += 'Present:\n  ' +
         scrawl.wordwrap(present.join(', '), 65, '\n  ') + '\n';
-      rval += 'Audio:\n  http://payswarm.com/minutes/' +
+      rval += 'Audio:\n  https://web-payments.org/minutes/' +
         time.getFullYear() + '-' +
          month + '-' + day + '/audio.ogg\n\n';
     }
