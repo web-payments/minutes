@@ -31,14 +31,14 @@
   } else {
     window.scrawl = scrawl;
   }
-  
+
   /* The update counter and the timeout is used to delay the update of the
     HTML output by a few seconds so that reformatting the page doesn't
     overload the CPU. */
   scrawl.updateCounter = 1;
   scrawl.updateCounterTimeout = null;
 
-  scrawl.wordwrap = function(str, width, brk, cut ) 
+  scrawl.wordwrap = function(str, width, brk, cut )
   {
     brk = brk || '\n';
     width = width || 65;
@@ -46,7 +46,7 @@
 
     if (!str) { return str; }
 
-    var regex = '.{1,' + width + '}(\\s|$)' + 
+    var regex = '.{1,' + width + '}(\\s|$)' +
       (cut ? '|.{' +width+ '}|.+$' : '|\\S+?(\\s|$)');
 
     return str.match(RegExp(regex, 'g')).join(brk);
@@ -85,7 +85,7 @@
   scrawl.htmlencode = function(text)
   {
     var modified = '';
-    
+
     if(nodejs) {
       modified = entities.encodeNonUTF(text);
     } else {
@@ -99,58 +99,58 @@
   scrawl.topic = function(msg, id, textMode)
   {
     var rval = '';
-    
+
     if(textMode == 'html')
     {
-      rval = '<h1 id="topic-' + id + '" class="topic">Topic: ' +  
+      rval = '<h1 id="topic-' + id + '" class="topic">Topic: ' +
        scrawl.htmlencode(msg) + '</h1>\n';
     }
     else
     {
       rval = '\nTopic: ' + msg + '\n\n';
     }
-    
+
     return rval;
   };
-  
+
   scrawl.action = function(msg, id, textMode)
   {
     var rval = '';
-    
+
     if(textMode == 'html')
     {
-      rval = '<div id="action-' + id + '" class="action">ACTION: ' +  
+      rval = '<div id="action-' + id + '" class="action">ACTION: ' +
        scrawl.htmlencode(msg) + '</div>\n';
     }
     else
     {
       rval = '\n\n' + scrawl.wordwrap('ACTION: ' + msg, 65, '\n  ') + '\n\n';
     }
-    
+
     return rval;
   };
-  
+
   scrawl.information = function(msg, textMode)
   {
     var rval = '';
-    
+
     if(textMode == 'html')
     {
-      rval = '<div class="information">' +  
+      rval = '<div class="information">' +
        scrawl.htmlencode(msg) + '</div>\n';
     }
     else
     {
       rval = scrawl.wordwrap(msg, 65, '\n  ') + '\n';
     }
-    
+
     return rval;
   };
 
   scrawl.proposal = function(msg, textMode)
   {
     var rval = '';
-    
+
     if(textMode == 'html')
     {
       rval = '<div class="proposal"><strong>PROPOSAL:</strong> ' +
@@ -158,17 +158,17 @@
     }
     else
     {
-      rval = 
+      rval =
         '\n' + scrawl.wordwrap('PROPOSAL: ' + msg, 65, '\n  ') + '\n\n';
     }
-    
+
     return rval;
   };
 
   scrawl.resolution = function(msg, id, textMode)
   {
     var rval = '';
-    
+
     if(textMode == 'html')
     {
       rval = '<div id="resolution-' + id + '" class="resolution">' +
@@ -177,10 +177,10 @@
     }
     else
     {
-      rval = 
+      rval =
         '\n' + scrawl.wordwrap('RESOLUTION: ' + msg, 65, '\n  ') + '\n\n';
     }
-    
+
     return rval;
   };
 
@@ -194,28 +194,28 @@
         return firstLetter.toUpperCase();
       });
     }
-    
+
     if(textMode == 'html')
     {
       rval = '<div ';
-    
+
       if(person != undefined)
       {
-        rval += 'class="comment"><span class="name">' + 
+        rval += 'class="comment"><span class="name">' +
           scrawl.htmlencode(person) + '</span>: ';
       }
       else
       {
         rval += 'class="information">';
       }
-      
+
       rval += scrawl.htmlencode(msg);
-      
+
       if(assist != undefined)
       {
         rval += ' [scribe assist by ' + scrawl.htmlencode(assist) + ']';
       }
-      
+
       rval += '</div>\n';
     }
     else
@@ -230,20 +230,20 @@
       {
         scribeline += ' [scribe assist by '+ assist + ']';
       }
-    
+
       rval = scrawl.wordwrap(scribeline, 65, '\n  ') + '\n';
     }
-    
+
     return rval;
   };
 
   scrawl.scribeContinuation = function(msg, textMode)
   {
     var rval = '';
-    
+
     if(textMode == 'html')
     {
-      rval = '<div class="comment-continuation">' +  
+      rval = '<div class="comment-continuation">' +
        scrawl.htmlencode(msg) + '</div>\n';
     }
     else
@@ -265,17 +265,17 @@
   scrawl.error = function(msg, textMode)
   {
     var rval = '';
-    
+
     if(textMode == 'html')
     {
-      rval = '<div class="error">Error: ' +  
+      rval = '<div class="error">Error: ' +
         scrawl.htmlencode(msg) + '</div>\n';
     }
     else
     {
       rval = scrawl.wordwrap('\nError: ' + msg, 65, '\n  ') + '\n';
     }
-    
+
     return rval;
   };
 
@@ -297,7 +297,7 @@
        var time = match[1];
        var nick = match[2].toLowerCase();
        var msg = match[3];
-       
+
        // check for a scribe line
        if(msg.search(scribeRx) != -1)
        {
@@ -385,7 +385,7 @@
          else if(msg.indexOf(':') != -1)
          {
            var alias = msg.split(':', 1)[0].replace(' ', '').toLowerCase();
-           
+
            if(alias in aliases)
            {
               // the line is a comment made by somebody else that was
@@ -415,14 +415,14 @@
          if(msg.indexOf(':') != -1)
          {
            var alias = msg.split(':', 1)[0].replace(' ', '').toLowerCase();
-           
+
            if(alias in aliases)
            {
               // the line is a scribe assist
               var cleanedMessage = msg.split(':').splice(1).join(':');
 
               scrawl.present(context, aliases[alias]);
-              rval = scrawl.scribe(cleanedMessage, textMode, 
+              rval = scrawl.scribe(cleanedMessage, textMode,
                 aliases[alias], aliases[nick]);
            }
            else if(alias.indexOf('http') == 0)
@@ -451,7 +451,7 @@
          rval = scrawl.error('(Strange line format)' + line, textMode);
        }
      }
-     
+
      return rval;
   };
 
@@ -482,7 +482,7 @@
     {
       month = '0' + month;
     }
-    
+
     if(day.length == 1)
     {
       day = '0' + day;
@@ -492,10 +492,10 @@
     if(textMode == 'html')
     {
       rval += '<h1>' + group +' Telecon</h1>\n';
-      rval += '<h2>Minutes for ' + time.getFullYear() + '-' + 
+      rval += '<h2>Minutes for ' + time.getFullYear() + '-' +
          month + '-' + day +'</h2>\n';
       rval += '<div class="summary">\n<dl>\n';
-      rval += '<dt>Agenda</dt><dd><a href="' + 
+      rval += '<dt>Agenda</dt><dd><a href="' +
          agenda + '">' + agenda + '</a></dd>\n';
 
       if(topics.length > 0)
@@ -504,19 +504,19 @@
         for(i in topics)
         {
           var topicNumber = parseInt(i) + 1;
-          rval += '<li><a href="#topic-' + topicNumber + '">' + 
+          rval += '<li><a href="#topic-' + topicNumber + '">' +
             topics[i] + '</a>';
         }
         rval += '</ol></dd>';
       }
-      
+
       if(resolutions.length > 0)
       {
         rval += '<dt>Resolutions</dt><dd><ol>';
         for(i in resolutions)
         {
           var resolutionNumber = parseInt(i) + 1;
-          rval += '<li><a href="#resolution-' + resolutionNumber + '">' + 
+          rval += '<li><a href="#resolution-' + resolutionNumber + '">' +
             resolutions[i] + '</a>';
         }
         rval += '</ol></dd>';
@@ -528,7 +528,7 @@
         for(i in actions)
         {
           var actionNumber = parseInt(i) + 1;
-          rval += '<li><a href="#action-' + actionNumber + '">' + 
+          rval += '<li><a href="#action-' + actionNumber + '">' +
             actions[i] + '</a>';
         }
         rval += '</ol></dd>';
@@ -539,7 +539,7 @@
       rval += '<dt>Present</dt><dd>' + present.join(', ') + '</dd>\n';
       rval += '<dt>Audio Log</dt><dd>' +
          '<div><a href="' + audio + '">' + audio + '</a></div>\n' +
-         '<div><audio controls="controls" preload="none">\n' + 
+         '<div><audio controls="controls" preload="none">\n' +
          '<source src="' + audio + '" type="audio/ogg" />' +
          'Warning: Your browser does not support the HTML5 audio element, ' +
          'please upgrade.</audio></div></dd></dl>\n';
@@ -547,7 +547,7 @@
     else
     {
       rval += group + ' Telecon ';
-      rval += 'Minutes for ' + time.getFullYear() + '-' + 
+      rval += 'Minutes for ' + time.getFullYear() + '-' +
          month + '-' + day + '\n\n';
       rval += 'Agenda:\n  ' + agenda + '\n';
 
@@ -558,11 +558,11 @@
         {
           var topicNumber = parseInt(i) + 1;
           rval += scrawl.wordwrap(
-            '  ' + topicNumber + '. ' + topics[i], 65, 
+            '  ' + topicNumber + '. ' + topics[i], 65,
             '\n    ') + '\n';
         }
       }
-      
+
       if(resolutions.length > 0)
       {
         rval += 'Resolutions:\n';
@@ -570,11 +570,11 @@
         {
           var resolutionNumber = parseInt(i) + 1;
           rval += scrawl.wordwrap(
-            '  ' + resolutionNumber + '. ' + resolutions[i], 65, 
+            '  ' + resolutionNumber + '. ' + resolutions[i], 65,
             '\n    ') + '\n';
         }
       }
-      
+
       if(actions.length > 0)
       {
         rval += 'Action Items:\n';
@@ -582,17 +582,17 @@
         {
           var actionNumber = parseInt(i) + 1;
           rval += scrawl.wordwrap(
-            '  ' + actionNumber + '. ' + actions[i], 65, 
+            '  ' + actionNumber + '. ' + actions[i], 65,
             '\n    ') + '\n';
         }
       }
-      
+
       rval += 'Chair:\n  ' + chair + '\n';
       rval += 'Scribe:\n  ' + scribe + '\n';
-      rval += 'Present:\n  ' + 
+      rval += 'Present:\n  ' +
         scrawl.wordwrap(present.join(', '), 65, '\n  ') + '\n';
       rval += 'Audio:\n  http://payswarm.com/minutes/' +
-        time.getFullYear() + '-' + 
+        time.getFullYear() + '-' +
          month + '-' + day + '/audio.ogg\n\n';
     }
 
@@ -606,23 +606,23 @@
     var summary = '';
     var ircLines = ircLog.split('\n');
     var aliases = scrawl.generateAliases();
-    
+
     // initialize the IRC log scanning context
-    var context = 
-    { 
-      'group': scrawl.group, 
+    var context =
+    {
+      'group': scrawl.group,
       'chair': 'Manu Sporny',
       'present': {},
       'topics': [],
       'resolutions': [],
       'actions': []
     };
-    
+
     if(date) {
       context.date = new Date(date);
       context.date.setHours(36);
     }
-    
+
     // process each IRC log line
     for(var i = 0; i < ircLines.length; i++)
     {
@@ -630,7 +630,7 @@
 
       minutes += scrawl.processLine(context, aliases, line, textMode);
     }
-    
+
     // generate the meeting summary
     summary = scrawl.generateSummary(context, textMode);
 
@@ -639,7 +639,7 @@
 
     // create the final log output
     rval = summary + minutes;
-    
+
     return rval;
-  }  
+  }
 })();
