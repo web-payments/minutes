@@ -220,6 +220,44 @@ async.waterfall([ function(callback) {
     callback();
   }
 }, function(callback) {
+  // format the G+ post for copy-paste
+  if(program.google) {
+    if(!program.quiet) {
+      console.log('scrawl: Composing new G+ message.');
+    }
+
+    // generate the body of the email
+    var content = scrawl.generateMinutes(gLogData, 'text', gDate);
+    content = content.match(/Agenda(.|\n)*Chair:/)[0].replace('Chair:', '');
+    var items = content.match(/Topics(.|\n)*Action/)[0]
+      .match(/[0-9]{1,2}\. (.*)/g);
+    var formattedItems = '';
+
+    // create a brief description of what was discussed
+    for(var i = 0; i < items.length; i++) {
+       if(i > 0 && i < items.length - 1) {
+         formattedItems += ', ';
+       }
+       else if(i == items.length - 1) {
+         formattedItems += ', and ';
+       }
+       formattedItems += items[i].replace(/[0-9]{1,2}\. /, '').toLowerCase();
+    }
+
+    // format in a way that is readable on G+ 
+    content = '*Web Payments Community Group Meeting Summary for ' + gDate + '*\n\n' + 
+      'We discussed ' + formattedItems + '.\n\n' +
+      content + '\nFull transcript and audio logs are available here:\n\n' +
+      'https://web-payments.org/minutes/' + gDate + '/\n\n' +
+      '#webpayments #w3c';
+
+    console.log('scrawl: You will need to paste this to your G+ stream:\n');
+    console.log(content);
+    callback();
+  } else {
+    callback();
+  }
+}, function(callback) {
   // publish the minutes to Twitter
   if(program.twitter) {
     if(!process.env.SCRAWL_TWITTER_CONSUMER_KEY ||
