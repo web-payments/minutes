@@ -41,7 +41,7 @@ updateMinutes = function(event) {
   } else {
     updateCounter--;
   }
-  
+
   if(updateCounter <= 0) {
     displayMinutes();
   } else {
@@ -58,7 +58,7 @@ showMarkup = function(type) {
   // Display the appropriate markup text area based on the 'type'
   if(type == 'html')
   {
-    var html = scrawl.htmlHeader + scrawl.generateMinutes(ircLog, 'html') + 
+    var html = scrawl.htmlHeader + scrawl.generateMinutes(ircLog, 'html') +
       scrawl.htmlFooter;
 
     $('#irc-log').hide();
