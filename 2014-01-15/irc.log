@@ -1,0 +1,133 @@
+[Wed 11:04] <m4nu> Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2014Jan/0112.html
+[Wed 11:04] <dlongley> scribe: dlongley
+[Wed 11:05] <dlongley> m4nu: Any changes to the Agenda? Any objections to discussing the charter proposal first, moving item 1 down?
+[Wed 11:05] <dlongley> No agenda changes, item #1 (web-payments.org changes) moved to end of call.
+[Wed 11:05] <m4nu> Topic: Web Payments CG Charter Proposal
+[Wed 11:05] <m4nu> http://www.w3.org/community/webpayments/wiki/WebPaymentsCommunityGroupCharterProposal
+[Wed 11:06] <dlongley> m4nu: the charter proposal came about because of PayPal/Ebay's concerns with the group, it wasn't clear where the lines were, and after we talked with Ian Jacobs at W3C, he suggested that having a charter may help clarify where the Web Payments CG stops and a potential Web Payments WG starts
+[Wed 11:06] <dlongley> m4nu: this is basically an attempt to document what we're working on in the group to ensure we're on the same page, people can quickly look at the charter and know what's in scope, and hopefully we can get much bigger players into the group; their lawyers are concerned about the openendedness of IP and patent commitments.
+[Wed 11:07] <dlongley> m4nu: we've got a wiki page up now with the proposed charter, it's fairly complete at this point
+[Wed 11:07] <dlongley> m4nu: i know Joseph asked about putting a section on funding into the charter
+[Wed 11:07] <dlongley> m4nu: that's typically not done with w3c charters
+[Wed 11:07] <dlongley> m4nu: not having it in the charter doesn't stop us from trying to raise funds, but if we put it into the charter we may have to solve funding issues before accepting it the charter (it will slow us down).
+[Wed 11:08] <dlongley> m4nu: and it may be better to amend later if we want to
+[Wed 11:08] <dlongley> m4nu: we can discuss in more detail later, but it's complicated, CG groups aren't technically paid for by W3C, they dont' get funding, the W3C is only allowed to spend money on specific working group activities, and even that doesn't include paying editors and implementors, etc.
+[Wed 11:08] <dlongley> m4nu: Funding is problematic, we want to address that issue in this group but we can't do that just yet
+[Wed 11:09] <dlongley> jpotvin: what occurred to me when writing that was that.... if we come across a person or entity that wants to support the work how can they? what's the answer?
+[Wed 11:09] <dlongley> m4nu: the answer right now is "we don't know"
+[Wed 11:09] <dlongley> m4nu: the text that you put in there was fine, we just need to talk about it a bit more, but we don't want that to slow down charter selection.
+[Wed 11:10] <dlongley> m4nu: it may be to put something out to the mailing list, but someone might respond as if they were part of the group and they weren't necessarily and then they'd take funding for a proprietary solution, etc.
+[Wed 11:10] <dlongley> m4nu: getting funding for the work is very important and there's a balance we need to strike and we need to talk about it a bit more before we put something in the charter about it
+[Wed 11:10] <dlongley> m4nu: so that being said, any comments on the charter as it stands?
+[Wed 11:10] <m4nu> voip: connections?
+[Wed 11:10] <voip-ps> Conference connections: dlehn [SIP/192.168.1.165:5060-0000016a], Joseph Potvin [SIP/getonsip.com-00000168], Manu Sporny [SIP/6000-00000166], <unknown> (evan) [IAX2/diamondcard-9381], Dave Longley [SIP/6002-00000167]
+[Wed 11:11] <m4nu> dlongley: I think we should try to be minimalistic about it, to make sure that the charter doesn't cause problems w/ the group.
+[Wed 11:11] <dlongley> evan: i looked at it before the call and it seemed perfectly fine to me
+[Wed 11:11] <dlongley> m4nu: i think the way it's written should make the Ripple and Bitcoin work be considered in scope
+[Wed 11:12] <dlongley> evan: i saw the part about it being about web payments and not specific currencies and we agree with that
+[Wed 11:12] <dlongley> evan: and i do think this group does touch on identity and security and stuff like that
+[Wed 11:13] <dlongley> jpotvin: we may add a phrase at the bottom to say that partner entries could be added and that wouldn't require a new vote/amendment on the charter
+[Wed 11:13] <dlongley> m4nu: ok, i'll put that in
+[Wed 11:14] <dlongley> jpotvin: should we include the work items too?
+[Wed 11:14] <dlongley> m4nu: no we can't do that, that is a scoping issue, lawyers will look at that to sign off on whether or not their engineers can participate in the group
+[Wed 11:14] <dlongley> m4nu: for work items we have to recharter to give lawyers time to look and see if they still agree with the list
+[Wed 11:14] <dlongley> m4nu: any other comments/questions on the charter?
+[Wed 11:15] <m4nu> dlongley: It certainly seems like the charter defines what we've been doing for the past several years and what we've been doing.
+[Wed 11:15] <dlongley> jpotvin: in the decision process i don't think we have a sentence or two describing charter approval or revision
+[Wed 11:16] <dlongley> m4nu: to accept the charter is a 2/3rds vote
+[Wed 11:16] <dlongley> m4nu: i did that to accept the charter because i think we should have a supermajority
+[Wed 11:16] <dlongley> jpotvin: oh, nevermind it is in there
+[Wed 11:16] <voip-ps> Joseph Potvin (SIP/getonsip.com-00000168) has left the conference.
+[Wed 11:16] <dlongley> jpotvin: i wonder if the amendment to the charter is a section under decision processes
+[Wed 11:17] <dlongley> m4nu: in general we don't want to bikeshed it too much, the information is there, and we could call it a day and it would be formatting change not a significant change to the charter
+[Wed 11:17] <voip-ps> Joseph Potvin (SIP/getonsip.com-0000016b) has joined the conference.
+[Wed 11:18] <dlongley> m4nu: if anyone on the mailing list doesn't like a formatting change they can call for a vote on the change
+[Wed 11:19] <dlongley> dlongley: will we send the version of the charter to the mailing list and save a link to the specific revision?
+[Wed 11:19] <dlongley> m4nu: yes, i'll send it to the mailing list and we have it in github and we'll put it on the website too
+[Wed 11:19] <dlongley> m4nu: if everyone is more or less ok with it we can call for a vote and we can resolve that here and call for a vote starting tomorrow
+[Wed 11:20] <dlongley> jpotvin: it's a separate vote on the work items though?
+[Wed 11:20] <dlongley> m4nu: yes
+[Wed 11:20] <dlongley> m4nu: two different votes
+[Wed 11:20] <dlongley> m4nu: one for charter, one for work items
+[Wed 11:20] <dlongley> jpotvin: just don't want people to get confused
+[Wed 11:21] <dlongley> m4nu: we can put both votes out at the same time and make it clear there are two polls to participate in
+[Wed 11:21] <dlongley> scribe: jpotvin
+[Wed 11:22] <m4nu> PROPOSAL: The Web Payments CG Charter Proposal is ready for a vote, the vote will open on January 16th 2014 and close on January 31st 2014.
+[Wed 11:22] <m4nu> +1
+[Wed 11:22] <dlongley> +1
+[Wed 11:23] <taaz> +1
+[Wed 11:23] <jpotvin> +1
+[Wed 11:23] <evan>  +1
+[Wed 11:23] <m4nu> RESOLVED: The Web Payments CG Charter Proposal is ready for a vote, the vote will open on January 16th 2014 and close on January 31st 2014.
+[Wed 11:24] <m4nu> Topic: Web Payments CG Charter Poll
+[Wed 11:24] <m4nu> The poll is here - http://www.addpoll.com/msporny/survey/web-payments-community-group-charter
+[Wed 11:24] <jpotvin> m4nu: Please take a look at the language for the poll, point out any issues.
+[Wed 11:25] <dlongley> We might want the charter link to use a revision number
+[Wed 11:25] <manu> Yeah, agreed. I'll add it.
+[Wed 11:25] <jpotvin> m4nu: Introductory section - this polling approach approach permits any polling system and also anonymity
+[Wed 11:27] <jpotvin> m4nu: Stepping through the questions on the Charter vote -- any concerns about the questions?
+[Wed 11:28] <jpotvin> dlongley: the vote on the charter approval itself is only approve or not with no abstain thought other questions have an abstain option? That's what the decision process in the charter says.
+[Wed 11:30] <jpotvin> dlongley: what is different between routine decision making and calling a vote?
+[Wed 11:32] <jpotvin> m4nu: adjusting text in "decision process" section to clarify three kinds of processes
+[Wed 11:37] <dlongley> jpotvin: if a person is opposed but won't stand in the way that's working consensus #1, if someone is opposed and does want to prevent a decision that's #2
+[Wed 11:43] <jpotvin> dlongley: the three kinds now work as increasing validation of a decision . Second stage formally acknowledges a disagreement. An opposed individual can then seek two others who agree that stage-3 vote is needed.
+[Wed 11:46] <jpotvin> dlongley: three decision stages should show escalation
+[Wed 11:47] <jpotvin> m4nu: Ok, made those changes to the decision making process in the charter. Are there any further comments on the poll?
+[Wed 11:50] <jpotvin> dlongley: In the poll, change "will adopting" to "adopting" -- as a statement
+[Wed 11:50] <jpotvin> manu: Done. Any further comments?
+[Wed 11:47] <jpotvin> No further comments, group agrees on poll questions.
+[Wed 11:48] <m4nu> PROPOSAL: Adopt the Web Payments CG Charter Proposal poll and use it to determine consensus on the groups charter.
+
+[Wed 11:50] <jpotvin> +1
+[Wed 11:50] <m4nu> +1
+[Wed 11:50] <taaz> +1
+[Wed 11:50] <dlongley> +1
+[Wed 11:51] <evan> +1
+[Wed 11:51] <m4nu> RESOLVED: Adopt the Web Payments CG Charter Proposal poll and use it to determine consensus on the groups charter.
+[Wed 11:51] <jpotvin> m4nu: we need to talk about the vote on in-scope specs
+[Wed 11:52] <m4nu> Topic: Web Payments CG Work Items Poll
+[Wed 11:52] <m4nu> http://www.addpoll.com/msporny/survey/web-payments-cg-work-items
+[Wed 11:54] <jpotvin> manu: If everyone on the call can scan the poll and raise any problems with the poll, that'd be great.
+[Wed 11:54] <jpotvin> jpotvin: the working in Q6 about pricing indices should not refer to any particular unit of account (re: Bitcoin).
+[Wed 11:54] <jpotvin> manu: Ok, change made.
+[Wed 11:55] <jpotvin> taaz: What happens if people accept a higher-level spec (like Web Payments), but then reject a lower-level spec (like Secure Messaging) that the higher-level spec depends on? What happens if people that are not educated about how these specs fit together vote against some of the lower-level specs that the higher level ones depend on?
+[Wed 11:55] <jpotvin> m4nu: we'd have to figure that out if it happens. It could be something as simple as a message out to the mailing list noting that the group just shot itself in the foot. A re-vote could be held and if people still vote against the low-level spec, then we'd have to ask for alternatives to that low-level spec. In general, we're expecting people to make an educated decision about these specs w/o needing to understand all the details.
+[Wed 11:56] <jpotvin> taaz: sometimes it's not clear why we use a given technlology or take a given approach, except wading through email list archives.
+[Wed 11:57] <jpotvin> m4nu: hard to bring all the info together in an elegant and efficient way, we're trying, and we need to do a better job on that. That's why there is a short explanation of each spec and what it does by each vote item.
+[Wed 11:58] <jpotvin> taaz: some might say some items are better addressed elsewhere, for example - but it's much easier to work on all of this stuff in one group until it matures a bit more, easier to change dependencies in all the specs. It could be that lots of people abstain.
+[Wed 11:59] <jpotvin> m4nu: a high number of abstentions would indicate that members feel a lack of info, so we might have to educate and vote again as a group.
+[Wed 11:59] <jpotvin> dlongley: Are abstentions counted in the calculation of a majority?
+[Wed 11:59] <jpotvin> m4nu: an abstention is not count as a cast vote in favor or against, no it doesn't count.
+[Wed 11:59] <jpotvin> m4nu: this is now clarifired in the poll
+[Wed 12:02] <jpotvin> dlongley: should we state the function of abstention in the Charter decision section?
+[Wed 12:03] <jpotvin> m4nu: I don't think it's necessary, we can always include that information in the poll. If we find that we do it for every poll, we could put it in the charter.
+[Wed 12:03] <jpotvin> m4nu: ok, let's all please read through each work item in the work items poll and comment on anything that needs to be fixed
+[Wed 12:05] <m4nu> jpotvin: There was a discussion on the list about the form of documentation and UML. Documentation is a controversial issue, do we want to say that's part of this?
+[Wed 12:05] <m4nu> dlongley: If this is a controversial issue (how we document things), perhaps we can leave it out for now?
+[Wed 12:07] <jpotvin> m4nu: let's find out first what implementers will be looking for in documentation. Let's not include here the "how" and "what form" right now, because that's part of the process of developing these documents.
+[Wed 12:09] <m4nu> jpotvin: I have concerns about the "Web Payment Intents" item... for the purposes of the poll, can we refine the title?
+[Wed 12:10] <jpotvin> m4nu: sure, now it's Web Payment Crowdfunding
+[Wed 12:10] <taaz> Q9 links to http-keys which redirs to secure-messaging. I was changing links last night to point to secure-messaging, should the poll do so too?
+[Wed 12:07] <jpotvin> m4nu: yes, fixed.
+[Wed 12:11] <jpotvin> dlongley: change "patent and royalty-free" to "unencumbered by patents and royalties"
+[Wed 12:07] <jpotvin> m4nu: ok, changed.
+[Wed 12:09] <m4nu> jpotvin: Q3 text is problematic, needs to be updated to new text from the Charter.
+[Wed 12:15] <jpotvin> m4nu: Done, alignment of Q3 text to Goal section of Charter
+[Wed 12:21] <jpotvin> jpotvin: Q6 suggested to refine but generalize the examples of indices
+[Wed 12:22] <jpotvin> m4nu: Fixing... added indexing examples, and example for a baker and energy index
+[Wed 12:22] <jpotvin> m4nu: Any other changes to the poll?
+[Wed 12:22] <jpotvin> No changes requested by the participants.
+[Wed 12:24] <m4nu> PROPOSAL: Accept the questions in the modified Web Payments CG Work Items poll and run the poll from January 16th to January 31st.
+[Wed 12:24] <dlongley> +1
+[Wed 12:24] <jpotvin> +1
+[Wed 12:24] <m4nu> +1
+[Wed 12:24] <evan> +1
+[Wed 12:24] <taaz> +1
+[Wed 12:25] <m4nu> RESOLVED: Accept the questions in the modified Web Payments CG Work Items poll and run the poll from January 16th to January 31st.
+[Wed 12:25] <jpotvin> m4nu: The next call will cover the changes to the website and then hopefully back into technical discussion.
+[Wed 12:25] <jpotvin> m4nu: Any other comments or concerns before we adjourn? 
+[Wed 12:25] <jpotvin> No other comments.
+[Wed 12:25] <jpotvin> m4nu: Talk with all of you next week, thanks for scribing Joseph, you did great! :)
+[Wed 12:25] <voip-ps> Manu Sporny (SIP/6000-00000166) has left the conference.
+[Wed 12:25] <voip-ps> Dave Longley (SIP/6002-00000167) has left the conference.
+[Wed 12:26] <voip-ps> dlehn (SIP/192.168.1.165:5060-0000016a) has left the conference.
