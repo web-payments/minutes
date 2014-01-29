@@ -1,0 +1,78 @@
+[Wed 11:02] <m4nu> Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2014Jan/0181.html
+[Wed 11:02] <dlongley> scribe: dlongley
+[Wed 11:02] <dlongley> m4nu: Any changes to the Agenda?
+[Wed 11:02] <dlongley> taaz: Nope.
+[Wed 11:03] <m4nu> Topic: Introduction to Jeff Cliff
+[Wed 11:04] <dlongley> themusicgod1: i'm a fairly active member in the ripple community. I've been following the work that's been done here for quite some time. I'm not affiliated with any organization here. I'm a voice of the Ripple community in some ways. I'm a developer, I haven't contributed any code to this project yet, and I'm still trying to figure out a way to do that
+[Wed 11:04] <dlongley> m4nu: welcome, we're really happy to have you here! Hopefully we can figure out a way to get some contributions from you or just get your input on the work we're doing here.
+[Wed 11:04] <dlongley> m4nu: are you coming to the web payments workshop, it's in Paris?
+[Wed 11:04] <dlongley> themusicgod1: I'm trying to figure a way to get there, I'll work on that.
+[Wed 11:04] <dlongley> m4nu: Let us know if you have any questions as we go through all this stuff, feel free to follow up on the mailing list as well.
+[Wed 11:05] <m4nu> Topic: ISSUE-20: eBay/PayPal concerns
+[Wed 11:05] <m4nu> https://github.com/web-payments/web-payments.org/issues/20
+[Wed 11:05] <dlongley> m4nu: paypal wrote in with a number of concerns about the website. T they were concerned that people would get the wrong impression that the output of the web payments CG would become standards immediately, they wanted us to be a bit more clear about what the group was working on, this is what kicked off the entire discussion about the charter and scope of work/work items
+[Wed 11:06] <dlongley> m4nu: we talked with w3c management and we've gone to a pretty great effort to ensure that w3c management and paypal/ebay and some other larger companies were ok with the text
+[Wed 11:06] <dlongley> m4nu: if you look at issue 20, the first 4 have been marked off
+[Wed 11:07] <dlongley> m4nu: we've made it clear that no community group is endorsed by w3c but also made it clear that we are working on tech here that we hope to get into the w3c standards-track process. I've mentioned that we've done this before, gone through this mechanism and gotten things published.
+[Wed 11:07] <dlongley> m4nu: also made a clear statement that while the work is not on the w3c rec track, we do plan on trying to get it adopted through a web payments working group
+[Wed 11:07] <dlongley> m4nu: we plan to push hard to get the specs that are mature enough from the CG into the WG
+[Wed 11:08] <m4nu> We've made these changes to the site over two weeks ago - https://web-payments.org/
+[Wed 11:08] <dlongley> m4nu: the other part was specifying who the community is. Paypal was concerned that people would get the impression that the CG consists of W3C member companies, but even though it does, since it doesn't have W3C WG blessing yet, we've clarified the group info on the site
+[Wed 11:08] <dlongley> m4nu: i think the statement is accurate enough to indicate who the group consists of
+[Wed 11:09] <dlongley> m4nu: they wanted us to remove the language that says the world's financial system is ailing or has problems with it, the larger financial players don't want that language there, we just say that the web is going to play a key role in improving the world's financial infrastructure and a more equitable future of all of us, etc.
+[Wed 11:09] <m4nu> We were also asked to specify who the dependencies/liasons are: http://www.w3.org/community/webpayments/wiki/WebPaymentsCommunityGroupCharterProposal#Dependencies_or_Liaisons
+[Wed 11:09] <dlongley> m4nu: we touch on a wide variety of issues in the dependencies/liaisons list
+[Wed 11:10] <dlongley> m4nu: we have a large number of people to keep in touch with and up-to-date on with respect to what we're working on
+[Wed 11:10] <dlongley> m4nu: we can't create a page for the charter on the website  until we're done with the vote on the charter, the vote ends this friday
+[Wed 11:11] <dlongley> m4nu: i believe those were all of Paypal's concerns that we could address, a lot of them were non-issues because paypal/ebay didn't seem to understand how CGs were run, talking with w3c management i believe we have hopefully clarified that all of the issues.
+[Wed 11:11] <dlongley> m4nu: anyone think there are any concerns or other issues that haven't been addressed?
+[Wed 11:11] <dlongley> m4nu: if there's nothing else, we'll go ahead and move on
+[Wed 11:12] <dlongley> m4nu: i imagine that this issue will be closed once we close the vote and update the site w/ the charter and list of liasons.
+[Wed 11:12] <m4nu> Topic: Communication with SWIFT and IETF
+[Wed 11:13] <dlongley> m4nu: SWIFT reached out to us and said that they don't want to be listed in the liaison group on the CG list, there have been a number in their membership that are concerned with SWIFT's interaction with this group. They wanted to make clear that they are very interested in what we're doing. They are on the program committee and coming to the workshop, they just want to make sure that any announcement of SWIFT's involvement with this Community Group is held off until after the workshop once they've figured out what part they will play in this space.
+[Wed 11:13] <voip-ps> <unknown> (IAX2/diamondcard-11947) has joined the conference.
+[Wed 11:13] <dlongley> m4nu: i've removed them from the list, it doesn't require us to recharter, etc.
+[Wed 11:14] <dlongley> m4nu: I also spoke with Hannes Tschofenig from the IETF's Advisory Board about Web Payments yesterday.
+[Wed 11:15] <dlongley> m4nu: we're going to try and present the web payments work at the next IETF plenary which is in march in london, i'm trying to find money to fly me out there to do a presentation on our work here.
+[Wed 11:15] <dlongley> m4nu: they said it's a topic the plenary is very interested in there would be between 800-100 highly technical folks in the audience there.
+[Wed 11:15] <dlongley> m4nu: Hannes is very involved in OAuth as well.
+[Wed 11:15] <dlongley> m4nu: we built the web payments stuff on top of oauth in the beginning and moved away from it
+[Wed 11:16] <dlongley> m4nu: Hannes wants to know more about why we made that decision and wants to see if the newer stuff in oauth can help
+[Wed 11:16] <dlongley> m4nu: so we're in close contact with these IETF groups: OAuth, JOSE, HTTP2
+[Wed 11:16] <dlongley> m4nu: the whole purpose is to get more communication happening here between w3c and IETF when it comes to payments, so this is a good thing, it's not a done deal yet, we have to figure out funding but hopefully it will work out
+[Wed 11:16] <m4nu> voip: connections?
+[Wed 11:16] <voip-ps> Conference connections: Manu Sporny [SIP/6000-00000184], Dave Longley [SIP/6002-00000187], Dave Lehn [SIP/6003-00000188], <no name> (themusicgod1) [IAX2/diamondcard-8706], <unknown> (brent) [SIP/172.0.222.56-00000186], IAX2/diamondcard-11947
+[Wed 11:17] <dlongley> m4nu: any questions about that?
+[Wed 11:17] <m4nu> Topic: Web Payments Charter/Work Items Voting Status
+[Wed 11:19] <dlongley> m4nu: The votes on the proposed charter and scope of work are going well, we have a good turnout. We would still like more people to vote before Friday.
+[Wed 11:19] <dlongley> m4nu: We expect the charter to go through, it is overwhelmingly supported
+[Wed 11:20] <dlongley> m4nu: with the work items, some people who weren't technical in nature abstained, most votes were from people who are at least fairly technical in nature
+[Wed 11:21] <dlongley> m4nu: the only specs that have gotten votes against them have been the web payments design principles (which is a little confusing), the web commerce specification, and the web payments crowdfunding specification and http signatures and nonces, each having just one vote against them. Vast majority is for the specs, with about 25% abstention rate.
+[Wed 11:21] <dlongley> m4nu: any questions on the charter voting status stuff?
+[Wed 11:23] <dlongley> brent: I've been working on my own stuff for a while, just got looped back in for the vote, for whatever that's worth.
+[Wed 11:21] <dlongley> m4nu: That's fine, the vote's more about whether or not you'd like the work to happen, not necessarily that you've been deeply involved in the work.
+[Wed 11:23] <m4nu> Topic: Web Commerce API
+[Wed 11:23] <m4nu> https://web-payments.org/specs/source/web-commerce-api/
+[Wed 11:24] <dlongley> m4nu: this is a revival of the mozpay API, which was something created for the firefox marketplace, it's a place where you can list items for sale and using a firefox phone you can do a single click purchase
+[Wed 11:25] <dlongley> m4nu: mozilla has somewhat abandoned that approach, they were counting on a trusted chrome UI to protect the transaction, but they've found that that approach has been too difficult to implement, they are concerned about it being easy to fake that UI, there is a bit of that spec that could be used for doing web payments, specifically the thing that we are missing in the group right now, is the ability to provide a unified mechanism on the web where someone can click on the buy button on the web, regardless of who their payment provider is, paypal, payswarm, bitcoin, google, amazon, whatever, they should be able to use the same UI flow to make a purchase
+[Wed 11:26] <dlongley> m4nu: this spec is about sending a purchase request to a payment processor and having that payment processor respond with a standardized digital receipt that indicates whether or not the payment went through
+[Wed 11:26] <dlongley> m4nu: after talking with Kumar from Mozilla about this last week, he said it shouldn't be an issue to just build on top of what they had.
+[Wed 11:26] <dlongley> m4nu: and we're also looking at making this simpler on the browser manufacturers - we  want to make this implementable as a polyfill
+[Wed 11:27] <dlongley> m4nu: this is similar to how JSON got going (JSON.parse() / JSON.stringify()), and mozilla persona, etc.
+[Wed 11:27] <dlongley> m4nu: if it becomes widely used, then the API can be built into the browser
+[Wed 11:27] <dlongley> m4nu: the API in the browser would then take over what the polyfill was doing
+[Wed 11:28] <dlongley> m4nu: it's just a neat technical trick to say something will be a browser ability without having to get buy in at the very beginning, if it never catches on, browsers don't have the nasty legacy to live with. If it does catch on, browsers can implement a more secure version of it (using 2-factor auth, for example).
+[Wed 11:28] <dlongley> m4nu: so when people go to a website and click on "pay with X" button, it will execute the same code across each one of those systems, it will be the same across any of the payment providers available, and the digital receipt will be the same as well
+[Wed 11:28] <dlongley> m4nu: the big question is whether or not paypal/google/amazon will go for this
+[Wed 11:29] <dlongley> m4nu: it does allow us to do the simplest possible thing, we're just standardizing the purchase request and digital receipt
+[Wed 11:29] <dlongley> m4nu: whether or not the vendor will trust these receipts is another thing
+[Wed 11:29] <dlongley> m4nu: the digital receipt will be signed by say, paypal, and the vendor can decide if they trust them and grant access
+[Wed 11:30] <dlongley> m4nu: if someone else, some completely unknown payment processor on the web gives a digital receipt to the vendor, the vendor might not know them and may not trust them and they'd not honor that digital receipt because the person on the other end could be trying to spoof the purchase
+[Wed 11:30] <dlongley> m4nu: i'm pointing that out because there are issues with this implementation because it gives an undue advantage to very large organizations that are already payment processors
+[Wed 11:31] <dlongley> m4nu: payment processors to be are going to have a difficult time with this unless we make it possible to register new payment processors and decentralized payment processor trust mechanisms.
+[Wed 11:31] <dlongley> m4nu: that's an overview of what this spec is supposed to do (buy button/API, standard purchase request, which is transmitted to buyer's payment processor, digital receipt is returned to the vendor through the browser, etc.)
+[Wed 11:31] <dlongley> m4nu: this should work with paypal, payswarm, google wallet, bitcoin, etc. buy flows
+[Wed 11:32] <dlongley> m4nu: any comments or questions on this spec?
+[Wed 11:32] <voip-ps> <unknown> (IAX2/diamondcard-11947) has left the conference.
+[Wed 11:32] <dlongley> m4nu: this is not a part of our scope of work right now, so we'd have to figure out if it's part of our scope of work, we'd have to do another vote to add it in as a work item
+[Wed 11:33] <dlongley> m4nu: when it comes to creating a WG at w3c this is probably one of the specs that will get the bigger companies interested, this could get googles, paypals, large banks of the world interested, allows them to slowly move towards a standardized buy flow on the web while keeping their proprietary backend payment system.

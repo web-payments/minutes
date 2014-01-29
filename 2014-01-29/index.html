@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web Payments">
+    <meta name="author" content="Manu Sporny">
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico">
+
+    <title>Web Payments</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="../../assets/css/bootstrap.css">
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/icomoon.css">
+    <link rel="stylesheet" href="../../assets/css/animate-custom.css">
+
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' type='text/css'>
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Raleway:400,300,700' type='text/css'>
+
+    <script src="../../assets/js/jquery.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/modernizr.custom.js"></script>
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body data-target="#navbar-nav" data-spy="scroll">
+
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <img class="navbar-logo" src="../../images/logo-32.png">
+          </button>
+          <a class="navbar-brand hidden-xs hidden-sm" href="#home"><img class="navbar-logo" src="../../images/logo-32.png"></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../#home" class="smoothScroll">Home</a></li>
+            <li> <a href="../../#about" class="smoothScroll"> About</a></li>
+            <li> <a href="../../#tech" class="smoothScroll"> Tech</a></li>
+            <li> <a href="../../#participate" class="smoothScroll"> Participate</a></li>
+            <li> <a href="../../#contact" class="smoothScroll"> Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+
+<section><div class="container"><div class="row white"><br><div class="col-lg-offset-2 col-lg-8"><h1>Web Payments Community Group Telecon</h1>
+<h2>Minutes for 2014-01-29</h2>
+<div class="summary">
+<dl>
+<dt>Agenda</dt><dd><a href="http://lists.w3.org/Archives/Public/public-webpayments/2014Jan/0181.html">http://lists.w3.org/Archives/Public/public-webpayments/2014Jan/0181.html</a></dd>
+<dt>Topics</dt><dd><ol><li><a href="#topic-1">Introduction to Jeff Cliff</a><li><a href="#topic-2">ISSUE-20: eBay/PayPal concerns</a><li><a href="#topic-3">Communication with SWIFT and IETF</a><li><a href="#topic-4">Web Payments Charter/Work Items Voting Status</a><li><a href="#topic-5">Web Commerce API</a></ol></dd><dt>Chair</dt><dd>Manu Sporny</dd>
+<dt>Scribe</dt><dd>Dave Longley</dd>
+<dt>Present</dt><dd>Dave Longley, Manu Sporny, David I. Lehn, Jeff Cliff, Brent Shambaugh</dd>
+<dt>Audio Log</dt><dd><div><a href="audio.ogg">audio.ogg</a></div>
+<div><audio controls="controls" preload="none">
+<source src="audio.ogg" type="audio/ogg" />Warning: Your browser does not support the HTML5 audio element, please upgrade.</audio></div></dd></dl>
+<div class="information">Dave Longley is scribing.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Any changes to the Agenda?</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  Nope.</div>
+<h1 id="topic-1" class="topic">Topic: Introduction to Jeff Cliff</h1>
+<div class="comment"><span class="name">Jeff Cliff</span>:  I&apos;m a fairly active member in the ripple community. I&apos;ve been following the work that&apos;s been done here for quite some time. I&apos;m not affiliated with any organization here. I&apos;m a voice of the Ripple community in some ways. I&apos;m a developer, I haven&apos;t contributed any code to this project yet, and I&apos;m still trying to figure out a way to do that</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Welcome, we&apos;re really happy to have you here! Hopefully we can figure out a way to get some contributions from you or just get your input on the work we&apos;re doing here.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Are you coming to the web payments workshop, it&apos;s in Paris?</div>
+<div class="comment"><span class="name">Jeff Cliff</span>:  I&apos;m trying to figure a way to get there, I&apos;ll work on that.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Let us know if you have any questions as we go through all this stuff, feel free to follow up on the mailing list as well.</div>
+<h1 id="topic-2" class="topic">Topic: ISSUE-20: eBay/PayPal concerns</h1>
+<div class="comment"><span class="name">Manu Sporny</span>: <a href="https://github.com/web-payments/web-payments.org/issues/20">https://github.com/web-payments/web-payments.org/issues/20</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Paypal wrote in with a number of concerns about the website. T they were concerned that people would get the wrong impression that the output of the web payments CG would become standards immediately, they wanted us to be a bit more clear about what the group was working on, this is what kicked off the entire discussion about the charter and scope of work/work items</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We talked with w3c management and we&apos;ve gone to a pretty great effort to ensure that w3c management and paypal/ebay and some other larger companies were ok with the text</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  If you look at issue 20, the first 4 have been marked off</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We&apos;ve made it clear that no community group is endorsed by w3c but also made it clear that we are working on tech here that we hope to get into the w3c standards-track process. I&apos;ve mentioned that we&apos;ve done this before, gone through this mechanism and gotten things published.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Also made a clear statement that while the work is not on the w3c rec track, we do plan on trying to get it adopted through a web payments working group</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We plan to push hard to get the specs that are mature enough from the CG into the WG</div>
+<div class="comment"><span class="name">Manu Sporny</span>: We&apos;ve Made these changes to the site over two weeks ago - <a href="https://web-payments.org/">https://web-payments.org/</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>:  The other part was specifying who the community is. Paypal was concerned that people would get the impression that the CG consists of W3C member companies, but even though it does, since it doesn&apos;t have W3C WG blessing yet, we&apos;ve clarified the group info on the site</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  I think the statement is accurate enough to indicate who the group consists of</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  They wanted us to remove the language that says the world&apos;s financial system is ailing or has problems with it, the larger financial players don&apos;t want that language there, we just say that the web is going to play a key role in improving the world&apos;s financial infrastructure and a more equitable future of all of us, etc.</div>
+<div class="comment"><span class="name">Manu Sporny</span>: We Were also asked to specify who the dependencies/liasons are: <a href="http://www.w3.org/community/webpayments/wiki/WebPaymentsCommunityGroupCharterProposal#Dependencies_or_Liaisons">http://www.w3.org/community/webpayments/wiki/WebPaymentsCommunityGroupCharterProposal#Dependencies_or_Liaisons</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We touch on a wide variety of issues in the dependencies/liaisons list</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We have a large number of people to keep in touch with and up-to-date on with respect to what we&apos;re working on</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We can&apos;t create a page for the charter on the website  until we&apos;re done with the vote on the charter, the vote ends this friday</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  I believe those were all of Paypal&apos;s concerns that we could address, a lot of them were non-issues because paypal/ebay didn&apos;t seem to understand how CGs were run, talking with w3c management i believe we have hopefully clarified that all of the issues.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Anyone think there are any concerns or other issues that haven&apos;t been addressed?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  If there&apos;s nothing else, we&apos;ll go ahead and move on</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  I imagine that this issue will be closed once we close the vote and update the site w/ the charter and list of liasons.</div>
+<h1 id="topic-3" class="topic">Topic: Communication with SWIFT and IETF</h1>
+<div class="comment"><span class="name">Manu Sporny</span>:  SWIFT reached out to us and said that they don&apos;t want to be listed in the liaison group on the CG list, there have been a number in their membership that are concerned with SWIFT&apos;s interaction with this group. They wanted to make clear that they are very interested in what we&apos;re doing. They are on the program committee and coming to the workshop, they just want to make sure that any announcement of SWIFT&apos;s involvement with this Community Group is held off until after the workshop once they&apos;ve figured out what part they will play in this space.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  I&apos;ve removed them from the list, it doesn&apos;t require us to recharter, etc.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  I also spoke with Hannes Tschofenig from the IETF&apos;s Advisory Board about Web Payments yesterday.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We&apos;re going to try and present the web payments work at the next IETF plenary which is in march in london, i&apos;m trying to find money to fly me out there to do a presentation on our work here.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  They said it&apos;s a topic the plenary is very interested in there would be between 800-100 highly technical folks in the audience there.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Hannes is very involved in OAuth as well.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We built the web payments stuff on top of oauth in the beginning and moved away from it</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Hannes wants to know more about why we made that decision and wants to see if the newer stuff in oauth can help</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  So we&apos;re in close contact with these IETF groups: OAuth, JOSE, HTTP2</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  The whole purpose is to get more communication happening here between w3c and IETF when it comes to payments, so this is a good thing, it&apos;s not a done deal yet, we have to figure out funding but hopefully it will work out</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Any questions about that?</div>
+<h1 id="topic-4" class="topic">Topic: Web Payments Charter/Work Items Voting Status</h1>
+<div class="comment"><span class="name">Manu Sporny</span>:  The votes on the proposed charter and scope of work are going well, we have a good turnout. We would still like more people to vote before Friday.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We expect the charter to go through, it is overwhelmingly supported</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  With the work items, some people who weren&apos;t technical in nature abstained, most votes were from people who are at least fairly technical in nature</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  The only specs that have gotten votes against them have been the web payments design principles (which is a little confusing), the web commerce specification, and the web payments crowdfunding specification and http signatures and nonces, each having just one vote against them. Vast majority is for the specs, with about 25% abstention rate.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Any questions on the charter voting status stuff?</div>
+<div class="comment"><span class="name">Brent Shambaugh</span>:  I&apos;ve been working on my own stuff for a while, just got looped back in for the vote, for whatever that&apos;s worth.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  That&apos;s fine, the vote&apos;s more about whether or not you&apos;d like the work to happen, not necessarily that you&apos;ve been deeply involved in the work.</div>
+<h1 id="topic-5" class="topic">Topic: Web Commerce API</h1>
+<div class="comment"><span class="name">Manu Sporny</span>: <a href="https://web-payments.org/specs/source/web-commerce-api/">https://web-payments.org/specs/source/web-commerce-api/</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>:  This is a revival of the mozpay API, which was something created for the firefox marketplace, it&apos;s a place where you can list items for sale and using a firefox phone you can do a single click purchase</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Mozilla has somewhat abandoned that approach, they were counting on a trusted chrome UI to protect the transaction, but they&apos;ve found that that approach has been too difficult to implement, they are concerned about it being easy to fake that UI, there is a bit of that spec that could be used for doing web payments, specifically the thing that we are missing in the group right now, is the ability to provide a unified mechanism on the web where someone can click on the buy button on the web, regardless of who their payment provider is, paypal, payswarm, bitcoin, google, amazon, whatever, they should be able to use the same UI flow to make a purchase</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  This spec is about sending a purchase request to a payment processor and having that payment processor respond with a standardized digital receipt that indicates whether or not the payment went through</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  After talking with Kumar from Mozilla about this last week, he said it shouldn&apos;t be an issue to just build on top of what they had.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  And we&apos;re also looking at making this simpler on the browser manufacturers - we  want to make this implementable as a polyfill</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  This is similar to how JSON got going (JSON.parse() / JSON.stringify()), and mozilla persona, etc.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  If it becomes widely used, then the API can be built into the browser</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  The API in the browser would then take over what the polyfill was doing</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  It&apos;s just a neat technical trick to say something will be a browser ability without having to get buy in at the very beginning, if it never catches on, browsers don&apos;t have the nasty legacy to live with. If it does catch on, browsers can implement a more secure version of it (using 2-factor auth, for example).</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  So when people go to a website and click on &quot;pay with X&quot; button, it will execute the same code across each one of those systems, it will be the same across any of the payment providers available, and the digital receipt will be the same as well</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  The big question is whether or not paypal/google/amazon will go for this</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  It does allow us to do the simplest possible thing, we&apos;re just standardizing the purchase request and digital receipt</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Whether or not the vendor will trust these receipts is another thing</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  The digital receipt will be signed by say, paypal, and the vendor can decide if they trust them and grant access</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  If someone else, some completely unknown payment processor on the web gives a digital receipt to the vendor, the vendor might not know them and may not trust them and they&apos;d not honor that digital receipt because the person on the other end could be trying to spoof the purchase</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  I&apos;m pointing that out because there are issues with this implementation because it gives an undue advantage to very large organizations that are already payment processors</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Payment processors to be are going to have a difficult time with this unless we make it possible to register new payment processors and decentralized payment processor trust mechanisms.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  That&apos;s an overview of what this spec is supposed to do (buy button/API, standard purchase request, which is transmitted to buyer&apos;s payment processor, digital receipt is returned to the vendor through the browser, etc.)</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  This should work with paypal, payswarm, google wallet, bitcoin, etc. buy flows</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Any comments or questions on this spec?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  This is not a part of our scope of work right now, so we&apos;d have to figure out if it&apos;s part of our scope of work, we&apos;d have to do another vote to add it in as a work item</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  When it comes to creating a WG at w3c this is probably one of the specs that will get the bigger companies interested, this could get googles, paypals, large banks of the world interested, allows them to slowly move towards a standardized buy flow on the web while keeping their proprietary backend payment system.</div>
+</div></div></div></section>
+    <div id="footerwrap">
+      <div class="container">
+        <h4>Created by the <a href="http://www.w3.org/community/webpayments/">Web Payments Community Group</a>. Shared with love under a <a href="http://creativecommons.org/licenses/by/4.0/">CC-BY</a> license. Thanks to our <a href="../../thanks">contributors</a>.</h4>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+
+  <script type="text/javascript" src="../../assets/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/retina.js"></script>
+  <script type="text/javascript" src="../../assets/js/jquery.easing.1.3.js"></script>
+  <script type="text/javascript" src="../../assets/js/smoothscroll.js"></script> 
+    
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-1539674-7']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+  })();
+  </script>
+    
+  </body>
+</html>
+
