@@ -229,7 +229,7 @@ async.waterfall([ function(callback) {
     // generate the body of the email
     var content = scrawl.generateMinutes(gLogData, 'text', gDate);
     content = content.match(/Agenda(.|\n)*Chair:/)[0].replace('Chair:', '');
-    var items = content.match(/Topics(.|\n)*Action/)[0]
+    var items = content.match(/Topics(.|\n)*(Action|Resolutions)/)[0]
       .match(/[0-9]{1,2}\. (.*)/g);
     var formattedItems = '';
 
