@@ -1,0 +1,85 @@
+[Wed 11:03] <m4nu> Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2014Feb/0030.html
+[Wed 11:03] <dlongley> scribe: dlongley
+[Wed 11:04] <voip-ps> Dave Lehn (SIP/6003-00000193) has joined the conference.
+[Wed 11:04] <m4nu> Topic: Updating Website w/ Charter and Work Items
+[Wed 11:05] <m4nu> http://lists.w3.org/Archives/Public/public-webpayments/2014Feb/0001.html
+[Wed 11:05] <dlongley> m4nu: the voting is complete, we had a decent turnout, typical turnout for small w3c items is 0.5-1%, for larger votes its around 25%, we had 19% - so, that's good.
+[Wed 11:05] <dlongley> scribe: taaz
+[Wed 11:05] <taaz> m4nu: Results of charter vote were good, we now have a charter. 19% show up rate for charter. Good turnout.
+[Wed 11:06] <taaz> m4nu: Not much is going to change about how we operate (because the charter formalizes what we've been doing for the past several years) but we have the charter written down now.
+[Wed 11:06] <taaz> m4nu: Posted charter on community page - http://www.w3.org/community/webpayments/charter/
+[Wed 11:07] <taaz> m4nu: Two editorial changes. Wrong link to community and business process. Link to SWIFT removed per discussion last week.
+[Wed 11:08] <taaz> m4nu: Each of the work item are listed in the charter now.
+[Wed 11:08] <jpotvin> Manu is talking w/ a few legal teams from large organizations and they will advise if there are any issues.
+[Wed 11:09] <taaz> m4nu: Of the work items, the HTTP Signature nonces had least support, which is not surprising. Everything else had good support.
+[Wed 11:09] <taaz> m4nu: We could draw a few conclusions based on how people voted and what the priorites are.
+[Wed 11:09] <jpotvin> We could conclude that higher number voting suggests priorities for workplan.
+[Wed 11:12] <taaz> jpotvin: The voting rate may suggest priority but also may indicate level of understanding of a topic.
+[Wed 11:12] <taaz> manu: Yeah, we shouldn't read too much into the number wrt. votes having to do w/ priorities, it's just one input to the decision plan.
+[Wed 11:12] <m4nu> Topic: Web Identity Updates
+[Wed 11:12] =-= jpotvin is now known as jpotvin
+[Wed 11:12] <m4nu> https://web-payments.org/specs/source/web-identity/
+[Wed 11:13] <taaz> m4nu: We're working with another company that's part of the group to figure out how to include other information with an identity.
+[Wed 11:13] <m4nu> Web Identity works with OpenID or Persona, once you login, the login mechanism transmits the identifier
+[Wed 11:13] <taaz> m4nu: Should be able to do login via OpenID or Persona and be able to go get more information about an identity.
+[Wed 11:14] <taaz> m4nu: Two primary things you want in an identity. Easy to use object. Things like name, phone number, citizenship status, etc.
+[Wed 11:14] <taaz> m4nu: If a government has signed a identity or similar, need to have a mechanism to get this info. So, that's the second thing you want - to be able to get ahold of the assertions.
+[Wed 11:15] <taaz> dlongley: Signatures in payments work on assets and listings were done by normalizing data and storing signature along with data.
+[Wed 11:16] <taaz> dlongley: Similar for identities, but with one small difference - Store data and assertions on the data.
+[Wed 11:16] <taaz> dlongley: Assertions from government or other authority. Data will be signed by that entity and signature included with assertion. Then the assertions will be merged with the identity object.
+[Wed 11:16] <taaz> dlongley: The identity object will include all the information related to the identity and all the assertions related to that information.
+[Wed 11:17] <taaz> dlongley: We can use the JSON-LD flatten feature to get all the data together in an easy to use object.
+[Wed 11:17] <taaz> dlongley: If you want to check particular data, you can go through list of assertions and find who signed a piece of data.
+[Wed 11:19] <taaz> manu: here's an example of an identity: https://web-payments.org/specs/source/web-identity/#a-typical-identity
+[Wed 11:19] <taaz> m4nu: Changes we'll need to make - we'll add a property called "assertion" with an array of assertions.
+[Wed 11:20] <taaz> m4nu: Each assertion will have a type such as NameAssertion, AddressAssertion, EmailAssertion, or PassportAssertion. It will also include something called an "endorsement", that is the information on the identity that you're asserting.
+[Wed 11:21] <taaz> m4nu: The entire assertion will be signed. If government signs a digital passport, can use the email or web identity url. That ties assertion to identity.
+[Wed 11:21] <taaz> m4nu: Electronic passport would assert name, birtdate, country, etc.
+[Wed 11:21] <taaz> dlongley: Here's an example of what this would look like in practice: https://gist.github.com/dlongley/8827309
+[Wed 11:27] <taaz> Discussion related to the design of the assertion and endorsement object.
+[Wed 11:27] <taaz> dlongley: The 'id' in endorsement needs to be the identity id so the flatten process works.
+[Wed 11:28] <taaz> m4nu: mozilla badges system ties data to email address, so I don't know if this will work for something like that.
+[Wed 11:28] <taaz> m4nu: It's a bad idea to use an email because our email addresses change over time, we don't want to lose that data just because our email address changed.
+[Wed 11:33] <voip-ps> Joseph Potvin (SIP/getonsip.com-00000195) has joined the conference.
+[Wed 11:33] <voip-ps> Joseph Potvin (SIP/getonsip.com-00000195) has left the conference.
+[Wed 11:34] <taaz> Discussion about issues with how much data to be in endorsements and how to avoid leaking too much data.
+[Wed 11:35] <voip-ps> Joseph Potvin (SIP/getonsip.com-00000196) has joined the conference.
+[Wed 11:36] <taaz> evan: could you have the government sign each piece of the identity and then sign some kind of group object that links all of the fields they've signed together?
+[Wed 11:37] <taaz> m4nu: I don't think we need the group signed, because the JSON-LD flattening process takes care of collating the data together. The issue is with granularity, if you have a passport that signs your name, government ID, and birthday and a site asks for just your birthday, you don't want to give them all of your passport assertion information. You just want to give them information related to your birthday. So, the government is going to have to provide multiple assertions - one each for name, birthday, and government ID and one for all of that information bundled together plus a few other passport-specific details.
+[Wed 11:43] <taaz> m4nu: website could request information, but person could decide to not send certain information, then website could decide if they want to continue
+[Wed 11:43] <taaz> evan: I do think we should go that way.
+[Wed 11:43] <taaz> dlongley: yes, put the onus on websites to break the chain.
+[Wed 11:45] <taaz> m4nu: So, we need to clarify how assertions and endorsements are made in the spec based on this discussion.
+[Wed 11:45] <taaz> m4nu: Do we want non-signed assertions to be made?
+[Wed 11:45] <taaz> dlongley: May not be useful and could pollute the data model.
+[Wed 11:45] <taaz> dlongley: If a 3rd party wants to assert something you should provide proof you made the assertions.
+[Wed 11:45] <taaz> dlongley: People can make assertions about themselves, the assertion is assumed and doesn't have to be signed.
+[Wed 11:46] <m4nu> Topic: HTTP Signatures
+[Wed 11:46] <taaz> manu: We pushed a new HTTP Signatures spec out last week: https://web-payments.org/specs/source/http-signatures/
+[Wed 11:46] <taaz> manu: We got feedback from Julian, who is the editor of a ton of HTTP specs at IETF and really knows his stuff: http://lists.w3.org/Archives/Public/public-webpayments/2014Feb/0018.html
+[Wed 11:46] <taaz> manu: and feedback from Mark, the Chair of the HTTP working group: http://lists.w3.org/Archives/Public/public-webpayments/2014Feb/0019.html
+[Wed 11:47] <taaz> m4nu: These guys really know what they're doing so we need to make a number of the changes they've asked for and respond to them sooner than later.
+[Wed 11:47] <m4nu> Let's cover Julian's feedback first - http://lists.w3.org/Archives/Public/public-webpayments/2014Feb/0018.html
+[Wed 11:49] <taaz> m4nu: Confused if we define a HTTP Authentication scheme. We want this to work for both client-to-server and server-to-client scenarios, so we may want to not use the Authentication scheme and define our own HTTP header.
+[Wed 11:50] <taaz> m4nu: Julian says that we should align with algorithm names. Unfortunately, IETF specs used different naming for algorithms. JOSE vs DKIM etc. I'm going to ask Julian what should be used.
+[Wed 11:52] <taaz> m4nu: headers param. request-line change to "(request-line)" can break current deployed code.
+[Wed 11:52] <taaz> dlongley: should do something that works better with HTTP/2
+[Wed 11:54] <taaz> m4nu: We might just have to specify how the header line is canonicalized
+[Wed 11:54] <taaz> m4nu: item 4 extensions - removing the section, we have a better way of doing extensions now in the spec.
+[Wed 11:54] <taaz> m4nu: item 5 - point to a proper base 64 spec, going to do that.
+[Wed 11:56] <taaz> m4nu: item 6 - field values, We want to avoid canonicalization. proxies might do strange things to headers. 
+[Wed 11:57] <taaz> dlongley: might be able to use x- headers as a work around for proxies, we might want to spec that.
+[Wed 11:57] <taaz> m4nu: item 7 - point to digest spec, yep, we'll do that
+[Wed 11:57] <taaz> m4nu: item 8 - error handling. how to handle multiple values. use last value wins?
+[Wed 11:58] <taaz> dlongley: whenever multiple occurances not allowed, last wins, done.
+[Wed 11:58] <taaz> m4nu: where to send feedback? just use web payments list? I think just use the web payments mailing list since it's not an official HTTP Auth WG item.
+[Wed 11:58] <taaz> m4nu: fix cite and other misc issues
+[Wed 12:01] <taaz> manu: On to Mark's feedback, his email is here: http://lists.w3.org/Archives/Public/public-webpayments/2014Feb/0019.html
+[Wed 12:06] <taaz> manu: We want to change the name of the spec and make the editorial changes he is asking for.  We want to avoid canonicalization if we can, but may not be able to do that for the request line.  Regarding the 401 Unauthorized + WWW-Authenticate, we don't really want to provide that but I doubt the spec will make it through the process w/o it, so we might as well add it.
+[Wed 12:07] <taaz> m4nu: anything else we need to cover for this call?
+[Wed 12:07] <taaz> No other business mentioned.
+[Wed 12:07] <taaz> m4nu: thanks, we may not have call next week.
+[Wed 12:07] <voip-ps> evan (IAX2/diamondcard-14675) has left the conference.
+[Wed 12:07] <voip-ps> Manu Sporny (SIP/6000-00000190) has left the conference.
+[Wed 12:07] <voip-ps> Dave Longley (SIP/6002-00000191) has left the conference.
+[Wed 12:07] <voip-ps> Dave Lehn (SIP/6003-00000193) has left the conference.
