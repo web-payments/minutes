@@ -1,0 +1,115 @@
+[Wed 11:04:19] <m4nu>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2014Feb/0092.html
+[Wed 11:04:24] <m4nu>	scribe: jpotvin
+[Wed 11:04:28] <jpotvin>	manu: Natasha may join in later to talk about the Web/Mobile payments task force
+[Wed 11:06:15] <m4nu>	jpotvin: Is there a quick update on any organizational things based on Web Payments Workshop.
+[Wed 11:07:02] <m4nu>	Topic: Web Payments Workshop
+[Wed 11:07:40] <jpotvin>	manu: Paper reviews are due by the end of March. I think we're currently overbooked for the workshop - lots and lots of interest.
+[Wed 11:08:44] <m4nu>	jpotvin: Could we have a BoF? Would they be against it in principle? If there are any side meetings, could someone locate a nice cafe nearby if it doesn't interfere w/ the main agenda.
+[Wed 11:09:27] <m4nu>	jpotvin: A BoF would be great in principles, but the venue doesn't support it. Side meetings at some cafe nearby? Maybe we can find a venue adjacent to the Palais - pub, cafe.
+[Wed 11:10:36] <m4nu>	ACTION: Manu to ask Web Payments Workshop Program Committee to list potential BoF venues.
+[Wed 11:11:17] <bshambaugh>	manu: The workshop is single track, nobody is going to want to leave the venue for a BoF.
+[Wed 11:11:35] <m4nu>	Topic: Web Payments Introductory Documents
+[Wed 11:11:57] <jpotvin>	manu: We've not had a number of in-depth conversations with people in economics, writing,  programming that want to get involved, but not sure how.
+[Wed 11:12:54] <jpotvin>	Manu: we have lots of specs, hard to locate an entry point - we need better documentation
+[Wed 11:13:12] <jpotvin>	Manu: We don't  have an overview or fucntional flow document - that could be what they work on.
+[Wed 11:13:42] <jpotvin>	Manu: need this for entry-points as well as big-picture, those could be other work items.
+[Wed 11:14:26] <jpotvin>	Manu: Any other ideas?  We have 3 volunteers, need an outline, the volunteers can fill it out
+[Wed 11:14:47] <jpotvin>	Manu: Brent, weren't you one of the volunteers for this?
+[Wed 11:15:07] <jpotvin>	Brent: Going thorugh things right now, and will try to map this.
+[Wed 11:15:48] <voip-ps>	Joseph Potvin (SIP/getonsip.com-000001b9) has left the conference.
+[Wed 11:16:13] <dlongley>	m4nu: Ok great, we'll do that as a starting point, do you want us to draft an outline?
+[Wed 11:16:21] <dlongley>	brent: would it help if i just went ahead and drafted the outline?
+[Wed 11:16:46] <dlongley>	m4nu: if you could draft an outline based on what you've read that would be very helpful, you have a fresh set of eyes on this and we've been too entrenched for too long.
+[Wed 11:17:05] <dlongley>	m4nu: that would be great if you could do that with your new perspective, and then just post that to the mailing list and we'll discuss it
+[Wed 11:17:09] <dlongley>	m4nu: anything else on the intro docs?
+[Wed 11:17:25] <voip-ps>	Joseph Potvin (SIP/getonsip.com-000001be) has joined the conference.
+[Wed 11:17:25] <m4nu>	Topic: Update on the Google Summer of Code 2014
+[Wed 11:18:13] <jpotvin>	Manu: We submitted the CG as a mentor organization to the Google Summer of Code
+[Wed 11:18:27] <m4nu>	https://www.w3.org/community/webpayments/wiki/GSoC2014ProjectIdeas
+[Wed 11:18:53] <jpotvin>	Manu: wide variety of possible topics, 3 categories (novices, intermediate, advanced)
+[Wed 11:19:24] <jpotvin>	Manu: students can apply, salary is about $5500 to pay for expenses to work on the project over the summer
+[Wed 11:19:52] <jpotvin>	Manu: all WPCG projects are open source, open standard
+[Wed 11:20:07] <jpotvin>	manu: we just wait now  to see if we're approved.
+[Wed 11:20:30] <taaz>	https://www.google-melange.com/gsoc/events/google/gsoc2014
+[Wed 11:20:51] <jpotvin>	Manu: GSoC organizations will be announced on Feb 24.
+[Wed 11:21:25] <jpotvin>	Manu: If accepted, we need to make some noise about our projects so we can recruit students.
+[Wed 11:21:27] <m4nu>	Topic: Web Commerce API
+[Wed 11:21:35] <m4nu>	https://web-payments.org/specs/source/web-commerce-api/
+[Wed 11:21:49] <jpotvin>	manu: This is the resurrected Mozpay API that we covered a few weeks ago.
+[Wed 11:22:24] <jpotvin>	manu: based on our consultation, the workshop focus may be on payments request and digital receipts, this spec describes how we can do that.
+[Wed 11:23:04] <jpotvin>	manu: this allows all proprietary player to stay as-is, but also new entrants into the marketplace.
+[Wed 11:23:26] <jpotvin>	manu: The approach seems to work for proprietary payment providers, cryptocurrency wallets, and open payment solutions, but it is not yet an official work item
+[Wed 11:23:53] <jpotvin>	manu: We would need to vote on this as a WPCG work item
+[Wed 11:24:11] <m4nu>	jpotvin: How did we manage to leave it off the charter vote?
+[Wed 11:24:30] <jpotvin>	manu: Mozilla retracted it before we voted on the charter, we resurrected it a week after we voted on the charter. It was just bad timing, which is funny because this could be the most important spec we do.
+[Wed 11:25:33] <jpotvin>	manu: it was too browser specific at first, but others determined that it could be made generic, which we did.
+[Wed 11:26:35] <jpotvin>	manu: Mozilla is okay with using it again, and will decide later on support.
+[Wed 11:27:09] <jpotvin>	manu: can be later implemented in browsers, doesn't require browser buy-in at first.
+[Wed 11:27:53] <jpotvin>	dlongley: I'm in support of including it as a work item.
+[Wed 11:28:40] <m4nu>	PROPOSAL: Start an official vote on adopting the Web Commerce API as a work item for the Web Payments Community Group.
+[Wed 11:28:42] <jpotvin>	+1
+[Wed 11:28:42] <dlongley>	+1
+[Wed 11:28:43] <m4nu>	+1
+[Wed 11:28:49] <bshambaugh>	+1
+[Wed 11:28:53] <taaz>	+1
+[Wed 11:28:54] <m4nu>	RESOLVED: Start an official vote on adopting the Web Commerce API as a work item for the Web Payments Community Group.
+[Wed 11:29:44] <voip-ps>	Joseph Potvin (SIP/getonsip.com-000001bf) has joined the conference.
+[Wed 11:30:43] <voip-ps>	Joseph Potvin (SIP/getonsip.com-000001c0) has joined the conference.
+[Wed 11:31:13] <m4nu>	bshambaugh: I'm concerned about there being so much focus on Bitcoin that PaySwarm may be lost in the excitement, what does PaySwarm provide that Bitcoin doesn't?
+[Wed 11:31:34] <m4nu>	manu: Basically, it standardizes the payment process for the web. The payment request and the response format. Bitcoin doesn't do that. It also promotes a solid identity solution for the Web, which Bitcoin doesn't have either. How to list assets for sale in a decentralized way, how to provide machine-readable offers of sale (listings). How to do digital receipts, there's a lot that it does that Bitcoin doesn't because PaySwarm is more high-level than these other protocols. It deals w/ the commerce layer, not the payment clearing layer.
+[Wed 11:32:10] <m4nu>	dlongley: Right now, there is no standard way to initiate a payment and know that the payment happened, that's basically what PaySwarm provides.
+[Wed 11:35:22] <m4nu>	Topic: Persona and Web Identity Spec
+[Wed 11:35:30] <m4nu>	https://wiki.mozilla.org/Identity/Persona_AAR
+[Wed 11:35:49] <jpotvin>	manu: Mozilla put out something confusing, an After Action Review, which they typically only do after they tombstone a product. 
+[Wed 11:36:34] <jpotvin>	manu: idea was a simple web login mechanism, things going well, pushed it for a while, but then leaders left Mozilla, and now there is a worry that Mozilla is going to pull the rest of the developers off of the project. I don't know anything yet, but it seems suspicious and is typically what Mozilla does before they wind down a project.
+[Wed 11:36:57] <jpotvin>	manu: This is an issue for Web Payments because we depends on Persona for a clean login solution.
+[Wed 11:37:14] <jpotvin>	manu: The customer's payments provider is identified with the login.
+[Wed 11:37:30] <jpotvin>	manu:  If the technology is orphaned, we'll need an alternative solution.
+[Wed 11:37:51] <jpotvin>	manu: Mozilla probably has a continuity plan, but we just don't know what it is yet.
+[Wed 11:38:07] <jpotvin>	manu: We've elaborated in the Web Identity spec a bit here: https://web-payments.org/specs/source/web-identity/
+[Wed 11:38:24] <jpotvin>	manu: Scroll here to see the changes: https://web-payments.org/specs/source/web-identity/#a-typical-identity
+[Wed 11:39:16] <jpotvin>	manu: ID is composed of data, and some assertions (some 3rd party validates your data, with a digital signature)
+[Wed 11:39:40] <jpotvin>	manu:  identity validation is very important to trusted payments, and login is very important to ease of use. We also need to talk about the name.
+[Wed 11:40:25] <jpotvin>	manu:  Web Identity and WebID are different specs, the differences are confusing some folks.
+[Wed 11:40:56] <m4nu>	manu: The proposal would be to change the title of the "Web Identity" spec to "Identity Assertions"
+[Wed 11:41:57] <m4nu>	jpotvin: If the spec goes to "identity assertions", is this an assertion validation spec in general? Maybe we should take "identity" out of the title?
+[Wed 11:42:26] <m4nu>	dlongley: We want to be careful about scope creep, the general technology can be used for assertions on just about anything.
+[Wed 11:43:09] <m4nu>	jpotvin: I wouldn't expand the scope of work, but the choice of the name doesn't mean we need to increase the scope.
+[Wed 11:43:36] <m4nu>	dlongley: Maybe we could say "Entity Assertions"? Maybe identifier for an entity? Depends on where we want to go with that.
+[Wed 11:43:49] <m4nu>	jpotvin: Identity could get us into problems w/ metadata that goes into identity.
+[Wed 11:44:03] *	Guest33987 is now known as schuki
+[Wed 11:44:39] <m4nu>	dlongley: Web Assertions is okay - how to make assertions on things on the Web. Maybe people could say that assertions are too broad? Validation is the wrong word? 
+[Wed 11:44:49] <m4nu>	dlongley: It's more like you're verifying / validating?
+[Wed 11:45:01] <m4nu>	jpotvin: Wouldn't you get Identity Assertions anyway?
+[Wed 11:46:21] <m4nu>	manu: We could say that this is just about identity - "Identity Assertions" and say that others can use this same approach for other technologies.
+[Wed 11:46:29] <m4nu>	dlongley: Yeah, I guess we can do that.
+[Wed 11:46:48] <m4nu>	jpotvin: Does this have to be limited to a person? What about a corporation?
+[Wed 11:47:36] <jpotvin>	jpotvin: a thing?
+[Wed 11:47:47] <jpotvin>	manu: yes, included
+[Wed 11:47:48] <taaz>	bike shed... resource assertions?  does that fit into the semantic terminology better?
+[Wed 11:47:50] <m4nu>	dlongley: Yes, we're talking about "Entity Assertions"
+[Wed 11:48:57] <m4nu>	dlongley: But we may just want to use a more understandable name for the spec title.
+[Wed 11:49:12] <jpotvin>	dlongley: entities with URL
+[Wed 11:49:38] <m4nu>	dlongley: I think identity assertions says what the spec is for?
+[Wed 11:51:30] <jpotvin>	brent: how does the identity data get handled?
+[Wed 11:51:59] <jpotvin>	manu: we say there has to be a way to read/write data to that entity, and to request that info
+[Wed 11:52:39] <jpotvin>	manu: data lives with your service provider, somewhwere on the web, document you are served, for example
+[Wed 11:53:02] <m4nu>	manu: Yeah, so for example - https://dev.payswarm.com/i/manu
+[Wed 11:54:19] <jpotvin>	manu: the spec outlines how the requests for the info are issued and answered, under what conditions
+[Wed 11:54:58] <jpotvin>	manu: the person who owns that identity controls the access to the entity's info
+[Wed 11:55:40] <jpotvin>	manu: So do we have a proposal to rename the spec?
+[Wed 11:55:48] <m4nu>	taaz: I still think the "Identity Assertions" name is strange... seems like there are a lot of pieces to this.
+[Wed 11:58:06] <m4nu>	jpotvin: I think that it might be bad that people associated "identity" with "people".
+[Wed 11:58:14] <m4nu>	manu: I think that's a good thing.
+[Wed 11:58:24] <m4nu>	dlongley: I think that's an advantage... isn't it? 
+[Wed 11:58:38] <m4nu>	dlongley: A more generic name "Entity Assertion" will be more difficult.
+[Wed 11:59:12] <m4nu>	dlongley: We could talk about "Identity Exchange" or some other synonym to "read/write"?
+[Wed 11:59:34] <m4nu>	dlongley: The spec does provide more than that - it's a readable / writable identity. Part of that is being able to write stuff to the identity.
+[Wed 12:00:00] <m4nu>	taaz: What's the scope of the spec?
+[Wed 12:00:28] <m4nu>	dlongley: Creating a readable/writable identity where pieces of that identity can be modified.
+[Wed 12:00:38] <m4nu>	dlongley: There's nothing to say that people can add things to do this in another way.
+[Wed 12:03:05] <m4nu>	dlongley: We should get the message across about "Read, write, verify identity"
+[Wed 12:03:36] <bshambaugh>	We could do Agent Identity or Agent Assertion, is that vague?
+[Wed 12:03:36] <jpotvin>	manu: yeah, anything w/ "Agent" typically means "software" wrt. Web technologies, so it might be confusing.
+[Wed 12:05:23] <jpotvin>	manu: Ok, we're out of time and we don't have consensus. Let's think about this offline, perhaps something better will come to us.
+
