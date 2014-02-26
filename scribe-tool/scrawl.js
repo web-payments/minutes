@@ -189,8 +189,8 @@
     var rval = '';
 
     // capitalize the first letter of the message if it doesn't start with http
-    if(!(/^\shttp:\/\//.test(msg))) {
-      msg = msg.replace(/(\s)([a-zA-Z])/, function(firstLetter) {
+    if(!(/^(\s)*https?:\/\//.test(msg))) {
+      msg = msg.replace(/(\s)?([a-zA-Z])/, function(firstLetter) {
         return firstLetter.toUpperCase();
       });
     }
@@ -303,14 +303,18 @@
        {
          var scribe = msg.split(':')[1].replace(' ', '');
          scribe = scribe.toLowerCase();
-
          if(scribe in aliases)
          {
+            if(!context.hasOwnProperty('scribe')) {
+              context.scribe = [];
+            }
+
             context.scribenick = scribe;
-            context.scribe = aliases[scribe];
+            context.scribe.push(aliases[scribe]);
             scrawl.present(context, aliases[scribe]);
             rval = scrawl.information(
-              context.scribe + ' is scribing.', textMode);
+              context.scribe[context.scribe.length-1] + 
+              ' is scribing.', textMode);
          }
        }
        else if(msg.search(chairRx) != -1)
@@ -535,7 +539,7 @@
       }
 
       rval += '<dt>Chair</dt><dd>' + chair + '</dd>\n';
-      rval += '<dt>Scribe</dt><dd>' + scribe + '</dd>\n';
+      rval += '<dt>Scribe</dt><dd>' + scribe.join(' and ') + '</dd>\n';
       rval += '<dt>Present</dt><dd>' + present.join(', ') + '</dd>\n';
       rval += '<dt>Audio Log</dt><dd>' +
          '<div><a href="' + audio + '">' + audio + '</a></div>\n' +
@@ -588,7 +592,7 @@
       }
 
       rval += 'Chair:\n  ' + chair + '\n';
-      rval += 'Scribe:\n  ' + scribe + '\n';
+      rval += 'Scribe:\n  ' + scribe.join(' and ') + '\n';
       rval += 'Present:\n  ' +
         scrawl.wordwrap(present.join(', '), 65, '\n  ') + '\n';
       rval += 'Audio:\n  https://web-payments.org/minutes/' +
@@ -613,6 +617,7 @@
       'group': scrawl.group,
       'chair': 'Manu Sporny',
       'present': {},
+      'scribe': [],
       'topics': [],
       'resolutions': [],
       'actions': []
@@ -627,7 +632,6 @@
     for(var i = 0; i < ircLines.length; i++)
     {
       var line = ircLines[i];
-
       minutes += scrawl.processLine(context, aliases, line, textMode);
     }
 
