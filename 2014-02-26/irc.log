@@ -1,0 +1,85 @@
+[Wed 11:02:56] <m4nu>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2014Feb/0130.html
+[Wed 11:02:59] <m4nu>	scribe: dlongley
+[Wed 11:03:49] <dlongley>	m4nu: Any updates or changes to the agenda today? Hearing none, moving on.
+[Wed 11:03:49] <m4nu>	Topic: WebMob Payments Task Force
+[Wed 11:04:22] <bshambaugh>	https://github.com/w3c-webmob/payments-use-cases
+[Wed 11:04:26] <dlongley>	m4nu: natasha is at the Mobile World Congress, so can't be here
+[Wed 11:05:40] <dlongley>	m4nu: can you run us through the payments use cases, Brent?
+[Wed 11:06:01] <dlongley>	bshambaugh: paper is trying to deliver a feel for what's out there,  talks about current solutions
+[Wed 11:06:42] <dlongley>	bshambaugh: i started learning how to edit this thing so i have my own fork of it here: https://github.com/bshambaugh/payments-use-cases
+[Wed 11:07:19] <dlongley>	bshambaugh: i'm going to go through and following the template that Natasha created. I have added many payment providers - Square, Dwolla, etc.
+[Wed 11:08:01] <dlongley>	m4nu: i think mainly what Natasha is looking for is mobile-specific use cases, that's not to say it's not important to do a survey of all of them, it's important for the web payments group.
+[Wed 11:08:09] <dlongley>	m4nu: it might be good to see how each one of these payment mechanisms works for mobile specifically
+[Wed 11:08:22] <dlongley>	m4nu: for example, how exactly is Square used on mobile? That's a mobile use case. I don't know if Western Union has any mobile use cases.
+[Wed 11:08:40] <dlongley>	m4nu: Square has the little card reader attachment that plugs into the audio jack and you accept credit cards by swiping through that, that's definnitely a mobile use case.
+[Wed 11:09:10] <dlongley>	m4nu: Amazon payments may not be super mobile heavy, for example, use case may be different, maybe amazon payments analysis goes in a separate web payments document
+[Wed 11:09:16] <dlongley>	m4nu: what do you think of that approach?
+[Wed 11:09:18] <dlongley>	brent: Ok.
+[Wed 11:10:21] <dlongley>	m4nu: i think Natasha is looking for mobile-specific stuff ... you could argue anything could work on mobile, but she's looking for example for things like NFC, bluetooth low energy, and how those fit into the payment landscape.
+[Wed 11:10:50] <dlongley>	m4nu: for example if you're in a museum and you want to buy a ticket you could use bluetooth low energy, there are some proprietary mobile wallet solutions out there, we should include those.
+[Wed 11:11:12] <m4nu>	We already have the Web Payments use cases here, which is where we've been gathering over the past several years: https://web-payments.org/specs/source/use-cases/
+[Wed 11:11:14] <dlongley>	m4nu: the other thing that we might want to do is to take a look at the use cases for some of the newer initiatives, like Bitcoin, Ripple, etc.
+[Wed 11:11:20] <dlongley>	m4nu: i don't know if you've seen this document before, Brent?
+[Wed 11:11:43] <dlongley>	m4nu: whatever you find out and create if it doesn't fit in the mobile use cases document it should go in the Web Payments use cases document
+[Wed 11:12:41] <dlongley>	m4nu: i don't know if i'd categorize the "use cases" on Natasha's document for google wallet/paypal as use cases, they are more like product features, which can still be a fine way to go about it, but using use cases lets you genericize it and see the commonality of it.
+[Wed 11:12:50] <dlongley>	m4nu: both google and paypal let you pay via a wallet system, that's a shared use case
+[Wed 11:12:59] <dlongley>	m4nu: they both have the ability to use a credit card/debit card, that's a shared use case
+[Wed 11:13:19] <dlongley>	m4nu: the ones that are different are ... the paypal case doesn't let you include card loyalty schemes whereas google does
+[Wed 11:14:06] <dlongley>	m4nu: at some point the work has to be done to go through all payment mechanisms out there to list what they can and can't do, so it has to be done anyway, the concern is that i'm not sure if you'll be able to do all of that background to do it before the end of march, i don't know if you have that kind of time
+[Wed 11:14:13] <dlongley>	bshambaugh: i don't know what i have planned this month really, my assumption is that this will be a week by week thing
+[Wed 11:14:44] <dlongley>	m4nu: yeah it is, by the end of the third week there should be something pretty solid that Natasha can work with.
+[Wed 11:14:57] <dlongley>	m4nu: maybe this is as simple as going to a website and dumping a features list in there?
+[Wed 11:15:04] <dlongley>	m4nu: after we have that we can try and organize that
+[Wed 11:15:14] <dlongley>	m4nu: it would help if you linked each one of those to a website
+[Wed 11:15:31] <dlongley>	m4nu: then we could say we've got all the popular payment companies on the web and then we can divvy up the work
+[Wed 11:15:45] <dlongley>	m4nu: it might be better to just put this all in a wiki
+[Wed 11:15:51] <dlongley>	m4nu: it's going to be hard to do PRs for each use case, too much overhead, let's hack on it in a wiki quickly and then put the end result in the document Natasha put together.
+[Wed 11:16:36] <dlongley>	bshambaugh: using a wiki for cooperation might be good
+[Wed 11:19:50] <dlongley>	Manu sets up a wiki page for working on Payments and Mobile use cases.
+[Wed 11:19:53] <m4nu>	Here's the mobile use cases wiki page: https://www.w3.org/community/webpayments/wiki/WebPaymentsMobileUseCases
+[Wed 11:21:39] <dlongley>	m4nu: you can create a table to check off each feature for each payment provider, etc.
+[Wed 11:21:52] <dlongley>	m4nu: i'll fill out a few examples like PaySwarm and Stripe.
+[Wed 11:22:19] <m4nu>	Topic: Web Commerce API Vote
+[Wed 11:22:30] <m4nu>	http://lists.w3.org/Archives/Public/public-webpayments/2014Feb/0119.html
+[Wed 11:22:46] <dlongley>	m4nu: We've got a good number of votes coming in, every one is positive except for one.
+[Wed 11:23:03] <dlongley>	m4nu: i followed up with the person casting a negative vote ... there was a miscommunication with what the purpose of the spec is.
+[Wed 11:23:31] <dlongley>	m4nu: the person thought that the only way to initiate payment was through the browser, but all the spec is trying to do is standardize payment request and repsonse
+[Wed 11:23:43] <dlongley>	m4nu: standardizing what the JSON looks like
+[Wed 11:24:08] <dlongley>	m4nu: the API in the document provides an example for how it could be implemented in a browser, but the core of the protocol should be able to be initiated by just doing HTTP and the person that did the negative vote didn't think that was the case.
+[Wed 11:24:16] <dlongley>	m4nu: you can do this without the need for something in the browser itself
+[Wed 11:24:56] <dlongley>	m4nu: so it was a vote against the browser API (end to end) and it wasn't against standardizing the request and response format, the person that voted negatively would be fine with standardizing those
+[Wed 11:25:01] <dlongley>	m4nu: there's a week left in the vote, I'll ping people individually if they haven't already voted. I also failed to specify fields for first and last name for the first 4 people that voted, so they'll have to identify themselves for their votes to stick. That was an unfortunate oversight on my part, I think I know who 2 out of the 4 people are.
+[Wed 11:26:28] <taaz>	dlongley: Need to drop off.
+[Wed 11:26:28] <taaz>	scribe: taaz
+[Wed 11:26:28] <taaz>	m4nu: We needed Dave Longley to discuss the HTTP Signatures stuff. Maybe we should make this call short?
+[Wed 11:26:28] <taaz>	evan: I'd like to hear a bit more about the Persona / Web Identity spec stuff.
+[Wed 11:26:37] <m4nu>	Topic: Persona and Web Identity Spec
+[Wed 11:27:01] <taaz>	m4nu: Mozilla been working on web identity system called Persona.
+[Wed 11:27:17] <taaz>	m4nu: Simple spec that just authenticated that you own a particular email address.
+[Wed 11:27:37] <taaz>	m4nu: You go to site and get digitally signed assertion from email provider so you can sign in.
+[Wed 11:28:46] <taaz>	m4nu: Mozilla Persona decoupled the assertion of who you are from site you log into, very privacy conscious.
+[Wed 11:28:57] <taaz>	m4nu: Made a polyfill for navigator api, that was the other neat thing they did.
+[Wed 11:29:10] <taaz>	m4nu: They could support hundreds of millions of people logging in through persona.
+[Wed 11:29:31] <taaz>	m4nu: The solution was partially centralized at first. Then they suddenly published an "After Action Review", which you typically do at the end of a project.
+[Wed 11:29:32] <m4nu>	https://wiki.mozilla.org/Identity/Persona_AAR
+[Wed 11:30:10] <taaz>	m4nu: Two weeks ago posted after action review, then they went silent.  It has become apparent that the entire persona team has now been assigned to other projects.
+[Wed 11:30:33] <taaz>	m4nu: Not tombstoned but put into maintenance mode.  Only work will be volunteer based development, Persona will be kept alive for the foreseeable future.
+[Wed 11:30:48] <taaz>	m4nu: They are going to focus on Firefox accounts, more vertical integration w/ FirefoxOS.
+[Wed 11:30:59] <taaz>	m4nu: They sent out email last week detailing what's going on:
+[Wed 11:31:20] <m4nu>	https://groups.google.com/forum/#!msg/mozilla.dev.identity/Qnxt8lmOEeo/fVtJrMDfOjMJ
+[Wed 11:31:55] <taaz>	m4nu: They will try to get a blog post about the status out some time this week.
+[Wed 11:32:06] <taaz>	m4nu: If we want more features we'll have to go in and implement them ourselves.
+[Wed 11:32:10] <m4nu>	https://web-payments.org/specs/source/web-identity/
+[Wed 11:32:22] <taaz>	m4nu: We've got a web identity spec that is supposed to integrate with Persona.
+[Wed 11:32:38] <taaz>	m4nu: We're getting some interest from other large organizations in the Web Identity spec and other people are working on their own solutions.
+[Wed 11:32:56] <taaz>	m4nu: Persona going into maintenance mode is a step backwards for the Web. We wanted someone else to develop that solution, but it doesn't look like it's going to happen.
+[Wed 11:33:12] <taaz>	m4nu: The other spec out there is OpenID Connect.
+[Wed 11:33:57] <taaz>	m4nu: Should the web identity spec be compatilble with OpenID Connect?  It probably should be, we don't want to pick a winner, but we may have to provide an alternative to OpenID Connect.
+[Wed 11:34:17] <taaz>	m4nu: There are other approaches out there as well, such as Namecoin.
+[Wed 11:34:32] <taaz>	m4nu: That is a fully decentralized solution.
+[Wed 11:34:39] <taaz>	m4nu: Not clear where we should go at this point.
+[Wed 11:34:57] <taaz>	m4nu: The web payments workshop is coming up.  Should expect identity will be a big topic there. You need solid identity for payments.
+[Wed 11:35:14] <taaz>	m4nu: Should have alternatives to show for identity and KYC before the workshop.
+[Wed 11:35:21] <taaz>	m4nu: Any comments before we end the call?
+[Wed 11:36:39] <taaz>	m4nu: Brent, we'll work on the use cases in the interim. I'll get the first two examples filled out and then it'd help if you get the rest.
+[Wed 11:36:48] <taaz>	m4nu: We'll chat again next week. Bye!

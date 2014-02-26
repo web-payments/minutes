@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web Payments">
+    <meta name="author" content="Manu Sporny">
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico">
+
+    <title>Web Payments</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="../../assets/css/bootstrap.css">
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/icomoon.css">
+    <link rel="stylesheet" href="../../assets/css/animate-custom.css">
+
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' type='text/css'>
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Raleway:400,300,700' type='text/css'>
+
+    <script src="../../assets/js/jquery.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/modernizr.custom.js"></script>
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body data-target="#navbar-nav" data-spy="scroll">
+
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <img class="navbar-logo" src="../../images/logo-32.png">
+          </button>
+          <a class="navbar-brand hidden-xs hidden-sm" href="#home"><img class="navbar-logo" src="../../images/logo-32.png"></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../#home" class="smoothScroll">Home</a></li>
+            <li> <a href="../../#about" class="smoothScroll"> About</a></li>
+            <li> <a href="../../#tech" class="smoothScroll"> Tech</a></li>
+            <li> <a href="../../#participate" class="smoothScroll"> Participate</a></li>
+            <li> <a href="../../#contact" class="smoothScroll"> Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+
+<section><div class="container"><div class="row white"><br><div class="col-lg-offset-2 col-lg-8"><h1>Web Payments Community Group Telecon</h1>
+<h2>Minutes for 2014-02-26</h2>
+<div class="summary">
+<dl>
+<dt>Agenda</dt><dd><a href="http://lists.w3.org/Archives/Public/public-webpayments/2014Feb/0130.html">http://lists.w3.org/Archives/Public/public-webpayments/2014Feb/0130.html</a></dd>
+<dt>Topics</dt><dd><ol><li><a href="#topic-1">WebMob Payments Task Force</a><li><a href="#topic-2">Web Commerce API Vote</a><li><a href="#topic-3">Persona and Web Identity Spec</a></ol></dd><dt>Chair</dt><dd>Manu Sporny</dd>
+<dt>Scribe</dt><dd>Dave Longley and David I. Lehn</dd>
+<dt>Present</dt><dd>Dave Longley, Manu Sporny, Brent Shambaugh, David I. Lehn, Evan Schwartz</dd>
+<dt>Audio Log</dt><dd><div><a href="audio.ogg">audio.ogg</a></div>
+<div><audio controls="controls" preload="none">
+<source src="audio.ogg" type="audio/ogg" />Warning: Your browser does not support the HTML5 audio element, please upgrade.</audio></div></dd></dl>
+<div class="information">Dave Longley is scribing.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Any updates or changes to the agenda today? Hearing none, moving on.</div>
+<h1 id="topic-1" class="topic">Topic: WebMob Payments Task Force</h1>
+<div class="comment"><span class="name">Brent Shambaugh</span>: <a href="https://github.com/w3c-webmob/payments-use-cases">https://github.com/w3c-webmob/payments-use-cases</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Natasha is at the Mobile World Congress, so can&apos;t be here</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Can you run us through the payments use cases, Brent?</div>
+<div class="comment"><span class="name">Brent Shambaugh</span>:  Paper is trying to deliver a feel for what&apos;s out there,  talks about current solutions</div>
+<div class="comment"><span class="name">Brent Shambaugh</span>:  I started learning how to edit this thing so i have my own fork of it here: <a href="https://github.com/bshambaugh/payments-use-cases">https://github.com/bshambaugh/payments-use-cases</a></div>
+<div class="comment"><span class="name">Brent Shambaugh</span>:  I&apos;m going to go through and following the template that Natasha created. I have added many payment providers - Square, Dwolla, etc.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  I think mainly what Natasha is looking for is mobile-specific use cases, that&apos;s not to say it&apos;s not important to do a survey of all of them, it&apos;s important for the web payments group.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  It might be good to see how each one of these payment mechanisms works for mobile specifically</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  For example, how exactly is Square used on mobile? That&apos;s a mobile use case. I don&apos;t know if Western Union has any mobile use cases.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Square has the little card reader attachment that plugs into the audio jack and you accept credit cards by swiping through that, that&apos;s definnitely a mobile use case.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Amazon payments may not be super mobile heavy, for example, use case may be different, maybe amazon payments analysis goes in a separate web payments document</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  What do you think of that approach?</div>
+<div class="comment"><span class="name">Brent Shambaugh</span>:  Ok.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  I think Natasha is looking for mobile-specific stuff ... you could argue anything could work on mobile, but she&apos;s looking for example for things like NFC, bluetooth low energy, and how those fit into the payment landscape.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  For example if you&apos;re in a museum and you want to buy a ticket you could use bluetooth low energy, there are some proprietary mobile wallet solutions out there, we should include those.</div>
+<div class="comment"><span class="name">Manu Sporny</span>: We already have the Web Payments use cases here, which is where we&apos;ve been gathering over the past several years: <a href="https://web-payments.org/specs/source/use-cases/">https://web-payments.org/specs/source/use-cases/</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>:  The other thing that we might want to do is to take a look at the use cases for some of the newer initiatives, like Bitcoin, Ripple, etc.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  I don&apos;t know if you&apos;ve seen this document before, Brent?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Whatever you find out and create if it doesn&apos;t fit in the mobile use cases document it should go in the Web Payments use cases document</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  I don&apos;t know if i&apos;d categorize the &quot;use cases&quot; on Natasha&apos;s document for google wallet/paypal as use cases, they are more like product features, which can still be a fine way to go about it, but using use cases lets you genericize it and see the commonality of it.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Both google and paypal let you pay via a wallet system, that&apos;s a shared use case</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  They both have the ability to use a credit card/debit card, that&apos;s a shared use case</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  The ones that are different are ... the paypal case doesn&apos;t let you include card loyalty schemes whereas google does</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  At some point the work has to be done to go through all payment mechanisms out there to list what they can and can&apos;t do, so it has to be done anyway, the concern is that i&apos;m not sure if you&apos;ll be able to do all of that background to do it before the end of march, i don&apos;t know if you have that kind of time</div>
+<div class="comment"><span class="name">Brent Shambaugh</span>:  I don&apos;t know what i have planned this month really, my assumption is that this will be a week by week thing</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Yeah it is, by the end of the third week there should be something pretty solid that Natasha can work with.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Maybe this is as simple as going to a website and dumping a features list in there?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  After we have that we can try and organize that</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  It would help if you linked each one of those to a website</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Then we could say we&apos;ve got all the popular payment companies on the web and then we can divvy up the work</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  It might be better to just put this all in a wiki</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  It&apos;s going to be hard to do PRs for each use case, too much overhead, let&apos;s hack on it in a wiki quickly and then put the end result in the document Natasha put together.</div>
+<div class="comment"><span class="name">Brent Shambaugh</span>:  Using a wiki for cooperation might be good</div>
+<div class="information">Manu sets up a wiki page for working on Payments and Mobile use cases.</div>
+<div class="comment"><span class="name">Manu Sporny</span>: Here&apos;s the mobile use cases wiki page: <a href="https://www.w3.org/community/webpayments/wiki/WebPaymentsMobileUseCases">https://www.w3.org/community/webpayments/wiki/WebPaymentsMobileUseCases</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>:  You can create a table to check off each feature for each payment provider, etc.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  I&apos;ll fill out a few examples like PaySwarm and Stripe.</div>
+<h1 id="topic-2" class="topic">Topic: Web Commerce API Vote</h1>
+<div class="comment"><span class="name">Manu Sporny</span>: <a href="http://lists.w3.org/Archives/Public/public-webpayments/2014Feb/0119.html">http://lists.w3.org/Archives/Public/public-webpayments/2014Feb/0119.html</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We&apos;ve got a good number of votes coming in, every one is positive except for one.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  I followed up with the person casting a negative vote ... there was a miscommunication with what the purpose of the spec is.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  The person thought that the only way to initiate payment was through the browser, but all the spec is trying to do is standardize payment request and repsonse</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Standardizing what the JSON looks like</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  The API in the document provides an example for how it could be implemented in a browser, but the core of the protocol should be able to be initiated by just doing HTTP and the person that did the negative vote didn&apos;t think that was the case.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  You can do this without the need for something in the browser itself</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  So it was a vote against the browser API (end to end) and it wasn&apos;t against standardizing the request and response format, the person that voted negatively would be fine with standardizing those</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  There&apos;s a week left in the vote, I&apos;ll ping people individually if they haven&apos;t already voted. I also failed to specify fields for first and last name for the first 4 people that voted, so they&apos;ll have to identify themselves for their votes to stick. That was an unfortunate oversight on my part, I think I know who 2 out of the 4 people are.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Need to drop off. [scribe assist by David I. Lehn]</div>
+<div class="information">David I. Lehn is scribing.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We needed Dave Longley to discuss the HTTP Signatures stuff. Maybe we should make this call short?</div>
+<div class="comment"><span class="name">Evan Schwartz</span>:  I&apos;d like to hear a bit more about the Persona / Web Identity spec stuff.</div>
+<h1 id="topic-3" class="topic">Topic: Persona and Web Identity Spec</h1>
+<div class="comment"><span class="name">Manu Sporny</span>:  Mozilla been working on web identity system called Persona.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Simple spec that just authenticated that you own a particular email address.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  You go to site and get digitally signed assertion from email provider so you can sign in.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Mozilla Persona decoupled the assertion of who you are from site you log into, very privacy conscious.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Made a polyfill for navigator api, that was the other neat thing they did.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  They could support hundreds of millions of people logging in through persona.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  The solution was partially centralized at first. Then they suddenly published an &quot;After Action Review&quot;, which you typically do at the end of a project.</div>
+<div class="comment"><span class="name">Manu Sporny</span>: <a href="https://wiki.mozilla.org/Identity/Persona_AAR">https://wiki.mozilla.org/Identity/Persona_AAR</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Two weeks ago posted after action review, then they went silent.  It has become apparent that the entire persona team has now been assigned to other projects.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Not tombstoned but put into maintenance mode.  Only work will be volunteer based development, Persona will be kept alive for the foreseeable future.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  They are going to focus on Firefox accounts, more vertical integration w/ FirefoxOS.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  They sent out email last week detailing what&apos;s going on:</div>
+<div class="comment"><span class="name">Manu Sporny</span>: <a href="https://groups.google.com/forum/#!msg/mozilla.dev.identity/Qnxt8lmOEeo/fVtJrMDfOjMJ">https://groups.google.com/forum/#!msg/mozilla.dev.identity/Qnxt8lmOEeo/fVtJrMDfOjMJ</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>:  They will try to get a blog post about the status out some time this week.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  If we want more features we&apos;ll have to go in and implement them ourselves.</div>
+<div class="comment"><span class="name">Manu Sporny</span>: <a href="https://web-payments.org/specs/source/web-identity/">https://web-payments.org/specs/source/web-identity/</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We&apos;ve got a web identity spec that is supposed to integrate with Persona.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We&apos;re getting some interest from other large organizations in the Web Identity spec and other people are working on their own solutions.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Persona going into maintenance mode is a step backwards for the Web. We wanted someone else to develop that solution, but it doesn&apos;t look like it&apos;s going to happen.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  The other spec out there is OpenID Connect.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Should the web identity spec be compatilble with OpenID Connect?  It probably should be, we don&apos;t want to pick a winner, but we may have to provide an alternative to OpenID Connect.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  There are other approaches out there as well, such as Namecoin.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  That is a fully decentralized solution.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Not clear where we should go at this point.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  The web payments workshop is coming up.  Should expect identity will be a big topic there. You need solid identity for payments.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Should have alternatives to show for identity and KYC before the workshop.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Any comments before we end the call?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Brent, we&apos;ll work on the use cases in the interim. I&apos;ll get the first two examples filled out and then it&apos;d help if you get the rest.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We&apos;ll chat again next week. Bye!</div>
+</div></div></div></section>
+    <div id="footerwrap">
+      <div class="container">
+        <h4>Created by the <a href="http://www.w3.org/community/webpayments/">Web Payments Community Group</a>. Shared with love under a <a href="http://creativecommons.org/licenses/by/4.0/">CC-BY</a> license. Thanks to our <a href="../../thanks">contributors</a>.</h4>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+
+  <script type="text/javascript" src="../../assets/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/retina.js"></script>
+  <script type="text/javascript" src="../../assets/js/jquery.easing.1.3.js"></script>
+  <script type="text/javascript" src="../../assets/js/smoothscroll.js"></script> 
+    
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-1539674-7']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+  })();
+  </script>
+    
+  </body>
+</html>
+
