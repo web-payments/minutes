@@ -1,0 +1,121 @@
+[Wed 11:05:02] <m4nu>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2014Mar/0024.html
+[Wed 11:05:04] <dlongley>	scribe: dlongley
+[Wed 11:05:50] <m4nu>	Topic: Web Payments Mobile Use Cases
+[Wed 11:06:26] <m4nu>	https://github.com/w3c-webmob/payments-use-cases
+[Wed 11:07:10] <dlongley>	schuki: Hi Natasha from GSM Association, big mobile standardization organization, Brent has offered to help out on mobile payments use cases, what we're doing is taking use cases for how payments exist on native platforms, possibly in proprietary solutions on the web, and documenting how they work on mobile
+[Wed 11:07:32] <voip-ps>	<unknown> (IAX2/diamondcard-6624) has joined the conference.
+[Wed 11:07:48] <schuki>	https://www.w3.org/community/webpayments/wiki/WebPaymentsMobileUseCases
+[Wed 11:08:00] <m4nu>	voip: 6624 is Brent
+[Wed 11:08:00] <voip-ps>	Brent is now associated with IAX2/diamondcard-6624.
+[Wed 11:08:13] <dlongley>	schuki: thx for putting up link to github page, there's also a wiki, the work is in two places, i'd like to move both into github, my preference
+[Wed 11:08:33] <dlongley>	schuki: or continue to work on the wiki, the issue there is that the mobile access group doesn't have access to the wiki
+[Wed 11:08:58] <dlongley>	m4nu: the wiki was meant to be temporary, we didn't want 20-30 PRs out there conflicting, we wanted a rapid way to dump information in there, and then organize and move back to github
+[Wed 11:09:08] <dlongley>	m4nu: if you feel there's enough information there please pull it back into github
+[Wed 11:09:16] <dlongley>	m4nu: there are some outstanding questinos there we'll get to later
+[Wed 11:09:29] <dlongley>	m4nu: we wanted to be able to iterate on it quickly and github PR was maybe going to slow it down
+[Wed 11:09:41] <dlongley>	schuki: makes perfect sense, i'll pull things into github repo
+[Wed 11:10:00] <schuki>	https://github.com/w3c-webmob/payments-use-cases
+[Wed 11:11:02] <dlongley>	schuki: i went through the wiki style use cases, got criticized by co-chair saying we really should document solutions that exist across native platforms, and that experience on mobile, if you scroll down to the paypal section on github, there's an example of what i'd like to produce for all of the other native applications/plugins/proprietary apps
+[Wed 11:11:20] <dlongley>	schuki: i've put in regions where it operates, capabilities, APIs to develop
+[Wed 11:11:55] <dlongley>	schuki: i consider API very interesting as something we could use as a standardization body to create an API later on, not wanting to get into a legal discussion now there are legal issues, just a good guideline
+[Wed 11:12:19] <dlongley>	schuki: we'd like help from both this group and the rest of the mobile interest group as well, we want a robust set of use cases for payments for mobile
+[Wed 11:12:26] <dlongley>	schuki: manu you mentioned questions?
+[Wed 11:13:29] <dlongley>	m4nu: i think you answered a good chunk of them, the main thing we were concerned about -- some of the use cases weren't use cases but feature sets, some people disagree on what "use case" means.. don't want to get bogged down there... so we've been taking any use cases we can see from websites for payment providers and also pulling any features that seem important but can't be categorized as use cases and documenting those too. Your developer API sections make more sense to me now, might be difficult to get all that information together before W3C Web Payments Workshop.
+[Wed 11:14:28] <dlongley>	m4nu: the high-level question is .... it's confusing how we should categorize mobile payments use cases vs. just web payments use cases, because as you said there's a lot of overlap, so in general we've been trying to capture everything and then we can pull the mobile bits out of everything, the reason for capturing everything is that we dont' have a document outlining all the payment systems out on the web today so this would be  a good opportunity to do that, and at the same time we'd get the mobile use cases
+[Wed 11:14:46] <dlongley>	m4nu: in particular did you have a way that you wanted to classify the mobile payments stuff? What qualifies a mobile payments system
+[Wed 11:15:48] <dlongley>	schuki: i was taking the approach of everything as well, focusing on everything means there's a lot of work to do, but not focusing on it and thinking just focusing on the desktop issue may cause issues later on, think of this instead as a data-gathering exercise and then from that data identify the use cases, so when i looked at google wallet and paypal there was a common set of use cases
+[Wed 11:16:04] <dlongley>	schuki: so i think one doc for data and then have another doc that identifies use cases and put data underneath it would work
+[Wed 11:16:31] <dlongley>	m4nu: yeah, my concern is getting something to the web payments workshop that's useful, i feel we have a decent chunk of work in front of us that could be reduced by just doing a fairly high-level pass of these systems
+[Wed 11:16:39] <dlongley>	m4nu: we still capture a good chunk of common use cases
+[Wed 11:16:52] <dlongley>	m4nu: for example, being able to pay with a digital wallet that supports credit card and bank account
+[Wed 11:17:58] <dlongley>	m4nu: we have a lot of these payment mechanisms out there on this web payments mobile use cases page, but if we do just a really quick scan across the site, 10-15 minutes per platform we can get a good high-level summary of the types of features that there are, we won't be able to get deep into development API, but we can get what each site thinks are the most important features that they provide, that way we can get this done in the next week hopefully and then there's a week left to get things down to something the workshop can use
+[Wed 11:18:08] <dlongley>	schuki: makes sense i can find key cases that exist between them
+[Wed 11:18:13] <dlongley>	schuki: i forget how close it is to the workshop
+[Wed 11:18:40] <dlongley>	schuki: after this call, i'll do that email to both groups about what we're going to do now and hopefully we'll get some people to help brent and me out here
+[Wed 11:19:06] <dlongley>	schuki: feel free to raise an issue on the github repo, if you have a particular thought, don't feel you'll have to deal with it, if you're silent we won't know about it, please be vocal
+[Wed 11:20:20] <dlongley>	m4nu: let's say the deliverable to the workshop is the first iteration of the use cases, after that the CG will want to go back in an expand out each of the high level things, we'll want to do a deep dive into dev APIs for types of calls they provide, things like that, do you want to coordinate through the payment use cases thing throuhg the web and mobile group or do this somewhere else? seems this will turn into a living doc on  all the payment systems out there, i'm happy to put it in the payments use cases repo, if you think that's something the web and mobile group would be interested in to collaborate on.
+[Wed 11:20:36] <dlongley>	schuki: yeah, i think you guys should eventually pull it in, it can stay where it is now, but you guys can pull it over later it would be best
+[Wed 11:21:02] <dlongley>	schuki: we can still work on this with you guys of course, you can always get me to join a call, we can have that discussion about what other work needs to be done
+[Wed 11:22:30] <dlongley>	m4nu: the rough plan then is to get as many people as we can get to keep fill out the use cases wiki, preferably following the format of the paypal example in the github repo (payments use cases repo) and once we're done filling that out, you (Natasha) will pull the pieces you think are applicable to mobile payments into the github repo and do some editing there, and whatever that doc ends up becoming it's one we will provide to the web payments workshop
+[Wed 11:22:30] <dlongley>	 m4nu: After the workshop, we'll figure out a way of more properly getting all the information together and maybe we'll put it into a respec format or github repo or something and continue to add deeper info about dev APIs and other things that aren't quite apparent at first glance from lookign at this websites, that sound good?
+[Wed 11:22:35] <dlongley>	schuki: absolutely perfect, you've got it all
+[Wed 11:22:41] <m4nu>	voip: connections?
+[Wed 11:22:41] <voip-ps>	Conference connections: Dave Longley [SIP/6002-000001e7], Manu Sporny [SIP/6000-000001e9], <unknown> (schuki) [IAX2/diamondcard-2117], <unknown> (Brent) [IAX2/diamondcard-6624], Dave Lehn [SIP/6003-000001ea]
+[Wed 11:22:54] <m4nu>	voip: 6624 is Eric
+[Wed 11:22:55] <voip-ps>	Eric is now associated with IAX2/diamondcard-6624.
+[Wed 11:22:59] <dlongley>	erik: no input from me, all good discussion
+[Wed 11:23:09] <dlongley>	schuki: i have to run, but it sounds good
+[Wed 11:23:28] <m4nu>	Topic: Persona and Web Identity Spec
+[Wed 11:23:47] <m4nu>	https://web-payments.org/specs/source/web-identity/
+[Wed 11:24:27] <dlongley>	m4nu: the spec's been worked on for a while now, the spec covers ways to identify people, home address, KYC, email, payment systems and banks need this info, the web identity spec defines a mechanism for storing that info and retrieving it in a decentralized way
+[Wed 11:24:54] <dlongley>	m4nu: when you log into a website you can provide your home address, credit score, govt ID, etc. in a way that's digitally signed, your govt ID for example could be signed by your national govt and your bank could depend on it 
+[Wed 11:25:18] <dlongley>	erik: i have a call with the Department of State later on this week concerning this subject
+[Wed 11:25:57] <dlongley>	m4nu: we're also working with an entity in the education arena and they have millions of identities that they have to identify on a yearly basis... they have to ensure people have university degrees, make sure people have credentials to do surgery on people, practice medicine as a nurse, things of that nature.
+[Wed 11:26:23] <dlongley>	m4nu: this is cryptographically verifiable identity stuff, where it really matters if that doctor that is going to operate on you is qualified, or that multi-thousand dollar transaction you're going to do is actually approved by you, etc.
+[Wed 11:26:43] <dlongley>	m4nu: we've been operating with this name "Web Identity" for a while now which is confusing because there are other identity specs out there, this spec is more about verifiable credentials
+[Wed 11:27:02] <dlongley>	m4nu: the idea to rename the spec to "identity credentials" or "web credentials" or "entity credentials" has been floated
+[Wed 11:27:20] <dlongley>	m4nu: the idea here is to help people understand that while identity is an aspect of this it has more to do with verifiable credentials than not
+[Wed 11:27:34] <dlongley>	m4nu: i think the current proposal is "web credentials" or "identity credentials"
+[Wed 11:28:12] <dlongley>	erik: "digital credentials" works too
+[Wed 11:29:12] <dlongley>	m4nu: stephen rowat pointed out that "web" isn't that useful in the name
+[Wed 11:29:22] <dlongley>	m4nu: "digital" is sort of like "web" here, doesn't add all that much
+[Wed 11:30:04] <m4nu>	dlongley: I agree that "identity credentials" is better.
+[Wed 11:30:39] <dlongley>	erik: "identity credentials" ... people want to be anonymous on the web, could bring library of congress in - lots of people do identity, you want to show up well on searches.
+[Wed 11:30:57] <dlongley>	erik: might be hard to find (too generic)
+[Wed 11:31:11] <dlongley>	m4nu: we do want the name of the spec to be fairly unique
+[Wed 11:31:27] <dlongley>	m4nu: "digital credentialing" is pretty well-used term as well
+[Wed 11:32:57] <dlongley>	dlongley: "Decentralized Credentials" ?
+[Wed 11:33:04] <dlongley>	erik: i like that, it's ok
+[Wed 11:33:07] <dlongley>	m4nu: yeah, that's ok
+[Wed 11:33:13] <dlongley>	erik: I have to drop off, another call
+[Wed 11:33:17] <voip-ps>	Eric (IAX2/diamondcard-6624) has left the conference.
+[Wed 11:33:25] *	taaz_ is now known as taaz
+[Wed 11:33:41] <dlongley>	m4nu: we'll send the new name to the mailing list to see if anyone objects
+[Wed 11:34:03] <dlongley>	m4nu: we had some spec changes, most recent change is the login mechanism that was just added
+[Wed 11:34:13] <m4nu>	Topic: Decentralized Credentials-based Login
+[Wed 11:34:15] <m4nu>	A commit was made yesterday to the "Decentralized Credentials" specification adding a Persona-like login mechanism: https://github.com/web-payments/web-payments.org/commit/e88f5717bb0a1496289bfae17312cfda34bdb468
+[Wed 11:34:29] <m4nu>	The section can be viewed here: https://web-payments.org/specs/source/web-identity/#web-credential-based-login
+[Wed 11:36:05] <dlongley>	m4nu: the spec provides a way to assert facts about yourself, the same mechanism can be used for login, now that persona is on the backburner at mozilla, we're back to not really having a unified login mechanism other than OpenID connect, and while we could use Decentralized-Credentials-based login using OpenID connect, the flow is not ideal, the other issue with OpenID connect is that there are something like 17 specs you need to implement to get it working, it's not trivial to implement to do a login. Persona by comparison was fairly trivial to implement, especially if using secure messaging instead of the JOSE stack.
+[Wed 11:36:31] <dlongley>	m4nu: so what was added to DC spec was an example of login mechanism, so if you don't have openID or persona then you can still do a login, it's a fairly simple 2-step process
+[Wed 11:37:08] <dlongley>	m4nu: the other thing that this new login flow does is ... it can operate as a replacement for persona, it's a much more simplified version for persona, it also means there can be a browser polyfill for it, using a regular desktop, tablet, etc you can do an email-based login
+[Wed 11:37:57] <dlongley>	m4nu: looks like this: customer goes to a store to make a purchase, type in/auto fill email, and if they have the browser implementation then they'll log right in. If they don't, then the polyfill will contact a 3rd party identity login service that looks just like Persona.
+[Wed 11:38:23] <dlongley>	m4nu: it's a fairly nice way of doing login, with one exception in that 3rd party app could find your ID using a decentralized protocol
+[Wed 11:38:28] <dlongley>	m4nu: we're looking at using telehash for the decentralized bits of it.
+[Wed 11:38:50] <dlongley>	m4nu: so all the identity providers don't have to be tied to a single third party
+[Wed 11:38:56] <dlongley>	m4nu: they just join a decentralized network
+[Wed 11:39:28] <dlongley>	m4nu: if you dont' have browser impl. then 3rd party network finds your ID provider and store talks to them and gets digitally signed ID+email (that credential)
+[Wed 11:39:55] <dlongley>	m4nu: your credential could be stored on a completely different identity provider, etc. it's fairly complicated behind the scenes but the customer it just is a quick login with browser support or not.
+[Wed 11:40:09] <dlongley>	m4nu: what the store gets is a digitally-signed assertion that you have that email address,  which is what persona does right now.
+[Wed 11:40:38] <dlongley>	m4nu: Since we're also talking about payments here, what we also want is to send your preferred payment provider to the store, so the credential will include verified email and payment provider
+[Wed 11:40:57] <dlongley>	m4nu: other things in the future could include, email address, preferred payment provider, and shipping address when logging into amazon, for instance, etc
+[Wed 11:41:08] <dlongley>	m4nu: Dave Longley, we may want to talk a bit more about the telehash-based mechanism
+[Wed 11:41:08] <dlongley>	taaz: Why are we considering telehash?
+[Wed 11:42:07] <m4nu>	dlongley: At a high-level the telehash based mechanism - decentralized network - makes it easy to discover nodes on a decentralized network. Individual identity providers would generate a hash and join a network. Any queries that came across the network for various credentials would return which identity provider could provide the credentials. We want an authentication layer on top of this.
+[Wed 11:42:52] <m4nu>	dlongley: We need to think through the authentication layer a bit more. Basic idea is that authenticated requests for given email address. Other credentials could be used. Decentralized network would respond w/ which identity provider handles which email address.
+[Wed 11:43:22] <m4nu>	dlongley: If you have a browser implementation, it provides the login information directly. If you don't have a browser implementation, you ask the decentralized network.
+[Wed 11:45:29] <m4nu>	So, in general, you go to the store and put in your email address. That store calls navigator.id.login('email@example.org', 'http://example.com/login-callback'). In the browser-native implementation, that would create a dialog where the user picks which identity they want to use to login, the email credential verifying that you own the email address is retrieved from the identity provider, and the credential is delivered to the website.
+[Wed 11:45:41] <m4nu>	In the non-browser-native implementation, the polyfill would open a browser window to a trusted, open source login aggregation site (jointly run by W3C, Mozilla, and IETF).  That site would hook into the telehash protocol, retrieve your email-to-identity-provider mapping (protected via a password to prevent information leakage), and use that to map the email to the identity provider. The rest of the interaction would be the same as the browser-based mechanism above. Note that this step is done to ensure that the identity provider doesn't know where you're using each credential (tracking protection).
+[Wed 11:45:50] <m4nu>	dlongley: We might be able to implement this where the store would just have a javascript telehash client, which just runs in your browser. Browser connects and gets your identity provider.
+[Wed 11:47:07] <dlongley>	m4nu: There are of course, privacy issues w/ that approach - namely that each store would know who your identity providers are (and that's probably not a good thing).
+[Wed 11:49:04] <m4nu>	dlongley: Since the telehash client is a javascript client, you can talk more closely with the browser. Maybe there is something clever we can do w/ the authentication there - leveraging Web Crypto for one-time pads. The information that you use is only in localstorage for that site. There are some implementation details that we need to think through, but that we can use a javascript telehash client means that we may be able to solve the privacy issues as well.
+[Wed 11:49:59] <dlongley>	manu: We can always fall back to a 3rd party site to do the implementation, like Persona did.
+[Wed 11:50:21] <m4nu>	dlongley: It is fully decentralized, but we provide a mechanism to ease implementation.
+[Wed 11:51:59] <dlongley>	m4nu: we don't want identity providers to be able to track you across the web, there's a debate about whether or not that's ever possible, etc. evercookies, google tracking, etc. 
+[Wed 11:52:04] <dlongley>	m4nu: However,  that's another concern and we'll get to that in time. The solution is simpler than OpenID Connect and requires less of a technology stack (and infrastructure) than Persona.
+[Wed 11:52:19] <m4nu>	Topic: HTTP Signatures
+[Wed 11:52:25] <m4nu>	https://web-payments.org/specs/source/http-signatures/
+[Wed 11:52:41] <dlongley>	m4nu: we've gotten good feedback from some folks working on HTTP/2 and HTTPbis
+[Wed 11:52:52] <dlongley>	m4nu: we've made updates based on mark nottingham and julian reschke's feedback
+[Wed 11:53:14] <dlongley>	dlongley: We should also make sure to review this (looks more or less like what we ended up with): http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html
+[Wed 11:53:24] <dlongley>	dlongley: and this, which was abandoned: https://tools.ietf.org/html/draft-burke-content-signature-00
+[Wed 11:54:52] <dlongley>	m4nu: the other thing that's interesting with the signature stuff is that the Authorization header that is meant to be client-server, http is written such that the client and server can switch places, and that's perfectly fine, the problem is in including Authorization header in an http response
+[Wed 11:55:32] <m4nu>	dlongley: I believe that Content-Signature might not be the right thing... maybe just "Signature" header?
+[Wed 11:55:58] <m4nu>	m4nu: If we do that, should we have the Authorization header?
+[Wed 11:56:11] <m4nu>	dlongley: If we do that, we should abandon Authorization, or put it in another specification.
+[Wed 11:56:20] <m4nu>	dlongley: Maybe Authorization should be for sessions only?
+[Wed 11:57:54] <m4nu>	m4nu: Maybe we'll put Authorization into a different spec, and Signature header into a different spec? Authorization builds off HTTP Signature Header spec?
+[Wed 11:58:09] <m4nu>	dlongley: That allows us to make a number of changes w/o breaking backwards compatibility.
+[Wed 11:59:06] <m4nu>	dlongley: If they're just using the Signature header, they're using the new mechanism. If they're using it in the old way, it either won't function or it won't be supported.
+[Wed 12:04:05] <bshambaugh>	Sorry that I did not make it to the beginning part of the teleconference. Did it go well?
+[Wed 12:08:35] <bshambaugh>	I just posted thoughts to the list. It might be better there.
+[Wed 12:51:40] <m4nu>	Yeah, posting to the mailing list is helpful, thanks.

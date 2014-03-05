@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web Payments">
+    <meta name="author" content="Manu Sporny">
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico">
+
+    <title>Web Payments</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="../../assets/css/bootstrap.css">
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/icomoon.css">
+    <link rel="stylesheet" href="../../assets/css/animate-custom.css">
+
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' type='text/css'>
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Raleway:400,300,700' type='text/css'>
+
+    <script src="../../assets/js/jquery.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/modernizr.custom.js"></script>
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body data-target="#navbar-nav" data-spy="scroll">
+
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <img class="navbar-logo" src="../../images/logo-32.png">
+          </button>
+          <a class="navbar-brand hidden-xs hidden-sm" href="#home"><img class="navbar-logo" src="../../images/logo-32.png"></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../#home" class="smoothScroll">Home</a></li>
+            <li> <a href="../../#about" class="smoothScroll"> About</a></li>
+            <li> <a href="../../#tech" class="smoothScroll"> Tech</a></li>
+            <li> <a href="../../#participate" class="smoothScroll"> Participate</a></li>
+            <li> <a href="../../#contact" class="smoothScroll"> Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+
+<section><div class="container"><div class="row white"><br><div class="col-lg-offset-2 col-lg-8"><h1>Web Payments Community Group Telecon</h1>
+<h2>Minutes for 2014-03-05</h2>
+<div class="summary">
+<dl>
+<dt>Agenda</dt><dd><a href="http://lists.w3.org/Archives/Public/public-webpayments/2014Mar/0024.html">http://lists.w3.org/Archives/Public/public-webpayments/2014Mar/0024.html</a></dd>
+<dt>Topics</dt><dd><ol><li><a href="#topic-1">Web Payments Mobile Use Cases</a><li><a href="#topic-2">Persona and Web Identity Spec</a><li><a href="#topic-3">Decentralized Credentials-based Login</a><li><a href="#topic-4">HTTP Signatures</a></ol></dd><dt>Chair</dt><dd>Manu Sporny</dd>
+<dt>Scribe</dt><dd>Dave Longley</dd>
+<dt>Present</dt><dd>Dave Longley, Natasha Rooney, Manu Sporny, Erik Anderson, David I. Lehn, Brent Shambaugh</dd>
+<dt>Audio Log</dt><dd><div><a href="audio.ogg">audio.ogg</a></div>
+<div><audio controls="controls" preload="none">
+<source src="audio.ogg" type="audio/ogg" />Warning: Your browser does not support the HTML5 audio element, please upgrade.</audio></div></dd></dl>
+<div class="information">Dave Longley is scribing.</div>
+<h1 id="topic-1" class="topic">Topic: Web Payments Mobile Use Cases</h1>
+<div class="comment"><span class="name">Manu Sporny</span>: <a href="https://github.com/w3c-webmob/payments-use-cases">https://github.com/w3c-webmob/payments-use-cases</a></div>
+<div class="comment"><span class="name">Natasha Rooney</span>:  Hi Natasha from GSM Association, big mobile standardization organization, Brent has offered to help out on mobile payments use cases, what we&apos;re doing is taking use cases for how payments exist on native platforms, possibly in proprietary solutions on the web, and documenting how they work on mobile</div>
+<div class="comment"><span class="name">Natasha Rooney</span>: <a href="https://www.w3.org/community/webpayments/wiki/WebPaymentsMobileUseCases">https://www.w3.org/community/webpayments/wiki/WebPaymentsMobileUseCases</a></div>
+<div class="comment"><span class="name">Natasha Rooney</span>:  Thx for putting up link to github page, there&apos;s also a wiki, the work is in two places, i&apos;d like to move both into github, my preference</div>
+<div class="comment"><span class="name">Natasha Rooney</span>:  Or continue to work on the wiki, the issue there is that the mobile access group doesn&apos;t have access to the wiki</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  The wiki was meant to be temporary, we didn&apos;t want 20-30 PRs out there conflicting, we wanted a rapid way to dump information in there, and then organize and move back to github</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  If you feel there&apos;s enough information there please pull it back into github</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  There are some outstanding questinos there we&apos;ll get to later</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We wanted to be able to iterate on it quickly and github PR was maybe going to slow it down</div>
+<div class="comment"><span class="name">Natasha Rooney</span>:  Makes perfect sense, i&apos;ll pull things into github repo</div>
+<div class="comment"><span class="name">Natasha Rooney</span>: <a href="https://github.com/w3c-webmob/payments-use-cases">https://github.com/w3c-webmob/payments-use-cases</a></div>
+<div class="comment"><span class="name">Natasha Rooney</span>:  I went through the wiki style use cases, got criticized by co-chair saying we really should document solutions that exist across native platforms, and that experience on mobile, if you scroll down to the paypal section on github, there&apos;s an example of what i&apos;d like to produce for all of the other native applications/plugins/proprietary apps</div>
+<div class="comment"><span class="name">Natasha Rooney</span>:  I&apos;ve put in regions where it operates, capabilities, APIs to develop</div>
+<div class="comment"><span class="name">Natasha Rooney</span>:  I consider API very interesting as something we could use as a standardization body to create an API later on, not wanting to get into a legal discussion now there are legal issues, just a good guideline</div>
+<div class="comment"><span class="name">Natasha Rooney</span>:  We&apos;d like help from both this group and the rest of the mobile interest group as well, we want a robust set of use cases for payments for mobile</div>
+<div class="comment"><span class="name">Natasha Rooney</span>:  Manu you mentioned questions?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  I think you answered a good chunk of them, the main thing we were concerned about -- some of the use cases weren&apos;t use cases but feature sets, some people disagree on what &quot;use case&quot; means.. don&apos;t want to get bogged down there... so we&apos;ve been taking any use cases we can see from websites for payment providers and also pulling any features that seem important but can&apos;t be categorized as use cases and documenting those too. Your developer API sections make more sense to me now, might be difficult to get all that information together before W3C Web Payments Workshop.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  The high-level question is .... it&apos;s confusing how we should categorize mobile payments use cases vs. just web payments use cases, because as you said there&apos;s a lot of overlap, so in general we&apos;ve been trying to capture everything and then we can pull the mobile bits out of everything, the reason for capturing everything is that we dont&apos; have a document outlining all the payment systems out on the web today so this would be  a good opportunity to do that, and at the same time we&apos;d get the mobile use cases</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  In particular did you have a way that you wanted to classify the mobile payments stuff? What qualifies a mobile payments system</div>
+<div class="comment"><span class="name">Natasha Rooney</span>:  I was taking the approach of everything as well, focusing on everything means there&apos;s a lot of work to do, but not focusing on it and thinking just focusing on the desktop issue may cause issues later on, think of this instead as a data-gathering exercise and then from that data identify the use cases, so when i looked at google wallet and paypal there was a common set of use cases</div>
+<div class="comment"><span class="name">Natasha Rooney</span>:  So i think one doc for data and then have another doc that identifies use cases and put data underneath it would work</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Yeah, my concern is getting something to the web payments workshop that&apos;s useful, i feel we have a decent chunk of work in front of us that could be reduced by just doing a fairly high-level pass of these systems</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We still capture a good chunk of common use cases</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  For example, being able to pay with a digital wallet that supports credit card and bank account</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We have a lot of these payment mechanisms out there on this web payments mobile use cases page, but if we do just a really quick scan across the site, 10-15 minutes per platform we can get a good high-level summary of the types of features that there are, we won&apos;t be able to get deep into development API, but we can get what each site thinks are the most important features that they provide, that way we can get this done in the next week hopefully and then there&apos;s a week left to get things down to something the workshop can use</div>
+<div class="comment"><span class="name">Natasha Rooney</span>:  Makes sense i can find key cases that exist between them</div>
+<div class="comment"><span class="name">Natasha Rooney</span>:  I forget how close it is to the workshop</div>
+<div class="comment"><span class="name">Natasha Rooney</span>:  After this call, i&apos;ll do that email to both groups about what we&apos;re going to do now and hopefully we&apos;ll get some people to help brent and me out here</div>
+<div class="comment"><span class="name">Natasha Rooney</span>:  Feel free to raise an issue on the github repo, if you have a particular thought, don&apos;t feel you&apos;ll have to deal with it, if you&apos;re silent we won&apos;t know about it, please be vocal</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Let&apos;s say the deliverable to the workshop is the first iteration of the use cases, after that the CG will want to go back in an expand out each of the high level things, we&apos;ll want to do a deep dive into dev APIs for types of calls they provide, things like that, do you want to coordinate through the payment use cases thing throuhg the web and mobile group or do this somewhere else? seems this will turn into a living doc on  all the payment systems out there, i&apos;m happy to put it in the payments use cases repo, if you think that&apos;s something the web and mobile group would be interested in to collaborate on.</div>
+<div class="comment"><span class="name">Natasha Rooney</span>:  Yeah, i think you guys should eventually pull it in, it can stay where it is now, but you guys can pull it over later it would be best</div>
+<div class="comment"><span class="name">Natasha Rooney</span>:  We can still work on this with you guys of course, you can always get me to join a call, we can have that discussion about what other work needs to be done</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  The rough plan then is to get as many people as we can get to keep fill out the use cases wiki, preferably following the format of the paypal example in the github repo (payments use cases repo) and once we&apos;re done filling that out, you (Natasha) will pull the pieces you think are applicable to mobile payments into the github repo and do some editing there, and whatever that doc ends up becoming it&apos;s one we will provide to the web payments workshop</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  After the workshop, we&apos;ll figure out a way of more properly getting all the information together and maybe we&apos;ll put it into a respec format or github repo or something and continue to add deeper info about dev APIs and other things that aren&apos;t quite apparent at first glance from lookign at this websites, that sound good?</div>
+<div class="comment"><span class="name">Natasha Rooney</span>:  Absolutely perfect, you&apos;ve got it all</div>
+<div class="comment"><span class="name">Erik Anderson</span>:  No input from me, all good discussion</div>
+<div class="comment"><span class="name">Natasha Rooney</span>:  I have to run, but it sounds good</div>
+<h1 id="topic-2" class="topic">Topic: Persona and Web Identity Spec</h1>
+<div class="comment"><span class="name">Manu Sporny</span>: <a href="https://web-payments.org/specs/source/web-identity/">https://web-payments.org/specs/source/web-identity/</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>:  The spec&apos;s been worked on for a while now, the spec covers ways to identify people, home address, KYC, email, payment systems and banks need this info, the web identity spec defines a mechanism for storing that info and retrieving it in a decentralized way</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  When you log into a website you can provide your home address, credit score, govt ID, etc. in a way that&apos;s digitally signed, your govt ID for example could be signed by your national govt and your bank could depend on it </div>
+<div class="comment"><span class="name">Erik Anderson</span>:  I have a call with the Department of State later on this week concerning this subject</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We&apos;re also working with an entity in the education arena and they have millions of identities that they have to identify on a yearly basis... they have to ensure people have university degrees, make sure people have credentials to do surgery on people, practice medicine as a nurse, things of that nature.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  This is cryptographically verifiable identity stuff, where it really matters if that doctor that is going to operate on you is qualified, or that multi-thousand dollar transaction you&apos;re going to do is actually approved by you, etc.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We&apos;ve been operating with this name &quot;Web Identity&quot; for a while now which is confusing because there are other identity specs out there, this spec is more about verifiable credentials</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  The idea to rename the spec to &quot;identity credentials&quot; or &quot;web credentials&quot; or &quot;entity credentials&quot; has been floated</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  The idea here is to help people understand that while identity is an aspect of this it has more to do with verifiable credentials than not</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  I think the current proposal is &quot;web credentials&quot; or &quot;identity credentials&quot;</div>
+<div class="comment"><span class="name">Erik Anderson</span>:  &quot;Digital credentials&quot; works too</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Stephen rowat pointed out that &quot;web&quot; isn&apos;t that useful in the name</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  &quot;Digital&quot; is sort of like &quot;web&quot; here, doesn&apos;t add all that much</div>
+<div class="comment"><span class="name">Dave Longley</span>:  I agree that &quot;identity credentials&quot; is better. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Erik Anderson</span>:  &quot;Identity credentials&quot; ... people want to be anonymous on the web, could bring library of congress in - lots of people do identity, you want to show up well on searches.</div>
+<div class="comment"><span class="name">Erik Anderson</span>:  Might be hard to find (too generic)</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We do want the name of the spec to be fairly unique</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  &quot;Digital credentialing&quot; is pretty well-used term as well</div>
+<div class="comment"><span class="name">Dave Longley</span>:  &quot;Decentralized Credentials&quot; ?</div>
+<div class="comment"><span class="name">Erik Anderson</span>:  I like that, it&apos;s ok</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Yeah, that&apos;s ok</div>
+<div class="comment"><span class="name">Erik Anderson</span>:  I have to drop off, another call</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We&apos;ll send the new name to the mailing list to see if anyone objects</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We had some spec changes, most recent change is the login mechanism that was just added</div>
+<h1 id="topic-3" class="topic">Topic: Decentralized Credentials-based Login</h1>
+<div class="comment"><span class="name">Manu Sporny</span>: A commit was made yesterday to the &quot;Decentralized Credentials&quot; specification adding a Persona-like login mechanism: <a href="https://github.com/web-payments/web-payments.org/commit/e88f5717bb0a1496289bfae17312cfda34bdb468">https://github.com/web-payments/web-payments.org/commit/e88f5717bb0a1496289bfae17312cfda34bdb468</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>: The section can be viewed here: <a href="https://web-payments.org/specs/source/web-identity/#web-credential-based-login">https://web-payments.org/specs/source/web-identity/#web-credential-based-login</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>:  The spec provides a way to assert facts about yourself, the same mechanism can be used for login, now that persona is on the backburner at mozilla, we&apos;re back to not really having a unified login mechanism other than OpenID connect, and while we could use Decentralized-Credentials-based login using OpenID connect, the flow is not ideal, the other issue with OpenID connect is that there are something like 17 specs you need to implement to get it working, it&apos;s not trivial to implement to do a login. Persona by comparison was fairly trivial to implement, especially if using secure messaging instead of the JOSE stack.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  So what was added to DC spec was an example of login mechanism, so if you don&apos;t have openID or persona then you can still do a login, it&apos;s a fairly simple 2-step process</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  The other thing that this new login flow does is ... it can operate as a replacement for persona, it&apos;s a much more simplified version for persona, it also means there can be a browser polyfill for it, using a regular desktop, tablet, etc you can do an email-based login</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Looks like this: customer goes to a store to make a purchase, type in/auto fill email, and if they have the browser implementation then they&apos;ll log right in. If they don&apos;t, then the polyfill will contact a 3rd party identity login service that looks just like Persona.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  It&apos;s a fairly nice way of doing login, with one exception in that 3rd party app could find your ID using a decentralized protocol</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We&apos;re looking at using telehash for the decentralized bits of it.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  So all the identity providers don&apos;t have to be tied to a single third party</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  They just join a decentralized network</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  If you dont&apos; have browser impl. then 3rd party network finds your ID provider and store talks to them and gets digitally signed ID+email (that credential)</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Your credential could be stored on a completely different identity provider, etc. it&apos;s fairly complicated behind the scenes but the customer it just is a quick login with browser support or not.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  What the store gets is a digitally-signed assertion that you have that email address,  which is what persona does right now.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Since we&apos;re also talking about payments here, what we also want is to send your preferred payment provider to the store, so the credential will include verified email and payment provider</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Other things in the future could include, email address, preferred payment provider, and shipping address when logging into amazon, for instance, etc</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Dave Longley, we may want to talk a bit more about the telehash-based mechanism</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  Why are we considering telehash?</div>
+<div class="comment"><span class="name">Dave Longley</span>:  At a high-level the telehash based mechanism - decentralized network - makes it easy to discover nodes on a decentralized network. Individual identity providers would generate a hash and join a network. Any queries that came across the network for various credentials would return which identity provider could provide the credentials. We want an authentication layer on top of this. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  We need to think through the authentication layer a bit more. Basic idea is that authenticated requests for given email address. Other credentials could be used. Decentralized network would respond w/ which identity provider handles which email address. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  If you have a browser implementation, it provides the login information directly. If you don&apos;t have a browser implementation, you ask the decentralized network. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>: So, in general, you go to the store and put in your email address. That store calls navigator.id.login(&apos;email@example.org&apos;, &apos;<a href="http://example.com/login-callback&apos;).">http://example.com/login-callback&apos;).</a> In the browser-native implementation, that would create a dialog where the user picks which identity they want to use to login, the email credential verifying that you own the email address is retrieved from the identity provider, and the credential is delivered to the website.</div>
+<div class="comment"><span class="name">Manu Sporny</span>: In the non-browser-native implementation, the polyfill would open a browser window to a trusted, open source login aggregation site (jointly run by W3C, Mozilla, and IETF).  That site would hook into the telehash protocol, retrieve your email-to-identity-provider mapping (protected via a password to prevent information leakage), and use that to map the email to the identity provider. The rest of the interaction would be the same as the browser-based mechanism above. Note that this step is done to ensure that the identity provider doesn&apos;t know where you&apos;re using each credential (tracking protection).</div>
+<div class="comment"><span class="name">Dave Longley</span>:  We might be able to implement this where the store would just have a javascript telehash client, which just runs in your browser. Browser connects and gets your identity provider. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  There are of course, privacy issues w/ that approach - namely that each store would know who your identity providers are (and that&apos;s probably not a good thing).</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Since the telehash client is a javascript client, you can talk more closely with the browser. Maybe there is something clever we can do w/ the authentication there - leveraging Web Crypto for one-time pads. The information that you use is only in localstorage for that site. There are some implementation details that we need to think through, but that we can use a javascript telehash client means that we may be able to solve the privacy issues as well. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We can always fall back to a 3rd party site to do the implementation, like Persona did.</div>
+<div class="comment"><span class="name">Dave Longley</span>:  It is fully decentralized, but we provide a mechanism to ease implementation. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We don&apos;t want identity providers to be able to track you across the web, there&apos;s a debate about whether or not that&apos;s ever possible, etc. evercookies, google tracking, etc. </div>
+<div class="comment"><span class="name">Manu Sporny</span>:  However,  that&apos;s another concern and we&apos;ll get to that in time. The solution is simpler than OpenID Connect and requires less of a technology stack (and infrastructure) than Persona.</div>
+<h1 id="topic-4" class="topic">Topic: HTTP Signatures</h1>
+<div class="comment"><span class="name">Manu Sporny</span>: <a href="https://web-payments.org/specs/source/http-signatures/">https://web-payments.org/specs/source/http-signatures/</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We&apos;ve gotten good feedback from some folks working on HTTP/2 and HTTPbis</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We&apos;ve made updates based on mark nottingham and julian reschke&apos;s feedback</div>
+<div class="comment"><span class="name">Dave Longley</span>:  We should also make sure to review this (looks more or less like what we ended up with): <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html</a></div>
+<div class="comment"><span class="name">Dave Longley</span>:  And this, which was abandoned: <a href="https://tools.ietf.org/html/draft-burke-content-signature-00">https://tools.ietf.org/html/draft-burke-content-signature-00</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>:  The other thing that&apos;s interesting with the signature stuff is that the Authorization header that is meant to be client-server, http is written such that the client and server can switch places, and that&apos;s perfectly fine, the problem is in including Authorization header in an http response</div>
+<div class="comment"><span class="name">Dave Longley</span>:  I believe that Content-Signature might not be the right thing... maybe just &quot;Signature&quot; header? [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  If we do that, should we have the Authorization header? [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  If we do that, we should abandon Authorization, or put it in another specification. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Maybe Authorization should be for sessions only? [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Maybe we&apos;ll put Authorization into a different spec, and Signature header into a different spec? Authorization builds off HTTP Signature Header spec? [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  That allows us to make a number of changes w/o breaking backwards compatibility. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  If they&apos;re just using the Signature header, they&apos;re using the new mechanism. If they&apos;re using it in the old way, it either won&apos;t function or it won&apos;t be supported. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Brent Shambaugh</span>: Sorry that I did not make it to the beginning part of the teleconference. Did it go well?</div>
+<div class="comment"><span class="name">Brent Shambaugh</span>: I just posted thoughts to the list. It might be better there.</div>
+<div class="comment"><span class="name">Manu Sporny</span>: Yeah, posting to the mailing list is helpful, thanks.</div>
+</div></div></div></section>
+    <div id="footerwrap">
+      <div class="container">
+        <h4>Created by the <a href="http://www.w3.org/community/webpayments/">Web Payments Community Group</a>. Shared with love under a <a href="http://creativecommons.org/licenses/by/4.0/">CC-BY</a> license. Thanks to our <a href="../../thanks">contributors</a>.</h4>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+
+  <script type="text/javascript" src="../../assets/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/retina.js"></script>
+  <script type="text/javascript" src="../../assets/js/jquery.easing.1.3.js"></script>
+  <script type="text/javascript" src="../../assets/js/smoothscroll.js"></script> 
+    
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-1539674-7']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+  })();
+  </script>
+    
+  </body>
+</html>
+
