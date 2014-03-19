@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web Payments">
+    <meta name="author" content="Manu Sporny">
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico">
+
+    <title>Web Payments</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="../../assets/css/bootstrap.css">
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/icomoon.css">
+    <link rel="stylesheet" href="../../assets/css/animate-custom.css">
+
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' type='text/css'>
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Raleway:400,300,700' type='text/css'>
+
+    <script src="../../assets/js/jquery.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/modernizr.custom.js"></script>
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body data-target="#navbar-nav" data-spy="scroll">
+
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <img class="navbar-logo" src="../../images/logo-32.png">
+          </button>
+          <a class="navbar-brand hidden-xs hidden-sm" href="#home"><img class="navbar-logo" src="../../images/logo-32.png"></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../#home" class="smoothScroll">Home</a></li>
+            <li> <a href="../../#about" class="smoothScroll"> About</a></li>
+            <li> <a href="../../#tech" class="smoothScroll"> Tech</a></li>
+            <li> <a href="../../#participate" class="smoothScroll"> Participate</a></li>
+            <li> <a href="../../#contact" class="smoothScroll"> Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+
+<section><div class="container"><div class="row white"><br><div class="col-lg-offset-2 col-lg-8"><h1>Web Payments Community Group Telecon</h1>
+<h2>Minutes for 2014-03-19</h2>
+<div class="summary">
+<dl>
+<dt>Agenda</dt><dd><a href="http://lists.w3.org/Archives/Public/public-webpayments/2014Mar/0128.html">http://lists.w3.org/Archives/Public/public-webpayments/2014Mar/0128.html</a></dd>
+<dt>Topics</dt><dd><ol><li><a href="#topic-1">Web Payments Workshop Agenda</a><li><a href="#topic-2">Web Payments Mobile Use Cases</a><li><a href="#topic-3">Credential-based Login</a><li><a href="#topic-4">HTTP Signatures Update</a></ol></dd><dt>Chair</dt><dd>Manu Sporny</dd>
+<dt>Scribe</dt><dd>Evan Schwartz</dd>
+<dt>Present</dt><dd>Evan Schwartz, Manu Sporny, Brent Shambaugh, Matt Kaufman, Dave Longley, Erik Anderson, David I. Lehn</dd>
+<dt>Audio Log</dt><dd><div><a href="audio.ogg">audio.ogg</a></div>
+<div><audio controls="controls" preload="none">
+<source src="audio.ogg" type="audio/ogg" />Warning: Your browser does not support the HTML5 audio element, please upgrade.</audio></div></dd></dl>
+<div class="information">Evan Schwartz is scribing.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Any changes to the agenda? *long pause* If not, moving on.</div>
+<h1 id="topic-1" class="topic">Topic: Web Payments Workshop Agenda</h1>
+<div class="comment"><span class="name">Manu Sporny</span>: <a href="http://www.w3.org/2013/10/payments/agenda.html">http://www.w3.org/2013/10/payments/agenda.html</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Agenda is almost finalized. ton of big multinational companies and startups attending. only thing that&apos;s weak at the conference is participation by retailers and regulators</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  6 Sessions, each 2 hours, mostly attendee-driven, main purpose of speakers is to kickstart discussion</div>
+<div class="comment"><span class="name">Manu Sporny</span>: Session 1 &#8212; Overview of Current and Future Payment Ecosystems</div>
+<div class="comment"><span class="name">Manu Sporny</span>: Session 2 &#8212; Toward an Ideal Web Payment Experience</div>
+<div class="comment"><span class="name">Manu Sporny</span>: Session 3 &#8212; Back End: Banks, Regulation, and Future Clearing</div>
+<div class="comment"><span class="name">Manu Sporny</span>: Session 4 &#8212; Enhancing the Customer and Merchant Experience</div>
+<div class="comment"><span class="name">Manu Sporny</span>: Session 5 &#8212; Front End: Wallets - Initiating Payment and Digital Receipts</div>
+<div class="comment"><span class="name">Manu Sporny</span>: Session 6 &#8212; Identity, Security, and Privacy</div>
+<div class="comment"><span class="name">Manu Sporny</span>: Papers that were accepted are at the bottom of the page: <a href="http://www.w3.org/2013/10/payments/agenda.html">http://www.w3.org/2013/10/payments/agenda.html</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Accepted papers for the workshop can be found on conference page</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Papers that were not accepted will not be shown on the conference webpage because some of them were quite bad and got bad reviews, authors that want theirs published can publish them through other means</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Conference starts next monday, fantastic group coming to it</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  All of the minutes will be made public shortly after, if not during the conference</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Pindar has asked if we can record the video or audio of the conference, we&apos;ll have to ask w3c</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  W3C might agree to it, unless the PC or attendees don&apos;t want it to happen, or if there isn&apos;t the time to set it up</div>
+<h1 id="topic-2" class="topic">Topic: Web Payments Mobile Use Cases</h1>
+<div class="comment"><span class="name">Manu Sporny</span>: Would you mind giving us an overview of the use cases you&apos;ve been collecting, Brent? <a href="https://github.com/w3c-webmob/payments-use-cases">https://github.com/w3c-webmob/payments-use-cases</a></div>
+<div class="comment"><span class="name">Brent Shambaugh</span>: <a href="https://www.w3.org/community/webpayments/wiki/WebPaymentsMobileUseCases">https://www.w3.org/community/webpayments/wiki/WebPaymentsMobileUseCases</a> </div>
+<div class="comment"><span class="name">Brent Shambaugh</span>: <a href="https://github.com/w3c-webmob/payments-use-cases">https://github.com/w3c-webmob/payments-use-cases</a></div>
+<div class="comment"><span class="name">Brent Shambaugh</span>: Due to discussions with Marcos Caceres and Natasha Rooney am attempting to apply the following template:</div>
+<div class="comment"><span class="name">Brent Shambaugh</span>: Name: name of the solution</div>
+<div class="comment"><span class="name">Brent Shambaugh</span>: Use Cases: Key use cases for the solution</div>
+<div class="comment"><span class="name">Brent Shambaugh</span>: Regions and currencies: Any SDKs or APIs which are available to developers</div>
+<div class="comment"><span class="name">Brent Shambaugh</span>: With the following things to consider (for use cases):</div>
+<div class="comment"><span class="name">Brent Shambaugh</span>: (1) Add real money to the service</div>
+<div class="comment"><span class="name">Brent Shambaugh</span>: (2) Buy a physical good in the real wold (e.g., a cup of coffee)</div>
+<div class="comment"><span class="name">Brent Shambaugh</span>: (3) Pay for physical service (e.g., gym membership)?</div>
+<div class="comment"><span class="name">Brent Shambaugh</span>: (4) Convert virtual money back into paper money</div>
+<div class="comment"><span class="name">Brent Shambaugh</span>: (5) Transfer money from one person to another (even if the second person is not signed up for the service)?</div>
+<div class="comment"><span class="name">Brent Shambaugh</span>: (6) Buy product online</div>
+<div class="comment"><span class="name">Brent Shambaugh</span>: (7) Resolve disputes?</div>
+<div class="comment"><span class="name">Brent Shambaugh</span>: (8) View transactions?</div>
+<div class="comment"><span class="name">Brent Shambaugh</span>: (9) Secure the wallet</div>
+<div class="comment"><span class="name">Brent Shambaugh</span>: (10) Etc.</div>
+<div class="comment"><span class="name">Brent Shambaugh</span>:  Right now i have a lot of information, trying to fit it in a template</div>
+<div class="comment"><span class="name">Brent Shambaugh</span>:  Next stage is to weeding stuff out, make it more digestable</div>
+<div class="comment"><span class="name">Brent Shambaugh</span>:  How the phone is communicating with other devices, new hardware or legacy hardware, existing ACH system or replace that entirely with bitcoin or ripple, start adding info to transactions with payswarm and linked data or namecoin or colored coin?</div>
+<div class="comment"><span class="name">Brent Shambaugh</span>:  Emphasis towards trying to use the legacy hardware, difficult to push people to use new stuff</div>
+<div class="comment"><span class="name">Brent Shambaugh</span>:  Convert virtual money back into paper money -- might be a small use case</div>
+<div class="comment"><span class="name">Brent Shambaugh</span>:  If you compare stripe and square, square has POS system, stripe is only API no hardware</div>
+<div class="comment"><span class="name">Brent Shambaugh</span>:  Many systems store reward card or store credit card info in the system</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Fantastic amount of info on the wiki page, condensing all of the info down is easier than getting the info</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Natasha was hoping we would have a summary to share with the web payments workshop, need a bit more time to condense it further</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  What are the common features across all of these solutions, what could be standardized and what couldn&apos;t, combine that with the CG&apos;s work and the workshop attendees input, we&apos;ll have some authority to say we&apos;ve done our homework</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Can turn the use cases into spreadsheet of features and solutions and just have check boxes for which solutions have which services and tally the most widely spread features, only problem is that may lose most innovative solutions</div>
+<div class="comment"><span class="name">Brent Shambaugh</span>:  Do we care about listing hardware stuff too?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Might be good to outline hardware, educates us about what&apos;s missing in mobile phones or devices, square reader tells us that card readers are missing from mobile phones</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Brent should brainstorm and send an email to the mailing list about how to coalesce info into 1-2 page summary</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Brent should talk to natasha about the most updated list of use cases</div>
+<h1 id="topic-3" class="topic">Topic: Credential-based Login</h1>
+<div class="comment"><span class="name">Manu Sporny</span>: <a href="http://manu.sporny.org/2014/credential-based-login/">http://manu.sporny.org/2014/credential-based-login/</a></div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Now that persona&apos;s engineers have been transitioned off the project, we needed to at least propose something for doing transmission of digital wallet provider info</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Apply identity credentials spec to login on the web. when you login to a website that you need to make a payment on, the process used to transmit payment info should be the same as transmitting address and login info</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Email is one credential, shipping address is another credential, where you live, age, etc</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Use same method to transmit email as well as other more complicated data, it&apos;s all transmission of credentials.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Proposal looked at reasons mozilla thought persona failed other than internal problems. google and yahoo didn&apos;t want to add persona support</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Bypass the email providers so that a number of organizations can digitally sign email address, no longer beholden to email providers.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Persona had to run centralized infrastructure while getting the system off the ground, and that cost mozilla a lot of money/time.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Proposed decentralized solution based on telehash, didn&apos;t know if telehash would work for this but after speaking w/ Jeremie Miller, he said it could support this login mechanism</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Clearly there are problems with this proposal, but the hope was that other people would specify what they would want to replace parts of the system with</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Decentralized system could be replaced by any decentralized network, namecoin, other distributed hash table solutions</div>
+<div class="comment"><span class="name">Matt Kaufman</span>:  Is anyone aware of google migrating to google+ single sign-on? They have a timeline migration table here: <a href="https://developers.google.com/+/api/auth-migration">https://developers.google.com/+/api/auth-migration</a></div>
+<div class="comment"><span class="name">Matt Kaufman</span>:  Why wouldn&apos;t the PGP system work for the public key? Maybe with keys stored in DHT?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Making it a little more web-y, trying to remove centralization, login assertions are digitally signed using public-private key crypto. we&apos;re using email because the system has to work for people that don&apos;t understand crypto. if using an email need a way of mapping email to identity</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  System should be online at all times, could use DNS system and make sure that core identity servers are up all the time, but then there needs to be central organization that maintains system</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Jeremie Miller has recently picked up telehash full time, he always wanted xmpp to be decentralized</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  If we want attack resistant network, bit torrent uses kademlia, mpaa has tried many times to kill it and it hasn&apos;t worked</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Very attack resilient</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Another network like bitcoin could do it as well</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Need to bridge those non-web protocols to the web</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  User should be able to decide when to share or not share info</div>
+<div class="comment"><span class="name">Matt Kaufman</span>:  Nxp has ucode gen2 chip, nfc rfid chip with integrated i2c - do we care about that sort of hardware? Is that out of scope?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  We do want to support two factor authentication, or three factor authentication, but we can&apos;t count on it being in every device so we leave that up to identity provider.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  If they trust no one they can setup their own system</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  People will pick identity providers based on security and ease of use</div>
+<div class="comment"><span class="name">Evan Schwartz</span>:  Is the idea that you&apos;d store actual credential data in the Kademlia DHT? Do you only store the latter, just store the mapping? [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  You&apos;d do the latter, right now. Mapping from email to identity provider, primarily. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  There is a potential future here where you&apos;d store all credentials in the cloud. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Matt Kaufman</span>:  How will the DHT first be populated?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Go to some website, go to another that will do email verification, now that website will digitally sign that email is tied to your identity</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Information is stored at identity provider and then send something to telehash network, everything is encrypted so if you need to login to a website you type in email address and passphrase, query goes to telehash network and if the passphrase is correct then it&apos;s used to decrypt identity service. Identity service verifies the email verification and sends it to the website.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  This is a very loose plan right now, there are a number of security concerns and usability/centralization concerns.</div>
+<div class="comment"><span class="name">Evan Schwartz</span>:  I&apos;m pretty interested in how to move away from everything being stored by an identity provider. I don&apos;t like the idea of depending on a specific service. If they&apos;re down, or they&apos;re out of range/firewalled, or they&apos;re trying to block me, that&apos;s not good. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Evan Schwartz</span>:  How does this system prevent the IdP from impersonating me to a different service? How do you prevent the IdP&apos;s from impersonating you. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Brent Shambaugh</span>: An improvement on DHT: <a href="http://iptps06.cs.ucsb.edu/papers/Pouw-Tribler06.pdf,">http://iptps06.cs.ucsb.edu/papers/Pouw-Tribler06.pdf,</a> </div>
+<div class="comment"><span class="name">Brent Shambaugh</span>: Another improvement (INGA) <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.72.7668&amp;rep=rep1&amp;type=pdf">http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.72.7668&amp;rep=rep1&amp;type=pdf</a></div>
+<div class="comment"><span class="name">Brent Shambaugh</span>: Use semantic information in the network</div>
+<div class="comment"><span class="name">Dave Longley</span>:  In the future, an IdP could always come along and provide it&apos;s own decentralized solution that piggybacks off of this. They could store stuff in the decentralized cloud that avoids this sort of stuff. So, there could be innovation built on top of this. [scribe assist by Manu Sporny]</div>
+<div class="comment"><span class="name">Dave Longley</span>:  An identity provider could come along and store their info in a decentralized cloud</div>
+<div class="comment"><span class="name">Erik Anderson</span>:  Anything I need to know about this before the workshop?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  No, but we can talk about it there if necessary.</div>
+<h1 id="topic-4" class="topic">Topic: HTTP Signatures Update</h1>
+<div class="comment"><span class="name">Manu Sporny</span>:  This stuff is important for banking and verifying high value transactions</div>
+<div class="comment"><span class="name">Manu Sporny</span>: Mark Nottingham and Julian Reschke gave us some good input recently, offlist.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  They were positive but http auth working group is shutting down in 3 months, but they have offered to make it part of http bis working group if necessary.</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Proposed way to simplify spec for authorization and non-authorization scenarios</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Could create new signature header, only adds 4-5 paragraphs to the spec</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Clear ietf path and clear editorial path</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  This allows digital signature authorization on http request, even without logging into a service</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Integrates with identity credentials and json-ld</div>
+<div class="comment"><span class="name">David I. Lehn</span>:  When should we start updating implementations? Some of these are breaking changes, aren&apos;t they?</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  The only thing that should change in library implementations should be addition of signature header</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  There are ways of making the code change without breaking things that are out there</div>
+<div class="comment"><span class="name">Dave Longley</span>:  Maybe all the changes could be done in a deprecation manner and phased out over time</div>
+<div class="comment"><span class="name">Manu Sporny</span>:  Ok, out of time for today. Next week is the Web Payments Workshop, very excited about that. No call next week, we&apos;ll pick up again to do a post-workshop wrap up in the first week of April... April 2nd is the next call.</div>
+</div></div></div></section>
+    <div id="footerwrap">
+      <div class="container">
+        <h4>Created by the <a href="http://www.w3.org/community/webpayments/">Web Payments Community Group</a>. Shared with love under a <a href="http://creativecommons.org/licenses/by/4.0/">CC-BY</a> license. Thanks to our <a href="../../thanks">contributors</a>.</h4>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+
+  <script type="text/javascript" src="../../assets/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/retina.js"></script>
+  <script type="text/javascript" src="../../assets/js/jquery.easing.1.3.js"></script>
+  <script type="text/javascript" src="../../assets/js/smoothscroll.js"></script> 
+    
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-1539674-7']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+  })();
+  </script>
+    
+  </body>
+</html>
+

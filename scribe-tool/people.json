@@ -22,6 +22,9 @@
     "alias": ["themusicgod1"],
     "homepage": "https://plus.google.com/105395547687614433866/about"
   },
+  "Matt Kaufman": {
+    "alias": ["mkaufman"]
+  },
   "David Ezell": {
     "alias": ["dezell"]
   },
@@ -38,10 +41,6 @@
     "alias": ["taaz", "dil", "dlehn"],
     "homepage": "http://dil.lehn.org/"
   },
-  "Dave Raggett": {
-    "alias": ["dsr"],
-    "homepage": "http://www.w3.org/People/Raggett/"
-  },
   "Evan Schwartz":  {
     "alias": ["eschwartz"],
     "homepage": "http://www.linkedin.com/in/evanmarkschwartz"
@@ -51,6 +50,10 @@
   },
   "Dave Longley": {
     "alias": ["dlongley", "dlongley-db"]
+  },
+  "Dave Raggett": {
+    "alias": ["dsr"],
+    "homepage": "http://www.w3.org/People/Raggett/"
   },
   "Joseph Potvin": {
     "alias": ["joe", "jpotvin"],

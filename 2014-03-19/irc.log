@@ -1,0 +1,123 @@
+[Wed 11:05:07] <m4nu>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2014Mar/0128.html
+[Wed 11:05:19] <voip-ps>	Dave Lehn (SIP/6003-00000215) has joined the conference.
+[Wed 11:05:12] <m4nu>	scribe: evan
+[Wed 11:05:12] <evan>	manu: Any changes to the agenda? *long pause* If not, moving on.
+[Wed 11:05:57] <m4nu>	Topic: Web Payments Workshop Agenda
+[Wed 11:06:05] <m4nu>	http://www.w3.org/2013/10/payments/agenda.html
+[Wed 11:06:51] <evan>	manu: agenda is almost finalized. ton of big multinational companies and startups attending. only thing that's weak at the conference is participation by retailers and regulators
+[Wed 11:07:34] <evan>	manu: 6 sessions, each 2 hours, mostly attendee-driven, main purpose of speakers is to kickstart discussion
+[Wed 11:07:57] <m4nu>	Session 1 — Overview of Current and Future Payment Ecosystems
+[Wed 11:08:19] <m4nu>	Session 2 — Toward an Ideal Web Payment Experience
+[Wed 11:08:55] <m4nu>	Session 3 — Back End: Banks, Regulation, and Future Clearing
+[Wed 11:09:39] <m4nu>	Session 4 — Enhancing the Customer and Merchant Experience
+[Wed 11:10:05] <m4nu>	 Session 5 — Front End: Wallets - Initiating Payment and Digital Receipts
+[Wed 11:10:37] <m4nu>	Session 6 — Identity, Security, and Privacy
+[Wed 11:11:22] <m4nu>	Papers that were accepted are at the bottom of the page: http://www.w3.org/2013/10/payments/agenda.html
+[Wed 11:11:23] <evan>	manu: accepted papers for the workshop can be found on conference page
+[Wed 11:12:29] <voip-ps>	<unknown> (IAX2/diamondcard-5749) has joined the conference.
+[Wed 11:12:30] <evan>	manu: papers that were not accepted will not be shown on the conference webpage because some of them were quite bad and got bad reviews, authors that want theirs published can publish them through other means
+[Wed 11:12:39] <evan>	manu: conference starts next monday, fantastic group coming to it
+[Wed 11:12:57] <evan>	manu: all of the minutes will be made public shortly after, if not during the conference
+[Wed 11:13:13] <evan>	manu: pindar has asked if we can record the video or audio of the conference, we'll have to ask w3c
+[Wed 11:13:38] <evan>	manu: W3C might agree to it, unless the PC or attendees don't want it to happen, or if there isn't the time to set it up
+[Wed 11:13:44] <m4nu>	voip: connections?
+[Wed 11:13:45] <voip-ps>	Conference connections: bshambaugh [SIP/192.168.1.122-00000214], IAX2/diamondcard-5749, <no name> [IAX2/diamondcard-4587], Dave Longley [SIP/6002-00000213], Manu Sporny [SIP/6000-00000212], Dave Lehn [SIP/6003-00000215]
+[Wed 11:14:25] <m4nu>	Topic: Web Payments Mobile Use Cases
+[Wed 11:14:29] <m4nu>	Would you mind giving us an overview of the use cases you've been collecting, Brent? https://github.com/w3c-webmob/payments-use-cases
+[Wed 11:14:57] <bshambaugh>	https://www.w3.org/community/webpayments/wiki/WebPaymentsMobileUseCases 
+[Wed 11:15:12] <bshambaugh>	https://github.com/w3c-webmob/payments-use-cases
+[Wed 11:15:46] <bshambaugh>	Due to discussions with Marcos Caceres and Natasha Rooney am attempting to apply the following template:
+[Wed 11:15:46] <bshambaugh>	Name: name of the solution
+[Wed 11:15:46] <bshambaugh>	Use Cases: Key use cases for the solution
+[Wed 11:15:46] <bshambaugh>	Regions and currencies: Any SDKs or APIs which are available to developers
+[Wed 11:15:46] <bshambaugh>	with the following things to consider (for use cases):
+[Wed 11:15:47] <bshambaugh>	(1) add real money to the service
+[Wed 11:15:49] <bshambaugh>	(2) buy a physical good in the real wold (e.g., a cup of coffee)
+[Wed 11:15:51] <bshambaugh>	(3) pay for physical service (e.g., gym membership)?
+[Wed 11:15:53] <bshambaugh>	(4) convert virtual money back into paper money
+[Wed 11:15:57] <bshambaugh>	(5) transfer money from one person to another (even if the second person is not signed up for the service)?
+[Wed 11:16:00] <bshambaugh>	(6) buy product online
+[Wed 11:16:02] <bshambaugh>	(7) resolve disputes?
+[Wed 11:16:04] <bshambaugh>	(8) view transactions?
+[Wed 11:16:06] <bshambaugh>	(9) secure the wallet
+[Wed 11:16:08] <bshambaugh>	(10) etc.
+[Wed 11:16:13] <evan>	brent: right now i have a lot of information, trying to fit it in a template
+[Wed 11:16:39] <evan>	brent: next stage is to weeding stuff out, make it more digestable
+[Wed 11:17:59] <evan>	brent: how the phone is communicating with other devices, new hardware or legacy hardware, existing ACH system or replace that entirely with bitcoin or ripple, start adding info to transactions with payswarm and linked data or namecoin or colored coin?
+[Wed 11:18:30] <evan>	brent: emphasis towards trying to use the legacy hardware, difficult to push people to use new stuff
+[Wed 11:19:24] <evan>	brent: convert virtual money back into paper money -- might be a small use case
+[Wed 11:19:44] <evan>	brent: if you compare stripe and square, square has POS system, stripe is only API no hardware
+[Wed 11:20:16] <evan>	brent: many systems store reward card or store credit card info in the system
+[Wed 11:21:23] <evan>	manu: fantastic amount of info on the wiki page, condensing all of the info down is easier than getting the info
+[Wed 11:21:49] <evan>	manu: natasha was hoping we would have a summary to share with the web payments workshop, need a bit more time to condense it further
+[Wed 11:23:02] <evan>	manu: what are the common features across all of these solutions, what could be standardized and what couldn't, combine that with the CG's work and the workshop attendees input, we'll have some authority to say we've done our homework
+[Wed 11:24:30] <voip-ps>	<unknown> (IAX2/diamondcard-3302) has joined the conference.
+[Wed 11:24:42] <m4nu>	voip: connections?
+[Wed 11:24:42] <voip-ps>	Conference connections: IAX2/diamondcard-3302, bshambaugh [SIP/192.168.1.122-00000214], IAX2/diamondcard-5749, <no name> [IAX2/diamondcard-4587], Dave Longley [SIP/6002-00000213], Manu Sporny [SIP/6000-00000212], Dave Lehn [SIP/6003-00000215]
+[Wed 11:24:48] <evan>	manu: can turn the use cases into spreadsheet of features and solutions and just have check boxes for which solutions have which services and tally the most widely spread features, only problem is that may lose most innovative solutions
+[Wed 11:24:55] <voip-ps>	<unknown> (IAX2/diamondcard-3302) has left the conference.
+[Wed 11:25:42] <evan>	brent: Do we care about listing hardware stuff too?
+[Wed 11:25:47] <evan>	manu: might be good to outline hardware, educates us about what's missing in mobile phones or devices, square reader tells us that card readers are missing from mobile phones
+[Wed 11:26:25] <evan>	manu: brent should brainstorm and send an email to the mailing list about how to coalesce info into 1-2 page summary
+[Wed 11:27:11] <evan>	manu: brent should talk to natasha about the most updated list of use cases
+[Wed 11:27:38] <m4nu>	Topic: Credential-based Login
+[Wed 11:27:44] <m4nu>	http://manu.sporny.org/2014/credential-based-login/
+[Wed 11:28:37] <evan>	manu: now that persona's engineers have been transitioned off the project, we needed to at least propose something for doing transmission of digital wallet provider info
+[Wed 11:28:37] <voip-ps>	<unknown> (IAX2/diamondcard-4409) has joined the conference.
+[Wed 11:29:25] <evan>	manu: apply identity credentials spec to login on the web. when you login to a website that you need to make a payment on, the process used to transmit payment info should be the same as transmitting address and login info
+[Wed 11:29:44] <evan>	manu: email is one credential, shipping address is another credential, where you live, age, etc
+[Wed 11:30:12] <evan>	manu: use same method to transmit email as well as other more complicated data, it's all transmission of credentials.
+[Wed 11:30:58] <evan>	manu: proposal looked at reasons mozilla thought persona failed other than internal problems. google and yahoo didn't want to add persona support
+[Wed 11:31:18] <evan>	manu: bypass the email providers so that a number of organizations can digitally sign email address, no longer beholden to email providers.
+[Wed 11:32:02] <evan>	manu: persona had to run centralized infrastructure while getting the system off the ground, and that cost mozilla a lot of money/time.
+[Wed 11:33:00] <evan>	manu: proposed decentralized solution based on telehash, didn't know if telehash would work for this but after speaking w/ Jeremie Miller, he said it could support this login mechanism
+[Wed 11:33:42] <evan>	manu: clearly there are problems with this proposal, but the hope was that other people would specify what they would want to replace parts of the system with
+[Wed 11:34:01] <evan>	manu: decentralized system could be replaced by any decentralized network, namecoin, other distributed hash table solutions
+[Wed 11:34:33] <m4nu>	voip: connections?
+[Wed 11:34:34] <voip-ps>	Conference connections: IAX2/diamondcard-4409, bshambaugh [SIP/192.168.1.122-00000214], IAX2/diamondcard-5749, <no name> [IAX2/diamondcard-4587], Dave Longley [SIP/6002-00000213], Manu Sporny [SIP/6000-00000212], Dave Lehn [SIP/6003-00000215]
+[Wed 11:34:49] <m4nu>	voip: 5749 is Matt_Kaufman
+[Wed 11:34:50] <voip-ps>	Matt_Kaufman is now associated with IAX2/diamondcard-5749.
+[Wed 11:35:09] <evan>	matt: is anyone aware of google migrating to google+ single sign-on? They have a timeline migration table here: https://developers.google.com/+/api/auth-migration
+[Wed 11:36:57] <evan>	matt: Why wouldn't the PGP system work for the public key? Maybe with keys stored in DHT?
+[Wed 11:38:10] <evan>	manu: making it a little more web-y, trying to remove centralization, login assertions are digitally signed using public-private key crypto. we're using email because the system has to work for people that don't understand crypto. if using an email need a way of mapping email to identity
+[Wed 11:38:51] <evan>	manu: system should be online at all times, could use DNS system and make sure that core identity servers are up all the time, but then there needs to be central organization that maintains system
+[Wed 11:39:16] <evan>	manu: Jeremie Miller has recently picked up telehash full time, he always wanted xmpp to be decentralized
+[Wed 11:39:58] <evan>	manu: if we want attack resistant network, bit torrent uses kademlia, mpaa has tried many times to kill it and it hasn't worked
+[Wed 11:40:14] <evan>	manu: very attack resilient
+[Wed 11:40:35] <evan>	manu: another network like bitcoin could do it as well
+[Wed 11:41:14] <evan>	manu: need to bridge those non-web protocols to the web
+[Wed 11:41:30] <evan>	manu: user should be able to decide when to share or not share info
+[Wed 11:43:09] <evan>	matt: nxp has ucode gen2 chip, nfc rfid chip with integrated i2c - do we care about that sort of hardware? Is that out of scope?
+[Wed 11:43:39] <evan>	manu: We do want to support two factor authentication, or three factor authentication, but we can't count on it being in every device so we leave that up to identity provider.
+[Wed 11:43:59] <evan>	manu: if they trust no one they can setup their own system
+[Wed 11:44:46] <evan>	manu: people will pick identity providers based on security and ease of use
+[Wed 11:46:55] <m4nu>	evan: Is the idea that you'd store actual credential data in the Kademlia DHT? Do you only store the latter, just store the mapping?
+[Wed 11:48:37] <m4nu>	dlongley: You'd do the latter, right now. Mapping from email to identity provider, primarily.
+[Wed 11:49:04] <m4nu>	manu: There is a potential future here where you'd store all credentials in the cloud.
+[Wed 11:48:53] <evan>	matt: how will the DHT first be populated?
+[Wed 11:50:16] <evan>	manu: go to some website, go to another that will do email verification, now that website will digitally sign that email is tied to your identity
+[Wed 11:51:30] <evan>	manu: information is stored at identity provider and then send something to telehash network, everything is encrypted so if you need to login to a website you type in email address and passphrase, query goes to telehash network and if the passphrase is correct then it's used to decrypt identity service. Identity service verifies the email verification and sends it to the website.
+[Wed 11:51:47] <evan>	manu: this is a very loose plan right now, there are a number of security concerns and usability/centralization concerns.
+[Wed 11:52:26] <m4nu>	evan: I'm pretty interested in how to move away from everything being stored by an identity provider. I don't like the idea of depending on a specific service. If they're down, or they're out of range/firewalled, or they're trying to block me, that's not good.
+[Wed 11:52:55] <m4nu>	evan: How does this system prevent the IdP from impersonating me to a different service? How do you prevent the IdP's from impersonating you.
+[Wed 11:53:25] <bshambaugh>	An improvement on DHT: http://iptps06.cs.ucsb.edu/papers/Pouw-Tribler06.pdf, 
+[Wed 11:53:25] <bshambaugh>	another improvement (INGA) http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.72.7668&rep=rep1&type=pdf
+[Wed 11:53:50] <bshambaugh>	use semantic information in the network
+[Wed 11:54:13] <m4nu>	dlongley: In the future, an IdP could always come along and provide it's own decentralized solution that piggybacks off of this. They could store stuff in the decentralized cloud that avoids this sort of stuff. So, there could be innovation built on top of this.
+[Wed 11:54:18] <evan>	dave: an identity provider could come along and store their info in a decentralized cloud
+[Wed 11:54:18] <evan>	erik: Anything I need to know about this before the workshop?
+[Wed 11:54:18] <evan>	manu: No, but we can talk about it there if necessary.
+[Wed 11:55:15] <m4nu>	Topic: HTTP Signatures Update
+[Wed 11:55:16] <evan>	manu: this stuff is important for banking and verifying high value transactions
+[Wed 11:55:36] <m4nu>	 Mark Nottingham and Julian Reschke gave us some good input recently, offlist.
+[Wed 11:56:22] <evan>	manu: they were positive but http auth working group is shutting down in 3 months, but they have offered to make it part of http bis working group if necessary.
+[Wed 11:56:37] <evan>	manu: proposed way to simplify spec for authorization and non-authorization scenarios
+[Wed 11:56:55] <evan>	manu: could create new signature header, only adds 4-5 paragraphs to the spec
+[Wed 11:57:10] <evan>	manu: clear ietf path and clear editorial path
+[Wed 11:57:37] <evan>	manu: this allows digital signature authorization on http request, even without logging into a service
+[Wed 11:58:07] <evan>	manu: integrates with identity credentials and json-ld
+[Wed 11:58:07] <evan>	taaz: When should we start updating implementations? Some of these are breaking changes, aren't they?
+[Wed 11:59:16] <evan>	manu: the only thing that should change in library implementations should be addition of signature header
+[Wed 12:00:03] <evan>	manu: there are ways of making the code change without breaking things that are out there
+[Wed 12:00:48] <evan>	dlongley: maybe all the changes could be done in a deprecation manner and phased out over time
+[Wed 12:00:48] <evan>	manu: Ok, out of time for today. Next week is the Web Payments Workshop, very excited about that. No call next week, we'll pick up again to do a post-workshop wrap up in the first week of April... April 2nd is the next call.
