@@ -1,0 +1,340 @@
+15:06:51 <dsr> Topic: Session 3 â€” Back End: Banks, Regulation, and Future Clearing
+15:07:09 <phariramani> Day 1: 16:00 Session 3 â€” Back End: Banks, Regulation, and Future Clearing starting
+15:07:37 <dka> dka has joined #w3cpayment
+15:07:40 <dsr> Stephane introduces the session moderator Erik Anderson
+15:07:55 <darobin> darobin has joined #W3Cpayment
+15:08:00 <phariramani> Erik Anderson: Session focused on banking, back end and regulation
+15:08:10 <dsr> Erik: this session will be more about the backend and the banking side.
+15:08:24 <kodonog> kodonog has joined #w3cpayment
+15:08:27 <darobin> darobin has joined #W3Cpayment
+15:08:35 <darobin> darobin has joined #W3Cpayment
+15:08:37 <dsr> (introduces Jean Claude Barbezange, Worldline)
+15:08:44 <phobeo> phobeo has joined #w3cpayment
+15:09:16 <Floris> Floris has joined #W3CPAYMENT
+15:09:18 <Hannes> Hannes has joined #W3CPayment
+15:09:24 <jeff> jeff has joined #w3cpayment
+15:10:00 <mhepp> mhepp has joined #w3cpayment
+15:10:01 <dsr> JC: slide on legacy web payment mode
+15:10:37 <phariramani> Jean: Front end: web form: declarative data: E.g. PAN, CVV
+15:10:44 <phariramani> PAN = Personal Account Number
+15:11:09 <phariramani> CVV =  security code at back of card
+15:11:36 <phariramani> secure mechanisms: 3dS, tokenization, dynamic CVX
+15:11:36 <marie> marie has joined #w3cpayment
+15:11:37 <dsr> ... front end with a web form, declarative data, e.g. card info. Security with 3DSecure, and more recently tokenization.
+15:11:53 <stanstalnaker> stanstalnaker has joined #w3cpayment
+15:12:08 <phariramani> Dynamic CVX provides better secuirty
+15:12:22 <dezell> dezell has joined #w3cpayment
+15:12:30 <phariramani> Slide 3: Legacy Web Payment -> Back end
+15:12:34 <dsr> ... also dynamic CVS for improved security. Also convenience for user, e.g. form auto completion and one click purchases.
+15:12:55 <phariramani> Banking card: universal, fee for payee, some level guarantees
+15:13:00 <jphong> jphong has joined #w3cpayment
+15:13:13 <tim> tim has joined #w3cpayment
+15:13:20 <phariramani> In some countries like Germany, credit transfer is used for nilling, home banking..
+15:13:26 <phariramani> Ideal is used in Netherlands
+15:13:30 <mdadas> mdadas has joined #w3Cpayment
+15:13:40 <phariramani> Direct debit is used for regular recurring payments
+15:13:50 <phariramani> Slide 4: Legacy web payment mode
+15:13:51 <Angie> Angie has joined #w3cpayment
+15:13:55 <dsr> scribe: phariramani
+15:14:15 <phariramani> depends on cultural user behavior per country/usage/trusted level
+15:14:39 <Parslow> Parslow has joined #W3CPayment
+15:15:07 <phariramani> different rules for some functions: transaction collection, clearing/settlement, cancellation/refund, dispute, risk management, fraud detection
+15:15:33 <phariramani> If token is used for txn lifecycle management then toke needs to be preserved for long period
+15:16:50 <phariramani> Backed protocol is moving to ISO 20002
+15:17:05 <phariramani> Slide 5: New web payment mode (crypto currencies)
+15:17:30 <phariramani> Crypto tools: hash, asymmetric signatures, mathematical functions like pairing
+15:17:38 <Mark_E> Mark_E has joined #W3Cpayment
+15:17:46 <phariramani> currency virtualization: dynamic change currency
+15:18:08 <phariramani> autonomous cryptogram contains all the data for the transaction as bank notes or coin.
+15:18:29 <phariramani> Interest in reducing cross border transaction costs
+15:18:43 <phariramani> in some cases can keep anonymous information on user
+15:18:50 <phariramani> Slide 6: New web payment mode
+15:19:11 <phariramani> Front end: P2P: Based on open source software wallet
+15:19:26 <DarrenG> DarrenG has joined #w3cpayment
+15:19:49 <phariramani> Front end: Also based on new internet technologies like IP (TCP/UDOP), IP Address
+15:20:20 <phariramani> Slide 7: New Web Payment mode: Back end
+15:20:27 <phariramani> Real time with instant balance
+15:20:35 <phariramani> distributed functions for txn validation
+15:20:44 <phariramani> Slide 8: Conclusion
+15:20:57 <phariramani> For both ecosystems, trust and security are mandatory
+15:21:20 <phariramani> PSPs also have to develop authentication, risk analysis and fraud detection
+15:21:48 <erik_anderson> erik_anderson has joined #w3cpayment
+15:21:56 <phariramani> Some standardization on web browser could be helpful like fingerprinting, secure inputs, API to secure client device resources
+15:22:20 <phariramani> and privacy requirement on vendor
+15:22:31 <virginie> virginie has joined #w3cpayment
+15:22:33 <NeilMJ> NeilMJ has joined #W3Cpayment
+15:23:43 <phariramani> Erik: W3C is encapsulation layer beyond a low level protocol; need to consider legacy systems while considering standards
+15:24:08 <phariramani> Erik: introducing World Bank/Harish Natarajan
+15:24:56 <manu2> manu2 has joined #w3cpayment
+15:25:05 <phariramani> Harish: Build on topics introduced from this morning
+15:25:19 <phariramani> Key findings from WB global payments survey...
+15:25:43 <phariramani> Innovative = anything not based on traditional bank accounts
+15:26:33 <phariramani> 11% of innovative product transactions accounted for more than 5% of electronic payments volume
+15:26:46 <phariramani> 69% of innovative product transactions were growing
+15:27:04 <phariramani> Slide 4: Findings & policy implications ..
+15:27:38 <phariramani> Right hand corner of pie chart -> innovations could serve affordability & accessibility of payment services
+15:27:44 <phariramani> Slide 5: interoperability
+15:27:53 <phariramani> Interoperability generally associated with card products
+15:28:30 <phariramani> Interoperability fosters competition and consumer convenience
+15:28:54 <phariramani> Several levels of interoperability. Infrastructure, system wide & cross system
+15:29:36 <phariramani> E.g. card level interoperability -> POS terminal in US can support cards issued by any bank as long as card adheres to standards
+15:29:53 <phariramani> E.g. system wide interoperability -> Visa system
+15:30:10 <dlongley> dlongley has joined #W3Cpayment
+15:30:29 <phariramani> Cross system interoperability not as easily achieved
+15:31:09 <phariramani> However cross membership across systems (Visa / MasterCard) could achieve cross system interoperability
+15:31:51 <phariramani> Money transfer example: Typically Western Union/Money Gram generally prohibit sharing of agents; restricts interoperability
+15:32:26 <phariramani> Thats sounds good. Thanks Dave
+15:33:07 <phariramani> Slide 7: Infrastructure and access interoperability//use of clearing & settlement
+15:33:24 <Mauro> s/Thats sounds good. Thanks Dave/ /
+15:33:49 <phariramani> More than 50% of innovative products settled in books of issuer and only around 24% with central bank
+15:33:56 <phariramani> Ok chaals. Good idea
+15:34:11 <phariramani> Slide 9: Legal and Regulatory Considerations
+15:34:34 <Mauro> s/Ok chaals. Good idea//
+15:34:40 <StephanSteglich> StephanSteglich has joined #W3CPAYMENT
+15:35:00 <bryan> AML/CFT = Anti-Money Laundering/Combating the Financing of Terrorism (AML/CFT)
+15:35:23 <chaals> rrsagent, draft minutes
+15:35:23 <RRSAgent> I have made the request to generate http://www.w3.org/2014/03/24-w3cpayment-minutes.html chaals
+15:35:32 <phariramani> 4 main issues-> safety of customer funds; typical bank has deposit insurance however this may not apply for a non bank institution
+15:36:17 <bryan> link: http://www.imf.org/external/np/leg/amlcft/eng/
+15:36:20 <phariramani> Heightened AML/CTF risks: The way non bank accounts are setup created higher AML/CTF risks but can be addressed thru velocity limits, txn sizes
+15:36:50 <TomPic> TomPic has joined #W3CPayment
+15:36:53 <phariramani> Weaker authentication could lead to higher fraud risks. E.g. SMS used by some for operator billing
+15:37:44 <phariramani> Consumer protection: when a customer signs up for credit/debit card there are very clear requirements however that is not the case with many prepaid products so customer may not be aware of what they are getting into
+15:38:21 <bryan> how to know if a customer really knows what they are getting into? $64K question
+15:38:35 <phariramani> Need to ensure competitive market conditions: Avoid regulatory arbitrage. Banks subject to higher constraints but non banks may have more relaxed requirements
+15:39:23 <phariramani> Oversight arrangements: Typically supervision is the term used; oversight looks at impacts to system as a whole and typically function of central bank. Non banks typically fall outside of this central bank purview
+15:40:12 <phariramani> Conclusion: Innovative payment mechanisms expand access, efficiency but form a regulatory perspective they need to be seen as an integral part of the national payment system of the country
+15:40:17 <bryan> usecase: payment process includes user informed consent requirements about "what they are getting into"
+15:40:52 <phariramani> Dave Birch: 2 of the most successful schemes (mesa and SMART Philippines) do not involve banks. Is that a coincidence?
+15:41:24 <phariramani> Harish: They adopted a model that banks typically do not use (agent model) and a consumer pays model
+15:41:47 <phobeo> s/mesa/MPESA/
+15:41:53 <gmandyam> q+
+15:41:54 <phariramani> Harish: mesa transactions have a typical 1% transaction fee but many banks are not allowed to charge users for withdrawing cash form their own account
+15:42:17 <phariramani> Erik: Introducing Evan from Ripple
+15:42:24 <phobeo> s/mesa transactions/MPESA transactions/
+15:42:38 <chaals> [chaals wonders how much of the reason MPESA/Smart didn't come from banks is due to banks thinking "payment already worksâ€¦"]
+15:42:48 <wseltzer> zakim, open queue
+15:42:48 <Zakim> ok, wseltzer, the speaker queue is open
+15:42:53 <wseltzer> q+ gmandyam
+15:43:05 <phariramani> Evan: Ripple = global, open source decentralized payment network that connects other payment networks
+15:43:22 <phariramani> Erik: Talk about how Ripple can make payments faster, easier and cheaper for everyone
+15:43:34 <phariramani> s / Erik / Evan
+15:43:52 <phariramani> Ripple = Global decentralized open source network
+15:44:23 <phariramani> Ripple Labs = company dedicated to supporting Ripple's development
+15:44:40 <phariramani> Next slide (no slide numbers unfortunately) : Ripple payments are . . .
+15:45:14 <phariramani> Ripple payments are fast, free, in any currency, global and secure. Can be done in any currency, gold or any stored value
+15:45:41 <phariramani> Slide: Payments technologies are not interoperable ..
+15:46:11 <phariramani> payment technologies do not work together because inter network transfers are slow and expensive. Very difficult to move money cross border
+15:46:29 <phariramani> Slide: Web payments need decentralized clearing and settlement
+15:46:50 <phariramani> There will never be buy in for a centralized clearinghouse
+15:47:06 <phariramani> Slide: Ripple connects payments technologies
+15:47:19 <phariramani> Ripple takes 2-5 seconds to settle and is essentially free
+15:47:41 <phariramani> Slide: Ripple connects payment networks (slide with Paypal, Bank of America logo)
+15:48:02 <phariramani> Slide: Ripple has 4 broad categories of users
+15:48:16 <phariramani> Basic user example is someone trying to send a payment
+15:48:31 <phariramani> Merchant, market makers and gateways are the other 3 users
+15:48:45 <phariramani> Slide: Send from any currency to any currency ..
+15:49:05 <phariramani> Network takes care of all the exchange and this is seamless for the end user
+15:49:14 <phariramani> Slide: Receive only the currency you want
+15:49:35 <bryan> usecase: send money to any currency type
+15:49:38 <phariramani> This is great for merchants because they can accept only the currencies they desire. No currency risk with Ripple
+15:50:00 <phariramani> Slide: Market makers facilitate exchange
+15:50:06 <bryan> usecase: receive money in a desired type
+15:50:27 <phariramani> Market maker facilitates exchange. E.g. someone buying USD and selling Euros. Transparent to user since market maker handles this
+15:50:40 <phariramani> Slide: Market makers compete on a distributed exchange
+15:50:57 <phariramani> 1st open decentralized currency exchange
+15:51:09 <phariramani> User does not have to worry about FX
+15:51:12 <bryan> usecase: market makers acting as transfer agent
+15:51:28 <phariramani> Slide: Financial institutions act as entry/exit points on Ripple
+15:51:41 <phariramani> These could be Paypal, mesa, etc
+15:51:51 <chaals> s/mesa/mpesa/
+15:52:21 <phariramani> As long as the institutions are connected to the Ripple network this is transparent to the user.
+15:52:33 <phariramani> Slide: Deal only with institutions you trust
+15:52:57 <phariramani> No individual integrations required; you sign up with only one service you trust
+15:53:37 <phariramani> Unlike other systems where both sender/receiver to have say signed up with Visa/MC this is more interoperable
+15:53:54 <phariramani> Slide: Connected without needing any prior business arrangements
+15:54:13 <phariramani> Picture of 2 Ripple gateways and market makers are between them
+15:54:26 <bryan> usecase: transfer money through gateway providers of financial networks
+15:54:32 <phariramani> Market makers compete to offer the best exchange between these gateways
+15:55:04 <phariramani> Does not require FIs/merchants to have individual negotiations
+15:55:10 <bryan> usecase: knowing through which financial network your transaction will be delivered (you might care?)
+15:55:14 <phariramani> Slide: Summary
+15:55:31 <phariramani> Ripple connects other payment technologies, fast easy to integrate ..
+15:55:52 <phariramani> Erik introducing Max (CoinAPex)
+15:56:04 <phariramani> Max: Introducing Bitcoin incubator
+15:56:32 <phariramani> Mac: Interesting to talk about standardization in context of decentralized community like bitcoin
+15:56:40 <phariramani> Please do take over scribing :-)
+15:56:44 <phariramani> Thanks dsr
+15:56:45 <dsr> scribe: dsr
+15:57:34 <dsr> What's interesting is that there are lot of solutions in the bitcoin world which can move quickly, but are not necessarily what the regulators will want to see.
+15:58:50 <dsr> We're seeing a split in the bitcoin community with some who want to create an identity layer on top of bitcoin and others who want to avoid any kind of centralization.
+15:58:52 <bryan> the "interesting interplay" and knowing this is a concern (or may be) is one rationale for the use case of knowing how your money is being transfered (what if an international network used bitcoin internally?)
+15:59:31 <dsr> What US banks and regulators will be able to do is still in progress and it will be interesting to see how it plays out.
+16:00:22 <dsr> Connie Theien (US Federal Reserve), I want to take us back to legacy system and the feedback we got from stakeholders.
+16:00:30 <dsr> W
+16:00:51 <dsr> s/W/We've identified about 11 major kinds of use cases/
+16:01:24 <dsr> ... We've document the requirements and are looking at the gaps from what is doable now.
+16:02:09 <dsr> ... We want to understand where we should be focusing our efforts -- shoring up the existing systems or supporting new kinds of systems.
+16:03:03 <dsr> We would like to make payment systems more accessible.  We look at ACH as an efficient system, but we want to make it more open.
+16:03:52 <dsr> We've seen interest from some sources for a means to initiate cheque based payments electronically.
+16:03:53 <bryan> usecase: Electronically originated checks
+16:04:49 <dsr> We're also looking at the unique needs of businesses, and their specific requirements as compared to B2C.
+16:05:09 <bryan> usecase: knowing what info will be required to supplement a transaction
+16:05:59 <dsr> On the international side, we're looking at an ACH service that is fairly fast relative to other international payment solutions. Today this reaches 35 countries and we are looking to expand this further.
+16:06:31 <r2d2> r2d2 has joined #w3cpayment
+16:06:36 <bryan> X9 = http://x9.org/
+16:06:39 <dsr> ISO 20022 ...
+16:07:14 <bryan> NACHA = https://www.nacha.org/
+16:07:20 <andym> andym has joined #w3cpayment
+16:07:25 <dsr> We're interested in enabling improved security, information sharing and fraud detection.
+16:07:27 <andym> andym has joined #w3cpayment
+16:08:07 <dsr> This is what we're hearing from our qualitative assessment of our consultation.
+16:08:15 <phariramani> ISO 20022 = http://www.iso20022.org
+16:08:20 <gmandyam> q+
+16:08:23 <bryan> usecase: knowing that data minimization principles are followed by systems in a payment chain
+16:08:24 <dsr> Erik: I would like to open the floor to questions.
+16:08:57 <dsr> Manu Sporny: an observation, it is great that all of the panelists have been focusing on their individual areas.
+16:09:35 <dsr> ... I am seeing that there is a very large divide between what is said in public and what people will say privately.
+16:09:58 <bryan> q+
+16:10:20 <dsr> For example in respect to bitcoin and risk of legal litigation
+16:11:09 <dsr> ... As far as I can see, banks don't have a motivation to switch to truly decentralized clearing solutions. Very little cross pollination with the bitcoin communities.
+16:11:37 <dsr> ... It is great to see representatives from both communities sitting down together here.
+16:12:52 <dsr> Max: you are going to see caution at least from a high level. Things are happening, maybe not at the pace bitcoin folks want, but progress nonetheless.
+16:13:44 <dsr> If states start seeing tax dollars from bitcoin transactions, this will ease things forward.
+16:14:41 <dsr> Connie: I do see the dialog starting with people keen to reach out and talk. I think there is interest in learning and understanding where the future of payment systems might evolve.
+16:14:58 <TomPic_> TomPic_ has joined #W3CPayment
+16:15:00 <dsr> ... Much of our focus and effort is on how we can improve.
+16:15:35 <dsr> Jeromie: I would like to second Manu, it is readlly good to discuss the potential changes.
+16:16:02 <steph> s/Jeromie/Jaromil/
+16:16:26 <dsr> ... games are now bigger than movies, and kids are trading their WoW goods.
+16:17:01 <dsr> ... we are talking too much about fraud and not enough at the opportunities for supporting new markets.
+16:17:39 <dsr> Erik: not significant traffic as now on these alternative networks for governments to worry too much.
+16:17:51 <cyberphone> is fixing the broken Card Not Present system in scope?
+16:18:26 <dsr> Stan: Our experience with governments has been surprisingly open. It is difficult for small startups to fly and meet people.
+16:19:24 <dsr> ... We need to see greater effort on non-incumbent organizations to reach out and make their case on behalf of their communities.
+16:20:09 <dsr> Anonymity is a real concern in some areas of the world.
+16:20:25 <dsr> ... we need to avoid setting up conflict.
+16:20:28 <bryan> in an environment which a variety of decentralized / "innovative" systems may be used by money transfer networks, how important is it for users to know which types of networks may be involved, and to set preferences or express consent for their money to be transferred via such networks?
+16:21:16 <stanstalnaker> stanstalnaker has joined #w3cpayment
+16:21:40 <dsr> Bryan: in the environment, how important is it for standards and metadata about transactions, e.g. to enable people to know whether a given solution is more likely to be subject to scrutiny.
+16:22:25 <dsr> Evan: as long as the payment solutions are trusted and secure, that's probably sufficient.
+16:23:59 <phobeo> q?
+16:24:08 <dsr> David Birch: as a consumer I am protected against fraud on credit cards. This is different from regulating money. Can you be a little clearer about consumer protection vs regulatory requirements
+16:24:08 <jaromil> ECB paper I've mentioned https://www.ecb.europa.eu/pub/pdf/other/virtualcurrencyschemes201210en.pdf
+16:24:38 <phobeo> q?
+16:25:24 <dsr> Harish: a customer may not know, but the bank will. There needs to be a framework governing how exceptions are handled.
+16:25:39 <bryan> the notion of trustworthiness and the current user transparency to how their money is transferred point to an issue of (a) who is asserting the trustworthiness (regulators?), and (2) the fact that users can currently rely upon a safe/reliable transfer system i.e. they have never had to worry about such things, so far.
+16:25:59 <dsr> Evan: on Ripple, all transactions are irreversible, so there is now mechanism for charge back.
+16:26:43 <bryan> q-
+16:26:48 <dsr> ... Ripple is much more like a debit system than a credit system, payments only proceed if you account has the necessary funds.
+16:27:24 <dsr> Harish: it is more about when a service needs to be refunded, e.g. on cancelling a flight.
+16:27:58 <dsr> Evan: you could have an escrow service that only transfers the funds when the service is delivered.
+16:28:22 <phobeo> s/there is now mechanism/there is no mechanism/
+16:28:29 <dsr> ... The merchant would have a rock solid guarantee of receiving the funds.
+16:29:18 <phobeo> q?
+16:29:21 <phobeo> q+
+16:29:26 <dsr> Erik: we've seen stories of people paying with bitcoin on ebay and never getting a refund on non-delivery of the product. Escrow is important.
+16:30:34 <dsr> Evan: Ripple would allow card issuers to reduce their fees and it is likely that market pressure would force that.
+16:31:24 <dsr> ??: will crypto currencies become important for wallet to wallet transactions?
+16:32:53 <dsr> YY: VISA and MasterCard are profit driven. Merchants are tee'd up to go, but are concerned about volatility.
+16:33:07 <wseltzer> s/YY/Gray Taylor, NACS/
+16:33:15 <marleen> marleen has joined #W3Cpayment
+16:33:50 <dsr> ... smaller payments are subject to a different risk model
+16:34:12 <bryan> way long ago, I used Tradenable to sell a high-value guitar to a buyer in the UK, with international shipping required - a complex sale. the role of the escrow company was an essential one. speed of transaction or the lowest fees are often (if not always, to me) secondary to trust in the transaction.
+16:34:59 <stanstalnaker> stanstalnaker has left #W3Cpayment
+16:34:59 <dsr> Manu: I've just heard something really scary. Evan: you've just explained why MasterCard and VISA are unlikely to adopt Ripple.
+16:35:21 <stanstalnaker> stanstalnaker has joined #w3cpayment
+16:35:47 <stanstalnaker> Manu - donâ€™t forget that 50% of the interchange fee goes to the banks, so they are in the same boat as Visa/Mastercard
+16:35:54 <dsr> ... We're talking about standardization process that could drive fees down, and this may deter adption, unless it is forced by governments.
+16:37:32 <dsr> Max: if enough merchants switch, the market will force a transition to reduced fees. This is likely to happen in an incremental and initially small way.
+16:38:32 <dsr> If the banks become more comfortable and regulators give a nod, we can expect to see change.
+16:38:47 <chaals> q+ to say there is a market for visa/mc apart from interchange, and there are plenty of people living in wildly fluctuating currencies
+16:39:35 <bryan> I think enabling payments on the web through APIs is orthogonal to the desire to reduce fees which I would think in user's minds is secondary to trust in the payment provider/system
+16:39:38 <dsr> Evan: I expect an inevitable decline in fees as the market evolves.
+16:39:56 <steph> +1 to bryan
+16:40:37 <bryan> in summary we don't have to solve the international transfer problems to enable payments on the web
+16:40:45 <dsr> ZZ: the only thing that is likely to be regulated is the entry point to the system.
+16:40:53 <chaals> s/ZZ/Ricardo/
+16:41:48 <Mauro> q?
+16:41:53 <dsr> ??: regulation of virtual currency to virtual currency will happen when the volume is sufficiently high to take notice.
+16:42:02 <chaals> s/??/Bailey/
+16:42:08 <chaals> ack me
+16:42:08 <Zakim> chaals, you wanted to say there is a market for visa/mc apart from interchange, and there are plenty of people living in wildly fluctuating currencies
+16:43:11 <dsr> Chaals: We've heard about exorbitant fees especially in less regulated markets
+16:43:57 <bryan> and a lot of people are paying 300% for payday loans... web payments enabling similar loans could operate a much more efficient/low-cost system for the masses of people that currently depend upon payday loan services
+16:44:03 <dsr> ... bitcoins might be attractive simply on the grounds of cost. Credit cards on the other hand are attractive because they offer credit.
+16:44:33 <chaals> s/of cost/of transaction cost and relative stability/
+16:45:19 <stanstalnaker> q+
+16:45:24 <dsr> Evan: some of those fees are due to unnecessary issues and we may be able to get rid of them.
+16:45:32 <stanstalnaker> stanstalnaker has left #W3Cpayment
+16:45:44 <dka> q?
+16:45:57 <dsr> Max: once we see a stable future's market for bitcoin, this should address volatility concerns.
+16:46:13 <marie> q?
+16:46:50 <dsr> David Birch: are there any ideas for merchant run payment systems?
+16:47:52 <dsr> Max: ...
+16:47:59 <dezell> q+ GrayTaylor
+16:48:41 <phariramani_> q +
+16:49:05 <dsr> Joerg: as long as the issuing banks are receiving the interchange fees, they are motivated to continue this.
+16:49:11 <steph> q+ phariramani
+16:50:27 <phariramani> sorry i typed too quickly
+16:50:50 <steph> q?
+16:50:56 <dsr> Max: if there is no intermediary then bitcoin transfers incur no fees.
+16:51:38 <stanstalnaker> stanstalnaker has joined #w3cpayment
+16:51:44 <dsr> ack gmandyam
+16:51:49 <manu2> ack phobeo
+16:51:58 <manu2> q+ phobeo (sorry!!!)
+16:52:07 <chaals> s/q +//
+16:52:13 <wseltzer> q- sorry
+16:52:44 <manu2> q- (sorry!!!)
+16:52:52 <Mark_E> Mark_E has joined #W3Cpayment
+16:52:58 <dsr> Giri: can standardization realistically address the problem of bad debts for merchants of apps?
+16:53:10 <gmandyam> Re: bad debt.  Many of the speakers have focused on consumer protections, but not so much on merchant protection.  There are many well-known methods where operator-direct billing can be exploited by end users to obtain electronic goods (e.g. apps).  Merchants either bear the cost through worse rev-shares or eating the costs.  Can standardization realistically address this problem (e.g. standardized receipts)?  Will they ever achieve adoption worldwide?
+16:53:44 <dsr> Evan: I don't know how standards could dictate terms.
+16:54:01 <dsr> ack phobeo
+16:55:04 <jameslei> jameslei has joined #W3Cpayment
+16:55:06 <gmandyam> Regardng my question , I didn't expect standards could address business terms.  I was asking whether standardization (e.g. standardized receipts) could be used to address bad debt.
+16:55:07 <wseltzer> [wseltzer notes that W3C can make recommendations, at the behest of its members' consensus]
+16:55:24 <dsr> Phobeo: if visa and mastercard removed their fees, what other reasons would merchants have for using Ripple?
+16:55:42 <ernesto> q?
+16:55:45 <ernesto> q+
+16:56:35 <dsr> Evan: we're more likely to see competition across a wide range of payment solutions. We want to see standards that make it easier for users to have a free choice.
+16:56:55 <dsr> ack stan
+16:57:52 <dsr> Stan: metadata could be one answer given the opportunities for the Ripple ledger.
+16:58:11 <ER> ER has joined #W3Cpayment
+16:58:20 <dsr> Evan: metadata could be attached to any transaction and made public or subject to some form of access control.
+16:58:35 <dsr> ... we've been thinking of SWIFT style clearing
+16:59:28 <bryan> "intelligent data" (or metadata) sounds to me like a double-edged sword, especially one that comes with access control / privacy implications
+16:59:45 <dsr> Max: the sky could be the limit for what could be built on top of the bitcoin technologies, but on the other hand it could be nothing (Laughter)
+16:59:59 <dezell> q- GrayTaylor
+17:00:37 <bryan> +1 to avoiding all discussion of fees in a standards context
+17:01:01 <dsr> XX: Visa and MasterCard aren't here, so let's not refer to unjustified claims about fees
+17:01:06 <ernesto> q-
+17:01:30 <dsr> Evan: I was only referring to what we heard earlier.
+17:01:48 <stanstalnaker> re fees and Visa/MC my comment on bank take - that information is public from MC
+17:01:48 <bryan> ... except that disclosure of such fees might be useful metadata for a payment transaction, something that might drive user choice
+17:02:51 <dsr> Harish: there is a question of whose metadata is involved in transactions, there is a privacy issue here.
+17:03:10 <dsr> Evan: we're very interested in digital receipts and where these are stored.
+17:03:23 <chaals> zakim, close queue
+17:03:23 <Zakim> ok, chaals, the speaker queue is closed
+17:03:42 <stanstalnaker> stanstalnaker has left #W3Cpayment
+17:04:05 <dsr> Erik: let me close up the session!  This is the first time I've seen all of these players in the room, but it is disappointing that MC and Visa aren't.
+17:04:16 <dsr> Stephane makes some closing announcements.
+17:04:28 <dsr> rrsagent, make minutes
+17:04:28 <RRSAgent> I have made the request to generate http://www.w3.org/2014/03/24-w3cpayment-minutes.html dsr
+17:05:57 <wseltzer> [adjourned]
+17:17:44 <mhepp> mhepp has joined #w3cpayment
+17:33:31 <phariramani> phariramani has joined #w3cpayment
+17:39:21 <skddc> skddc has joined #W3Cpayment
+17:56:56 <andym_> andym_ has joined #w3cpayment
+18:23:14 <Harish> Harish has joined #w3cpayment
+19:22:40 <Zakim> Zakim has left #W3Cpayment
+19:25:43 <kees> kees has joined #W3CPayment
+20:32:06 <steph> steph has joined #w3cpayment
+20:40:45 <dka> dka has joined #w3cpayment
+20:59:28 <bgidon> bgidon has joined #w3cpayment
+21:03:10 <mountie> mountie has joined #W3Cpayment
+21:06:11 <dka> dka has joined #w3cpayment
+21:54:32 <bryan> bryan has joined #W3Cpayment
+22:12:13 <cyv> cyv has joined #W3Cpayment
+22:39:43 <mountie> mountie has joined #W3Cpayment
+23:01:54 <mhepp> mhepp has joined #w3cpayment

@@ -1,0 +1,347 @@
+07:59:53 <bryan> topic: Session 4: Enhancing the Customer and Merchant Experience
+08:00:30 <phariramani> phariramani has joined #w3cpayment
+08:00:58 <marie> marie has joined #w3cpayment
+08:01:31 <bryan> Dave_Birch: kickoff on consumer and merchant experience with focus on the frontend
+08:01:48 <bryan> ... people have asked why look at this? things work OK
+08:01:58 <Angie> Angie has joined #w3cpayment
+08:02:10 <bryan> ... but they dont really work for consumers and merchants, basically
+08:02:19 <dsr> dsr has joined #w3cpayment
+08:02:29 <Mauro> Mauro has joined #w3cpayment
+08:02:35 <erik_anderson> erik_anderson has joined #w3cpayment
+08:02:41 <bryan> ... how many paid for the dinner last night with cash (a few respond)
+08:02:42 <jeff> jeff has joined #w3cpayment
+08:03:01 <eriko> eriko has joined #W3Cpayment
+08:03:11 <bryan> ... the paypal payment method did not work, got locked out after three tries due to some suspicion
+08:03:37 <bryan> ... puzzling as my paypal app knows who and where I am.
+08:04:01 <wonsuk> Present+ Wonsuk_Lee
+08:04:07 <bryan> ... the app could figure this out, and just do it since its only 30 euros. we would be moving to the right experience
+08:04:23 <jungkees> jungkees has joined #W3CPAYMENT
+08:04:25 <SartoriMichele> SartoriMichele has joined #W3CPayment
+08:04:25 <phobeo> phobeo has joined #w3cpayment
+08:04:45 <jungkees> present+ Jungkee_Song
+08:04:59 <virginie> virginie has joined #w3cpayment
+08:05:21 <bryan> ... I use Halo in london (taxi service). the app shows you the license # and picture of the driver. you tell them where you're going, you get there, and walk off. payment is automatic. there is no payment experience.
+08:05:26 <mdadas> mdadas has joined #w3cpayment
+08:05:53 <bryan> ... no one looks forward to payment, they look forward to buying stuff. payment needs to be transparent, out of the loop
+08:06:13 <kjheimark> kjheimark has joined #w3cpayment
+08:06:20 <Floris> Floris has joined #W3CPAYMENT
+08:06:46 <bryan> ... all sorts of clever stuff will enable this experience. where is dave, is this activity normal, don't bother him.
+08:06:55 <manu3> manu3 has joined #W3Cpayment
+08:07:06 <bryan> ... we should make the experience vanish, set the bar high.
+08:07:30 <bryan> ... its not good to make it easy for me to type in a card . that's a hack.
+08:07:38 <phobeo> s/Halo/Hailo/
+08:08:12 <bryan> ... cards as the central metaphor for payment is anachronistic. we dont want to make cards work better on the web. its 1949 tech, and too dangerous now.
+08:08:23 <Ori_Eisen> Ori_Eisen has joined #W3Cpayment
+08:09:12 <bryan> ... knowing that use of cards is risky, and that eventually you will be attacked, please imagine further forward.
+08:09:17 <dka> dka has joined #w3cpayment
+08:09:54 <bryan> ... starting with a merchant perspective now
+08:10:15 <kennyluck> kennyluck has joined #W3Cpayment
+08:10:33 <bryan> ... Gray Taylor (NACS - @grayotaylor)
+08:10:42 <Angie> Angie has joined #w3cpayment
+08:11:33 <bryan> Gray_Taylor: represent PCATS & NACS, attached to convenience stores in the US, involved in system data exchange
+08:12:03 <bmathis> bmathis has joined #w3cpayment
+08:12:04 <bryan> ... payments is 30% of our effort. mobile commerce will increase that, so we are focused on this work today
+08:12:54 <bryan> ... where are we? the system is broken. in the 70s there was no need for data visibility, data was static, magstripe based
+08:13:23 <bryan> ... a lot of people are being hacked. 1.6B cards, 1.5B have been reissued.
+08:13:58 <bryan> ... this is about a 10$B problem in the US, just the cost of fraud to banks
+08:14:17 <m4nu> Gray: Fraud cost is 6 basis points... that's just due to fraud.
+08:14:18 <bryan> ... another problem is segmentation of the customer to the merchant. knowing your customer is important.
+08:14:36 <bryan> ... e.g. walmart needs to know who is buying what, and they don't want to get that data from mastercard
+08:14:54 <bryan> ... due to data security, we are moving to EMV
+08:14:57 <james> james has joined #W3Cpayment
+08:15:39 <bryan> ... we are last getting on this tech, and it's not a good feeling.
+08:15:46 <korz> korz has joined #w3cpayment
+08:16:12 <bryan> ... what can we do? we wish that mobile was ready, because we feel like a real late comer to an old tech
+08:16:42 <bryan> ... major oil companies have no plans to implement EMV, due to poor ROI
+08:17:25 <bryan> ... incrementalism in the card business creates heartburn. todays system is based upon the account, more important than the person.
+08:17:48 <bryan> ... the system is moving toward the person, who can select the card. card companies don't like that, banks are ambivalent
+08:18:03 <lesellier> lesellier has joined #w3cpayment
+08:18:20 <bryan> ... W3C's job is to boil this ocean. this is a critical subset of global commerce, and shouldn't be a walled garden for the web
+08:18:36 <bryan> ... tech has the ability to overturn monopolies
+08:19:05 <bryan> ... US Payments SOI 2016 slide
+08:19:29 <korz> @bryan i like the focus on the person, not card. good step
+08:19:37 <bryan> ... debit is the single largest thing going forward, driven by the banking crisis in 2008
+08:19:47 <bryan> ... people are living in their means more now
+08:20:14 <bryan> ... 2006-7 we hit equilibrium with paper on the way out
+08:20:57 <bryan> ... cstore profile vs card fees graph shows fees pulling away from pretax profit
+08:21:12 <erik_anderson> Was that a use case? 2 fat guys arguing over a ham sandwich?
+08:21:23 <bryan> ... the fees are passed onto consumers, 1$B of subsidization
+08:21:32 <bryan> ... the only higher cost is labor
+08:21:50 <m4nu> Gray: If you pay cash, you pay over $400 a year to subsidize the card industry.
+08:22:18 <bryan> ... re cost/liter, 2/3 of margin is gross profit
+08:22:31 <bryan> ... much is cost of unauthenticated card use
+08:22:55 <bryan> ... focusing on business and consumer in the payments ecosystem
+08:25:14 <bryan> ... (totally lost on this slide - not sure what's being said...!)
+08:25:46 <bryan> ... customers get steered to where discounts are offered
+08:26:18 <bryan> ... re method of payment, they are changing, polluting the card handling environment
+08:26:43 <bryan> ... we have to enable these methods but not have them affect the card vendor environment
+08:27:26 <bryan> (discussion about PCI... not sure who is talking)
+08:27:30 <gmandyam> gmandyam has joined #W3Cpayment
+08:27:43 <chaals> chaals has joined #w3cpayment
+08:27:43 <schuki> bryan: surname is king i think
+08:27:49 <schuki> bryan: jeremy king?!
+08:27:51 <Ori_Eisen> Jeremy King is speaking, from PCI
+08:28:20 <bryan> (seems like an internal conflict in the payment industry. don't know the context, terms, etc... can't scribe this well)
+08:28:29 <kodonog> kodonog has joined #w3cpayment
+08:28:45 <bryan> (please add notes anyone if you understand this)
+08:29:04 <bryan> ... we are turning a battleship here. PCI has helped re a finite set of things to look at
+08:29:10 <AxelNennker> AxelNennker has joined #w3cpayment
+08:29:10 <bryan> (anyone know what PCI is?)
+08:29:29 <mountie> Payment Card Industry
+08:29:36 <mountie> DSS Data Security Standard
+08:29:38 <schuki> bryan: standards council, security I think
+08:29:41 <bryan> ... it's a huge science project to become compliant. our #1 threat vector (dispenser skimming) was excluded from PCI
+08:29:54 <wseltzer> -> https://www.pcisecuritystandards.org/ PCI
+08:29:56 <bryan> ... defending PCI, it provided a clearinghouse to mitigate risk
+08:30:11 <andym> andym has joined #w3cpayment
+08:30:31 <bryan> ... when it comes to trust, banks are #1, the crisis dipped that, but they are still #1 going forward
+08:30:46 <bryan> ... payments in flux - the perfect storm
+08:30:59 <bryan> ... for profit without competition is bad
+08:31:01 <TomPic> TomPic has joined #W3CPayment
+08:31:10 <phobeo> bryan: Dave asked Gray about how much fraud had gone down since the PCI implementation. Jeremy complained about this being out of order. Dave responded that he wanted the data point to know what did merchants get back from this investment and there was discussion about which other areas this helped on. There was admission that they were slightly better off with it but not sure if it wasn't worth it to redo the whole security model, but for now they had [CUT]
+08:31:25 <bryan> ... bank brick and mortal infratstructure is a cost holding them back
+08:31:41 <bryan> ... it will be difficult to get the profit margin from the banks
+08:31:51 <chaals> s/mortal/mortar/
+08:32:12 <phobeo> bryan: for ref pci dss docs are at https://www.pcisecuritystandards.org/security_standards/
+08:32:20 <bryan> ... a consumer focus will be required, mobile and online banking will be changed by focus on the consumer
+08:33:00 <m4nu> Gray: We need to re-think how we do digital identities and security.
+08:33:10 <bryan> ... mobilization will rise, mobile wallets are will become the mobile briefcase. digital identities and megabit encrypted PINs are where we need to get to
+08:33:37 <bryan> Dave_Birch: digital ID problem is underlying many of these problems
+08:33:47 <bgidon> bgidon has joined #W3cpayment
+08:34:17 <bryan> Gray_Taylor: with trust credentials, we can take ACH from Zimbabwe and be reasonably assured for it
+08:34:29 <m4nu> Gray: With the appropriate trust credentials floating around, I could bank w/ different people and decrease fraud.
+08:34:33 <AxelNennker> ACH=?
+08:34:43 <bryan> ... re tokenization, there are about 6 standsards
+08:35:19 <AxelNennker> thanks m4nu
+08:35:52 <bryan> ... we need to kill standards as readily as we create standards - look at what's out there to leverage it, that will ease globalization
+08:36:02 <bryan> ... Digital Identity
+08:36:43 <bryan> ... counterfit IDs are easily obtained. transaction auth is similar to the boarding process
+08:37:04 <bryan> ... all of the financial system is depending upon authentication of the individual
+08:37:17 <m4nu> Gray: Digital identity will preserve our freedom online, not take it away.
+08:37:20 <bryan> ... this is something that will preserve freedom
+08:37:36 <m4nu> Gray: There is still no way to digitally sign any contract, how dumb is that?
+08:37:41 <bryan> ... guiding access, medical records, etc...
+08:37:43 <erik_anderson> +1 passport is one of the weakest areas in need of security enhancements and digital ID's
+08:38:01 <m4nu> Gray: I believe in standards - that's the way forward.
+08:38:08 <Jorg> Jorg has joined #W3Cpayment
+08:38:16 <bryan> ... i believe in standards, you need to come up with building blocks. any safe system has not reached volume yet
+08:38:32 <bryan> ... we need plausible deniability of risk
+08:38:59 <bryan> ... what are the best practices systems should be following? consumers are just kicking the tires, and hacks can take wind out of the sales
+08:39:44 <bryan> ... uniform datasets; at the end of the day, moving money is not rocket science; datasets need to be flexible and amended per the payment type
+08:40:08 <bryan> ... re digital receipt standards, look to fiscal receipt standards
+08:40:12 <m4nu> Gray: Important to bring more data into the digital receipts, look to people that need fiscal reporting in their receipts.
+08:40:19 <melvster> melvster has joined #W3Cpayment
+08:41:12 <bryan> ... "out of the box" use cases; data security is about minimizing value and maximizibng effort; hacking ROI needs to be low
+08:41:41 <bryan> ... we need to look to how we can keep credentials in a small ecosystem and use tokens outside it
+08:41:45 <m4nu> Gray: We should keep credentials in a small ecosystem, use tokens/intermediaries.
+08:42:26 <bryan> Robin_Berjon: I work for W3C, editing HTML
+08:43:09 <kennyluck> kennyluck has joined #W3Cpayment
+08:43:29 <bryan> ... acronym blizzard ... things are sinking in; from the perspective of the web platform, these thoughts are about how we can work together for payments on the web
+08:44:09 <bryan> ... it would be easy to standardize what is done today; APIs would be easy. but they would not be innovation conducive
+08:44:43 <bryan> ... a better approach is an "intents" based approach; like HTTP, when you ask for something you don't know what will result, you just  get something back
+08:45:46 <bryan> ... we can reproduce a similar system for payments, avoiding the "nascar" problem, i.e. that user have to choose among a lot of logos for providers e.g. socnet "share" buttons; this hurts the small players
+08:46:27 <bryan> ... "intents" on the android platform indicates something the user wants to do; the user is allowed to pick among services that are available to them
+08:46:53 <bryan> ... we can include payment in the intents architecture as an "intent to pay"
+08:47:13 <bryan> (I think I said the same thing yesterday, and it was in the discussion of web intents earlier)
+08:47:46 <bryan> ... intents can provide a very simple flow for the web platform, that is orthogonal to the underlying payment system
+08:48:38 <bryan> Dave_Birch: we didn't test the notion of being able to pay without any understanding of the underlying payment system; to decouple it sounds great but it is real;
+08:49:03 <bryan> Robin_Berjon: domain experts need to help us with the mapping to the payment level
+08:49:33 <bryan> ... we need to avoid locking ourselves into what payment is today, and move to decoupling at the design level
+08:49:47 <dsr> rrsagent, make minutes
+08:49:47 <RRSAgent> I have made the request to generate http://www.w3.org/2014/03/25-w3cpayment-minutes.html dsr
+08:49:51 <m4nu> Use Case: Decouple payments as much as possible. Base on an intent-to-pay mechanism
+08:50:41 <bryan> Cyril_Vignet: I work for BPCE, a bank in France; I have worked in the payment systems for 25 years
+08:51:11 <bryan> ... focusing on one point from the paper, the SEPAmail project
+08:52:22 <bryan> ... we have clients, merchants, cardholders, etc; B2B, B2C... there is a lot of savings that could be made, Euro billions, to be saved
+08:52:47 <bryan> ... the idea of SEPAmail was to define not only a protocol but how actors interact
+08:53:12 <bryan> ... slide 2 Trusted Third Party Processors
+08:53:35 <bryan> ... TTPP Trusted Third Party Processors
+08:54:11 <bryan> ... ABC Inc talks to TTPPs in a trapezoid arch to Alice
+08:54:38 <bryan> ... SEPAmail is based upon web standards, ISO 20022 or xlm data formats
+08:54:42 <TomPic> Intend is nice but might be preventing the user to discover new services, no ?
+08:55:26 <dsr> SEPAmail uses web/internet standards to encapsulate ISO20022 or xlm data format for payments via trusted third party processors.
+08:55:47 <bryan> ... the protocol is mandatory between the TTPPs, optional between the endpoints and TTPP
+08:56:19 <bryan> ... what we want to avoid; one party must be connected to the TTPP of the other party (thus the trapezoid arch)
+08:56:39 <bryan> ... each client can choose their TTPP
+08:57:53 <bryan> ... we also want to avoid subject-specific protocols, and use encapsulation for that
+08:58:38 <bryan> ... we also want to avoid ACH or CSM; these are not very well regulated; ACH is quite expensive; much less than manual but still expensive
+08:59:09 <bryan> ... it was important not to have a central monitoring point, enabling freedom to do what you want
+09:00:08 <bryan> ... experience with SEPAmail; based upon ISI 20022, with different layers for bill presentment, direct debit e-mandates, IBAN control, data along payments
+09:00:44 <skddc> skddc has joined #W3Cpayment
+09:01:28 <bryan> ... (discussing EPC...not sure what the points being made are)
+09:02:36 <bryan> ... (what is IBAN?)
+09:03:01 <bryan> ... we will launch this in 2014 a network for TTPPs
+09:03:40 <marie> [crÃ©dit mutuel, crÃ©dit agricole, sociÃ©tÃ© gÃ©nÃ©rale, BPCE, @@ banks in France}
+09:04:02 <bryan> ... design is in progress, "families for TTPP than may not be PSP" (someone explain if possible...)
+09:04:31 <bryan> ... SEPAmail is an "overal arch that solves (part) of the auth problem"
+09:04:48 <Jonny> Jonny has joined #w3cpayment
+09:05:10 <marie> s/@@/BNP Paribas
+09:05:17 <dezell> dezell has joined #w3cpayment
+09:05:35 <bryan> ... example of the "APPHIRE family", implemented this three years ago. it's very simple from the banks' view; self-care for the user
+09:06:02 <bryan> ... the corresponding private keys is in the mobile, in the secure element or NFC card
+09:06:07 <dsr> s/APPHIRE/SAPPHIRE/
+09:06:19 <bryan> ... if the payment is low, you may not need very high security
+09:07:12 <bryan> ... with this generic approach we have demonstrated ability to support more things beyond payment
+09:07:28 <lesellier> lesellier has joined #w3cpayment
+09:07:47 <bryan> ... SEPAmail is CC-SA Paternity licensed
+09:08:18 <phobeo> link is wrong in the slide, should be http://documentation.sepamail.eu/
+09:08:21 <justmoon> justmoon has joined #W3Cpayment
+09:09:26 <bryan> Joseph_Potvin: here I am as an economist, 15 years in the IT domain
+09:09:40 <bryan> ... re the UI for digital payments
+09:09:43 <Angie> Angie has joined #w3cpayment
+09:10:05 <bryan> ... leave it up if you clicked on conversion options in paypal's screen
+09:12:27 <bryan> ... amounts were quoted in local and Euros; this illustrates and underlying assumption, that there is only one exchange rate option; this example though showed other options e.g. between paypal and mastercard/visa, the diff being whether you know the rate at the time of the transaction
+09:13:25 <bryan> ... I chose the credit card, due to fewer intermidiaries, rather than use paypal then intermediaries
+09:14:28 <bryan> ... re philosophy of money; the tokenization of human obligations; a means of accounting them
+09:14:53 <bryan> ... if we did UML for the payment process, three use cases for money
+09:15:43 <bryan> ... unit of account; medium of exchange (communications); value aspect (descriptors or standard of deferred payment, stored value - I call it a value benchmark)
+09:16:19 <bryan> ... doing the use case and relationship diagrams in UML; who are the stick figures?; who gets to choose the value benchmark etc?
+09:17:03 <bryan> ... we are used to those choices; but not for this example (the exchange rate options showed earlier)
+09:17:42 <bryan> ... in this paypal example, who got to choose the value benchmark? there were two parties in the transaction, did either get to choose?
+09:17:55 <bryan> ... happy that paypal provided this choice, but whose role is it?
+09:19:09 <bryan> ... example of a taxi and porter to the check-in. if the porter opens the bags and takes something "it's my business model to take something" - it's not the intermediary's role to determine aspects of price, rather to define service fees
+09:19:27 <bryan> ... conversion rate is not a service fee, it's a component of the money
+09:20:12 <bryan> ... there is a lot more to this example choice than is apparent
+09:20:32 <bryan> ... in the WWW, we need a way to code these things
+09:21:14 <bryan> ... thinking about this in the UML terms, where do the lines go and what roles do the actors have, this is a direct line to the theory of money
+09:21:31 <r2d2> r2d2 has joined #w3cpayment
+09:22:19 <bryan> Neil_Mason-Jones: I represent Trans-Africa Solutions, a South Africa startup; bringing the emerging market / unbanked perspective
+09:22:24 <bmathis> bmathis has joined #W3Cpayment
+09:22:37 <kodonog> kodonog has joined #w3cpayment
+09:22:38 <steph> steph has joined #w3cpayment
+09:22:39 <bryan> ... the market is very difficult to authenticate
+09:22:53 <bryan> ... we are trying to meet them in the way they want to transact; mostly cash
+09:23:00 <phobeo> small highlight over Josephs comments: many payment providers, including paypal, do not call this a conversion but mention it specifically as "cross border and currency conversion fees", as there are both variable and fixed costs associated with the networks they use to move money
+09:23:19 <bryan> ... in SA we have a huge divide in economic capability
+09:23:24 <phobeo> so yes, they are fees and you accept them as so on the payment terms and conditions
+09:23:59 <bryan> ... re the unbanked, in SA as much as 80%, scenarios such as this occur; in the living in city center, traveling back to home is very expensive
+09:24:09 <Jonny> Jonny has joined #w3cpayment
+09:24:18 <bryan> ... outside the city center, you can spend a lot just going to buy a ticket
+09:24:42 <bryan> ... we find that there is a resistance to putting cash anywhere, in wallets or savings
+09:25:23 <bryan> ... we are trying to bridge the last mile, using the mobile devices, libraries or cafes to access the product, gain a token and make a payment in a physical location
+09:25:34 <bryan> ... tokens can be barcodes, QR codes, etc
+09:26:07 <bryan> ... this is slightly different use case; between request and receipt, it can take days
+09:26:50 <bryan> ... its easy to expect all to be online; that the offline are not that large a subset; that may be but we need other options and fluidity to support them
+09:27:55 <bryan> ... also there's a large opportunity for tech to help; but in Africa charges are obscene re the service bring provided; people thus distrust the banks; in the UK it is very different, the cost factors are so low
+09:28:20 <bryan> ... tech talked about in this meeting e.g. crypto currencies can have large impact in emerging economies
+09:28:46 <bryan> ... though banks etc resist on every possible level, we need tech competition to bring about change
+09:29:13 <erik_anderson> q+
+09:29:15 <bryan> Dave_Birch: summing up; Gray established the merchant needs
+09:29:26 <bryan> ... Robin suggested a web framework for this
+09:29:40 <Zakim> Zakim has joined #w3cpayment
+09:29:40 <bryan> ... Cyril suggested a standard way to move around the data
+09:29:47 <wseltzer> q+ erik_anderson
+09:30:24 <bryan> ... Joseph pointed out that we have collapsed unit of accounts, building upon other work
+09:30:44 <bryan> ... Neil made the point that the medium of exchange needs to be extended into cash
+09:30:57 <m4nu> q?
+09:31:01 <chaals> usecase: allowing for a settlement that is based on a cash transfer
+09:31:12 <jphong_> jphong_ has joined #w3cpayment
+09:31:14 <bryan> ... e.e. walmart has a capability to buy online and pay in cash
+09:31:21 <bryan> ... to the floor
+09:31:21 <marie> marie has joined #w3cpayment
+09:31:35 <marie> q?
+09:31:51 <bryan> Stephane_W3C: you make a good point re the notion of decoupling payment systems with intent of payment
+09:32:03 <bryan> ... this is a critical point; we need layer separation;
+09:32:22 <m4nu> q+ to ask about entry points for change being merchants (MCX, could we deploy web payments in fuel industry?)
+09:32:43 <bryan> ... having an easy way for merchants to support multiple systems and a method for user to select...
+09:33:42 <bryan> Dave_Birch: between the phone and a payment terminal, there is a lot of chance for complex options to take place; standards may need to address the complext negotiations that will occur
+09:34:27 <bryan> Cyril: part of standards is to define the value chain of payments
+09:36:02 <bryan> Gray: taking into account foreign exchange, what I care about in the end is what I will get charged for
+09:36:17 <marie> q?
+09:36:18 <bryan> ... quoting the final ticket price will let the user choose
+09:37:18 <tobie__> q?
+09:37:19 <steph> steph has joined #w3cpayment
+09:37:25 <bryan> Michel: there's no breakout that makes it possible to know what cut was taken by whom;
+09:37:58 <bryan> ... re transparency and seamlessness, they don't correlate; the more choices are offered, the more complex the UX
+09:38:15 <bryan> Gray: customers will never read those screens
+09:38:36 <ernesto> q+
+09:38:48 <marie> ack erik
+09:39:10 <bryan> Eric(Bloomberg): what about POS terminals, how to integrate what we come up with here
+09:40:11 <bryan> Gray: fees added happen in the back office, not the POS. pricing queues at the POS are philosohically great, but impossible
+09:40:38 <bryan> ... if we can present the final ticket across multiple vendors and give choice that would be great
+09:40:59 <Jorg> Jorg has joined #W3Cpayment
+09:41:11 <Jonny> Jonny has joined #w3cpayment
+09:41:13 <bryan> ... our POS challenge is painting the screen as the user is using it; we have to keep it simple for the user
+09:41:38 <bryan> ... moving the POS screen down to the phone, you can see exactly what's going on
+09:42:05 <erik_anderson> usecase: Move the point of sales terminal off to the users mobile ?
+09:42:06 <bryan> Cyril: need for customer choice may be based upon size of the transaction
+09:42:39 <Angie> Angie has joined #w3cpayment
+09:42:51 <bryan> s/Cyril/Michel/
+09:44:02 <bryan> Cyril: is is possible to automate options at the POS, for POS with web-based presentation
+09:45:52 <bryan> Dave: existing systems do limit us, so we mustn't limit our standards efforts to the existing card system, but look to more options, with the understanding that one implementation of the standard may ultimately be card-based
+09:46:31 <bryan> Michel: should a standard be explicit about roles? would it be acceptable for intermediaries to propose components of price?
+09:46:52 <phobeo> q+
+09:47:00 <bryan> ... in multiple currency transactions, the intermediary does define components of price
+09:47:45 <wseltzer>  ack m4nu
+09:47:45 <Zakim> m4nu, you wanted to ask about entry points for change being merchants (MCX, could we deploy web payments in fuel industry?)
+09:47:50 <marie> ack m4
+09:48:18 <bryan> Manu: it's good to think past cards; who will be the early adopters? probably not the banks unless fees are preserved
+09:48:32 <bryan> ... convincing consumers may also be difficult
+09:48:42 <bryan> Dave: successful wallets are from retailers
+09:49:22 <bryan> Manu: exactly; retailers will push this into the market; W3C will need to figure out how to work with them
+09:49:32 <bryan> Dave: we do need to build those bridges
+09:49:39 <Ori_Eisen> What is the problem we are trying to solve?
+09:49:53 <marie> q+ emil
+09:50:11 <bryan> Michel: if the banks are changing, they will change with the game also if the economics are right
+09:52:07 <bryan> Dave: banks also have an interest in driving down costs
+09:53:03 <bryan> Gray: the limus test for retailers will be can they get banks to change from the interbank model
+09:53:34 <bryan> ... retailers want online and POS to work the same
+09:54:03 <m4nu> ACTION: Manu to reach out to MCX to try and get them involved in the W3C work on payments.
+09:54:13 <bryan> Dave: retailers will incentivize customers to opt for MCX
+09:54:17 <bryan> (what is MCX?)
+09:54:30 <marie> ack ernes
+09:55:07 <dezell> Merchant Customer Exchange
+09:55:08 <marie> zakim, close the queue
+09:55:08 <Zakim> ok, marie, the speaker queue is closed
+09:55:21 <bryan> Ernesto: re the point about negotiation on the payment process, users may need to choose manually since you can't always know what balances are on the different payment methods
+09:55:43 <bryan> ... availability of options will also depend upon location
+09:56:26 <bryan> Dave: what I am saying is there can be a wider set of possibilities
+09:56:38 <virginie> note MCX : http://www.mcx.com/
+09:57:09 <bryan> Ernesto: range of payment service providers can be loaded into the wallet in the short term, but balances may not be known
+09:57:36 <bryan> ... user behavior/preferences can also drive automated choices
+09:58:03 <ernesto> q?
+09:58:20 <bryan> Dave: policies can be set and downloaded from many sources and executed at the POS
+09:58:27 <steph> zakim, close queue
+09:58:27 <Zakim> ok, steph, the speaker queue is closed
+09:58:38 <bryan> Tobie: this is typically where user agents compete
+09:58:49 <marie> ack pho
+09:58:51 <Jonny> Jonny has joined #w3cpayment
+09:59:41 <Jonny> Jonny has joined #w3cpayment
+09:59:48 <bryan> Ricardo: API integrations in browsers will likely cause Visa/MC to cooperate; so we shouldn't expect them to resist this. The standards won't say anything about fees so that will change on its own
+10:00:27 <bryan> ... is we assume that we have to tell intermediaries what they have to do we are already making some assumptions
+10:00:57 <bryan> Michel: what I was saying was that the role that intermediaries are taking needs to be visible in the standard
+10:01:49 <bryan> Ricardo: there you are already supposing there will be intermediaries, and how many there are is unclear
+10:02:09 <bryan> s/Michel/Joseph/
+10:02:10 <ernesto> q?
+10:02:23 <marie> ack emil
+10:02:43 <bryan> Emil: question re SEPAmail; trust is important, what will be the consumer protections?
+10:04:31 <bryan> Cyril: consumer protection will be provided by the TTPP; the payload will define terms etc; the payment request will have all the data, the idea is to have all the info at the customer side so they can make decisions
+10:04:46 <jameslei> jameslei has joined #W3Cpayment
+10:05:20 <bryan> Dave: under the current systems, these aspects are all bundled. A system like SEPAmail will allow unbundling of those elements, which can then become part of a negotiation.
+10:05:59 <bryan> ... Specialist Intermediaries may arise who can provide that role; Visa/MC may actually fulfill that role
+10:06:44 <bryan> Alexander(EC): we have draft legislation that payer should have the final word on which payment service should be used
+10:07:07 <bryan> (end of session)
+10:07:40 <steph> steph has joined #w3cpayment
+10:14:29 <andym> andym has joined #w3cpayment
+10:15:09 <KenI_> KenI_ has joined #w3cpayment
+10:29:08 <Danny_Jeong> Danny_Jeong has joined #W3CPayment
+10:29:24 <Danny> Danny has joined #W3CPayment
+10:30:26 <max> max has joined #w3cpayment
+10:34:09 <chaals> q+ to say this is how you get in the queue
+10:34:18 <chaals> zakim, open the queue
+10:34:18 <Zakim> ok, chaals, the speaker queue is open
+10:34:29 <chaals> q+ to say now this is right
+10:34:33 <chaals> ack chaals
+10:34:33 <Zakim> chaals, you wanted to say now this is right
+10:34:36 <bryan> bryan has joined #W3Cpayment
+10:36:11 <dka> dka has joined #w3cpayment
+10:36:15 <mountie> mountie has joined #W3Cpayment
+10:36:58 <steph> steph has joined #w3cpayment
+10:38:34 <schuki> chaals: are you scribing?!
+10:38:42 <skddc> skddc has joined #W3Cpayment
+10:38:54 <phobeo> phobeo has joined #w3cpayment
+10:38:55 <bmathis> bmathis has joined #W3Cpayment
+10:38:56 <Floris> Floris has joined #W3CPAYMENT
+10:38:57 <chaals> scribe: Chaals
+10:39:00 <schuki> thanks
+

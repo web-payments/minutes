@@ -1,0 +1,404 @@
+09:35:02 <m4nu> Topic: Overview of Current and Future Payment Ecosystems
+09:35:09 <mountie> mountie has joined #W3Cpayment
+09:35:19 <virginie> virginie has joined #w3cpayment
+09:35:29 <m4nu> Stan: Hello, I work for Hub Culture - one of the first social networks. We operate a digital currency, It's been moving into financial markets
+09:35:43 <m4nu> Stan: I want to talk about the idea of reserves, social contract, and identity.
+09:36:15 <m4nu> Stan: These are core to payments. The size of where we see digital currency - by 2017 2.5 billion unbanked coming online - low incomes, not profitable to find banking solutions for them.
+09:36:28 <NBREDS> NBREDS has joined #W3CPayment
+09:36:35 <m4nu> Stan: 2018 bots doing around $1T in transactions - humans now playing day to day in transaction.
+09:36:43 <darobin> darobin has joined #W3Cpayment
+09:36:45 <m4nu> Stan: 2020 - 50 billion connected devices
+09:37:41 <Parslow> Parslow has joined #W3Cpayment
+09:37:45 <m4nu> Stan: Social connections are  important, virtual currency allows us to create/maintain accounts relative to connections.
+09:38:22 <m4nu> Stan: A few things in Ven that are valuable - Ven is 100% asset backed - wide variety of currencies - it's stable... 50% less volatile than other currencies.
+09:38:41 <bryan> Any guidance on use case capturing for the minutes? otherwise i'll just preface notes in irc with "usecase: "
+09:38:42 <m4nu> Stan: It's global, it's secure - you don't use credit card / banking system to move it around. zero transaction cost.
+09:39:38 <m4nu> Stan: We introduced "carbon" into asset - so actual money backing currency builds in natural protection for nature. This is our answer to "social contract" concept.
+09:39:39 <bryan> usecase: autobots that execute financial operations on behalf of users
+09:39:52 <dezell> dezell has joined #w3cpayment
+09:39:54 <m4nu> Stan: Even though Ven isn't fiat - it is a ledger of value and recorder of value.
+09:39:54 <Angie> Angie has joined #w3cpayment
+09:40:03 <mdadas> mdadas has joined #w3cpayment
+09:40:18 <m4nu> Stan: These currencies can have positive benefit to society.
+09:40:43 <m4nu> Stan: We think we'll do $1B in transactions this year - it's traded in the global markets.
+09:41:13 <m4nu> Stan: Social network that runs Ven is an open source set of APIs. Apps on core platform are moving towards open source so that others can innovate/build around it.
+09:41:31 <chaals> s/Any guidance on use case capturing for the minutes? otherwise i'll just preface notes in irc with "usecase: "//
+09:41:31 <m4nu> Stan shows Hubs that show Ven.
+09:41:50 <m4nu> Stan: We're working w/ partners - authorities that can issue/redeem Ven.
+09:42:22 <m4nu> Stan: We're working on identity - HubID - KYC and AML solution for digital currency on the Internet - can be used by anyone.
+09:42:23 <phobeo> phobeo has joined #w3cpayment
+09:42:24 <bryan> kyc? aml?
+09:42:33 <m4nu> KYC == Know Your Customer
+09:42:38 <m4nu> AML == Anti-Money Laundering
+09:42:40 <phariramani> AML = Anti Money Laundering
+09:43:07 <HannesTschofenig> HannesTschofenig has joined #W3CPayment
+09:43:09 <m4nu> Stan: We're creating open source crypto vaults that are issuing identity to individual uses on the Web. You own this ID - self soverignty on the Web.
+09:43:32 <m4nu> Stan: We don't sell the data that's connected to underlying users - we work off of a transaction model. Data is safe and not being looked at.
+09:44:17 <m4nu> Stan: In return for this, we can give you a unique profile/badge - more data you put into that vault, it generates an "aura" on the Web. They only have to look at your HubID to know how authenticated you are.
+09:44:24 <bryan> usecase: personal vault can host information/assets and issue ids useful for various things (e.g. payments?)
+09:44:41 <m4nu> Stan: Size of your network, bank number - you own this stuff yourself. No one can access this data w/o your knowledge.
+09:44:57 <m4nu> Stan: In this way, you have much more information, much more granular control.
+09:45:09 <mauro> s/soverignty/sovereignty/
+09:45:25 <virginie> HubID : http://developers.hubculture.com/info/hubid
+09:45:30 <m4nu> Loud ringing drives Stan off of the stage.
+09:45:43 <bryan> usecase: managed access to personal identity/attributes as economically valuable assets in a payment system
+09:46:09 <m4nu> Ken Isaacson from US Federal Reserve takes the stage.
+09:46:25 <m4nu> Ken: I lead Future Payment team - national US Fed effort. Improves the payment system in the US.
+09:47:09 <m4nu> Ken: Fed has multiple responsibilities - provide financial services to depository institutions - that's where this intiative is being led.
+09:47:26 <m4nu> Ken: Supervisors - we don't represent the monetary policy or regulatory side.
+09:47:58 <m4nu> Ken: One of the things we do is every 5 years, we update our strategic direction - essence of refresh is to improve safety-speed of the system, from end to end.
+09:48:09 <m4nu> Ken: Renewed focus on speed - make payments faster.
+09:48:31 <m4nu> Ken: End-to-end - Fed has focused more on inter-bank - now we're focused on end users.
+09:48:59 <mauro> s/safety-speed/safety-speed-efficiency/
+09:49:03 <m4nu> Ken: We put out a public consultation to have the Fed put some ideas out there on the problem in the US - what we can improve - desired outcomes.
+09:49:56 <wseltzer> -> http://fedpaymentsimprovement.org/wp-content/uploads/2013/09/Payment_System_Improvement-Public_Consultation_Paper.pdf Fed's Payment System Improvement Public Consultation Paper
+09:50:06 <m4nu> Ken: Desired outcomes - strategic industry engagement, ubiquitous  real-time payment capability, improved efficiency, cross-border payment improvements, enhanced payments safety and security.
+09:50:34 <kodonog> kodonog has joined #w3cpayment
+09:50:44 <m4nu> Ken: Multiple work streams feeding into the Fed - three other work streams.
+09:51:19 <m4nu> Ken: Fed's retail payment study - important to figure out where we are.
+09:51:37 <m4nu> Ken: Data of 2012 released publicly in 2013 - 122B total
+09:51:47 <m4nu> ACH == Automated Clearing House (bank-based payments)
+09:52:19 <m4nu> Ken: Breakdown - less checks, about the same ACH, more credit card, much more debit card, pre-paid card...
+09:52:42 <m4nu> Ken: Highest areas of growth are Debit Cards / Prepaid.
+09:53:04 <yiminghe> yiminghe has joined #W3Cpayment
+09:53:26 <m4nu> Ken: Public consultation paper - asked anyone to give input on how we could improve.
+09:53:39 <marie> marie has joined #w3cpayment
+09:53:50 <m4nu> Ken: 200 responses - bottom line - agreed on gaps/opportunities that US Fed put out there.
+09:54:53 <m4nu> Ken: Fed should become more active, non-banks want to get involved, desire for faster payments, unfairness in risk management.
+09:54:59 <chaals> present+ KenIsaacson, OlivierMaas, StanStalnaker, HarishNatarajan, ErikAnderson
+09:55:14 <skddc> skddc has joined #W3Cpayment
+09:55:21 <ThomasPicard> ThomasPicard has joined #W3CPayment
+09:55:23 <mauro> present+ JeremyKing
+09:55:27 <m4nu> Ken: End-user research - 1,200 consumers - resuls are here
+09:55:52 <m4nu> Ken: 69%-75% prefer instant or one-hour payment systems.
+09:56:25 <m4nu> Chaals: Next speaker is Yvgeny from Yandex.
+09:57:33 <ernesto> s/Yvgeny/Evgeny/
+09:57:42 <m4nu> Yvgeny: Yandex Money is the payment system provider for Yandex - huge search engine/shopping company in Russia.
+09:58:09 <mauro> s/Yvgeny/Evgeny/
+09:58:21 <m4nu> Yvgeny: This is a payment service provider perspective. We need a standard?
+09:58:29 <wseltzer> s/Yvgeny/Evgeny/g
+09:58:30 <mauro> s/Yvgeny/Evgeny/
+09:59:08 <m4nu> Evgeny: We want to decrease the friction for user payment, we want to improve security, the standard could help both of these things.
+09:59:49 <m4nu> Evgeny: We want to provide interoperability - let's talk about markup.
+10:00:16 <m4nu> Evgeny: One parameter, lots of parameters - markup can help user. Browser - start email app.
+10:00:30 <bryan> usecase: invoke payment service via uri scheme
+10:01:21 <bryan> sounds like the earlier vision for web intents, in which "pay" was one of the actions I recommended be on the roadmap
+10:01:29 <m4nu> Evgeny: We want to have a standard like mailto: but in the payments area. We want to help someone that wants to pay via this link markup - payto:mybankcom/payto.xml?item=BigBook&sum=10$account=28394728&someotherparams=foo
+10:01:38 <m4nu> Evgeny: Who can process the payment?
+10:02:27 <m4nu> Evgeny: The benfits is this is just a simple link
+10:02:45 <m4nu> Evgeny: Stuff like this is the sort of stuff we can expect from a standard.
+10:02:56 <m4nu> Evgeny: Once you click the link, the payment process begins.
+10:03:12 <mauro> s/benfits/benefits/
+10:03:14 <chaals> usecase: simple URI system => simple payment markup that developers get right
+10:03:17 <m4nu> Evgeny: Once we initiate the transaction, we need to know where the money comes from.
+10:03:17 <bryan> ernesto, really a solution, but hard to distinguish from use case at this point
+10:03:38 <circ-user-G0J0V> circ-user-G0J0V has joined #w3cpayment
+10:03:38 <chaals> usecase: allow selection of payment processor
+10:04:02 <bryan> i welcome though ideas on what the higher-level use case(s) for this might be
+10:04:11 <m4nu> Evgeny: The source of money can be different, changed during the payment process, this can be complicated infrastructure for banks/payment processors.
+10:04:22 <chaals> s/i welcome though ideas on what the higher-level use case(s) for this might be//
+10:04:45 <chaals> i/sounds like/[/
+10:05:02 <m4nu> Evgeny: We also need to be concerned about the confirmation mechanism (how does buy er say they hve money, seller has the goods)
+10:05:05 <bryan> usecase: switching payment method in the middle of transactions
+10:05:48 <m4nu> Joerg: Would you be able to incorporate user loyalty cards / coupons in your solution?
+10:06:05 <m4nu> Evgeny: We don't wan tto restrict for loyalty cards - maybe not for first version.
+10:06:35 <mauro> s/tto/to/
+10:06:38 <m4nu> Ricardo: This is more a suggestion of an intent-based payment mechanism? Was this a proposal?
+10:06:47 <m4nu> Evgeny: This is an idea, it's supposed to make it easier.
+10:07:02 <m4nu> Chaals next up is Harish.
+10:07:46 <Zakim> Zakim has left #W3Cpayment
+10:07:55 <bryan> re invoking payment via a URI, is a well-known resource essentially equivalent to a uri scheme in this case / for this purpose? that's something to be considered at qa technical level I guess
+10:09:00 <m4nu> Harish: I'm from the world bank, payment system deliveries group. Let's focus on public policy perspectives - safety and efficiency is a goal.
+10:09:00 <chaals> usecase: allow loyalty cards, coupons, etc as a payment mechanism
+10:09:03 <Gray> Gray has joined #w3cpayment
+10:09:18 <m4nu> Harish: We care about affordability - 2.5B who don't have access to payment services can't afford costs.
+10:09:38 <m4nu> Harish: We want access - goal should be to expand access.
+10:10:04 <m4nu> Harish: Moving to electronic is not necessarily an objective - there are costs there - things like credit cards may not be ideal.
+10:10:41 <Zakim> Zakim has joined #w3cpayment
+10:10:59 <m4nu> Harish: There have been studies done on what a good electronic payment mechanisms can do for a country... Brazil did a study that showed that they could save a almost 0.7% of GDP, huge savings.
+10:11:11 <m4nu> Harish: Cost of cash is about $70B to businesses - that's in US.
+10:11:37 <chaals> q?
+10:11:39 <m4nu> Harish: Government payments - small amount of cash distribution to families in Brazil could be reduced by 80% if moved to electronic.
+10:11:55 <chaals> q+ Olivier to give his presentation
+10:12:05 <m4nu> Harish: cost of international remittances is ba - 11% of transaction cost - we want to move to 5% by 2018. From the slide, there's a significant gap
+10:12:06 <chaals> q+ Erik to give his presentation
+10:12:23 <bryan> usecase: national incentives for using web-based payments due to beneficial effects upon economy
+10:12:25 <m4nu> Harish: Moving towards electronic payments - wide disparity
+10:12:58 <m4nu> Harish: Number of cashless transactions (missed slide 6)
+10:13:21 <dka> dka has joined #w3cpayment
+10:13:40 <m4nu> Harish: Here are the factors that matter: infrastructure is bad, competition and cost is bad, government and corporate payments are not being addressed, risk management mechanisms are not adequate.
+10:13:58 <bgidon> bgidon has joined #w3cpayment
+10:14:10 <m4nu> Harish: This is a chart that shows percentage of populatio that has access to payment network (slide 8)
+10:14:20 <m4nu> Harish: 2010 - we looked at diff payment instruments being used.
+10:14:28 <m4nu> Harish: Top payment instrument by volume.
+10:14:32 <bryan> usecase: access to payment systems by non-traditional channels, where barriers exist for traditional channels
+10:14:53 <m4nu> Harish: check usage is substantial in low-income countries. Direct debit are lower in those countries as well.
+10:15:10 <m4nu> Harish: This shows that traditional payment instruments are not reaching the global population.
+10:15:26 <m4nu> Harish: Here are a few trends - technology and new payment needs are key drivers for innovation.
+10:15:33 <chaals> present+ LarsErik
+10:15:40 <chaals> rrsagent, draft minutes
+10:15:40 <RRSAgent> I have made the request to generate http://www.w3.org/2014/03/24-w3cpayment-minutes.html chaals
+10:16:05 <m4nu> Harish: There is a greater involvement from non-banks in retail payments - these are not banks.
+10:16:30 <m4nu> Harish: Pre-paid products are also on the rise - lots of different types of emoney - this is at an early stange.
+10:16:53 <m4nu> Harish: Business model, card payments - greater usage of authentiation mechanisms - biometric, 2 factor, etc.
+10:17:12 <m4nu> Harish: Broad shift toward near-realtime in traditional payment systems - examples in Mexico, India, etc.
+10:17:37 <m4nu> Harish: The objective - universal financial access by 2020.
+10:17:55 <m4nu> Harish: Access could be possible by 2020.
+10:17:57 <tim> tim has joined #W3CPayment
+10:18:16 <m4nu> Chaals: Olivier is next from Worldline.
+10:19:45 <m4nu> Olivier: Where do you draw the line between Web Payment and non-Web payment? We've talked about cash and non-cash payment mechanisms. What is current, what is past? It's not clear.
+10:20:18 <m4nu> Olivier: Basics of payment is a buyer and a seller. Let's say buyer has a smartphone and seller has a POS (Point of Sale)
+10:20:46 <m4nu> Olivier: Let's say they want to do an EMV payment.
+10:21:06 <bryan> emv = https://www.emvco.com/
+10:21:32 <andym> andym has joined #w3cpayment
+10:21:35 <m4nu> Olivier: So, EMV offline payment is done - POS terminal won't go online to query about issuer/account - this is an account present transaction
+10:21:54 <bryan> EMV = Europay Mastercard Visa
+10:21:58 <m4nu> Olivier: What does this have to do w/ Web Payment? It's not even online, it's offline.
+10:22:52 <bryan> usecase: secure element based offline payment
+10:23:38 <m4nu> Olivier: These are secure elements, the cloud is involved - let's go one step further.
+10:23:42 <phariramani> Actually he is talking about non secure element based payment where payment credentials are in the cloud
+10:23:51 <m4nu> Olivier: On the POS terminal, there was no PIN input - that was done on the buyer's side.
+10:24:01 <Axel_Nennker> Axel_Nennker has joined #w3cpayment
+10:24:23 <m4nu> Olivier: There is an app on the tablet for the seller. Let's go one step further, let's get rid of the tablet - let's say everything happens in the web browser of the buyer - wallet app.
+10:24:59 <m4nu> Olivier: So, there is a SE in the browser on their mobile phone - the idea was to give you some thoughts about where we draw the line.
+10:25:22 <m4nu> Olivier: In both cases, we're doing EMV card not present transaction. So, cloud -> phone -> cloud?
+10:25:22 <Mark_E> Mark_E has joined #W3Cpayment
+10:25:30 <chaals> ack oli
+10:25:30 <Zakim> Olivier, you wanted to give his presentation
+10:25:54 <andym_> andym_ has joined #w3cpayment
+10:25:59 <m4nu> Olivier: EMV is well suited - but where are we going.
+10:26:21 <m4nu> XYZ: Do card schemes agree w/ this card not present mechanism?
+10:26:40 <m4nu> Olivier: They said they'll support this architecture - they're going to publish a SE transaction spec soon.
+10:27:00 <m4nu> Olivier: Offline EMV authentication - this has been around for 10 years - nobody uses it - what's the barrier?
+10:27:23 <m4nu> Olivier: It's been adopted by some banks during the pilot, not on the wide scale - total cost of ownership is too expensive.
+10:27:25 <bryan_> bryan_ has joined #W3Cpayment
+10:28:08 <m4nu> Dave_Birch: Costs are pushed onto merchant - surely these are cheaper if that weren't the case?
+10:28:12 <bryan_> CAP = Chip_Authentication_Program http://en.wikipedia.org/wiki/Chip_Authentication_Program
+10:28:17 <m4nu> Olivier: There are many reasons this solution hasn't been adopted widely.
+10:28:41 <m4nu> Joerg: I don' tthink big difference is offline - we don't expect everhything to be online, always.
+10:28:53 <voxpelli> voxpelli has joined #w3cpayment
+10:28:55 <Angie> Angie has joined #w3cpayment
+10:29:07 <mauro> s/tthink/think/
+10:29:08 <m4nu> Olivier: Technically, EMV is "offline", but you need to be "online" to perform it.
+10:29:21 <bryan_> usecase: browser-mediated offline transactions
+10:29:29 <m4nu> Chaals next up is Erik Anderson from Bloomberg.
+10:30:03 <Keir> Keir has joined #w3cpayment
+10:30:08 <m4nu> Erik: I'd like to talk a bit about remittances - $1.1B live below $1.25/day
+10:30:24 <m4nu> Erik: There are a lot of people in different parts of the world that don't have access to financial networks/services.
+10:30:35 <Axel_Nennker> e.g. Mastercard does not care (much) about the channel how their applet is reached. Can be over the web.
+10:31:13 <m4nu> Erik: Remittances are growing - $400B today - these are people trying to send money back to their family. How are you going to get $20 to your mom in Brazil when it costs $30 for the wire transfer?
+10:31:25 <bryan_> usecase: sending money to family internationally via low-cost methods
+10:31:32 <m4nu> Erik: The countries where you need the money the worst are the most expensive to send it to.
+10:31:54 <m4nu> Erik: South Africa -> Malawi - 23% to send the money - people provind gthe services get that money.
+10:32:13 <m4nu> Erik shows complex slide showing how money flows.
+10:32:26 <m4nu> This is just for US -> Mexico.
+10:32:48 <m4nu> Erik: Every one of these steps, someone takes a percentage of this money.
+10:32:59 <m4nu> Erik: Let's just go from the person -> US Feds -> Person.
+10:33:14 <m4nu> Erik: We should also look at Cryptocurrencies.
+10:33:32 <m4nu> Erik: Out of all 7 stages that your money goes through, each one of these people makes money.
+10:33:50 <m4nu> Erik: Saving 5% per year is 15B extra to those familities.
+10:34:12 <m4nu> Erik: Many places in African have bypassed traditional telephone lines, they have mobile phones - computers in their pocket.
+10:34:30 <m4nu> Erik: FinCEN needs to come up w/ creative solutions to handle currencies.
+10:34:32 <chaals> ack erik
+10:34:32 <Zakim> Erik, you wanted to give his presentation
+10:34:46 <mauro> s/African/Africa/
+10:34:47 <chaals> q+ DaveBirch
+10:34:53 <m4nu> Erik: Everyone that sends value must be licensed - etc - high cost of compliance. They have thousands of compliance officers to meet regulator.
+10:35:07 <wseltzer> q+ to say amonymous != evil
+10:35:14 <m4nu> Erik: Anonymity is Evil (stay with me)
+10:35:23 <bryan_> wow talk about your value judgements!
+10:35:24 <m4nu> Erik: We should put the regulations in the protocols.
+10:36:07 <m4nu> Erik: Underground economy that people are trying to send this stuff to -  these folks live on $1.25/day
+10:36:12 <chaals> usecase: enable financial regulation (e.g. reporting above a certain value) to be implemented directly in payment protocols
+10:36:20 <dezell> dezell has joined #w3cpayment
+10:36:29 <andym> andym has joined #w3cpayment
+10:36:42 <chaals> present+ davidEzell
+10:36:45 <m4nu> Erik: System D - people were classified into standard money users - kid selling koolaid and someone else running drugs categorized into same area.
+10:36:53 <bryan_> usecase: zero-trust transactions
+10:37:20 <m4nu> Dave_Birch: Anyone read FATF recommendations? Those recommendations say to target higher value transactions.
+10:37:33 <virginie> reference to FAFT http://tomorrowstransactions.com/2011/06/the-fatf-report-on-new-payment-methods-has-very-sensible-conclusions/
+10:37:49 <m4nu> Dave_Birch: So, we should reduce these costs - any oppotunities to remove these?
+10:38:16 <m4nu> Erik: What gets reported when - $10K in the US, China - it's probably $100. We need to put financial regulations into the code - don't focus on compliance officers.
+10:38:27 <m4nu> Erik: Put the regulatory call-outs in the technology - that's a use case.
+10:38:46 <m4nu> Erik: So, let governments know what they need to know while keeping out of their business.
+10:39:11 <m4nu> Joseph: Put code is law - is that Lawrence Lessig's work?
+10:39:27 <m4nu> Erik: Yes, that idea has been floated around the cryptocurrency world - so yeah.
+10:40:01 <m4nu> Chaals thanks panelists.
+10:40:13 <bryan_> Code is law -> http://codev2.cc/
+10:40:33 <andym_> andym_ has joined #w3cpayment
+10:40:42 <m4nu> Dave_Birch: Banks thought that things were fine, everyone else didn't.
+10:41:07 <m4nu> Dave_Birch: How is the US Fed going to weight those comments? In the EU, the government had to step in and mandate it.
+10:41:24 <StephanSteglich> StephanSteglich has joined #W3CPAYMENT
+10:42:10 <m4nu> Ken: our perspective is an end-to-end perspective. So, we have our high-level objectives. If there's something in the public interest, we want to support that.
+10:42:28 <m4nu> Ken: Many people said that the only way this is going to happen is to do a mandate - that may be where we're headed.
+10:42:33 <chaals> q?
+10:42:42 <m4nu> Ken: So, regulators are watching, but we're operating w/in the constraints of the law.
+10:42:44 <wseltzer> q-
+10:42:47 <m4nu> ack DaveBirch
+10:43:01 <dka> q?
+10:43:23 <dka> q+ to ask how transferwire is addressing the international remittence problem?
+10:43:42 <m4nu> WendySeltzer: Anonymous == Evil - we should think about customer/end-user interests. We should look of ways of aggregating ways - maybe diaggregatingn when we need to do it.
+10:44:33 <m4nu> Erik: Depending on what government you need to go into will shape the regulation.
+10:44:42 <chaals> ack hannes
+10:44:43 <wseltzer> s/==/!=/
+10:45:15 <bryan_> usecase: leveraging variable degrees of identity/anonymity per requirements of the payment transaction
+10:45:31 <m4nu> Hannes: Does this new system need to work w/ legacy infrastructure - payment systems in Africa don't necessarily. These countries may catch up - they jump an entire generation of technology.
+10:45:45 <m4nu> Hannes: I'm not quite sure I get the message.
+10:46:01 <m4nu> Erik: We want a bridge - we can't replace everything in a day - Ripple will talk about it during panel 3.
+10:46:03 <wseltzer> s/look of ways of aggregating ways - maybe diaggregatingn/look at which attributes of identity are necessary where; users' interests may differ from regulators'. Focus on /
+10:46:23 <chaals> ack dka
+10:46:23 <Zakim> dka, you wanted to ask how transferwire is addressing the international remittence problem?
+10:47:08 <m4nu> Dan: I want to get back to International Remittances - it's an area that we ran into a lot of trouble when integrating into BlueVia - if you want an end user to pay from Brazil to Estonia - then that's a huge issue.
+10:47:28 <m4nu> Dan: There are startups coming into the space that are doing better...
+10:47:47 <prakash> prakash has joined #w3cpayment
+10:48:19 <m4nu> Erik: The problem w/ startups is that they're not top-down. Lots of financial institutions, govt. needs to be involved. W3C standards are a better solution. There are a lot of big players in this room that are going to be a part of it.
+10:48:35 <m4nu> Erik: Then again, startups are paving their way too - they're not taking a passive stance.
+10:48:55 <chaals> s/they're not/while others are/
+10:48:57 <Sergio_Aquero> Sergio_Aquero has joined #w3cpayment
+10:49:15 <m4nu> Harish: Broadly, what we're seeing is Visa/mastercard for international payments - aside from SWIFT, there is no such infrastructure. Earthport does some of this, so does Western Union.
+10:49:32 <m4nu> Harish: US Federal Reserve - international payment framework.
+10:50:10 <chaals> q+ ricardoVarela
+10:50:35 <m4nu> Hannes: Role of standards may  be different here - you can always add more roles as people do - we may want to start fairly simplistic w/ very few standards.
+10:50:48 <m4nu> Hannes: Maybe we don't need so much standardization.
+10:51:21 <chaals> -> http://datauthority.org organisation to track new transfer systems
+10:51:23 <m4nu> Bryan: DAT Authority is important - reguator industry organization - related to cutting edge technologies - crypto, digital, digital asset transfer systems - Washington later this month. Look at it.
+10:51:32 <chaals> s/Bryan/Stan/
+10:51:38 <chaals> ack ri
+10:51:44 <m4nu> Stan: That could be a good link to what's happening here.
+10:51:55 <AndroUser> AndroUser has joined #W3CPayment
+10:52:11 <m4nu> Ricardo: It's nice to think that standards are going to solve that stuff - but W3C can standardize protocols, it's the financial operators that need to implement this stuff.
+10:53:02 <m4nu> Ricardo: At BlueVia, we were thinking of doing these transfers w/in ourselves. But when we do that, law comes into play - if Visa/Mastercard have effectively a monopoly, why can't business entities play the role of money transmitter?
+10:53:05 <bryan_> bryan_ has joined #W3Cpayment
+10:53:21 <Roy> Roy has joined #W3cpayment
+10:53:33 <m4nu> Ricardo: If you have a facebook coupon, and transfer to facebook in spain - no banks, no western union, now multiply that by several million transactions.
+10:54:05 <m4nu> Adrian: Adrian from SWIFT - payment, 20022 - a lot of what you're trying to do is already done by SWIFT in some cases.
+10:54:18 <m4nu> Adrian: We could start w/ ISO standards and see where that takes us.
+10:55:26 <ad76> ad76 has joined #w3cpayment
+10:55:28 <m4nu> Joerg: My assumption is that people want to know the money is there - US Fed - need more info (missed)
+10:55:53 <m4nu> Ken: How fast you received the money is not as important as convenience. When asked all other things equal, most everyone said "Yes".
+10:56:20 <m4nu> Ken: Consumers - speed of debiting is more important than crediting. With corporations - they care more about getting the money faster.
+10:56:27 <m4nu> Ken: But that's not always the most important factor.
+10:56:53 <m4nu> Harish: What's the expectation of the consumer. P2P transfer - they expect it to be near real-time. For a business, they want confirmation of payment.
+10:57:00 <dsr> rrsagent, make minutes
+10:57:00 <RRSAgent> I have made the request to generate http://www.w3.org/2014/03/24-w3cpayment-minutes.html dsr
+10:57:03 <phobeo> s/why can't business entities play/how can business entities play/
+10:58:02 <bryan_> usecase: realtime purchases involving prerequisite reception of funds from international sources (e.g. family)
+10:58:10 <m4nu> Chaals: Fast transactions - remittances Australia -> Spain - market case of buying something.
+10:58:57 <m4nu> Chaals: Different use case - I want to mix the sources of payment, don't have anything big enough to cover. Nearly all of that money should get to who I'm trying to pay. How easy/hard is that today - is it important?
+10:59:02 <bryan_> usecase: mixed sources of payment for a single transaction, using multiple payments with minimal transaction overhead
+10:59:28 <darobin> darobin has joined #W3Cpayment
+10:59:29 <m4nu> Joerg: I'm wondering if we're misled about the topics - Credit Cards are great, I can choose to pay much later.
+10:59:45 <m4nu> Joerg: People taking money out is a good thing.
+10:59:52 <bryan_> usecase: selection of payment method based upon desired payment delay
+11:00:25 <m4nu> Joerg: There is innovation there, we need to encourage that - we shouldn't say one way or another. We need a wide variety of things around payment.
+11:01:13 <chaals> q?
+11:01:23 <m4nu> Evgeny: Let's talk about small payments - payments should "look" fast. It should seem fast, even if the money moves more slowly. Backend speed doesn't need to increase, front-end speed should only be necessary.
+11:02:18 <m4nu> XYZ: We did some studies (somewhere) - You can't compete against credit card - test groups, active online buyers - speedy debiting was an advantage. Overspending on credit card was a bad thing wrt. customer thoughts.
+11:03:09 <m4nu> YYT: Single transaction would be nice, efficiencies to be driven there.
+11:03:10 <jungkees> Alexander Gee
+11:03:31 <chaals> s/yyt/Alexander/
+11:04:04 <m4nu> Connie: On the merchant side - different point that we've heard - merchants need feedback - many retailers have business cycle where they're taking in revenues on weekend. They'll use credit/debit - but they have huge swings in liquidity - big credit facilities to help offset these swings.
+11:04:22 <RRSAgent> I have made the request to generate http://www.w3.org/2014/03/24-w3cpayment-minutes.html mauro
+11:04:24 <m4nu> Connie: So big input on Thu-Sun, but they don't get money until Tues.
+11:04:50 <m4nu> Emil: Are the merchants willing to pay for earlier servie.
+11:05:00 <mnot> mnot has joined #w3cpayment
+11:05:04 <m4nu> Connie: 1/3rd of consumers say faster payments would be okay if it costs more.
+11:05:24 <bryan_> usecase: option to get faster payment
+11:05:34 <m4nu> Connie: 75% of businesses said they'd like that.
+11:05:52 <m4nu> Ken: it varies by use case - sometimes ome of the antiquated systems - ACH - doesn't have any of those requirements.
+11:05:53 <Ox2Oh> Ox2Oh has joined #w3cpayment
+11:06:04 <m4nu> s/those requirements/those features/
+11:06:11 <mauro> s/YYT/Alexander/
+11:06:23 <m4nu> Ken: So, you need to look at each use case to determine if there is a gap or not.
+11:06:55 <m4nu> Chaals: So, people want a wide variety of options, but asking people what they want doesn't mean that they'll tell you what they need.
+11:07:09 <m4nu> Chaals: What are people already spending their money on in an array of services.
+11:07:38 <m4nu> Jeff: Jeff, W3C - we've heard a number of different comments on what people would like to see. Some done by companies, some by regulators, innovators.
+11:07:56 <m4nu> Jeff: What's the role for Web standards - what do panelists want to see in web standards.
+11:08:40 <AndroUser> AndroUser has joined #W3CPayment
+11:08:58 <m4nu> Olivier: The trend is to mix payment, shopping experience, first payment provider - Alipay - escrow type of payment - it's cultural. In China, people don't trust seller. Every culture has its own way of making payments.
+11:09:22 <m4nu> Olivier: We need to create a basic mechanism that enables all of these use cases happen. We shouldn't focus on commerce use case.
+11:09:35 <bryan> usecase: selection of payment service based upon ability to handle escrow for untrusted merchants
+11:09:44 <m4nu> Olivier: If we try to support all shopping use cases, it won't work.
+11:10:06 <m4nu> Harish: From a data standards perspective - I think payment systems community is working on it. There are existing standards.
+11:10:16 <m4nu> Harish: The intent to pay and how to pay is a good area to focus.
+11:10:40 <m4nu> Harish: The interactions between new payment mechanisms - how do you exchange new payment info.
+11:11:17 <m4nu> AngelicoXYZ: Payment is about trust, security, convenience - Web technology should focus on bringing trust/convenience.
+11:11:40 <m4nu> AngelicoXYZ: People need to be comfortable w/ payment online. Complexity of payment online - fragmentation of market.
+11:12:11 <m4nu> AngelicoXYZ: We want technologies to ease integration of payment w/ nice user experience.
+11:12:13 <dka> +1 to focus on trust / convenience
+11:12:29 <m4nu> AngelicoXYZ: Web technology is right technology.
+11:12:44 <mauro> sAngelicoXYZ/IngenicoXYZ/g
+11:12:52 <m4nu> AngelicoXYZ: Payments/business integration - payment is separate from everything else business related.
+11:13:07 <mauro> s/AngelicoXYZ/IngenicoXYZ/g
+11:13:12 <m4nu> IngenicoXYZ: We want payment to be integrated w/ business application.
+11:13:45 <m4nu> Evgeny: The important thing that a standard can bring to us is a good user experience.
+11:14:03 <m4nu> Evgeny: Why do they want my phone number to any service that asks for it?
+11:14:16 <evan_schwartz> evan_schwartz has joined #w3cpayment
+11:14:35 <m4nu> Evgeny: The security mechanics - everyone should be able to implement it.
+11:15:17 <m4nu> Joseph: These standards need to be explicit about rights/responsibilities - what rights do they have? How can one impose stuff on other merchants.
+11:15:36 <m4nu> Joseph: Many merchants complain that many things are imposed on them by credit card companies.
+11:16:37 <m4nu> Ken: In Australia - they mapped out payments use cases - then made a determinination on whether it should be in cooperative space. One potential approach could be to do that. Where is the boundary between cooperative/competitive.
+11:17:15 <m4nu> Stan: On the Internet, the things that we now have, like blogs - are along side the media players - we have this whole forest of new things that have appeared. 2005-2015 is happening in finance.
+11:17:24 <mauro> s/determinination/determination/
+11:17:28 <m4nu> Stan: it's important that we take an open approach to standards.
+11:18:38 <m4nu> Louise: Louise Bennet, BCS - follow up on rights/responsibilities. It's vital from business/consumer perspective - where is the liability. Some of the panel were talking about regulators, when is the regulator going to impose of something on the standard. At what point is a regulator going to say that KYC is required?
+11:19:03 <m4nu> Louise: Do we know what the regulator is going to impose?
+11:19:39 <bryan> usecase: rights & responsibilities of a transaction being associated with the context of the transaction, and conveyed to parties in the transaction
+11:20:08 <m4nu> Erik: KYC is going to be hard to give up - it's going to have to happen - they're going to have to happen. I built a lot of the systems that people in this room works, but before I start building something, I need to know the standards before I do that, though.
+11:20:31 <m4nu> Erik: One person in XRP, another in Bitcoin, how are they going to interchange? Without those standards, we can't build anything on top of them.
+11:20:51 <m4nu> Ernesto: I see this as where we draw the line wrt. what we can standardize.
+11:21:39 <m4nu> Ernesto: I'm interested in payments, not necessarily in cryptocurrencies. This is very much aligned w/ Yandex - This is like supporting existing technologies for money - more convenient.
+11:22:06 <m4nu> Dave_Birch: Anonymity is Evil - so I'm going to agree on that - US printed $22B in non small bills.
+11:22:53 <m4nu> Dave_Birch: Number of US currency in circulation is very large. If you kick down the door of a mexican drug dealer, you don't find Bitcoin, you find USD.
+11:23:13 <bryan> anonymity is evil = cash is evil? both are suspect concepts IMO, and their equation is suspect squared
+11:23:36 <bryan> q+
+11:23:45 <m4nu> Chaals: I think we need to be aware of the case where I order sushi to my house - it works on a very high-trust system. I fill in a form, sends a form to someone 2km from my house, they bring it to my door, and then they expect me to hand over some cash.
+11:24:35 <lesellier> lesellier has joined #w3cpayment
+11:24:37 <m4nu> Chaals: Building systems that ignore that would be bad. Let's not restrict things people are doing. I'd like standards that take a layered approach, there are some basic things we do, and there are some basic things we need (like security) that should be in there from the beginning.
+11:25:20 <m4nu> Chaals: The bottom layer of the standards need to be solid. We want future standards to bild on top of the base layer. We don'tn want to prevent further standardization. We want competition/innovation to give us more.
+11:25:41 <m4nu> Bryan: This might be cash being an aspect of anonymity - we're trying to collect use cases.
+11:26:11 <dsr> Bryan: is zero-trust transactions on the table?
+11:26:12 <bryan> q-
+11:26:24 <m4nu> Ricardo: 20% of electronic transactions are done by a printed system - you pay in a bank/shop - 20% of digital transactions are anonymous.
+11:26:26 <dsr> Chaals: yes it is definitely on the table.
+11:27:07 <m4nu> Joerg: It's always possible to grant anonymity - we should have that.
+11:27:25 <ernesto> s/20% of electronic transactions/20% of electronic transactions in Brazil/
+11:28:04 <m4nu> Chaals: Building regulation into code - we should think about whether we want to deanonymize all transactions immediately - we will create a digital underground mechanism.
+11:28:12 <bryan> trying to clarify the sentiment here, it seemed that people are equating anonymity with zero trust, which perhaqps is not necessary, but the role identity/anonymity of zero-trust transactions is a key question, if that type of transaction is to be on the table as a use case (which I think it should, at least from the perspective of some participants in a transaction, if not all)
+11:28:51 <m4nu> Chaals: Who is tracking my transaction? Can I influence that?
+11:29:22 <m4nu> Chaals: An identity at global scale is a big identity scheme to roll out.
+11:29:33 <bryan> s/role identity/role of identity/g
+11:29:50 <Sergio_Aquero> US printed $27 billion in non-$100 bills, lowest since 1981
+11:29:57 <m4nu> Hannes: When some of you use privacy - and it appears there is a black/white - that's a bad characterization. We need to figure out which player sees what in the transaction.
+11:30:30 <Sergio_Aquero> So the US is printing record amounts of $100 bills, which are used primarily for criminal purposes
+11:31:13 <bryan> personally I like $100 bills...
+11:31:26 <Sergio_Aquero> ergo the US is in favour of anonymity for criminal transactions but not for legitimate transactions - seems a crazy policy to me
+11:31:26 <m4nu> Stan: A couple of quick points - founding ethos of Web - anyone can contribute. With payments in particular, with identity - it has to be in a careful way so that founding principles can be held in place. We could accidentally put us on the road to totalitarianism, there needs to be constant churn in power structures. We don't want to lock in  power strutures that are detrimental.
+11:31:41 <bryan> though getting change for them is sometimes problematic
+11:32:02 <m4nu> Stan: There is much more at stake than just a payment transactions, we need need to preserve human freedom on the Web.
+11:32:06 <mauro> s/strutures/structures/
+11:32:08 <bryan> usecase: take the change for your $100 bill through a web payment
+11:32:41 <m4nu> Olivier: Anonymity is meaning less and less - there is room for anonymity. No system has made it through, but we can't wipe it off of the Agenda.
+11:32:41 <wseltzer> [for more on anonymity, see Financial Crypto, PETS Symposium]
+11:32:53 <dsr> rrsagent, make minutes
+11:32:53 <RRSAgent> I have made the request to generate http://www.w3.org/2014/03/24-w3cpayment-minutes.html dsr
+11:37:06 <AndroUser2> AndroUser2 has joined #W3CPayment
+11:38:41 <virginie> virginie has joined #w3cpayment
+11:43:31 <voxpelli> voxpelli has joined #w3cpayment
+12:03:33 <mhepp> Present+ mhepp
+12:10:48 <andym> andym has joined #w3cpayment
+12:24:11 <melvster> melvster has joined #W3Cpayment
+12:24:12 <Harish> Harish has joined #w3cpayment
+12:31:02 <dka> dka has joined #w3cpayment
+12:31:27 <tim> tim has joined #w3cpayment
+12:31:28 <evan_schwartz> evan_schwartz has joined #w3cpayment
+12:31:36 <evan_schwartz> Session 2 â€” Toward an Ideal Web Payment Experience
+12:32:47 <virginie> virginie has joined #w3cpayment
+12:32:57 <evan_schwartz> I'll be scribing for this session but unlike Manu I don't know everyone's names. To all on IRC, any help with figuring out who's talking would be much appreciated
+12:33:03 <phariramani> phariramani has joined #w3cpayment
+12:33:34 <Ox2Oh> Ox2Oh has joined #w3cpayment
+12:33:38 <hellekin> hellekin has joined #w3cpayment
+12:33:41 <evan_schwartz> will do
+12:33:43 <mhepp> mhepp has joined #w3cpayment
+12:33:53 <mhepp> Present+ mhepp
+

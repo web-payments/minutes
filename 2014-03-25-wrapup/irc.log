@@ -1,0 +1,223 @@
+16:05:55 <m4nu> Topic: Wrap-up of Workshop
+16:05:58 <karl_johan> karl_johan has joined #w3cpayment
+16:06:02 <m4nu> scribenick: m4nu
+16:06:32 <virginie> virginie has joined #w3cpayment
+16:06:35 <m4nu> Steph: I'm going to publish slides soon, Dan, go ahead.
+16:07:01 <m4nu> Dan: I'm Dan Appelquist, I work for Telefonica, I chaired the program committee and chair the Technical Architecture Group (TAG) at W3C.
+16:07:22 <marie> [Hear, hear: all prez slides will be linked from the agenda: http://www.w3.org/2013/10/payments/agenda.html]
+16:07:24 <m4nu> Dan: The next hour will be unstructured, be interactive.
+16:07:57 <mountie> share the link on the screen
+16:08:16 <Jorg> Jorg has joined #W3Cpayment
+16:08:16 <m4nu> Dan: So, what are the actionable items for W3C?
+16:08:17 <jungkees> jungkees has joined #W3CPAYMENT
+16:08:42 <SartoriMichele> SartoriMichele has joined #W3CPayment
+16:08:42 <mhepp> mhepp has joined #w3cpayment
+16:09:02 <m4nu> Dan: What existing efforts are going on in W3C? Could those groups be influenced by this workshop? Think about this stuff.
+16:09:08 <phobeo> phobeo has joined #w3cpayment
+16:09:17 <floris> floris has joined #W3CPAYMENT
+16:09:22 <mdadas> mdadas has joined #w3cpayment
+16:09:32 <m4nu> Dan: So, let's go through this - we've learned some interesting things.
+16:10:04 <m4nu> Dan: The Web should be a level playing field - that's a key concept for the Web. That leveling may be threatening to certain parties. We have to keep that in mind.
+16:10:48 <m4nu> Dan: There are not two different worlds (physical and web) - there is one world. More and more, this is not about "Web Payments", it's just "payments" and we're doing "commerce".
+16:10:54 <dezell> dezell has joined #w3cpayment
+16:10:59 <m4nu> Dan: There is no distinct mobile web and fixed web.
+16:11:17 <m4nu> Dan: An underlying theme - the web includes both the browser and the web of data.
+16:11:28 <Angie> Angie has joined #w3cpayment
+16:11:30 <m4nu> Dan: When we talk about Web Crypto, we are talking about the browser.
+16:11:43 <m4nu> Dan: A browser centric web - that's where a lot of the energy is.
+16:12:09 <m4nu> Dan: The Web includes data and data formats. When we start talking about receipts, we need to think about that.
+16:12:21 <bgidon> bgidon has joined #w3cpayment
+16:13:59 <m4nu> Dan: We've talked about payment scenarios - physically transacting via web app, physically transacting via merchant device, user online and app is online, user to user, etc.
+16:14:48 <chaals> [+1 to wendy - let's not spend too much of our time agreeing on the exact weasel words we are all happy with, so long as we have done enough to remember the idea *clearly*enough*]
+16:15:25 <tim> tim has joined #w3cpayment
+16:16:32 <m4nu> Dan: There has been a lot of talk of the primitives / building blocks - clear technical work that is going on right now, or may need to start.
+16:16:59 <m4nu> Dan: The second category is more strategic, prioritization of requirements, perhaps by splitting off a new WG?
+16:17:30 <m4nu> Dan: There are different kinds of groups that W3C can create - technical deliverable groups, interest groups (places to generate requirements / prioritize)
+16:17:43 <m4nu> Dan: There might be a call for a more strategic interest group.
+16:18:14 <Angie_> Angie_ has joined #w3cpayment
+16:18:17 <bryan> s/ink rel/link rel/
+16:19:07 <m4nu> Dan: Work that's already going on - webapps, security, other, etc.
+16:19:32 <m4nu> Dan: payto was an interesting proposal.
+16:20:05 <dsr> q?
+16:20:09 <m4nu> Chaals: outside the payments CG, there isn't work in this area. There used to be Web Intents work
+16:20:10 <m4nu> q+
+16:20:21 <cyv> cyv has joined #W3Cpayment
+16:20:23 <m4nu> Chaals: There was work on intents, which has gone to sleep.
+16:20:32 <m4nu> Chaals: The CG might be the place to develop that further?
+16:21:05 <m4nu> Chaals: For WebApps, our charter is being rewritten right now in a final draft. if there is stuff that should be in there, right now would be a good time to propose it. There will be a F2F in April.
+16:21:21 <m4nu> Dan: How do we influence that?
+16:21:38 <m4nu> Chaals: You tell us you want to work on something, if we have consensus, we add it.
+16:22:09 <m4nu> Chaals: We'll work on new pieces of web stuff to support stuff. If it's in scope, we can add it.
+16:22:25 <jameslei> jameslei has joined #W3Cpayment
+16:22:45 <m4nu> Chaals: it could be that we tell folks to do it in a different group - WebApps is a big group, lots of important players involved already. Disadvantage is that its a big group, if you don't have people actively working on something, it'll disappear.
+16:22:55 <phobeo> I think we should also keep in mind work done in other related areas that got mentioned... eg RFC 2801 (IOTP), paypal express button code (similarities with payto: link schema suggested)..
+16:23:08 <dsr> There are several other W3C groups of interest, e.g. System Applications, Web Crypto, NFC, Geolocation, etc.
+16:23:32 <phobeo> and keep payment providers involved so they can share whether discussions fit with their current APIs or not
+16:23:58 <m4nu> Dan: Request Autocomplete is going on in WebApps, so good example of piece of work that I strongly recommend that people read.
+16:24:04 <chaals> -> http://www.w3.org/2008/webapps/wiki/PubStatus What webapps is currently working on and where it is up to
+16:24:09 <phobeo> (eg: we have netm in the room and I'm pretty sure any links to pay with credit card but not mobile billing can be raised by them, same with bitcoin processors)
+16:24:23 <m4nu> Prakash: This was announced by Google last May - it's something that's a payments template. There is a chromium dev. post, we'll put that in IRC.
+16:24:23 <darobin> -> http://www.html5rocks.com/en/tutorials/forms/requestautocomplete/ requestAutoComplete
+16:24:27 <RRSAgent> I have made the request to generate http://www.w3.org/2014/03/25-w3cpayment-minutes.html wseltzer
+16:24:42 <m4nu> Olivier: What does PCI say about this?
+16:24:51 <jpotvin> jpotvin has joined #W3Cpayment
+16:25:02 <phariramani> requestAutoComplete details are here  http://www.chromium.org/developers/using-requestautocomplete#id.befidh5t7x8d
+16:25:04 <m4nu> Dan: That's exactly the type of feedback that should go into that group.
+16:25:39 <m4nu> Dan: WebApps is via a public mailing list, you can give feedback there. W3C groups MUST respond to public feedback.
+16:26:56 <m4nu> Dan: Going back up - lots of conversation about digital receiving - payment requests, digital receipts. Rleate to schema.org - JSON-LD format. - description of goods machine/human readable.
+16:27:14 <chaals> -> http://afbarstow.github.io/WebApps/charter.html a draft proposal for the new webapps charter
+16:27:26 <dsr> (this is likely to need to be an extensible format rather than a closed one)
+16:27:33 <m4nu> Dan: There isn't work going on in here at W3C - payment requests, digital receipts, - this could be a new work item for W3C, possibly for a new WG.
+16:27:41 <m4nu> Dan: This is clearly something that's important.
+16:27:50 <bryan> q+
+16:28:19 <m4nu> DaveEzell: Should we check outside W3C too? IFCSF has a card vocabulary - card request, card response, we should look at what they've done.
+16:29:24 <m4nu> Chaals: Let's talk to the group that is working on digital items - EME work, HTML WG task force - let's see if that group is interested.
+16:29:32 <bryan> q-
+16:30:30 <m4nu> Dan: We might want to think more about the Trusted UI stuff - is there work going on on this? There wasn't.
+16:30:35 <bryan> I was going to comment that schema.org seems to be less viable a resource for W3C given ongoing difficulties getting them to allow W3C to leverage / align / influence their work
+16:30:37 <Mauro> Present+ MauroNunez
+16:30:43 <m4nu> Dan: There is the Secure UI
+16:30:52 <marie> http://www.w3.org/2011/webappsec/
+16:30:55 <m4nu> Chaals: WebApps Sec might be interested in Trusted UI
+16:31:09 <marie> https://www.w3.org/Security/wiki/IG
+16:31:09 <Mauro> Present+ JeremyKing
+16:31:32 <RRSAgent> I have made the request to generate http://www.w3.org/2014/03/25-w3cpayment-minutes.html Mauro
+16:32:04 <marie> strint wsp: https://www.w3.org/2014/strint/
+16:32:16 <m4nu> Wendy: Web Security IG, Web Apps Sec WG is doing XSS protection, site protection, Web Security IG, STRINT workshop (W3C and IETF IAB), interest - how do we help users to deal w/ plethora of choices, right context for making security decisions.
+16:33:18 <m4nu> Harry: I know for people that don't know about W3C - Interest Groups have high-level strategic role, commuications, roadmaps, kick out requirements.
+16:33:39 <m4nu> Harry: Then kick stuff out to Working Groups - they do implementations.
+16:34:30 <m4nu> Harry: Anyone can start a grass-roots community group, they work on pre-standards stuff.
+16:34:39 <dsr> q?
+16:35:00 <m4nu> Mountie: The requirement for the user environment - none of the working groups were accepted for specs - there is still a ???
+16:35:03 <m4nu> q- m4nu
+16:35:47 <m4nu> Dan shows what the STRINT website looks like, what came out of it.
+16:36:41 <m4nu> Joseph: Relationship between IGs and other IGs - can groups be created where they provide input to other IGs?
+16:36:57 <dezell> -- International Forecourt Standards Forum Information --
+16:36:57 <dezell> Home:
+16:36:57 <dezell>  - http://www.ifsf.org/
+16:36:57 <dezell> Standards:
+16:36:57 <dezell>  - http://www.ifsf.org/ifsf-standards.aspx
+16:36:57 <dezell> Electronic Payment Server overview:
+16:36:57 <dezell>  - http://ifsf.org/archive.aspx
+16:36:58 <dezell>    then search for "Part 3-19 IFSF POS to EPS Interface Specification"
+16:37:02 <m4nu> Joseph: Should there be a parallel community group - Web Payments CG - could this other group be an interest group?
+16:37:07 <erik_anderson> erik_anderson has joined #w3cpayment
+16:37:34 <steph> steph has joined #w3cpayment
+16:37:41 <marie> q?
+16:37:43 <m4nu> Chaals: I don't think it makes sense to have parallel groups - we may want an IG instead of the CG.
+16:37:45 <marie> ack jpo
+16:38:14 <m4nu> Chaals: The process differences can be different - there is a different IPR policy, different set of rules.
+16:38:53 <erik_anderson> erik_anderson has joined #w3cpayment
+16:39:05 <m4nu> Chaals: One of the things that happens when you get into regulation - how do  you define competition, open processes are important. I would be happy for the CG to continue - the one thing I would be oncerned about are that big players don't like  IPR policies
+16:39:52 <m4nu> Jeff: I want to clarify - within the W3C, we have the official process of W3C, and then we have the less formal processes - official process has W3C WGs that work on next generation standards.
+16:40:06 <m4nu> Jeff: IGs work on use cases / requirements to feed recommendation track.
+16:40:24 <m4nu> Jeff: Web and TV IG are trying to figure out what we need for entertainment.
+16:41:04 <m4nu> Jeff: CGs are not an official part of the process, but we  make it available so we can capture the innovatin of the Web community, which is far broader than official process. To give you some sizing, our CG group is 3x the size of our WGs.
+16:41:31 <m4nu> Jeff: We probably need an IG for payments. The Web and TV IG, in addition to feeding WGs, they adopted several CGs that they want to work on prestandardization work.
+16:42:00 <chaals> -> http://afbarstow.github.io/WebApps/charter.html Community Groups home page
+16:42:08 <chaals> [the explanation of how they work]
+16:42:24 <m4nu> Joseph: Thanks for the guidance - asked by Central Banker publications to see what parts of this events should be interesting to them. Then next step is how they provide input.
+16:42:35 <chaals> [Note also that Interest Groups get dedicated W3C resources, Community Groups do not]
+16:42:56 <m4nu> Joseph: in the case of bitcoin, China, finland, does not consider Bitcoin not currency - sounds theoretical, but it invokes a whole different set of laws - for reg ulators that's crucially important.
+16:43:08 <m4nu> Joseph: Where should these issues go?
+16:43:18 <marie> q?
+16:43:28 <m4nu> Jeff: we don't make comments on laws - maybe an IG?
+16:43:35 <chaals> -> http://www.w3.org/Consortium/Process/ W3C Process
+16:43:54 <chaals> [see especially chapters 3 and 6]
+16:44:16 <m4nu> Dan: This is what I'm trying to get across - there may be an IG to get across these issues. Other answer to your question is things like - what are these other building block elements.
+16:45:03 <m4nu> Dan: Out-of-band authentication, NFC APIs, banking community could engage there.
+16:45:18 <m4nu> dsr: we're looking for companies to become involved in NFC.
+16:45:59 <m4nu> Harry: To build off of what Jeff said - grass roots community groups are good for ideas. if you want something like hardware tokens to work across all browsers you have to send that to a technical WG, you should join W3C.
+16:46:18 <m4nu> Harry: IG -> WG is a good example of best way to approach.
+16:46:39 <mountie> q?
+16:46:54 <chaals> s/a good example/the generally effective way to get technical work done and implemented. Web Crypto is a good example/
+16:47:01 <chaals> rrsagent, draft minutes
+16:47:01 <RRSAgent> I have made the request to generate http://www.w3.org/2014/03/25-w3cpayment-minutes.html chaals
+16:47:34 <m4nu> Bryan: very briefly - push API has been under work for a number of years. wallet apps - could plumb that right to the browser - watch it.
+16:47:39 <m4nu> Bryan: All ideas are welcome.
+16:47:50 <m4nu> Dan: Fundamental building block APIs.
+16:48:39 <bryan> s/number of years/a little more than a year/
+16:48:39 <dsr> In addition to NFC, other related technologies we are seeking greater involvment, include Bluetooth, e.g. BLE, and access to Secure Elements.
+16:48:52 <m4nu> Ricardo: Now that we have payment providers, they need to join this other work - paypal, bitcoin, etc, companies need to get involved.
+16:49:11 <virginie> virginie has joined #w3cpayment
+16:49:32 <m4nu> Ricardo: This structure doesn't work for me - things like that. We keep mentioning a trusted UI, it's just a way to verify.
+16:50:01 <m4nu> Ricardo: Chrome-less apps needs to happen, perhaps in WebApps.
+16:50:09 <dsr> q?
+16:50:15 <phobeo> q-
+16:50:27 <chaals> s/This structure doesn't work for me/What we do might as well align with what people who are working in this already do/
+16:51:01 <m4nu> DaveEzell: How do you get input from regulatory folks? I'd hate to see us take a big step back from that. We have a number of people have joined us, I want them to be approached to provide a little bit of bandwidth and input. Let's use this opportunity to reach out to them.
+16:51:06 <erik_anderson> q+, q-, q+, q-  What does that command do?  :)
+16:51:08 <phobeo> s/This structure doesn't work for me/so that those payment providers can let us know easrly if the structures we define don't work for them or anything of the like/
+16:51:47 <m4nu> Wendy: Thanks for reminding us of the invited expert group - we need to reach out to them. We need to incorporate regulatory concerns.
+16:51:56 <m4nu> q?
+16:52:47 <Jorg> q+
+16:52:49 <m4nu> Dan: The role of cryptography, geofencing, NFC APIs, out-of-band seconday auth - all work that's going on.
+16:53:03 <erik_anderson> q$  Muuhahaha!
+16:53:16 <m4nu> Dan: When you're within a Web environment, are there additional use cases that are payment related?
+16:53:30 <m4nu> Dan: or, could you use the existing technology to support geofencing.
+16:53:39 <marie> q?
+16:53:52 <wseltzer> s/invited expert group - we need to reach out to them./the importance of regulatory considerations. We welcome that input and encourage participation, e.g. in the Tracking Protection Working Group./
+16:54:12 <m4nu> Giri: Geolocation WG is circulating a new charter - hardware accelerated geofencing is in the work. It doesn't solve the whole problem yet, geolocation from trusted source - that's what's needed.
+16:54:39 <m4nu> Giri: This could be something they could give assistance to...
+16:55:21 <virginie> q+
+16:55:42 <marie> sysapps wg: http://www.w3.org/2012/sysapps/
+16:55:54 <chaals> [if anyone wants a quick (and idiosyncratic) guide to W3C Process, let me know and your requests may be answeredâ€¦]
+16:56:14 <m4nu> Wonsuk: SysApps create security sensitive APIs, including Secure Element for providing interface to access secure storage information in the spectre of payment. We need to save/access private key and other info for users - that item is helpful wrt. payment. Do we have use cases for Secure Element.
+16:56:45 <m4nu> Wonsuk: Secure Element - we're gathering use cases, please come there and share opinions on payments
+16:57:02 <dsr> s/Do we have/We are interested in your/
+16:57:14 <virginie> note : secure element unofficial draft is here  : http://opoto.github.io/secure-element/
+16:57:21 <m4nu> Joerg: I want secure element here, so that's my list of technical items.
+16:57:21 <marie> ack jorg
+16:57:36 <wseltzer> [Secure element discussion likely in the WebCrypto vNext workshop]
+16:57:58 <bryan> need to add "Know Your Provider" (KYP)
+16:58:19 <m4nu> Dan: Her'es the strategic stuff: tokenization, intents, digital ID problem, authentication on mobile, digital signatures on contracts, Kknow your customers, multi-currency transactions, complex negotiation on payment instrument, price benchmarking
+16:58:24 <virginie> q-
+16:58:29 <wseltzer> bryan, and that ties into security for the users
+16:58:53 <bryan> exactly, trust is a 2-way transaction
+16:59:29 <m4nu> Dan: PoS terminals, string authentication, digital identity, ACH, loyalty card use cases, privacy concerns, ticketing/couponing, API between wallet and browser, synchronizing data to the cloud, interface for web app to request payment and what it gets back
+16:59:32 <jpotvin> to "multicurrency transactions" please add "deferred transactions", because many of the same issues arise (value of EUR today not equal to USD today;  value of EUR today not equal to EUR next week)
+16:59:49 <dsr> Re: authentication -- what can W3C to to enable providers to implement the authentication procededures appropriate to their risk models.
+16:59:54 <m4nu> Dan: Identity - long term, where are we going  here. Moving away from username/password, identity and privacy social graph, web of trust.
+17:00:10 <m4nu> Dan: Secure local storage? Should it be sync'd - does WebCrypto work affect that?
+17:00:43 <jpotvin> strat issues should include explicit documentation of roles
+17:01:03 <jpotvin> q+
+17:01:05 <m4nu> Dan: What's missing from this?
+17:01:07 <mountie> q+
+17:01:44 <chaals> manu: Putting all this stuff into an IG, it might not be the best place. We may want to incuvate in teh CG and move stuff to working groups from there.
+17:04:26 <melvster> wseltzer , verginie ... already raised, and an issue has been filed ... so we'll see ... :)
+17:04:48 <m4nu> Stan: It's important that you don't limit what a payment should be. We shouldn't setup guard rails - it should be nodal representation - we shouldn't prevent stuff from happening.
+17:04:48 <melvster> s/verginie/virginie
+17:05:11 <m4nu> Dan: I didn't mean to exclude cryptocurrencies - but it's strategic long-term.
+17:05:26 <m4nu> Jeff: I wanted to first embrace manu's concerns about boiling the ocean.
+17:06:23 <m4nu> Jeff: Digital publishing work is 1 year old - 60 distinct requirements came out for CSS WG alone - looked like boiling the ocean. When we created IG, chair and people went through prioritization activity. Any group has to get something done, so the IG defined 9 task forces, we're trying to get our arms around what we heard. There will be a significant boiling down activity on what we do.
+17:06:42 <jonny> jonny has joined #w3cpayment
+17:06:47 <mountie> q?
+17:07:41 <m4nu> Joseph: A couple of points - I'd agree that defining what a payment is comes from the legal community - there was some discussion on whether such a standard could be equally useful in handling barter. This might be Web-mediated value transactions. I don't think you list explicit documentation of the roles. Multicurrency transactions issues come up w/ subscription-type payment. Over time, relative values change.
+17:07:46 <bryan> +1 to "web-mediated value transactions" as the goal - given that we can keep the scope from being too wide
+17:08:10 <m4nu> Dan: We have to close, Stephane is staring at me w/ daggers in his eyes.
+17:08:18 <m4nu> Topic: Goodbye
+17:08:31 <erik_anderson> Is there a way to get the full chat logs?
+17:08:41 <RRSAgent> I'm logging. I don't understand 'draft miniutes', wseltzer.  Try /msg RRSAgent help
+17:08:43 <m4nu> Steph: There is a mailing list for all people on this mailing list - we'll continue it after - we'll send a draft report soon-ish.
+17:08:44 <RRSAgent> I have made the request to generate http://www.w3.org/2014/03/25-w3cpayment-minutes.html wseltzer
+17:09:17 <virginie> lets thanks the scribes, great material there :)
+17:09:37 <dsr> rrsagent, make minutes
+17:09:37 <RRSAgent> I have made the request to generate http://www.w3.org/2014/03/25-w3cpayment-minutes.html dsr
+17:09:43 <wseltzer> [adjourned]
+17:09:45 <m4nu> Steph: Thank you for coming from W3C - a big thank you to PC that's been very active. Thank you to all moderators. Thanks to scribes.
+17:33:17 <phariramani> phariramani has joined #w3cpayment
+17:37:40 <mhepp> mhepp has joined #w3cpayment
+18:01:49 <phariramani> phariramani has joined #w3cpayment
+18:05:04 <steph> steph has joined #w3cpayment
+18:19:09 <skddc> skddc has joined #W3Cpayment
+19:17:38 <Zakim> Zakim has left #W3Cpayment
+19:53:20 <dka> dka has joined #w3cpayment
+19:56:44 <mountie> mountie has joined #W3Cpayment
+20:20:24 <dka_> dka_ has joined #w3cpayment
+20:48:05 <dka> dka has joined #w3cpayment
+20:50:54 <tor> tor has joined #W3Cpayment
+21:19:01 <AndroUser> AndroUser has joined #w3cpayment
+21:57:59 <dka_> dka_ has joined #w3cpayment
+22:04:35 <steph> steph has joined #w3cpayment
+22:48:19 <chaals> chaals has joined #w3cpayment
+23:02:13 <chaals> chaals has joined #w3cpayment

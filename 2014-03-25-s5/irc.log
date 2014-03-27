@@ -1,0 +1,443 @@
+10:39:06 <m4nu> Topic: Session 5: Front End: Wallets - Initiating Payment and Digital Receipts
+10:39:09 <darobin> darobin has joined #W3Cpayment
+10:39:12 <chaals> Prakash: good news is things are growing in online payment.
+10:39:16 <erik_anderson> erik_anderson has joined #w3cpayment
+10:39:31 <m4nu> scribenick: chaals
+10:39:31 <chaals> â€¦ bad news, the experience is a mess. Repeated repetition of terrible steps to go through.
+10:39:45 <max> max has joined #w3cpayment
+10:39:51 <chaals> â€¦ m-commerce rates < 1% - imagine what it could be without such friction.
+10:39:52 <Emil> Emil has joined #W3Cpayment
+10:40:03 <max> max has joined #w3cpayment
+10:40:14 <Angie> Angie has joined #w3cpayment
+10:40:33 <lesellier> lesellier has joined #w3cpayment
+10:40:33 <chaals> â€¦ we've got different stakeholders here and tried to cover the world. 2.5 billion are underbanked...
+10:40:48 <Cyril> Cyril has joined #W3Cpayment
+10:40:51 <chaals> â€¦ We're focusing on b2c payment.
+10:40:58 <TomPic> TomPic has joined #W3CPayment
+10:41:23 <chaals> â€¦ will consider this a success if we can narrow our focus on what needs to be standardised.
+10:41:49 <mdadas> mdadas has joined #w3cpayment
+10:42:00 <chaals> DSR: Creating a level playing field for providers.
+10:42:29 <chaals> -> http://www.w3.org/2013/10/payments/front-end.pdf Dave's slides
+10:42:45 <chaals> â€¦ I want to be able to get a digital receipt from a part-payment for a group meal.
+10:42:58 <jeff> jeff has joined #w3cpayment
+10:43:12 <chaals> [repeats Jeff Jaffe's slide of where we might standardise...]
+10:43:30 <m4nu> That was actually Dave's initial slide - not Jeff's
+10:44:11 <Jonny> Jonny has joined #w3cpayment
+10:44:11 <chaals> DSR: We have web app -> browser transition, and then browser -> wallet conversation, and wallets talking to individual providers, as possible points of standardisation.
+10:44:23 <chaals> â€¦ and we can have multiple wallets, like int he real world.
+10:44:39 <chaals> â€¦ standards should be minimal, enabling competition
+10:44:57 <chaals> â€¦ information needed (slide 5)
+10:45:29 <chaals> â€¦ amount, currency, jurisdiction, acceptable settlement solutions, etc.
+10:45:30 <kjheimark> kjheimark has joined #w3cpayment
+10:45:43 <chaals> â€¦ in current UX we have to repeatedly add too much info. Could be done by the wallet
+10:46:00 <chaals> â€¦ Maybe you need DRM for virtual goods.
+10:46:35 <chaals> â€¦ What about value-added services - what is compelling enough to get people to switch. Loyalty coupons (seemed very US-centric idea), ...
+10:46:43 <SartoriMichele> SartoriMichele has joined #W3CPayment
+10:46:51 <chaals> â€¦ Where does escrow fit.
+10:47:00 <chaals> [slide 6]
+10:47:21 <chaals> DSR: Wallet can keep receipts etc. Where does the receipt get held?
+10:47:36 <chaals> [chaals: that was my question about receipts helping eme yesterday]
+10:48:03 <chaals> DSR: It's about improving the experience. Less data entry. This just depends on the risk model for provider/customer - the merchant just wants the money
+10:48:10 <chaals> q+ to say the merchant wants user data too
+10:48:13 <virginie> virginie has joined #w3cpayment
+10:48:15 <chaals> [slide 7]
+10:48:30 <dezell> dezell has joined #w3cpayment
+10:48:43 <bryan> usecase: wallet as an expert system
+10:48:55 <chaals> DSR: trusted customers can have expert wallets as user agents. Shouldn't offer solutions that won't match the acceptable mechanisms fora  transaction.
+10:49:17 <chaals> â€¦ wallets need to provide information, options for payment (use debit, or pay with coupons, â€¦)
+10:49:26 <chaals> â€¦ and of course transparency in eventual cost.
+10:49:31 <chaals> [slide 8]
+10:50:07 <chaals> DSR: standardisation needs to be unbiased, we need to be held to that. Effective competition is critical for improvement, so we need hooks in browsers for multiple wallets to be used / dropped.
+10:50:18 <chaals> â€¦ these could be in teh cloud, or notâ€¦
+10:50:29 <chaals> â€¦ And should be movable between my devices.
+10:50:45 <chaals> â€¦ What about offline payments? That's a complexity we should bear in mind for the future.
+10:50:50 <chaals> [slide 9]
+10:51:07 <bryan> offline payments is a current capability, not only something for the future
+10:51:23 <chaals> DSR: Sysapps is working on APIs for trusted applications, allowing web apps to create device side part of wallet is a possibility.
+10:51:37 <chaals> â€¦ need to move away from username/password as the base of authentication.
+10:51:52 <chaals> â€¦ What happens when I give someone else my device?
+10:51:53 <Jonny> Jonny has joined #w3cpayment
+10:52:08 <chaals> â€¦ privacy friendly "Know Your Customer"?
+10:52:24 <bryan> identity of all parties is essential for trust - Know Your Provider (KYP)
+10:52:39 <chaals> â€¦ related - NFC, and upcoming bluetooth work at W3C
+10:52:45 <chaals> [slide 10]
+10:53:21 <chaals> DSR: Loyalty schemes as value-adding services for a wallet. coupons, vouchers, etc - how does this fit. Maybe a question for the future.
+10:53:37 <chaals> â€¦ Merchants want repeat customers, want to know how users arrived.
+10:53:42 <chaals> q?
+10:54:30 <bryan> I use a Safeway app that provides me discounts on things that I typically buy, and alerts me when they're on sale, and uses barcodes so that I can "like" products right in the store - all key parts of the new retail experience.
+10:55:04 <Cyril> careful of loyality coupons : the business model is that the customer value them but don't uses them ;-)
+10:55:06 <chaals> Vidya: money for the un/derbanked
+10:55:23 <chaals> â€¦ who is familiar with mobile money? [almost everyone]
+10:55:53 <chaals> [slide 2, recaps yesterday points]
+10:56:07 <chaals> Vidya: 2.5B underbanked, big opportunity
+10:56:28 <chaals> â€¦ growing industry increasingly competitive. dominated by telcos.
+10:56:33 <bryan> just like the payment experience - make the couponing experience transparent/effortless and usage will increase and churn will decrease
+10:56:49 <chaals> â€¦ very lightly regulated, no interoperability.
+10:56:55 <chaals> [slide 4 - stats]
+10:56:56 <erik_anderson> erik_anderson has joined #w3cpayment
+10:57:16 <chaals> Vidya: 1.2B users in 9 months. 2.5B un/derbanked people online in 3 years
+10:57:32 <chaals> [slide 5 - africa research]
+10:57:52 <chaals> Vidya: Huge growth in everything - 100's of % CAGR
+10:58:43 <chaals> â€¦ Kenya 5th fastest towards cashless society because of mpesa
+10:58:51 <chaals> q: what's the axis?
+10:59:02 <chaals> comment: It's just marketing pictures
+10:59:18 <chaals> Vidya: Shows mpesa changes the way a country deals with cash, which is a surprise
+11:00:03 <marie> marie has joined #w3cpayment
+11:00:03 <chaals> â€¦ Money systems don't interoperate, no public API. That will change soon to have an ecosystem building around it. There is already a mini-industry offering integration, bridging, etc.
+11:00:32 <chaals> â€¦ Strong growth trajectory, time to leverage the synergy with standardisation.
+11:00:44 <chaals> â€¦ otherwise experience will be siloed.
+11:00:57 <mark_> mark_ has joined #W3Cpayment
+11:01:06 <chaals> â€¦ Where will mobile money fit in a layered appraoch?
+11:01:19 <chaals> [slide - Standardisation Considerations]
+11:01:45 <chaals> Vidya: different from cards, this is a stored value system on a phone not card.
+11:02:04 <chaals> â€¦ mobile number is account nuber, but portability signals a coming need to change that.
+11:02:18 <chaals> â€¦ low tech literacy means UX needs to be simple, smooth.
+11:02:45 <chaals> â€¦ 2-factor auth is inherent in mobile money.
+11:02:52 <chaals> [chaals wonders why]
+11:03:29 <chaals> Vidya: Category of goods that can be purchased could be limited by account type.
+11:03:40 <bryan> q+ to ask why portability is a concern for use of mobile # as account key
+11:03:46 <chaals> â€¦ consumer demographics include multiple languages, multiple currencies, low literacy, ...
+11:04:10 <chaals> â€¦P2P transfer is big in mobile money, that's where the traction has been.
+11:04:49 <chaals> â€¦ what is relevant for merchants is proximity not online payment.
+11:05:06 <chaals> â€¦ Mobile payments are done on mobiles, not cards, and that's what's different about it.
+11:05:54 <chaals> Philippe: Who uses a mobile wallet daily?
+11:06:03 <chaals> [few]
+11:06:26 <chaals> Philippe: that's why I am here. Think this is really key to help adoption of payment technology. WIll focus mostly on UX
+11:07:05 <chaals> â€¦ key aspect is that the wallets should be multi-scheme multi-technology from the start.
+11:07:17 <chaals> â€¦ acccept MNO billing, alternates, â€¦
+11:07:58 <chaals> â€¦ Why is user expecting so much? There is a lack of control for the end user on what payment to use, clear reward for doing so, and feeling secure about the payment
+11:08:29 <chaals> â€¦ Giving my data to multiple websites doesn't feel secure, I want a wallet to keep them in.
+11:08:50 <Angie> Angie has joined #w3cpayment
+11:09:06 <chaals> â€¦ I don't know the balances on my cards, want to see them (or info about the differences in different cards at merchants) at purchase time.
+11:09:18 <Harish_> Harish_ has joined #W3Cpayment
+11:09:20 <jpotvin> jpotvin has joined #W3Cpayment
+11:09:33 <chaals> â€¦ I don't have a central point to store receipts.
+11:09:53 <chaals> usecase: go to london and spend schuki's friend's money on coffee
+11:10:11 <bryan> usecase: realtime checks on account balances in wallets to help decide how to pay
+11:10:32 <chaals> â€¦ payment process can be very painful. To secure it with 2-factor can bring problems e.g. trying to use CAPTCHA on mobiles.
+11:11:09 <chaals> â€¦ login is painful across multiple sites. Wallet can help here.
+11:11:37 <chaals> â€¦ Today there are lots of loyalty cards, but don't see a reward. Wallet could show you that
+11:11:54 <chaals> usecase: showing added value from things you already do
+11:12:11 <chaals> Philippe: Blockers to having this lovely wallet?
+11:12:31 <chaals> â€¦ need more implementations to be availble, more ways to deploy wallets.
+11:12:45 <chaals> â€¦ ability to port wallet to various platforms is key.
+11:13:05 <bryan> usecase: wallet is synced with loyalty coupons and digital receipts as they are collected
+11:13:15 <m4nu> How about this: You should be able to store your digital receipts wherever you want - whether it  be in a wallet or in the cloud.
+11:13:19 <chaals> â€¦ W3C can help abstract and standardise these interfaces to reduce the cost of deployment.
+11:13:37 <bryan> cloud or device would be included in the previous usecase
+11:13:42 <chaals> â€¦ Unfortunately, wallet issuers are too eager for user data, so seems like a privacy threat.
+11:14:11 <chaals> â€¦ end user should be able to choose what info to share with whom. Think this will be key.
+11:14:34 <chaals> â€¦ of course need to standardise interations with merchant website - coupons, sharing shipping addresses, etc
+11:14:56 <chaals> â€¦ smartphone is a good way to allow users to select payments.
+11:15:20 <chaals> â€¦ Need to make sure wallets are widespread and available, believe W3C is the right place to make sure there will be an open garden type of wallet
+11:15:41 <bryan> I agree, a wallet issuer should not have access to my data just because they provided the wallet
+11:15:50 <chaals> Gregory: What do we need to standardise on front end for wallets to integrate.
+11:16:04 <chaals> â€¦ What merchant wants isn't always what customer wants.
+11:16:33 <chaals> â€¦ Purchase: There is a cart. Some providers require the cart contents to be passed to the payment provider.
+11:17:01 <chaals> â€¦ There are some advantages - if customer goes to another website, will be pleased to see the cart is still the same.
+11:17:15 <chaals> â€¦ Provides valable information for fraud detection, digital receipts.
+11:17:46 <chaals> â€¦ But drawbacks too - consistency has to be achieveed. And raises privacy concerns - does the customer want all purchase information detail given to the bank?
+11:18:02 <chaals> â€¦ Then billing and shipping info. Most annoying part of the process.
+11:18:27 <jonny> jonny has joined #w3cpayment
+11:18:31 <chaals> â€¦ But while cart is temporary, these are related to identity (which is its own can of worms)
+11:18:47 <chaals> â€¦ When it all goes well, everyone wants to skip this and let the wallet do it.
+11:19:23 <chaals> â€¦ But if something goes wrong with the purchase, some privacy concerns are raised. Merchant acquires information about a non-customer, device fingerprinting them, etc.
+11:19:41 <chaals> â€¦ like in the physical world. Merchant wants the customerto open the wallet, customer doesn't.
+11:20:12 <chaals> [chaals: Merchant wants customer to start buyijg. and then buy more]
+11:20:56 <chaals> Gregory: There is a process to figure out which system is the best. Payment schemes have deals with merchants, customers have different goals.
+11:21:34 <chaals> â€¦ for instance a merchant might have a reason (or 2â‚¬) to try and sign you up to a new wallet
+11:22:03 <chaals> â€¦ At payment there are mostly security concerns. Merchants shouldn't collect credit card details, but part of these are meaningful.
+11:22:29 <chaals> â€¦ E.g. issuer may determine where the merchant wants to process the transaction.
+11:22:41 <chaals> Prakash: Merchants should just get a token, not real credentials?
+11:22:57 <chaals> Gregory: Partially, but there are parts of the information the merchant should get too.
+11:23:54 <chaals> â€¦ e.g. in PCIDSS you mask middle of the number. But on POS terminals masking is first 12 digits. Merchant loses important information on what kind of card it is.
+11:24:03 <chaals> s/POS/modern POS/
+11:24:59 <chaals> â€¦ 3D secure, etc can be involved. This is a real pain point. UX is bad, website is mobile-first and often -only, terrible on desktop.
+11:25:17 <chaals> â€¦ SMS auth when you purchase from your phone is no good if your phone gets stolen.
+11:25:31 <chaals> â€¦ But birthday security in a facebooked world is even worse.
+11:25:54 <chaals> â€¦ We could stepwise propose better integration for most common auth schemes.
+11:26:12 <chaals> [chaals: this sounds like password management in browsers, which is years old]
+11:26:37 <chaals> Gregory: We could alternatively enrich the authentication process with branding from the merchant website.
+11:28:05 <chaals> â€¦ Then there is receipts. There are many receipts. Merchant-supplied, something from a payment provider. If customer uses coupons and loyalty cards, the amount of money will be dispatched around the world with tex and handling fees from different places coming into play. Standardising this seems difficult.
+11:28:35 <chaals> â€¦ Merchant receipts are a sales facilitator. Lots of the receipt is used to offer coupons, advertising, etc.
+11:28:48 <Cyril> standard for receipts should be "cumulative" i.e. each actor could add its won information for the receipt during the payment life cycle
+11:28:59 <chaals> â€¦ problem is payment-gateway receipts.
+11:29:35 <chaals> â€¦ They should be digitally signed, merchant receipts will be useable for warranty.
+11:30:00 <chaals> Jorg: Identity, privacy and mobile
+11:30:11 <Cyril> waranty or tax issues
+11:30:46 <chaals> [Cyril: so who "owns" the receipt content?]
+11:31:38 <chaals> Jorg: Not talking about a product, just what we think a wallet might look like
+11:31:55 <chaals> [slide development history]
+11:32:14 <chaals> â€¦ started in NFC, infocard. Found that compelling in the context of payments.
+11:32:48 <chaals> â€¦ so we created a wallet - same virtual card can be used on payment terminal or web shop.
+11:33:21 <m4nu> Use Case: (from Ernesto) User can receive digital receipts (receipt POSTed to user's digital receipt storage vs. an emailed receipt)
+11:33:35 <chaals> â€¦ want a framework independent of implemnetation, so the card is an abstraction, where people can make payments with whatever instruments they have.
+11:34:01 <chaals> â€¦ so far only used in trials. Aspiration to cover tickets and identity as well as payments seems feasible
+11:34:25 <chaals> â€¦ expect any account online becomes a virtual customer card.
+11:34:44 <chaals> [slide - wallet vision "so abstract it can't be wrong"]
+11:35:29 <chaals> Jorg: providing security and communication needed for transaction. The actual transaction happens outside the actual wallet, but there are times when it appears. it's mine on my system that I can secure.
+11:35:40 <jpotvin> wallet architecture needs to be open to any type of implementation technology
+11:35:44 <chaals> â€¦ This is an agreement between me and a payment provider.
+11:36:07 <chaals> â€¦ maybe I can use NFC, hardware-secured ID management, OAuth, â€¦ or not ...
+11:36:30 <chaals> â€¦ I just need to be told what level of security I am ignoring at the moment.
+11:37:10 <chaals> â€¦ When I join airline program, I get a number on paper - this is free to issue. If I get more miles, I may get a card with NFC access to lounge, etc.
+11:37:21 <chaals> [chaals already has that cardâ€¦]
+11:37:46 <chaals> Jorg: The ecosystem needs to be arrange differently from what people think.
+11:37:56 <chaals> [slide - future wallet definition]
+11:38:08 <chaals> Jorg: This is user-centric (everyone says thatâ€¦)
+11:38:20 <chaals> â€¦ we give the card to the user. Maybe that never holds any more data.
+11:38:39 <chaals> â€¦ can make things more transparent to the end-user.
+11:38:46 <chaals> â€¦ wallet provider is important role.
+11:39:08 <chaals> â€¦ better if it isn't a payment provider too.
+11:39:27 <chaals> â€¦ Operator might be OK for that - or not. Service providers need to be differentiated.
+11:40:01 <chaals> [last slide]
+11:40:27 <chaals> Jorg: We already have lots of APIs. Our wallet is implemented in HTML5. Could be cloud-based or belong on client device.
+11:40:27 <jonny> jonny has joined #w3cpayment
+11:40:40 <chaals> â€¦ You could have several wallets doing partial synchronisation
+11:41:16 <chaals> â€¦ we can have wallet responding to auth requests. It can be done, but lack of standards makes it a mess.
+11:41:30 <chaals> â€¦ and then we want all the things people already said - start transactions, etc.
+11:42:09 <Cyril> I suggest to include along with cards the 3 other main payment mecanisms konwn : credit transfer, direct debit, crypto currency
+11:43:05 <chaals> Natasha: Jorg covered a lot of the technical detail of where we are going.
+11:43:37 <chaals> â€¦ a long time ago we were working on projects, eg with NFC. That has started to change, providing trusted security modules around SIMs and wallet has become important to us.
+11:44:00 <chaals> â€¦ we want a simple approach from customer viewpoint (with business things wrapped around it)
+11:44:10 <chaals> â€¦ Idea is use a wallet to pay, and it has security.
+11:44:34 <chaals> â€¦ Spec is for operator-led wallets held on the device. Sometimes may not need secure elements all the time.
+11:44:57 <chaals> [chaals loves that people can steal everything if they take it in 20s...]
+11:45:47 <chaals> â€¦ CAPTCHA is painful, wallets will simplify life by having your details on your device
+11:46:15 <andym> andym has joined #w3cpayment
+11:46:38 <chaals> â€¦ Lot of work going on around Identity. Generally there is a lot of movement towards identity providers/managers. Who do customers choose - my main one now is Google. I made that choice (and people gasp) based on what I get...
+11:46:59 <chaals> â€¦ It's up to you - what country is your data held in, what do you get, do you trust the company, â€¦
+11:47:20 <chaals> â€¦ not much uptake for identity by interpretive dance yet. But we want to do it in the most secure way we can.
+11:48:00 <chaals> â€¦ The process of buying a 30p sweet shouldn't involve 2-factor authentication.
+11:48:18 <m4nu> q?
+11:48:28 <chaals> â€¦ There is a heavy business aspect around wallets. Who holds the data and what are they getting by doing it?
+11:48:45 <chaals> â€¦ and can we hold you money for a while too?
+11:48:47 <m4nu> q+ to raise the point that if we store wallet information on device, that we're inevitably going to need to sync it to the "cloud"
+11:48:48 <Ori-Eisen> Ori-Eisen has joined #W3Cpayment
+11:49:28 <chaals> â€¦ We still have to deal with these issues. Which leads to merchants. They are losing valuable data to wallets, paymetn providers, etc. Merchants have to weigh up the cost benefit
+11:49:49 <chaals> â€¦ Don't believe it is our choice.
+11:50:34 <jpotvin> interpretive dance --- bees do that
+11:51:02 <chaals> â€¦ There has been a lot of talk about choosing your payment provider on your device. Something that wants to get paid giving you a button to click and pay it, backed by whatever you have chosen to use, this leads back to tokenisation.
+11:51:33 <chaals> â€¦ Final point - lose your  phone is a real issue. We'd like to see more activity in the cloud - but not sure which cloud.
+11:51:44 <mhepp> mhepp has joined #w3cpayment
+11:51:48 <m4nu> q?
+11:52:00 <mountie> q+
+11:52:00 <steph> q+
+11:52:13 <mhepp> Present+ mhepp
+11:52:17 <steph> q+ to ask how can an operator be a wallet provider
+11:52:19 <chaals> Prakash: talked of consumers, merchants, wallet/payment provider
+11:52:35 <chaals> â€¦ does everyone agree with Dave's characterisation of the three points for standardisation?
+11:52:39 <erik_anderson> q+
+11:52:39 <jpotvin> "connect the dots" mobile lock/unlock is an real application of finger-based interpretive dance
+11:52:42 <dka> q?
+11:53:01 <dka> q+
+11:53:29 <chaals> OlivierMass: Reacting to wallet interface. Philippe showed few people use them today, retail wallets more success than bank wallets but that will lead to us having lots of them. Wonder if we will talk about them in 5 years.
+11:54:17 <chaals> â€¦ surprised nobody has mentioned trend to personal data stores, to me describe use cases which fit with the seamless UX better than wallets which are repeated one-shot transaction interfaces
+11:54:29 <chaals> â€¦ my point: don't restrict the interface to wallets.
+11:54:51 <chaals> â€¦ they are just a 'new' way to do payments today.
+11:54:57 <jpotvin> q
+11:55:01 <Sergio_Aquero> Sergio_Aquero has joined #w3cpayment
+11:55:14 <jpotvin> q+
+11:55:18 <Sergio_Aquero> "Wallet" presupposes an architecture
+11:55:25 <Sergio_Aquero> it's one way of handling the payment request
+11:55:39 <chaals> DSR: Agree - wallet is a personal assistant, not a container for payment cards. There will be assistants, e.g. help manage expenses, tell you not to buy more ice cream. Think those value-added services are key
+11:55:48 <virginie> q?
+11:56:20 <chaals> Jorg: Should be cautious about putting too much into the wallet. But one power of the notion of a mobile wallet is as an authorisation agent.
+11:56:31 <chaals> â€¦ but it needs to be somehow cloud-capable, synchronised, â€¦
+11:56:44 <chaals> â€¦ what we call it I don't know.
+11:56:55 <virginie> q?
+11:57:41 <dka> q?
+11:57:47 <chaals> Prakash: Does anyone think P2P payment belongs in the primitive set?
+11:57:49 <schuki> ack chaals
+11:57:49 <Zakim> chaals, you wanted to say the merchant wants user data too
+11:57:55 <chaals> Chaals, Jorg: Yes
+11:57:55 <dezell> dezell has joined #w3cpayment
+11:57:57 <steph> ack bryan
+11:57:57 <Zakim> bryan, you wanted to ask why portability is a concern for use of mobile # as account key
+11:58:35 <chaals> Bryan: You commented on prtoability as a problem for using mobile number as account identifier.
+11:58:54 <schuki> q?
+11:59:12 <hnataraj> hnataraj has joined #W3Cpayment
+11:59:20 <m4nu> q?
+11:59:36 <chaals> Vidya: Mobile money uses the number as an account identifier. When the number gets ported to another telephony provider, the money account may stay with the original money operator, which can become a problem.
+11:59:43 <steph> ack m4nu
+11:59:43 <Zakim> m4nu, you wanted to raise the point that if we store wallet information on device, that we're inevitably going to need to sync it to the "cloud"
+11:59:43 <chaals> Bryan: Not sure if it does, butâ€¦
+12:00:05 <chaals> Manu: Wallet is best word we have, but isn't really ideal. So we will get misunderstanding from that.
+12:00:14 <bryan> ? re the last question are use cases equivalent to primitives ? "P2P", "B2C" are use cases, not primitives
+12:00:24 <chaals> â€¦ Growing concern about where the contents of the wallet are stored. People have more than one device, so they have to synch.
+12:00:32 <chaals> q+ to ask about shared devies
+12:00:43 <bryan> a primitive is e.g. "make a payment request", "get a receipt", etc
+12:00:45 <chaals> â€¦ Wallets are not the only things that get synched these days
+12:01:10 <chaals> â€¦ maybe W3C should think about synching in general. We probably want this stuff on the web not on the device
+12:01:19 <schuki> ack mountie
+12:01:51 <jonny> q+
+12:02:00 <chaals> Mountie: mobile is now the megatrend but wasn't always, and we're also talking about internet of things, wearable devices, vehicles as clients.
+12:02:00 <r2d2> r2d2 has joined #w3cpayment
+12:02:30 <bryan> usecase: wallet portability to new wallet service provider
+12:02:49 <jameslei> jameslei has joined #W3Cpayment
+12:02:59 <chaals> â€¦ wallet is targeting for human interaction based on mobiles and brings a risk of adding a layer of activity, with W3C trying to take the role of banks and payment service providers. And this is too complex.
+12:03:19 <m4nu> q?
+12:03:21 <chaals> â€¦ User and user agent is the centre, and standards need to concentrate on the connections between the devices.
+12:04:40 <chaals> Steph: There are different views of the wallet. Could be a very light element supporting payment. If we can gather payment systems, that's great. If it's another layer that we need, I think we will fail - getting everyone to delegate everything to a wallet will be a challenge.
+12:04:46 <Mauro> ack steph
+12:04:46 <Zakim> steph, you wanted to ask how can an operator be a wallet provider
+12:05:12 <chaals> â€¦ how can a mobie provider be a wallet provider, when you change operator all the time - from phone to wifi to roaming to ...
+12:05:55 <Mauro> s/mobie/mobile/
+12:06:06 <chaals> Jorg: I'm here to reduce complexity. Today all platforms need different implmentations. standardise this through a layer of abstraction - it's feasible and would help to have a good identity abstraction layer. We don't have it yet.
+12:06:06 <dka> q?
+12:06:18 <chaals> â€¦ Who looks at certificate stores?
+12:06:42 <bryan> steph, the ISP/MNO can be the wallet provider just like anyone else. ISPs/MNOs are not limited to serving users over specific networks - they can be cloud-based service providers just like anyone else. The IdM key that is used is also not necessarily tied to specific networks.
+12:06:44 <chaals> â€¦ If we can brand strong authentication (Walmart security anyone) you could sell it.
+12:06:49 <Ori-Eisen> q+
+12:07:14 <chaals> Steph: Is it a technical issue? I think that isn't the problem, it is about getting agreement to delegate the work.
+12:07:17 <Ori-Eisen> what is "strong authentication"?
+12:07:49 <virginie> q?
+12:07:55 <chaals> Jorg: We're missing the motivation to accept the extra complexity of security, while for big players it is cheaper to just use risk-management. We're pushing toward monopolistic tendencies because the large players don't need anything new.
+12:08:01 <melvster> http://en.wikipedia.org/wiki/Strong_authentication
+12:08:17 <mhepp> q+
+12:08:31 <chaals> â€¦ what we do today is nonsense for security, but it works for the existing market. I hope the neutral position at W3C can enable us to make something usable and attractive enough to get adopted
+12:08:40 <Ori-Eisen> my point is that "strong authnetication" is a relative term, compared to what are we trying to authenticate
+12:09:07 <chaals> Natasha: How can we make this implementable? Everyone agrees that mobile number is a bad identifier.
+12:09:25 <dka> q?
+12:09:41 <chaals> â€¦ If you have a contract there are a lot of ways to be identified. Liked the idea if you're paying to use the name of the event not the person.
+12:10:02 <chaals> â€¦ GSMA standardising a wallet isn't about forcing everyone to use it, it is making a business product for operators.
+12:10:19 <Emil> I think that a definition of "strong authnetication" is needed.
+12:10:24 <phobeo> q?
+12:10:27 <chaals> â€¦ If there is a hook in the wallet to say "now please pay" and the standards are agnostic to the wallet chosen, that is interesting.
+12:10:39 <bryan> Not sure I agree that mobile number is a bad identifier. It's just an ID like all others, and in fact one that everyone understands and uses every day;
+12:10:39 <chaals> â€¦ comes back to the customer choosing what to do.
+12:11:01 <mhepp> IMO, security in payment cannot be built into the standards. instead, it will be a highly adaptive component that permits or declines a transaction based on 100+ signals.
+12:11:06 <chaals> â€¦ this is achievable in the short term - which isn't always the case with a complex set of stakeholders.
+12:11:16 <chaals> â€¦ It isn't the be-all answer.
+12:12:00 <chaals> ErikA: Mobile wallets aren't that useful, which explains some low usage. Concerned about device storing wallet, being the 2-factor auth vector and synching to the cloud. It becomes a single point of massive failure.
+12:12:07 <chaals> ack er
+12:12:11 <Jorg> Jorg has joined #W3Cpayment
+12:12:45 <m4nu> Use Case: Where is the wallet, how is it protected, is it stored on the same device as your 2-factor authentication device? Security side-effects of mobile-as-wallet are not straightforward.
+12:12:52 <chaals> Cyril: When you go to a merchant, we almost know what they are. If you go to a certificate chain it gives no information. The policy is a nightmare.
+12:13:17 <chaals> â€¦ I don't know what is going on as a user. Is a problem of trust to explain this better -what the certification means?
+12:13:45 <chaals> â€¦ signed by someone *I* trust, not a chain of trusted trusted trusters?
+12:13:53 <chaals> â€¦ maybe this is part of an extension.
+12:13:58 <m4nu> +1 to mhepp wrt. security must be modular.
+12:14:11 <wseltzer> q+ re exposing security UI to users
+12:14:21 <chaals> Jorg: This transparency needs to be used with care. Users need to put a name to the responsibility. If they trust a brand, they don't question it.
+12:14:56 <mhepp> The standards should support interoperability at the data (and maybe process) level, but not standardize the implementation and internal processes of components.
+12:15:11 <chaals> â€¦ they allow for trust to be distributed. It needs to be transparent, but a lot of real trust comes from trusting on particular brands. We can use that to help get acceptance, or misunderstand it and build stuff that fails
+12:15:48 <chaals> DKA: I'm worried about the notion of standardising a wallet. feels like the wrong level of abstraction.
+12:16:13 <chaals> â€¦ some twitter comment said startups should be the innovators. Feels like an attempt to create an app, not underlying technologies.
+12:16:44 <phobeo> q?
+12:16:49 <bryan> dave, standardizing interface primitives and data formats for browser interface with a wallet is not the same as standardizing the wallet - so we are not standardizing the wallet really - implementations are free to innovate / differentiate
+12:16:54 <phobeo> q+
+12:16:54 <chaals> â€¦ maybe better takeaway for W3C is to look at use cases in the context of existing work - look at synch in teh context of storage work, â€¦ what are the primitives for multiple wallets?
+12:17:34 <bryan> q?
+12:17:40 <chaals> DSR: Idea is to create a space for innovation. Maybe we don't need to standardise synch. What are the *minimal* set of standards that meet the primary goals - innovation, merchants' and users' needs met
+12:17:40 <Jorg> Wallet should be seen as a Concept helping us to guide standardization in various fields ! (security, identity, identity selectors, transaction framing)...
+12:17:56 <phobeo> there may be a bit of confusion about what is "a wallet" in this context... because for example for requestAutocomplete spec it already says you store cc and credentials in either "the user agent or other element" (in chrome's implementation in google wallet) so that already defines that there IS a wallet
+12:17:59 <virginie> note speaker is gergory estrade
+12:18:09 <chaals> Gregory: We are focusing on ID and security, losing sight of what functions and features a wallet can add to payments.
+12:18:14 <chaals> ack dka
+12:18:39 <erik_anderson> Certificate chains are important.  I know firewall units and corporate policies at corporations that inject its own certificate of authority into your browsers so they can "man-in-the-middle" decrypt SSL traffic.  Corporations do this so they can read your email, prevent file sharing/uploads, but they shouldnt be connected in between the user and what they are purchasing.
+12:18:40 <chaals> Prakash: Need to define wallet, by use of a tokenâ€¦.
+12:19:20 <mdadas> mdadas has joined #w3cpayment
+12:19:20 <chaals> Joseph: I though that authentication through interpretive dance is what a written signature involves. Or the dot-connecting to unlock my phone.
+12:19:29 <chaals> s/though/thought/
+12:19:39 <mhepp> +1 to phobeo
+12:19:54 <Angie> Angie has joined #w3cpayment
+12:20:02 <chaals> â€¦ drawing a symbol on a tablet can provide an authentication mechanism.
+12:20:15 <bryan> phobeo, I personally dont like requestAutocomplete - it's a crutch to help us deal with with a last-gen interaction method (web forms) and is a continual source of privacy concern for me (where is all that info backed up? is it secure? what if someone gets one of my devices that is synced with it?)
+12:20:34 <chaals> â€¦ Applying WCAG to this, there are people who are visual, and people who have e.g. dyslexia and huge problems with authentication.
+12:21:13 <chaals> Natasha: Identity and how we authenticate will be something we choose- retina, password, use a signature?
+12:21:32 <phobeo> whether we like the API or not what I mean is that we need a vocabulary that defines "wallet" because different people have different interpretations and I think user agents are already aiming to behave like at least my interpretation of a wallet, whether directly or via things like requestAutocomplete
+12:21:44 <bshambaugh> bshambaugh has joined #w3cpayment
+12:22:02 <chaals> â€¦ accessibiltiy comment is important. and this has impact on the web of things. Was at a dev conf in London and people were talking about accessibility, and there were people who still couldn't see that the web might noit always be entirely visual.
+12:22:10 <chaals> ack me
+12:22:10 <Zakim> chaals, you wanted to ask about shared devies
+12:22:24 <chaals> usecase: payment systems running on shared devices.
+12:23:01 <chaals> Prakash: Don't want to bleed into identity session, but I;d love to look at identity questions about how we look at risk in authentication.
+12:23:10 <mhepp> q+
+12:23:14 <dka> q?
+12:23:17 <m4nu> Chaals: I think people share devices, we should look at those as a use case.
+12:23:26 <dka> ack jpo
+12:23:26 <bryan> phobeo, I agree we need discussions based upon actual behaviors/features and functions, and less focus on terms at the start - the terms will define themselves through the discussion process
+12:23:30 <Ori-Eisen> bravo for the last comment about RBA!
+12:23:34 <m4nu> Use Case: How do wallets work with shared devices?
+12:23:35 <dka> q+ hannes
+12:23:50 <steph> zakim, close the queue
+12:23:50 <Zakim> ok, steph, the speaker queue is closed
+12:24:09 <chaals> Prakash: Shared devices can lead to "friendly fraud". For physical goods the main vector is account takeovers. You need something other than username/password.
+12:24:25 <chaals> Jorg: Adding biometry or behavioural auth, these can be solved.
+12:25:02 <chaals> â€¦ you can do air writing as a secure instrument. But tests showed germans didn't like it.
+12:25:11 <jpotvin> Principles of the  WCAG standard should apply to authentication methods (therefore offer various kinds of authentication)
+12:25:33 <chaals> DaveBirch: Mustn't jumble biometrics for authentication (good) with identification (bad)
+12:25:53 <chaals> â€¦ corrput officials have been selling bogus national id cards - these things are of limited reliability
+12:27:23 <wseltzer> q- later (next session)
+12:27:34 <chaals> Evgeny: DSR says there is a problem where to keep receipts. need to differentiate notification from real receipts for eg warranty. Using phone number as identifier - in some countries you need to show ID to have a SIM, and the number is linked to a real person, and then may be useful. Gregory talks about UI problems for security systems - this can be easily solved with a standard by building an API. There is one edit field and one button, not to hard.
+12:27:37 <wseltzer> q- later
+12:27:42 <chaals> s/to/too/
+12:28:07 <chaals> â€¦ How deep should the standard go into communication channels - totally transport-agnostic, or more detail on NFC/bluetooth/whatever?
+12:28:23 <erik_anderson> In Indonesia the phone number is locked to a particular SIM card.  If the SIM card expires for over xxx time period the SIM must be replaced and the user gets a new phone number
+12:28:23 <schuki> close q
+12:28:34 <chaals> Jorg: We framed this with total payment-agnostic. Could do it with EMV, think it works with paypal online, shouldn't matter.
+12:28:41 <marie> marie has joined #w3cpayment
+12:28:49 <marie> zakim, close the queue
+12:28:49 <Zakim> ok, marie, the speaker queue is closed
+12:28:50 <chaals> Ori: Shocked that ID cards got sold wrongly.
+12:28:53 <marie> q?
+12:28:57 <jonny> jonny has joined #w3cpayment
+12:29:00 <steph> ack jonny
+12:29:03 <marie> ack jon
+12:29:09 <marie> ack ori
+12:29:09 <steph> ack ori-eisen
+12:29:51 <schuki> q close
+12:29:52 <erik_anderson> +1 "Where ever there is value there will be fraud"
+12:29:57 <chaals> â€¦ Err. Where there is value there will be fraud. Take a case where people are trying to pay 30p for sweets or 300k for a house. standards for communicating what is being paid, who is authenticating, the wallet that is being uesd? What are we trying to standardise, many things could be affected.
+12:30:26 <chaals> Prakash: Didn't see Dave say standardise wallet, but interface between wallet and browser, and between wallet and payment provider.
+12:30:30 <chaals> DSR: Right.
+12:30:33 <ernesto> Zakim, close queue
+12:30:33 <Zakim> ok, ernesto, the speaker queue is closed
+12:31:42 <melvster> +1 "Where ever there is value there will be fraud" or "A certain percentage of fraud is accepted as unavoidable" -- Satoshi Nakamoto
+12:32:03 <marie> q?
+12:32:09 <marie> ack mh
+12:32:38 <chaals> mhepp: To make ground we should seperate the work that needs to be done as implementation, and the things that we should stnadardise. If we stnadardise protocols, the decision to decide if something is fraudulent will be probabilistic. So what should we standardise? Means for interoperability of data. Conceptual structures for stages of initiating, archiving, etc, steps that can be document. Not IMHO processes that determine whether a payment is fraudule[CUT]
+12:32:50 <chaals> â€¦ standards are slow, bad guys are fast.
+12:33:14 <melvster> s/stnadardise/standardise
+12:33:24 <chaals> Prakash: focus on parts that are missing. Don't try to build a giant end to end standard - no need and too much work to get it done.
+12:33:33 <chaals> mhepp: @@
+12:33:36 <dka> +1 on not trying to build end-to-end
+12:33:43 <wseltzer> [an interesting question overall: how do we standardize frameworks for risk-based decisions on security?]
+12:34:21 <wseltzer> rrsagent, make minutes
+12:34:21 <RRSAgent> I have made the request to generate http://www.w3.org/2014/03/25-w3cpayment-minutes.html wseltzer
+12:34:50 <mhepp> @chaals: I said that bugfixes to security issues in standards will likely come much slower than apple's bugfix for the #gotofail vulnerability ;-)
+12:34:59 <darobin> darobin has joined #W3Cpayment
+12:35:15 <chaals> s/@@/bugfixes to security issues in standards will likely come much slower than apple's bugfix for the irc://irc.w3.org:6665/#gotofailÂ vulnerability/
+12:35:25 <chaals> [lunch]
+12:35:29 <chaals> rrsagent, draft minutes
+12:35:29 <RRSAgent> I have made the request to generate http://www.w3.org/2014/03/25-w3cpayment-minutes.html chaals
+12:35:53 <chaals> present+ Evgeny, chaals, darobin, tobie
+12:36:07 <chaals> Meeting: W3C Payments Workshop, day 2
+12:36:18 <mhepp> thus, we should not standardize processes with a binary outcome of "1 - transaction valid" vs. "0 - transaction declined". The actual decision will be based on tens of signals from the client (e.g. id, geo-location, history), transaction (volume, type of goods), merchant, etc.
+12:37:04 <mhepp> instead, we should focus on standardizing data interchange, so that components can exchange the respective signals.
+12:38:05 <andym> andym has joined #w3cpayment
+12:38:29 <melvster> mhepp: +1
+12:43:56 <bshambaugh> bshambaugh has joined #w3cpayment
+13:06:39 <andym> andym has joined #w3cpayment
+13:08:15 <andym_> andym_ has joined #w3cpayment
+13:08:32 <dka> dka has joined #w3cpayment
+13:09:09 <mountie> mountie has joined #W3Cpayment
+13:11:59 <mhepp> mhepp has joined #w3cpayment
+13:12:36 <neilm> neilm has joined #w3Cpayment
+13:20:12 <phariramani> phariramani has joined #w3cpayment
+13:24:45 <karl_johan> karl_johan has joined #w3cpayment
+13:27:18 <skddc> skddc has joined #W3Cpayment
+13:30:06 <virginie> virginie has joined #w3cpayment
+13:30:26 <SartoriMichele> SartoriMichele has joined #W3CPayment
+13:32:44 <andym> andym has joined #w3cpayment
+13:32:47 <jphong> jphong has joined #w3cpayment
+13:32:51 <andym> andym has joined #w3cpayment
+13:34:52 <jonny> jonny has joined #w3cpayment
+13:35:09 <Emil> Emil has joined #W3Cpayment
+13:35:26 <marie> marie has joined #w3cpayment
+13:35:40 <phobeo> phobeo has joined #w3cpayment
+13:36:42 <dezell> dezell has joined #w3cpayment
+13:36:48 <schuki> scribe: schuki
+13:37:01 <dka> dka has joined #w3cpayment
+

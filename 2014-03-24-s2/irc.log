@@ -1,0 +1,443 @@
+12:33:56 <wseltzer> Topic: Toward an Ideal Web Payments Experience
+12:34:06 <wseltzer> speaking, Natasha Rooney
+12:34:39 <evan_schwartz> Natasha: in this session, look at use cases for web payments, analyzing issues and questions associated. By the end we should have some guidelines on how to move forward with these issues
+12:34:55 <dezell> dezell has joined #w3cpayment
+12:34:56 <Angie> Angie has joined #w3cpayment
+12:35:39 <dsr> dsr has joined #w3cpayment
+12:35:46 <jphong> jphong has joined #w3cpayment
+12:35:46 <FlorisKleemans> FlorisKleemans has joined #W3CPAYMENT
+12:35:48 <kodonog> kodonog has joined #w3cpayment
+12:36:34 <evan_schwartz> Manu Sporny: "Cat herding 101", everyone has a different idea of what to standardize
+12:37:17 <evan_schwartz> Manu: W3C creates standards through consensus, "ideal" payments experience is subjective and there are many, we can only realistically standardize parts of the experience
+12:37:22 <marie> marie has joined #w3cpayment
+12:37:27 <evan_schwartz> Manu: don't want to beat innovation out in the process
+12:37:44 <phobeo> phobeo has joined #w3cpayment
+12:37:46 <mountie> mountie has joined #W3Cpayment
+12:37:50 <jeff> jeff has joined #w3cpayment
+12:37:51 <evan_schwartz> Manu: 3 main inputs to standardization: position papers, input from Web Payments Community Group, attendees of this workshop
+12:38:06 <keir> keir has joined #w3cpayment
+12:38:22 <BryanS> BryanS has joined #W3Cpayment
+12:38:44 <OlivierMaas> OlivierMaas has joined #w3Cpayment
+12:38:45 <evan_schwartz> Manu: survey of papers, common themes: no verified identity / trust mechanism (72%), outdated security tech (50%), no payment request standard (38%), no proof of purchase standard (38%)
+12:38:58 <mhepp> usecase: verify identity or assess trust of partners in a transaction
+12:39:07 <evan_schwartz> Manu: didn't think identity was going to be such a common issue but it was the #1 issue cited amongst the papers
+12:39:24 <mhepp> usecase: initiate / request payment
+12:39:49 <mhepp> usecase: issue, transmit, validate proof-of-purchase
+12:40:08 <Mauro> Mauro has joined #w3cpayment
+12:40:38 <darobin> darobin has joined #W3Cpayment
+12:40:39 <mhepp> usecase: find and compare payment options for transaction
+12:40:46 <kjheimark> kjheimark has joined #w3cpayment
+12:40:54 <evan_schwartz> Manu: other themes: bad payment provider competition and lock-in (38%), expensive for vendors to integrate with payment providers (31%), mobile payments are fragmented (31%), payment provider lock-in (28%), poor rate of extensibility
+12:41:24 <prakash> prakash has joined #w3cpayment
+12:41:34 <evan_schwartz> Manu: Web Payments CG - 146 members -- not an official group at the W3C, existed for ~3 years, creating space where open payment technologies can incubate
+12:41:47 <evan_schwartz> Manu: currently working on 14 technologies that can be applied to payment problems
+12:42:11 <evan_schwartz> Manu: machine-readable products and offers, initiating transactions, digital receipts, identity, web security upgrades
+12:42:26 <mhepp> usecase: digital receipts
+12:42:28 <evan_schwartz> Manu: (types of tech being worked on)
+12:42:55 <evan_schwartz> Manu: workshop attendee input: looking to determine problems, constraints, use cases, goals, and actions for the W3C
+12:44:00 <evan_schwartz> Manu: if you are interested in following up with this work, please join the Web Payments CG, it's not official but there will be a lot of post-workshop work
+12:44:53 <evan_schwartz> Kumar McMillan: for the past several years mozilla has been building mobile OS called Firefox OS
+12:45:01 <Parslow> Parslow has joined #W3Cpayment
+12:45:08 <schuki> q?
+12:45:16 <evan_schwartz> Kumar: looked at HTML5 and available APIs, tried to create APIs that did not already exist
+12:45:39 <evan_schwartz> Kumar: wanted to have commerce as part of the mobile operating system, for developers to sell apps
+12:45:52 <mhepp> usecase: selling apps in mobile scenarios
+12:45:59 <evan_schwartz> Kumar: navigator.mozPay is not on the standards track
+12:46:17 <evan_schwartz> Kumar: talk will focus on what can be standardized based on mozilla's experience
+12:46:23 <evan_schwartz> Kumar: web payments work today
+12:47:15 <evan_schwartz> Kumar: when presented with a choice between credit card and paypal, I'll almost always choose paypal. This works on the web, we have secure HTTP. There's also Stripe and Square in the US. Lots of startups disrupting the space
+12:47:23 <evan_schwartz> Kumar: there are some problems
+12:47:43 <danny> danny has joined #W3CPayment
+12:47:48 <evan_schwartz> Kumar: credit card numbers are insecure, mobile billing is broken in some major ways, new customer info, no standard for asset ownership
+12:47:58 <mhepp> usecase:: Prove asset ownership
+12:48:21 <evan_schwartz> Kumar: credit card numbers are totally insecured, Target got hacked and I had to cancel my card, get a new one, and update all of the accounts
+12:48:39 <evan_schwartz> Kumar: why are we giving people credit cards when all they want to do is make a specific payment
+12:49:04 <evan_schwartz> Kumar: payment tokens for merchants: merchants could give token that requests specific amount of money and token expires
+12:49:09 <mhepp> usecase: temporaty payment tokens for mechants
+12:49:37 <evan_schwartz> Kumar: payment processor needs to move money from customer's account to merchant account -- merchant doesn't care how payment is executed
+12:50:02 <Mauro> s/temporaty/temporary/
+12:50:03 <mhepp> s/temporaty/temporary
+12:50:03 <evan_schwartz> Kumar: PayPal hosted flow works with tokens, mozPay JSON web token works the same way, as well as Stripe and Square
+12:50:13 <mdadas> mdadas has joined #w3cpayment
+12:50:17 <evan_schwartz> Kumar: merchant never receives credit card number
+12:50:34 <mhepp> usecase: mobile billing
+12:51:04 <evan_schwartz> Kumar: mobile billing is broken, it's a nice way to pay and works on the web, but there is HTTP header injection, every operator is different, and there are SMS hacks
+12:51:39 <evan_schwartz> Kumar: don't know how to fix this, operators need to step up and fix this
+12:52:07 <evan_schwartz> Kumar: at mozilla, introduced silent SMS API, they'd like to extract that from mozPay -- still just a better hack
+12:52:16 <evan_schwartz> Kumar: Apple's facetime has published how they do silent SMS
+12:52:31 <mhepp> usecase: registering new / as a new customer
+12:52:40 <evan_schwartz> Kumar: becoming a new customer is hard, you have to fill in home address, billing address, credit card number, and you need to do it all over again for each payment provider
+12:53:22 <evan_schwartz> Kumar: Request Autocomplete was developed by Google, shipping in Chrome, web page can request and autocompletion by the device and the info will be stored securely on the device
+12:53:48 <evan_schwartz> Kumar: standard web identity could be one solution but it's pretty ambitious, there are strongholds around identity so it might be harder to use that
+12:54:05 <Thomas_Picard> Thomas_Picard has joined #W3CPayment
+12:54:47 <evan_schwartz> Kumar: how do you prove you own an item? FirefoxOS is trying to embrace fragmentation, they want firefox marketplace to sell app but other marketplaces can also sell that app -- to make this work they made a digital receipt format that is portable, decentralized, and verifiable
+12:55:15 <evan_schwartz> Kumar: digital receipts could be standardized to help payments
+12:55:36 <evan_schwartz> Kumar: payments work well, it's important to focus on things that are real problems
+12:55:54 <bshambaugh> bshambaugh has joined #W3Cpayment
+12:55:58 <evan_schwartz> Kumar: also important to think about what are the payment primitives? the basic, low-level building blocks like the token idea
+12:56:40 <schuki> q?
+12:57:31 <evan_schwartz> Yaromin from Dynorg (?): looking at the spec for web payments provider, it asks providers to be in a whitelist, what does it take to get in there?
+12:57:38 <mhepp> q+
+12:58:00 <virginie> q?
+12:58:18 <evan_schwartz> Kumar: whitelist of payment providers may end up being deprecated, need low-level building blocks for accessible APIs
+12:58:29 <schuki> ack mhepp
+12:58:39 <Jonny> Jonny has joined #W3Cpayment
+12:58:57 <evan_schwartz> @@: how is the idea of digital receipts related to the work on schema.org? -- could be applied to JSON-LD representation
+12:59:17 <evan_schwartz> Kumar: no plan right now to align this with JSON-LD but he thinks it's a better idea than Mozilla's free-form JSON
+12:59:39 <schuki> q?
+12:59:43 <schuki> q+
+13:00:20 <evan_schwartz> Stephane Boyera: mozPay seems like an interesting abstraction across other payment provider APIs
+13:01:16 <ernesto> q+
+13:01:21 <andym> andym has joined #w3cpayment
+13:01:21 <evan_schwartz> Kumar: it's an abstraction but anyone could make an abstraction, all the building blocks are on there on the web with HTML forms that have a submit button, i don't think we need to standardize an end-to-end flow, only focus on things that are missing like tokens. Stripe has its own abstraction
+13:01:33 <schuki> ack schuki
+13:01:54 <evan_schwartz> Daniel Appelquist: working at Telefonica I agree with what Kumar said, but I don't agree that SMS is a hack
+13:02:40 <Lou> Lou has joined #W3Cpayment
+13:02:40 <evan_schwartz> Daniel: using SMS is becoming pretty well cemented as mechanism for verification -- silent SMS may be useful in some cases but in others it might make the customer feel more secure
+13:04:01 <evan_schwartz> Daniel: is there really an ideal payment experience? Micropayments have long been needed. HTTP status code 402 was intended to support micro-payments. There were people in the mid-1990s trying to implement micropayments but there is plenty of room for innovation, shouldn't just focus on an ideal scenario. Need to focus on security and convenience
+13:04:25 <Angie> Angie has joined #w3cpayment
+13:04:32 <evan_schwartz> Daniel: there are issues with the current security aspect, chromeless webapps or native applications, how can you determine if you're in a secure application
+13:05:09 <evan_schwartz> Daniel: certificate model of web security is broken because people don't pay attention to it, people click through even on old certificates
+13:05:28 <evan_schwartz> Daniel: innovations in payment UI like using camera to recognize credit card, but then there's a privacy issue
+13:05:47 <phobeo> q?
+13:05:50 <phobeo> q+
+13:05:53 <evan_schwartz> Daniel: loyalty cards have interesting developments
+13:06:04 <evan_schwartz> Daniel: mobile ticketing is also part of payments
+13:06:31 <joe> joe has joined #w3cpayment
+13:06:48 <evan_schwartz> Daniel: not currently convinced that we need payments as part of the core architecture of the web. we should incrementally strengthen existing work
+13:07:53 <evan_schwartz> Bryan Sullivan: ATT has operated as payment broker since 2002, APIs have improved over the years, also mobile wallet in the US. There isn't an ideal experience
+13:08:01 <mhepp> usecase:loyalty cards
+13:08:06 <evan_schwartz> Bryan: people should look at the push API he's working on with Telefonica
+13:08:28 <mhepp> s/:loyalty/: loyalty/
+13:08:30 <evan_schwartz> Bryan: payment is personal, enabling user choice in everything regarded to payment is a key aspect of the UI
+13:09:02 <evan_schwartz> Bryan: W3C doesn't have to address entire industry but it should look at key use cases and requirements
+13:09:41 <evan_schwartz> Bryan: UI for web on moblie is very diverse, all of contexts should be supported. Don't want a fragmented web UX
+13:10:27 <evan_schwartz> Bryan: UX is going to be driven by how consistently the APIs are implemented, not so much about the UI -- you can set expectations but mandating a particular UX leads to narrowing scope of problem too much
+13:11:10 <evan_schwartz> Bryan: transfer of funds as an exercise is a really good place to start but we need to think of payments as an aspect of transaction processing in general, need to be able to exchange all types of value
+13:11:18 <schuki> ack ernesto
+13:11:22 <gmandyam> q+
+13:11:36 <andym> andym has joined #w3cpayment
+13:11:42 <Mauro> q+ JeremyKing
+13:11:51 <andym> q+ andym
+13:13:01 <evan_schwartz> Ernesto: used to work for Telefonica and Mozilla, background on what mozPay offered them -- it was good because everything is web-based, needed a way to verify trusted UI for entering details, the only problem was that there wasn't an option to open it up to every type of payment provider
+13:14:30 <andym> q- andym
+13:14:32 <evan_schwartz> Kumar: in mozPay there's a trusted UI, but it is still spoofable. That's not a payment-specific problem, it's a problem for all mobile. There's no way to trust that a site is connected to the right URL, all of mobile needs that
+13:15:38 <evan_schwartz> David Birch: if you assume payment token is the invoice signed by the provider, that's completely feasible. The client is going to pass the token to the payment service provider so they need to manage providers. They'll also resolve certificate chains
+13:16:05 <evan_schwartz> David: digitally signed invoice can act as the receipts
+13:16:10 <erik_anderson> erik_anderson has joined #w3cpayment
+13:16:34 <evan_schwartz> David: if we assume most of this is going to move onto mobile, Trusted Execution Environments might add some optimism even if it's not ideal right now
+13:16:50 <virginie> +1 to Dave Birch point on TEE optimism
+13:17:12 <evan_schwartz> Kumar: maybe the token doesn't need the W3C but I want to see sites stop using credit card numbers
+13:17:20 <bshambaugh> Hello Web Payments Workshop!
+13:17:46 <evan_schwartz> Kumar: with the receipts there's also the ownership part, like a cookie that lives on device so you could give it back to the website
+13:18:21 <evan_schwartz> Bryan: people should look at global platform for TEE, this is a problem that's been around since feature phones
+13:18:21 <chaals> s/@@/MartinHepp/
+13:18:50 <evan_schwartz> Bryan: it's a general problem of the web that things can pop up and take over the screen
+13:18:51 <Erik_Anderson> Erik_Anderson has joined #w3cpayment
+13:19:03 <schuki> ack phobeo
+13:20:35 <virginie> note : light explanation of Trusted Execution Environment technology there : http://poulpita.com/2014/02/18/trusted-execution-environment-do-you-have-yours/
+13:20:37 <evan_schwartz> Ricardo: the moment we start getting into trusted elements, we're getting into manufacturers and browsers, etc. we'll need to decide if we want to involve those. Payments are not just a form, the actual payment is done later. The open question is whether payments should be a more integral part of the web. Similar to geolocation where you say I want your location, a merchant could say I want $10
+13:21:53 <evan_schwartz> Natasha: many position papers separate UI and intent to pay, questioning whether UI should be standardized. What do people want from standards?
+13:22:29 <stanstalnaker> stanstalnaker has joined #w3cpayment
+13:22:32 <wseltzer> q?
+13:22:38 <wseltzer> q+ hannes
+13:22:44 <stanstalnaker> hello world
+13:22:49 <jeff> q+
+13:22:52 <evan_schwartz> Kumar: dangerous to standardize things that don't need to be standardized -- UI is easy to build on existing web technology. Risky to introduce APIs that are not useful. A 402 response is not as useful as a 301 redirect that redirects to a page saying you haven't purchased this option
+13:23:12 <ernesto> usecase: when doing a payment, need a way to assure the customer he is his payment service provider and is not subject to phising. Specially problematic in mobile when browser chrome is not available.
+13:23:14 <chaals> q+
+13:24:41 <evan_schwartz> Manu: agrees completely. Dangerous to say this is exactly how payments look on the web, it's more about the intent to pay. Whitelists and digital receipts have been raised a number of times but if we say there will be a whitelist on payment provider signatures we'll continue having the same ecosystem we see today, no innovation. We could potentially put in the same infrastructure that was put in for the Certificate Authorities, we want a m[CUT]
+13:25:20 <evan_schwartz> Bryan: management of that type of data is the essence of evil, solution needs to be more scalable
+13:25:48 <OlivierM> OlivierM has joined #w3cpayment
+13:26:18 <schuki> q+
+13:26:34 <chaals> q+ to ask what the relation is between digital receipts and EME, and to offer the counter-example of EV certificates and standardisation of UI
+13:26:39 <evan_schwartz> Daniel: shouldn't describe things as evil. On mobile, most apps are being used in a chromeless way, there is a disparity because there isn't the same kinds of visual queues
+13:27:01 <evan_schwartz> * cues
+13:27:17 <chaals> s/queues/cues/
+13:27:25 <evan_schwartz> Bryan: trusted consent is a general problem of the web
+13:27:29 <chaals> q+ jorg
+13:27:38 <bshambaugh> If I may ask, how's linked data, Ethereum?
+13:28:26 <Mauro> q?
+13:28:27 <evan_schwartz> Prakash: murkiness in terms of the standard for payment tokens, what does the Fed and European Commission think of the standards?
+13:28:33 <virginie> note : some trusted user interface like work is discussed in WebAppSec see : http://www.w3.org/TR/wsc-ui/
+13:28:48 <evan_schwartz> can't hear unmiced commentors
+13:29:37 <BryanS> BryanS has joined #W3Cpayment
+13:29:39 <andym> andym has joined #w3cpayment
+13:29:41 <evan_schwartz> Jeremy King: the standard that Mastercard and Visa have just related is taking tokenization from the issuer perspective and using token to iinitiate transaction
+13:30:09 <evan_schwartz> Jeremy: from PCI standards there is tokenization from the acquirer's side
+13:30:34 <ernesto> q+ about commenting on UI specification
+13:30:35 <evan_schwartz> Jeremy: everyone's talking about tokenization from different ends of the spectrum
+13:30:41 <mhepp> usecase: Tokenization
+13:30:47 <BryanS> Not sure how the tokenization spec relates to the UX, maybe this can be clarified
+13:30:58 <mountie> q?
+13:31:13 <dezell> q+ for Gray Taylor
+13:31:28 <schuki> ack gmandyam
+13:31:32 <chaals> q+ GrayTaylor
+13:32:03 <ernesto> q+ to comment on UI specification
+13:32:30 <keir> keir has joined #w3cpayment
+13:32:39 <steph> steph has joined #w3cpayment
+13:32:40 <evan_schwartz> Geary: re: mozilla telefonica paper -- why aren't client technologies for geolocation good enough? How will third party payment providers being included?
+13:32:44 <chaals> q- dezell
+13:32:45 <virginie> note emvco tokenization framework : https://www.emvco.com/specifications.aspx?id=263
+13:32:55 <steph> s/Geary/Giri/g
+13:33:23 <chaals> (see above for an example :) )
+13:33:30 <steph> q+ to talk about merchant ideal experience: adding easily psps without changing a line
+13:33:53 <evan_schwartz> Kumar: we're not sure, that's why there's a whitelist right now. There are really sensitive APIs, there are privacy reasons why we don't want to allow access to that
+13:34:00 <wseltzer> q+ re privacy
+13:35:06 <r2d2> r2d2 has joined #W3CPAYMENT
+13:35:53 <evan_schwartz> Natasha: want to pull conversation away from mozPay because they're not going to spec it
+13:36:19 <schuki> ack JeremyKing
+13:36:57 <evan_schwartz> Jeremy King: re comments about SMS, not long ago there was a laptop and mobile phone, but now they've merged into one so SMS is ineffective 2FA
+13:37:27 <Jorg> Jorg has joined #W3Cpayment
+13:38:01 <dezell> q- GrayTaylor
+13:38:03 <Jorg> +q
+13:38:10 <wseltzer> ack hannes
+13:38:14 <schuki> ack hannes
+13:38:26 <chaals> s/+q//
+13:38:31 <chaals> q?
+13:38:51 <evan_schwartz> Hans: there's always a reluctance to standardize UI but the standardization is gone on mobile, as well as the certificate validation. Is there any possibility to improve the mobile experience? No one wants someone to dictate UI but it's not a good state now
+13:39:20 <BryanS> Re SMS use in stolen phones, the solution there is faster response for locking phones. And anyway in most cases the thief will pull the SIM first thing, which prevents the SMS from being an attack vector.
+13:39:26 <phobeo> q?
+13:39:45 <evan_schwartz> Kumar: any time you're talking to any website on mobile phone, need better mechanism than a lock icon for non-crypto users to know they're talking to the right site
+13:40:25 <Parslow> there is not only stolen phones but a lot of stolen OTP are due to cloned SIM issued by the operators
+13:40:46 <evan_schwartz> Daniel: security is a payments issue. HTTPS was designed for payments
+13:40:52 <BryanS> Re earlier point on location, I agree it should be entirely adequate (GeoLoc API) for payment purposes. Newer tech and networks e.g. LTE will also support indoor location soon.
+13:40:59 <schuki> ack jeff
+13:41:40 <wseltzer> s/HTTPS was designed for payments/per PHB, HTTPS was designed for payments, i.e., to make consumers feel confident enough to make payments online./
+13:41:43 <evan_schwartz> Jeff Jaffe: both Kumar and Manu have made strong points about not standardizing UI, but if we're talking about an ideal UX for payments, we have to get people to trust us with their dollars or Euros, it's different than browsing the web for information
+13:42:02 <Ori_Eisen> Ori_Eisen has joined #W3Cpayment
+13:42:06 <Ori_Eisen> Hi, I would like to make a comment
+13:42:14 <wseltzer> q+ Ori_Eisen
+13:42:23 <evan_schwartz> Kumar: there's a lot of innovation on the current web with UI. Amazon payments are incredibly fast, Stripe has made it super easy to pay. We'd hold people back
+13:42:38 <Ori_Eisen> q+
+13:42:40 <evan_schwartz> Manu: does anyone even have an idea of what the ideal UI would be?
+13:42:45 <evan_schwartz> Natasha: too many stakeholders
+13:42:46 <Ori_Eisen> sorry, new to this format ;-)
+13:42:48 <Mauro> s/Hi, I would like to make a comment//
+13:42:57 <steph> i believe we are mixing ideal functional interface vs ideal design
+13:43:01 <evan_schwartz> Manu: never heard an idea that would work for everyone
+13:43:06 <RRSAgent> I have made the request to generate http://www.w3.org/2014/03/24-w3cpayment-minutes.html wseltzer
+13:43:22 <evan_schwartz> Bryan: shouldn't focus too much on UI
+13:43:35 <Erik_Anderson> UI will always be branded by the organization.  They will want their own particular theme.  Standardizing the UI will never go anywhere.
+13:44:07 <wseltzer> i/Natasha: in this session/scribenick: evan_schwartz
+13:44:28 <RRSAgent> I have made the request to generate http://www.w3.org/2014/03/24-w3cpayment-minutes.html wseltzer
+13:44:38 <Ori_Eisen> Wendy, do I type just "q+" or like you did "q+ Ori_Eisen"? so I know
+13:44:45 <schuki> ack chaals
+13:44:45 <Zakim> chaals, you wanted to ask what the relation is between digital receipts and EME, and to offer the counter-example of EV certificates and standardisation of UI
+13:44:48 <BryanS> The problem is that solutions that focus on UI get reduced to a solvable surface, in the case of tracking protection for example limited to web browsers, and leaving all other web contexts off the table.
+13:44:54 <steph> +1 to Dan
+13:45:01 <Ori_Eisen> thanks!
+13:45:27 <wseltzer> s/Wendy, do I type just "q+" or like you did "q+ Ori_Eisen"? so I know//
+13:46:19 <keir> keir has joined #w3cpayment
+13:46:28 <evan_schwartz> Chaals: when we created extended validation certificate system, one of the things we did at W3C was standardization of UI to show that you were on an extended validated system. There's not a full spec but there are some clear guidelines to help users be sure they know what they're getting. You do have to dictate something about the UI to pass a clear message across different UIs, need to pass minimal viable set. This wouldn't be restricted[CUT]
+13:46:31 <jaromil> evan_schwartz: s/Yaromin from Dynorg/Jaromil from Dyne.org/
+13:46:48 <evan_schwartz> thank you
+13:47:24 <BryanS> UI can come from many places... Web servers are the most flexible source of UI, and OAuth servers have the same advantage of being able to dynamically pull in content/info to present to the user, and don't impact browser code bases (another limiting factor).
+13:47:38 <ernesto> q?
+13:48:44 <evan_schwartz> Chaals: might be way to standardize receipts
+13:49:04 <evan_schwartz> Natasha: who thinks it's a good idea to start looking into UI elements of payments?
+13:49:16 <evan_schwartz> some people think it's a good idea, a few think it's an awful idea
+13:49:29 <evan_schwartz> Natasha: good case to start looking at it
+13:49:39 <schuki> ack Jorg
+13:49:42 <virginie> Note : UI with security merits may be worth looking at
+13:50:00 <tobie__> q+ on non-normative UI/UX work
+13:50:16 <evan_schwartz> Jorg: need to differentiate between UI and user iteraction patters, need to get into user interaction patters which blend into technical transaction interactions
+13:50:46 <chaals> [having a digital receipt that is transferable doesn't solve all of EME, but one part of what they want to do is determine whether you have the right to use the content]
+13:50:58 <evan_schwartz> scribe is getting very tired of typing :(
+13:51:00 <BryanS> To address offline use cases, we also have service workers and other new tech that can serve the same goals e.g. local OAuth servers that can on the back end integrate with TEE Trusted Applications or Secure Elements, which can provide a truly trusted UI capability for the web.
+13:51:05 <Erik_Anderson> q+
+13:51:32 <dka> +1 to thinking about interaction (not interface).
+13:51:42 <steph> +1 too
+13:51:56 <BryanS> Would web components provide a means to create secure interactive elements?
+13:52:08 <schuki> BryanS: I was going to say!
+13:52:09 <jeff> [+1 the distinction between interaction and interface is a helpful distinction]
+13:52:11 <evan_schwartz> Daniel: interaction is the more accurate term than interface
+13:52:35 <chaals> [â€¦ i.e. a digital receipt. And having a decentralised receipt instead of your prof-of-ownership being provided as a service by a particular provider would, for example, reduce the problem of your key expiring with the company that made it]
+13:52:39 <evan_schwartz> Bryan: what would be the role of web components? they could provide secure interactive elements
+13:53:04 <evan_schwartz> Natasha: B2B payments haven't come up yet
+13:53:21 <phobeo> bryan, I don't think so: web components at its basic form are just glorified client-side template engines, they don't solve anything we couldn't do already (of course they have benefits like reusability but they don't add new "use cases")
+13:53:52 <evan_schwartz> Bryan: whole range of relationships beyond B2C, in order to really reach scale, need to look at end-to-end interaction and see all of the players. Need means of exchange between providers and a market
+13:54:43 <schuki> ack ernesto
+13:54:43 <Zakim> ernesto, you wanted to comment on UI specification
+13:54:44 <mhepp> usecase: encrypted media extensions
+13:54:50 <schuki> ack schuki
+13:54:52 <mountie> q+
+13:55:46 <evan_schwartz> Ernesto: 2 tracks for UI, browser or OS UI and there's also UI for payment flow from payment processor. need way to show customer in mobile and desktop that they're in a trusted environment. shouldn't standardize how that looks but should provide means for browsers to show it's in a trusted environment
+13:57:00 <evan_schwartz> Ernesto: different aspects of this could be standardized separately as layers
+13:57:03 <BryanS> Businesses and enterprise user use cases are just as important as consumer use cases. For example, the parties involved in enterprise use cases might aggregate or authorize payments on behalf of the enterprise, thus represent a B2B use case.
+13:57:11 <StephanSteglich> StephanSteglich has joined #W3CPAYMENT
+13:57:16 <chaals> scribe: chaals
+13:57:25 <evan_schwartz> thank you so much
+13:57:26 <schuki> q?
+13:57:28 <chaals> Manu: Don't think anyone is arguing against a layered approach
+13:57:31 <chaals> DKA: Agreed
+13:57:34 <schuki> ack steph
+13:57:34 <Zakim> steph, you wanted to talk about merchant ideal experience: adding easily psps without changing a line
+13:57:49 <schuki> q+
+13:58:15 <chaals> Steph: We talk a lot about users. I feel we need a holistic approach. Think of the merchant UI. What merchants want is to support more payment providers without changing the website for each one.
+13:58:22 <chaals> â€¦ that has a huge impact.
+13:58:42 <chaals> Kumar: Would be nice, don't see it happening. People woudn't follow a standard for an API.
+13:58:48 <stanstalnaker_> stanstalnaker_ has joined #w3cpayment
+13:58:51 <chaals> â€¦ the incentives are not there. Open source is a good answer
+13:59:12 <chaals> [chaals thinks a standard is a far better tool than an Open Library]
+13:59:18 <chaals> â€¦ that would get traction.
+13:59:35 <dezell> +1 to chaals
+13:59:56 <chaals> Steph: There is an abstraction that can be done like mozpay, routing the user through the payment layer generically seems a clever way to provide benefits to merchants and customers.
+14:00:13 <BryanS> Isn't the interface between a virtual wallet and payment providers valuable to standardize?
+14:00:13 <chaals> â€¦ think that could be a good goal, allowing innovation where it makes sense and a generic approach where it is required.
+14:00:29 <chaals> Manu: Big problem for merchants- if there is an open mechanism, the merchant still needs to get the money.
+14:00:44 <schuki> q?
+14:00:49 <chaals> â€¦ They want to accept all payment, but don't want to make individual deals with each processor. Not sure we touched on that.
+14:01:00 <BryanS> The merchants don't need to know or use the API between the wallet and payment provider, just the web API that provides access to the wallet.
+14:01:11 <chaals> Steph: Think that would solve the issue. It isn't just an account today, it is also writing a whole backend.
+14:01:19 <chaals> Manu: So where to they open the account?
+14:01:36 <chaals> Natasha: Wallets might be able to handle that, giving a bundle of accounts.
+14:01:41 <Danny_Jeong> Danny_Jeong has joined #W3CPayment
+14:01:44 <chaals> â€¦ people innovating around there can cause issues.
+14:01:54 <schuki> ack wseltzer
+14:01:54 <Zakim> wseltzer, you wanted to discuss privacy
+14:02:13 <chaals> Wendy: Wanted to re-emphasise Dan's quote about HTTPS - giving customers confidence to make payments on the web.
+14:02:27 <chaals> â€¦ shared interest is giving the customer confidence in transactions.
+14:02:33 <schuki> q+ hannes
+14:02:37 <chaals> â€¦ and we have interest in making that confidence justified.
+14:02:56 <Erik_Anderson> Merchants dont want to be exposed to all of the underlying payment sources or technologies.
+14:03:08 <Erik_Anderson> They want it more simple
+14:03:22 <stanstalnaker> d:) deep thought - what would an httpp:// protocol look like as a means of annotating a potential payment marker
+14:03:30 <chaals> â€¦ some attention to the UX is needed. We need some workto standardise and help people see they don't need to be an expret in choosing providers to do business, don't need to do a lot of research before knowing if payment will work on the web.
+14:03:47 <chaals> [chaals to stan: payto:â€¦ ?]
+14:03:55 <chaals> â€¦ we want this to happen, where can we do the work?
+14:04:03 <schuki> ack hannes
+14:04:04 <dezell> Merchants want choice, but not necessarily infinite choice.  Having ANY choice would be a huge improvement over status quo.
+14:04:42 <chaals> Hannes: Raises an interesting question for W3C. On the one hand you create building blocks, and let industry innovate, but how do you ensure that these are sound for security, which is the sum of, not just individual block propoerties.
+14:04:52 <chaals> â€¦ relates to white-listing/certification.
+14:05:29 <chaals> â€¦ When people meet the right criteria they get the User Experience. I see layers in standardisation - some blocks at W3C, but some maybe somewhere else (dunno where)
+14:05:51 <chaals> â€¦ to provide a block that people get which is trustable. There are examples in other sectors, like FIDO or Bluetooth.
+14:05:57 <BryanS> I agree that trusted UI is an important thing to be considered but in general, not just for payments. And we should keep a broader focus when we consider this, remembering that much of the Web's UI exists outside the user agent, at least in how the presentation layer is crafted.
+14:06:02 <chaals> Natasha: has happened in eg WebRTC too.
+14:06:19 <schuki> ack Ori_Eisen
+14:06:28 <bgidon> bgidon has joined #w3cpayment
+14:06:55 <Erik_Anderson> +1 core
+14:06:58 <schuki> virginie: Ori_Eisen
+14:07:03 <chaals> Ori: Suggest we keep the UI and visual to the end. Computers are great in shell before they had UIs. Let's fix the core issue and then worry about how to signal what we are trying to solve.
+14:07:31 <virginie> .me thanks schuki, helps preparing my security session
+14:07:33 <chaals> â€¦ Think there are plenty of things W3C can and should do. BUT there is no standardisation of fighting viruses. The bad guys are too agile to make standards of how we fight them.
+14:07:33 <BryanS> APIs are the analogy of the shell
+14:07:49 <wseltzer> [cough Kerkhoffs]
+14:07:51 <chaals> â€¦ any standard we make will be so slow that bad guys have a roadmap in advance.
+14:08:04 <chaals> â€¦ need to figure what should and what shouldn't be standardised.
+14:08:22 <betehess> betehess has joined #w3cpayment
+14:08:30 <chaals> â€¦ who takes responsibility for paymetn security if it goes bad. How do people who take responsibility for lost money fit into the standardisation.
+14:08:41 <chaals> â€¦ Don't forget there is an adversary watching us.
+14:09:15 <chaals> DKA: My perspective is this workshop is looking to feed a process in W3C, but the thinking we are doing can have a big influence too.
+14:09:25 <schuki> q?
+14:09:40 <chaals> â€¦ documented record of the meeting might produce outcomes which are work items but not for W3C.
+14:09:56 <schuki> acl tobie__
+14:10:09 <schuki> ack tobie__
+14:10:09 <Zakim> tobie__, you wanted to comment on non-normative UI/UX work
+14:10:18 <wseltzer> s/cough Kerkhoffs/Kerckhoffs's Principle, that a cryptosystem should be secure even if all is disclosed but the key; transparency can aid security
+14:10:34 <schuki> q+ hannes
+14:10:37 <chaals> tobie: Following up on UX. The reason not to standardise is 1: IPconcerns, 2: don't block innovation. Which are important points. However, there would be value in some non-normative documents on the topics.
+14:10:50 <schuki> ack Erik_Anderson
+14:11:05 <jeff> [Jeff supports Tobie's point.  We often call that "Best Practices".]
+14:11:17 <chaals> Erik: All the merchant cares about is getting the money into their bank. What is their experience going to be?
+14:11:51 <chaals> Manu: we ar focusing on customer experience and especially security issue for them, not "does their payment provider match the merchant"?
+14:12:40 <chaals> â€¦ Visa and MC don't care who people bank with. Unless we're building on existing powers, you have to have a standard where the merchant and customer can have different bank accounts, otherwise we can't compete with what we already have.
+14:13:04 <chaals> DKA: Agree. E.g. Stripe's value-add is simplifying life for the merchant.
+14:13:39 <ernesto> q?
+14:13:43 <chaals> â€¦ Yandex proposal has some issues but the thinking behind it to make it easy for merchants to integrate payment is something we really need to understand how to do, and to get right as an output.
+14:14:07 <chaals> Kumar: Why do we need to standardise? Merchant can accept bitcoin.
+14:14:19 <chaals> [there are some governments who take a dim view of merchants doing that]
+14:14:31 <phobeo> q?
+14:14:34 <steph> -1 to Kumar
+14:14:35 <phobeo> q+
+14:14:36 <steph> q+
+14:14:38 <Jorg> q+
+14:14:59 <virginie> q+
+14:14:59 <chaals> Bryan: downside is fragmentation inhibits growth. Developers always complain about the lack of standard APIs. The developer experience is horrible and they don't have bandwidthto track the fragmented world.
+14:15:10 <chaals> â€¦ standardising at least a digital receipt might help as a minimum.
+14:15:58 <chaals> Manu: Any merchant can integrate any currency, so long as the value ends up at "X". Ideal is that when a vendor implements a cart, the mechanism is the same across currencies. They just want a receipt for the amount they asked for.
+14:16:01 <steph> +1 to manu
+14:16:19 <chaals> DKA: Sometimes the vendor needs more info than the credit, e.g. for regulatory requirements (reporting, etc)
+14:16:28 <schuki> ack mountie
+14:17:08 <chaals> Mountie: Re certificates, a strength is that it is not yet fully standardised. Problem of transport medium. Web is on the application layer.
+14:17:19 <chaals> â€¦ certificate has ???
+14:17:57 <chaals> â€¦ 2nd point, payment can be connected to the merchant or delivery or ID service providers. Have to think about integrating the process from initiating, getting the receipt, â€¦
+14:18:27 <chaals> â€¦ 3rd We can use recommendation systems to determine trust.
+14:18:50 <Hannes> Hannes has joined #W3CPayment
+14:18:56 <chaals> â€¦ we can rent the idea from bitcoins and use users instead of whitelisting
+14:19:11 <chaals> DKA: So learn from cryptocurrency and bring ideas into mainstream payment?
+14:19:25 <BryanS> The third idea seems to call for vendor reputation integration into the UX for payment.
+14:19:53 <chaals> Mountie: No, we get votes from users. Accumulating votes can use the bitcoin transaction history mechanism to increase trust.
+14:20:10 <marie> q?
+14:20:17 <chaals> Manu: Trust of merchant based on other transactions. More people work with them, the more you an trust them.
+14:20:38 <dka> q?
+14:20:48 <virginie> q-
+14:20:50 <chaals> Mountie: Also user experience reports. No trust until you get "xyz" accumulated experiences
+14:20:53 <steph> q- to not eat the break
+14:21:04 <chaals> [chaals: problem with that is how new entrants get on board]
+14:21:26 <steph> q?
+14:21:26 <Erik_Anderson> usecase: Merchant and User reputation
+14:21:32 <chaals> Bryan: reputation is integral. If we could integrate verifiiable reputation recommendation it would be valuable
+14:21:35 <wseltzer> zakim, close queue
+14:21:36 <Zakim> ok, wseltzer, the speaker queue is closed
+14:21:56 <wseltzer> [I hear "two-sided market"]
+14:22:01 <dsr> Bryan: reputation is important for all the parties, not just merchants
+14:22:02 <chaals> Ricardo: payments with cards are optimised for merchants. I ahve no idea what I get charged when I make an international purchase.
+14:22:08 <marie> q?
+14:22:18 <schuki> ack hannes
+14:22:20 <schuki> ack phobeo
+14:22:35 <BryanS> Usecase: reputation based selection of providers in a payment transaction, or info about merchants to help the user choose whether to complete the transaction
+14:22:38 <chaals> â€¦ The same will happen here. Merchants already whitelist payment providers - won't accept some card because of various factors.
+14:22:44 <chaals> â€¦ question is who does whitelisting.
+14:23:03 <chaals> â€¦ in B2B, a merchant cannot ust receive money out of everywhere, they have to justify the income.
+14:23:09 <Parslow> now in France you can be charged for exchange rate between EUR and EUR â€¦
+14:23:28 <dka> q?
+14:23:34 <schuki> ack Jorg
+14:23:57 <Parslow> I'm sure this existe also elwere chaals
+14:24:03 <chaals> Jorg: Important to understand that the security things are about risk management, since 100% security is an illusion. We need to keep that in mind and associate risk with the right players.
+14:24:21 <chaals> â€¦ in many cases the system holds the user free of liabilities - this is a service of the payment provider.
+14:25:02 <chaals> â€¦ f they can make the browser secure easily, they can make things cheaper. We're not looking for *a*  security mechanism but a framework that supports many. We want to give users and merchants a choice.
+14:25:14 <DarrenG> DarrenG has joined #w3cpayment
+14:25:38 <chaals> â€¦ I go to a shop and they say what they accept. I want to see that on the web, and then choose the instrument of those I want. two places where choices can be matched, which is a protocol thing that we can work on.
+14:25:39 <Mauro> q?
+14:25:56 <phariramani> phariramani has joined #w3cpayment
+14:26:10 <marie> ack sch
+14:26:11 <chaals> Natasha: Seemed from position papers that stronger solutions were the simple things. Is a simplesolution the right thing to do? What would it be?
+14:26:13 <schuki> ack schuki
+14:26:45 <chaals> Kumar: Think we need to focus on the small pieces, not an end-to-end solution. Everyone has different incentives. So they won't adopt a standard that doesn't match their incentive.
+14:27:02 <phariramani_> phariramani_ has joined #w3cpayment
+14:27:18 <chaals> â€¦ If we focus on e.g. receipts, someone finds that useful but will want to e.g. maintain their own control over identity provision. So think we can only focus on the primitives.
+14:28:14 <chaals> Manu: Largely agree. Important to know where we are going. Would expect work to happen in phases. Primitives first, then maybe higher-level concepts. Can we give anyone the ability to crowdfund up to X value? Not in generation 1, but with the right primitives in place it might be possible to handle that.
+14:28:26 <chaals> â€¦ best approach to failure is to try and make this a big standards initiative.
+14:28:31 <chaals> DKA: +1
+14:29:02 <chaals> Bryan: Keep it simple. Don't make a thin abstraction layer covering a mess of javascript that covers all the horrors.
+14:29:18 <chaals> â€¦ finding the sweet spot is complex (we're going through that with PushAPI)
+14:29:32 <chaals> Natasha: Wrapping: Trust and security is a big topic.
+14:29:46 <chaals> s/initiative/initiative, we need to start on small blocks/
+14:30:20 <chaals> â€¦ we focused on trust and trustworthy UI. Lot of attention paid to digital receipts and tokens. Whitelisting has scalability issues but we want to look at what they really are.
+14:30:21 <Hannes> It was interesting that all panel members argue for **simple** solution
+14:30:26 <mhepp> usecase: whitelisting of parties - users, merchants, payment providers
+14:30:34 <chaals> â€¦ flow from the merchant perspective is important - we are all users, but not all merchants.
+14:30:43 <Hannes> (Nobody every argues for complex solution and for standards that are hard to understand. How boring is that?)
+14:30:51 <chaals> â€¦ for standards, keep things simple and/or standardise in modules.
+14:31:07 <chaals> â€¦ We dabbled in stakeholders, and wallets (there is a session on that tomorrow)
+14:31:36 <Hannes> Even consultants argue for simple solutions. They just add that the search for simple solutions is still ongoing and requires lots of work
+14:31:37 <wseltzer> rrsagent, draft minutes
+14:31:37 <RRSAgent> I have made the request to generate http://www.w3.org/2014/03/24-w3cpayment-minutes.html wseltzer
+14:31:38 <chaals> â€¦ I'm eating your break, but while there, think of the primitives to standardise around and tweet with #w3cpayment tag
+14:31:51 <wseltzer> [break]
+14:34:13 <sboyera> sboyera has joined #w3cpayment
+14:34:15 <marie> rrsagent, make minutes
+14:34:15 <RRSAgent> I have made the request to generate http://www.w3.org/2014/03/24-w3cpayment-minutes.html marie
+14:47:22 <phariramani> phariramani has joined #w3cpayment
+14:53:32 <andym> andym has joined #w3cpayment
+14:55:53 <phariramani> phariramani has joined #w3cpayment
+14:56:17 <phariramani_> phariramani_ has joined #w3cpayment
+14:59:42 <skddc> skddc has joined #W3Cpayment
+15:04:14 <steph> steph has joined #w3cpayment
+15:06:18 <kjheimark> kjheimark has joined #w3cpayment
+15:06:19 <SartoriMichele> SartoriMichele has joined #w3cPAYMENT
+15:06:43 <dsr> scribenick: dsr
+15:06:47 <dsr> scribe: dsr
+15:06:50 <mountie> mountie has joined #W3Cpayment
+
