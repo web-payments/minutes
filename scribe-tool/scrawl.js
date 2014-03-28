@@ -8,14 +8,20 @@
   /* Standard regular expressions to use when matching lines */
   var commentRx = /^\[?(.*)\]?\s+\<(.*)\>\s+(.*)$/;
   var scribeRx = /^scribe:.*$/i;
-  var meetingRx = /^meeting:.*$/i;
+  var meetingRx = /^meeting:\s(.*)$/i;
+  var presentRx = /^present\s?\+\s(.*)$/i;
+  var totalPresentRx = /^total present:\s(.*)$/i;
+  var dateRx = /^date:\s(.*)$/i;
   var chairRx = /^chair:.*$/i;
+  var audioRx = /^audio:\s?(.*)$/i;
   var proposalRx = /^(proposal|proposed):.*$/i;
   var resolutionRx = /^(resolution|resolved): ?(.*)$/i;
+  var useCaseRx = /^(use case|usecase): ?(.*)$/i;
   var topicRx = /^topic:\s*(.*)$/i;
   var actionRx = /^action:\s*(.*)$/i;
   var voipRx = /^voip.*$/i;
   var toVoipRx = /^voip.{0,4}:.*$/i;
+  var rrsAgentRx = /^RRSAgent.*$/i;
   var queueRx = /^q[+-]\s.*|^q[+-].*|^ack\s+.*|^ack$/i;
   var voteRx = /^[+-][01]\s.*|[+-][01]$/i;
   var agendaRx = /^agenda:\s*(http:.*)$/i;
@@ -335,6 +341,17 @@
          var meeting = msg.match(meetingRx)[1];
          context.group = meeting;
        }
+       // check for audio line
+       else if(msg.search(audioRx) != -1)
+       {
+         context.audio = false;
+       }
+       // check for date line
+       else if(msg.search(dateRx) != -1)
+       {
+         var date = msg.match(dateRx)[1];
+         context.date = new Date(date);
+       }
        // check for topic line
        else if(msg.search(topicRx) != -1)
        {
@@ -369,9 +386,18 @@
          rval = scrawl.resolution(
            resolution, context.resolutions.length, textMode);
        }
-       else if(nick.search(voipRx) != -1 || msg.search(toVoipRx) != -1)
+       else if(msg.search(presentRx) != -1) 
        {
-         // the line is from or is addressed to the voip bot, ignore it
+         // ignore present lines
+       }
+       else if(msg.search(totalPresentRx) != -1) 
+       {
+         context.totalPresent = msg.match(totalPresentRx)[1];
+       }
+       else if(nick.search(voipRx) != -1 || msg.search(toVoipRx) != -1 ||
+         nick.search(rrsAgentRx) != -1 || msg.search(rrsAgentRx) != -1 )
+       {
+         // the line is from or is addressed to a channel bot, ignore it
        }
        else if(msg.search(queueRx) != -1)
        {
@@ -442,6 +468,7 @@
            }
            else if(aliases.hasOwnProperty(nick))
            {
+             scrawl.present(context, aliases[nick]);
              rval = scrawl.scribe(msg, textMode, aliases[nick]);
            }
            else
@@ -480,7 +507,14 @@
     var topics = context.topics;
     var resolutions = context.resolutions;
     var actions = context.actions;
-    var present = Object.keys(context.present);
+    var present = [];
+
+    // build the list of people present
+    for(var name in context.present) {
+      var person = scrawl.people[name]
+      person['name'] = name;
+      present.push(person)
+    }
 
     // modify the time if it was specified
     if(context.date) {
@@ -545,20 +579,54 @@
         rval += '</ol></dd>';
       }
 
+      // generate the list of people present
+      var peoplePresent = ''
+      for(var i = 0; i < present.length; i++) {
+        var person = present[i];
+
+        if(i > 0) {
+          peoplePresent += ', ';
+        }
+
+        peoplePresent += '<a href="' + person.homepage + '">'+ 
+          person.name + '</a>'
+      }
+      if(context.totalPresent) {
+        peoplePresent += ', ' + context.totalPresent;
+      }
+
       rval += '<dt>Chair</dt><dd>' + chair + '</dd>\n';
       rval += '<dt>Scribe</dt><dd>' + scribe.join(' and ') + '</dd>\n';
-      rval += '<dt>Present</dt><dd>' + present.join(', ') + '</dd>\n';
-      rval += '<dt>Audio Log</dt><dd>' +
-         '<div><a href="' + audio + '">' + audio + '</a></div>\n' +
-         '<div><audio controls="controls" preload="none">\n' +
-         '<source src="' + audio + '" type="audio/ogg" />' +
-         'Warning: Your browser does not support the HTML5 audio element, ' +
-         'please upgrade.</audio></div></dd></dl>\n';
+      rval += '<dt>Present</dt><dd>' + peoplePresent + '</dd>\n';
+
+      if(context.audio) {
+        rval += '<dt>Audio Log</dt><dd>' +
+           '<div><a href="' + audio + '">' + audio + '</a></div>\n' +
+           '<div><audio controls="controls" preload="none">\n' +
+           '<source src="' + audio + '" type="audio/ogg" />' +
+           'Warning: Your browser does not support the HTML5 audio element, ' +
+           'please upgrade.</audio></div></dd></dl>\n';
+      }
     }
     else
     {
-      rval += group + ' Telecon ';
-      rval += 'Minutes for ' + time.getFullYear() + '-' +
+      // generate the list of people present
+      var peoplePresent = ''
+      for(var i = 0; i < present.length; i++) {
+        var person = present[i];
+
+        if(i > 0) {
+          peoplePresent += ', ';
+        }
+
+        peoplePresent += person.name
+      }
+      if(context.totalPresent) {
+        peoplePresent += ', ' + context.totalPresent;
+      }
+
+      rval += group;
+      rval += ' Minutes for ' + time.getFullYear() + '-' +
          month + '-' + day + '\n\n';
       rval += 'Agenda:\n  ' + agenda + '\n';
 
@@ -600,11 +668,15 @@
 
       rval += 'Chair:\n  ' + chair + '\n';
       rval += 'Scribe:\n  ' + scribe.join(' and ') + '\n';
-      rval += 'Present:\n  ' +
-        scrawl.wordwrap(present.join(', '), 65, '\n  ') + '\n';
-      rval += 'Audio:\n  https://web-payments.org/minutes/' +
-        time.getFullYear() + '-' +
-         month + '-' + day + '/audio.ogg\n\n';
+      rval += 'Present:\n  ' + 
+        scrawl.wordwrap(peoplePresent, 65, '\n  ') + '\n';
+      if(context.audio) {
+        rval += 'Audio:\n  https://web-payments.org/minutes/' +
+          time.getFullYear() + '-' +
+           month + '-' + day + '/audio.ogg\n\n';
+      } else {
+        rval += '\n';
+      }
     }
 
     return rval;

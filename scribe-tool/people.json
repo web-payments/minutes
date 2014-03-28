@@ -174,5 +174,389 @@
   },
   "Joe Cascio": {
     "alias": ["joecascio"]
+  },
+  "Harry Halpin": {
+    "alias": ["hhalpin"],
+    "homepage": "http://w3.org/"
+  },
+  "Evert Fekkes": {
+    "alias": ["efekkes"],
+    "homepage": "http://rn.rabobank.nl/"
+  },
+  "Oscar Katime": {
+    "alias": ["okatime"],
+    "homepage": "http://bbva.com/"
+  },
+  "Bernard Gidon": {
+    "alias": ["bgidon"],
+    "homepage": "http://w3.org/"
+  },
+  "Max Raskin": {
+    "alias": ["mraskin"],
+    "homepage": "http://gmail.com/"
+  },
+  "Prakash Hariramani": {
+    "alias": ["phariramani"],
+    "homepage": "http://google.com/"
+  },
+  "Stephane Schultz": {
+    "alias": ["sschultz"],
+    "homepage": "http://15marches.fr/"
+  },
+  "Saurabh Sethi": {
+    "alias": ["ssethi"],
+    "homepage": "http://gsma.com/"
+  },
+  "Cyril Vignet": {
+    "alias": ["cvignet"],
+    "homepage": "http://bpce.fr/"
+  },
+  "Guorong Tian": {
+    "alias": ["gtian"],
+    "homepage": "http://sbc4d.com/"
+  },
+  "WonSuk Lee": {
+    "alias": ["wlee"],
+    "homepage": "http://samsung.com/"
+  },
+  "Ricardo Varela": {
+    "alias": ["rvarela"],
+    "homepage": "http://gmail.com/"
+  },
+  "Jörg Heuer": {
+    "alias": ["jheuer"],
+    "homepage": "http://telekom.de/"
+  },
+  "Michele Sartori": {
+    "alias": ["msartori"],
+    "homepage": "http://oberthur.com/"
+  },
+  "Ernesto Jimenez": {
+    "alias": ["ejimenez"],
+    "homepage": "http://gmail.com/"
+  },
+  "Andy McKay": {
+    "alias": ["amckay"],
+    "homepage": "http://mozilla.com/"
+  },
+  "Hervé Bourdon": {
+    "alias": ["hbourdon"],
+    "homepage": "http://gmail.com/"
+  },
+  "Jungkee Song": {
+    "alias": ["jsong"],
+    "homepage": "http://samsung.com/"
+  },
+  "Gerard Hammarlund": {
+    "alias": ["ghammarlund"],
+    "homepage": "http://endresultsgrp.com/"
+  },
+  "Eric Tak": {
+    "alias": ["etak"],
+    "homepage": "http://ing.com/"
+  },
+  "Pierre Georget": {
+    "alias": ["pgeorget"],
+    "homepage": "http://gs1fr.org/"
+  },
+  "Mohammed Dadas": {
+    "alias": ["mdadas"],
+    "homepage": "http://orange.com/"
+  },
+  "Stefan Thomas": {
+    "alias": ["sthomas"],
+    "homepage": "http://ripple.com/"
+  },
+  "Stan Stalnaker": {
+    "alias": ["sstalnaker"],
+    "homepage": "http://hubculture.com/"
+  },
+  "Harish Natarajan": {
+    "alias": ["hnatarajan"],
+    "homepage": "http://worldbank.org/"
+  },
+  "Eriko Hondo": {
+    "alias": ["ehondo"],
+    "homepage": "http://kddi.com/"
+  },
+  "Hannes Tschofenig": {
+    "alias": ["htschofenig"],
+    "homepage": "http://gmx.net/"
+  },
+  "Tobie Langel": {
+    "alias": ["tlangel"],
+    "homepage": "http://gmail.com/"
+  },
+  "David Ezell": {
+    "alias": ["dezell"],
+    "homepage": "http://verifone.com/"
+  },
+  "Karen O'Donoghue": {
+    "alias": ["ko'donoghue"],
+    "homepage": "http://isoc.org/"
+  },
+  "Jean-Yves Rossi": {
+    "alias": ["jrossi"],
+    "homepage": "http://cantonconsulting.fr/"
+  },
+  "Martin Hepp": {
+    "alias": ["mhepp"],
+    "homepage": "http://unibw.de/"
+  },
+  "Francois Crehange": {
+    "alias": ["fcrehange"],
+    "homepage": "http://paybox.com/"
+  },
+  "Giridhar Mandyam": {
+    "alias": ["gmandyam"],
+    "homepage": "http://quicinc.com/"
+  },
+  "Wendy Seltzer": {
+    "alias": ["wseltzer"],
+    "homepage": "http://w3.org/"
+  },
+  "Ori Eisen": {
+    "alias": ["oeisen"],
+    "homepage": "http://the41st.com/"
+  },
+  "Curtis Young": {
+    "alias": ["cyoung"],
+    "homepage": "http://shcn.cc/"
+  },
+  "Patrice Bernard": {
+    "alias": ["pbernard"],
+    "homepage": "http://conix.fr/"
+  },
+  "Michel Leger": {
+    "alias": ["mleger"],
+    "homepage": "http://ingenico.com/"
+  },
+  "Alexandra Lavirotte": {
+    "alias": ["alavirotte"],
+    "homepage": "http://w3.org/"
+  },
+  "Ye Tian": {
+    "alias": ["ytian"],
+    "homepage": "http://cnnic.cn/"
+  },
+  "Emil Johansson": {
+    "alias": ["ejohansson"],
+    "homepage": "http://swedbank.se/"
+  },
+  "Jean-Claude Barbezange": {
+    "alias": ["jbarbezange"],
+    "homepage": "http://worldline.com/"
+  },
+  "Angeles Marzo": {
+    "alias": ["amarzo"],
+    "homepage": "http://ingdirect.es/"
+  },
+  "Louise Bennett": {
+    "alias": ["lbennett"],
+    "homepage": "http://vivasltd.net/"
+  },
+  "Vidya Chandy": {
+    "alias": ["vchandy"],
+    "homepage": "http://comviva.com/"
+  },
+  "King Jeremy": {
+    "alias": ["kjeremy"],
+    "homepage": "http://pcisecuritystandards.org/"
+  },
+  "Timothy Ng": {
+    "alias": ["tng"],
+    "homepage": "http://microsoft.com/"
+  },
+  "Ken Isaacson": {
+    "alias": ["kisaacson"],
+    "homepage": "http://ny.frb.org/"
+  },
+  "Mauro Nunez": {
+    "alias": ["mnunez"],
+    "homepage": "http://pcisecuritystandards.org/"
+  },
+  "Keir Kettle": {
+    "alias": ["kkettle"],
+    "homepage": "http://bango.com/"
+  },
+  "Dave Birch": {
+    "alias": ["dbirch"],
+    "homepage": "http://chyp.com/"
+  },
+  "Stephan Steglich": {
+    "alias": ["ssteglich"],
+    "homepage": "http://fokus.fraunhofer.de/"
+  },
+  "Bülent Ünal": {
+    "alias": ["bÜnal"],
+    "homepage": "http://net-m.de/"
+  },
+  "Marie-Claire Forgue": {
+    "alias": ["mforgue"],
+    "homepage": "http://w3.org/"
+  },
+  "Luce Moinecourt": {
+    "alias": ["lmoinecourt"],
+    "homepage": "http://cantonconsulting.fr/"
+  },
+  "Gregory Estrade": {
+    "alias": ["gestrade"],
+    "homepage": "http://gmail.com/"
+  },
+  "Axel Nennker": {
+    "alias": ["anennker"],
+    "homepage": "http://telekom.de/"
+  },
+  "Otero Rafael": {
+    "alias": ["orafael"],
+    "homepage": "http://payleven.com/"
+  },
+  "Robert Kleinfeld": {
+    "alias": ["rkleinfeld"],
+    "homepage": "http://fokus.fraunhofer.de/"
+  },
+  "Adrian Citu": {
+    "alias": ["acitu"],
+    "homepage": "http://swift.com/"
+  },
+  "Mark Evans": {
+    "alias": ["mevans"],
+    "homepage": "http://hsbc.com/"
+  },
+  "Marijke De Soete": {
+    "alias": ["mdesoete"],
+    "homepage": "http://pandora.be/"
+  },
+  "Gray Taylor": {
+    "alias": ["gtaylor"],
+    "homepage": "http://pcats.org/"
+  },
+  "Heimark Karl Johan": {
+    "alias": ["hkarljohan"],
+    "homepage": "http://telenordigital.com/"
+  },
+  "Lars Erik Bolstad": {
+    "alias": ["lerikbolstad"],
+    "homepage": "http://opera.com/"
+  },
+  "Zhibin James Lei": {
+    "alias": ["zjameslei"],
+    "homepage": "http://astri.org/"
+  },
+  "Thomas Picard": {
+    "alias": ["tpicard"],
+    "homepage": "http://alcatel-lucent.com/"
+  },
+  "Rémy Lesellier": {
+    "alias": ["rlesellier"],
+    "homepage": "http://ca-normandie.fr/"
+  },
+  "Alexander Gee": {
+    "alias": ["agee"],
+    "homepage": "http://ec.europa.eu/"
+  },
+  "Joe MoonOk": {
+    "alias": ["jmoonok"],
+    "homepage": "http://sk.com/"
+  },
+  "Robin Berjon": {
+    "alias": ["rberjon"],
+    "homepage": "http://w3.org/"
+  },
+  "Etienne Hayem": {
+    "alias": ["ehayem"],
+    "homepage": "http://zoupic.com/"
+  },
+  "Jong Pyo Hong": {
+    "alias": ["jpyohong"],
+    "homepage": "http://paygate.net/"
+  },
+  "Sebastian Kippe": {
+    "alias": ["skippe"],
+    "homepage": "http://5apps.com/"
+  },
+  "Jeff Jaffe": {
+    "alias": ["jjaffe"],
+    "homepage": "http://w3.org/"
+  },
+  "Connie Theien": {
+    "alias": ["ctheien"],
+    "homepage": "http://chi.frb.org/"
+  },
+  "Aurelien Chouvet": {
+    "alias": ["achouvet"],
+    "homepage": "http://w3.org/"
+  },
+  "Daekeun Jeong": {
+    "alias": ["djeong"],
+    "homepage": "http://nbreds.com/"
+  },
+  "Neil Mason-Jones": {
+    "alias": ["nmason-jones"],
+    "homepage": "http://transafricasolutions.com/"
+  },
+  "Roy Duffels": {
+    "alias": ["rduffels"],
+    "homepage": "http://rabobank.nl/"
+  },
+  "Evgeny Vinogradov": {
+    "alias": ["evinogradov"],
+    "homepage": "http://yamoney.ru/"
+  },
+  "Stéphane Boyera": {
+    "alias": ["sboyera"],
+    "homepage": "http://w3.org/"
+  },
+  "Gerben Mak": {
+    "alias": ["gmak"],
+    "homepage": "http://rabobank.nl/"
+  },
+  "Darren Goucher": {
+    "alias": ["dgoucher"],
+    "homepage": "http://hsbc.com/"
+  },
+  "Bryan Sullivan": {
+    "alias": ["bsullivan"],
+    "homepage": "http://att.com/"
+  },
+  "Virginie Galindo": {
+    "alias": ["vgalindo"],
+    "homepage": "http://gemalto.com/"
+  },
+  "Floris Kleemans": {
+    "alias": ["fkleemans"],
+    "homepage": "http://nl.abnamro.com/"
+  },
+  "Jonathan Warren": {
+    "alias": ["jwarren"],
+    "homepage": "http://coinapex.com/"
+  },
+  "Bailey Reutzel": {
+    "alias": ["breutzel"],
+    "homepage": "http://sourcemedia.com/"
+  },
+  "Olivier Maas": {
+    "alias": ["omaas"],
+    "homepage": "http://worldline.com/"
+  },
+  "Rafael Hernandez": {
+    "alias": ["rhernandez"],
+    "homepage": "http://bbva.com/"
+  },
+  "Denis Roio": {
+    "alias": ["droio"],
+    "homepage": "http://dyne.org/"
+  },
+  "Daniel Appelquist": {
+    "alias": ["dka", "dappelquist"],
+    "homepage": "http://telefonica.com/"
+  },
+  "Lauret Penou": {
+    "alias": ["lpenou"],
+    "homepage": "http://pzen.eu/"
+  },
+  "Mountie Lee": {
+    "alias": ["mlee"],
+    "homepage": "http://paygate.net/"
   }
 }
