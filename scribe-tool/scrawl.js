@@ -204,7 +204,10 @@
 
     if(textMode == 'html')
     {
-      rval = '<div ';
+      scrawl.counter += 1;
+      rval = '<div onmouseout="$(\'#link-' + scrawl.counter + '\').hide()" ' +
+        'onmouseover="$(\'#link-' + scrawl.counter + '\').show()"" ' +
+        'id="' + scrawl.counter + '" ';
 
       if(person != undefined)
       {
@@ -223,7 +226,8 @@
         rval += ' [scribe assist by ' + scrawl.htmlencode(assist) + ']';
       }
 
-      rval += '</div>\n';
+      rval += ' <a id="link-' + scrawl.counter + 
+        '" style="display:none;" href="#'+ scrawl.counter + '">✪</a></div>\n';
     }
     else
     {
@@ -536,6 +540,7 @@
     // generate the summary text
     if(textMode == 'html')
     {
+      rval += scrawl.minutesJavascript;
       rval += '<h1>' + group + '</h1>\n';
       rval += '<h2>Minutes for ' + time.getFullYear() + '-' +
          month + '-' + day +'</h2>\n';
@@ -689,6 +694,7 @@
     var summary = '';
     var ircLines = ircLog.split('\n');
     var aliases = scrawl.generateAliases();
+    scrawl.counter = 0;
 
     // initialize the IRC log scanning context
     var context =
