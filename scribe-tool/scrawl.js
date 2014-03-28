@@ -16,7 +16,7 @@
   var audioRx = /^audio:\s?(.*)$/i;
   var proposalRx = /^(proposal|proposed):.*$/i;
   var resolutionRx = /^(resolution|resolved): ?(.*)$/i;
-  var useCaseRx = /^(use case|usecase): ?(.*)$/i;
+  var useCaseRx = /^(use case|usecase):\s?(.*)$/i;
   var topicRx = /^topic:\s*(.*)$/i;
   var actionRx = /^action:\s*(.*)$/i;
   var voipRx = /^voip.*$/i;
@@ -186,6 +186,25 @@
     {
       rval =
         '\n' + scrawl.wordwrap('RESOLUTION: ' + msg, 65, '\n  ') + '\n\n';
+    }
+
+    return rval;
+  };
+
+  scrawl.usecase = function(msg, textMode)
+  {
+    var rval = '';
+
+    if(textMode == 'html')
+    {
+      rval = '<div id="usecase-' + scrawl.counter + '" class="resolution">' +
+        '<strong>USE CASE:</strong> ' +
+        scrawl.htmlencode(msg) + '</div>\n';
+    }
+    else
+    {
+      rval =
+        '\n' + scrawl.wordwrap('USE CASE: ' + msg, 65, '\n  ') + '\n\n';
     }
 
     return rval;
@@ -390,6 +409,12 @@
          rval = scrawl.resolution(
            resolution, context.resolutions.length, textMode);
        }
+       // check for use case line
+       else if(msg.search(useCaseRx) != -1)
+       {
+         var usecase = msg.match(useCaseRx)[2];
+         rval = scrawl.usecase(usecase, textMode);
+       }
        else if(msg.search(presentRx) != -1) 
        {
          // ignore present lines
@@ -540,7 +565,6 @@
     // generate the summary text
     if(textMode == 'html')
     {
-      rval += scrawl.minutesJavascript;
       rval += '<h1>' + group + '</h1>\n';
       rval += '<h2>Minutes for ' + time.getFullYear() + '-' +
          month + '-' + day +'</h2>\n';
