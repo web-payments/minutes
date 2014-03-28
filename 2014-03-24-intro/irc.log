@@ -1,258 +1,187 @@
-08:06:07 <RRSAgent> RRSAgent has joined #w3cpayment
-08:06:07 <RRSAgent> logging to http://www.w3.org/2014/03/24-w3cpayment-irc
-08:06:12 <Zakim> Zakim has joined #w3cpayment
-08:06:25 <wseltzer> Meeting: Web Payments Workshop - Introduction
-08:06:25 <wonsuk> wonsuk has joined #W3CPAYMENT
-08:06:29 <chaals> chaals has joined #w3cpayment
-08:06:35 <wseltzer> Date: 24 March, 2014
-08:06:50 <chaals> rrsagent, draft minutes
-08:06:50 <RRSAgent> I have made the request to generate http://www.w3.org/2014/03/24-w3cpayment-minutes.html chaals
-08:07:04 <NeilMJ> NeilMJ has joined #W3Cpayment
-08:07:14 <chaals> rrsagent, make log public
-08:07:15 <lesellier> lesellier has joined #w3cpayment
-08:07:27 <kumar> kumar has joined #w3cpayment
-08:07:31 <wseltzer> Welcomes from Stephane Boyera, Virgine Galindo (Gemalto) and @@, Ingenico
-08:07:40 <m4nu> m4nu has joined #W3Cpayment
-08:07:43 <skddc> skddc has joined #W3Cpayment
-08:07:49 <HannesTschofenig> HannesTschofenig has joined #W3CPAYMENT
-08:07:52 <chaals> Chair: DKA
-08:07:56 <mauro> mauro has joined #w3cpayment
-08:08:06 <Bmathis> Bmathis has joined #W3Cpayment
-08:08:07 <Parslow> more glazou https://pbs.twimg.com/media/Bjek-PyIEAAiwzr.jpg:large
-08:08:14 <m4nu> Topic: Introduction by Jeff Jaffe at W3C
-08:08:15 <chaals> Present+ chaals
-08:08:18 <m4nu> scribe: m4nu
-08:08:20 <Torlus> Torlus has joined #w3cpayment
-08:08:37 <m4nu> Jeff: The W3C was founded by the invetor of the WWW, Tim Berners-Lee.
-08:08:39 <chaals> Present+ Manu, StephB
-08:08:54 <m4nu> Jeff: Earlier this month, we celebrated the 20th anniversary of the WWW.
-08:08:54 <chaals> Present+ Wonsuk, Jungkee
-08:09:05 <gmandyam> gmandyam has joined #W3Cpayment
-08:09:05 <chaals> s/20th/25th/
-08:09:11 <m4nu> Jeff: We have a very simple, mission statement - lead the web to it's full potential.
-08:09:17 <chaals> Present+ Mauro
-08:09:33 <chaals> Present+ EvgenyVinogradov
-08:09:33 <Torlus> hi everybody
-08:09:39 <m4nu> Jeff: We have a pretty good track record of that. We're a member-based organization. We have govts, startups, technology companies, non profits, close to 400 members.
-08:09:51 <chaals> s/hi everybody//
-08:09:54 <dsr> dsr has joined #W3CPAYMENT
-08:10:07 <jphong> hi all
-08:10:07 <m4nu> Jeff: Large commercial companies. The community that we have are the entire users of the WWW, we're shooting for entire planet.
-08:10:19 <chaals> s/hi all//
-08:10:28 <kumar> ?
-08:10:34 <chaals> s/?//
-08:10:43 <m4nu> Jeff: For technical standards, we're larger than most technical standards - 70 people spread around the world, we want architectural coherance for the Web.
-08:10:48 <kumar> hehe, ok
-08:10:55 <m4nu> Jeff: Outputs we produce are available to everyone.
-08:10:59 <chaals> s/hehe, ok//
-08:11:03 <kumar> chaals: why? is that for auto note taking?
-08:11:23 <m4nu> Jeff: UbiWeb - ubiquitous Web, We work on Web accessibility.
-08:11:36 <kodonog> kodonog has joined #w3cpayment
-08:11:39 <ernesto> s/chaals: why? is that for auto note taking?//
-08:11:39 <m4nu> Jeff: No one from disabilities should be prevented from using the Web.
-08:11:42 <mdadas> mdadas has joined #w3cpayment
-08:11:48 <m4nu> Jeff: Information and Knowledge focuses on data.
-08:11:56 <jameslei> jameslei has joined #W3Cpayment
-08:12:10 <m4nu> Jeff: Each piece of technology gets created in a WG. Most of the work is done by engineers from member organizations, sometimes we have invited experts from outside.
-08:12:24 <chaals> rrsagent, draft minutes
-08:12:24 <RRSAgent> I have made the request to generate http://www.w3.org/2014/03/24-w3cpayment-minutes.html chaals
-08:12:31 <m4nu> Jeff: We work w/ Internet Engineering Task Force, we interface w/ who we need to.
-08:12:48 <bryan> bryan has joined #W3Cpayment
-08:13:12 <m4nu> Jeff: We have a royalty-free patent policy. When Tim invented the Web, he made it available to the world. If you have an invention that belongs in the core of the Web, and  you have a patent, that should be available on a royalty-free basis.
-08:13:34 <m4nu> Jeff: Some of you may be familiar w/ de-jure standards. We have a fast-path track for DeJure international standards.
-08:13:58 <m4nu> Jeff: As the Web has become more important, large companies have been joining.
-08:14:29 <m4nu> Jeff: We also have been trying to get smaller companies in. There is a new track of work - once community decides that something needs to be a Web Standard, we did a good job.
-08:14:39 <m4nu> Jeff: However, we didn't do well in pre-standardization work.
-08:15:23 <m4nu> Jeff: So, innovators would get together to do pre-standardization work. So, we created a new track called Community Groups. It made pre-standardization work easier. Sometimes CGs are discussion groups.
-08:15:36 <m4nu> Jeff: We have around 170 CGs, close to 4,000 engineers working in these groups.
-08:15:42 <jrml> jrml has joined #w3cpayment
-08:16:18 <m4nu> Jeff: We are working on the "Open Web Platform", lots of people doing work, but at the end of the day it all has to come together. We use "open web platform" to differentiate the open web from the web of 25 years ago.
-08:16:49 <m4nu> Jeff: In 25 years, the Web has become much more. Increasingly, the Web is not the end result, it's a platform for other applications to build on top of it.
-08:16:56 <prakash> prakash has joined #w3cpayment
-08:17:15 <Parslow> glazou: close to the number of prrson in the amphi
-08:17:41 <m4nu> Jeff: The platform for building distributed applications - it's very interactive. It's characterized by Rich Interactive Media. The content was exciting, but it was fairly static. Now web pages are exciting (lots of great fonts, media, images, etc.)
-08:17:58 <m4nu> Jeff: We're working on HTML5 and CSS3 now, two hallmarks of W3C standardization work.
-08:18:04 <chaals> s/glazou: close to the number of prrson in the amphi//
-08:18:23 <m4nu> Jeff: The span of devices implementing the Web has been expanding. In last 10 years, we've successfuly moved the Web to the smartphone, it's a design point for the Web.
-08:18:42 <m4nu> Jeff: Web and automotive is new work we're doing. So is mobile.
-08:18:47 <chaals> present+ prakash, VirginieG, JeffJaffe, WendySeltzer
-08:18:50 <m4nu> Jeff: Web technology runs most everywhere,
-08:19:03 <m4nu> Jeff: Secure Web Platform - it's important that we keep innovating.
-08:19:17 <mauro> s/ invetor/inventor/
-08:19:54 <m4nu> Jeff: New industries that are affected - mobile, entertainment, gaming, healthcare, digital publishing, all are increasingly getting affected.
-08:19:57 <dka> dka has joined #w3cpayment
-08:20:21 <virginie> virginie has joined #w3cpayment
-08:20:23 <m4nu> Jeff: Digital publishing is interesting, we've been publishing for a while now. Mass distribution on a global scale, everyone is an author. Very different from highly selective publishing houses.
-08:20:57 <m4nu> Jeff: Web lacked quality of publishing for a long time. Font selection, styling, you couldn't do any of that. However, today we're in a situation we know how to achieve all of that technically.
-08:21:15 <prakash> prakash has joined #W3Cpayment
-08:21:28 <m4nu> Jeff: As publishing was changed after Web, so do other industries.
-08:21:47 <m4nu> Jeff: With the Web Payments workshop, we're launching what could be a more fundamental transformation. It'll be impactful,  now sure how it'll turn out.
-08:22:00 <m4nu> Jeff: Lots of stuff is bought on the Web :)
-08:22:14 <m4nu> Jeff: Payments for mobile devices are increasing, searching for new ways of providing  payments on the Web.
-08:22:40 <m4nu> Jeff: If the Open Web Platform has been successful, to be the reference standard for what gets done in those industries, let's explore how the Web affects payments.
-08:22:54 <m4nu> Jeff: We wouldn't be exploring this if payments were simple.
-08:23:10 <m4nu> Jeff: For most people, it's bewildering to do payments on the Web (to pay for things).
-08:23:22 <m4nu> Jeff: To set something up the first time, it's difficult.
-08:23:45 <phariramani> phariramani has joined #W3Cpayment
-08:23:47 <m4nu> Jeff: We have cryptocurrencies coming up, it's part of the whole picture. The complexity of the ecosystem is something we're going to be focusing on.
-08:23:48 <ThomasPicard_ALU> ThomasPicard_ALU has joined #W3CPayment
-08:24:11 <m4nu> Jeff: merchants are a part of the picture. When you want to set yourself up on the Web, you have to figure out how you're going to get payments accessible to your customers.
-08:24:27 <m4nu> jeff: With Web Applications, the number of people that are trying to monetize things on the Web is growing exponentially.
-08:24:33 <phariramani> With web applications, number of people who are trying to navigate the web has increased substantially
-08:24:37 <Axel> Axel has joined #w3cpayment
-08:24:42 <m4nu> Jeff: I want to do a one-off purchase, it's not easy.
-08:25:17 <m4nu> Jeff: A regular Amazon user has no problem, but we want a frictionless approach where anyone can buy from anyone in an easy fashion. The user experience should be simple. Not tons of passwords for each site that I frequent.
-08:25:33 <m4nu> Jeff: High levels of fraud, the overall security of the system - it's not great. We all worry that one day it's going to get worse.
-08:25:35 <phariramani> Lack of standardization = Poor and variable user experience across sites and across payment systems
-08:25:44 <m4nu> Jeff: Is it really secure enough?
-08:25:48 <m4nu> Jeff: payments should be easy
-08:26:22 <m4nu> jeff: People should be able to pay how they want to. If I have a smartphone, or tablet - I'd like a single "wallet" and do things consistently among devices.
-08:26:31 <m4nu> Jeff: Transparency is important -transaction fees should be clear.
-08:26:54 <m4nu> jeff: How does this get done technically? Unsure, that's why we're having this workshop.
-08:27:05 <mountie> we need link for current presentation of Jeffe
-08:27:07 <Tim> Tim has joined #W3CPayment
-08:27:11 <m4nu> Jeff: We're going to figure out where to do standardization. Maybe this happens at W3C, maybe somewhere else.
-08:27:25 <chaals> s/we need link for current presentation of Jeffe//
-08:27:26 <m4nu> Jeff: What to standardize is a very delicate choice.
-08:28:03 <m4nu> Jeff: We have the open web platform, having a clean way of getting a request for payments, proof of payments is standardization candidate.
-08:28:18 <m4nu> Jeff: having a standard interface between browser/wallet is a good standardization candidate.
-08:28:36 <m4nu> Jeff: Interfacing w/ external payment providers is important.
-08:28:44 <chaals> Present+ thisNatasha
-08:29:01 <chaals> Present+ BryanSullivan
-08:29:07 <m4nu> Jeff: Being abe to select payment mechanism is important... we need tomanaage this complexity.
-08:29:22 <chaals> rrsagent, draft minutes
-08:29:22 <RRSAgent> I have made the request to generate http://www.w3.org/2014/03/24-w3cpayment-minutes.html chaals
-08:29:43 <m4nu> Jeff: Users should have greater choices, more choices, more consistency. There is enough automation/verification that merchants should be able to trust customers.
-08:30:18 <chaals> Present+ JorgHeuer, MarieClaire
-08:30:46 <m4nu> Jeff: W3C is a consensus organization, we bring stakeholders together. We bring them together to try and figure out the best way to address some of these issues.
-08:30:54 <mauro> s/abe/able/
-08:31:03 <m4nu> Jeff: The Web is a global mechanism, we need things to work across borders. We want an open and level playing field.
-08:31:27 <m4nu> Jeff: When we start to look at a complex problem, we fail if we try to solve the  entire problem at once.
-08:31:33 <m4nu> Jeff: So, what's the lowest hanging fruit.
-08:31:43 <mauro> s/tomanaage/to manage/
-08:31:46 <m4nu> Jeff: What makes a workshop successful - enter it w/ a spirit of openness.
-08:32:15 <m4nu> Jeff: There are many things related to technology and payments - we're focused on technology issues and enablement. Standards are a human activity.
-08:32:16 <mauro> s/ theinventor/ the inventor/
-08:32:31 <m4nu> Jeff: Let's start talking and seeking consensus.
-08:32:46 <wseltzer> i/Date/-> http://www.w3.org/2013/10/payments/agenda Agenda
-08:33:42 <m4nu> Topic: Introduction from Worldline
-08:33:56 <m4nu> Alexander Gee takes the stage.
-08:34:04 <wseltzer> -> http://wendy.seltzer.org/media/webpay.jpg  Piggy bank
-08:34:08 <vsointu> vsointu has joined #w3cpayment
-08:34:11 <m4nu> Alexander: I've been doing payments since 2008.
-08:34:45 <m4nu> Alexander: We welcome what's being done here. Anything that makes payment on the Web better, we'd welcome anything that would expect the single market from the EU.
-08:34:45 <andym> andym has joined #w3cpayment
-08:34:56 <wseltzer> s/Introduction from Worldline/EU Work on Payments: DG Competition
-08:35:01 <m4nu> Alexander: What I'd like to do now is simply go through  - explain what we're doing.
-08:35:21 <m4nu> Alexander: My slides are detailed, so I'll skip through slides relatively quickly.
-08:35:41 <wseltzer> rrsagent, draft minutes
-08:35:41 <RRSAgent> I have made the request to generate http://www.w3.org/2014/03/24-w3cpayment-minutes.html wseltzer
-08:35:58 <m4nu> Alexander: Payments in EU - epayments are largely card based. As far as Eu is concerned, payments is 1% of GDP
-08:36:06 <jeff> jeff has joined #w3cpayment
-08:36:06 <m4nu> Alexander: It's 25% of bank revenues.
-08:36:44 <m4nu> Alexander: card transactions have grown from 7.4% to 17.4% - price for accepting card payments is not reflecting scale and increased efficiency.
-08:37:05 <m4nu> Alexander: DG Competition has focused on interchange fees. This is one of the biggest barriers to competition in payments market.
-08:37:56 <m4nu> Alexander: We have been embroiled in a legal debate for years. MasterCard has said they'd move interchange fees down 0.2% to 0.3%. They're around 1% right now.
-08:38:10 <m4nu> Alexander: Visa says they'll match Mastercard's fees.
-08:38:37 <m4nu> Alexander: Lower fees - markets segmented between national markets.
-08:38:38 <curtis> curtis has joined #w3cpayment
-08:38:44 <dezell> dezell has joined #w3cpayment
-08:38:59 <m4nu> Alexander: We are now continuing w/ cases against MasterCard and Visa - regarding international payments.
-08:39:49 <m4nu> Alexander: with interchange fees at this level, merchant is indifferent on getting paid w/ cash vs. card. We don't have enough info on what a good comparator is for epayments.
-08:40:17 <m4nu> Alexander: Direct debits of credit transfers would be good. Offline figures would be good.
-08:40:33 <Angie> Angie has joined #w3cpayment
-08:40:46 <m4nu> Alexander: We've carried out a detailed study - 0.2% or 0.3% seems reasonable.
-08:41:44 <m4nu> Alexander: Normal standardization is pro-competitive, but we've found that major players have banded together to create an exclusionary effect on non-bank epayment mechanisms.
-08:42:20 <m4nu> Alexander: In Netherlands, more internet-based payments are made than card-based ones.
-08:42:51 <m4nu> Alexander: Non-bank players were excluded - the way standardization was being done - it was exclusionary.
-08:43:16 <chaals> Present+ darobin
-08:43:20 <m4nu> Alexander: We tried to work w/ European Payments Council .
-08:43:39 <damdam41> damdam41 has joined #w3cpayment
-08:44:08 <m4nu> Alexander: Interchange fees are a way to pass fees onto customers in a way that they can't see them.
-08:45:01 <Anaethelion> Anaethelion has joined #W3Cpayment
-08:45:20 <m4nu> Alexander: New entrants to innovation - atms / internet banking, paypal, payfair, monnet, ideal and Mybank, sofort.
-08:45:49 <phariramani> Alexander: Paypal is more expensive than card payments
-08:45:52 <m4nu> Alexander: From our point of view, Paypal is expensive - more expensive than card payments. It's a closed system. You have to establish a new account w them.
-08:46:26 <virginie> payfair : http://www.payfair.eu/
-08:46:43 <m4nu> Alexander: Monnet replaced national schemes, but it failed, they were willing to offer 0.2%-0.3%, they wanted to match fees elsehewre in EU (not in France)
-08:46:57 <chaals> present+ tobie
-08:46:59 <m4nu> Alexander: If they didn't do these higher fees, they were taking much more risk.
-08:47:26 <m4nu> Alexander: Systems in Italy - click directly on bank via credit transfer.
-08:48:26 <m4nu> Alexander: Recently proposed regulation - we want to create a level playing field - it can't be done by competition enforcement.
-08:48:39 <m4nu> Alexander: it cannot act very fast - mastercard case took 7 years.
-08:48:49 <phariramani> Alexander: competition enforcement cannot act fast//last mover advantage
-08:48:52 <m4nu> Alexander: So, we want to create a legal base for non-banks - third party providers.
-08:49:21 <m4nu> Alexander: So, here's the proposal:
-08:49:31 <m4nu> Alexander: Promote consumer welfare - reduce excessive fees.
-08:49:34 <m4nu> Alexander: Increase choice
-08:49:49 <m4nu> Alexander: Promote competition, efficiences should be passed on to consumers.
-08:50:09 <m4nu> Alexander: We want to reduce barriers for competition and increase transparency, reduce barriers to entry.
-08:50:37 <m4nu> Alexander: Reducing interchange fees - Monnet and PayFair - they cannot enter the market because banks are expecting a similar revenue.
-08:51:00 <m4nu> Alexander: Banks are keen to have more expensive card payments schemes, so we need to work on that.
-08:51:24 <m4nu> Alexander: the commission proposes - regulate the fees of "Must take" cards - 4 party schemes, consumer visa/mastercard card.
-08:51:36 <m4nu> Alexander: National schemes are ???
-08:51:50 <m4nu> Alexander: Immediately cap the fees for cross-border transactions.
-08:52:08 <m4nu> Alexander: Promote the idea of a single market - 2 years delay on national/domestic transactions.
-08:52:35 <m4nu> Alexander: More effectively functioning cards market -
-08:52:45 <m4nu> Alexander: What we can do:
-08:52:58 <m4nu> Aleander: Allow merchants to refuse cards, ... (missed)
-08:53:38 <m4nu> Alexander: Provide a legal base for 3rd party providers - supervise licensing, make sure their presence in the market is secure - supervised/licensed, identify themselves, limit access to minimum necessary.
-08:53:51 <m4nu> scribe missed slide 13
-08:54:19 <m4nu> Alexander: No strong confidential data, need strong authentication.
-08:54:28 <m4nu> State of play regarding proposal.
-08:54:55 <m4nu> Alexander: EU Parliment voted in 20 Feb 2014. MIF caps after 1 year, 7 cent max debit fee
-08:55:05 <m4nu> Alexander: Caps should also cover commercial cards.
-08:55:20 <m4nu> Alexander: Cross-border acquiring at rate of aqurers country.
-08:55:53 <ernesto> s/aqurers/acquirer's/
-08:55:53 <m4nu> Alexander: Ongoing work on Greek Presidency, undder Italian presidency in Italy.
-08:56:37 <m4nu> Eric (from ING): Considerign that fees were identified are also being used online - does that mean it's a basis for services like MyBank to consider?
-08:56:52 <Ven> Ven has joined #W3CPAYMENT
-08:57:13 <m4nu> Alexander: No, under competition rules, we have the obligatin to say that there is a problem. They can always come forward w/ efficiency arguments. They'll find it difficult to do.
-08:57:31 <m4nu> Alexander: So, I don't see what efficiency arguments they could bring forward.
-08:57:36 <mauro> s/Considerign/Considering/
-08:57:56 <chaals> Present+ DaveBirch
-08:58:05 <m4nu> Dave_Birch: I don't see what the principle of the regulation is?
-08:58:23 <mauro> s/obligatin/obligation/
-08:58:24 <m4nu> Dave_Birch: Since the DG Competition has been doing this for a decade - and there is no new competition. I don't get what you're doing?
-08:58:35 <bryan> present+ Bryan_Sullivan
-08:58:43 <m4nu> Alexander: I don't think it's fair to say nothing "new" has happened, there have been new things.
-08:59:01 <m4nu> Dave_Birch: you can't use it in the netherlands
-08:59:42 <m4nu> Alexander: There is so much money floating around in this system, banks have not wanted to comply w/ competition law. Mastercard has made no attempt to do anthing other than bare necessary changes.
-09:00:11 <m4nu> Alexander: Visa has always made changes at very last section. We haven't seen lowering of interchange fees. It takes a very long time to force people to do it.
-09:00:31 <m4nu> Alexander: Regulatory approach is necessary. If we enforce lower interchange fees, we might be able to do something about it.
-09:01:13 <phobeo> s/you can't use it in the netherlands/ you can only use it in the Netherlands/
-09:01:16 <darobin> darobin has joined #W3Cpayment
-09:01:25 <chaals> present+ HannesTchofenig
-09:01:37 <m4nu> Hannes: In Jeff's takl - he said we should have more user choice. Been working on identity - there's an interesting pattern. Little choice w/ identity providers on internet.
-09:01:45 <chaals> s/takl/talk/
-09:02:09 <te> te has joined #W3Cpayment
-09:02:18 <m4nu> Hannes: Identity providers layering payment on top. How do we provide more user choice? To prevent us from using 3 payment providers that are going to be US companies.
-09:02:25 <m4nu> Alexander: Regulators have a hard time leading the market.
-09:02:36 <dka> Some side discussion going on here kicked off my my comment on http 402 status code and also link rel=payment (see http://relpayment.com) : https://twitter.com/torgo/status/448016153869574145
-09:02:49 <m4nu> Alexander: Danish market - banks operating through banking association - NETSID - ID system used by danish banks - used for online gaming.
-09:02:59 <m4nu> Alexander: Way of verifying that people are over 18.
-09:03:31 <m4nu> Alexander: This is the only recognized system - banks have used this power to kick out new entrants. This is a difficult area for regulators to get involved in.
-09:04:23 <m4nu> Chaals: Two questions - in 3rd party providers - they're not allowed to store confidential data? What kind and why? Isn't there a risk that if you silo off EU as a limited income space, won't they just jack up the prices for the rest of the world? Isn't that what they do?
-09:05:03 <m4nu> Alexander: Second question first, this is an argument that we often hear from the banks / card schemes. What we see is that we're moving away from hidden fees to fees people can see.
-09:05:38 <m4nu> Alexander: System of transparent pricing - see what happened in US - Durbin amendment - banks said that they want to increase card payment fees, found that they couldn't do it - people didn't want it.
-09:06:02 <m4nu> Alexander: Banks would like to say - we want to raise fees - they will be constrained by market opportunities. If they could raise them, they'd have already done it.
-09:06:09 <NBREDS> NBREDS has joined #W3CPayment
-09:06:20 <m4nu> Chaals: There is a difference between transparency and caps on pricing.
-09:06:31 <tobie__> tobie__ has joined #w3cpayment
-09:06:35 <m4nu> Alexander: In this case, we're capping the part that customers can't see
-09:06:52 <andym> andym has joined #w3cpayment
-09:06:54 <m4nu> Chaals: TPP's and why they can't hold data?
-09:07:10 <m4nu> Alexander: The concern is that payment providers can hold your data and get back into your bank account.
-09:07:28 <m4nu> Alexander: That should not be possible, there should be a transactional business model. You leave no trace w/ the TPP.
-09:07:49 <m4nu> Alexander: Minimize risks - they need to keep basic info on transaction.
-09:08:36 <wseltzer> rrsagent, make minutes
-09:08:36 <RRSAgent> I have made the request to generate http://www.w3.org/2014/03/24-w3cpayment-minutes.html wseltzer
-09:28:13 <andym> andym has joined #w3cpayment
-09:31:12 <Shinji> Shinji has joined #W3Cpayment
-09:32:40 <dka> dka has joined #w3cpayment
-09:33:17 <phariramani> phariramani has joined #w3cpayment
-09:33:52 <Tor> Tor has joined #W3Cpayment
-09:34:08 <m4nu> Topic: Format of Sessions
-09:34:28 <m4nu> Stephane: We're trying to keep presentations short - less than 1 hour. Chaals w/ be moderator for this session
-09:34:34 <jeff> jeff has joined #w3cpayment
-09:34:57 <bryan> bryan has joined #W3Cpayment
+[08:06:07] <RRSAgent> logging to http://www.w3.org/2014/03/24-w3cpayment-irc
+[08:06:25] <wseltzer> Meeting: Web Payments Workshop - Introduction
+[08:06:35] <wseltzer> Agenda: http://www.w3.org/2013/10/payments/agenda.html
+[08:06:35] <wseltzer> Date: 24 March, 2014
+[08:06:35] <wseltzer> Audio: none
+[08:06:50] <chaals> rrsagent, draft minutes
+[08:06:50] <RRSAgent> I have made the request to generate http://www.w3.org/2014/03/24-w3cpayment-minutes.html chaals
+[08:07:14] <chaals> rrsagent, make log public
+[08:07:52] <chaals> Chair: Appelquist
+[08:07:52] <chaals> scribe: m4nu
+[08:08:07] <manu> Packed room of 100+ people waiting for Web Payments Workshop to start: https://pbs.twimg.com/media/Bjek-PyIEAAiwzr.jpg:large
+[08:08:07] <manu> total present: plus 91 others for a total of 103 people
+[08:07:31] <manu> Welcomes from Stephane Boyera (W3C), Virgine Galindo (Gemalto) and Ingenico
+[08:08:14] <m4nu> Topic: Introduction by Jeff Jaffe of W3C
+[08:08:15] <chaals> Present+ chaals
+[08:08:37] <m4nu> Slides for presentation by Jeff Jaffe: http://www.w3.org/2013/10/payments/slides/intro_jeff_jaffe.pdf
+[08:08:37] <m4nu> jjaffe: The W3C was founded by the inventor of the WWW, Tim Berners-Lee.
+[08:08:39] <chaals> Present+ Manu, StephB
+[08:08:54] <m4nu> jjaffe: Earlier this month, we celebrated the 25th anniversary of the WWW.
+[08:08:54] <chaals> Present+ Wonsuk, Jungkee
+[08:09:11] <m4nu> jjaffe: We have a very simple, mission statement - lead the web to it's full potential.
+[08:09:17] <chaals> Present+ Mauro
+[08:09:33] <chaals> Present+ EvgenyVinogradov
+[08:09:39] <m4nu> jjaffe: We have a pretty good track record of that. We're a member-based organization. We have govts, startups, technology companies, non profits, close to 400 members.
+[08:10:07] <m4nu> jjaffe: Large commercial companies. The community that we have are the entire users of the WWW, we're shooting for entire planet.
+[08:10:43] <m4nu> jjaffe: For technical standards, we're larger than most technical standards - 70 people spread around the world, we want architectural coherance for the Web.
+[08:10:55] <m4nu> jjaffe: Outputs we produce are available to everyone.
+[08:11:23] <m4nu> jjaffe: UbiWeb - ubiquitous Web, We work on Web accessibility.
+[08:11:39] <m4nu> jjaffe: No one with disabilities should be prevented from using the Web.
+[08:11:48] <m4nu> jjaffe: Information and Knowledge focuses on data.
+[08:12:10] <m4nu> jjaffe: Each piece of technology gets created in a WG. Most of the work is done by engineers from member organizations, sometimes we have invited experts from outside.
+[08:12:24] <chaals> rrsagent, draft minutes
+[08:12:24] <RRSAgent> I have made the request to generate http://www.w3.org/2014/03/24-w3cpayment-minutes.html chaals
+[08:12:31] <m4nu> jjaffe: We work w/ Internet Engineering Task Force, we interface w/ who we need to.
+[08:13:12] <m4nu> jjaffe: We have a royalty-free patent policy. When Tim invented the Web, he made it available to the world. If you have an invention that belongs in the core of the Web, and  you have a patent, that should be available on a royalty-free basis.
+[08:13:34] <m4nu> jjaffe: Some of you may be familiar w/ de jure standards. We have a fast-track for de jure international standards.
+[08:13:58] <m4nu> jjaffe: As the Web has become more important, large companies have been joining.
+[08:14:29] <m4nu> jjaffe: We also have been trying to get smaller companies in. There is a new track of work - once community decides that something needs to be a Web Standard, we did a good job.
+[08:14:39] <m4nu> jjaffe: However, we didn't do well in pre-standardization work.
+[08:15:23] <m4nu> jjaffe: So, innovators would get together to do pre-standardization work. So, we created a new track called Community Groups. It made pre-standardization work easier. Sometimes CGs are discussion groups.
+[08:15:36] <m4nu> jjaffe: We have around 170 CGs, close to 4,000 engineers working in these groups.
+[08:16:18] <m4nu> jjaffe: We are working on the "Open Web Platform", lots of people doing work, but at the end of the day it all has to come together. We use "open web platform" to differentiate the open web from the web of 25 years ago.
+[08:16:49] <m4nu> jjaffe: In 25 years, the Web has become much more. Increasingly, the Web is not the end result, it's a platform for other applications to build on top of it.
+[08:17:41] <m4nu> jjaffe: The platform for building distributed applications - it's very interactive. It's characterized by Rich Interactive Media. The content was exciting, but it was fairly static. Now web pages are exciting (lots of great fonts, media, images, etc.)
+[08:17:58] <m4nu> jjaffe: We're working on HTML5 and CSS3 now, two hallmarks of W3C standardization work.
+[08:18:23] <m4nu> jjaffe: The span of devices implementing the Web has been expanding. In last 10 years, we've successfuly moved the Web to the smartphone, it's a design point for the Web.
+[08:18:42] <m4nu> jjaffe: Web and automotive is new work we're doing. So is mobile.
+[08:18:47] <chaals> present+ prakash, VirginieG, JeffJaffe, WendySeltzer
+[08:18:50] <m4nu> jjaffe: Web technology runs most everywhere,
+[08:19:03] <m4nu> jjaffe: Secure Web Platform - it's important that we keep innovating.
+[08:19:54] <m4nu> jjaffe: New industries that are affected - mobile, entertainment, gaming, healthcare, digital publishing, all are increasingly getting affected.
+[08:20:23] <m4nu> jjaffe: Digital publishing is interesting, we've been publishing for a while now. Mass distribution on a global scale, everyone is an author. Very different from highly selective publishing houses.
+[08:20:57] <m4nu> jjaffe: Web lacked quality of publishing for a long time. Font selection, styling, you couldn't do any of that. However, today we're in a situation we know how to achieve all of that technically.
+[08:21:28] <m4nu> jjaffe: As publishing was changed after Web, so do other industries.
+[08:21:47] <m4nu> jjaffe: With the Web Payments workshop, we're launching what could be a more fundamental transformation. It'll be impactful,  not sure how it'll turn out.
+[08:22:00] <m4nu> jjaffe: Lots of stuff is bought on the Web :)
+[08:22:14] <m4nu> jjaffe: Payments for mobile devices are increasing, searching for new ways of providing  payments on the Web.
+[08:22:40] <m4nu> jjaffe: If the Open Web Platform has been successful, to be the reference standard for what gets done in those industries, let's explore how the Web affects payments.
+[08:22:54] <m4nu> jjaffe: We wouldn't be exploring this if payments were simple.
+[08:23:10] <m4nu> jjaffe: For most people, it's bewildering to do payments on the Web (to pay for things).
+[08:23:22] <m4nu> jjaffe: To set something up the first time, it's difficult.
+[08:23:47] <m4nu> jjaffe: We have cryptocurrencies coming up, it's part of the whole picture. The complexity of the ecosystem is something we're going to be focusing on.
+[08:24:11] <m4nu> jjaffe: merchants are a part of the picture. When you want to set yourself up on the Web, you have to figure out how you're going to get payments accessible to your customers.
+[08:24:27] <m4nu> jjaffe: With Web Applications, the number of people that are trying to monetize things on the Web is growing exponentially.
+[08:24:33] <phariramani> With web applications, number of people who are trying to navigate the web has increased substantially
+[08:24:42] <m4nu> jjaffe: I want to do a one-off purchase, it's not easy.
+[08:25:17] <m4nu> jjaffe: A regular Amazon user has no problem, but we want a frictionless approach where anyone can buy from anyone in an easy fashion. The user experience should be simple. Not tons of passwords for each site that I frequent.
+[08:25:33] <m4nu> jjaffe: High levels of fraud, the overall security of the system - it's not great. We all worry that one day it's going to get worse.
+[08:25:35] <phariramani> Lack of standardization = Poor and variable user experience across sites and across payment systems
+[08:25:44] <m4nu> jjaffe: Is it really secure enough?
+[08:25:48] <m4nu> jjaffe: payments should be easy
+[08:26:22] <m4nu> jjaffe: People should be able to pay how they want to. If I have a smartphone, or tablet - I'd like a single "wallet" and do things consistently among devices.
+[08:26:31] <m4nu> jjaffe: Transparency is important -transaction fees should be clear.
+[08:26:54] <m4nu> jjaffe: How does this get done technically? Unsure, that's why we're having this workshop.
+[08:27:11] <m4nu> jjaffe: We're going to figure out where to do standardization. Maybe this happens at W3C, maybe somewhere else.
+[08:27:26] <m4nu> jjaffe: What to standardize is a very delicate choice.
+[08:28:03] <m4nu> jjaffe: We have the open web platform, having a clean way of getting a request for payments, proof of payments is standardization candidate.
+[08:28:18] <m4nu> jjaffe: having a standard interface between browser/wallet is a good standardization candidate.
+[08:28:36] <m4nu> jjaffe: Interfacing w/ external payment providers is important.
+[08:28:44] <chaals> Present+ thisNatasha
+[08:29:01] <chaals> Present+ BryanSullivan
+[08:29:07] <m4nu> jjaffe: Being able to select payment mechanism is important... we need to manage this complexity.
+[08:29:22] <chaals> rrsagent, draft minutes
+[08:29:22] <RRSAgent> I have made the request to generate http://www.w3.org/2014/03/24-w3cpayment-minutes.html chaals
+[08:29:43] <m4nu> jjaffe: Users should have greater choices, more choices, more consistency. There is enough automation/verification that merchants should be able to trust customers.
+[08:30:18] <chaals> Present+ JorgHeuer, MarieClaire
+[08:30:46] <m4nu> jjaffe: W3C is a consensus organization, we bring stakeholders together. We bring them together to try and figure out the best way to address some of these issues.
+[08:31:03] <m4nu> jjaffe: The Web is a global mechanism, we need things to work across borders. We want an open and level playing field.
+[08:31:27] <m4nu> jjaffe: When we start to look at a complex problem, we fail if we try to solve the  entire problem at once.
+[08:31:33] <m4nu> jjaffe: So, what's the lowest hanging fruit.
+[08:31:46] <m4nu> jjaffe: What makes a workshop successful - enter it w/ a spirit of openness.
+[08:32:15] <m4nu> jjaffe: There are many things related to technology and payments - we're focused on technology issues and enablement. Standards are a human activity.
+[08:32:31] <m4nu> jjaffe: Let's start talking and seeking consensus.
+[08:34:04] <wseltzer> Piggy bank swag from event: http://wendy.seltzer.org/media/webpay.jpg
+[08:33:42] <m4nu> Topic: Introduction from Alexander Gee, European Commission
+[08:33:42] <m4nu> Slides for presentation by Alexander Gee, Deputy Head of the Payments Unit for the European Commission's DG Competition: http://www.w3.org/2013/10/payments/slides/gee.pdf
+[08:34:11] <m4nu> Alexander: I've been doing payments since 2008.
+[08:34:45] <m4nu> Alexander: We welcome what's being done here. Anything that makes payment on the Web better, we'd welcome anything that would expect the single market from the EU.
+[08:35:01] <m4nu> Alexander: What I'd like to do now is simply go through  - explain what we're doing.
+[08:35:21] <m4nu> Alexander: My slides are detailed, so I'll skip through slides relatively quickly.
+[08:35:41] <wseltzer> rrsagent, draft minutes
+[08:35:41] <RRSAgent> I have made the request to generate http://www.w3.org/2014/03/24-w3cpayment-minutes.html wseltzer
+[08:35:58] <m4nu> Alexander: Payments in EU - epayments are largely card based. As far as EU is concerned, payments is 1% of GDP
+[08:36:06] <m4nu> Alexander: It's 25% of bank revenues.
+[08:36:44] <m4nu> Alexander: card transactions have grown from 7.4% to 17.4% - price for accepting card payments is not reflecting scale and increased efficiency.
+[08:37:05] <m4nu> Alexander: DG Competition has focused on interchange fees. This is one of the biggest barriers to competition in payments market.
+[08:37:56] <m4nu> Alexander: We have been embroiled in a legal debate for years. MasterCard has said they'd move interchange fees down 0.2% to 0.3%. They're around 1% right now.
+[08:38:10] <m4nu> Alexander: Visa says they'll match Mastercard's fees.
+[08:38:37] <m4nu> Alexander: Lower fees - markets segmented between national markets.
+[08:38:59] <m4nu> Alexander: We are now continuing w/ cases against MasterCard and Visa - regarding international payments.
+[08:39:49] <m4nu> Alexander: with interchange fees at this level, merchant is indifferent on getting paid w/ cash vs. card. We don't have enough info on what a good comparator is for epayments.
+[08:40:17] <m4nu> Alexander: Direct debits of credit transfers would be good. Offline figures would be good.
+[08:40:46] <m4nu> Alexander: We've carried out a detailed study - 0.2% or 0.3% seems reasonable.
+[08:41:44] <m4nu> Alexander: Normal standardization is pro-competitive, but we've found that major players have banded together to create an exclusionary effect on non-bank epayment mechanisms.
+[08:42:20] <m4nu> Alexander: In Netherlands, more internet-based payments are made than card-based ones.
+[08:42:51] <m4nu> Alexander: Non-bank players were excluded - the way standardization was being done - it was exclusionary.
+[08:43:16] <chaals> Present+ darobin
+[08:43:20] <m4nu> Alexander: We tried to work w/ European Payments Council .
+[08:44:08] <m4nu> Alexander: Interchange fees are a way to pass fees onto customers in a way that they can't see them.
+[08:45:20] <m4nu> Alexander: New entrants to innovation - atms / internet banking, paypal, payfair, monnet, ideal and Mybank, sofort.
+[08:45:49] <phariramani> Alexander: Paypal is more expensive than card payments
+[08:45:52] <m4nu> Alexander: From our point of view, Paypal is expensive - more expensive than card payments. It's a closed system. You have to establish a new account w them.
+[08:46:26] <virginie> payfair : http://www.payfair.eu/
+[08:46:43] <m4nu> Alexander: Monnet replaced national schemes, but it failed, they were willing to offer 0.2%-0.3%, they wanted to match fees elsehewre in EU (not in France)
+[08:46:57] <chaals> present+ tobie
+[08:46:59] <m4nu> Alexander: If they didn't do these higher fees, they were taking much more risk.
+[08:47:26] <m4nu> Alexander: Systems in Italy - click directly on bank via credit transfer.
+[08:48:26] <m4nu> Alexander: Recently proposed regulation - we want to create a level playing field - it can't be done by competition enforcement.
+[08:48:39] <m4nu> Alexander: it cannot act very fast - mastercard case took 7 years.
+[08:48:49] <phariramani> Alexander: competition enforcement cannot act fast/last mover advantage
+[08:48:52] <m4nu> Alexander: So, we want to create a legal base for non-banks - third party providers.
+[08:49:21] <m4nu> Alexander: So, here's the proposal:
+[08:49:31] <m4nu> Alexander: Promote consumer welfare - reduce excessive fees.
+[08:49:34] <m4nu> Alexander: Increase choice
+[08:49:49] <m4nu> Alexander: Promote competition, efficiences should be passed on to consumers.
+[08:50:09] <m4nu> Alexander: We want to reduce barriers for competition and increase transparency, reduce barriers to entry.
+[08:50:37] <m4nu> Alexander: Reducing interchange fees - Monnet and PayFair - they cannot enter the market because banks are expecting a similar revenue.
+[08:51:00] <m4nu> Alexander: Banks are keen to have more expensive card payments schemes, so we need to work on that.
+[08:51:24] <m4nu> Alexander: the commission proposes - regulate the fees of "Must take" cards - 4 party schemes, consumer visa/mastercard card.
+[08:51:36] <m4nu> Alexander: National schemes problematic
+[08:51:50] <m4nu> Alexander: Immediately cap the fees for cross-border transactions.
+[08:52:08] <m4nu> Alexander: Promote the idea of a single market - 2 years delay on national/domestic transactions.
+[08:52:35] <m4nu> Alexander: More effectively functioning cards market -
+[08:52:45] <m4nu> Alexander: What we can do:
+[08:52:58] <m4nu> Alexander: Allow merchants to refuse cards
+[08:53:38] <m4nu> Alexander: Provide a legal base for 3rd party providers - supervise licensing, make sure their presence in the market is secure - supervised/licensed, identify themselves, limit access to minimum necessary.
+[08:53:51] <m4nu> The scribe missed the content of slide 13
+[08:54:19] <m4nu> Alexander: No strong confidential data, need strong authentication.
+[08:54:28] <m4nu> State of play regarding proposal.
+[08:54:55] <m4nu> Alexander: EU Parliment voted in 20 Feb 2014. MIF caps after 1 year, 7 cent max debit fee
+[08:55:05] <m4nu> Alexander: Caps should also cover commercial cards.
+[08:55:20] <m4nu> Alexander: Cross-border acquiring at rate of acquirer's country.
+[08:55:53] <m4nu> Alexander: Ongoing work on Greek Presidency, under Italian presidency in Italy.
+[08:56:37] <m4nu> Eric: Considering that fees were identified are also being used online - does that mean it's a basis for services like MyBank to consider?
+[08:57:13] <m4nu> Alexander: No, under competition rules, we have the obligatin to say that there is a problem. They can always come forward w/ efficiency arguments. They'll find it difficult to do.
+[08:57:31] <m4nu> Alexander: So, I don't see what efficiency arguments they could bring forward.
+[08:57:56] <chaals> Present+ DaveBirch
+[08:58:05] <m4nu> dbirch: I don't see what the principle of the regulation is?
+[08:58:24] <m4nu> dbirch: Since the DG Competition has been doing this for a decade - and there is no new competition. I don't get what you're doing?
+[08:58:35] <bryan> present+ Bryan_Sullivan
+[08:58:43] <m4nu> Alexander: I don't think it's fair to say nothing "new" has happened, there have been new things.
+[08:59:01] <m4nu> dbirch: you can only use it in the Netherlands, it's not effective!
+[08:59:42] <m4nu> Alexander: There is so much money floating around in this system, banks have not wanted to comply w/ competition law. Mastercard has made no attempt to do anthing other than bare necessary changes.
+[09:00:11] <m4nu> Alexander: Visa has always made changes at very last section. We haven't seen lowering of interchange fees. It takes a very long time to force people to do it.
+[09:00:31] <m4nu> Alexander: Regulatory approach is necessary. If we enforce lower interchange fees, we might be able to do something about it.
+[09:01:25] <chaals> present+ HannesTchofenig
+[09:01:37] <m4nu> Hannes: In Jeff's talk - he said we should have more user choice. Been working on identity - there's an interesting pattern. Little choice w/ identity providers on internet.
+[09:02:18] <m4nu> Hannes: Identity providers layering payment on top. How do we provide more user choice? To prevent us from using 3 payment providers that are going to be US companies.
+[09:02:25] <m4nu> Alexander: Regulators have a hard time leading the market.
+[09:02:36] <dka> Some side discussion going on here kicked off my my comment on http 402 status code and also link rel=payment (see http://relpayment.com) : https://twitter.com/torgo/status/448016153869574145
+[09:02:49] <m4nu> Alexander: Danish market - banks operating through banking association - NETSID - ID system used by danish banks - used for online gaming.
+[09:02:59] <m4nu> Alexander: Way of verifying that people are over 18.
+[09:03:31] <m4nu> Alexander: This is the only recognized system - banks have used this power to kick out new entrants. This is a difficult area for regulators to get involved in.
+[09:04:23] <m4nu> Chaals: Two questions - in 3rd party providers - they're not allowed to store confidential data? What kind and why? Isn't there a risk that if you silo off EU as a limited income space, won't they just jack up the prices for the rest of the world? Isn't that what they do?
+[09:05:03] <m4nu> Alexander: Second question first, this is an argument that we often hear from the banks / card schemes. What we see is that we're moving away from hidden fees to fees people can see.
+[09:05:38] <m4nu> Alexander: System of transparent pricing - see what happened in US - Durbin amendment - banks said that they want to increase card payment fees, found that they couldn't do it - people didn't want it.
+[09:06:02] <m4nu> Alexander: Banks would like to say - we want to raise fees - they will be constrained by market opportunities. If they could raise them, they'd have already done it.
+[09:06:20] <m4nu> Chaals: There is a difference between transparency and caps on pricing.
+[09:06:35] <m4nu> Alexander: In this case, we're capping the part that customers can't see
+[09:06:54] <m4nu> Chaals: Trusted Third Parties (TPP's) and why can't they hold data?
+[09:07:10] <m4nu> Alexander: The concern is that payment providers can hold your data and get back into your bank account.
+[09:07:28] <m4nu> Alexander: That should not be possible, there should be a transactional business model. You leave no trace w/ the TPP.
+[09:07:49] <m4nu> Alexander: Minimize risks - they need to keep basic info on transaction.
+[09:08:36] <wseltzer> rrsagent, make minutes
+[09:08:36] <RRSAgent> I have made the request to generate http://www.w3.org/2014/03/24-w3cpayment-minutes.html wseltzer
+[09:34:08] <m4nu> Topic: Format of Sessions
+[09:34:28] <m4nu> sboyera: Ok, so the rest of the sessions are 2 hours long. We're trying to keep presentations short - less than 1 hour. Chaals w/ be moderator for the first session.
