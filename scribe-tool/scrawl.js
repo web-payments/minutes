@@ -6,8 +6,9 @@
 (function() {
   var $ = (typeof jQuery !== 'undefined') ? jQuery : undefined;
   /* Standard regular expressions to use when matching lines */
-  var commentRx = /^\[(.*)\]\s+\<(.*)\>\s+(.*)$/;
+  var commentRx = /^\[?(.*)\]?\s+\<(.*)\>\s+(.*)$/;
   var scribeRx = /^scribe:.*$/i;
+  var meetingRx = /^meeting:.*$/i;
   var chairRx = /^chair:.*$/i;
   var proposalRx = /^(proposal|proposed):.*$/i;
   var resolutionRx = /^(resolution|resolved): ?(.*)$/i;
@@ -328,6 +329,12 @@
             scrawl.present(context, aliases[chair]);
          }
        }
+       // check for meeting line
+       else if(msg.search(meetingRx) != -1)
+       {
+         var meeting = msg.match(meetingRx)[1];
+         context.group = meeting;
+       }
        // check for topic line
        else if(msg.search(topicRx) != -1)
        {
@@ -495,7 +502,7 @@
     // generate the summary text
     if(textMode == 'html')
     {
-      rval += '<h1>' + group +' Telecon</h1>\n';
+      rval += '<h1>' + group + '</h1>\n';
       rval += '<h2>Minutes for ' + time.getFullYear() + '-' +
          month + '-' + day +'</h2>\n';
       rval += '<div class="summary">\n<dl>\n';

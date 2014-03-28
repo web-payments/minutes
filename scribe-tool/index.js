@@ -41,7 +41,7 @@ var gDate = path.basename(dstDir);
 gDate = gDate.replace(/-[a-z]+$/, '');
 
 // configure scrawl
-scrawl.group = "Web Payments Community Group";
+scrawl.group = 'Web Payments Community Group Telecon';
 scrawl.people = JSON.parse(peopleJson);
 
 /************************* Utility Functions *********************************/
