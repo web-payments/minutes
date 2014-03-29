@@ -215,6 +215,7 @@
 [10:49:15] <m4nu> Harish: Broadly, what we're seeing is Visa/mastercard for international payments - aside from SWIFT, there is no such infrastructure. Earthport does some of this, so does Western Union.
 [10:49:32] <m4nu> Harish: US Federal Reserve - international payment framework.
 [10:50:10] <chaals> q+ ricardoVarela
+[10:50:35] <m4nu> Topic: General Discussion about Financial Infrastructure
 [10:50:35] <m4nu> Hannes: Role of standards may  be different here - you can always add more roles as people do - we may want to start fairly simplistic w/ very few standards.
 [10:50:48] <m4nu> Hannes: Maybe we don't need so much standardization.
 [10:51:21] <chaals> Organisation to track new transfer systems - http://datauthority.org/
@@ -255,8 +256,8 @@
 [11:06:23] <m4nu> Ken: So, you need to look at each use case to determine if there is a gap or not.
 [11:06:55] <m4nu> Chaals: So, people want a wide variety of options, but asking people what they want doesn't mean that they'll tell you what they need.
 [11:07:09] <m4nu> Chaals: What are people already spending their money on in an array of services.
-[11:07:38] <m4nu> Jeff: Jeff, W3C - we've heard a number of different comments on what people would like to see. Some done by companies, some by regulators, innovators.
-[11:07:56] <m4nu> Jeff: What's the role for Web standards - what do panelists want to see in web standards.
+[11:07:38] <m4nu> jjaffe: Jeff, W3C - we've heard a number of different comments on what people would like to see. Some done by companies, some by regulators, innovators.
+[11:07:56] <m4nu> jjaffe: What's the role for Web standards - what do panelists want to see in web standards.
 [11:08:58] <m4nu> Olivier: The trend is to mix payment, shopping experience, first payment provider - Alipay - escrow type of payment - it's cultural. In China, people don't trust seller. Every culture has its own way of making payments.
 [11:09:22] <m4nu> Olivier: We need to create a basic mechanism that enables all of these use cases happen. We shouldn't focus on commerce use case.
 [11:09:35] <bryan> usecase: Selection of payment service based upon ability to handle escrow for untrusted merchants.
