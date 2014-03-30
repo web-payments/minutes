@@ -9,6 +9,10 @@
   "Mike Johnson": {
     "alias": ["mjohnson", "mjohnson_db"]
   },
+  "Daniel Appelquist": {
+    "alias": ["dka", "dappelquist"],
+    "homepage": "http://www.torgo.com/blog/"
+  },
   "Daniel Austin": {
     "alias": ["daustin"]
   },
@@ -282,7 +286,7 @@
   },
   "Tobie Langel": {
     "alias": ["tlangel"],
-    "homepage": "http://gmail.com/"
+    "homepage": "http://tobielangel.com/"
   },
   "David Ezell": {
     "alias": ["dezell"],
@@ -298,7 +302,7 @@
   },
   "Martin Hepp": {
     "alias": ["mhepp"],
-    "homepage": "http://unibw.de/"
+    "homepage": "http://www.heppnetz.de/"
   },
   "Francois Crehange": {
     "alias": ["fcrehange"],
@@ -356,8 +360,8 @@
     "alias": ["vchandy"],
     "homepage": "http://comviva.com/"
   },
-  "King Jeremy": {
-    "alias": ["kjeremy"],
+  "Jeremy King": {
+    "alias": ["jking"],
     "homepage": "http://pcisecuritystandards.org/"
   },
   "Timothy Ng": {
@@ -540,13 +544,9 @@
     "alias": ["rhernandez"],
     "homepage": "http://bbva.com/"
   },
-  "Denis Roio": {
-    "alias": ["droio"],
+  "D. Jaromil Roio": {
+    "alias": ["droio", "jaromil"],
     "homepage": "http://dyne.org/"
-  },
-  "Daniel Appelquist": {
-    "alias": ["dka", "dappelquist"],
-    "homepage": "http://www.torgo.com/blog/"
   },
   "Lauret Penou": {
     "alias": ["lpenou"],
