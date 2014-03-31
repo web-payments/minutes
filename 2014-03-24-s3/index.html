@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web Payments">
+    <meta name="author" content="Manu Sporny">
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico">
+
+    <title>Web Payments</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="../../assets/css/bootstrap.css">
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/icomoon.css">
+    <link rel="stylesheet" href="../../assets/css/animate-custom.css">
+
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' type='text/css'>
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Raleway:400,300,700' type='text/css'>
+
+    <script src="../../assets/js/jquery.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/modernizr.custom.js"></script>
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body data-target="#navbar-nav" data-spy="scroll">
+
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <img class="navbar-logo" src="../../images/logo-32.png">
+          </button>
+          <a class="navbar-brand hidden-xs hidden-sm" href="#home"><img class="navbar-logo" src="../../images/logo-32.png"></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../#home" class="smoothScroll">Home</a></li>
+            <li> <a href="../../#about" class="smoothScroll"> About</a></li>
+            <li> <a href="../../#tech" class="smoothScroll"> Tech</a></li>
+            <li> <a href="../../#participate" class="smoothScroll"> Participate</a></li>
+            <li> <a href="../../#contact" class="smoothScroll"> Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+
+<section><div class="container"><div class="row white"><br><div class="col-lg-offset-2 col-lg-8"><h1>Web Payments Workshop - Session 3</h1>
+<h2>Minutes for 2014-03-24</h2>
+<div class="summary">
+<dl>
+<dt>Agenda</dt><dd><a href="http://www.w3.org/2013/10/payments/agenda.html">http://www.w3.org/2013/10/payments/agenda.html</a></dd>
+<dt>Topics</dt><dd><ol><li><a href="#topic-1">Session 3: Back End: Banks, Regulation, and Future Clearing</a><li><a href="#topic-2">Card Processing - Worldline</a><li><a href="#topic-3">Global Payments - World Bank</a><li><a href="#topic-4">Future Clearing - Ripple Labs</a><li><a href="#topic-5">Alternative Currencies - CoinApex</a><li><a href="#topic-6">National Infrastructure - US Federal Reserve</a><li><a href="#topic-7">General Discussion on Back-end Systems</a></ol></dd><dt>Chair</dt><dd>Daniel Appelquist</dd>
+<dt>Scribe</dt><dd>Prakash Hariramani and Dave Raggett</dd>
+<dt>Present</dt><dd><a href="http://www.torgo.com/blog/">Daniel Appelquist</a>, <a href="https://www.linkedin.com/in/hariramani">Prakash Hariramani</a>, <a href="http://www.linkedin.com/in/erikanderson">Erik Anderson</a>, <a href="http://worldline.com/">Jean-Claude Barbezange</a>, <a href="http://www.linkedin.com/pub/harish-natarajan/2/896/861/">Harish Natarajan</a>, <a href="http://www.linkedin.com/in/blsaws">Bryan Sullivan</a>, <a href="http://www.dgwbirch.com/DGWB/Welcome.html">Dave Birch</a>, <a href="http://www.linkedin.com/in/chaals">Charles McCathie Nevile</a>, <a href="http://www.linkedin.com/in/evanmarkschwartz">Evan Schwartz</a>, <a href="http://www.w3.org/People/Raggett/">Dave Raggett</a>, <a href="https://twitter.com/maxraskin">Max Raskin</a>, <a href="http://www.linkedin.com/pub/connie-theien/1/609/7bb/">Connie Theien</a>, <a href="http://manu.sporny.org/about">Manu Sporny</a>, <a href="http://dyne.org/">D. Jaromil Roio</a>, <a href="http://www.linkedin.com/in/hubculture">Stan Stalnaker</a>, <a href="https://www.linkedin.com/pub/gray-taylor/6/50b/a5b">Gray Taylor</a>, <a href="http://www.w3.org/People/Boyera/">Stéphane Boyera</a>, <a href="http://uk.linkedin.com/in/ricardovarela/">Ricardo Varela</a>, <a href="https://www.linkedin.com/pub/bailey-reutzel/21/a89/954">Bailey Reutzel</a>, <a href="http://de.linkedin.com/pub/joerg-heuer/2/a47/6ab">Jörg Heuer</a>, <a href="https://www.linkedin.com/pub/giridhar-mandyam/0/905/b99">Giridhar Mandyam</a>, <a href="http://wendy.seltzer.org/">Wendy Seltzer</a>, <a href="https://www.linkedin.com/pub/jeremy-king/28/753/90a">Jeremy King</a>, and 80 others for a total of 103+ people</dd>
+<div class="information">Prakash Hariramani is scribing.</div>
+<h1 id="topic-1" class="topic">Topic: Session 3: Back End: Banks, Regulation, and Future Clearing</h1>
+<div onmouseout="$('#link-1').hide()" onmouseover="$('#link-1').show()"" id="1" class="information">Stephane introduces the session moderator, Erik Anderson from Bloomberg <a id="link-1" style="display:none;" href="#1">✪</a></div>
+<div onmouseout="$('#link-2').hide()" onmouseover="$('#link-2').show()"" id="2" class="comment"><span class="name">Erik Anderson</span>:  This session will be more about the backend and the banking side. <a id="link-2" style="display:none;" href="#2">✪</a></div>
+<div onmouseout="$('#link-3').hide()" onmouseover="$('#link-3').show()"" id="3" class="information">Erik introduces Jean Claude Barbezange from Worldline <a id="link-3" style="display:none;" href="#3">✪</a></div>
+<h1 id="topic-2" class="topic">Topic: Card Processing - Worldline</h1>
+<div onmouseout="$('#link-4').hide()" onmouseover="$('#link-4').show()"" id="4" class="information">Slides for this session: <a href="http://www.w3.org/2013/10/payments/slides/session3_worldline.pdf">http://www.w3.org/2013/10/payments/slides/session3_worldline.pdf</a> <a id="link-4" style="display:none;" href="#4">✪</a></div>
+<div onmouseout="$('#link-5').hide()" onmouseover="$('#link-5').show()"" id="5" class="information">Slide 1: Legacy web payment mode <a id="link-5" style="display:none;" href="#5">✪</a></div>
+<div onmouseout="$('#link-6').hide()" onmouseover="$('#link-6').show()"" id="6" class="comment"><span class="name">Jean-Claude Barbezange</span>:  Front end: web form: declarative data: E.g. PAN, CVV <a id="link-6" style="display:none;" href="#6">✪</a></div>
+<div onmouseout="$('#link-7').hide()" onmouseover="$('#link-7').show()"" id="7" class="information">PAN = Personal Account Number <a id="link-7" style="display:none;" href="#7">✪</a></div>
+<div onmouseout="$('#link-8').hide()" onmouseover="$('#link-8').show()"" id="8" class="information">CVV =  security code at back of card <a id="link-8" style="display:none;" href="#8">✪</a></div>
+<div onmouseout="$('#link-9').hide()" onmouseover="$('#link-9').show()"" id="9" class="comment"><span class="name">Jean-Claude Barbezange</span>:  Secure mechanisms: 3dS, tokenization, dynamic CVX <a id="link-9" style="display:none;" href="#9">✪</a></div>
+<div class="comment-continuation">... front end with a web form, declarative data, e.g. card info. Security with 3DSecure, and more recently tokenization.</div>
+<div class="comment-continuation">... Dynamic CVX provides better secuirty</div>
+<div onmouseout="$('#link-10').hide()" onmouseover="$('#link-10').show()"" id="10" class="information">Slide 3: Legacy Web Payment - Back end <a id="link-10" style="display:none;" href="#10">✪</a></div>
+<div onmouseout="$('#link-11').hide()" onmouseover="$('#link-11').show()"" id="11" class="comment"><span class="name">Jean-Claude Barbezange</span>:  Also dynamic CVS for improved security. Also convenience for user, e.g. form auto completion and one click purchases. <a id="link-11" style="display:none;" href="#11">✪</a></div>
+<div class="comment-continuation">... Banking card: universal, fee for payee, some level guarantees</div>
+<div class="comment-continuation">... In some countries like Germany, credit transfer is used for nilling, home banking..</div>
+<div class="comment-continuation">... Ideal is used in Netherlands</div>
+<div class="comment-continuation">... Direct debit is used for regular recurring payments</div>
+<div onmouseout="$('#link-12').hide()" onmouseover="$('#link-12').show()"" id="12" class="information">Slide 4: Legacy web payment mode <a id="link-12" style="display:none;" href="#12">✪</a></div>
+<div onmouseout="$('#link-13').hide()" onmouseover="$('#link-13').show()"" id="13" class="comment"><span class="name">Jean-Claude Barbezange</span>:  Depends on cultural user behavior per country/usage/trusted level <a id="link-13" style="display:none;" href="#13">✪</a></div>
+<div class="comment-continuation">... different rules for some functions: transaction collection, clearing/settlement, cancellation/refund, dispute, risk management, fraud detection</div>
+<div class="comment-continuation">... If token is used for txn lifecycle management then toke needs to be preserved for long period</div>
+<div class="comment-continuation">... Backed protocol is moving to ISO 20002</div>
+<div onmouseout="$('#link-14').hide()" onmouseover="$('#link-14').show()"" id="14" class="information">Slide 5: New web payment mode (crypto currencies) <a id="link-14" style="display:none;" href="#14">✪</a></div>
+<div onmouseout="$('#link-15').hide()" onmouseover="$('#link-15').show()"" id="15" class="comment"><span class="name">Jean-Claude Barbezange</span>:  Crypto tools: hash, asymmetric signatures, mathematical functions like pairing <a id="link-15" style="display:none;" href="#15">✪</a></div>
+<div class="comment-continuation">... currency virtualization: dynamic change currency</div>
+<div class="comment-continuation">... autonomous cryptogram contains all the data for the transaction as bank notes or coin.</div>
+<div class="comment-continuation">... Interest in reducing cross border transaction costs</div>
+<div class="comment-continuation">... in some cases can keep anonymous information on user</div>
+<div onmouseout="$('#link-16').hide()" onmouseover="$('#link-16').show()"" id="16" class="information">Slide 6: New web payment mode <a id="link-16" style="display:none;" href="#16">✪</a></div>
+<div onmouseout="$('#link-17').hide()" onmouseover="$('#link-17').show()"" id="17" class="comment"><span class="name">Jean-Claude Barbezange</span>:  Front end: P2P: Based on open source software wallet <a id="link-17" style="display:none;" href="#17">✪</a></div>
+<div class="comment-continuation">... Front end: Also based on new internet technologies like IP (TCP/UDOP), IP Address</div>
+<div onmouseout="$('#link-18').hide()" onmouseover="$('#link-18').show()"" id="18" class="information">Slide 7: New Web Payment mode: Back end <a id="link-18" style="display:none;" href="#18">✪</a></div>
+<div onmouseout="$('#link-19').hide()" onmouseover="$('#link-19').show()"" id="19" class="comment"><span class="name">Jean-Claude Barbezange</span>:  Real time with instant balance <a id="link-19" style="display:none;" href="#19">✪</a></div>
+<div class="comment-continuation">... distributed functions for txn validation</div>
+<div onmouseout="$('#link-20').hide()" onmouseover="$('#link-20').show()"" id="20" class="information">Slide 8: Conclusion <a id="link-20" style="display:none;" href="#20">✪</a></div>
+<div onmouseout="$('#link-21').hide()" onmouseover="$('#link-21').show()"" id="21" class="comment"><span class="name">Jean-Claude Barbezange</span>:  For both ecosystems, trust and security are mandatory <a id="link-21" style="display:none;" href="#21">✪</a></div>
+<div class="comment-continuation">... PSPs also have to develop authentication, risk analysis and fraud detection</div>
+<div class="comment-continuation">... Some standardization on web browser could be helpful like fingerprinting, secure inputs, API to secure client device resources</div>
+<div onmouseout="$('#link-22').hide()" onmouseover="$('#link-22').show()"" id="22" class="comment"><span class="name">Jean-Claude Barbezange</span>:  And privacy requirement on vendor <a id="link-22" style="display:none;" href="#22">✪</a></div>
+<div onmouseout="$('#link-23').hide()" onmouseover="$('#link-23').show()"" id="23" class="comment"><span class="name">Erik Anderson</span>:  W3C is encapsulation layer beyond a low level protocol; need to consider legacy systems while considering standards <a id="link-23" style="display:none;" href="#23">✪</a></div>
+<h1 id="topic-3" class="topic">Topic: Global Payments - World Bank</h1>
+<div onmouseout="$('#link-24').hide()" onmouseover="$('#link-24').show()"" id="24" class="comment"><span class="name">Erik Anderson</span>:  Introducing World Bank/Harish Natarajan <a id="link-24" style="display:none;" href="#24">✪</a></div>
+<div onmouseout="$('#link-25').hide()" onmouseover="$('#link-25').show()"" id="25" class="comment"><span class="name">Harish Natarajan</span>:  Build on topics introduced from this morning <a id="link-25" style="display:none;" href="#25">✪</a></div>
+<div class="comment-continuation">... Key findings from WB global payments survey...</div>
+<div class="comment-continuation">... Innovative = anything not based on traditional bank accounts</div>
+<div class="comment-continuation">... 11% of innovative product transactions accounted for more than 5% of electronic payments volume</div>
+<div class="comment-continuation">... 69% of innovative product transactions were growing</div>
+<div onmouseout="$('#link-26').hide()" onmouseover="$('#link-26').show()"" id="26" class="information">Slide 4: Findings &amp; policy implications .. <a id="link-26" style="display:none;" href="#26">✪</a></div>
+<div onmouseout="$('#link-27').hide()" onmouseover="$('#link-27').show()"" id="27" class="comment"><span class="name">Harish Natarajan</span>:  Right hand corner of pie chart - innovations could serve affordability &amp; accessibility of payment services <a id="link-27" style="display:none;" href="#27">✪</a></div>
+<div onmouseout="$('#link-28').hide()" onmouseover="$('#link-28').show()"" id="28" class="information">Slide 5: interoperability <a id="link-28" style="display:none;" href="#28">✪</a></div>
+<div onmouseout="$('#link-29').hide()" onmouseover="$('#link-29').show()"" id="29" class="comment"><span class="name">Harish Natarajan</span>:  Interoperability generally associated with card products <a id="link-29" style="display:none;" href="#29">✪</a></div>
+<div class="comment-continuation">... Interoperability fosters competition and consumer convenience</div>
+<div class="comment-continuation">... Several levels of interoperability. Infrastructure, system wide &amp; cross system</div>
+<div class="comment-continuation">...  E.g. card level interoperability - POS terminal in US can support cards issued by any bank as long as card adheres to standards</div>
+<div class="comment-continuation">... E.g. system wide interoperability - Visa system</div>
+<div class="comment-continuation">... Cross system interoperability not as easily achieved</div>
+<div class="comment-continuation">...However cross membership across systems (Visa / MasterCard) could achieve cross system interoperability</div>
+<div class="comment-continuation">... Money transfer example: Typically Western Union/Money Gram generally prohibit sharing of agents; restricts interoperability</div>
+<div onmouseout="$('#link-30').hide()" onmouseover="$('#link-30').show()"" id="30" class="information">Slide 7: Infrastructure and access interoperability//use of clearing &amp; settlement <a id="link-30" style="display:none;" href="#30">✪</a></div>
+<div onmouseout="$('#link-31').hide()" onmouseover="$('#link-31').show()"" id="31" class="comment"><span class="name">Harish Natarajan</span>:  More than 50% of innovative products settled in books of issuer and only around 24% with central bank <a id="link-31" style="display:none;" href="#31">✪</a></div>
+<div onmouseout="$('#link-32').hide()" onmouseover="$('#link-32').show()"" id="32" class="information">Slide 9: Legal and Regulatory Considerations <a id="link-32" style="display:none;" href="#32">✪</a></div>
+<div onmouseout="$('#link-33').hide()" onmouseover="$('#link-33').show()"" id="33" class="comment"><span class="name">Bryan Sullivan</span>: AML/CFT = Anti-Money Laundering/Combating the Financing of Terrorism (AML/CFT) <a id="link-33" style="display:none;" href="#33">✪</a></div>
+<div onmouseout="$('#link-34').hide()" onmouseover="$('#link-34').show()"" id="34" class="comment"><span class="name">Harish Natarajan</span>:  4 Main issues - safety of customer funds; typical bank has deposit insurance however this may not apply for a non bank institution <a id="link-34" style="display:none;" href="#34">✪</a></div>
+<div onmouseout="$('#link-35').hide()" onmouseover="$('#link-35').show()"" id="35" class="comment"><span class="name">Bryan Sullivan</span>: Link for AML/CFT stuff: <a href="http://www.imf.org/external/np/leg/amlcft/eng/">http://www.imf.org/external/np/leg/amlcft/eng/</a> <a id="link-35" style="display:none;" href="#35">✪</a></div>
+<div onmouseout="$('#link-36').hide()" onmouseover="$('#link-36').show()"" id="36" class="comment"><span class="name">Harish Natarajan</span>:  Heightened AML/CTF risks: The way non bank accounts are setup created higher AML/CTF risks but can be addressed thru velocity limits, txn sizes <a id="link-36" style="display:none;" href="#36">✪</a></div>
+<div class="comment-continuation">... Weaker authentication could lead to higher fraud risks. E.g. SMS used by some for operator billing</div>
+<div class="comment-continuation">... Consumer protection: when a customer signs up for credit/debit card there are very clear requirements however that is not the case with many prepaid products so customer may not be aware of what they are getting into</div>
+<div onmouseout="$('#link-37').hide()" onmouseover="$('#link-37').show()"" id="37" class="comment"><span class="name">Bryan Sullivan</span>: How to know if a customer really knows what they are getting into? $64K question <a id="link-37" style="display:none;" href="#37">✪</a></div>
+<div onmouseout="$('#link-38').hide()" onmouseover="$('#link-38').show()"" id="38" class="comment"><span class="name">Harish Natarajan</span>:  Need to ensure competitive market conditions: Avoid regulatory arbitrage. Banks subject to higher constraints but non banks may have more relaxed requirements <a id="link-38" style="display:none;" href="#38">✪</a></div>
+<div class="comment-continuation">... Oversight arrangements: Typically supervision is the term used; oversight looks at impacts to system as a whole and typically function of central bank. Non banks typically fall outside of this central bank purview</div>
+<div onmouseout="$('#link-39').hide()" onmouseover="$('#link-39').show()"" id="39" class="comment"><span class="name">Harish Natarajan</span>:  Conclusion: Innovative payment mechanisms expand access, efficiency but form a regulatory perspective they need to be seen as an integral part of the national payment system of the country <a id="link-39" style="display:none;" href="#39">✪</a></div>
+<div id="usecase-39" class="resolution"><strong>USE CASE:</strong> Payment process includes user informed consent requirements about &quot;what they are getting into&quot;.</div>
+<div onmouseout="$('#link-40').hide()" onmouseover="$('#link-40').show()"" id="40" class="comment"><span class="name">Dave Birch</span>:  2 Of the most successful schemes (MPESA in Kenya and SMART Philippines) do not involve banks. Is that a coincidence? <a id="link-40" style="display:none;" href="#40">✪</a></div>
+<div onmouseout="$('#link-41').hide()" onmouseover="$('#link-41').show()"" id="41" class="information">Laughter from audience. <a id="link-41" style="display:none;" href="#41">✪</a></div>
+<div onmouseout="$('#link-42').hide()" onmouseover="$('#link-42').show()"" id="42" class="comment"><span class="name">Harish Natarajan</span>:  They adopted a model that banks typically do not use (agent model) and a consumer pays model <a id="link-42" style="display:none;" href="#42">✪</a></div>
+<div class="comment-continuation">... MPESA transactions have a typical 1% transaction fee but many banks are not allowed to charge users for withdrawing cash form their own account</div>
+<div onmouseout="$('#link-43').hide()" onmouseover="$('#link-43').show()"" id="43" class="comment"><span class="name">Charles McCathie Nevile</span>: I wonder how much of the reason MPESA/Smart didn&apos;t come from banks is due to banks thinking &quot;payment already works&quot; <a id="link-43" style="display:none;" href="#43">✪</a></div>
+<h1 id="topic-4" class="topic">Topic: Future Clearing - Ripple Labs</h1>
+<div onmouseout="$('#link-44').hide()" onmouseover="$('#link-44').show()"" id="44" class="information">Slides for this talk are available here: <a href="http://www.w3.org/2013/10/payments/slides/session3_ripple.pdf">http://www.w3.org/2013/10/payments/slides/session3_ripple.pdf</a> <a id="link-44" style="display:none;" href="#44">✪</a></div>
+<div onmouseout="$('#link-45').hide()" onmouseover="$('#link-45').show()"" id="45" class="comment"><span class="name">Erik Anderson</span>:  Introducing Evan from Ripple <a id="link-45" style="display:none;" href="#45">✪</a></div>
+<div onmouseout="$('#link-46').hide()" onmouseover="$('#link-46').show()"" id="46" class="comment"><span class="name">Evan Schwartz</span>:  Ripple is a global, open source decentralized payment network that connects other payment networks. <a id="link-46" style="display:none;" href="#46">✪</a></div>
+<div onmouseout="$('#link-47').hide()" onmouseover="$('#link-47').show()"" id="47" class="comment"><span class="name">Evan Schwartz</span>:  Let&apos;s talk about how Ripple can make payments faster, easier and cheaper for everyone. <a id="link-47" style="display:none;" href="#47">✪</a></div>
+<div class="comment-continuation">... Ripple = Global decentralized open source network</div>
+<div class="comment-continuation">... Ripple Labs = company dedicated to supporting Ripple&apos;s development</div>
+<div onmouseout="$('#link-48').hide()" onmouseover="$('#link-48').show()"" id="48" class="information">Next slide (no slide numbers unfortunately) : Ripple payments are . . . <a id="link-48" style="display:none;" href="#48">✪</a></div>
+<div onmouseout="$('#link-49').hide()" onmouseover="$('#link-49').show()"" id="49" class="comment"><span class="name">Evan Schwartz</span>:  Ripple payments are fast, free, in any currency, global and secure. Can be done in any currency, gold or any stored value <a id="link-49" style="display:none;" href="#49">✪</a></div>
+<div onmouseout="$('#link-50').hide()" onmouseover="$('#link-50').show()"" id="50" class="information">Slide: Payments technologies are not interoperable .. <a id="link-50" style="display:none;" href="#50">✪</a></div>
+<div onmouseout="$('#link-51').hide()" onmouseover="$('#link-51').show()"" id="51" class="comment"><span class="name">Evan Schwartz</span>:  Payment technologies do not work together because inter network transfers are slow and expensive. Very difficult to move money cross border <a id="link-51" style="display:none;" href="#51">✪</a></div>
+<div onmouseout="$('#link-52').hide()" onmouseover="$('#link-52').show()"" id="52" class="information">Slide: Web payments need decentralized clearing and settlement <a id="link-52" style="display:none;" href="#52">✪</a></div>
+<div onmouseout="$('#link-53').hide()" onmouseover="$('#link-53').show()"" id="53" class="comment"><span class="name">Evan Schwartz</span>:  There will never be buy in for a centralized clearing house <a id="link-53" style="display:none;" href="#53">✪</a></div>
+<div onmouseout="$('#link-54').hide()" onmouseover="$('#link-54').show()"" id="54" class="information">Slide: Ripple connects payments technologies <a id="link-54" style="display:none;" href="#54">✪</a></div>
+<div onmouseout="$('#link-55').hide()" onmouseover="$('#link-55').show()"" id="55" class="comment"><span class="name">Evan Schwartz</span>:  Ripple takes 2-5 seconds to settle and is essentially free <a id="link-55" style="display:none;" href="#55">✪</a></div>
+<div onmouseout="$('#link-56').hide()" onmouseover="$('#link-56').show()"" id="56" class="information">Slide: Ripple connects payment networks (slide with Paypal, Bank of America logo) <a id="link-56" style="display:none;" href="#56">✪</a></div>
+<div onmouseout="$('#link-57').hide()" onmouseover="$('#link-57').show()"" id="57" class="information">Slide: Ripple has 4 broad categories of users <a id="link-57" style="display:none;" href="#57">✪</a></div>
+<div onmouseout="$('#link-58').hide()" onmouseover="$('#link-58').show()"" id="58" class="comment"><span class="name">Evan Schwartz</span>:  Basic user example is someone trying to send a payment <a id="link-58" style="display:none;" href="#58">✪</a></div>
+<div class="comment-continuation">... Merchant, market makers and gateways are the other 3 users</div>
+<div onmouseout="$('#link-59').hide()" onmouseover="$('#link-59').show()"" id="59" class="information">Slide: Send from any currency to any currency .. <a id="link-59" style="display:none;" href="#59">✪</a></div>
+<div onmouseout="$('#link-60').hide()" onmouseover="$('#link-60').show()"" id="60" class="comment"><span class="name">Evan Schwartz</span>:  Network takes care of all the exchange and this is seamless for the end user <a id="link-60" style="display:none;" href="#60">✪</a></div>
+<div onmouseout="$('#link-61').hide()" onmouseover="$('#link-61').show()"" id="61" class="information">Slide: Receive only the currency you want <a id="link-61" style="display:none;" href="#61">✪</a></div>
+<div id="usecase-61" class="resolution"><strong>USE CASE:</strong> Send money in any currency, have the network automatically do currency conversion, give currency at the other end in the receivers native currency.</div>
+<div onmouseout="$('#link-62').hide()" onmouseover="$('#link-62').show()"" id="62" class="comment"><span class="name">Evan Schwartz</span>:  This is great for merchants because they can accept only the currencies they desire. No currency risk with Ripple <a id="link-62" style="display:none;" href="#62">✪</a></div>
+<div onmouseout="$('#link-63').hide()" onmouseover="$('#link-63').show()"" id="63" class="information">Slide: Market makers facilitate exchange <a id="link-63" style="display:none;" href="#63">✪</a></div>
+<div onmouseout="$('#link-64').hide()" onmouseover="$('#link-64').show()"" id="64" class="comment"><span class="name">Evan Schwartz</span>:  Market maker facilitates exchange. E.g. someone buying USD and selling Euros. Transparent to user since market maker handles this <a id="link-64" style="display:none;" href="#64">✪</a></div>
+<div onmouseout="$('#link-65').hide()" onmouseover="$('#link-65').show()"" id="65" class="information">Slide: Market makers compete on a distributed exchange <a id="link-65" style="display:none;" href="#65">✪</a></div>
+<div onmouseout="$('#link-66').hide()" onmouseover="$('#link-66').show()"" id="66" class="comment"><span class="name">Evan Schwartz</span>:  1St open decentralized currency exchange... user does not have to worry about FX <a id="link-66" style="display:none;" href="#66">✪</a></div>
+<div id="usecase-66" class="resolution"><strong>USE CASE:</strong> Market makers acting as a transfer agent (foreign exchange happens automatically)</div>
+<div onmouseout="$('#link-67').hide()" onmouseover="$('#link-67').show()"" id="67" class="information">Slide: Financial institutions act as entry/exit points on Ripple <a id="link-67" style="display:none;" href="#67">✪</a></div>
+<div onmouseout="$('#link-68').hide()" onmouseover="$('#link-68').show()"" id="68" class="comment"><span class="name">Evan Schwartz</span>:  These could be Paypal, MPESA, etc <a id="link-68" style="display:none;" href="#68">✪</a></div>
+<div class="comment-continuation">... As long as the institutions are connected to the Ripple network this is transparent to the user.</div>
+<div onmouseout="$('#link-69').hide()" onmouseover="$('#link-69').show()"" id="69" class="information">Slide: Deal only with institutions you trust <a id="link-69" style="display:none;" href="#69">✪</a></div>
+<div onmouseout="$('#link-70').hide()" onmouseover="$('#link-70').show()"" id="70" class="comment"><span class="name">Evan Schwartz</span>:  No individual integrations required; you sign up with only one service you trust <a id="link-70" style="display:none;" href="#70">✪</a></div>
+<div class="comment-continuation">... Unlike other systems where both sender/receiver to have say signed up with Visa/MC this is more interoperable</div>
+<div onmouseout="$('#link-71').hide()" onmouseover="$('#link-71').show()"" id="71" class="information">Slide: Connected without needing any prior business arrangements <a id="link-71" style="display:none;" href="#71">✪</a></div>
+<div onmouseout="$('#link-72').hide()" onmouseover="$('#link-72').show()"" id="72" class="information">Picture of 2 Ripple gateways and market makers are between them doing currency conversion. <a id="link-72" style="display:none;" href="#72">✪</a></div>
+<div id="usecase-72" class="resolution"><strong>USE CASE:</strong> Transfer money through gateway providers of financial networks.</div>
+<div onmouseout="$('#link-73').hide()" onmouseover="$('#link-73').show()"" id="73" class="comment"><span class="name">Evan Schwartz</span>:  Market makers compete to offer the best exchange between these gateways <a id="link-73" style="display:none;" href="#73">✪</a></div>
+<div class="comment-continuation">... Does not require financial institutions and merchants to have individual negotiations.</div>
+<div id="usecase-73" class="resolution"><strong>USE CASE:</strong> Knowing through which financial network your transaction will be delivered (you might care?).</div>
+<div onmouseout="$('#link-74').hide()" onmouseover="$('#link-74').show()"" id="74" class="information">Slide: Summary <a id="link-74" style="display:none;" href="#74">✪</a></div>
+<div onmouseout="$('#link-75').hide()" onmouseover="$('#link-75').show()"" id="75" class="comment"><span class="name">Evan Schwartz</span>:  Ripple connects other payment technologies, fast easy to integrate. <a id="link-75" style="display:none;" href="#75">✪</a></div>
+<div class="information">Dave Raggett is scribing.</div>
+<h1 id="topic-5" class="topic">Topic: Alternative Currencies - CoinApex</h1>
+<div onmouseout="$('#link-76').hide()" onmouseover="$('#link-76').show()"" id="76" class="information">Erik introducing Max from CoinAPex. <a id="link-76" style="display:none;" href="#76">✪</a></div>
+<div onmouseout="$('#link-77').hide()" onmouseover="$('#link-77').show()"" id="77" class="comment"><span class="name">Max Raskin</span>:  Introducing Bitcoin incubator <a id="link-77" style="display:none;" href="#77">✪</a></div>
+<div class="comment-continuation">... Interesting to talk about standardization in context of decentralized community like Bitcoin.</div>
+<div class="comment-continuation">... What&apos;s interesting is that there are lot of solutions in the Bitcoin world which can move quickly, but are not necessarily what the regulators will want to see.</div>
+<div class="comment-continuation">...We&apos;re seeing a split in the Bitcoin community with some who want to create an identity layer on top of Bitcoin and others who want to avoid any kind of centralization.</div>
+<div onmouseout="$('#link-78').hide()" onmouseover="$('#link-78').show()"" id="78" class="comment"><span class="name">Bryan Sullivan</span>: The &quot;interesting interplay&quot; and knowing this is a concern (or may be) is one rationale for the use case of knowing how your money is being transfered (what if an international network used Bitcoin internally?) <a id="link-78" style="display:none;" href="#78">✪</a></div>
+<div onmouseout="$('#link-79').hide()" onmouseover="$('#link-79').show()"" id="79" class="comment"><span class="name">Max Raskin</span>: What US banks and regulators will be able to do is still in progress and it will be interesting to see how it plays out. Happy to be here and be a part of the conversation. <a id="link-79" style="display:none;" href="#79">✪</a></div>
+<h1 id="topic-6" class="topic">Topic: National Infrastructure - US Federal Reserve</h1>
+<div onmouseout="$('#link-80').hide()" onmouseover="$('#link-80').show()"" id="80" class="information">Erik introduces Connie Theien from the US Federal Reserve <a id="link-80" style="display:none;" href="#80">✪</a></div>
+<div onmouseout="$('#link-81').hide()" onmouseover="$('#link-81').show()"" id="81" class="comment"><span class="name">Connie Theien</span>:  I want to take us back to legacy system and the feedback we got from stakeholders. <a id="link-81" style="display:none;" href="#81">✪</a></div>
+<div class="comment-continuation">...We&apos;ve identified about 11 major kinds of use cases</div>
+<div class="comment-continuation">... We&apos;ve document the requirements and are looking at the gaps from what is doable now.</div>
+<div class="comment-continuation">... We want to understand where we should be focusing our efforts -- shoring up the existing systems or supporting new kinds of systems.</div>
+<div class="comment-continuation">... We would like to make payment systems more accessible.  We look at ACH as an efficient system, but we want to make it more open.</div>
+<div class="comment-continuation">... We&apos;ve seen interest from some sources for a means to initiate cheque based payments electronically.</div>
+<div id="usecase-81" class="resolution"><strong>USE CASE:</strong> Electronically originated checks</div>
+<div onmouseout="$('#link-82').hide()" onmouseover="$('#link-82').show()"" id="82" class="comment"><span class="name">Connie Theien</span>:  We&apos;re also looking at the unique needs of businesses, and their specific requirements as compared to B2C. <a id="link-82" style="display:none;" href="#82">✪</a></div>
+<div id="usecase-82" class="resolution"><strong>USE CASE:</strong> Knowing what info will be required to supplement a transaction.</div>
+<div onmouseout="$('#link-83').hide()" onmouseover="$('#link-83').show()"" id="83" class="comment"><span class="name">Connie Theien</span>:  On the international side, we&apos;re looking at an ACH service that is fairly fast relative to other international payment solutions. Today this reaches 35 countries and we are looking to expand this further. <a id="link-83" style="display:none;" href="#83">✪</a></div>
+<div onmouseout="$('#link-84').hide()" onmouseover="$('#link-84').show()"" id="84" class="comment"><span class="name">Bryan Sullivan</span>: X9 = <a href="http://x9.org/">http://x9.org/</a> <a id="link-84" style="display:none;" href="#84">✪</a></div>
+<div onmouseout="$('#link-85').hide()" onmouseover="$('#link-85').show()"" id="85" class="comment"><span class="name">Bryan Sullivan</span>: NACHA = <a href="https://www.nacha.org/">https://www.nacha.org/</a> <a id="link-85" style="display:none;" href="#85">✪</a></div>
+<div onmouseout="$('#link-86').hide()" onmouseover="$('#link-86').show()"" id="86" class="comment"><span class="name">Connie Theien</span>:  We&apos;re interested in enabling improved security, information sharing and fraud detection. <a id="link-86" style="display:none;" href="#86">✪</a></div>
+<div onmouseout="$('#link-87').hide()" onmouseover="$('#link-87').show()"" id="87" class="comment"><span class="name">Connie Theien</span>:  This is what we&apos;re hearing from our qualitative assessment of our consultation. <a id="link-87" style="display:none;" href="#87">✪</a></div>
+<div onmouseout="$('#link-88').hide()" onmouseover="$('#link-88').show()"" id="88" class="comment"><span class="name">Prakash Hariramani</span>: ISO 20022 = <a href="http://www.iso20022.org">http://www.iso20022.org</a> <a id="link-88" style="display:none;" href="#88">✪</a></div>
+<div id="usecase-88" class="resolution"><strong>USE CASE:</strong> Knowing that data minimization principles are followed by systems in a payment chain</div>
+<div onmouseout="$('#link-89').hide()" onmouseover="$('#link-89').show()"" id="89" class="comment"><span class="name">Erik Anderson</span>:  I would like to open the floor to questions. <a id="link-89" style="display:none;" href="#89">✪</a></div>
+<h1 id="topic-7" class="topic">Topic: General Discussion on Back-end Systems</h1>
+<div onmouseout="$('#link-90').hide()" onmouseover="$('#link-90').show()"" id="90" class="comment"><span class="name">Manu Sporny</span>:  An observation, it is great that all of the panelists have been focusing on their individual areas. <a id="link-90" style="display:none;" href="#90">✪</a></div>
+<div class="comment-continuation">... I am seeing that there is a very large divide between what is said in public and what people will say privately.</div>
+<div class="comment-continuation">... For example in respect to Bitcoin and risk of legal litigation. You hear banks and regulators say that they&apos;re interested in seeing the best parts of Bitcoin make it into the banking system, but when you talk to the banks/regulators behind the scenes, they don&apos;t want to touch the stuff because of the perceived risk (sometimes warranted) associated with it. If we&apos;re going to make progress, banks/regulators are going to have to take a more proactive role.</div>
+<div class="comment-continuation">... As far as I can see, banks don&apos;t have a motivation to switch to truly decentralized clearing solutions - financial incentive isn&apos;t there (no fees is a bad business proposition for them... great for the customer, though). Add to that that there is very little cross pollination with the Bitcoin communities, and I don&apos;t see how we&apos;re going to make progress in that area.</div>
+<div class="comment-continuation">... That said, it&apos;s is great to see representatives from both communities sitting down together here. I&apos;d like to know how we&apos;re going to get the traditional finance industry to work with the alternative currency community.</div>
+<div onmouseout="$('#link-91').hide()" onmouseover="$('#link-91').show()"" id="91" class="comment"><span class="name">Max Raskin</span>:  You are going to see caution at least from a high level. Things are happening, maybe not at the pace Bitcoin folks want, but progress nonetheless. <a id="link-91" style="display:none;" href="#91">✪</a></div>
+<div class="comment-continuation">... If states start seeing tax dollars from bitcoin transactions, this will ease things forward.</div>
+<div onmouseout="$('#link-92').hide()" onmouseover="$('#link-92').show()"" id="92" class="comment"><span class="name">Connie Theien</span>:  I do see the dialog starting with people keen to reach out and talk. I think there is interest in learning and understanding where the future of payment systems might evolve. <a id="link-92" style="display:none;" href="#92">✪</a></div>
+<div class="comment-continuation">... Much of our focus and effort is on how we can improve.</div>
+<div onmouseout="$('#link-93').hide()" onmouseover="$('#link-93').show()"" id="93" class="comment"><span class="name">D. Jaromil Roio</span>:  I would like to second Manu, it is readlly good to discuss the potential changes. <a id="link-93" style="display:none;" href="#93">✪</a></div>
+<div class="comment-continuation">... games are now bigger than movies, and kids are trading their World of Warcraft goods.</div>
+<div class="comment-continuation">... we are talking too much about fraud/risk and not enough at the opportunities for supporting new markets.</div>
+<div onmouseout="$('#link-94').hide()" onmouseover="$('#link-94').show()"" id="94" class="comment"><span class="name">Erik Anderson</span>:  Not significant traffic as now on these alternative networks for governments to worry too much. <a id="link-94" style="display:none;" href="#94">✪</a></div>
+<div onmouseout="$('#link-95').hide()" onmouseover="$('#link-95').show()"" id="95" class="information">Someone from the audience says -&quot;Is fixing the broken Card Not Present system in scope?&quot; <a id="link-95" style="display:none;" href="#95">✪</a></div>
+<div onmouseout="$('#link-96').hide()" onmouseover="$('#link-96').show()"" id="96" class="comment"><span class="name">Stan Stalnaker</span>:  Our experience with governments has been surprisingly open. It is difficult for small startups to fly and meet people. <a id="link-96" style="display:none;" href="#96">✪</a></div>
+<div class="comment-continuation">... We need to see greater effort on non-incumbent organizations to reach out and make their case on behalf of their communities.</div>
+<div class="comment-continuation">... Anonymity is a real concern in some areas of the world.</div>
+<div class="comment-continuation">... we need to avoid setting up conflict.</div>
+<div onmouseout="$('#link-97').hide()" onmouseover="$('#link-97').show()"" id="97" class="comment"><span class="name">Bryan Sullivan</span>: In an environment which a variety of decentralized / &quot;innovative&quot; systems may be used by money transfer networks, how important is it for users to know which types of networks may be involved, and to set preferences or express consent for their money to be transferred via such networks? <a id="link-97" style="display:none;" href="#97">✪</a></div>
+<div onmouseout="$('#link-98').hide()" onmouseover="$('#link-98').show()"" id="98" class="comment"><span class="name">Bryan Sullivan</span>:  In the environment, how important is it for standards and metadata about transactions, e.g. to enable people to know whether a given solution is more likely to be subject to scrutiny. <a id="link-98" style="display:none;" href="#98">✪</a></div>
+<div onmouseout="$('#link-99').hide()" onmouseover="$('#link-99').show()"" id="99" class="comment"><span class="name">Evan Schwartz</span>:  As long as the payment solutions are trusted and secure, that&apos;s probably sufficient. <a id="link-99" style="display:none;" href="#99">✪</a></div>
+<div onmouseout="$('#link-100').hide()" onmouseover="$('#link-100').show()"" id="100" class="comment"><span class="name">Dave Birch</span>:  As a consumer I am protected against fraud on credit cards. This is different from regulating money. Can you be a little clearer about consumer protection vs regulatory requirements <a id="link-100" style="display:none;" href="#100">✪</a></div>
+<div onmouseout="$('#link-101').hide()" onmouseover="$('#link-101').show()"" id="101" class="comment"><span class="name">D. Jaromil Roio</span>: ECB paper I&apos;ve mentioned <a href="https://www.ecb.europa.eu/pub/pdf/other/virtualcurrencyschemes201210en.pdf">https://www.ecb.europa.eu/pub/pdf/other/virtualcurrencyschemes201210en.pdf</a> <a id="link-101" style="display:none;" href="#101">✪</a></div>
+<div onmouseout="$('#link-102').hide()" onmouseover="$('#link-102').show()"" id="102" class="comment"><span class="name">Harish Natarajan</span>:  A customer may not know, but the bank will. There needs to be a framework governing how exceptions are handled. <a id="link-102" style="display:none;" href="#102">✪</a></div>
+<div onmouseout="$('#link-103').hide()" onmouseover="$('#link-103').show()"" id="103" class="comment"><span class="name">Bryan Sullivan</span>: The notion of trustworthiness and the current user transparency to how their money is transferred point to an issue of (a) who is asserting the trustworthiness (regulators?), and (2) the fact that users can currently rely upon a safe/reliable transfer system i.e. they have never had to worry about such things, so far. <a id="link-103" style="display:none;" href="#103">✪</a></div>
+<div onmouseout="$('#link-104').hide()" onmouseover="$('#link-104').show()"" id="104" class="comment"><span class="name">Evan Schwartz</span>:  On Ripple, all transactions are irreversible, so there is no mechanism for charge back. <a id="link-104" style="display:none;" href="#104">✪</a></div>
+<div class="comment-continuation">... Ripple is much more like a debit system than a credit system, payments only proceed if you account has the necessary funds.</div>
+<div onmouseout="$('#link-105').hide()" onmouseover="$('#link-105').show()"" id="105" class="comment"><span class="name">Harish Natarajan</span>:  It is more about when a service needs to be refunded, e.g. on cancelling a flight. <a id="link-105" style="display:none;" href="#105">✪</a></div>
+<div onmouseout="$('#link-106').hide()" onmouseover="$('#link-106').show()"" id="106" class="comment"><span class="name">Evan Schwartz</span>:  You could have an escrow service that only transfers the funds when the service is delivered. <a id="link-106" style="display:none;" href="#106">✪</a></div>
+<div class="comment-continuation">... The merchant would have a rock solid guarantee of receiving the funds.</div>
+<div onmouseout="$('#link-107').hide()" onmouseover="$('#link-107').show()"" id="107" class="comment"><span class="name">Erik Anderson</span>:  We&apos;ve seen stories of people paying with Bitcoin on ebay and never getting a refund on non-delivery of the product. Escrow is important. <a id="link-107" style="display:none;" href="#107">✪</a></div>
+<div onmouseout="$('#link-108').hide()" onmouseover="$('#link-108').show()"" id="108" class="comment"><span class="name">Evan Schwartz</span>:  Ripple would allow card issuers to reduce their fees and it is likely that market pressure would force that. <a id="link-108" style="display:none;" href="#108">✪</a></div>
+<div onmouseout="$('#link-109').hide()" onmouseover="$('#link-109').show()"" id="109" class="information">Unknown person from audience - will crypto currencies become important for wallet to wallet transactions? <a id="link-109" style="display:none;" href="#109">✪</a></div>
+<div onmouseout="$('#link-110').hide()" onmouseover="$('#link-110').show()"" id="110" class="comment"><span class="name">Gray Taylor</span>:  VISA and MasterCard are profit driven. Merchants are tee&apos;d up to go, but are concerned about volatility. <a id="link-110" style="display:none;" href="#110">✪</a></div>
+<div class="comment-continuation">... smaller payments are subject to a different risk model</div>
+<div onmouseout="$('#link-111').hide()" onmouseover="$('#link-111').show()"" id="111" class="comment"><span class="name">Bryan Sullivan</span>: Way long ago, I used Tradenable to sell a high-value guitar to a buyer in the UK, with international shipping required - a complex sale. the role of the escrow company was an essential one. Speed of transaction or the lowest fees are often (if not always, to me) secondary to trust in the transaction. <a id="link-111" style="display:none;" href="#111">✪</a></div>
+<div onmouseout="$('#link-112').hide()" onmouseover="$('#link-112').show()"" id="112" class="comment"><span class="name">Manu Sporny</span>:  I just heard something really scary... Evan, you&apos;ve just explained why MasterCard and VISA are unlikely to adopt Ripple - there is no profit in it for them. <a id="link-112" style="display:none;" href="#112">✪</a></div>
+<div onmouseout="$('#link-113').hide()" onmouseover="$('#link-113').show()"" id="113" class="comment"><span class="name">Stan Stalnaker</span>: Manu, don&apos;t forget that 50% of the interchange fee goes to the banks, so they are in the same boat as Visa/Mastercard <a id="link-113" style="display:none;" href="#113">✪</a></div>
+<div class="comment-continuation">... We&apos;re talking about standardization process that could drive fees down, and this may deter adption, unless it is forced by governments.</div>
+<div onmouseout="$('#link-114').hide()" onmouseover="$('#link-114').show()"" id="114" class="comment"><span class="name">Max Raskin</span>:  If enough merchants switch, the market will force a transition to reduced fees. This is likely to happen in an incremental and initially small way. <a id="link-114" style="display:none;" href="#114">✪</a></div>
+<div class="comment-continuation">... If the banks become more comfortable and regulators give a nod, we can expect to see change.</div>
+<div onmouseout="$('#link-115').hide()" onmouseover="$('#link-115').show()"" id="115" class="comment"><span class="name">Bryan Sullivan</span>: I think enabling payments on the web through APIs is orthogonal to the desire to reduce fees which I would think in user&apos;s minds is secondary to trust in the payment provider/system <a id="link-115" style="display:none;" href="#115">✪</a></div>
+<div onmouseout="$('#link-116').hide()" onmouseover="$('#link-116').show()"" id="116" class="comment"><span class="name">Evan Schwartz</span>:  I expect an inevitable decline in fees as the market evolves. <a id="link-116" style="display:none;" href="#116">✪</a></div>
+<div onmouseout="$('#link-117').hide()" onmouseover="$('#link-117').show()"" id="117" class="comment"><span class="name">St&#233;phane Boyera</span>:  +1 To what Bryan said. <a id="link-117" style="display:none;" href="#117">✪</a></div>
+<div onmouseout="$('#link-118').hide()" onmouseover="$('#link-118').show()"" id="118" class="comment"><span class="name">Bryan Sullivan</span>: In summary we don&apos;t have to solve the international transfer problems to enable payments on the web <a id="link-118" style="display:none;" href="#118">✪</a></div>
+<div onmouseout="$('#link-119').hide()" onmouseover="$('#link-119').show()"" id="119" class="comment"><span class="name">Ricardo Varela</span>:  The only thing that is likely to be regulated is the entry point to the system. <a id="link-119" style="display:none;" href="#119">✪</a></div>
+<div onmouseout="$('#link-120').hide()" onmouseover="$('#link-120').show()"" id="120" class="comment"><span class="name">Bailey Reutzel</span>:  Regulation of virtual currency to virtual currency will happen when the volume is sufficiently high to take notice. <a id="link-120" style="display:none;" href="#120">✪</a></div>
+<div onmouseout="$('#link-121').hide()" onmouseover="$('#link-121').show()"" id="121" class="information">Chaals wanted to you wanted to say there is a market for VISA/Mastercard apart from interchange, and there are plenty of people living in wildly fluctuating currencies. <a id="link-121" style="display:none;" href="#121">✪</a></div>
+<div onmouseout="$('#link-122').hide()" onmouseover="$('#link-122').show()"" id="122" class="comment"><span class="name">Charles McCathie Nevile</span>:  We&apos;ve heard about exorbitant fees especially in less regulated markets. <a id="link-122" style="display:none;" href="#122">✪</a></div>
+<div onmouseout="$('#link-123').hide()" onmouseover="$('#link-123').show()"" id="123" class="comment"><span class="name">Bryan Sullivan</span>: And a lot of people are paying 300% for payday loans... web payments enabling similar loans could operate a much more efficient/low-cost system for the masses of people that currently depend upon payday loan services. <a id="link-123" style="display:none;" href="#123">✪</a></div>
+<div class="comment-continuation">... Bitcoins might be attractive simply on the grounds of transaction cost and relative stability. Credit cards on the other hand are attractive because they offer credit.</div>
+<div onmouseout="$('#link-124').hide()" onmouseover="$('#link-124').show()"" id="124" class="comment"><span class="name">Evan Schwartz</span>:  Some of those fees are due to unnecessary issues and we may be able to get rid of them. <a id="link-124" style="display:none;" href="#124">✪</a></div>
+<div onmouseout="$('#link-125').hide()" onmouseover="$('#link-125').show()"" id="125" class="comment"><span class="name">Max Raskin</span>:  Once we see a stable future&apos;s market for bitcoin, this should address volatility concerns. <a id="link-125" style="display:none;" href="#125">✪</a></div>
+<div onmouseout="$('#link-126').hide()" onmouseover="$('#link-126').show()"" id="126" class="comment"><span class="name">Dave Birch</span>:  Are there any ideas for merchant run payment systems? <a id="link-126" style="display:none;" href="#126">✪</a></div>
+<div onmouseout="$('#link-127').hide()" onmouseover="$('#link-127').show()"" id="127" class="comment"><span class="name">J&#246;rg Heuer</span>:  As long as the issuing banks are receiving the interchange fees, they are motivated to continue this. <a id="link-127" style="display:none;" href="#127">✪</a></div>
+<div onmouseout="$('#link-128').hide()" onmouseover="$('#link-128').show()"" id="128" class="comment"><span class="name">Max Raskin</span>:  If there is no intermediary then bitcoin transfers incur no fees. <a id="link-128" style="display:none;" href="#128">✪</a></div>
+<div onmouseout="$('#link-129').hide()" onmouseover="$('#link-129').show()"" id="129" class="comment"><span class="name">Giridhar Mandyam</span>:  Can standardization realistically address the problem of bad debts for merchants of apps? <a id="link-129" style="display:none;" href="#129">✪</a></div>
+<div onmouseout="$('#link-130').hide()" onmouseover="$('#link-130').show()"" id="130" class="comment"><span class="name">Giridhar Mandyam</span>: Re: bad debt.  Many of the speakers have focused on consumer protections, but not so much on merchant protection.  There are many well-known methods where operator-direct billing can be exploited by end users to obtain electronic goods (e.g. apps).  Merchants either bear the cost through worse rev-shares or eating the costs.  Can standardization realistically address this problem (e.g. standardized receipts)?  Will they ever achieve adoption worldwide? <a id="link-130" style="display:none;" href="#130">✪</a></div>
+<div onmouseout="$('#link-131').hide()" onmouseover="$('#link-131').show()"" id="131" class="comment"><span class="name">Evan Schwartz</span>:  I don&apos;t know how standards could dictate terms. <a id="link-131" style="display:none;" href="#131">✪</a></div>
+<div onmouseout="$('#link-132').hide()" onmouseover="$('#link-132').show()"" id="132" class="comment"><span class="name">Giridhar Mandyam</span>: Regarding my question , I didn&apos;t expect standards could address business terms.  I was asking whether standardization (e.g. standardized receipts) could be used to address bad debt. <a id="link-132" style="display:none;" href="#132">✪</a></div>
+<div onmouseout="$('#link-133').hide()" onmouseover="$('#link-133').show()"" id="133" class="comment"><span class="name">Wendy Seltzer</span>: W3C can make recommendations, at the behest of its members&apos; consensus. <a id="link-133" style="display:none;" href="#133">✪</a></div>
+<div onmouseout="$('#link-134').hide()" onmouseover="$('#link-134').show()"" id="134" class="comment"><span class="name">Ricardo Varela</span>:  If visa and mastercard removed their fees, what other reasons would merchants have for using Ripple? <a id="link-134" style="display:none;" href="#134">✪</a></div>
+<div onmouseout="$('#link-135').hide()" onmouseover="$('#link-135').show()"" id="135" class="comment"><span class="name">Evan Schwartz</span>:  We&apos;re more likely to see competition across a wide range of payment solutions. We want to see standards that make it easier for users to have a free choice. <a id="link-135" style="display:none;" href="#135">✪</a></div>
+<div onmouseout="$('#link-136').hide()" onmouseover="$('#link-136').show()"" id="136" class="comment"><span class="name">Stan Stalnaker</span>:  Metadata could be one answer given the opportunities for the Ripple ledger. <a id="link-136" style="display:none;" href="#136">✪</a></div>
+<div onmouseout="$('#link-137').hide()" onmouseover="$('#link-137').show()"" id="137" class="comment"><span class="name">Evan Schwartz</span>:  Metadata could be attached to any transaction and made public or subject to some form of access control. <a id="link-137" style="display:none;" href="#137">✪</a></div>
+<div class="comment-continuation">... we&apos;ve been thinking of SWIFT style clearing</div>
+<div onmouseout="$('#link-138').hide()" onmouseover="$('#link-138').show()"" id="138" class="comment"><span class="name">Bryan Sullivan</span>: &quot;Intelligent data&quot; (or metadata) sounds to me like a double-edged sword, especially one that comes with access control / privacy implications <a id="link-138" style="display:none;" href="#138">✪</a></div>
+<div onmouseout="$('#link-139').hide()" onmouseover="$('#link-139').show()"" id="139" class="comment"><span class="name">Max Raskin</span>:  The sky could be the limit for what could be built on top of the bitcoin technologies, but on the other hand it could be nothing. <a id="link-139" style="display:none;" href="#139">✪</a></div>
+<div onmouseout="$('#link-140').hide()" onmouseover="$('#link-140').show()"" id="140" class="information">Laughter from the audience. <a id="link-140" style="display:none;" href="#140">✪</a></div>
+<div onmouseout="$('#link-141').hide()" onmouseover="$('#link-141').show()"" id="141" class="comment"><span class="name">Bryan Sullivan</span>: +1 To avoiding all discussion of fees in a standards context. <a id="link-141" style="display:none;" href="#141">✪</a></div>
+<div onmouseout="$('#link-142').hide()" onmouseover="$('#link-142').show()"" id="142" class="comment"><span class="name">Jeremy King</span>:  Visa and MasterCard aren&apos;t here, so let&apos;s not refer to unjustified claims about fees <a id="link-142" style="display:none;" href="#142">✪</a></div>
+<div onmouseout="$('#link-143').hide()" onmouseover="$('#link-143').show()"" id="143" class="comment"><span class="name">Evan Schwartz</span>:  I was only referring to what we heard earlier. <a id="link-143" style="display:none;" href="#143">✪</a></div>
+<div onmouseout="$('#link-144').hide()" onmouseover="$('#link-144').show()"" id="144" class="comment"><span class="name">Stan Stalnaker</span>: Regarding fees and Visa/MC my comment on bank take - that information is public from Mastercard <a id="link-144" style="display:none;" href="#144">✪</a></div>
+<div onmouseout="$('#link-145').hide()" onmouseover="$('#link-145').show()"" id="145" class="comment"><span class="name">Bryan Sullivan</span>: ... Except that disclosure of such fees might be useful metadata for a payment transaction, something that might drive user choice <a id="link-145" style="display:none;" href="#145">✪</a></div>
+<div onmouseout="$('#link-146').hide()" onmouseover="$('#link-146').show()"" id="146" class="comment"><span class="name">Harish Natarajan</span>:  There is a question of whose metadata is involved in transactions, there is a privacy issue here. <a id="link-146" style="display:none;" href="#146">✪</a></div>
+<div onmouseout="$('#link-147').hide()" onmouseover="$('#link-147').show()"" id="147" class="comment"><span class="name">Evan Schwartz</span>:  We&apos;re very interested in digital receipts and where these are stored. <a id="link-147" style="display:none;" href="#147">✪</a></div>
+<div onmouseout="$('#link-148').hide()" onmouseover="$('#link-148').show()"" id="148" class="comment"><span class="name">Erik Anderson</span>:  Let me close up the session!  This is the first time I&apos;ve seen all of these players in the room, but it is disappointing that Mastercard and Visa aren&apos;t here.  <a id="link-148" style="display:none;" href="#148">✪</a></div>
+<div onmouseout="$('#link-149').hide()" onmouseover="$('#link-149').show()"" id="149" class="information">End of session 3. <a id="link-149" style="display:none;" href="#149">✪</a></div>
+</div></div></div></section>
+    <div id="footerwrap">
+      <div class="container">
+        <h4>Created by the <a href="http://www.w3.org/community/webpayments/">Web Payments Community Group</a>. Shared with love under a <a href="http://creativecommons.org/licenses/by/4.0/">CC-BY</a> license. Thanks to our <a href="../../thanks">contributors</a>.</h4>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+
+  <script type="text/javascript" src="../../assets/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/retina.js"></script>
+  <script type="text/javascript" src="../../assets/js/jquery.easing.1.3.js"></script>
+  <script type="text/javascript" src="../../assets/js/smoothscroll.js"></script> 
+    
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-1539674-7']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+  })();
+  </script>
+    
+  </body>
+</html>
+
