@@ -5,6 +5,7 @@
 [15:06:50] <m4nu> Total Present: and 80 others for a total of 103+ people
 [15:06:50] <m4nu> Chair: dka
 [15:06:51] <dsr> scribe: phariramani
+[15:06:51] <phariramani> Note: These are minutes for an official W3C Workshop event that have been cleaned up and reformatted by the Web Payments Community Group. The Web Payments Community Group and the W3C are two different organizations, and it is the W3C that managed this event. These minutes may be handed over to the W3C to become the official minutes for the event, but that has not happened yet (and may not happen at all). Readers should understand that there is a difference between officially sanctioned W3C work, and the work done by the Web Payments Community Group (which is not officially sanctioned by W3C's membership).
 [15:06:51] <dsr> Topic: Session 3: Back End: Banks, Regulation, and Future Clearing
 [15:07:40] <phariramani> Stephane introduces the session moderator, Erik Anderson from Bloomberg
 [15:08:10] <phariramani> Erik: this session will be more about the backend and the banking side.
@@ -85,7 +86,7 @@
 [15:40:52] <phariramani> Laughter from audience.
 [15:41:24] <phariramani> Harish: They adopted a model that banks typically do not use (agent model) and a consumer pays model
 [15:41:53] <gmandyam> q+
-[15:41:54] <phariramani> ... MPESA transactions have a typical 1% transaction fee but many banks are not allowed to charge users for withdrawing cash form their own account
+[15:41:54] <phariramani> ... MPESA cash withdrawal transactions have a transaction fee of about on an average 1% but many banks are not allowed to charge users for withdrawing cash form their own account.
 [15:42:38] <chaals> I wonder how much of the reason MPESA/Smart didn't come from banks is due to banks thinking "payment already works"
 [15:42:17] <phariramani> Topic: Future Clearing - Ripple Labs
 [15:42:17] <phariramani> Slides for this talk are available here: http://www.w3.org/2013/10/payments/slides/session3_ripple.pdf
