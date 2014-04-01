@@ -120,7 +120,7 @@
 [16:52:49] <m4nu> dka: The role of cryptography, geofencing, NFC APIs, out-of-band seconday auth - all work that's going on.
 [16:53:16] <m4nu> ... When you're within a Web environment, are there additional use cases that are payment related?
 [16:53:30] <m4nu> ... or, could you use the existing technology to support geofencing.
-[16:54:12] <m4nu> : Geolocation WG is circulating a new charter - hardware accelerated geofencing is in the work. It doesn't solve the whole problem yet, geolocation from trusted source - that's what's needed.
+[16:54:12] <m4nu> gmandyam: Geolocation WG is circulating a new charter - hardware accelerated geofencing is in the work. It doesn't solve the whole problem yet, geolocation from trusted source - that's what's needed.
 [16:54:39] <m4nu> gmandyam: This could be something they could give assistance to...
 [16:55:21] <virginie> q+
 [16:55:42] <marie> sysapps wg: http://www.w3.org/2012/sysapps/
