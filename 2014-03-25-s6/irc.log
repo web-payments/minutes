@@ -1,496 +1,417 @@
-13:37:01 <schuki> topic:  Identity, Security, and Privacy
-13:37:17 <Angie> Angie has joined #w3cpayment
-13:38:24 <floris> floris has joined #W3CPAYMENT
-13:38:36 <sherlock> sherlock has joined #W3CPayment
-13:38:49 <darobin> darobin has joined #W3Cpayment
-13:39:06 <jeff> jeff has joined #w3cpayment
-13:39:09 <schuki> virginie: there have been many sessions which have mentioned security
-13:39:25 <schuki> ... identity and privacy
-13:39:33 <schuki> ... our panelists are going to talk about these stuff
-13:40:28 <schuki> ... hannes will be talking about IETF, gmandyam from qualcomm, tim from microsoft talking about product choices in microsoft, greg will share deployments solutions related to security, stefan from ripple, and harry from w3c perspective
-13:40:50 <schuki> virginie: hannes to the stage
-13:41:04 <schuki> hannes: i work in the ietf and was asked to talk about identity management
-13:41:48 <Jorg> Jorg has joined #W3Cpayment
-13:41:48 <bmathis> bmathis has joined #W3Cpayment
-13:41:51 <schuki> ... a few years ago there was a patent where linked in was asking for user/pw of email account
-13:41:59 <schuki> ... this created many privacy / secuirty problems
-13:42:10 <schuki> hannes: many companies worked on solving this
-13:42:26 <mountie> what OATH stand for?
-13:42:35 <schuki> hannes: many of us have noted the building block approach and use of these
-13:42:58 <schuki> hannes: the original protocol for this was OAuth
-13:43:11 <wseltzer> [OAuth is an authorization protocol, not an abbreviation]
-13:43:22 <cyril> cyril has joined #W3Cpayment
-13:43:33 <Danny> Danny has joined #W3CPayment
-13:43:38 <schuki> hannes: there are many companies using this today, some are in the room, also many smaller companies using this
-13:43:45 <schuki> slide [2]
-13:44:08 <schuki> hannes: this is how we defined identity, could be ansything from user/pw to a rick set of attributes
-13:44:29 <schuki> ... not just auth context, usually much more than that
-13:44:48 <schuki> hannes: so how does OAuth work? It all starts with the user ('resource owner')
-13:45:14 <m4nu> m4nu has joined #W3Cpayment
-13:45:14 <schuki> ... he stores resources somewhere
-13:45:35 <schuki> ... he/she wants to give access to this shared resoucre
-13:46:11 <schuki> ... an auth server has control of access to this
-13:46:18 <schuki> ... it grants this access
-13:46:33 <schuki> ... and this uses tokens, it captures the consent you have given and gives the client access
-13:47:06 <schuki> hannes: here is a typicaly diaglogue
-13:47:10 <schuki> slide [3]
-13:47:13 <schuki> slide [4]
-13:47:22 <Bulent> Bulent has joined #W3Cpayment
-13:47:28 <schuki> hannes: so the resource owner is the end user
-13:47:48 <schuki> ... and this user wants to buy something on a website, the client will then play the role of a merchant
-13:48:03 <schuki> ... the merchant then gets the access to withdraw the money from the users bank account
-13:48:17 <Harish> Harish has joined #W3Cpayment
-13:48:24 <schuki> ... this is not an abstract concept. You can find descriptions of what these companies have tried to do
-13:48:28 <schuki> slide [5]
-13:48:37 <mdadas> mdadas has joined #w3cpayment
-13:48:38 <schuki> hannes: i was told visa japan uses this mechanism
-13:48:44 <schuki> slide [6]
-13:49:03 <schuki> hannes: those are proprietary extensions on top of those protocols
-13:49:19 <schuki> ... but i think we made a good contribution to lower the password sharing of the old patterns
-13:49:29 <schuki> ... and helps users reduce the usage of pws
-13:49:35 <schuki> ... but we did notice challenges,
-13:49:45 <schuki> ... the industry likes to be an 'identity provider'
-13:50:03 <schuki> ... but not many want to be a reliant party
-13:50:34 <schuki> hannes: some hardware reliance for security for example
-13:50:45 <schuki> hannes: the mechanism we have come up with is a decentralised approach
-13:50:54 <jpotvin> jpotvin has joined #W3Cpayment
-13:51:04 <schuki> ... even still many companies decided to go with a small number of identity providers
-13:51:23 <schuki> ... so it;s still hard to find a fully open approach to identity providers
-13:51:32 <bryan> re high interest to be IdP, relying party = identity consumer; most companies want to be the producer instead, and not dependent upon external companies for their user IDs
-13:51:54 <schuki> hannes: we also noted some companies who use oauth also use it because they want to be interoperable with other companies
-13:52:09 <schuki> ... this can create lock-in
-13:52:23 <schuki> ... we cannot force people with what they do in thier business decisions, but it is unfortunate
-13:52:38 <schuki> hannes: e.g. facebook only allow you to login with them
-13:52:50 <schuki> slide [7]
-13:52:51 <bshambaugh> If I may ask, what is identity?
-13:52:56 <bshambaugh> sorry..
-13:53:07 <bshambaugh> for interrupting
-13:53:23 <schuki> hannes: whitelisting, there are some business agreements which make it difficult to give everyone full open access
-13:53:32 <jonny> jonny has joined #w3cpayment
-13:53:38 <schuki> ... there is some groups like Open Identity Exchange which work on this
-13:53:50 <schuki> ... the education industry is also good here
-13:54:28 <schuki> hannes: in terms of security, some companies ignore our recommendations
-13:54:38 <schuki> ... or shortcut it, and optimise it in another way
-13:54:44 <Ori_Eisen> Ori_Eisen has joined #W3Cpayment
-13:55:10 <schuki> hannes: with regards to privacy: consent management helped with privacy
-13:55:16 <Ori_Eisen> Facebook will not allow others to authenticate for them, as they can not control the quality of the process
-13:55:30 <marie> group
-13:55:32 <Ori_Eisen> this is a fundamental issue, that can not be solved with technology
-13:55:44 <schuki> hannes: the reliant party asks for so much data
-13:55:58 <schuki> ... they can ask for the purpose of the application
-13:56:06 <schuki> ... e.g. angry birds asks for location
-13:56:23 <schuki> ... FCC may need to kick in to stop this happening, but we are limited in what we can do here
-13:56:28 <bryan> dependence upon reliability of the IdP is one reason for reluctance to be a relying party
-13:57:08 <schuki> hannes: how much data you have to share depends on so many aspects
-13:57:15 <schuki> slide [8]
-13:57:38 <schuki> hannes: here i have included a link to the openID Connect protocol
-13:57:48 <schuki> ... thank-you
-13:57:53 <schuki> virginie: 5 min qs
-13:57:56 <mountie> q+
-13:58:05 <m4nu> q+
-13:58:08 <schuki> Zakim: open q
-13:58:08 <wseltzer> zakim, open queue
-13:58:08 <Zakim> ok, wseltzer, the speaker queue is open
-13:58:13 <m4nu> q+
-13:58:25 <mountie> q+
-13:58:25 <wseltzer> q-
-13:58:29 <ernesto> q- phobeo
-13:58:32 <phobeo> q-
-13:58:36 <ernesto> q- hannes
-13:59:05 <schuki> Jorg: have you considered who owns the identity data or who owns it
-13:59:13 <schuki> ... and who takes responsibility for it
-13:59:34 <Emil> Emil has joined #W3Cpayment
-13:59:35 <schuki> ... the stuff we're talking about here may be too technical, but these issues are real
-13:59:39 <marie> q?
-14:00:05 <schuki> hannes: sim based auth may be the way you want to do it, or a smart card
-14:00:14 <schuki> ... we didn't standardise on this, it can be outsources
-14:00:15 <m4nu> use case: Use OpenID Connect to bootstrap a payments process.
-14:00:23 <schuki> s/outsources/outsourced
-14:00:38 <schuki> hannes: also, how do you separate the identity and the person?
-14:00:40 <bryan> as noted by Hannes, OAuth can be a basis for payment APIs such as the OMA Payment API: http://technical.openmobilealliance.org/Technical/release_program/docs/PaymentREST/V1_0-20130924-A/OMA-TS-REST_NetAPI_Payment-V1_0-20130924-A.pdf
-14:01:24 <schuki> hannes: also te auth server and resource are separate components implemented by different implementers
-14:01:33 <schuki> ... this makes a lot of sense
-14:01:56 <marie> q?
-14:02:03 <schuki> adrian: what is a payment protocol and how can it fit?
-14:02:31 <schuki> hannes: the payment mechanisms on top of identity infrastructure already had the hooks to give the consent in the web and mobile app space
-14:02:41 <schuki> ... all they did was create additional data structure
-14:02:49 <schuki> s/structure/structures
-14:03:14 <schuki> hannes: it might be a good starting point as what can be done with these mechanisms
-14:03:28 <schuki> ... e.g. how you provide access from one payment system to a merchant
-14:03:56 <bryan> as noted by Hannes, OAuth can be a basis for payment APIs such as the OMA Payment API: http://technical.openmobilealliance.org/Technical/release_program/docs/PaymentREST/V1_0-20130924-A/OMA-TS-REST_NetAPI_Payment-V1_0-20130924-A.pdf
-14:04:10 <schuki> m4nu: we looked at openid connect and working on identity credentials spec
-14:04:18 <bryan> Sorry for the repaste... bad client
-14:04:44 <schuki> m4nu: seems like credential solution could work on storing credentials in some kind of cloud based identity
-14:04:58 <schuki> ... and then have the ability to send the credentials in a very specific way
-14:05:13 <schuki> ... for a payment you show up to a merchant and share your payment provider info
-14:05:28 <schuki> ... it seems like we're heading to a system which manages all of this
-14:05:44 <schuki> m4nu: have you seen anyone at IETF talk about the transmission of digitally verifiable credentials?1
-14:06:00 <schuki> m4nu: oh, and requestAutoComplete does the same, shares certain details
-14:06:05 <bryan> What Hannes is referring to re OpenID Connect use in payments is I think more specifically the use of OAuth (as a fundamental part of OpenID Connect) as a framework for defining the scope of a payment, as in the OMA Payment API I mentioned before.
-14:06:24 <schuki> hannes: well, the access token that we have here between the client and protected resource is the credential
-14:06:48 <schuki> ... what some of the industry players are working on are a higher security version of this
-14:06:51 <schuki> ... currently uses TLS
-14:07:10 <schuki> ... we are working on using a key or async credential
-14:07:39 <schuki> ... in order for it to be sucessfully deployed it requires existance of standards that harry et al have been working on at W3c
-14:08:08 <schuki> hannes: with todays browers this is tough, to store stuff in localstorage
-14:08:18 <schuki> ... so we have to work on something which is more secure
-14:08:28 <schuki> ... so we are hoping W3C crypto work is getting there
-14:09:03 <schuki> hannes: we are getting closer to deploying this secure version
-14:10:08 <schuki> mountie: we have seen openid, these kind of mechanisms touching for identity, do we think multiple provider (payment, identity, FX etc) we have this idea of expansion
-14:10:19 <schuki> ... will there be a gateway?
-14:10:24 <bryan> OpenID Connect is also being used in the GSMA Mobile Connect API program http://gsmamobileeconomy.com/gsmamc/ as another example of how secure/trusted identity can be seamlessly integrated into mobile services, based upon OpenID.
-14:10:33 <schuki> hannes: we didn't look much at multiple sources, but people have explored this
-14:10:55 <schuki> ... telecomms people have looked at attribute provider (e.g. street address info as well as subscriber data)
-14:11:11 <schuki> ... provider has the ability to verify against this data
-14:11:17 <m4nu> Identity Credentials spec: https://web-payments.org/specs/source/identity-credentials/
-14:11:31 <schuki> ... idea was that there will be some sort of broker which would make it available to the user
-14:11:40 <m4nu> A Proposal for Credential-based Login: http://manu.sporny.org/2014/credential-based-login/
-14:11:50 <schuki> mountie: with the payment provider we don't exchange info cross site, just with provider only
-14:12:00 <schuki> ... so address is given to delivery provider only
-14:12:12 <m4nu> (that is related to the comment about OpenID Connect, storage of credentials online, etc. above)
-14:12:14 <schuki> ... possible?
-14:12:23 <schuki> hannes: nothing we have done so far
-14:12:56 <schuki> virginie: let's welcome tim from microsoft to the stage
-14:12:58 <Danny> Danny has joined #W3CPayment
-14:13:09 <schuki> slide [1]
-14:13:25 <schuki> tim: i work on the commerce team at microsoft
-14:13:30 <schuki> slide [2]
-14:13:40 <jonny> jonny has joined #w3cpayment
-14:13:45 <schuki> tim: our thoughts around identty
-14:13:46 <lesellier> lesellier has joined #w3cpayment
-14:14:10 <schuki> ... as a result of living in multiple countries i have many bank accounts
-14:14:19 <schuki> s/identty/identity
-14:14:33 <schuki> tim: I also have many social network accounts
-14:14:43 <schuki> ... i tend to separate with who i interact with
-14:15:18 <schuki> ... I also have an address and I went to school and am recognised against these
-14:15:33 <schuki> ... these are all things used to find me
-14:15:49 <schuki> tim: so we decided at microsoft that we didn't want to launch a new commerce identity
-14:15:59 <schuki> ... we didn't want you to give more info over
-14:16:13 <schuki> ... so you take something that identifies you with a commerce identity
-14:16:15 <erik_anderson> erik_anderson has joined #w3cpayment
-14:16:16 <schuki> slide [3]
-14:16:40 <schuki> ...this identity identifies you next to these identities
-14:16:48 <schuki> ... whatever you created it links to your financial data
-14:16:48 <wseltzer> q+ to ask what about customers who don't want a *single* commerce identity but multiple personalities?
-14:17:09 <schuki> ... it realted you to rights, you may have purchases an xbox game
-14:17:19 <m4nu> q-
-14:17:20 <schuki> ... or whatever,
-14:17:24 <m4nu> q- mountie
-14:17:33 <schuki> ... you have a right to the game, but you may not have paid for it
-14:17:43 <schuki> ... you mum might have bought it for you
-14:17:58 <schuki> tim: we also model things against your 'friends'
-14:18:18 <schuki> ... this could help you give access to some friends so they can access things you have license for
-14:18:28 <schuki> tim: we model both buyers and sellers
-14:18:46 <schuki> ... so from a commerece perpective we see what is bought and sold
-14:18:58 <schuki> ... we have all the info on your purchase history
-14:19:04 <schuki> ... we give a score for this
-14:19:16 <schuki> tim: we want these commerce accounts to be stored offline and online
-14:19:33 <schuki> ... we want you to get a statement at the end of the month as to what you bought
-14:19:51 <schuki> tim: finally we give you the ability to enter multiple payment options and rules
-14:20:03 <schuki> ... there are simple rules (50/50 between two created cards)
-14:20:14 <schuki> ... rules can be complicated
-14:20:24 <schuki> s/created/credit
-14:20:39 <schuki> tim: the commerce identity is separate from your google/yahoo/hotmail
-14:21:03 <schuki> tim: we are trying to find out how users can get a commerce account for those who don't have an online profile
-14:21:10 <schuki> ... say if user first goes to a store
-14:21:20 <schuki> ... so can we use credit card or passport as in ID?
-14:21:25 <schuki> slide 4]
-14:21:43 <schuki> tim: there are a lot of identity providers here
-14:22:03 <schuki> ... we use the oauth protocol to integrate these
-14:22:14 <schuki> ... we use different views
-14:22:28 <schuki> ... so if you login with your corporate account you get a different view
-14:22:58 <schuki> tim: modelling trust between commerce accounts: so you don't give credit card to merchant
-14:23:19 <wseltzer> q+ re strong privacy guarantees, if you do link information?
-14:23:24 <schuki> ... also limiting spending limits for family members
-14:23:43 <schuki> tim: what we have done is only for microsoft products
-14:23:49 <schuki> ... we want to extend thios
-14:23:53 <schuki> s/thios/this
-14:23:59 <m4nu> q?
-14:24:03 <schuki> ... this is a opportunity for partnerships
-14:24:13 <schuki> tim: we want to bridge physical and digital worlds
-14:24:20 <schuki> ... also fraud
-14:24:25 <schuki> ... fraud is very siloed
-14:24:37 <jeff> q+
-14:24:53 <schuki> ... there is some interesting things to research here
-14:24:59 <schuki> slide [5]
-14:25:11 <m4nu> use case: Associate fraud information with identities.
-14:25:25 <schuki> security, we want to establish a secure protocol
-14:25:26 <kodonog> kodonog has joined #w3cpayment
-14:25:44 <schuki> tim: we may look at some money transfer scenarios
-14:25:45 <m4nu> use case: Don't share any theft-worthy data with merchants.
-14:25:56 <schuki> ... we are looking at new flows here
-14:26:08 <schuki> ... we would like the same API to work across situations
-14:26:25 <schuki> tim: we have some issues with security across banks and providers
-14:26:36 <schuki> ... ACH is good but hard, we want to work with this
-14:27:05 <schuki> ... I'd like to see more encryption in this whole pipeline
-14:27:23 <schuki> tim: we'd like to increase interoperability, discover where in the stack these solutions can help
-14:27:26 <Ori_Eisen> you cant easily change the 8583 protocol as millions of legacy systems will need to be changed
-14:27:28 <schuki> ... thank-you
-14:27:39 <m4nu> q?
-14:27:49 <wseltzer> ack wseltzer
-14:27:49 <Zakim> wseltzer, you wanted to ask what about customers who don't want a *single* commerce identity but multiple personalities? and to discuss strong privacy guarantees, if you do link
-14:27:49 <schuki> virginie: just one question from wendy, then wait till the end of all the speakers
-14:27:52 <Zakim> ... information?
-14:28:35 <schuki> wseltzer: thanks for sharing tim, what privacy considerations could you offer to user who doesn't want a single identity? Or who only wants to make payment but not to anything else
-14:29:08 <schuki> tim: good q. Today we allow user to create commerce account and not link org to that identity, and then you can create another account
-14:29:33 <schuki> ... then we wouldn't know the accounts were linked
-14:29:34 <jeff> q-
-14:29:44 <schuki> virginie: next is stefan from ripple
-14:30:28 <schuki> stefan: i will talk about identity from decentralised networks POV
-14:30:30 <schuki> slide [1]
-14:30:43 <schuki> and how distribute networks can help the issues speakers have bought up
-14:30:45 <schuki> slide [2]
-14:30:47 <Danny_> Danny_ has joined #W3CPayment
-14:30:53 <schuki> stefan: definition of terms
-14:31:03 <schuki> slide [3]
-14:31:19 <m4nu> Use Case: Place identity in a decentralized network
-14:31:41 <schuki> stefan: authentication (identifier could be name, or anything), attestation
-14:32:10 <schuki> ... (providing better solutions for trust)
-14:32:32 <cyberphone> cyberphone has joined #W3Cpayment
-14:32:43 <schuki> stefan: as a payments WG we would not presume to be more knowledgable on identiy, but look at some of the unique challenges for identity and payment
-14:32:56 <schuki> ... and how these distributed networks can help here
-14:33:00 <schuki> ... or be impacted
-14:33:04 <schuki> slide [4]
-14:33:19 <schuki> stefan: you have many identities (work, home, gamer id)
-14:33:38 <schuki> slide [5]
-14:34:03 <schuki> stefan: with your identity you can have claims and orgs requesting claims
-14:34:08 <schuki> slide [6]
-14:34:18 <schuki> stefan: openid connect is pretty good, agnostic to provider
-14:34:39 <schuki> ... cryptographically secure
-14:34:49 <schuki> .. offers granularity
-14:34:54 <schuki> s/../...
-14:35:03 <schuki> ... supports discovery
-14:35:11 <schuki> slide [7]
-14:35:28 <schuki> stefan: why would you care if google are your provider?
-14:35:33 <schuki> ... they are a target, so you might care
-14:35:53 <schuki> stefan: also there is a lot of lockin for some providers
-14:36:18 <schuki> ... it's hard to capture this point, but ppl do think there should be a different way
-14:36:21 <schuki> slide [8]
-14:36:48 <schuki> stefan: openid is another option
-14:37:08 <schuki> stefan: in ripple, we take a pw, we blind it, we take the unblinded value as a key
-14:37:30 <schuki> ... have full benefits of identity provider and 2 factor auth
-14:37:33 <schuki> slide [9]
-14:37:43 <schuki> the other problem is switching providers
-14:38:08 <schuki> stefan: a global identifier could help here
-14:38:14 <schuki> ... so Alice can sign things that act on her behalf
-14:38:29 <schuki> ... this is independant of any company
-14:38:40 <schuki> stefan: so how do i pay Alice?
-14:38:53 <schuki> ... we have a mapping from Alice to global pay identifier
-14:39:14 <schuki> ... and from there you map to different ways you can pay Alice
-14:39:24 <schuki> ... e.g. bank account, or bitcoin wallet
-14:39:39 <Ori_Eisen> How do you know for sure it is Alice who provided the crednetials?
-14:39:44 <schuki> ... this is an early version of what a web payments group could come up with
-14:39:53 <schuki> slide [10]
-14:40:02 <m4nu> Use Case: Update identity information in a decentralized network (replace payment providers, etc.)
-14:40:03 <schuki> stefan: so where is this info stored?
-14:40:49 <schuki> ... we want claims to not be stored in any particular info
-14:41:06 <schuki> s/info/place
-14:41:33 <schuki> stefan: so we can store these pieces of information decentrally
-14:41:44 <schuki> ... thank-you
-14:42:03 <schuki> virginie: gmandyam is our next speaker
-14:42:34 <chaals> [Agree with ernesto, relying on reputation provides a barrier to entry...]
-14:42:55 <schuki> gmandyam: thank-you to the organisers
-14:43:08 <schuki> ... i run web standards in qualcomm
-14:43:16 <schuki> ... with QuIC
-14:43:24 <schuki> s/with/withi
-14:43:33 <schuki> s/withi/within
-14:43:49 <jpotvin> q+
-14:43:55 <schuki> gmandyam: we have been doing more in the mobile payments given the hardware that has come into play
-14:44:01 <schuki> slide [2]
-14:45:00 <schuki> gmandyam: some history, lots of work in premium sms
-14:45:08 <schuki> ... this is still growing!
-14:45:13 <schuki> ... not going to die soon
-14:45:18 <m4nu> q?
-14:45:48 <schuki> gmandyam: any soltuon will have to look into how premium sms fits into the open web
-14:46:39 <schuki> gmandyam: it's not a great solution, bad rev shares, need to eat the bad debt, etc.
-14:46:45 <schuki> slide [3]
-14:47:05 <ernesto> q?
-14:47:19 <schuki> gmandyam: header enrichment, this is actually a very workable and used method
-14:47:34 <schuki> ... msisdn is injected into the header in the operator proxy
-14:47:45 <schuki> ... user never knows payment doens't take place
-14:47:53 <schuki> ... but it's not as secure
-14:48:25 <Emil> Emil has joined #W3Cpayment
-14:48:33 <schuki> gmandyam: once your outside the network then the operator doesn't know what you're doing
-14:49:03 <schuki> gmandyam: standards could help by setting guidelines
-14:49:19 <schuki> slide [4]
-14:49:36 <schuki> we are seeing more use of contextual data (geo location etc)
-14:50:04 <schuki> gmandyam: we did a lot of research on mobile shopping, particularly germany
-14:50:38 <schuki> ... in grocery they scan items and present final barcode and then leave the store
-14:50:38 <phobeo> q?
-14:50:58 <schuki> ... this was ok, but why can't we use indoor location to tell when they left
-14:51:13 <schuki> ... bluetooth access points was not great for indoor location tracking
-14:51:38 <schuki> .. i reason was couldn't keep up with speeds
-14:51:43 <schuki> ... beacons might help here
-14:51:45 <phobeo> q+
-14:52:08 <schuki> gmandyam: user should just be able to walk out.
-14:52:19 <schuki> ... and purchase should happen
-14:52:28 <schuki> gmandyam: HTML5 has given us some helpful APIs here
-14:52:36 <schuki> ... it could help with multifactor auth too
-14:52:55 <wseltzer> [note: privacy in contextual information]
-14:53:05 <schuki> gmandyam: security is still an issue
-14:53:13 <schuki> ... even TLS has security holes
-14:53:38 <erik_anderson_> erik_anderson_ has joined #w3cpayment
-14:53:54 <schuki> ... WebRTC has some issues here with emergency calls, biometric data has issues too
-14:53:59 <schuki> ... re trust in browser and TLS
-14:54:10 <erik_anderson_> erik_anderson_ has joined #w3cpayment
-14:54:34 <schuki> gmandyam: EME spec is a bit of a blackbox, so we are getting comfortable with more secure models
-14:54:38 <schuki> ... thank-you
-14:54:41 <erik_anderson_> W3C needs to reference some 3rd party secure hardware
-14:54:58 <schuki> virginie: next speaker is gregory fhe lira network
-14:55:16 <erik_anderson_> Google and Yubico have been working together on the U2F spec (universal 2 factor)
-14:55:48 <schuki> s/lira/lyra
-14:56:04 <schuki> gregory: here we will talk about principles
-14:56:10 <schuki> slide [2]
-14:56:23 <schuki> we have been conerned with centralised systems and data leaks
-14:56:33 <schuki> ... or surviellance
-14:57:14 <schuki> gregory: there was some expression to centralise the wbe
-14:57:18 <schuki> s/wbe/web
-14:57:20 <erik_anderson_> ernesto: http://www.yubico.com/2013/03/future-of-authentication-faq/
-14:57:33 <erik_anderson_> ernesto: www.getnymi.com
-14:58:18 <schuki> gregory: there have been platforms that are more decntralised
-14:58:21 <schuki> slide [3]
-14:58:29 <schuki> gregory: there is a lot of innovation in hardware
-14:59:20 <schuki> ... but not just hardware, some innovations are listed here
-14:59:24 <erik_anderson_> Facebook and Google have been working with Yubico on a hardware solution to remove passwords
-14:59:28 <schuki> ... secure elements, nfc, biometrics...
-14:59:50 <jonny> jonny has joined #w3cpayment
-15:00:28 <schuki> ... FIDO, identity credentials
-15:00:35 <cyberphone> http://images.apple.com/ipad/business/docs/iOS_Security_Feb14.pdf
-15:00:49 <schuki> ... some issues need to be addressed
-15:00:54 <schuki> ... ease of use
-15:01:20 <schuki> ... related to data aggregation
-15:02:23 <schuki> gregory: currently easy to copy data between devices, this is difficult to trust
-15:02:26 <erik_anderson_> m4nu I have been following this industry for a while.  I cant kill the evil anonymous until it is nearly impossible to impersonate someone
-15:02:51 <schuki> ... so many devices could produce multiple points of failure
-15:03:13 <schuki> gregory: identity and privacy is different, what you are is what other orgs know about you
-15:03:41 <erik_anderson_> schuki - Nearly impossible to coordinate a remote attack across multiple devices
-15:03:44 <schuki> ... identity is being someone
-15:04:08 <schuki> ... trust, trust is a subjective idea
-15:04:13 <schuki> ... we talked about cryptography
-15:04:30 <schuki> ... you can have trust in something / someone without sharing keys / credentials
-15:04:54 <schuki> slide [4]
-15:05:41 <schuki> gregory: idea is to build your own web of trust
-15:05:58 <schuki> ... you can add your id card, it can be part of your web of trust
-15:06:16 <schuki> ... you have to do the choice
-15:06:21 <schuki> ... also about education
-15:06:33 <schuki> ... facebook have done something for 1/2 years re trusted contacts
-15:06:41 <schuki> gregory: not everyone is web savvy
-15:06:48 <schuki> ... anyone could fall into the trap
-15:07:10 <schuki> ... you should put people who act as an insurance for you in case someone puts something which is wrong for your service
-15:07:52 <m4nu> Use Case: Figure out a way to couple identities together to allow one identity to retrieve access to another identity if the 2nd identity loses their 2FA device.
-15:08:24 <bryan> usecase: keeping your web of trust in your wallet
-15:08:46 <schuki> ... there needs to be a balance of things you need to give to the merchant and not
-15:08:54 <schuki> slide [5]
-15:09:01 <erik_anderson_> Manu: most providers allow you to setup multiple 2FA devices for your account incase you loose a device
-15:09:10 <schuki> gregory: secret sharing: idea is to avoid the point of failure
-15:09:24 <virginie> note shamir's reference : http://point-at-infinity.org/ssss/
-15:09:25 <erik_anderson_> 1 on person, 1 in fire safety box
-15:09:30 <schuki> ... you don't store your credentials in one place but in many palces
-15:09:36 <schuki> s/palces/places
-15:10:24 <m4nu> Shamir's secret is considered bad security practice via Bitcoin community - which is why they did multi-sig (in a way that wasn't Shamir's secret)
-15:10:33 <erik_anderson_> Shamir's Secret Sharing Scheme is less effective than multiple key signature protocols
-15:10:57 <erik_anderson_> +1 Manu!!!
-15:10:59 <schuki> gregory: internet of things: could argue the object owns, rather than other way around
-15:11:31 <schuki> ... object can become part of your identity
-15:12:33 <schuki> gregory: thank-you
-15:12:43 <bryan> usecase: secure backup storage of wallet info a friends wallet
-15:13:06 <schuki> virginie: we have discussed open id, protocols, security features, better management of identity
-15:13:06 <dka> q?
-15:13:07 <bryan> s/info a/info in a/
-15:13:25 <Jorg> Jorg has joined #W3Cpayment
-15:14:00 <schuki> harry: there are a number of things going wrong
-15:14:14 <schuki> ... there is a number of things W3C can do, and one of those is web crypto API
-15:14:18 <jonny> jonny has joined #w3cpayment
-15:14:35 <schuki> harry: up to a few months ago it was very hard to check digital signatures
-15:15:08 <schuki> ... this was because those components which were needed for secure applications were not available in the JS runtime
-15:15:14 <chaals> [I still rely on a lot of real life social networks for authentication - e.g. in bankingâ€¦]
-15:15:15 <schuki> ... workshop ran some time ago
-15:15:43 <schuki> harry: we can build technical systems that can build secure systems
-15:16:03 <schuki> ... and the great success over the past few years is oauth
-15:16:09 <schuki> ... persona came about a few years
-15:16:14 <schuki> ... dying now
-15:16:39 <schuki> ... but at the same point whilst this was going on the auth stuff was happening
-15:17:11 <erik_anderson_> Chaals: Go buy a 3D printer!!!
-15:17:18 <schuki> ... and now we have the crypto group (lists participants) which are unified on an API
-15:17:40 <virginie> note : Web Crypto API https://dvcs.w3.org/hg/webcrypto-api/raw-file/tip/spec/Overview.html
-15:17:49 <schuki> harry: so you need to know who has the private key material
-15:18:25 <schuki> ... right now the crypto API doesn't allow you to do that
-15:18:45 <schuki> ... but now we;re working with some new groups: FIDO alliance et al
-15:18:55 <schuki> ... so we can get hardware tokens working for the browser
-15:19:49 <schuki> ... we're inspecting key storage stuff in browser, new crypto works by some other groups, working with IETF
-15:20:10 <schuki> ... working with all these people to develop crypto API and hardware token
-15:20:40 <schuki> harry: pretty sure hardware tokens will have a workshop in sept in silicon valley
-15:20:48 <schuki> ... so join the crypto group
-15:21:09 <dsr> s/sept/September 2014/
-15:22:04 <schuki> ... and help us take these implementations to the community so we can discuss them all together
-15:22:09 <schuki> ... thank-you
-15:22:20 <schuki> virginie: thanks for the good work in the crypto group harry
-15:22:38 <schuki> ... next is Louise
-15:22:53 <schuki> louise: identity is marred with trust
-15:23:03 <schuki> louise: trust is essential for online payments
-15:23:09 <bryan> s/marred/married/
-15:23:28 <schuki> ... standards for payments on the internet is linked with security, tracability, privacy and anonymity
-15:24:40 <schuki> louise: you have to get the right data at the right place at the right time, so you need to be certain for some use that the identifier is linked to what you are concerned with
-15:24:59 <schuki> ... since people and orgs are not attached to the internet
-15:25:16 <schuki> ... how do you know they are linked on the internet
-15:26:18 <schuki> louise: how certain you need to be that it is me or my company that is needing the thing is where we come into risk in the internet
-15:26:48 <schuki> ... in the virtual world you may want to know you're dealing with me by many levels of
-15:26:55 <schuki> s/of/
-15:27:48 <schuki> louise:  in banking transactions the only thing that matter is i opened the account and i am deposting the money
-15:27:55 <schuki> ... but there exists legislation
-15:28:30 <schuki> louise: will web paymetns come under jurisdiction?
-15:28:54 <schuki> ... I predict p2p payments will start to become regulated
-15:28:58 <Angie> Angie has joined #w3cpayment
-15:29:00 <schuki> ...this will of course have impacts
-15:29:14 <schuki> louise: should you have one or many identities
-15:29:59 <schuki> ... most people think you should be allowed to have many identities
-15:30:18 <schuki> ... associated with ppl or orgs
-15:30:43 <schuki> ... there are terms and conditions assoicated for each
-15:30:57 <Danny_> Danny_ has joined #W3CPayment
-15:30:58 <schuki> louise:  some people think IPv6 is the answer to the issues with identity
-15:31:03 <schuki> ... i think that's a non starter
-15:31:35 <schuki> ... korean govt could access all identities, but this became unconstitutional
-15:31:58 <schuki> louise: in online commerce you need to be able to provie you've made the transaction
-15:32:25 <schuki> ... i like the allipay escrow model
-15:32:53 <schuki> ... in many online / international dealing you need a third party
-15:33:00 <chaals> s/could access all/mandated that access to korean sites would only be available to those who had government-verified/
-15:33:52 <chaals> s/became uncon/was later ruled to be uncon/
-15:33:52 <erik_anderson_> For public record Anonymity is evil!!!
-15:33:55 <schuki> louise: i would say anonymity is not evil, people can hide behind it an do evil things, but it doesn't make anonymity evil
-15:33:56 <erik_anderson_> :)
-15:34:33 <schuki> louise: privacy is about only providing data to those you want to provide it
-15:34:46 <bryan> privacy is also the right to share what you want to share - seems like the same thing as protecting what you want, but it isnt
-15:35:03 <schuki> ... advocates of privacy are trying to protect the individual
-15:35:14 <chaals> [I wonder if privacy is about providing data, and a sense of what you think it is OK to do with that data]
-15:35:46 <bryan> +1 chaals - putting people in control of their data is privacy
-15:35:48 <schuki> louise: de-anonymisation is much more damaging then anonymity
-15:36:19 <schuki> ... seems some people didn't want anonymity, they wanted non-tracability
-15:36:28 <schuki> ...some people wanted to hide from the authorities
-15:36:44 <schuki> ...they didn't want to hide from friends, just not tracable from the state
-15:37:24 <schuki> louise: many of us achieve this by using the different identities
-15:38:28 <m4nu> Loving this talk - really great capture of the subleties of privacy/anonymity/security/traceability.
-15:38:38 <schuki> louise: freedom of speech is far more important than privacy
-15:38:45 <erik_anderson_> usecase: separate the idea of privacy and anonymity when it comes to web payments.  Privacy for online actions is important.  Anonymity when it comes to financial transactions and moving of money is evil
-15:38:53 <jpotvin> US freedom to > freedom from; EU freedom from > freedom to
-15:38:59 <schuki> ... you must address these issues otherwise standards will have no global validity
-15:39:00 <jonny> jonny has joined #w3cpayment
-15:39:12 <mountie> q?
-15:39:13 <schuki> virginie: i would like to thank the speakers
-15:39:33 <chaals> usecase: completely banishing the word "evil"
-15:40:08 <schuki> virginie: we covered the multiple identity issue, user control over their info, protocols and how to make them secure, education
-15:40:39 <schuki> virginie: please ask questions to the speaker in the break
-15:41:22 <chaals> [I'm not sure that we want to draw the lines on what is privacy and anonymity. But I think standards need to support transparency of understanding what will happen to information (money, correspondence, associations, â€¦)]
-15:42:05 <andym> andym has joined #w3cpayment
-15:43:22 <bshambaugh> bshambaugh has joined #w3cpayment
-15:46:35 <dka> dka has joined #w3cpayment
-15:46:59 <JYR> JYR has joined #W3CPAYMENT
-15:54:33 <skddc> skddc has joined #W3Cpayment
-16:00:41 <andym> andym has joined #w3cpayment
-16:01:33 <andym_> andym_ has joined #w3cpayment
-16:02:13 <andym> andym has joined #w3cpayment
-16:03:20 <andym_> andym_ has joined #w3cpayment
-16:03:56 <jonny> jonny has joined #w3cpayment
-16:04:36 <mountie> mountie has joined #W3Cpayment
-16:05:06 <phariramani> phariramani has joined #w3cpayment
-16:05:28 <Harish> Harish has joined #W3Cpayment
-
+[13:37:01] <m4nu> Meeting: Web Payments Workshop - Session 6
+[13:37:01] <m4nu> Agenda: http://www.w3.org/2013/10/payments/agenda.html
+[13:37:01] <m4nu> Date: 25 March, 2014
+[13:37:01] <m4nu> Audio: none
+[13:37:01] <m4nu> Total Present: and 82 others for a total of 103+ people
+[13:37:01] <m4nu> Chair: dka
+[13:37:01] <m4nu> scribe: schuki
+[13:37:01] <schuki> Note: These are minutes for an official W3C Workshop event that have been cleaned up and reformatted by the Web Payments Community Group. The Web Payments Community Group and the W3C are two different organizations, and it is the W3C that managed this event. These minutes may be handed over to the W3C to become the official minutes for the event, but that has not happened yet (and may not happen at all). Readers should understand that there is a difference between officially sanctioned W3C work, and the work done by the Web Payments Community Group (which is not officially sanctioned by W3C's membership).
+[13:37:01] <schuki> topic: Identity, Security, and Privacy
+[13:39:09] <schuki> virginie: there have been many sessions which have mentioned security, identity, and privacy.
+[13:39:33] <schuki> ... our panelists are going to talk about this stuff in more depth.
+[13:40:28] <schuki> ... Hannes will be talking about IETF's role, Giri about work that Qualcomm has been doing. Tim from microsoft talking about product choices. Greg will share deployment solutions related to security. Stefan from Ripple will talk a bit about decentralized identity. Harry Halpin will be providing input from W3C's perspective.
+[13:40:50] <schuki> virginie: Hannes is up first.
+[13:41:04] <schuki> Topic: Identity Management - IETF
+[13:41:04] <schuki> Hannes' slides are available here: http://www.w3.org/2013/10/payments/slides/session6_oauth.pdf
+[13:41:04] <schuki> hannes: i work in the IETF and was asked to talk about identity management
+[13:41:51] <schuki> ... a few years ago there was a pattern where LinkedIn was asking for user/password of email account
+[13:41:59] <schuki> ... this created many privacy / security problems
+[13:42:10] <schuki> ... many companies worked on solving this terrible security practice.
+[13:42:35] <schuki> hannes: many of us have noted the building block approach and use of these
+[13:42:58] <schuki> ... the original protocol for this was OAuth (an authorization protocol)
+[13:43:38] <schuki> ... there are many companies using this today, some are in the room, also many smaller companies using this
+[13:43:45] <schuki> slide [2]
+[13:44:08] <schuki> hannes: this is how we defined identity, could be anything from user/password to a rich set of attributes
+[13:44:29] <schuki> ... not just auth context, usually much more than that
+[13:44:48] <schuki> hannes: so how does OAuth work? It all starts with the user ('resource owner')
+[13:45:14] <schuki> ... he stores resources somewhere
+[13:45:35] <schuki> ... he/she wants to give access to this shared resoucre
+[13:46:11] <schuki> ... an auth server has control of access to this
+[13:46:18] <schuki> ... it grants this access
+[13:46:33] <schuki> ... and this uses tokens, it captures the consent you have given and gives the client access
+[13:47:06] <schuki> hannes: here is a typicaly diaglogue
+[13:47:10] <schuki> slide [3]
+[13:47:10] <schuki> Hannes explains the flow of getting an OAuth token.
+[13:47:13] <schuki> slide [4]
+[13:47:28] <schuki> hannes: so the resource owner is the end user
+[13:47:48] <schuki> ... and this user wants to buy something on a website, the client will then play the role of a merchant
+[13:48:03] <schuki> ... the merchant then gets the access to withdraw the money from the users bank account
+[13:48:24] <schuki> ... this is not an abstract concept. You can find descriptions of what these companies have tried to do
+[13:48:28] <schuki> slide [5]
+[13:48:38] <schuki> hannes: i was told VISA Japan uses this mechanism
+[13:48:44] <schuki> slide [6]
+[13:49:03] <schuki> hannes: those are proprietary extensions on top of those protocols
+[13:49:19] <schuki> ... but i think we made a good contribution to lower the password sharing of the old patterns
+[13:49:29] <schuki> ... and helps users reduce the usage of pws
+[13:49:35] <schuki> ... but we did notice challenges,
+[13:49:45] <schuki> ... the industry likes to be an 'identity provider' (Google, Facebook, Twitter, etc.)
+[13:50:03] <schuki> ... but not many want to be a relying party (websites that use Google, Facebook, Twitter to do login)
+[13:50:34] <schuki> hannes: some hardware reliance for security for example
+[13:50:45] <schuki> ... the mechanism we have come up with is a decentralised approach
+[13:51:04] <schuki> ... even still many companies decided to go with a small number of identity providers
+[13:51:23] <schuki> ... so it's still hard to find a fully open approach to identity providers
+[13:51:32] <bryan> Regarding high interest to be IdP, relying party = identity consumer; most companies want to be the producer instead, and not dependent upon external companies for their user IDs
+[13:51:54] <schuki> hannes: we also noted some companies who use OAuth also use it because they want to be interoperable with other companies
+[13:52:09] <schuki> ... this can create lock-in
+[13:52:23] <schuki> ... we cannot force people with what they do in their business decisions, but it is unfortunate
+[13:52:38] <schuki> ... e.g. facebook only allow you to login with their system
+[13:52:50] <schuki> slide [7]
+[13:53:23] <schuki> hannes: whitelisting, there are some business agreements which make it difficult to give everyone full open access
+[13:53:38] <schuki> ... there is some groups like Open Identity Exchange which work on this
+[13:53:50] <schuki> ... the education industry is also good here
+[13:54:28] <schuki> hannes: in terms of security, some companies ignore our recommendations
+[13:54:38] <schuki> ... or shortcut it, and optimise it in another way (which creates security holes)
+[13:55:10] <schuki> hannes: with regards to privacy: consent management helped with privacy
+[13:55:16] <Ori_Eisen> Ori: Facebook will not allow others to authenticate for them, as they can not control the quality of the process. This is a fundamental issue, that can not be solved with technology.
+[13:55:44] <schuki> hannes: Another problem - the relying party asks for more data they they need.
+[13:55:58] <schuki> ... they can ask for the purpose of the application
+[13:56:06] <schuki> ... e.g. angry birds asks for location - no reason Angry Birds needs that information.
+[13:56:23] <schuki> ... FCC may need to kick in to stop this happening, but we are limited in what we can do here
+[13:56:28] <bryan> dependence upon reliability of the IdP is one reason for reluctance to be a relying party
+[13:57:08] <schuki> hannes: how much data you have to share depends on so many aspects
+[13:57:15] <schuki> slide [8]
+[13:57:38] <schuki> hannes: here I have included a link to the OpenID Connect protocol - this may be the way forward for attribute exchange.
+[13:57:53] <schuki> virginie: 5 minutes for questions...
+[13:57:56] <mountie> q+
+[13:58:05] <m4nu> q+
+[13:58:13] <m4nu> q+
+[13:58:25] <mountie> q+
+[13:58:25] <wseltzer> q-
+[13:58:29] <ernesto> q- phobeo
+[13:58:32] <phobeo> q-
+[13:58:36] <ernesto> q- hannes
+[13:59:05] <schuki> Joerg: have you considered who owns the identity data or who owns it?
+[13:59:13] <schuki> ... and who takes responsibility for it?
+[13:59:35] <schuki> ... the stuff we're talking about here may be too technical, but these issues are real.
+[14:00:05] <schuki> hannes: SIM based auth may be the way you want to do it, or a smart card
+[14:00:14] <schuki> ... we didn't standardise on this, it can be outsourced
+[14:00:15] <m4nu> use case: Use OpenID Connect to bootstrap a payments process.
+[14:00:38] <schuki> hannes: also, how do you separate the identity and the person?
+[14:00:40] <bryan> as noted by Hannes, OAuth can be a basis for payment APIs such as the OMA Payment API: http://technical.openmobilealliance.org/Technical/release_program/docs/PaymentREST/V1_0-20130924-A/OMA-TS-REST_NetAPI_Payment-V1_0-20130924-A.pdf
+[14:01:24] <schuki> hannes: also te auth server and resource are separate components implemented by different implementers
+[14:01:33] <schuki> ... this makes a lot of sense.
+[14:02:03] <schuki> adrian: what exactly does a payment protocol that sits on top of this look like?
+[14:02:31] <schuki> hannes: the payment mechanisms on top of identity infrastructure already had the hooks to give the consent in the web and mobile app space
+[14:02:41] <schuki> ... all they did was create additional data structures
+[14:03:14] <schuki> hannes: it might be a good starting point as what can be done with these mechanisms
+[14:03:28] <schuki> ... e.g. how you provide access from one payment system to a merchant
+[14:03:56] <bryan> as noted by Hannes, OAuth can be a basis for payment APIs such as the OMA Payment API: http://technical.openmobilealliance.org/Technical/release_program/docs/PaymentREST/V1_0-20130924-A/OMA-TS-REST_NetAPI_Payment-V1_0-20130924-A.pdf
+[14:04:10] <schuki> m4nu: we looked at OpenID Connect, it's complex - but that doesn't mean that it isn't a solution. We're working on something a bit simpler and that integrates well with digital receipts and payment requests via the Identity Credentials spec in the Web Payments CG. More on this here: http://manu.sporny.org/2014/credential-based-login/
+[14:04:44] <schuki> m4nu: It sounds like we're talking about sending credentials back and forth on the Web. Login is sending an "email credential". Payment is sending a "payment provider and authorization credential". It seems like we're saying a credential solution could work by storing credentials in some kind of cloud based identity
+[14:04:58] <schuki> ... and then have the ability to send the credentials in a very specific way
+[14:05:13] <schuki> ... for a payment you show up to a merchant and share your payment provider info
+[14:05:13] <schuki> ... for login you show up to a website and share your verified email credential/info
+[14:05:28] <schuki> ... it seems like we're heading to a system which manages all of this
+[14:05:44] <schuki> m4nu: have you seen anyone at IETF talk about the transmission of digitally verifiable credentials?
+[14:06:00] <schuki> m4nu: oh, and requestAutoComplete does the same, shares certain details - OpenID Connect, requestAutoComplete, Identity Credentials - these are all more or less doing the same thing (transmitting verified credentials to a website based on your authorization).
+[14:06:05] <bryan> What Hannes is referring to re OpenID Connect use in payments is I think more specifically the use of OAuth (as a fundamental part of OpenID Connect) as a framework for defining the scope of a payment, as in the OMA Payment API I mentioned before.
+[14:06:24] <schuki> hannes: well, the access token that we have here between the client and protected resource is the credential
+[14:06:48] <schuki> ... what some of the industry players are working on are a higher security version of this
+[14:06:51] <schuki> ... currently uses TLS
+[14:07:10] <schuki> ... we are working on using a key or async credential
+[14:07:39] <schuki> ... in order for it to be sucessfully deployed it requires existance of standards that harry et al have been working on at W3C
+[14:08:08] <schuki> hannes: with todays browers this is tough, to store stuff in localstorage
+[14:08:18] <schuki> ... so we have to work on something which is more secure
+[14:08:28] <schuki> ... so we are hoping W3C crypto work is getting there
+[14:09:03] <schuki> hannes: we are getting closer to deploying this secure version
+[14:10:08] <schuki> mountie: we have seen OpenID, these kind of mechanisms touching for identity, do we think multiple provider (payment, identity, FX etc) we have this idea of expansion
+[14:10:19] <schuki> ... will there be a gateway?
+[14:10:24] <bryan> OpenID Connect is also being used in the GSMA Mobile Connect API program http://gsmamobileeconomy.com/gsmamc/ as another example of how secure/trusted identity can be seamlessly integrated into mobile services, based upon OpenID.
+[14:10:33] <schuki> hannes: we didn't look much at multiple sources, but people have explored this
+[14:10:55] <schuki> ... telecomms people have looked at attribute provider (e.g. street address info as well as subscriber data)
+[14:11:11] <schuki> ... provider has the ability to verify against this data
+[14:11:17] <m4nu> Identity Credentials spec: https://web-payments.org/specs/source/identity-credentials/
+[14:11:31] <schuki> ... idea was that there will be some sort of broker which would make it available to the user
+[14:11:40] <m4nu> A Proposal for Credential-based Login: http://manu.sporny.org/2014/credential-based-login/
+[14:11:50] <schuki> mountie: with the payment provider we don't exchange info cross site, just with provider only
+[14:12:00] <schuki> ... so address is given to delivery provider only
+[14:12:14] <schuki> ... possible?
+[14:12:23] <schuki> hannes: Nothing we have done so far makes that possible.
+[14:12:56] <schuki> Topic: Commerce Identity - Microsoft
+[14:12:56] <schuki> Tim's slides are available here: http://www.w3.org/2013/10/payments/slides/session6_microsoft.pdf
+[14:12:56] <schuki> virginie: Let's welcome Tim from Microsoft to the stage
+[14:13:09] <schuki> slide [1]
+[14:13:25] <schuki> tng: i work on the Commerce team at Microsoft.
+[14:13:30] <schuki> slide [2]
+[14:13:45] <schuki> tng: our thoughts around identity... I was born in Hong Kong, some time in Singapore and Canada, I live in the US.
+[14:14:10] <schuki> ... as a result of living in multiple countries i have many bank accounts
+[14:14:33] <schuki> tng: I also have many social network accounts
+[14:14:43] <schuki> ... i tend to separate with who I interact with based on what I'm doing
+[14:15:18] <schuki> ... I also have an address and I went to school and am recognised against these
+[14:15:33] <schuki> ... these are all things used to find me
+[14:15:49] <schuki> tng: so we decided at Microsoft that we didn't want to launch a new commerce identity
+[14:15:59] <schuki> ... we didn't want you to give more info over
+[14:16:13] <schuki> ... so you take something that identifies you with a commerce identity
+[14:16:16] <schuki> slide [3]
+[14:16:40] <schuki>  tng: this identity identifies you next to these identities
+[14:16:48] <schuki> ... whatever you created it links to your financial data
+[14:16:48] <wseltzer> q+ to ask what about customers who don't want a *single* commerce identity but multiple personalities?
+[14:17:09] <schuki> ... it relates you to rights, you may have purchases an XBox game
+[14:17:19] <m4nu> q-
+[14:17:20] <schuki> ... or whatever,
+[14:17:24] <m4nu> q- mountie
+[14:17:33] <schuki> ... you have a right to the game, but you may not have paid for it
+[14:17:43] <schuki> ... you mum might have bought it for you
+[14:17:58] <schuki> tng: we also model things against your 'friends'
+[14:18:18] <schuki> ... this could help you give access to some friends so they can access things you have license for
+[14:18:28] <schuki> tng: we model both buyers and sellers
+[14:18:46] <schuki> ... so from a commerece perpective we see what is bought and sold
+[14:18:58] <schuki> ... we have all the info on your purchase history
+[14:19:04] <schuki> ... we give a score for this
+[14:19:16] <schuki> tng: we want these commerce accounts to be stored offline and online
+[14:19:33] <schuki> ... we want you to get a statement at the end of the month as to what you bought
+[14:19:51] <schuki> tng: finally we give you the ability to enter multiple payment options and rules
+[14:20:03] <schuki> ... there are simple rules (50/50 between two credit cards)
+[14:20:14] <schuki> ... rules can be complicated
+[14:20:39] <schuki> tng: the commerce identity is separate from your google/yahoo/hotmail
+[14:21:03] <schuki> tng: we are trying to find out how users can get a commerce account for those who don't have an online profile
+[14:21:10] <schuki> ... say if user first goes to a store
+[14:21:20] <schuki> ... so can we use credit card or passport as in ID?
+[14:21:25] <schuki> [slide 4]
+[14:21:43] <schuki> tng: there are a lot of identity providers here
+[14:22:03] <schuki> ... we use the oauth protocol to integrate these
+[14:22:14] <schuki> ... we use different views
+[14:22:28] <schuki> ... so if you login with your corporate account you get a different view
+[14:22:58] <schuki> tng: modelling trust between commerce accounts: so you don't give credit card to merchant
+[14:23:19] <wseltzer> q+ re strong privacy guarantees, if you do link information?
+[14:23:24] <schuki> ... also limiting spending limits for family members
+[14:23:43] <schuki> tng: what we have done is only for microsoft products
+[14:23:49] <schuki> ... we want to extend this
+[14:24:03] <schuki> ... this is a opportunity for partnerships
+[14:24:13] <schuki> tng: we want to bridge physical and digital worlds
+[14:24:20] <schuki> ... also fraud is an issue
+[14:24:25] <schuki> ... fraud is very siloed
+[14:24:37] <jeff> q+
+[14:24:53] <schuki> ... there is some interesting things to research here
+[14:24:59] <schuki> slide [5]
+[14:25:11] <m4nu> use case: Associate fraud information and signals with identities.
+[14:25:25] <schuki> tng: security, we want to establish a secure protocol
+[14:25:44] <schuki> ... we may look at some money transfer scenarios
+[14:25:45] <m4nu> use case: Don't share any theft-worthy data with merchants.
+[14:25:56] <schuki> ... we are looking at new flows here
+[14:26:08] <schuki> ... we would like the same API to work across situations
+[14:26:25] <schuki> tng: we have some issues with security across banks and providers
+[14:26:36] <schuki> ... ACH is good but hard, we want to work with this
+[14:27:05] <schuki> ... I'd like to see more encryption in this whole pipeline
+[14:27:23] <schuki> tng: we'd like to increase interoperability, discover where in the stack these solutions can help. Questions?
+[14:27:26] <Ori_Eisen> Ori: you cant easily change the 8583 protocol as millions of legacy systems will need to be changed.
+[14:27:49] <wseltzer> ack wseltzer
+[14:27:49] <Zakim> wseltzer, you wanted to ask what about customers who don't want a *single* commerce identity but multiple personalities? and to discuss strong privacy guarantees, if you do link
+[14:27:49] <schuki> virginie: just one question from wendy, then wait till the end of all the speakers
+[14:28:35] <schuki> wseltzer: thanks for sharing Tim. What privacy considerations could you offer to user who doesn't want a single identity? Or who only wants to make payment but not to anything else
+[14:29:08] <schuki> tng: good question. Today we allow user to create commerce account and not link org to that identity, and then you can create another account
+[14:29:33] <schuki> ... then we wouldn't know the accounts were linked
+[14:29:33] <schuki> Topic: Decentralized Identity - Ripple Labs
+[14:29:34] <jeff> q-
+[14:29:44] <schuki> Slides for Stefan's talk are here: http://www.w3.org/2013/10/payments/slides/session6_ripple.pdf
+[14:29:44] <schuki> virginie: next is Stefan from Ripple Labs.
+[14:30:28] <schuki> stefan: I'd like to talk about identity from decentralised networks point of view.
+[14:30:43] <schuki> ... and how distributed networks can help the issues speakers have bought up
+[14:31:19] <m4nu> Use Case: Place identity in a decentralized network
+[14:31:41] <schuki> stefan: authentication (identifier could be name, or anything), attestation (a claim of fact)
+[14:32:10] <schuki> ... we're providing better solutions for trust.
+[14:32:43] <schuki> ... as a payments WG we would not presume to be more knowledgable on identiy, but look at some of the unique challenges for identity and payment
+[14:32:56] <schuki> ... and how these distributed networks can help here
+[14:33:00] <schuki> ... or be impacted
+[14:33:04] <schuki> slide [4]
+[14:33:19] <schuki> stefan: you have many identities (work, home, gamer id)
+[14:33:38] <schuki> slide [5]
+[14:34:03] <schuki> stefan: with your identity you can have claims and orgs requesting claims
+[14:34:08] <schuki> slide [6]
+[14:34:18] <schuki> stefan: openid connect is pretty good, agnostic to provider
+[14:34:39] <schuki> ... cryptographically secure
+[14:34:49] <schuki> ... offers granularity
+[14:35:03] <schuki> ... supports discovery
+[14:35:11] <schuki> slide [7]
+[14:35:28] <schuki> stefan: why would you care if google are your provider?
+[14:35:33] <schuki> ... Well, they're large, so they're a target, so you might care that they're under constant attack.
+[14:35:53] <schuki> stefan: also there is a lot of lockin for some providers
+[14:36:18] <schuki> ... it's hard to capture this point, but people do think there should be a different way
+[14:36:21] <schuki> slide [8]
+[14:36:48] <schuki> stefan: OpenID is another option
+[14:37:08] <schuki> stefan: in ripple, we take a password, we blind it, we take the unblinded value as a key
+[14:37:30] <schuki> ... have full benefits of identity provider and 2 factor auth
+[14:37:33] <schuki> slide [9]
+[14:37:43] <schuki> stefan: The other problem is switching providers
+[14:38:08] <schuki> ... a global identifier could help here
+[14:38:14] <schuki> ... so Alice can sign things that act on her behalf
+[14:38:29] <schuki> ... this is independant of any company
+[14:38:40] <schuki> stefan: so how do i pay Alice?
+[14:38:53] <schuki> ... we have a mapping from Alice to global pay identifier
+[14:39:14] <schuki> ... and from there you map to different ways you can pay Alice
+[14:39:24] <schuki> ... e.g. bank account, or bitcoin wallet
+[14:39:39] <Ori_Eisen> Ori: How do you know for sure it is Alice who provided the credentials?
+[14:39:44] <schuki> Stefan: This is an early version of what a web payments group could come up with
+[14:39:53] <schuki> slide [10]
+[14:40:02] <m4nu> Use Case: Update identity information in a decentralized network (replace payment providers, e-mail attestation, etc.)
+[14:40:03] <schuki> stefan: so where is this info stored?
+[14:40:49] <schuki> ... we want claims to not be stored in any particular place.
+[14:41:33] <schuki> stefan: so we can store these pieces of information in a decentralized location, like Ripple.
+[14:42:34] <ernesto> Relying on reputation could be problematic, creates a barrier to entry.
+[14:42:34] <chaals> I agree with ernesto, relying on reputation provides a barrier to entry.
+[14:41:44] <schuki> Topic: Mobile Identity and Payments - Qualcomm
+[14:42:03] <schuki> Slides for Giri's presentation are here: http://www.w3.org/2013/10/payments/slides/session6_qualcomm.pdf
+[14:42:03] <schuki> virginie: Giri Mandyam is our next speaker.
+[14:42:55] <schuki> gmandyam: thank-you to the organisers
+[14:43:08] <schuki> ... i run Web Standards within Qualcomm, with QuIC.
+[14:43:49] <jpotvin> q+
+[14:43:55] <schuki> gmandyam: we have been doing more in mobile payments given the hardware that has come into play.
+[14:44:01] <schuki> slide [2]
+[14:45:00] <schuki> gmandyam: some history, lots of work in premium SMS
+[14:45:08] <schuki> ... this is still growing!
+[14:45:13] <schuki> ... not going to die soon
+[14:45:48] <schuki> gmandyam: any solution will have to look into how premium sms fits into the open web.
+[14:45:48] <m4nu> Use Case: Determine how Premium SMS (operator billing) works with a Web payments solution.
+[14:46:39] <schuki> gmandyam: Premium SMS is not a great solution, bad rev shares, operators need to eat the bad debt, etc.
+[14:46:45] <schuki> slide [3]
+[14:47:19] <schuki> gmandyam: header enrichment, this is actually a very workable and used method
+[14:47:34] <schuki> ... MSISDN is injected into the header in the operator proxy
+[14:47:45] <schuki> ... user never knows payment doesn't take place
+[14:47:53] <schuki> ... but it's not as secure
+[14:47:53] <m4nu> MSISDN (pronounced "misden") is a number uniquely identifying a subscription in a GSM or a UMTS mobile network. Simply put, it is the telephone number to the SIM card in a mobile/cellular phone. This abbreviation has several interpretations, the most common one being "Mobile Subscriber Integrated Services Digital Network-Number". -- Wikipedia
+[14:48:33] <schuki> gmandyam: once your outside the network then the operator doesn't know what you're doing
+[14:49:03] <schuki> gmandyam: standards could help by setting guidelines.
+[14:49:19] <schuki> slide [4]
+[14:49:36] <schuki> gmandyam: we are seeing more use of contextual data (geo location etc)
+[14:50:04] <schuki> gmandyam: we did a lot of research on mobile shopping, particularly germany
+[14:50:38] <schuki> ... in grocery they scan items and present final barcode and then leave the store
+[14:50:58] <schuki> ... this was ok, but why can't we use indoor location to tell when they left
+[14:51:13] <schuki> ... bluetooth access points was not great for indoor location tracking
+[14:51:38] <schuki> ... the  reason was it couldn't keep up with speeds of people moving around
+[14:51:43] <schuki> ... beacons might help here
+[14:51:45] <phobeo> q+
+[14:52:08] <schuki> gmandyam: user should just be able to walk out of the store
+[14:52:19] <schuki> ... and the purchase should happen.
+[14:52:28] <schuki> gmandyam: HTML5 has given us some helpful APIs here
+[14:52:36] <schuki> ... it could help with multifactor auth too.
+[14:52:55] <wseltzer> Note: We need to think about privacy for contextual information
+[14:52:55] <m4nu> Use case: Protect privacy when making purchases using geolocation technologies.
+[14:53:05] <schuki> gmandyam: security is still an issue
+[14:53:13] <schuki> ... even TLS has security holes
+[14:53:54] <schuki> ... WebRTC has some issues here with emergency calls, biometric data has issues too
+[14:53:59] <schuki> ... re trust in browser and TLS, it's not great.
+[14:54:34] <schuki> gmandyam: EME spec is a bit of a blackbox, so we are getting comfortable with more secure models
+[14:54:41] <erik> W3C needs to reference some 3rd party secure hardware... Google and Yubico have been working together on the U2F spec (universal 2 factor)
+[14:57:20] <erik> http://www.yubico.com/2013/03/future-of-authentication-faq/
+[14:57:33] <erik> http://www.getnymi.com/
+[14:59:24] <schuki> erik: Facebook and Google have been working with Yubico on a hardware solution to remove passwords
+[15:02:26] <schuki> ... Manu, I have been following this industry for a while.  I cant kill the evil anonymous until it is nearly impossible to impersonate someone
+[15:03:41] <schuki> ... Natasha, Nearly impossible to coordinate a remote attack across multiple devices
+[14:54:58] <schuki> Topic: Pushing Back on Centralization - Lyra
+[14:54:58] <schuki> Slides for Gregory's talk are here: http://www.w3.org/2013/10/payments/slides/session6_lyra.htm
+[14:54:58] <schuki> virginie: next speaker is Gregory Estrade, from Lyra network
+[14:56:04] <schuki> gregory: here we will talk about principles for identity management on the Web.
+[14:56:10] <schuki> slide [2]
+[14:56:23] <schuki> gregory: we have been concerned with centralised systems and data leaks.
+[14:56:33] <schuki> ... or surveillance
+[14:57:14] <schuki> ... there was some expression to centralise the web
+[14:58:18] <schuki> ... there have been platforms that are more decntralised
+[14:58:21] <schuki> slide [3]
+[14:58:29] <schuki> gregory: there is a lot of innovation in hardware
+[14:59:20] <schuki> ... but not just hardware, some innovations are listed here
+[14:59:28] <schuki> ... secure elements, nfc, biometrics...
+[15:00:28] <schuki> ... FIDO, identity credentials
+[15:00:49] <schuki> ... some issues need to be addressed
+[15:00:54] <schuki> ... ease of use
+[15:01:20] <schuki> ... related to data aggregation
+[15:02:23] <schuki> gregory: currently easy to copy data between devices, this is difficult to trust
+[15:02:51] <schuki> ... so many devices could produce multiple points of failure
+[15:03:13] <schuki> gregory: identity and privacy is different, what you are is what other orgs know about you
+[15:03:44] <schuki> ... identity is being someone
+[15:04:08] <schuki> ... trust, trust is a subjective idea
+[15:04:13] <schuki> ... we talked about cryptography
+[15:04:30] <schuki> ... you can have trust in something / someone without sharing keys / credentials
+[15:04:54] <schuki> slide [4]
+[15:05:41] <schuki> gregory: idea is to build your own web of trust
+[15:05:58] <schuki> ... you can add your id card, it can be part of your web of trust
+[15:06:16] <schuki> ... you have to do the choice
+[15:06:21] <schuki> ... also about education
+[15:06:33] <schuki> ... facebook have done something for 1/2 years re "Trusted Contacts" - great way of doing Web of Trust for people that don't know anything about it. "Who do you trust with your Facebook login? List 2 people."
+[15:06:41] <schuki> gregory: not everyone is web savvy
+[15:06:48] <schuki> ... anyone could fall into the trap
+[15:07:10] <schuki> ... you should put people who act as an insurance for you in case someone puts something which is wrong for your service
+[15:07:52] <m4nu> Use Case: Figure out a way to couple identities together to allow one identity to retrieve access to another identity if the 2nd identity loses their 2FA device.
+[15:08:24] <bryan> usecase: Keeping your web of trust in your wallet and only expose it to the outside world when necessary.
+[15:08:46] <schuki> gregory: there needs to be a balance of things you need to give to the merchant and not.
+[15:08:54] <schuki> slide [5]
+[15:09:01] <erik> Manu, most providers allow you to setup multiple 2FA devices for your account in case you loose a device.
+[15:09:01] <m4nu> Yeah, but having multiple devices is a first world privilege. Many people can afford a mobile, and that's it.
+[15:09:10] <schuki> gregory: secret sharing: idea is to avoid the point of failure. Shamir's secret is interesting - split private key among 5 people, any 3 of them put together makes the key work.
+[15:09:24] <virginie> Shamir's Secret reference : http://point-at-infinity.org/ssss/
+[15:09:30] <schuki> ... you don't store your credentials in one place but in many places
+[15:10:24] <m4nu> Shamir's secret is considered bad security practice via Bitcoin community - which is why they did multi-sig (in a way that wasn't Shamir's secret). However, the point is that you want to decentralize single points of failure.
+[15:10:59] <schuki> gregory: internet of things: could argue the object owns, rather than other way around
+[15:11:31] <schuki> ... object can become part of your identity
+[15:15:14] <chaals> I still rely on a lot of real life social networks for authentication - e.g. in banking...
+[15:12:43] <bryan> usecase: Secure backup wallet data info to a friends wallet.
+[15:13:06] <schuki> virginie: we have discussed open id, protocols, security features, better management of identity, now for a W3C perspective.
+[15:14:00] <schuki> Topic: The Web Crypto API and Payments - W3C
+[15:14:00] <schuki> harry: there are a number of problems that we're discussing
+[15:14:14] <schuki> ... there are a number of things W3C can do, and one of those is the Web Crypto API
+[15:14:35] <schuki> harry: up to a few months ago it was very hard to check digital signatures
+[15:15:08] <schuki> ... this was because those components which were needed for secure applications were not available in the JS runtime
+[15:15:15] <schuki> ... workshop ran some time ago
+[15:15:43] <schuki> harry: we can build technical systems that can build secure systems
+[15:16:03] <schuki> ... and the great success over the past few years is OAuth
+[15:16:09] <schuki> ... Persona came about a few years ago, but it's dying now.
+[15:16:39] <schuki> ... but at the same point whilst this was going on the auth stuff was happening
+[15:16:09] <manu> I think the Persona team would find the "dying" comment problematic. It's on long-term maintenance and has been handed over to the community. A number of the core concepts are still very sound and should be massaged into future W3C work.
+[15:17:18] <schuki> ... and now we have the crypto group (lists participants) which are unified on an API
+[15:17:40] <virginie> Web Crypto API is here: https://dvcs.w3.org/hg/webcrypto-api/raw-file/tip/spec/Overview.html
+[15:17:49] <schuki> harry: so you need to know who has the private key material
+[15:18:25] <schuki> ... right now the crypto API doesn't allow you to do that
+[15:18:45] <schuki> ... but now we're working with some new groups: FIDO alliance et al
+[15:18:55] <schuki> ... so we can get hardware tokens working for the browser
+[15:19:49] <schuki> ... we're inspecting key storage stuff in browser, new crypto works by some other groups, working with IETF
+[15:20:10] <schuki> ... working with all these people to develop crypto API and hardware token
+[15:20:40] <schuki> harry: pretty sure hardware tokens will have a workshop in September 2014 in Silicon Valley.
+[15:20:48] <schuki> ... so join the crypto group
+[15:22:04] <schuki> ... and help us take these implementations to the community so we can discuss them all together
+[15:22:20] <schuki> virginie: thanks for the good work in the crypto group, Harry.
+[15:22:38] <schuki> Topic: Balancing Identity, Privacy, and Anonymity - British Computer Society
+[15:22:38] <schuki> Slides for Louise's talk are here: http://www.w3.org/2013/10/payments/slides/session6_bcs.pdf
+[15:22:38] <schuki> virginie: next is Louise Bennett from the British Computer Society
+[15:22:53] <schuki> louise: Identity is married to trust
+[15:23:03] <schuki> ... trust is essential for online payments
+[15:23:28] <schuki> ... standards for payments on the internet is linked with security, tracability, privacy and anonymity
+[15:24:40] <schuki> louise: you have to get the right data at the right place at the right time, so you need to be certain for some use that the identifier is linked to what you are concerned with
+[15:24:59] <schuki> ... since people and orgs are not attached to the internet
+[15:25:16] <schuki> ... how do you know they are linked on the internet
+[15:26:18] <schuki> louise: how certain you need to be that it is me or my company that is needing the thing is where we come into risk in the internet
+[15:26:48] <schuki> ... in the virtual world you may want to know you're dealing with me by many levels
+[15:27:48] <schuki> louise:  in banking transactions the only thing that matter is i opened the account and i am depositing the money
+[15:27:55] <schuki> ... but there exists legislation
+[15:28:30] <schuki> louise: will web paymetns come under jurisdiction?
+[15:28:54] <schuki> ... I predict p2p payments will start to become regulated
+[15:29:00] <schuki> ...this will of course have impacts
+[15:29:14] <schuki> louise: should you have one or many identities
+[15:29:59] <schuki> ... most people think you should be allowed to have many identities
+[15:30:18] <schuki> ... associated with ppl or orgs
+[15:30:43] <schuki> ... there are terms and conditions assoicated for each
+[15:30:58] <schuki> louise:  some people think IPv6 is the answer to the issues with identity
+[15:31:03] <schuki> ... i think that's a non starter
+[15:31:35] <schuki> ... korean govt mandated that access to korean sites would only be available to those who had government-verified identities, but this was later ruled to be unconstitutional
+[15:31:58] <schuki> louise: in online commerce you need to be able to prove you've made the transaction
+[15:32:25] <schuki> ... i like the Alipay escrow model
+[15:32:53] <schuki> ... in many online / international dealing you need a third party
+[15:33:52] <erik> For public record, Anonymity is evil!!! ;)
+[15:33:55] <schuki> louise: i would say anonymity is not evil, people can hide behind it an do evil things, but it doesn't make anonymity evil
+[15:33:56] <erik> :)
+[15:34:33] <schuki> louise: privacy is about only providing data to those you want to provide it
+[15:34:46] <bryan> privacy is also the right to share what you want to share - seems like the same thing as protecting what you want, but it isnt
+[15:35:03] <schuki> ... advocates of privacy are trying to protect the individual
+[15:35:14] <chaals> I wonder if privacy is about providing data, and a sense of what you think it is OK to do with that data
+[15:35:46] <bryan> +1 chaals - putting people in control of their data is privacy
+[15:35:48] <schuki> louise: de-anonymisation is much more damaging then anonymity
+[15:36:19] <schuki> ... seems some people didn't want anonymity, they wanted non-tracability
+[15:36:28] <schuki> ...some people wanted to hide from the authorities
+[15:36:44] <schuki> ...they didn't want to hide from friends, just not tracable from the state
+[15:37:24] <schuki> louise: many of us achieve this by using the different identities
+[15:38:28] <m4nu> Loving this talk - it really captures the subtleties of privacy/anonymity/security/traceability in a way that can help guide the payments work.
+[15:38:38] <schuki> louise: freedom of speech is far more important than privacy
+[15:38:59] <schuki> ... you must address these issues otherwise standards will have no global validity
+[15:38:45] <erik> usecase: Separate the idea of privacy and anonymity when it comes to web payments.  Privacy for online actions is important.  Anonymity when it comes to financial transactions and moving of money is problematic.
+[15:38:53] <jpotvin> US freedom to - freedom from; EU freedom from - freedom to
+[15:40:08] <schuki> virginie: we covered the multiple identity issue, user control over their info, protocols and how to make them secure, education
+[15:40:39] <schuki> ... please ask questions of the speakers during the break.
+[15:41:22] <chaals> I'm not sure that we want to draw the lines on what is privacy and anonymity. But I think standards need to support transparency of understanding what will happen to information (money, correspondence, associations, ...)
