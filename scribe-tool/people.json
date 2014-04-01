@@ -313,7 +313,7 @@
     "homepage": "http://paybox.com/"
   },
   "Giridhar Mandyam": {
-    "alias": ["gmandyam"],
+    "alias": ["gmandyam", "giri"],
     "homepage": "https://www.linkedin.com/pub/giridhar-mandyam/0/905/b99"
   },
   "Wendy Seltzer": {
@@ -559,5 +559,9 @@
   "Mountie Lee": {
     "alias": ["mlee"],
     "homepage": "http://paygate.net/"
+  },
+  "Marie-Claire Forgue": {
+    "alias": ["marie", "mcforgue"],
+    "homepage": "http://www.w3.org/People/#mcf"
   }
 }
