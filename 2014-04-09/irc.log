@@ -1,0 +1,187 @@
+[Wed 11:02:38] <manu>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2014Apr/0018.html
+[Wed 11:02:43] <dlongley>	scribe: dlongley
+[Wed 11:02:57] <manu>	voip: mute bshambaugh 
+[Wed 11:02:58] <voip-ps>	SIP/107.196.157.162-00000013 has been muted.
+[Wed 11:03:39] <dlongley>	manu: Additional to agenda, Joseph said he wanted to talk about UNCITRAL stuff he'll be involved in during the next few weeks.
+[Wed 11:04:04] <dlongley>	manu: any other updates/changes to the agenda?
+[Wed 11:04:04] <dlongley>	taaz: nope
+[Wed 11:04:04] <dlongley>	No other updates noted.
+[Wed 11:04:06] <manu>	Topic: Internet Governance Forum 2014
+[Wed 11:04:13] <manu>	http://www.intgovforum.org/cms/
+[Wed 11:04:56] <voip-ps>	Joseph Potvin (SIP/getonsip.com-00000016) has joined the conference.
+[Wed 11:04:57] <dlongley>	manu: if folks will remember, last year we participated in the IGF, as a result, a number of orgs from there came to the web payments workshop, specifically, the british computer society, they had great input on identity, the world bank came as well, played a very big part talking about needs of world w/web payments
+[Wed 11:05:03] <dlongley>	manu: there were a number of other orgs as well, it was a very good outcome based on our participation in IGF.
+[Wed 11:05:14] <dlongley>	manu: so we should think heavily about how we should participate, Pindar, any thoughts?
+[Wed 11:06:06] <dlongley>	pindar: yeah, i'd like to speak in favor of our participation, if you recall last year we tried to design it so there were follow-on activities, so it would be more than just talking about policy issues involved, i'd like to also structure it so that any output from this years IGF and any other meetings can be fed into W3C this year
+[Wed 11:06:43] *	jpotvin (cef886e4@gateway/web/freenode/ip.206.248.134.228) has joined #payswarm
+[Wed 11:06:52] <dlongley>	pindar: one of the things that came up from last year was the tremendous interest in the web payments work and we'd like to deal with the issues more than just once a year, there's an interest in more than just talking about the issues, wanting to move forward w/actions
+[Wed 11:07:59] <dlongley>	manu: talking about where we should take what can be standardized is what we want to do, we have to get into consumer rights issues, anonimity issues things we got from talking about identity at the workshop, outlining the stuff that will happen at w3c on identity and getting input from IGF and talk about getting them to influence the work by discussing w3c's official group that will be looking at this
+[Wed 11:08:16] <manu>	voip: mute jpotvin
+[Wed 11:08:19] <dlongley>	manu: we're going to be creating technical standards, if people at IGF want to get involved they can come to w3c and work with the group
+[Wed 11:08:26] <manu>	voip: mute 0016
+[Wed 11:08:27] <voip-ps>	SIP/getonsip.com-00000016 has been muted.
+[Wed 11:08:37] <manu>	voip: 0016 is jpotvin
+[Wed 11:08:37] <voip-ps>	jpotvin is now associated with SIP/getonsip.com-00000016.
+[Wed 11:08:44] <dlongley>	pindar: yes, moving from the theoretical to the practical is very important, the deadline is 15th of april, so if we want to participate we have to get cracking
+[Wed 11:08:54] <dlongley>	pindar: i'd be very happy to work with you to get something put together
+[Wed 11:09:16] <dlongley>	pindar: i think seeing the results from last time is a positive indicator we should go, it would be worth while, i'd be happy to work with you to flesh out a proposal
+[Wed 11:09:46] <manu>	dlongley: I agree w/ Pindar's thoughts - getting more feedback on the identity work would be helpful.
+[Wed 11:10:05] <dlongley>	manu: pindar were you thinking of focusing on web payments or identity+web and security implications, etc?
+[Wed 11:10:45] <dlongley>	pindar: given response from last year, the interface between identity and web payments is the crux of the issue and the IGF is a really good place to have dialog about interfacing, the issue of identity+identifiers with respect to payments is where we ought to focus
+[Wed 11:11:25] <dlongley>	pindar: its the interface that's important, the payment is the motivation. Ddealing with the interplay with identity and anonymity is important and vital to address, etc.
+[Wed 11:12:01] <dlongley>	pindar: last year i made a mistake of not controlling presentation time and we can correct that this year and get a lot of good policy-level feedback on areas we would not normally have access to
+[Wed 11:12:23] <bshambaugh>	+1
+[Wed 11:12:25] <dlongley>	manu: the one thing we were really missing at the web payments workshop was that kind of policy input, so IGF is important to get feedback from
+[Wed 11:12:42] <dlongley>	manu: so maybe Pindar and i can take this offline and report back to CG later
+[Wed 11:12:56] <dlongley>	pindar: i'll have some time to work on this for the next few days
+[Wed 11:13:00] <dlongley>	manu: Good, let's work together on this. We'll take it offline and report back to the group when we have it figured out. Anything else on IGF?
+[Wed 11:13:02] <manu>	voip: unmute jpotvin
+[Wed 11:13:02] <dlongley>	Nothing else on IGF.
+[Wed 11:13:03] <voip-ps>	jpotvin has been unmuted.
+[Wed 11:13:42] <manu>	Topic: Getting United Nations' CITRAL Involved
+[Wed 11:13:50] <dlongley>	jpotvin: Is anyone familiar with UNCITRAL?
+[Wed 11:13:54] <dlongley>	pindar: yes, i am a bit
+[Wed 11:15:33] <dlongley>	jpotvin: they focus on international trade law has some working groups for ecommerce and has a number of initiatives that seem to me to provide the legal environment in which the whole discussion w/w3c web payments seems to be situated, they way it works is they have delegates from numerous countries, they've been doing ecommerce since 80s, countries have their own legal positions, they produce a model/template law and that is taken and interpreted into the legal context of each participating country, as a result each country's legal tradition comes in, but across borders there are some common things that come into play because of the template, etc.
+[Wed 11:16:33] <dlongley>	jpotvin: a fair bit of work on nitty gritty details of ecommerce trying to determine the specific thing that is being moved around with the various ecommerce payments alternatives, whether a digital packet of money going around or is meta data about money, and if meta data, what is it, is it a bill of exchange a promisory note, etc. when writing software you have to be really clear about classes and properties, etc.
+[Wed 11:17:11] <dlongley>	pindar: the point about terminology about promissory notes and negotiable instruments, and getting to know the terminology in this space is really important if only to avoid potential friction later on, the terminology is quite key
+[Wed 11:17:20] <manu>	q+ to ask about the speed at which the two groups can operate.
+[Wed 11:17:21] <voip-ps>	Added manu to the speaker queue: manu
+[Wed 11:18:03] <dlongley>	jpotvin: to give an example of the degree of headache: in 1978 the bank in canada in montreal was shipping dollar $5 bills and had an accident where the truck transporting the bills burned. The legal case went to the supreme court and question was whether or not bank could get money back by reprinting, split decision 3-3
+[Wed 11:18:12] <dlongley>	jpotvin: even at highest court there is disagreement with what we're dealing with
+[Wed 11:18:51] <dlongley>	jpotvin: in the case of w3c potential specifications, i don't think we want to have ambiguity about the classes we're dealing with, so there's a legal side and a technical side to this, on tech side legal stuff becomes requirements for what's being coded, etc.
+[Wed 11:19:31] <dlongley>	jpotvin: accounting entries that cause numbers to go up/down aren't money moving around and are at a level of systems architecture but it will be problematic if the community gets them wrong and courts start deciding that things are invalid
+[Wed 11:35:20] <jpotvin>	Example link on UNCITRAL: http://www.uncitral.org/pdf/english/workinggroups/wg_4/wp_120_e.pdf
+[Wed 11:20:06] <dlongley>	manu: i definitely agree that we need to get the terminology right and make sure that it lines up with international law, my concern is that we dont' want to create some kind of blocking item that prevents tech work from happening because we're waiting for legal decision to play out
+[Wed 11:20:21] <dlongley>	manu: this is the UN so it works in broad strokes, not low-level technical detail
+[Wed 11:20:44] <voip-ps>	jpotvin (SIP/getonsip.com-00000016) has left the conference.
+[Wed 11:20:51] <dlongley>	manu: there may be a mismatch with high-level vs. low-level language and a speed mismatch with how quickly w3c can work vs. UN
+[Wed 11:21:48] <dlongley>	pindar: the phasing and expectations of when useful output from this group might interface is quite an important one, i think there is a phasing issue where these processes are deliberate and slow moving but i wouldn't actually say them informing our process is the right perspective, i'd look at it the other way around, getting them to shape their processes as ours evolve, the flow of the direction is a little bit back to front
+[Wed 11:22:14] <dlongley>	manu: I think that since Joseph is volunteering to participate in that work and is very motivated to do so, we should have him  reach out to that group and be the liason.
+[Wed 11:22:25] <dlongley>	pindar: absolutely, i'm in full  support, nothing i've said should imply otherwise
+[Wed 11:22:40] <dlongley>	manu: i agree, joseph should reach out and liaise with them
+[Wed 11:22:47] <voip-ps>	Joseph Potvin (SIP/getonsip.com-00000017) has joined the conference.
+[Wed 11:22:57] <dlongley>	manu: but i agree with you pindar that the faster moving w3c process should inform the slower moving UN proecss
+[Wed 11:23:07] <dlongley>	pindar: after first year they should be very aware of this group's existence
+[Wed 11:23:59] <dlongley>	manu: so in general, if Joseph wants to interface with that group, we should make first contact with them, make them aware of the work at W3C CG and the potential upcoming IG, and we want faster moving group to provide input to the slower moving group (faster=w3c cg, slower=UN)
+[Wed 11:24:10] <dlongley>	manu: and then there's a feedback loop where we get input from UN and put back into w3c cg
+[Wed 11:24:38] <dlongley>	jpotvin: i was just talking to someone on phone about w3c having observer status with that working group and i will follow up
+[Wed 11:25:08] <dlongley>	manu: it would be Wendy or Rigo. I'd be surprised if any one of them can make it, but they'd be the contact at w3c
+[Wed 11:25:18] <dlongley>	jpotvin: i'll try and arrange for w3c to have observer status and see if i can be the observer
+[Wed 11:25:23] <dlongley>	manu: definitely clear that with w3c first, do not say that you're representing them.
+[Wed 11:25:30] <dlongley>	manu: You can't use their name without their permission
+[Wed 11:25:30] <dlongley>	joseph: Of course, I was going to clear it with them first.
+[Wed 11:25:53] <dlongley>	manu: it sounds like there's al ot of positive upside as long as we don't tie two groups together too tightly
+[Wed 11:26:17] <dlongley>	jpotvin: bitcoin a good example of not getting legal stuff working early on then with a stroke of a pen all the tech work becomes bogged down by the legal ramifications.
+[Wed 11:26:38] <dlongley>	jpotvin: my experience over past 15 years working on this kind of thing ... as long as lawyers are comfortable with concepts being straightened out then they can move pretty quickly
+[Wed 11:26:59] <voip-ps>	Joseph Potvin (SIP/getonsip.com-00000018) has joined the conference.
+[Wed 11:27:17] <dlongley>	manu: let us know if you need anything from us, otherwise ball is in your court, go ahead and make first contact, let us know how things go
+[Wed 11:27:41] <jpotvin>	:-)  I'll leave it at that.  I'll follow up with Wendy Selzer and keep you al l informed
+[Wed 11:27:43] <manu>	Topic: Web Payments Workshop Review
+[Wed 11:27:51] <manu>	http://www.w3.org/2013/10/payments/minutes/
+[Wed 11:28:21] <dlongley>	manu: web payments workshop very successful, more so than we thought there would be, lots of problems brought up (identity, payments) and general feeling that w3c should do something about them
+[Wed 11:28:48] <dlongley>	manu: we could have found out that there was no desire for w3c to address these problems, instead orgs thought there were lots of problems and w3c could and should solve them with relatively narrowly scoped work.
+[Wed 11:29:19] <dlongley>	manu: minutes were cleaned up by web payments cg, we've gotten compliments about how nice they are, etc. there are 14 hours of minutes there so we can't go through all of them of course
+[Wed 11:29:35] <dlongley>	manu: we can hit 3 highlights on the call today, spending about 10 minutes per highlight ... any questions in general about workshop?
+[Wed 11:29:44] <dlongley>	pindar: slides were excellent and thanks for taking such outstanding notes
+[Wed 11:29:48] <bshambaugh>	+1
+[Wed 11:29:58] <dlongley>	manu: w3c has a great history of being very open and transparent for these events and running them, etc.
+[Wed 11:30:37] <dlongley>	manu: half of the people coming to the workshop were new to w3c and chatter afterwards was that attendees were very impressed with the community and people were trying to solve problems of a technical nature and not getting stuck on policy, etc. and most felt that everyone was really on point for most of the time there
+[Wed 11:30:54] <manu>	Topic: Identity, Anonymity, Privacy, and Security
+[Wed 11:30:59] <dlongley>	manu: we're kind of going out of order ... it's ordered by items with most about interest at workshop 
+[Wed 11:31:27] <dlongley>	manu: first item was somewhat tangential to payments, there was a big push at the workshop to try and address the identity problem on the web
+[Wed 11:31:47] <manu>	http://www.w3.org/2013/10/payments/minutes/2014-03-25-s6/
+[Wed 11:31:49] <dlongley>	manu: in order to do a payment of any sizeable amount you have to sort out the identities involved in the transaction, to establish trust and sort out know-your-customer and anti money laundering issues, etc.
+[Wed 11:32:06] <voip-ps>	Joseph Potvin (SIP/getonsip.com-00000018) has left the conference.
+[Wed 11:32:06] <voip-ps>	Joseph Potvin (SIP/getonsip.com-00000017) has left the conference.
+[Wed 11:32:35] <dlongley>	manu: identity was a huge topic at the workshop, 70% of the papers submitted stated that identity was a serious issue on the web, that we needed to figure out at a way to transmit personal credentials without violating privacy, even for incredibly low-value transactions you currently have to give otu too much personal data
+[Wed 11:33:07] <dlongley>	manu: there was a debate, one group saying eradicating anonymity, another one saying eradicating that would be like 1984 future, etc. good debate
+[Wed 11:33:57] <dlongley>	manu: Folks involved in the discussion were IETF, qualcomm, microsoft, w3c talking about webcrypto API and role played in identity space, Louise Bennett  from the Chartered Institute for IT (British Computer Society) did a phenomenal job talking about balance between anonymity and privacy and security and balancing with the law, etc.
+[Wed 11:34:14] <dlongley>	manu: end result, personal opinion here, it would be very difficult for w3c to ignore identity problem for much longer
+[Wed 11:34:37] <dlongley>	manu: big swell of w3c companies wanting to address the identity problem, 1. by itself it's a problem on the internet, 2. for payments use cases we have to figure identity problem out
+[Wed 11:34:40] <dlongley>	manu: any thoughts so far?
+[Wed 11:34:56] <dlongley>	pindar: do you recall any specific comments bout Lucy Lynch from ISOC?
+[Wed 11:35:21] <dlongley>	manu: she wasn't there, Karen O'Donahue was (from IETF / ISOC). I emailed Lucy and she said she couldn't make it ... sent karen on her behalf
+[Wed 11:35:35] <dlongley>	manu: karen did digital signature stuff at IETF, she co-chairs the JOSE working group.
+[Wed 11:36:18] <dlongley>	manu: Hannes Tschofenig in charge of OAuth work at IETF and strong proponent for getting anonymity and privacy right, was speaking on behalf of privacy and identity, and wendy seltzer from w3c were some of the strongest voices for supporting anonymity and privacy from day 1
+[Wed 11:36:39] <dlongley>	pindar: i value Lucy's opinion/views deeply, she's a great star in this area, so was curious
+[Wed 11:36:53] <dlongley>	manu: she did help shape agenda for workshop, but was unfortunate she had a conflict and couldn't make it
+[Wed 11:38:41] <dlongley>	manu: it was interesting because at w3c ... i spoke with some w3c staff ... and my general input was you're going to have to do something about identity it's clear, and w3c said they tried to do something about this 3 years ago, we had a workshop and it wasn't clear what identity was, the problem wasn't clearly defined, and w3c is wary about picking it up again because it wasn't clear what identity is on the web, and it means a wh ole bunch of different things to different people, but now there are w3c orgs that want to solve very specific identity issues, like transmitting credentials across the web ins a secure, private way, passport, license ID, citizen of a particular state/province, whether you have a degree from a university, an email address is another type of verifiable credential, etc.
+[Wed 11:38:56] <voip-ps>	Joseph Potvin (SIP/getonsip.com-00000019) has joined the conference.
+[Wed 11:38:57] <dlongley>	manu: we have put out the "Identity Credentials" specification via the Web Payments CG, OpenID Connect also exists, as do things like LTI - so we're not starting from scratch:
+[Wed 11:39:09] <manu>	http://manu.sporny.org/2014/credential-based-login/
+[Wed 11:39:49] <dlongley>	manu: there's a blog post out there about this, it's a call for a credential-based login, there's a spec built someway off of persona, reuses best bits of web payments work, puts a stake in the ground to build off of, etc.
+[Wed 11:40:07] <dlongley>	manu: pindar, if you could make her aware of the Identity Credentials spec work in the CG that would be great
+[Wed 11:40:40] <dlongley>	manu: i'll be pushing this myself in various places, we'll also be having a w3c plenary later where this proposal will be on the table in october, so this is something concrete to look at
+[Wed 11:41:01] <dlongley>	pindar: since we have IGF 2014 in september, plenary in october, maybe focusing on the identity issue would be best
+[Wed 11:42:03] <dlongley>	jpotvin: i provided a link on identity management in IRC, which connects in because it provides the pathway to communicate on all of this stuff with the ministries and departments of justice in these countries where this will matter where these things must be permitted within these jurisdictions, so once again it goes beyond the technical ability to resolve these issues, it also has to do with linkage w/justice departments, etc.
+[Wed 11:42:11] <bshambaugh>	 For security, I was trying to reach out to OWASP. Could I drop a link?
+[Wed 11:42:13] <dlongley>	manu: i agree, please get them involved and aware that this is going on.
+[Wed 11:42:29] <bshambaugh>	https://www.owasp.org/index.php/OWASP_Mobile_Security_Project#tab.3DTop_Ten_Mobile_Risk
+[Wed 11:42:40] <manu>	voip: unmute bshambaugh 
+[Wed 11:42:41] <voip-ps>	SIP/107.196.157.162-00000013 has been unmuted.
+[Wed 11:42:49] <dlongley>	manu: security was also a big thing that went along with identity, just like security+payments, brent added link about OWASP, can you give a background?
+[Wed 11:43:13] <dlongley>	bshambaugh: it's an open source security group that deals with mobile security.
+[Wed 11:43:48] <dlongley>	bshambaugh: they have a top 10 mobile problems list -  password, identity, securing sensitive data, things like that.
+[Wed 11:44:14] <dlongley>	bshambaugh: I was really impressed with what they had put together, check out the Top Ten Mobile Risks list they have above.
+[Wed 11:44:37] <dlongley>	manu: maybe one of the things we could do is just invite some of the OWASP people onto the call and chat with them, talk about there's work at w3c that might start in the next year, we'd like their input on it, etc.
+[Wed 11:44:54] <dlongley>	manu: maybe also contact Natasha Rooney at GSMA as she may be in contact w/them as well.
+[Wed 11:44:57] <manu>	voip: mute bshambaugh 
+[Wed 11:44:58] <voip-ps>	SIP/107.196.157.162-00000013 has been muted.
+[Wed 11:46:42] <manu>	Topic: Current and Future Payment Systems
+[Wed 11:46:47] <manu>	http://www.w3.org/2013/10/payments/minutes/2014-03-24-s3/
+[Wed 11:47:31] <dlongley>	manu: this had to do with ... they got all of the big providers, big payment companies on stage to talk about where we are currently and where we need to go, there was a pretty big gap between what the current banks and payments companies were talking about and what folks like ripple labs and bitcoin companies and to some degree w3c were talking about
+[Wed 11:47:38] <dlongley>	manu: the groups were Worldline, The World Bank, Ripple Labs, The US Federal Reserve, CoinApex, and many others.
+[Wed 11:48:39] <manu>	voip: mute jpotvin
+[Wed 11:48:52] <manu>	voip: mute 0019
+[Wed 11:48:52] <voip-ps>	SIP/getonsip.com-00000019 has been muted.
+[Wed 11:49:54] <dlongley>	manu: we didn't have a lot of feedback from the banks ... their position was mostly that nothing was so wrong that we couldn't make minor changes to make progress, etc. the input from the cryptocurrency providers was that there were fairly big problems that need to be addressed, international remittances, for example are absolutely awful, there was a lot of back and forth for where this w3c standard would go, the clear outcome from that was that there was nothing w3c could do to really modify current payment systems in the world, the w3c standards will have to apply to emerging nations w/no real banking infrastructure, or they will have to layer on top of existing payment systems today, the top layer will have to simulate the complex underwriting below
+[Wed 11:50:13] <dlongley>	manu: so payments will look faster to the customer but will still use old infrastructure underneath, which we expected
+[Wed 11:50:27] <dlongley>	manu: in the CG, we just need to build a shim that would hide complexities of the old system
+[Wed 11:50:45] <dlongley>	manu: the other thing is we can't create anything that changes the fundamental movement of money in the first iteration of this technology
+[Wed 11:51:07] <dlongley>	voip: unmute 0019
+[Wed 11:51:08] <voip-ps>	SIP/getonsip.com-00000019 has been unmuted.
+[Wed 11:51:30] <dlongley>	voip: 0019 is jpotvin
+[Wed 11:51:31] <voip-ps>	jpotvin is now associated with SIP/getonsip.com-00000019.
+[Wed 11:51:36] <dlongley>	manu: so the thing we need to focus on has more to do with consumer facing tech ... than with back end banking systems.
+[Wed 11:52:03] <dlongley>	jpotvin: Connie, from the US Federal Reserve, indicated that there were technologies in Bitcoin that could improve payments  for ACH-based systems.
+[Wed 11:52:28] <dlongley>	jpotvin: GIRO (spanish word, pronounced "Hero") banking is about moving money around but doesn't actually move money around, it's just a distributed accounting system
+[Wed 12:00:49] <jpotvin>	Here is a nice summary of how GIRO works -- see the diagram on pg 2 http://www.abs.org.sg/pdfs/Financial/GIRO/IBG_Procedures.pdf
+[Wed 11:52:35] <dlongley>	jpotvin: one account goes up the other goes down
+[Wed 11:52:44] <dlongley>	jpotvin: and it can handle conversions as well, ACH is like this system
+[Wed 11:53:10] <dlongley>	jpotvin: the reserve bank of india is in the process of setting one up as well, these are different from other currency systems because the other ones move digital packets around
+[Wed 11:53:14] <dlongley>	jpotvin: and this is just accounting
+[Wed 11:53:24] <dlongley>	jpotvin: i'd like to reinforce what she said about that
+[Wed 11:53:36] <dlongley>	jpotvin: more attention should be paid to GIRO banking as well
+[Wed 11:53:51] <dlongley>	manu: what i'm trying to get across is that our ability to change ACH with a W3C spec is almost non-existent. That's something that the banks have control over and are probably not willing to change in any large way.
+[Wed 11:54:04] <dlongley>	jpotvin: there are many GIRO banking systems
+[Wed 11:58:52] <jpotvin>	My recommendation is for the community to understand GIRO banking, and how it differs from conventional banking. GIRO is a business model for banking, not a brand.
+[Wed 11:54:44] <voip-ps>	jpotvin (SIP/getonsip.com-00000019) has left the conference.
+[Wed 11:54:48] <dlongley>	jpotvin: about what would would a w3c spec be about? and it seems it should be able a generic GIRO spec ... and i don't think it would be about the kind of thing that ripple is, a GIRO wouldn't require anything like an XRP to (Joseph's audio becomes garbled and disconnects).
+[Wed 11:55:34] <dlongley>	manu: i think what we was going to say was that you wouldn't need XRP to do transactions, it's merely based on the trust of the banks in the network and w3c could try and standardize that. We'll have to have a whole conference call to talk about that, the feedback I got from banks is that they wouldn't be all that interested in making that big of a change to their systems.
+[Wed 11:55:54] <dlongley>	manu: It's too expensive for them, to the tune of tens of millions of dollars, unless it's fairly easy to make a technical change there, i'm a bit dubious whether w3c could accomplish that.
+[Wed 11:56:42] <manu>	Topic: Initiating Payments and Digital Receipts
+[Wed 11:56:54] <dlongley>	manu: the key takeaway there is that we had agreement ... we heard that banks wouldn't be willing to do that, we heard instead that various people would be willing to standardize payments and a mechanism that's universal on all websites for intiating payments and a digital receipt and that dovetails into the discussion here ... i'm not disagreeing with Joseph just saying w3c may fail if we try to take a problem of that scope on.
+[Wed 11:57:12] <dlongley>	manu: definite agreement around initiating payments and digital receipts at the workshop.
+[Wed 11:57:36] <jpotvin>	There's no need to try to change or influence the incumbent banking solutions, but GIRO banking seems to me to be the model most suited to any eventual W3C spec on payments
+[Wed 11:58:12] <dlongley>	manu: standardizing initiating a payment ... and then once initiated, regardless of which payment system you're using then is up to the payment provider and what they do is generate a standard digital receipt (standard across the web) so that the merchant can verify that digital receipt, so the only three things are really required to standardize. A basic identity/credential protocol, a simple protocol to initiate payments, and merchant-verifiable digital receipts.
+[Wed 11:58:26] <dlongley>	manu: that would open up the entire market to far more competition, it would mean you could plug and play payment providers, etc.
+[Wed 11:58:49] <dlongley>	manu: visa mastercard, paypal would all still exist, but banks could participate as well, they'd just run extra software on top of their systems, and also new payment providers could pop up and could operate int his space
+[Wed 11:58:53] <dlongley>	manu: all using these standards
+[Wed 11:59:26] <dlongley>	manu: so the first cut of the web paymetns work would have fairly narrow scope, measurable goals, we have use cases from CG, etc. it would be best way to proceed
+[Wed 12:00:10] <dlongley>	pindar: on the issue w/payments and digital receipts, that's where i thought the CG was before Paris ... and afterwards we're at the same place, and that sounds like a huge win for the CG
+[Wed 12:00:28] <dlongley>	manu: yup, people at the workshop were essentially playing catchup with the CG and it's great that we were in the right place
+[Wed 12:00:48] <dlongley>	manu: there was some gnashing of teeth by fairly large payments players about the CG predicting this
+[Wed 12:01:12] <dlongley>	manu: they wanted to say that for the first time a bunch of people came together and decided initiating payments and digital receipts was the way to go, but in reality the CG was there years ago.
+[Wed 12:01:31] <dlongley>	manu: but we don't need to hammer that home, it's more important that two fairly diverse/different groups/events came together and both agreed on the direction, etc.
+[Wed 12:01:46] <dlongley>	pindar: yup, no interest in bragging rights, just think it's huge win CG is in the right place
+[Wed 12:02:02] <dlongley>	pindar: identity in payments is going to be a big one, good to get more important from outside this field from IGF, etc.
+[Wed 12:02:16] <dlongley>	pindar: for initiation of payments, digital receipts, this is a great outcome, great achievement
+[Wed 12:02:38] <dlongley>	manu: to be clear, everyone thought identity was a big problem and is important but not a clear path forward, just that it needs to be addressed
+[Wed 12:02:43] <dlongley>	manu: we're out of time for today
+[Wed 12:03:06] <dlongley>	manu: we will probably have a follow up conversation next week, tons of use cases to discuss, progress on specs that have been happening in parallel to discuss, etc.
+[Wed 12:03:20] <dlongley>	manu: i will be out in the bay area, silicon valley, next week April 16th-18th,  in case any other Web Payments CG members want to meet up.
+[Wed 12:03:39] <voip-ps>	Manu Sporny (SIP/6000-00000012) has left the conference.
+[Wed 12:03:44] <voip-ps>	Dave Lehn (SIP/6003-00000014) has left the conference.
+[Wed 12:03:44] <voip-ps>	Pindar (IAX2/diamondcard-5132) has left the conference.
+[Wed 12:03:44] <voip-ps>	Dave Longley (SIP/6002-00000015) has left the conference.
+[Wed 12:03:47] <voip-ps>	bshambaugh (SIP/107.196.157.162-00000013) has left the conference.
