@@ -634,8 +634,10 @@
            '<div><audio controls="controls" preload="none">\n' +
            '<source src="' + audio + '" type="audio/ogg" />' +
            'Warning: Your browser does not support the HTML5 audio element, ' +
-           'please upgrade.</audio></div></dd></dl>\n';
+           'please upgrade.</audio></div></dd>\n';
       }
+
+      rval += '</dl>\n';
     }
     else
     {
@@ -729,7 +731,8 @@
       'scribe': [],
       'topics': [],
       'resolutions': [],
-      'actions': []
+      'actions': [],
+      'audio': true
     };
 
     if(date) {

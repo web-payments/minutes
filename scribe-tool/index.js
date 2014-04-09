@@ -52,7 +52,6 @@ function postToWordpress(username, password, content, callback) {
     url: 'https://www.w3.org/community/webpayments/xmlrpc.php'
 //    url: 'https://manu.sporny.org/xmlrpc.php'
   });
-
   // Re-format the HTML for publication to a Wordpress blog
   var datetime = new Date(gDate);
   datetime.setHours(37);
