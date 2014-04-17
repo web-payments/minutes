@@ -1,0 +1,127 @@
+[Wed 11:04:05] <manu>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2014Apr/0116.html
+[Wed 11:04:15] <dlongley>	scribe: dlongley
+[Wed 11:05:10] <dlongley>	manu: Today, we'll be trying to organize the use cases into something we can feed into the upcoming web payments interest group, then figure out how workshop input fits in, then get volunteers for use case work. The goal is a consistent, updated use cases document for the upcoming Web Payments IG work.
+[Wed 11:05:26] <dlongley>	taaz: nope
+[Wed 11:05:40] <manu>	Topic: Organizing In-the-Field Use Cases
+[Wed 11:06:01] <manu>	https://www.w3.org/community/webpayments/wiki/WebPaymentsUseCases
+[Wed 11:06:56] <dlongley>	manu: brent has done a great job getting all these use cases documented on the wiki. There's a lot of data there, brent has started summarizing some of the information there at the top, what we're trying to here is take this list and demonstrate that these are the use cases taht are already supported by many players out there and then we want to find the most common use cases in the area, then we're taking use cases from the workshop which are more forward looking future use case sthat would be part of new standards on the web
+[Wed 11:07:03] <dlongley>	manu: brent can you talk about the current use cases you've documented?
+[Wed 11:07:13] <dlongley>	bshambaugh: Yeah, starting at the top, just going to go over the major themes/areas.
+[Wed 11:07:33] <dlongley>	bshambaugh: there's a highlights section at the beginning
+[Wed 11:08:33] <dlongley>	bshambaugh: and it splits things into APIs, developers, technologies that allow for a prepaid card, cryptocurrencies, things that are based on the bitcoin technologies, some of them seem to be very similar with the functionality, there's also tech like prepaid card you may get in a store that you then can use online, 
+[Wed 11:09:00] <dlongley>	bshambaugh: apps that makes your smartphone become lots of different credit cards, originally developed stripe technology for these credit cards
+[Wed 11:09:37] <dlongley>	bshambaugh: Take this and put it in a phone, lots of fitting legacy technologies into more technical framework, then there are several techs that rely on card readers, they may have an API, or have a card reader you attach to your phone like square so you can accept payment like that
+[Wed 11:10:42] <dlongley>	bshambaugh: then you also have things where you get some kind of number you can pay with, e-cash for example, techs that use NFC, techs that use bluetooth low energy, and using a QR-code to pay with mobiles, like starbuck's
+[Wed 11:11:56] <dlongley>	bshambaugh: starbucks is kind of a leader in the mobile payments QR/bar code payments and there's certain cases where you'll be able to pay for your items before you go to the store so you don't have to wait in line, some form of cash, some techs allow you to pay within a mobile app, and then there are several techs that emulate your card. Subscription seems to be a common use case as well.
+[Wed 11:12:16] <dlongley>	manu: go back to techs associated with your credit card image, how do those work?
+[Wed 11:12:29] <dlongley>	bshambaugh: you may take a picture of your credit card but it's in your app so you can use it as your credit card in a way
+[Wed 11:12:51] <dlongley>	bshambaugh: so for example, you can take pictures of the cards and store them, then pay using those cards.
+[Wed 11:12:58] <dlongley>	bshambaugh: that's something to look at again
+[Wed 11:13:32] <dlongley>	bshambaugh: subscription payments, set up, it continues to charge the card on a scheduled basis, there's stuff to do refunds, different options for that depending what your API is
+[Wed 11:13:49] <dlongley>	bshambaugh: There is also automatic application of discounts, and APIs to list products for sale on a site.
+[Wed 11:14:16] <dlongley>	manu: by list products you mean you can use the API and submit something to a store and your product will be listed on the store?
+[Wed 11:15:00] <dlongley>	bshambaugh: it might be as simple as listing the item on a website, let me get an example...
+[Wed 11:15:20] <bshambaugh>	https://www.2checkout.com/documentation/libraries/node/api/products/update
+[Wed 11:15:45] <dlongley>	bshambaugh: that's an example of listing products via an API.
+[Wed 11:16:04] <dlongley>	bshambaugh: so conditional payments using some pre-determined agreement.
+[Wed 11:18:05] <dlongley>	manu: So, in the future, if you could elaborate a bit more on the list products conditional payments and coupons and the rest of them in the list, it's hard to understand what the functionality provides, you can guess you can register a product with the store, but exactly ... what does the API look like and elaborate a bit, maybe a sentence or two... what it looks like is that these broad categories that you have up top with the ... a lot of these that you put each payment provider under could be reworded as use cases, the categories can be, for example, disputes within the API could be expanded to "a mechanism is provided to the customer to allow them to click a link to dispute a transaction after the transaction has occurred and that link is provided in the digital receipt at the time of sale"
+[Wed 11:18:29] <dlongley>	manu: that's something we could work with, assuming that's how balanced, paypal, stripe, work... just reword it so that it matches what they do in the most generic way
+[Wed 11:18:32] <dlongley>	manu: make sense?
+[Wed 11:18:34] <dlongley>	bshambaugh: yes
+[Wed 11:19:04] <dlongley>	manu: you've categorized each of these into generic techs and we could go further and make a generic use case, for example, for techs that let you save cards in the app, we could change that to "save a physical credit card into the application and then use that credit card information to make a payment online"
+[Wed 11:19:15] <dlongley>	manu: that could be a use case
+[Wed 11:19:37] <dlongley>	manu: the next step here might be to iterate through the broad categories at the top to transform these high level categories into a 2-4 sentence use case
+[Wed 11:19:40] <dlongley>	bshambaugh: that could be helpful
+[Wed 11:20:10] <dlongley>	manu: that's what we'll be using as input to the web payments interest/business group, they need to know that that use case is already supported by X, Y, Z payment processor, we don't have that now and if we don't then the work we're doing isn't clearly influenced by real world data
+[Wed 11:20:18] <bshambaugh>	There's also this that Natasha has updated: https://github.com/w3c-webmob/payments-use-cases
+[Wed 11:20:19] <dlongley>	manu: do you feel like these categorizations are complete or does more need to be done?
+[Wed 11:20:22] <dlongley>	bshambaugh: More needs to be done, there's a lot of data here.
+[Wed 11:20:33] <dlongley>	bshambaugh: there might be some more to look at, definitely
+[Wed 11:21:22] <dlongley>	manu: i'm trying to figure out a way that we can easily divide and conquer on this work, when we were working in the microformats community many years ago, we built an app that would let you type out features and then for each product/website you'd go through and say whether or not the feature was supported, at the end you had a big database you could run stats on, but that's a project in and of itself
+[Wed 11:22:11] <dlongley>	manu: what i'm saying is that at some point we're going to have to list all of these features in a way that allows to easily analyze the data, right now it's a big huge website, that's not a bad thing, that's just the first iteration which we need, but now we need each feature into a use case or set of use cases to figure out which features are most common
+[Wed 11:22:47] <dlongley>	manu: for example, being able to go to a website and click a pay button to pay the merchant is the biggest feature that all the apps provide, but the important thing for that use case is that you're directed to another website, it doesn't happen in the merchant website
+[Wed 11:22:53] <dlongley>	manu: from an operational/coding standpoint, that's important to note even if it is an implementation detail
+[Wed 11:23:39] <dlongley>	manu: i think it would certainly help if you just took the broad categories at the top and created use cases out of them, and saying braintree, paypal, stripe, etc. all support this use case is very useful, then we have to make another pass through and determine whether or not there are missing use cases that are fairly/broadly supported by other payments players
+[Wed 11:23:45] <dlongley>	manu: does that make sense, Brent?
+[Wed 11:23:48] <dlongley>	bshambaugh: yes
+[Wed 11:23:57] <dlongley>	manu: anything else on the high level use cases?
+[Wed 11:24:41] <dlongley>	manu: we'll be chatting with Andrew Mackie in 10 hours about this. He usually can't join these calls because he's on australian time which is the middle of the night for him right now. He's going to try and help a bit with these as well, so we should be on for that tonight
+[Wed 11:24:55] <dlongley>	manu: specifically with the web payments use cases, the ones that exist out there today, any concerns/questions before we move on?
+[Wed 11:25:03] <dlongley>	No concerns, group realizes that more work needs to be done and more categorizing and elaboration on each use case is needed.
+[Wed 11:25:21] <manu>	Topic: Organizing Web Payments Workshop Use Cases
+[Wed 11:26:01] <manu>	The use cases that came out of the Web Payments Workshop are here: http://lists.w3.org/Archives/Public/public-webpayments/2014Apr/0043.html
+[Wed 11:26:28] <dlongley>	manu: While the web payments workshop was going on, we had a person that was specifically allocated to be a use case scribe, their primary duty at the workshop was to capture use cases, to listen to people and capture the use case that the person seemed to be trying to express. When we went and cleaned up all the workshop minutes we extracted these use cases and sent and email to the mailing list on each one of these use cases
+[Wed 11:26:41] <dlongley>	manu: so i'll go down the email with those use cases to give people an idea of what's in scope and what's out of scope.
+[Wed 11:27:00] <dlongley>	manu: going back to the main outcomes of the workshop, there was a fairly big desire to work on identity, payment initiation, and digital receipt
+[Wed 11:28:36] <dlongley>	manu: so that means things like coin and loop, while very interesting, the idea that you'd put all your credit cards on a device and be able to switch It's neat but doesn't have all that much to do with web payments, other than being able to express using a card who your payment provider is, a lot of the hardware based stuff seems to be out of scope, the hardware based stuff seems to supprot the payments process, when we're talk	ing specifically about web protocol-level stuff. While 2-factor auth is very important for security purposes and 2-factor will play into the payments stuff, this group probably won't be working on it other than liaising with these groups to ensure you can do 2-factor on a payment if you need to.
+[Wed 11:29:04] <dlongley>	manu: we have to take these use cases and say there are a number of sites that support some kind of hardware-based payment today, but that is more than likely not what the web payments group will be working on
+[Wed 11:29:30] <dlongley>	manu: i'm going to go down the list and try and say if they are in scope for this first payment iteration document
+[Wed 11:29:46] <dlongley>	manu: each topic is listed before the use case to give some context about the use case
+[Wed 11:29:52] <dlongley>	manu: so, for example - Topic: Alternative Currencies - Ven and HubCulture
+[Wed 11:30:01] <dlongley>	manu: That would have something like this: Use Case: Bots that execute financial operations on behalf of users.
+[Wed 11:30:11] <dlongley>	manu: this is about algorithmic trading/purchasing
+[Wed 11:30:25] <dlongley>	manu: we're laying the ground work for that to happen, but the APIs for how to interface with or manage these bots are far out of scope for the first iteration
+[Wed 11:30:30] <dlongley>	manu: Use Case: Personal vault can host information/assets and issue ids
+[Wed 11:30:31] <dlongley>	manu: this is useful for various things (e.g. payments)
+[Wed 11:30:58] <dlongley>	manu: that's in scope, the idea of a digital wallet was something that people were very interested in, and having a personal vault for your identity would be important
+[Wed 11:31:10] <dlongley>	manu: that's an example that's certainly in scope for the first iteration based on output from the workshop
+[Wed 11:31:14] <dlongley>	manu: Use Case: Managed access to personal identity/attributes as economically valueable things.
+[Wed 11:31:14] <dlongley>	manu: This was about being able to store valuable assets (including credentials) in a payment system
+[Wed 11:31:18] <dlongley>	manu: that's also in scope
+[Wed 11:31:36] <dlongley>	manu: hopefully that outlines how we'll determine what's in scope/what isn't
+[Wed 11:31:38] <dlongley>	manu: any questions?
+[Wed 11:31:53] <dlongley>	bshambaugh: the bots, when you're using linked data, isn't that kind of part of the use case? Linked Data?
+[Wed 11:32:26] <dlongley>	manu: we're building a foundation for the bot case w/ Linked Data, but saying we'll write a specification that details how you do automated (bot-based) purchasing is out of scope
+[Wed 11:33:01] <dlongley>	manu: we're getting into a space where bots could buy and sell for us on our behalf, but i don't think we'll be creating a spec to standardize that in the next 2-3 years because there's no groundwork there. We're building the groundwork.
+[Wed 11:33:25] <dlongley>	bshambaugh: could you be using linked data so you could keep track of all your transactions on your different sites, so you could find out exactly how much tax you need to pay this year
+[Wed 11:33:50] <dlongley>	manu: yes, a bot could keep track of your buying/selling and because there's all that linked data that says there's sales that happened on ebay and where it was sold, which state sold/bought, etc. then it could file your taxes for you
+[Wed 11:33:57] <dlongley>	manu: but we're not going to write a spec for that yet
+[Wed 11:34:17] <dlongley>	manu: so what we need to do is put these use cases into buckets: "identity", "initiation of payment", and "digital receipt"
+[Wed 11:34:38] <dlongley>	manu: those seem to be the buckets where there was rough consensus, if use cases don't fit into the buckets then they are either unknown or out of scope for the first iteration
+[Wed 11:35:26] <dlongley>	manu: there might be a fourth category "unknown" where we don't know how this stuff will fit into what we want to do, and we put those use cases into that and the web payments interest/business group can figure out where those fit
+[Wed 11:35:58] <dlongley>	bshambaugh: i'm looking at the list, URI scheme for payments?
+[Wed 11:36:42] <dlongley>	manu: yes, yandex was saying it would be nice if there was a URL to say who you were paying, etc., just a payment link, which we actually wrote a spec for a while ago, and we already did the work on that and found out that you need to actually work on the protocol not just the link
+[Wed 11:37:09] <dlongley>	manu: there are a lot of these use cases, there were a ton and we don't have the time to go through it on the call and other people will need to put them into those three buckets so we can talk about them in more detail
+[Wed 11:37:18] <dlongley>	manu: anything else on this particular agenda item?
+[Wed 11:37:47] <dlongley>	bshambaugh: who will work on this? just start working on it and put things into buckets and other people will jump in and discuss?
+[Wed 11:38:07] <dlongley>	manu: yeah, if you can start that it would be great, i was going to jump in and work on it, if you can get it started and put it on a separate wiki that would be helpful
+[Wed 11:38:25] <dlongley>	manu: to store digital identity credentials online, hubculture, ven supports that
+[Wed 11:39:26] <dlongley>	manu: since you have a lot of this in your head already it would help if you started this ... create a wiki page and then start categorizing into the 3 categories ... there are actually 5: "identity", "payment initiation", "digital receipts", "we don't know where this goes, but it's in scope", and "this is out of scope for the next 3 years, etc"
+[Wed 11:39:45] <dlongley>	manu: i could try just setting up that page today, i'll do that
+[Wed 11:40:02] <manu>	ACTION: Manu to create a page for broad categories for use cases and transfer mailing list use cases to that wiki page.
+[Wed 11:40:10] <dlongley>	manu: i'll create the broad categories and start classifying a couple of them and then you can classify the rest, would that work for you, brent?
+[Wed 11:40:11] <dlongley>	bshambaugh: sure
+[Wed 11:40:16] <manu>	Topic: Use Cases Organizers/Volunteers
+[Wed 11:41:13] <dlongley>	manu: i will help out where i can here at a high level, Andrew Mackie and Brent may also help, once we have them in pretty good shape we could .... we've got a use cases document that we've had for a very long time, it was one of the first docs we worked on
+[Wed 11:41:18] <dlongley>	bshambaugh: would that be a template?
+[Wed 11:41:19] <manu>	https://web-payments.org/specs/source/use-cases/
+[Wed 11:41:23] <dlongley>	bshambaugh: so it's more readable?
+[Wed 11:41:41] <dlongley>	manu: i put the link to the use cases doc in IRC, we want to list what the use case is and then list what the requirements are to achieve that use case
+[Wed 11:42:31] <dlongley>	manu: and the reason these use cases and requirements are so important is because we use that to determine if the tech we've created applies to 80% of the use cases then we're in good shape, if it's 20% then we've got a problem and we need to cut use cases down or reconsider what the spec is capable of doing
+[Wed 11:43:23] <dlongley>	manu: for right now, brent, andrew, and myself will try to look at the use cases and boil them down, i think maybe we could pull in natasha from time to time to look at the use cases, but right now it looks like we need to make a first pass over it and make it a manageable set of use cases there are too many right now
+[Wed 11:43:52] <dlongley>	manu: when people look at all of those use cases they have a hard time figuring out which ones we're working on and which we will push off to another time, so we need a much smaller list for those 3 buckets
+[Wed 11:44:42] <dlongley>	manu: i would imagine that we'd go through 3-4 iterations here, first was what you did brent, surveying what's out in the field and getting input from web payments workshop, second iteration is categorizing into those 5 buckets, and then we can try and combine use cases to be more succinct in what we're trying to achieve
+[Wed 11:44:46] *	melvster has quit (Ping timeout: 265 seconds)
+[Wed 11:45:09] <bshambaugh>	https://github.com/w3c-webmob/payments-use-cases  --- how to relate this ?
+[Wed 11:45:12] <dlongley>	manu: we may even want to rate (during the 4th iteration) them as the level of desire for the feature, is it highly desired or would people not mind it not being in the first iteration, etc.
+[Wed 11:45:29] <dlongley>	bshambaugh: this was updated quite recently after the workshop (link in IRC) natasha and others were working on this
+[Wed 11:45:40] <dlongley>	bshambaugh: they have their own kind of use cases going on
+[Wed 11:45:46] <dlongley>	manu: yeah, we'll want to integrate that as well
+[Wed 11:45:55] <dlongley>	bshambaugh: i wasn't sure where that was coming from, from the workshop or what
+[Wed 11:46:10] <dlongley>	bshambaugh: maybe what i was producing was a little confusing and Natasha wanted to clean it up a bit
+[Wed 11:46:19] <dlongley>	manu: that's a pretty good document -- what natasha has
+[Wed 11:46:42] <dlongley>	manu: we're probably going to want to pull all of these in as well
+[Wed 11:47:01] <dlongley>	manu: they may or may not have better categories
+[Wed 11:47:04] *	melvster (~melvster@2a00:1028:96c6:214e:dd73:6b24:f6cd:516c) has joined #payswarm
+[Wed 11:47:18] <dlongley>	manu: they've marked mobile-specific ones
+[Wed 11:47:50] <dlongley>	manu: we're going to want to pull these in as well, just at least to make sure that we've got it clearly ... so we've got these use cases listed somewhere
+[Wed 11:47:59] <dlongley>	manu: this is not an easy task to pull all this information in and put it together
+[Wed 11:48:16] <dlongley>	manu: ok, the final thing that we have here is the use cases output document
+[Wed 11:48:20] <manu>	Topic: Use Cases Output Document
+[Wed 11:49:29] <dlongley>	manu: what we're shooting for is a use cases document ... and it may be that we're talking about three different use cases docs, identity, payment initiation, digital receipt, but we'll have them all in one document with 3 sections, then we'll put each use case in those sections and then we'll have a section at the very end for future use cases and that ... if we can give that to the Web Payments IG then they can determine whether or not ... they can focus on that and then whittle that list down to what they think is achievable in the first iteration of the technology
+[Wed 11:49:43] <dlongley>	manu: anything else about what our output should be as far as use cases are concerned?
+[Wed 11:50:25] <dlongley>	manu: we've got about maybe a month to get this stuff together, it's not a lot of time, if it's half-formed we can still hand it off to the IG, but it's important that we have something for them to start with rather than them just having all this raw data
+[Wed 11:50:39] <dlongley>	bshambaugh: i want to make sure we don't throw anything out
+[Wed 11:51:39] <dlongley>	manu: there's going to be an aspect of that where we throw out a use case that should have been in there, but someone will hopefully mention that and we'll get it back in, we don't want to delete the data ... use cases would just fall into the future list (things to achieve after 3-4 years) and people can scan that list and help decide if we need to move them back into more immediate use cases to cover
+[Wed 11:51:59] <dlongley>	manu: anything else for the call today?
+[Wed 11:52:17] <dlongley>	manu: Virginie and Wendy couldn't make it to discuss OWASP, we'll shift that to another telecon
