@@ -1,0 +1,114 @@
+[Wed 11:04:04] <manu>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2014Apr/0146.html
+[Wed 11:04:23] <dlongley>	scribe: dlongley
+[Wed 11:05:17] <dlongley>	manu: any updates or changes to the agenda?
+[Wed 11:05:37] <dlongley>	bshambaugh: i may throw something in at the end about a conference (internet identity workshop)
+[Wed 11:05:43] <dlongley>	manu: let's do that second on the agenda
+[Wed 11:05:37] <manu>	Topic: Meetings in Silicon Valley Last Week
+[Wed 11:07:02] <dlongley>	manu: I was in Silicon Valley/bay area last week and met with a number of payments companies/large tech companies, to propose a way forward for the web payments work, overall the reception was quite positive. In general after the web payments workshop happened, a number of the orgs were concerned that there wasn't really any consensus/direction that the work should proceed in, a lot of the orgs with those positions hadn't participated in a w3c workshop, tons of use cases provided not clear which to work on, a basis for the discussion we had was the blog post and the discussion on the mailing list
+[Wed 11:06:57] <manu>	We mostly discussed stuff in this blog post: http://manu.sporny.org/2014/dawn-of-web-payments/
+[Wed 11:08:08] <dlongley>	manu: the idea here is that there are three things that we could focus on identity, payment initiation, digital receipts... as we predicted last week, digital receipts are the least controversial, many of the people we spoke with thought that, we can definitely work on that, payment initiation was more of a toss up, meaning that people didn't seem to have an opinion on it, they though it would be fine to standardize, but they didn't know what it would look like, and after we introduced the topic to most of them they didn't have any strong feelings that we shouldn't do that
+[Wed 11:08:29] <dlongley>	manu: the third thing we discussed was identity, which was someway controversial, meaning that we had put forth a proposal (Identity Credentials)
+[Wed 11:08:34] <manu>	http://manu.sporny.org/2014/credential-based-login/
+[Wed 11:10:03] <dlongley>	manu: the credential-based login mechanism was a proposal for something we could use for KYC, anti-money laundering, login on the web, reporting, etc. and specifically the IdC spec is set up so that it can integrate with mozilla persona, openID connect, or be its own login mechanism, some large corps said they'd have a problem with it competing with openID connect, and they wanted it to integrate nicely rather than provide another login mechanism, there were some orgs that did feel a more decentralized login mechanism on the web and openID connect was not the best approach but this was a minority opinion
+[Wed 11:10:19] <dlongley>	manu: so we're going to change tactics a bit to make sure we can get this working with OpenID Connect
+[Wed 11:10:40] <dlongley>	manu: we're still waiting on w3c to publish the workshop result, it should be at some point near the end of this week, and then we'll find out when the actual interest group will start up
+[Wed 11:10:50] <dlongley>	manu: any questions?
+[Wed 11:10:51] <dlongley>	none, group moves on.
+[Wed 11:11:06] <manu>	Topic: Internet Identity Workshop
+[Wed 11:11:17] <bshambaugh>	http://www.internetidentityworkshop.com/
+[Wed 11:11:47] <dlongley>	manu: could you give a quick run down out of what you hope to get out of the workshop?
+[Wed 11:12:13] <dlongley>	bshambaugh: i was working on the use cases and started getting concerned about the identity aspect. I was also talking with Doc Searls, who runs the Internet Identity Workshop.
+[Wed 11:12:51] <dlongley>	manu: this year they're focusing privacy, surveillance, as well as payments
+[Wed 11:13:40] <dlongley>	manu: if you can point them to Identity Credentials that would be good, with respect to payments and privacy, we're putting together use cases for payments+identity, and if people are interested in identity then they should be interested in the work the web payments CG is doing, especially since w3c is planning on launching further work
+[Wed 11:13:54] <dlongley>	manu: brent, anything else you're thinking of doing there?
+[Wed 11:14:08] <dlongley>	bshambaugh: my view was to get a better understanding of what you're doing with identity and then talk about it there
+[Wed 11:14:09] <dlongley>	manu: ok
+[Wed 11:14:25] <dlongley>	manu: anything else on the internet identity workshop?
+[Wed 11:14:54] <dlongley>	bshambaugh: is there anything in particular i should be saying? do you want something specific towards payments? or just plug something that sounds close
+[Wed 11:15:15] <dlongley>	manu: you might want to say "these are the use cases we have going into identity and web payments, is there anything else people feel we should address as the first iteration of this technology"
+[Wed 11:15:32] <dlongley>	manu: "this is the input we had from the web payments workshop w/respect to identity+payments, anything else to consider?"
+[Wed 11:15:39] <dlongley>	bshambaugh: so this is stuff from the wiki?
+[Wed 11:15:41] <dlongley>	manu: yes
+[Wed 11:15:50] <dlongley>	bshambaugh: that's what i should bring to start the conversation?
+[Wed 11:15:56] <dlongley>	manu: i believe so, let me get a link from the wiki
+[Wed 11:16:31] <dlongley>	manu: ideally, you would also have your stuff, you'd have the use cases you've been doing integrated into that document, but i don't know if that's going to be possible in time for IIW #18
+[Wed 11:16:59] <manu>	https://www.w3.org/community/webpayments/wiki/CategorizedWebPaymentsUseCases
+[Wed 11:17:15] <dlongley>	manu: if you could take those identity use cases in there and get some feedback, that would be great
+[Wed 11:17:31] <dlongley>	manu: and then ask if they have any other use cases we should consider for identity and web payments
+[Wed 11:17:37] <dlongley>	bshambaugh: is there a best way to present this?
+[Wed 11:19:45] <dlongley>	manu: it's an unconference, so you'd have to propose a session, either find a session where people are talking about this stuff, or you'd have to present/write identity and payments up on the board and pick some time to discuss this stuff, all depends on how comfortable you feel with leading one of those sessions, if you're uncomfortable, you could join a session that seems like it would be related to payments/interested in payments and tell them that the web payments CG is working on this stuff and that we have to solve the identity problem for payments and we had a successful workshop on payments and more than likely there will be some work starting on payments in w3c shortly so we have to get people interested in solving identity on the web involved in that group, then give everyone the link to the web payments workshop the part on identity, give people a link to credential-based login on my blog, give people a link to the identity credentials spec, give people a link to the identity use cases on the wiki link (specifically identity portion)
+[Wed 11:19:52] <dlongley>	manu: we have a join link for the CG, give them that
+[Wed 11:20:00] <manu>	You should share these links: 
+[Wed 11:20:23] <manu>	http://www.w3.org/2013/10/payments/minutes/2014-03-25-s6/
+[Wed 11:20:29] <manu>	https://www.w3.org/community/webpayments/wiki/CategorizedWebPaymentsUseCases
+[Wed 11:20:41] <manu>	http://manu.sporny.org/2014/credential-based-login/
+[Wed 11:20:50] <manu>	https://web-payments.org/specs/source/identity-credentials/
+[Wed 11:20:56] <manu>	https://web-payments.org/join
+[Wed 11:21:31] <dlongley>	manu: that's the stuff most pertinent to the identity folks that will be there, tell them that we're actively working on this problem and it is more than likely to end up in some kind of w3c work, if they want to have an impact, please join the group
+[Wed 11:21:36] <dlongley>	bshambaugh: makes sense
+[Wed 11:21:58] <dlongley>	manu: they are fairly chaotic meetings, so you never really know what to expect, other than they do have payments listed there as something that is interesting to folks
+[Wed 11:22:14] <dlongley>	bshambaugh: would leading a session there require me to be an expert or just have an interest?
+[Wed 11:23:01] <dlongley>	manu: the second, but you have to have a fairly structured agenda, like with how we run these calls we always have an agenda, if you want to lead a session, create an agenda and spend some time working on what you want to get out of it, then you say "these are the things we want to talk about, give a one paragraph overview" then hand it over to the group to discuss that
+[Wed 11:23:27] <dlongley>	bshambaugh: i don't want to dominate what they're doing, i just want to give exposure for what we're doing here.
+[Wed 11:23:55] <dlongley>	manu: right, and the ideal way to do that is to have your own session, and say "for those interested in the overlap between identity and payments come to this session" and just say what the agenda will be
+[Wed 11:24:03] <dlongley>	manu: we can work with you on the agenda to make sure it's fairly clear
+[Wed 11:24:14] <dlongley>	bshambaugh: happens may 6th-8th
+[Wed 11:24:32] <dlongley>	manu: ok, we've got plenty of time, the next one after that is october, which overlaps w/ W3C TPAC in San Jose
+[Wed 11:25:00] <dlongley>	manu: ok, we'll try and help you create an unconference session for the internet identity workshop, and then you'll try and run a session, sound good?
+[Wed 11:25:04] <dlongley>	bshambaugh: yeah, sounds good
+[Wed 11:25:18] <dlongley>	manu: thanks for going out there, that will be very helpful to get people knowledgeable about the work going on here
+[Wed 11:25:29] <manu>	Topic: Digest Class to Use ni:// URI Scheme
+[Wed 11:25:42] <manu>	http://lists.w3.org/Archives/Public/public-webpayments/2014Apr/0135.html
+[Wed 11:26:47] <dlongley>	manu: Melvin suggested switching to the RFC 6920 for digests 
+[Wed 11:27:00] <dlongley>	manu: there's a well known URL scheme for digest URLs
+[Wed 11:27:06] <manu>	For example - ni:///sha-256-32;f4OxZQ?ct=text/plain
+[Wed 11:27:26] <dlongley>	manu: should we switch to that? What we have right now looks like this:
+[Wed 11:27:33] <manu>	{
+[Wed 11:27:33] <manu>	  "@context": "https://w3id.org/security/v1",
+[Wed 11:27:33] <manu>	  "@type": "Digest",
+[Wed 11:27:33] <manu>	  "digestAlgorithm": "http://www.w3.org/2000/09/xmldsig#sha1",
+[Wed 11:27:33] <manu>	  "digestValue": "981ec496092bf6ee18d6255d96069b528633268b"
+[Wed 11:27:33] <manu>	}
+[Wed 11:28:27] <manu>	dlongley: I think this might end up  being more difficult for web developers to use if they try to integrate w/ that RFC, doing microprocessing of the URL might be less developer friendly.
+[Wed 11:29:01] <manu>	dlongley: Maybe we could just include the ID and those properties about that ID. You could use either approach. If you use RFC6920, the author could include that as the identifier for the digest... but they could also include the digest algorithm and value.
+[Wed 11:29:32] <manu>	So, you're saying that we could have something like this: "@id": "ni:///sha-256-32;f4OxZQ?ct=text/plain" ?
+[Wed 11:29:45] <manu>	dlongley: If you try to dereference that URL, what sort of Linked Data you get back.
+[Wed 11:30:19] <manu>	dlongley: obviously, you want to get back JSON-LD that had some information. Maybe we want another property in there, the niUrl property? It might be incorrect to have the "@id" be the ni:/// URL.
+[Wed 11:30:48] <manu>	taaz: Parsing microsyntaxes is annoying, if you need to do it. It's a general URL, so you could probably use a general URL processor.
+[Wed 11:31:05] <manu>	taaz: No strong opinion, there are some places where we're using URIs that are useful, don't know if this is one of those cases.
+[Wed 11:31:27] <manu>	dlongley: It may make certain querying cases more difficult, if you're not using a direct HTTP dereference, it's strange.
+[Wed 11:31:32] <manu>	taaz: Could you elaborate?
+[Wed 11:32:41] <manu>	dlongley: If you want to get a digest value, you want to frame the data out in a way to get the digest value out - it becomes difficult to do, you're looking for very specific URLs. We don't know enough about this RFC to make an informed enough decision at this point, but I'm skeptical of it making things easier. I can see how having that information would be helpful for people using RFC6920, we could just add something for now. 
+[Wed 11:33:17] <manu>	dlongley: It becomes something new that you have to write new code for, rather than just extracting the value and checking it against the value. You have to understand how to parse the ni: URI schemes, how to communicate with it, etc. There's more stuff you have to do with it all of a sudden.
+[Wed 11:34:13] <manu>	taaz: Don't know if it's normalized to some form or not... don't know if the URL string is normalized, if it is, it's useful for using it as an index. Use it as a unique key.
+[Wed 11:35:03] <manu>	dlongley: The purpose of the RFC is to create a way to identify a particular thing using a hash, you'd be identifying the digest object as a thing, vs. what the digest is a digest for. If you had a document that had a digest property in it... hmm, thinking.
+[Wed 11:36:34] <manu>	dlongley: The way the spec is written, it seems like you'd change the IRI to be the hash for the document, it's not that the digest object attached to the graph would have the identifier. It doesn't seem like the modelling is correct, changing the identifier would also mess up the signature mechanism. If you change the identifier, it would change the graph. The identifier itself is a part of the hash of the document. There's a self-referencing problem that exists if we use the spec in the way it's intended. We're not looking to name the digest object, we're trying to name the document itself. The modeling seems broken.
+[Wed 11:37:01] <manu>	manu: We need to talk to Melvin about this more.
+[Wed 11:37:57] <manu>	dlongley: It might be good to use this as a part of the information about the document, you're signing a particular graph at a point of time/history. This URL identifies that graph. It might be useful for signed named graphs... you could use RFC-6920 to assign a name to named graphs, we didn't have a way to do this before. Now we might be able to use this.
+[Wed 11:38:26] <manu>	dlongley: So, if you wanted to, you could name the graph using the ni:// scheme... so the name is the hash, the hash is the hash on the actual document that's signed.
+[Wed 11:38:44] <manu>	so, the graph name would become "@id": "ni:///sha-256;UyaQV-Ev4rdLoHyJJWCi11OHfrYv9E1aGQAlMO2X_-Q"
+[Wed 11:39:04] <manu>	Is the .well-known scheme useful in RFC6920?
+[Wed 11:39:39] <manu>	dlongley: Not really, since JSON-LD just uses the URL for the information... you don't need a ni:// scheme. The only place it's useful is when you don't have a Linked Data system. If you have a Linked Data system, you don't need the .well-known mechanism.
+[Wed 11:40:11] <manu>	dlongley: I don't know how useful that is to do. If everyone is using Linked Data, there is no need for .well-known. In order to use that, you need to know the authority URL. There is no purpose for having well known.
+[Wed 11:40:44] <manu>	manu: So, what's the final thing that we think?
+[Wed 11:41:08] <manu>	dlongley: What does this mechanism bring to the table? If it passes that test, should we use it to replace what we have?
+[Wed 11:41:37] <manu>	dlongley: It doesn't seem like it integrates well with Linked Data, it seems like it's a parallel (inferior) mechanism. It could have use for named graphs.
+[Wed 11:41:47] <manu>	Topic: Range of Nonce
+[Wed 11:42:01] <manu>	http://lists.w3.org/Archives/Public/public-webpayments/2014Apr/0014.html
+[Wed 11:45:30] <manu>	dlongley: When you have code in an app, there is a context - it's deterministic in the code that you're writing. You would know, implicitly, how nonce is used because your context says so.
+[Wed 11:46:37] <manu>	dlongley: It might get a little more complicated if your type information in the context doesn't match up.
+[Wed 11:46:51] <manu>	taaz: This seems like it would make it more complicated to have multiple allowable ranges.
+[Wed 11:47:24] <manu>	dlongley: ultimately, whatever you're communicating with, for the majority of apps, you're going to be using nonce in only one way. You can put the nonce into a context for your application and things will work properly unless they've messed up the data.
+[Wed 11:47:46] <manu>	dlongley: if you have a complex app that could use strings, base64, or hexBinary, your code will have to become more complex to deal with the problem.
+[Wed 11:48:50] <manu>	dlongley: If we open up the range, we have to do that. I believe that we have a signatureValue property that we have, and I think that's just an xsd:string. In the Secure Messaging spec, we say that the string is a base64-encoded string. We specify what it should be in the spec. Your spec can say what the encoding should be for signature values, so the code doesn't have to deal w/ other applications that have nothing to do w/ what you're trying to do.
+[Wed 11:49:26] <manu>	dlongley: if you include the encoding information in the vocabulary, then every application gets more complex. If you include the value in the specification, then only the applications that need to interoperate care.
+[Wed 11:49:45] <manu>	dlongley: So the tradeoff is - put all the information in the Linked Data and make processing more complex, but generalized.
+[Wed 11:52:56] <manu>	dlongley: or, you put the information in the spec, and make applications easier to write, but now the application needs to understand the spec as well.
+[Wed 11:53:14] <manu>	manu: I don't think we want to head towards a future where the app needs to understand a spec to be able to decode binary values.
+[Wed 11:55:26] <manu>	dlongley: There is a certain amount of leakage into legacy applications for JSON-LD values. Everything we've designed to this point, you could always view as JSON. This means that the developer might see strange xsd: values.
+[Wed 11:55:57] <manu>	taaz: URL-safe mechanism?
+[Wed 11:56:07] <manu>	dlongley: We have to make sure the xsd: one uses the correct encoding.
+[Wed 11:58:18] <manu>	manu: Ok, so the proposal is to support xsd:base64Binary and xsd:hexBinary - do not use xsd:string because you have no idea what the encoding is.
+[Wed 11:58:31] <manu>	dlongley: xsd:base64Binary is not URL-safe.
+[Wed 12:01:05] <manu>	dlongley: Let's just do hexBinary for the nonce. For the signature, we will probably use xsd:base64Binary.
+[Wed 12:01:12] <manu>	dlongley: non-URL safe.
