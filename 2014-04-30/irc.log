@@ -1,0 +1,175 @@
+[Wed 11:04:01] <voip-ps>	Dave Longley (SIP/6002-0000007a) is in the conference.
+[Wed 11:04:01] <voip-ps>	Dave Lehn (SIP/6003-0000007b) is in the conference.
+[Wed 11:04:01] <voip-ps>	Manu Sporny (SIP/6000-0000007c) is in the conference.
+[Wed 11:04:01] <voip-ps>	Manu Sporny (SIP/6000-0000007c) has joined the conference.
+[Wed 11:04:14] <voip-ps>	bshambaugh (SIP/107.196.151.128-0000007d) has joined the conference.
+[Wed 11:04:41] <m4nu>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2014Apr/0195.html
+[Wed 11:04:55] <dlongley>	scribe: dlongley
+[Wed 11:05:50] <dlongley>	m4nu: we had a request to add something to the agenda; Tim Holborn wanted to add something about gathering user stories, but unfortunately, it's the middle of the night where he is, but maybe we could talk about his request at a very high level before we talk about the use cases.
+[Wed 11:05:59] <m4nu>	Topic: Graph Signatures Vocabulary
+[Wed 11:06:07] <m4nu>	http://lists.w3.org/Archives/Public/public-webpayments/2014Apr/0109.html
+[Wed 11:06:09] <dlongley>	m4nu: melvin raised a question on the mailing list a while ago.
+[Wed 11:07:23] <dlongley>	m4nu: he needs to be able to digitally-sign some information in a different way, specifically, he wants to use an ECDSA-256 curve key to digitally sign JSON-LD information, and he thought he could just use the GraphSignature2012, but the spec for that assumes that you're using RSA and he wants to use different parameters for the signature
+[Wed 11:07:38] <dlongley>	m4nu: the nice thing about the spec is that it lets you use a different signature mechanism, but he was wondering how to specify the parameters as Linked Data.
+[Wed 11:07:53] <dlongley>	m4nu: so we were wondering if we should have a different vocabulary for signatures
+[Wed 11:07:55] <dlongley>	m4nu: that's the open question
+[Wed 11:08:34] <m4nu>	dlongley: We should probably have this in a different vocabulary, we could keep the security vocab a little cleaner if we did that.
+[Wed 11:08:54] <m4nu>	dlongley: Of course, we would like to minimize the number of signature mechanisms, so that implementations aren't complicated.
+[Wed 11:09:32] <m4nu>	m4nu: The URL might change.
+[Wed 11:09:39] <m4nu>	m4nu: which would break backwards compatability.
+[Wed 11:09:41] <dlongley>	m4nu: this would affect the URL for the graph signature would change
+[Wed 11:09:54] <m4nu>	dlongley: We could keep it in the security spec for backwards compatability.
+[Wed 11:10:57] <dlongley>	m4nu: we have some deployment with GraphSignature2012, but it's not too much of a big deal
+[Wed 11:11:42] <dlongley>	m4nu: melvin's system is highly experimental, so the question is whether or not we should put highly experimental things into here... so should we add things to the signature vocabulary as people need them
+[Wed 11:11:48] <dlongley>	m4nu: or only add if they are standards track
+[Wed 11:12:44] <m4nu>	dlongley: For experimental things, you can always use the full URL - you could invent names or a prefix for it. It doesn't have to go in the official document, but the implementations would work if they understood the URL for the specific type of signature that's being created. That's probably the way we should go with that.
+[Wed 11:13:00] <m4nu>	m4nu: So, use the full URL for now?
+[Wed 11:13:37] <m4nu>	dlongley: We should probably not put it into the official spec if it's still experimental. Melvin should probably just use a full URL.
+[Wed 11:14:08] <m4nu>	dlongley: He can use whatever he wants for the URL, and it probably shouldn't point to the signature algorithms vocabulary.
+[Wed 11:14:31] <m4nu>	m4nu: so, should we create it?
+[Wed 11:14:43] <dlongley>	taaz: does IETF specify all of the things we need for this?
+[Wed 11:14:55] <dlongley>	taaz: they have URNs for them?
+[Wed 11:15:04] <melvster>	sounds good to me :)
+[Wed 11:15:11] <dlongley>	m4nu: i think they just have a registry, i don't think i saw that the last time i looked, we need a URL
+[Wed 11:15:14] <m4nu>	taaz: Out of curiosity, does the IETF thing specify the algorithms already?
+[Wed 11:15:20] <dlongley>	m4nu: if they have it we should use it
+[Wed 11:15:21] <melvster>	yes, my system is experimental ... ill be testing over the next year i think
+[Wed 11:15:46] <melvster>	openssl specifies a list of algorithms iirc
+[Wed 11:16:16] <dlongley>	m4nu: if the IETF spec specifies URLs or URNs we should use them, we need an identifier
+[Wed 11:16:22] <dlongley>	m4nu: we should create a signatures vocab for these
+[Wed 11:16:32] <dlongley>	m4nu: for now it will just have two entries, it won't take long to set up and start using
+[Wed 11:16:39] <dlongley>	m4nu: any other thoughts on that?
+[Wed 11:17:37] <dlongley>	bshambaugh: there are bitcoin URIs defined somewhere
+[Wed 11:17:59] <bshambaugh>	http://sourceforge.net/p/bitcoin/mailman/bitcoin-development/?viewmonth=201403&viewday=6
+[Wed 11:18:05] <dlongley>	m4nu: if you're talking about bitcoin URIs for a particular type of signature we can use that, otherwise it may just have more to do with specific URIs for bitcoin
+[Wed 11:19:26] <dlongley>	https://github.com/bitcoin/bips/blob/master/bip-0021.mediawiki
+[Wed 11:19:28] <bshambaugh>	https://en.bitcoin.it/wiki/BIP_0021
+[Wed 11:20:00] <dlongley>	dlongley: yeah, these are URIs for bitcoin addresses
+[Wed 11:20:17] <taaz>	http://tools.ietf.org/html/draft-ietf-jose-json-web-algorithms-25
+[Wed 11:20:24] <taaz>	short strings there
+[Wed 11:20:42] <dlongley>	m4nu: yeah, so that's the problem, the JOSE spec just uses strings
+[Wed 11:20:57] <dlongley>	taaz: i thought the xmpp people has a URN scheme too, but i can't find the reference right now
+[Wed 11:21:21] <dlongley>	m4nu: here's how we'd probably do it, we'd specify the URLs in the signature vocabulary and point to the JOSE spec to indicate that's what we're talking about
+[Wed 11:21:26] <dlongley>	m4nu: for example, The MelvinSignature2014 algorithm uses the ES256 algorithm as defined here: http://tools.ietf.org/html/draft-ietf-jose-json-web-algorithms-25#appendix-A.1
+[Wed 11:21:59] <dlongley>	m4nu: i think we did that in a couple of other specs, does that sound like an acceptable plan?
+[Wed 11:22:23] <melvster>	web crypto API also has a list of algorithms
+[Wed 11:22:32] <dlongley>	m4nu: Problem w/ Web Crypto API is that none of them are URLs. XML DSIG does have URLs, that's what we use right now. ok, we can just use those XML DSIG URLs maybe ... if everything we need is there
+[Wed 11:22:47] <melvster>	http://www.w3.org/TR/2014/WD-WebCryptoAPI-20140325/#algorithms
+[Wed 11:24:42] <dlongley>	m4nu: the WebCrypto API isn't a recommendation yet, so it may be problematic to point at it
+[Wed 11:24:47] <dlongley>	m4nu: any concerns about the plan?
+[Wed 11:24:47] <dlongley>	No concerns expressed by the group.
+[Wed 11:24:56] <dlongley>	m4nu: ok, moving on
+[Wed 11:25:22] <m4nu>	Topic: Tim Holborn Request for User Stories
+[Wed 11:25:45] <m4nu>	http://lists.w3.org/Archives/Public/public-webpayments/2014Apr/0197.html
+[Wed 11:26:09] <dlongley>	m4nu: on the mailing list, Tim said he thinks we need some user stories... the question i have is "What's the difference between a user story and a use case"
+[Wed 11:26:17] <dlongley>	m4nu: the use cases are a single line summary of a user story
+[Wed 11:26:34] <dlongley>	m4nu: once we figure out each use case we'll have a 1-2 paragraph user story to expand upon the one liner.
+[Wed 11:27:12] <dlongley>	m4nu: with the use cases we have today, we want to decide if we believe they are in/out of scope, then we'd hand them off to as many people as we can in the Web Payments CG to write a 1-2 paragraph story about what the motivation for the use case is
+[Wed 11:27:12] <bshambaugh>	https://web-payments.org/specs/source/use-cases/ <--- i.e. Lars and Jude?
+[Wed 11:27:43] <m4nu>	This is a user story: https://web-payments.org/specs/source/use-cases/#simple-payment-links
+[Wed 11:28:05] *	mediaprophet (~mediaprop@124-149-121-133.dyn.iinet.net.au) has joined #payswarm
+[Wed 11:28:39] <dlongley>	m4nu: i think that's what we're shooting for and that's at the top there
+[Wed 11:28:47] <dlongley>	m4nu: any other thoughts on that?
+[Wed 11:29:16] <m4nu>	dlongley: That's a generic user story, a more detailed representation of the use case. It makes it more obvious about what we're trying to support.
+[Wed 11:29:48] <m4nu>	dlongley: He could have said that he wants "authentic" use cases, but that's what we have now, we've got use cases from humans so I think we want to do what Tim's suggesting.
+[Wed 11:30:15] <dlongley>	bshambaugh: what does he mean by "engagement by what webwewant.org?"
+[Wed 11:30:18] <mediaprophet>	Hey guys, I just got pinged about this, joining the call via IRC.
+[Wed 11:31:36] <dlongley>	m4nu: "webwewant.org" is about making the web about a fundamental human right, etc. and the question is how we'd take that movement and direct it at this web payments stuff, but i think tim would have to propose something there, the user stories are elaborations of each use case, etc.
+[Wed 11:32:31] <mediaprophet>	my concern was that some members may not have enough software development lifecycle / related experience to consider all the facets relating to a use-case.
+[Wed 11:32:54] <mediaprophet>	therein; the use-stories (meaning, their more contextual) might help flesh that out, and find things we might be missing
+[Wed 11:33:10] *	m4nu mediaprophet are you Tim H. ?
+[Wed 11:33:55] <mediaprophet>	so, your in the US, others in other ‘common-law’ countries
+[Wed 11:34:04] <dlongley>	m4nu: so i think Tim is agreeing, he wants us to spell out what each use case means and get more input from local groups around the world.
+[Wed 11:34:07] <mediaprophet>	so many different ‘local rules’ to things.
+[Wed 11:34:36] <dlongley>	m4nu: from non-US/other localities that we don't have a lot of input from today
+[Wed 11:34:43] <mediaprophet>	re: human rights = web - so is the ability to monitise work.  I think we want to encourage accessibility for ‘value-adding’ via WWW…
+[Wed 11:35:14] <mediaprophet>	i was lucky to get a 60k projector out of customs in UAE, I found out about some local taxes along the way, etc.
+[Wed 11:35:27] <dlongley>	m4nu: yes, that's true (what tim said), does anyone thing we haven't addressed tim's concerns with the user story stuff?
+[Wed 11:36:01] <dlongley>	m4nu: the current plan is to take the use cases (the one liners) and expand them out into 1-2 paragraph user stories, once we've decided which use cases are in/out of scope
+[Wed 11:36:19] <dlongley>	m4nu: and it will be an iterative cycle, and the hope here is that multiple people on the mailing list will be writing user stories based on the use cases
+[Wed 11:37:25] <mediaprophet>	we’ve got a fair bit on our plate atm.  any of these process also have threats about becoming insular with the concepts / language, etc.  by going out and seeking info from related groups - we might come across new concepts / ideas / issues…  gives us an administrative challenge.
+[Wed 11:37:37] <mediaprophet>	broader community engagement
+[Wed 11:36:48] <m4nu>	Topic: Organizing Web Payments Workshop Use Cases
+[Wed 11:36:53] <m4nu>	https://www.w3.org/community/webpayments/wiki/CategorizedWebPaymentsUseCases
+[Wed 11:38:20] <dlongley>	m4nu: How do we want to approach culling the use cases down to a manageable set? What we could do is talk about each one and give it a thumbs up/down, just go through the list like that, see where the discussion takes us.
+[Wed 11:38:31] <dlongley>	m4nu: we're trying to aggressively cull these down to a basic set for the Web Payments IG.
+[Wed 11:38:32] <mediaprophet>	see http://lists.w3.org/Archives/Public/public-webpayments/2014Apr/0185.html 
+[Wed 11:39:00] <mediaprophet>	i think that’s a very important attitude to have.  
+[Wed 11:39:21] <bshambaugh>	Also: http://www.supplydemand.info/webpayments/Web_Payments_Use_Cases_Refactoring_2014_04_25.html
+[Wed 11:39:22] <mediaprophet>	dlongley: so long as we’ve got sufficient datapoints, to understand what our requirements need to be.
+[Wed 11:40:04] <dlongley>	dlongley: so we're just doing another iteration on categorization?
+[Wed 11:40:32] <m4nu>	Yes, let's start here - https://www.w3.org/community/webpayments/wiki/CategorizedWebPaymentsUseCases#Identity
+[Wed 11:40:48] <m4nu>	The first use case: "Personal vault/wallet can host information/assets and issue ids useful for various things (e.g. payments?)"
+[Wed 11:41:01] <m4nu>	Note, the first iteration would probably only store basic identity credentials and payment provider information
+[Wed 11:41:44] <dlongley>	m4nu: i think we should assume Identity is in scope unless the Payments IG decides otherwise
+[Wed 11:41:57] <dlongley>	m4nu: so we need to understand what needs to happen with Identity to make payments work on the Web'
+[Wed 11:42:12] <dlongley>	m4nu: kumar from mozilla is asserting that we don't need to touch Identity at all for payments on the web
+[Wed 11:42:32] <dlongley>	m4nu: and that's correct, but it means we don't really add much value, you can't tie payments to identity without any standard
+[Wed 11:42:34] <mediaprophet>	RWW / http://www.w3.org/DesignIssues/CloudStorage.html are producing potential “cloud storage” services.  i imagine interactions will play-out between the groups.
+[Wed 11:43:10] <dlongley>	m4nu: Tim, yes - this is in that same vein. Payments are fundamentally about trust between two entities, and in order to do a payment on the web, since you aren't face to face, you need to be able to understand who the sending/receiving parties are, if for no other reason for KYC and anti-money laundering for banks
+[Wed 11:43:48] <mediaprophet>	KYC / AML can be done by activating an account (which can be done via a banking interface, paying to set-up an account, for example).
+[Wed 11:44:00] <dlongley>	m4nu: that's mainly why identity is big for payments, but identity is also big on the web in general (single sign on for the web, etc. the education space also needs an identity mechanism and a way to store personal information in the cloud in a way that is under your control ... and that's all about identity)
+[Wed 11:44:05] <mediaprophet>	once that account is created however; the online account needs to maintain trust
+[Wed 11:44:06] <dlongley>	bshambaugh: what about anonymous payments?
+[Wed 11:44:12] <mediaprophet>	i see these as two seperate issues.
+[Wed 11:44:28] <dlongley>	m4nu: we do want to support anonymous payments, but in a lot of cases that won't work
+[Wed 11:44:33] <dlongley>	m4nu: due to various regulations, etc.
+[Wed 11:44:52] <dlongley>	m4nu: banks can't enable money laundering --- anonymous for small payments can work, but not for large payments based on current regulation, etc.
+[Wed 11:45:02] <dlongley>	m4nu: but the anonymity and privacy are part of the identity discussion
+[Wed 11:45:03] <mediaprophet>	could support anon in terms of what the receiver sees
+[Wed 11:45:18] <dlongley>	m4nu: we want to maximize those things where transactions don't require it
+[Wed 11:45:32] <dlongley>	bshambaugh: could you have an anonymous URI and not attribute things to anyone?
+[Wed 11:46:20] <dlongley>	m4nu: yeah, you could share URLs between like a thousand people, you could create anonymous URLs, you can't tie them to a particular person, but have information associated with it like age of the person so you know they can buy things/meet certain regulations
+[Wed 11:46:23] <dlongley>	m4nu: there are varying degrees that we want to support here that are all part of the identity discusison
+[Wed 11:46:49] <dlongley>	m4nu: re: tim in IRC, we do want to support anonymity w/respect to what the receiver sees as much as possible
+[Wed 11:47:05] <dlongley>	m4nu: keeping your details private from the merchant where they don't need that information, etc.
+[Wed 11:47:19] <dlongley>	bshambaugh: yeah, today you give people your credit card number and that's not good
+[Wed 11:47:25] <dlongley>	m4nu: yes, especially with a debit card
+[Wed 11:47:25] <mediaprophet>	one of the KYC / AML technologies i work with http://www.isignthis.com/ can identify a person rather well, rather quickly.
+[Wed 11:47:31] <mediaprophet>	that gets past the reg. issues.  
+[Wed 11:47:43] <m4nu>	https://www.w3.org/community/webpayments/wiki/CategorizedWebPaymentsUseCases#Identity
+[Wed 11:48:41] <m4nu>	dlongley: First use case should be changed, it's too high level, it should be narrowed.
+[Wed 11:48:42] <mediaprophet>	however; in a use-case, where a provider like that is used; to do the authorisation for an online ‘crediential’ how is that ‘crediential’ tied to the user on an on-going basis, if the transactions relate to say - a crypto-currency, or a e-contract - something that doesnt require another ‘get’ request from a traditional banking account.
+[Wed 11:51:05] <m4nu>	m4nu: So, the use case should become something like: "Store basic identity credentials and payment provider information on the Web in a way that is easy to share with various merchants given authorization by the owner of the identity, and that is easy to synchronize between devices."
+[Wed 11:51:21] <m4nu>	m4nu: basically, a read-write web storage mechanism.
+[Wed 11:51:25] <dlongley>	dlongley: one way to look at these Identity use cases is through the lens of Initiating Payments or Digital Receipts -- if it's related to that, it's likely in scope.
+[Wed 11:52:29] <m4nu>	dlongley: So, meeting this use case is required given that you'd need something like it to initiate a payment. If you're storing digital receipts with your identity, that requirement would make this use case in scope as well. Obviously, supporting this will have applicability to use cases outside of payments.
+[Wed 11:52:52] <m4nu>	dlongley: We clearly need to support this use case because it makes the whole initiating payment and digital receipts use cases easier to achieve.
+[Wed 11:53:18] <m4nu>	PROPOSAL: Accept the following use case - "Store basic identity credentials and payment provider information on the Web in a way that is easy to share with various merchants given authorization by the owner of the identity, and that is easy to synchronize between devices."
+[Wed 11:53:28] <dlongley>	+1
+[Wed 11:53:29] <m4nu>	+1
+[Wed 11:53:38] <taaz>	+1
+[Wed 11:53:58] <bshambaugh>	+1
+[Wed 11:54:15] *	m4nu melvster same thing, if you're around.
+[Wed 11:54:18] <mediaprophet>	+1
+[Wed 11:55:07] <m4nu>	RESOLVED: Accept the following use case: Store basic identity credentials and payment provider information on the Web in a way that is easy to share with various merchants given authorization by the owner of the identity, and that is easy to synchronize between devices.
+[Wed 11:55:21] <m4nu>	USE CASE: Store basic identity credentials and payment provider information on the Web in a way that is easy to share with various merchants given authorization by the owner of the identity, and that is easy to synchronize between devices.
+[Wed 11:56:16] <m4nu>	Looking at the second use case under identity - "Managed access to personal identity/attributes as economically valuable assets in a payment system"
+[Wed 11:56:33] <m4nu>	Noting that the first iteration would probably not focus on the "economically valuable" dimension of the personal identity attributes
+[Wed 11:57:17] <m4nu>	dlongley: I don't see the difference between this use case and the previous one. It's just the ability to manage whatever credentials that you have.
+[Wed 11:57:31] <m4nu>	m4nu: Suggest that we strike this use case since it's covered by the previous one.
+[Wed 11:57:36] <mediaprophet>	+1
+[Wed 11:57:45] <mediaprophet>	add it as a note to the first one
+[Wed 11:59:30] <dlongley>	bshambaugh: what is "economically valuable"?
+[Wed 11:59:56] <dlongley>	m4nu: "economically valuable" means that storing something like your spending habits would be valuable to someone like Walmart -- and you could potentially have the ability to be able to sell that information to them, etc.
+[Wed 11:59:58] <mediaprophet>	birth certificate, passport, contract, important email, 
+[Wed 12:00:06] <dlongley>	m4nu: we should be able to build that use case on top of what we have
+[Wed 12:00:12] <bshambaugh>	+1
+[Wed 12:00:12] <dlongley>	bshambaugh: but it's not required now
+[Wed 12:00:45] <mediaprophet>	perhaps an ontological method to assert something has a value.  bit like creative commons, 
+[Wed 12:01:49] <m4nu>	PROPOSAL: Fold the second identity use case ("Managed access to personal identity/attributes as economically valuable assets in a payment system") into the first one, since it consists of largely duplicated information. Do not attempt to address "sale of personal information" in the first iteration of the technology, but keep it in mind while designing the core architecture.
+[Wed 12:02:06] <dlongley>	+1
+[Wed 12:02:06] <m4nu>	+1
+[Wed 12:02:10] <mediaprophet>	+1
+[Wed 12:02:37] <taaz>	+0.5
+[Wed 12:03:06] <bshambaugh>	+0.9
+[Wed 12:03:10] <m4nu>	RESOLVED: Fold the second identity use case ("Managed access to personal identity/attributes as economically valuable assets in a payment system") into the first one, since it consists of largely duplicated information. Do not attempt to address "sale of personal information" in the first iteration of the technology, but keep it in mind while designing the core architecture.
+[Wed 12:02:46] <mediaprophet>	i think it should be noted in relation to the first use-case that it is the intention of that use-case, to support both
+[Wed 12:03:55] <dlongley>	m4nu: as we approve use cases we should throw each approved one to the mailing list to have someone write a user story on the mailing list for each one
+[Wed 12:04:13] <dlongley>	m4nu: once the user story is written we can integrate into the use cases document so there's a steady stream of updating the use cases.
+[Wed 12:04:16] <dlongley>	m4nu: anything else before we go?
+[Wed 12:04:16] <dlongley>	No other business, meeting adjourned.
+[Wed 12:04:23] <voip-ps>	Dave Longley (SIP/6002-0000007a) has left the conference.
+[Wed 12:04:23] <voip-ps>	Manu Sporny (SIP/6000-0000007c) has left the conference.
+[Wed 12:04:24] <voip-ps>	Dave Lehn (SIP/6003-0000007b) has left the conference.
+[Wed 12:04:32] <voip-ps>	bshambaugh (SIP/107.196.151.128-0000007d) has left the conference.
