@@ -1,0 +1,96 @@
+[Wed 11:06:28] <m4nu>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2014May/0016.html
+[Wed 11:07:56] <dlongley>	scribe: dlongley
+[Wed 11:08:07] <dlongley>	m4nu: tim holborn, Pindar, and Brent will be unavailable today, so we can't do any resolutions w/o a quorum, but what we can do is talk about decentralized identity
+[Wed 11:08:35] <dlongley>	m4nu: and try to get the use cases into a form that makes it easier to get through them next week
+[Wed 11:08:48] <m4nu>	Topic: Decentralized Identifiers
+[Wed 11:08:50] <dlongley>	m4nu: so let's talk about decentralized identifiers
+[Wed 11:08:59] <m4nu>	http://manu.sporny.org/2014/credential-based-login/
+[Wed 11:09:30] <m4nu>	So, using credential-based login, we can go from bob@example.com - resolve via telehash and get to - https://foobar.com/identities/bob
+[Wed 11:09:32] <dlongley>	m4nu: going off of what we have for credential-based login, we had this concept that when you put in an email address, you would resolve that via telehash to some kind of identifier, like https://foobar.com/identities/bob
+[Wed 11:10:03] <dlongley>	m4nu: so you could resolve an email address to a URL using telehash [w/some privacy protection implementation details in there]
+[Wed 11:10:13] <m4nu>	Ideally, what we would like is to go from bob@example.com - resolve via telehash - and get id:xyz:bob.bobman
+[Wed 11:10:27] <m4nu>	decentralized identifier is id:xyz:bob.bobman
+[Wed 11:10:29] <dlongley>	m4nu: you could instead resolve the email address to some kind of decentralized identifier
+[Wed 11:11:53] <dlongley>	Topic: Decentralized Database or Purely Protocol?
+[Wed 11:11:53] <dlongley>	m4nu: there are two ways we could implement the decentralized identity part -- we could use a decentralized database, like a bitcoin/ripplename like mechanism that stores this information in a truly decentralized database, the info is replicated between nodes, etc. -- the question is how exactly that's done; the other way this could be done is a decentralized network where the peers answer the request, so "id:xyz:bob.bobman" could be stored by an identity provider and when a request is sent to the network than the IdP would respond back with the information requested
+[Wed 11:12:08] <dlongley>	m4nu: one is a decentralized database, the other is a query+response protocol
+[Wed 11:12:29] <dlongley>	m4nu: the latter is easier to implement because you don't have to specify the storage mechanism, just the query+response mechanism
+[Wed 11:12:37] *	cagedwisdom has quit (Remote host closed the connection)
+[Wed 11:12:52] <m4nu>	dlongley: I agree that it would be easier to specify the protocol and leave the storage mechanism up to the implementers.
+[Wed 11:13:15] <m4nu>	dlongley: Everyone just follows the protocol, it should work out. It doesn't preclude using a decentralized database. We specify the protocol, we don't have to specify the protocol itself.
+[Wed 11:14:15] <m4nu>	dlongley: We still have all these privacy concerns, any requests that are made must be aligned w/ privacy concerns.
+[Wed 11:14:35] <m4nu>	dlongley: If you go w/ a decentralized database, you don't know who is responding w/ the information, you just get the information back. 
+[Wed 11:14:49] <m4nu>	dlongley: Just to be clear, the information you get back from the service is encrypted?
+[Wed 11:15:07] <m4nu>	m4nu: yes, we can't store passport credentials if we don't do that.
+[Wed 11:15:38] <m4nu>	dlongley: So, you send the query out - get back a decrypted blob from somewhere. In the other case, can we get information out of who is responding?
+[Wed 11:17:17] <dlongley>	Topic: The Decentralized Identity URL
+[Wed 11:17:17] <dlongley>	m4nu: so i want to dial the complexity back a bit, the key thing we want to be able to do ... when a third party asserts a credential on an identity, we want them to be able to assert that credential on a decentralized ID, meaning that it shouldn't be https://somedomain.com/i/bob, instead it should be attached to a decentralized ID
+[Wed 11:17:26] <m4nu>	m4nu: So, we want to assign credentials to id:xyz:bob.bobman, not  https://foobar.com/identities/bob
+[Wed 11:20:10] <m4nu>	dlongley: We may need some kind of blockchain type mechanism to claim a name - should identities end up being a public key hash? Why are we trying to come up with these URL schemes for them.
+[Wed 11:20:52] <m4nu>	dlongley: It could just be urn:PUBLIC_KEY_HASH - whenever you sign some piece of information, if you want to write credentials to a particular key, you would somehow set yourself up w/ an id provider that can listen to the network.
+[Wed 11:21:09] <m4nu>	dlongley: Then your identity provider must grab the message and sign it, that's how it gets into your list of credentials.
+[Wed 11:21:29] <m4nu>	dlongley: Essentially, anyone can write credentials to the network about any public key ID. Then the id provider can just pick that up.
+[Wed 11:21:53] <m4nu>	dlongley: Anyoen can write to decentralized network, anyone can join when they want, they just set their key. You either create a new identity or write to your existing identity w/ the new key.
+[Wed 11:22:47] <dlongley>	Topic: Registering a New Decentralized ID
+[Wed 11:22:47] <dlongley>	m4nu: so the steps are ... step 1 is you go to any identity provider and login and create an account with them (username + password), the first thing they are going to ask you to do, they will do one of two things
+[Wed 11:22:54] <dlongley>	m4nu: let's talk about the secure way to do this
+[Wed 11:23:08] <dlongley>	m4nu: IdP will say, you need to create a special account and we can't see the password for that account
+[Wed 11:23:36] <dlongley>	m4nu: IdP will redirect you to that piece of software that lets you create a private+public key pair that's attached to the telehash network
+[Wed 11:23:47] <dlongley>	m4nu: they will send a special network saying "a new account is being created"
+[Wed 11:24:27] <dlongley>	m4nu: on that other website, we are going to ask them for a passphrase, and that is going to be their decentralized ID and we're going to send that ID back to the identity provider
+[Wed 11:24:38] <dlongley>	m4nu: the IdP at that point, has a decentralized ID for that person
+[Wed 11:25:22] <dlongley>	m4nu: and at that point... then your identity provider we need to register ourselves as your identity provider
+[Wed 11:25:29] <dlongley>	m4nu: so they'll do a write to the network
+[Wed 11:25:40] <dlongley>	m4nu: IdP will say "we need you to authorize us as your identity provider"
+[Wed 11:25:59] <dlongley>	m4nu: it will send you back to that centralized website, password-based key generation website
+[Wed 11:26:29] <dlongley>	m4nu: that website will digitally sign the decentralized ID with the identity provider, saying this decentralized ID's provider is this URL (this is the mapping to the Web) and that is digitally signed and is posted to the network
+[Wed 11:26:41] <dlongley>	m4nu: ok, decentralized ID and IdP are now linked together
+[Wed 11:30:56] <m4nu>	dlongley: You could delegate trust to your identity provider - allow their key to make changes to your identity.
+[Wed 11:31:08] <m4nu>	dlongley: "These are the parties that are allowed to make changes to the credentials."
+[Wed 11:31:24] <m4nu>	dlongley: That's difficult because it's hard to say who can make changes to the credentials.
+[Wed 11:32:15] <m4nu>	dlongley: So, if you lose that key, or it's compromised, the person w/ the key can make changes. So, for multi-sig, you need an initial write to say "these are the rules for writing to the identity".
+[Wed 11:33:26] <m4nu>	dlongley: So, it's getting complicated, but if you were afraid of losing your identity forever, you could do "Multi-sig w/ 2 out of 3 keys". One of them is yours, the other is your identity provider, another is a family member/relative.
+[Wed 11:33:46] <m4nu>	dlongley: So, to generate IDs, it just needs to be a UUID or public key hash - something that's going to be globally unique that doesn't have any actual meaning.
+[Wed 11:34:13] <m4nu>	dlongley: Once you put meaning into the identifiers, people are going to try and claim the same thing.
+[Wed 11:34:29] <m4nu>	dlongley: These decentralized IDs should be entirely opaque.
+[Wed 11:34:54] <dlongley>	m4nu: there are concerns with recovering the id later if we make them opaque
+[Wed 11:35:29] <m4nu>	then we could have id:dave.longley:af746cd
+[Wed 11:36:02] <m4nu>	dlongley: The information is going to be a part of the document associated with that identity. You could put identifying information into the ID itself, then tack on some GUID to it.
+[Wed 11:36:34] <dlongley>	m4nu: I'm concerned about how you re-generate the same GUID, but maybe those concerns are unfounded.
+[Wed 11:39:19] <m4nu>	dlongley: It may be worse to not make this identifier opaque.
+[Wed 11:39:38] <m4nu>	dlongley: We can allow the identifier to be customized in some way.
+[Wed 11:40:13] <dlongley>	m4nu: the thing that ends up storing this information is going to be the IdP, and it will be stored internally somehow
+[Wed 11:40:50] <m4nu>	dlongley: To be clear - the polyfill login site is going to host your key, they'd sign information and transmit to the IdP.
+[Wed 11:41:17] <m4nu>	dlongley: This still can work w/ a decentralized database, but that's not an integral part of the standard. You could use an IdP that uses a decentralized database.
+[Wed 11:41:30] <m4nu>	dlongley: You chose the IdP that works that way. An IdP doesn't have to work that way.
+[Wed 11:42:46] <dlongley>	m4nu: so the first problem is solved, how you associate credentials with a decentralized ID
+[Wed 11:42:57] <dlongley>	Topic: Data Portability
+[Wed 11:42:57] <dlongley>	m4nu: the other question is how to get the info from one IdP to the other
+[Wed 11:44:00] <m4nu>	dlongley: So, one way to do it - redirect to centralized polyfill to do write operation, you sign the data you want to write, then you can send it somewhere.
+[Wed 11:44:55] <m4nu>	dlongley: You have your entire identity document, request your entire IdP document, instead of sending it to another website, you send it to your other IdP.
+[Wed 11:46:25] <m4nu>	dlongley: There's nothing much that needs to change. When you're not switching IdPs, you request the document from your IdP, then that goes to polyfill site, you write new credential, then you write to your IdP. Then your IdP stores it.
+[Wed 11:46:46] <m4nu>	dlongley: You write what you want to change, instead of sending to old IdP, you send it to new one.
+[Wed 11:47:10] <m4nu>	dlongley: Write to your old IdP w/ your new IdP information, close out your account.
+[Wed 11:48:22] <m4nu>	taaz: What happens when you have multiple IdPs?
+[Wed 11:49:24] <m4nu>	dlongley: You can write to one or more of them. Preferred IdP, and others.
+[Wed 11:50:05] <m4nu>	dlongley: Conformant credential writer just picks one IdP, but others can write to other ones. Write to other identity providers is an extension/option.
+[Wed 11:50:10] *	rossk (~rossk@64-142-88-9.dedicated.static.sonic.net) has joined #payswarm
+[Wed 11:50:48] <m4nu>	dlongley: These don't have to be identity providers - they're just information storage places. They just need a web storage location. You just say "I trust this place".
+[Wed 11:51:28] <m4nu>	dlongley: All of the credential writers just need to understand properties of a document, IdP stuff is written on top of that. IdP is primary place of storage - they can have username/password to allow you to access things.
+[Wed 11:51:54] <m4nu>	m4nu: You should be able to login to your IdP using your IdP (Credential-based login)
+[Wed 11:52:07] <m4nu>	dlongley: Some piece of software that knows how to store keys for you.
+[Wed 11:52:33] <m4nu>	dlongley: IdPs can be storage locations, they can use usernames/passwords, can provide you w/ insurance for backing up your identity, etc.
+[Wed 11:52:51] <m4nu>	dlongley: We can make it easier for people to use - but main thing is this credential writer that has access to keys. They can send credentials to some storage location.
+[Wed 11:53:05] <m4nu>	dlongley: ultimately, we want that to be the browser. In the meantime, there can be polyfills to do that.
+[Wed 11:55:08] <m4nu>	voip: connections?
+[Wed 11:55:08] <voip-ps>	Conference connections: Manu Sporny [SIP/6000-00000087], IAX2/diamondcard-15686, Dave Lehn [SIP/6003-0000008a], Dave Longley [SIP/6002-00000088]
+[Wed 11:55:24] <m4nu>	Topic: Decentralized ID Decisions
+[Wed 11:55:24] <m4nu>	Ok, so we made a few decisions on the call today:
+[Wed 11:55:58] <m4nu>	1. Credentials need to be associated with a decentralized identifier if they are going to be portable.
+[Wed 12:00:44] <m4nu>	2. A polyfill management site (which will be replaced by browser code in the future) is responsible for creating the decentralized identifier.
+[Wed 12:01:19] <m4nu>	3. The polyfill management site will associate a public key with the decentralized identifier.
+[Wed 12:02:13] <m4nu>	4. When you register with an identity provider, that identity provider will provide a storage URL that will be sent to the polyfill site to specify the storage location for the identity credentials.
+[Wed 12:03:28] <m4nu>	dlongley: The polyfill management site is also responsible for writing to your identity and sending the result to the storage URL.
+[Wed 12:10:19] <voip-ps>	Manu Sporny (SIP/6000-00000087) has left the conference.
+[Wed 12:10:20] <voip-ps>	Dave Lehn (SIP/6003-0000008a) has left the conference.
+[Wed 12:10:20] <voip-ps>	Dave Longley (SIP/6002-00000088) has left the conference.
