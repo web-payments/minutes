@@ -1,0 +1,113 @@
+[Wed 11:01:55] <voip-ps>	dlehn (SIP/50.134.65.129:5060-00000099) is in the conference.
+[Wed 11:01:55] <voip-ps>	dlehn (SIP/50.134.65.129:5060-00000099) has joined the conference.
+[Wed 11:02:37] <voip-ps>	Dave Longley (SIP/6002-0000009a) has joined the conference.
+[Wed 11:03:05] <voip-ps>	Dave Longley (SIP/6002-0000009a) has left the conference.
+[Wed 11:03:31] <voip-ps>	Dave Longley (SIP/6002-0000009b) has joined the conference.
+[Wed 11:04:34] *	m4nu was just on the Mobile Web telecon talking about identity.
+[Wed 11:04:37] <voip-ps>	Manu Sporny (SIP/6000-0000009c) has joined the conference.
+[Wed 11:07:58] <m4nu>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2014May/0059.html
+[Wed 11:08:09] <dlongley>	scribe: dlongley
+[Wed 11:08:23] <dlongley>	m4nu: any items to add to the agenda?
+[Wed 11:08:29] <dlongley>	No additional items.
+[Wed 11:08:29] <dlongley>	m4nu: Ok, then we'll be dealing with the section on Identity today: https://www.w3.org/community/webpayments/wiki/CategorizedWebPaymentsUseCases#Identity
+[Wed 11:08:34] <m4nu>	Topic: Payment Links
+[Wed 11:08:47] <m4nu>	The first use case is: Invoke payment service via URI scheme. Simple URI system - simple payment markup that developers get right.
+[Wed 11:09:27] <dlongley>	m4nu: this was proposed by Yandex at the web payments workshop, they wanted a simple URL for users to click on to initiate a payment
+[Wed 11:09:34] <dlongley>	m4nu: we did some of this work a while ago with the payment links spec
+[Wed 11:10:01] <m4nu>	This was the work we did before: https://web-payments.org/specs/source/payment-links/
+[Wed 11:10:17] *	cagedwisdom has quit (Remote host closed the connection)
+[Wed 11:10:25] <m4nu>	dlongley: There is also work on custom protocols, they can register w/ it - triggers payment processor to take over.
+[Wed 11:11:21] <dlongley>	m4nu: one thing we could do is specify what the url format is
+[Wed 11:11:31] <dlongley>	m4nu: and then what happens when multiple people register for the same handler
+[Wed 11:11:43] <m4nu>	dlongley: You can register a protocol handler to handle the link. It's not clear whether this is already a solved problem or not. Seems like it is w/ protocol handlers.
+[Wed 11:12:19] <dlongley>	taaz: at some point i did a demo for this
+[Wed 11:12:42] <dlongley>	m4nu: ok so that's in there, we accept the use case
+[Wed 11:14:12] <m4nu>	Topic: Identity Verification and Trust
+[Wed 11:14:24] <m4nu>	We currently have this use case - Verify identity or assess trust of partners in a transaction.
+[Wed 11:15:22] <m4nu>	That probably should be: Transmit one or more pieces of information that can be used to identify a participant in a transaction.
+[Wed 11:15:51] <m4nu>	dlongley: The use case seems ill-defined - does the transmission happen when you initiate the transaction? 
+[Wed 11:16:09] <m4nu>	dlongley: Does it happen after-the-fact? So you can follow-up via the digital receipt?
+[Wed 11:16:19] <m4nu>	dlongley: Does this happen before or after the transaction?
+[Wed 11:16:51] <dlongley>	m4nu: we could split into two use cases
+[Wed 11:16:59] <dlongley>	m4nu: one is transmit before, other is figure out via digital receipt
+[Wed 11:17:39] <m4nu>	So, what about this: Transmit one or more pieces of information before a purchase occurs such that the identification of participants in a transaction can be performed.
+[Wed 11:19:40] <m4nu>	and then we'd have another one: Using metadata that is the result of a transaction, discover the verified identity of participants in the transaction.
+[Wed 11:20:40] <m4nu>	Then, wrt. trust, we have this one: Assess the trustworthiness of an entity before entering into a particular transaction with the entity.
+[Wed 11:22:29] <m4nu>	dlongley: Thinking through blockchains and other technologies that could be used to achieve this. For example, the transaction is recorded, but not accepted until you decide to trust the individual (counter-signatures).
+[Wed 11:23:46] <m4nu>	dlongley: If these are digitally signed receipts, you trust the key, you trust the receipt. This could be in scope.
+[Wed 11:24:00] <m4nu>	I thought the trustworthiness thing would be more like an eBay-like rating system.
+[Wed 11:24:23] <m4nu>	dlongley: In some cases it's in-scope, others is out of scope. Rating system is out of scope. However, trusting the identity/key is something that's in scope.
+[Wed 11:25:16] <m4nu>	dlongley: This use case is too open to interpretation as to what that means.
+[Wed 11:26:50] <dlongley>	m4nu: we have another use case with reputation system mentioned
+[Wed 11:26:57] <dlongley>	dlongley: ok, let's just strike this and use that
+[Wed 11:28:11] <m4nu>	Topic: Reputation Systems
+[Wed 11:28:25] <m4nu>	What we have for this currently is: Merchant and User reputation system accessible to the payments system.
+[Wed 11:28:41] <m4nu>	This seems out of scope for the first revision, and could be added later via a Linked Data mechanism.
+[Wed 11:29:13] <m4nu>	dlongley: Yes, agreed, this seems out of scope.
+[Wed 11:30:41] <m4nu>	Ok, moving this to out of scope in the use cases document.
+[Wed 11:30:50] <m4nu>	Topic: 3rd Party Signed Digital Credentials
+[Wed 11:31:15] <m4nu>	We have this use case currently - Digital credentials that can be used for financial transactions, that provide plausible deniability to payment processors
+[Wed 11:31:15] <m4nu>	("we vetted the customer and they lied to us in a sophisticated way, here's proof").
+[Wed 11:32:45] <dlongley>	taaz: why is it phrased that way?
+[Wed 11:32:53] <dlongley>	m4nu: this is verbatim what was typed at the workshop
+[Wed 11:33:00] <dlongley>	m4nu: the scribe typed whatever was being said
+[Wed 11:34:38] <m4nu>	What about this? Digitally verifiable credentials such that a merchant or payment processor can prove that they have done due diligence when entering into a financial transaction with a customer.
+[Wed 11:34:49] <m4nu>	taaz: It's any party in a transaction.
+[Wed 11:36:35] <m4nu>	dlongley: if we say 'legal' - we may broaden the scope too much. This is about getting 3rd party proof of the people involved in the transaction being who they are (or they've stolen credentials). You made a best effort to confirm who they say they are.
+[Wed 11:37:46] <m4nu>	ok, then this? Digitally verifiable credentials such that any participant in a transaction can prove that a 3rd party has certified particular attributes of each participant in the transaction.
+[Wed 11:38:05] <m4nu>	dlongley: We should probably say "trusted third party"
+[Wed 11:38:14] <m4nu>	dlongley: Aspects of this use case are in scope, others are not.
+[Wed 11:38:54] <m4nu>	dlongley: It might be out of scope to cover it for the user's case (difficult or unnecessary to do that). Currently, TLS is a good-enough trust system to verify their payment processor/merchant. It would be nice for this to be covered in the user's case as well, but there might be a lot of scope creep there.
+[Wed 11:39:21] <m4nu>	dlongley: It's important that we cover it for at least the customer. The person that is transferring value, that's the primary participant in this use case. We don't want them acquiring value from a merchant w/o having paid for it.
+[Wed 11:41:23] <m4nu>	ok, so this: Digitally verifiable credentials such that a merchant and payment processor in a transaction can prove that they have done due diligence in verifying the customer's identity (KYC).
+[Wed 11:41:49] <dlongley>	dlongley: that's good
+[Wed 11:42:18] <m4nu>	Topic: Password-less identity solution
+[Wed 11:42:29] <m4nu>	So, we have this right now - Identity solution must not rely on passwords for primary functionality.
+[Wed 11:42:37] <dlongley>	dlongley: it's very unclear what primary functionality is
+[Wed 11:44:03] <m4nu>	dlongley: We need to define it... and we can't get rid of passwords. That doesn't mean that they need to provide that piece of information at every point where their identity needs to be confirmed. We don't want them to give that secret passphrase to every place they do business.
+[Wed 11:44:28] <m4nu>	dlongley: We want to get them to some other security protocol where they should not use a password, like PKI.
+[Wed 11:44:59] <m4nu>	dlongley: We just need to be more specific about what primary functionality means. Users only need to rely on passwords with their identity providers, they don't use those passwords anywhere else, they use PKI (or something equivalent).
+[Wed 11:45:33] <m4nu>	dlongley: User's should not have to share their secrets w/ merchants, unless the secret is absolutely vital for the transaction taking place (like your home address to ship a product to).
+[Wed 11:45:53] <m4nu>	dlongley: This is about an identity solution that minimizes the number of secrets you need to share w/ various parties.
+[Wed 11:49:45] <m4nu>	so, what about: Execute a transaction without revealing secrets (i.e. identity, passwords, credit card numbers, PINs) whose primary purpose is orthogonal to the actual transaction.
+[Wed 11:50:32] <m4nu>	dlongley: The secrets that are revealed during these exchanges should not be able to be re-used such that they create an unnecessary amount of damage to the customer.
+[Wed 11:51:43] <dlongley>	m4nu: if they have a passport or SSN, etc. they can use that in another system that isn't as secure to take advantage, so still lots of possible damage
+[Wed 11:52:20] <m4nu>	So, maybe change to this: Execute a transaction without revealing secrets (i.e. identity, passwords, PINs) whose primary purpose is orthogonal to the actual transaction.
+[Wed 11:53:22] <m4nu>	Topic: OpenID Connect-based payment initiation
+[Wed 11:53:38] <m4nu>	We have this now - Use OpenID Connect to bootstrap a payments process.
+[Wed 11:54:51] <m4nu>	dlongley: We might want to rephrase - whatever digital credential solution should be compatible with existing, widely deployed identity protocols. This is a requirement, not a use case.
+[Wed 11:56:03] <m4nu>	ok, so: Use an existing, widely deployed identity provider mechanism (i.e. OpenID Connect) to bootstrap the payments process.
+[Wed 11:56:07] <m4nu>	dlongley: Ok, that sounds fine.
+[Wed 11:56:44] <m4nu>	m4nu: "bootstrap" is vague.
+[Wed 11:56:58] <m4nu>	dlongley: You can go from your existing identity solution into this other system, that's what we mean by bootstrap.
+[Wed 11:57:54] <m4nu>	so, initiate?
+[Wed 11:58:03] <m4nu>	dlongley: That makes it sound like there's no intermediate step.
+[Wed 11:58:56] <m4nu>	ok, so this? Use an existing, widely deployed identity provider mechanism (i.e. OpenID Connect) to integrate with a digital credentials sharing and payments initiation process.
+[Wed 11:59:36] <m4nu>	Topic: Separation of Privacy and Anonymity
+[Wed 12:00:11] <m4nu>	We have this now, Separate the idea of privacy and anonymity when it comes to web payments.  Privacy for online actions is important.  Anonymity when it comes to financial transactions and moving of money is problematic.
+[Wed 12:00:21] <m4nu>	dlongley: It's strange to say "separate the idea" - too abstract.
+[Wed 12:01:02] <m4nu>	dlongley: It's not even a use case, the use case would be something like "Protect the privacy of customers when transacting, revealing only the details necessary." 
+[Wed 12:02:12] <m4nu>	The discussion at the workshop revolved around three things - privacy, discoverability of identity, and anonymity.
+[Wed 12:02:48] <m4nu>	Privacy had to do with the merchant not being able to discover who you are, but the transaction processor/government being able to investigate (after the fact) if a fraudulent or illegal transaction had occured.
+[Wed 12:03:15] <m4nu>	The anonymity aspect had to do with a truly anonymous transaction, that was completely untraceable - such as buying a candy bar using cash.
+[Wed 12:03:44] <m4nu>	dlongley: truly untraceable would be a candy bar drop zone - no surveillance. You put a dollar in the box, come back after a day, get your candy bar.
+[Wed 12:04:34] <m4nu>	dlongley: Maybe this should be: transact with a merchant without revealing any identifying information. Identifying information is available to the payment processor and government organizations.
+[Wed 12:05:27] <m4nu>	ok, so this? Transact with a merchant without revealing any identifying information, however, identifying information is available to the payment processor and government organizations (via a warrant).
+[Wed 12:06:33] <m4nu>	dlongley: There are some countries where you don't need a warrant.
+[Wed 12:06:46] <m4nu>	ok, so we can strike that, and make it this: Transact with a merchant without revealing any identifying information. Identifying information is available to the payment processor.
+[Wed 12:07:49] *	taaz has to go, bye
+[Wed 12:07:59] <voip-ps>	dlehn (SIP/50.134.65.129:5060-00000099) has left the conference.
+[Wed 12:08:01] <m4nu>	ok, so we have another use case that came out of this.
+[Wed 12:08:45] <m4nu>	Enable fully anonymous transactions such that the identity of the customer is not discoverable
+[Wed 12:09:51] <m4nu>	dlongley: No identity, it's out of scope?
+[Wed 12:10:12] <m4nu>	No, a number of workshop participants made it very clear that anonymous financial transactions were a requirement for them.
+[Wed 12:10:23] <m4nu>	You shouldn't have to hand over your name when you're buying a candy bar.
+[Wed 12:11:11] <m4nu>	dlongley: This has to do w/ tokenization of identity such that it's not traceable - it's a shared token, just one transaction, etc. It's untraceable.
+[Wed 12:13:11] <m4nu>	dlongley: The system that's being created here isn't going to record any information, but there may be other systems out there that are capable of tracking who you are (tracking cookies, for instance).
+[Wed 12:13:27] <m4nu>	dlongley: We're not doing a purely anonymous transaction, we're not going to add identifying information to the transaction.
+[Wed 12:14:01] <voip-ps>	Manu Sporny (SIP/6000-0000009c) has left the conference.
+[Wed 12:14:03] <voip-ps>	Dave Longley (SIP/6002-0000009b) has left the conference.
+[Wed 12:17:18] <m4nu>	voip: connections?
+[Wed 12:17:18] <voip-ps>	There are currently no conference connections.
+[Wed 12:17:22] <m4nu>	voip: self-destruct
+[Wed 12:17:23] *	voip-ps has quit (Quit: Auuugh! *booooom*)
