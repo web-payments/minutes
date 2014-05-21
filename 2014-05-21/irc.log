@@ -1,0 +1,140 @@
+[Wed 11:04:33] <m4nu>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2014May/0102.html
+[Wed 11:05:07] <m4nu>	scribe: dlongley
+[Wed 11:05:35] <m4nu>	There is one update to the agenda - the draft charter review for the Web Payments IG.
+[Wed 11:05:35] <dlehn>	No other updates.
+[Wed 11:05:44] <m4nu>	Topic: Web Payments IG Charter Draft
+[Wed 11:05:51] <m4nu>	The charter is here: http://www.w3.org/2014/04/payments/webpayments_charter.html
+[Wed 11:06:10] <m4nu>	There are two weeks left to review the charter and get your feedback in, so if you haven't done so yet, please do so.
+[Wed 11:06:30] <m4nu>	Send all comments in to: public-webpaymentsigcharter@w3.org 
+[Wed 11:06:36] *	bshambaugh (~quassel@172.0.212.132) has joined #payswarm
+[Wed 11:06:39] <m4nu>	Even if you agree with the entire charter, send comments in stating that you are okay with the charter in its current form. 
+[Wed 11:07:03] <m4nu>	Don't worry about doing a thorough line-by-line review if you don't have the time. Some comments are better than none. 
+[Wed 11:07:06] <dlongley>	m4nu: Don't worry about doing a thorough line-by-line review, some comments
+[Wed 11:07:15] <m4nu>	Sections 1 and 2 are the important bits, most everything else is boilerplate and follows standard W3C practices. 
+[Wed 11:07:39] <m4nu>	Read about what W3C wants specific input on: http://www.w3.org/community/webpaymentsigcharter/2014/05/15/first-draft-of-future-web-payments-interest-group-charter-published/
+[Wed 11:08:06] <m4nu>	The World Wide Web Consortium will be having an Advisory Committee meeting on June 6th and 7th and the charter must be in its final form before that meeting. 
+[Wed 11:09:12] <dlongley>	m4nu: We have contacted around 40 companies that have volunteered to review the charter, we sent out communications to ~185 companies, 40 will review and provide feedback, another 30 have committed engineering resources for any working groups that start up
+[Wed 11:09:23] <dlongley>	m4nu: some other companies are still trying to get things passed through their legal departments so they can participate
+[Wed 11:09:38] <dlongley>	m4nu: it looks like we translated momentum into some, at least, light commitments for now
+[Wed 11:09:48] <dlongley>	m4nu: any other comments about the IG charter, etc.?
+[Wed 11:09:50] <dlongley>	dlongley: no
+[Wed 11:09:58] <m4nu>	Topic: Merchant-initiated payments
+[Wed 11:10:16] <m4nu>	We're going to be looking at these use cases today: https://www.w3.org/community/webpayments/wiki/CategorizedWebPaymentsUseCases#Initiating_Payments
+[Wed 11:10:39] <m4nu>	So, right now we have - Merchant-initiated request for payment.
+[Wed 11:11:39] <m4nu>	dlongley: We might want to clean up the language a bit, might be fine as is?
+[Wed 11:11:48] <m4nu>	Like what?
+[Wed 11:12:30] <m4nu>	dlongley: We could say something like: "A user performs an action, clicks a buy button, merchant creates a payment request to be sent to customer's payment processor."
+[Wed 11:12:31] <dlongley>	m4nu: "You go to a website, you click on a button and the merchant generates a purchase request to be sent to the customer's payment processor"
+[Wed 11:13:59] <m4nu>	So, what about - Customer selects item to purchase on merchant's site, merchant generates a purchase request that will be processed by the customer's payment processor.
+[Wed 11:14:14] <m4nu>	dlongley: ok, that's fine.
+[Wed 11:15:06] <m4nu>	Topic: Customer-initiated payments
+[Wed 11:15:56] <m4nu>	we have this now - Invoke payment service via URI scheme. Simple URI system - simple payment markup that developers get right.
+[Wed 11:16:04] <m4nu>	dlongley: Doesn't sound like a use case, sounds more like a requirement.
+[Wed 11:16:38] <m4nu>	dlongley: The merchant can put a payment link with a specific URI scheme on their website such that when a customer clicks on it, it will invoke the customer's payment service.
+[Wed 11:16:47] <m4nu>	dlongley: It's a slight variant on the first case.
+[Wed 11:17:15] <dlongley>	m4nu: it's really more of a URI scheme
+[Wed 11:18:42] <m4nu>	Ok, so - A developer can create a payment link with a specific payment URI scheme such that when a customer clicks on it, the customer's payment processor starts the payment process.
+[Wed 11:19:31] <m4nu>	dlongley: get rid of the first mention of 'payment', otherwise looks good.
+[Wed 11:20:09] <m4nu>	Topic: Customer-based selection of payment processor
+[Wed 11:21:04] <dlongley>	m4nu: people can have more than one payment processor, so that when someone goes to pay for something, they need to be able to pick the one they want to use for the particular purchase, so it's negotiation between customer and merchant, if merchant takes paypal and visa, then customer is given option for both of those (if the customer uses them)
+[Wed 11:21:48] <m4nu>	dlongley: It's written as a requirement. So, reword to: When a customer intends to make a payment, they are given a choice of payment processor for all the payment processors they've previously registered with.
+[Wed 11:22:53] <m4nu>	Ok, so - When a customer intends to make a payment, they are given a choice to pick among the intersection of the payment processors they're registered with and the payment processors that are advertised by the merchant.
+[Wed 11:23:13] <m4nu>	dlongley: A bit wordy, but a bit more accurate. How that use case gets implemented might not match the use case exactly.
+[Wed 11:23:39] <m4nu>	dlongley: There are details about what "compatible" means wrt. the intersection.
+[Wed 11:24:24] <m4nu>	ok, sounds good, we'll keep that wording for now.
+[Wed 11:24:46] <m4nu>	Topic: Payment method switching
+[Wed 11:25:06] <m4nu>	What we have now - Switch payment method in the middle of a transaction.
+[Wed 11:25:33] <m4nu>	dlongley: This makes it seem like the process is a really long one, when it doesn't need to be. Before a transaction is finalized, a customer can pick a different payment processor.
+[Wed 11:25:55] <m4nu>	dlongley: It's going to get tricky/confusing wrt. what "finalized" means.
+[Wed 11:26:13] <m4nu>	dlongley: What we're really trying to say is that "before a customer consents to a transaction, they may change the payment processor that they want to use."
+[Wed 11:26:49] <m4nu>	Ok, so - Before a customer consents to a transaction, they may change the payment processor that they want to use.
+[Wed 11:27:24] <m4nu>	dlongley: it sounds like what this was meant to be about was, if the customer says they want to use a certain payment processor, the pricing might change, which may prompt the customer to change the payment processor.
+[Wed 11:28:03] <m4nu>	dlongley: There has to be a two-step process. The customer says "I want to pay w/ this method, do you want to change the terms?".
+[Wed 11:28:16] <m4nu>	What we do today is just make an offer using each payment mechanism.
+[Wed 11:28:56] <m4nu>	dlongley: that's simpler, I think the part that's out of scope, is the mechanism to select payment processors. We just need to provide the ability to pick different payment methods.
+[Wed 11:29:09] *	bshambaugh has quit (Read error: Connection reset by peer)
+[Wed 11:29:20] <m4nu>	dlongley: This use case is actually a merchant-based use case. The merchant can advertise different price models based on payment processor choice.
+[Wed 11:29:54] <m4nu>	dlongley: That's really what this use case is about, it'll have a whole bunch of legal/contractual repercussions, but the technology can support this.
+[Wed 11:29:59] *	bshambaugh (~quassel@adsl-172-0-212-132.dsl.okcyok.sbcglobal.net) has joined #payswarm
+[Wed 11:32:06] <m4nu>	Ok, so this is the use case, then - A merchant advertises different details for an offer of sale based on potential payment processor choice.
+[Wed 11:33:16] <dlongley>	m4nu: and that's in scope
+[Wed 11:33:42] <dlongley>	m4nu: we should be asking whether these are in/out of scope
+[Wed 11:33:50] <m4nu>	dlongley: so far everything has been in scope, as far as the changes go.
+[Wed 11:33:59] <m4nu>	Topic: Loyalty cards and coupons
+[Wed 11:34:13] <m4nu>	So, this is what we have so far - Allow loyalty cards, coupons, etc. as a payment mechanism.
+[Wed 11:34:36] <bshambaugh>	in what way?
+[Wed 11:34:57] <dlongley>	m4nu: i don't think they are payment mechanisms, one is payment association, the other is to make a payment with
+[Wed 11:35:33] <m4nu>	So, for example - If I'm buying airline tickets, I want to associate my Sky Miles number with the purchase so I can get Sky Miles credited to my account.
+[Wed 11:36:03] <bshambaugh>	loyalty cards --- association , coupons --- make a payment with
+[Wed 11:36:04] <m4nu>	Or, it could be the application of discounts to the purchase.
+[Wed 11:36:32] <bshambaugh>	coupons may only reduce  purchase...
+[Wed 11:36:39] <bshambaugh>	you may still need a credit card...etc
+[Wed 11:37:05] <m4nu>	The third one is "pay with gift card"
+[Wed 11:37:35] <bshambaugh>	which is like a credit or debit card in function?
+[Wed 11:37:42] <m4nu>	yes, exactly.
+[Wed 11:37:43] <bshambaugh>	basically it is a prepaid card
+[Wed 11:38:23] <m4nu>	What I'm trying to say is that the "pay with gift card" is already covered by other use cases.
+[Wed 11:38:30] <m4nu>	So, we really need to define two use cases for this one.
+[Wed 11:38:31] <dlongley>	m4nu: so we have 2 use cases here
+[Wed 11:38:39] <dlongley>	m4nu: payment association (loyalty cards, etc.)
+[Wed 11:38:47] <dlongley>	m4nu: coupons (discounts on a purchase)
+[Wed 11:39:21] <m4nu>	So, what about - Associate a membership card with the transaction such that points or benefits are associated with your membership as a result of a successful purchase.
+[Wed 11:39:48] <m4nu>	dlongley: Too wordy, how about - A customer can associate a membership card with a transaction to receive benefits.
+[Wed 11:39:51] <m4nu>	Sounds good to me.
+[Wed 11:40:15] <m4nu>	Ok, so the next one has to do with applying coupons/discounts.
+[Wed 11:40:37] <dlongley>	dlongley: A customer can use a coupon (or similar) to receive a discount on a transaction.
+[Wed 11:40:50] <m4nu>	Sounds good to me...
+[Wed 11:41:04] *	m4nu bshambaugh any other thoughts / use cases related to loyalty coupons etc?
+[Wed 11:41:54] <bshambaugh>	so you get then as a result of buying something? like a rewards system for being a good customer?
+[Wed 11:42:28] <bshambaugh>	and the amount in dollars or whatever of what you buy?
+[Wed 11:42:37] <m4nu>	dlongley: You can get some kind of benefit by associating a token w/ a transaction. We could combine them like that.
+[Wed 11:42:56] <bshambaugh>	and the specific type of item?
+[Wed 11:43:20] <bshambaugh>	all associable...perhaps out of scope for this conference
+[Wed 11:43:20] <dlongley>	dlongley: A customer can associate a membership card, coupon, or similar token with a transaction to receive a discount or other benefits.
+[Wed 11:45:03] <bshambaugh>	okay...makes sense
+[Wed 11:45:07] <m4nu>	Ok, that sounds good - A customer can associate a membership card, coupon, or similar token with a transaction to receive a discount or other benefits.
+[Wed 11:45:13] *	m4nu nods at bshambaugh.
+[Wed 11:45:22] <m4nu>	Topic: Remittances
+[Wed 11:45:32] <m4nu>	So, right now we have - Sending money to family internationally via low-cost methods.
+[Wed 11:45:44] <dlongley>	m4nu: this is pretty vague, seems too deployment-specific/business model-related.
+[Wed 11:46:38] <m4nu>	dlongley: Sounds like it's out of scope. It's too business model related. The only technical requirement is that benefits are gained by standardization that would probably result in the lowering of fees for remittances.
+[Wed 11:46:52] <m4nu>	dlongley: We want this to happen, but it's out of scope wrt. the use case affecting the technology (other than perhaps the international aspect to it, but it's the Web, we only really think  of this stuff in an international context w/ localization)
+[Wed 11:46:58] <bshambaugh>	and the cost is generally high...but this is out of scope...agreed
+[Wed 11:47:03] <m4nu>	(in that, we don't gain anything by having it in there).
+[Wed 11:47:40] <m4nu>	dlongley: If we create interoperability, then the "low cost" and "internationally" bits can be met.
+[Wed 11:48:02] <m4nu>	Ok, so, we're agreed - use case doesn't add much and is just an argument for interoperability, which is the basic requirement of any standard.
+[Wed 11:48:13] <m4nu>	So, this particular use case is rejected.
+[Wed 11:48:24] <m4nu>	Topic: Purchase-specific need-to-know identity
+[Wed 11:48:25] <bshambaugh>	brent's thought: yes, standards make things easier...
+[Wed 11:49:05] <m4nu>	ok, so we have this right now - Leveraging variable degrees of identity/anonymity per requirements of the payment transaction.
+[Wed 11:49:45] <m4nu>	dlongley: We already have this use case in the "Identity Use Cases" section.
+[Wed 11:49:55] <m4nu>	Yeah, agreed, we can reject this one because it's a duplicate.
+[Wed 11:50:27] <m4nu>	We already have: Execute a transaction without revealing secrets (i.e. identity, passwords, PINs) whose primary purpose is orthogonal to the actual transaction.
+[Wed 11:51:30] <bshambaugh>	why orthogonal?
+[Wed 11:52:27] <m4nu>	Orthogonal is hard to understand, what about: A customer executes transaction without revealing secrets (i.e. identity, passwords, PINs) whose primary purpose is not vital to the successful completion of the transaction.
+[Wed 11:53:38] <bshambaugh>	the only problem is when you spoof someone's identity and pay as them
+[Wed 11:53:42] *	cagedwisdom has quit (Remote host closed the connection)
+[Wed 11:53:47] <bshambaugh>	it is called stealing
+[Wed 11:53:49] <dlongley>	dlongley: A customer executes a transaction without revealing secrets (eg: identity, passwords, PINs) that are not vital to the successful completion of the transaction.
+[Wed 11:54:30] <bshambaugh>	but you can complete the transaction nevertheless
+[Wed 11:54:36] <m4nu>	ok, reword: A customer executes a transaction without revealing secrets that are not vital to the transaction (i.e. identity, passwords, PINs or other information the merchant does not need to know in order to complete the transaction).
+[Wed 11:56:01] <bshambaugh>	This seems wordy?
+[Wed 11:56:03] <m4nu>	Ok, so we deleted that use case and reworded one of the use cases in the identity section.
+[Wed 11:56:18] <m4nu>	any suggestions on how we could make it less wordy?
+[Wed 11:56:54] <bshambaugh>	just the stuff in the () is wordy, but it is in ()
+[Wed 11:57:13] <m4nu>	We're concerned that it's not clear w/o the stuff in the ()s
+[Wed 11:57:59] <m4nu>	Ok, general agreement that it doesn't hurt to keep the stuff in the ()s
+[Wed 11:58:05] *	m4nu bshambaugh agree/disagree ?
+[Wed 11:58:23] <dlongley>	dlongley: it's fine with me, i don't think we need to spend any more time on it
+[Wed 11:58:26] <bshambaugh>	it clarifies what a secret is?
+[Wed 11:58:35] <dlongley>	dlongley: it provides an example and makes clear what "vital" means (necessary to complete a transaction) (or at least gives an example of vital)
+[Wed 11:59:11] <bshambaugh>	"or other information the merchant does not need to know in order to complete the transaction"
+[Wed 11:59:55] <m4nu>	Brent, are you suggesting that we remove "identity, passwords, PINs" ?
+[Wed 12:00:34] <dlongley>	dlongley: Brent, can you type in exactly what you'd like the text to be?
+[Wed 12:02:24] <bshambaugh>	 A customer executes a transaction without revealing secrets that are not vital to the transaction (i.e. identity, passwords, PINs or or other information that the merchant does not need to know).
+[Wed 12:02:33] <voip-ps>	dlehn (SIP/50.134.65.129:5060-000000ab) has left the conference.
+[Wed 12:02:42] <m4nu>	+1 to bshambaugh's final text.
+[Wed 12:02:50] <dlongley>	+1
+[Wed 12:04:02] <m4nu>	I got it... I'll update the use case w/ that.
+[Wed 12:04:36] <bshambaugh>	Thanks Manu.
+[Wed 12:04:42] <m4nu>	thank /you/, Brent. :)
