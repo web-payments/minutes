@@ -1,0 +1,174 @@
+[Wed 11:07:50] <voip-ps>	Manu Sporny (SIP/6000-000000ed) is in the conference.
+[Wed 11:07:50] <voip-ps>	Manu Sporny (SIP/6000-000000ed) has joined the conference.
+[Wed 11:08:10] <voip-ps>	Dave Longley (SIP/6002-000000ee) has joined the conference.
+[Wed 11:09:33] <voip-ps>	Dave Lehn (SIP/6003-000000ef) has joined the conference.
+[Wed 11:10:47] <m4nu>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2014May/0139.html
+[Wed 11:10:50] <dlongley>	scribe: dlongley
+[Wed 11:11:10] <dlongley>	m4nu: we have some discussion around identity discovery as raised by Evan on the mailing list
+[Wed 11:11:52] <m4nu>	Topic: Is Identity a Distraction?
+[Wed 11:11:59] <m4nu>	http://lists.w3.org/Archives/Public/public-webpayments/2014May/0128.html
+[Wed 11:12:16] <dlongley>	m4nu: Evan raised three use cases to talk about with respect to discovery
+[Wed 11:12:16] <dlongley>	dlehn: Identity seems to be this touchy subject.
+[Wed 11:12:35] <dlongley>	m4nu: I got the feeling from Melvin that he was concerned that the identity stuff was a red herring, he felt that the identity stuff wasn't that important
+[Wed 11:13:07] <dlongley>	m4nu: the community may be split on that, i'm not sure, i'm not sure if the people that are anti-identity understand the entire purchase process
+[Wed 11:13:20] <dlongley>	m4nu: eg: you need to transmit identity info to people you buy things from
+[Wed 11:13:33] <dlongley>	m4nu: whatever payment system you come up with, if it doesn't cover identity in some way, it will be difficult to use
+[Wed 11:14:03] <dlongley>	m4nu: Dave Longley, Dave Lehn probably agree, so we need to talk to Melvin a bit more on the mailing list since he's not present on the call
+[Wed 11:14:35] <m4nu>	Topic: Memorable Payment Identifiers
+[Wed 11:14:35] <m4nu>	use case #1: A person sends money to their friend using a memorable identifier instead of a complex account number or URL. The memorable identifier is translated to a destination account for the payment. The friend should be able to easily communicate the identifier via voice, SMS or other short message and the person should be able to easily remember it.
+[Wed 11:15:07] <dlongley>	m4nu: this is a set of requirements more than a use case
+[Wed 11:15:10] <mediaprophet>	identity can assist in supporting use-cases such as digital receipt functionality.  say, a retail POS system has a WWW interface, to establish a relationship between the customer and the retailer (inclusive potentially of product / brand relationships).
+[Wed 11:16:02] <mediaprophet>	digital receipt functionality can in-turn extend to loyalty relationships
+[Wed 11:16:13] <m4nu>	+1 
+[Wed 11:16:19] <dlongley>	m4nu: we can't get away from the identity problem, if we use pseudo-anonymous IDs for all the digital receipts then the receipt has to be tied to the payment provider and we lose all the KYC/AML stuff that's required for high-value transactions. We don't want this to be a toy payment network.
+[Wed 11:17:59] <mediaprophet>	a pseudo-anonymous identity effectively diminishes support for the user.  warranty related information is one use-case where identity information relating to a transaction (perhaps to a product ID) supports the purchasers interests 
+[Wed 11:18:28] <mediaprophet>	the choice to provide that information, in a standardised form assists with interoperability
+[Wed 11:19:22] <mediaprophet>	ideally, the user has a service that allows them to store that information and select privacy preferences surrounding the relationship style with any participating retailers.
+[Wed 11:19:29] <m4nu>	dlongley: So, we should reword it so that someone wants to send someone else money, they ask for their "short payment identifier". The payment is sent to that short payment identifier. The payment system translates the short payment identifier into the correct destination account.
+[Wed 11:19:35] <mediaprophet>	understanding that’s a model of implementation, not a specification.
+[Wed 11:21:33] <mediaprophet>	re: short payment identifier +1
+[Wed 11:21:35] <m4nu>	So, the use case should be: Jack wants to send Jill some money and asks Jill for a short, memorable payment identifier. Jill sends the payment identifier to Jack via an SMS message. Jack makes a payment using the short payment identifier, the payment processor translates the short payment identifier into a destination financial account for Jill.
+[Wed 11:23:41] <dlongley>	dlongley: it's more about identity than payment initiation
+[Wed 11:23:56] <mediaprophet>	could be like a robot.txt file
+[Wed 11:23:58] <dlongley>	dlongley: first the translation of short id to financial account would occur then payment initiation would take place
+[Wed 11:25:04] <m4nu>	Topic: Trusting Short Payment Identifiers
+[Wed 11:25:04] <m4nu>	Ok, so Evan's next use case is:  A person needs to pay a (large) merchant for a purchase. They should be able to easily check that the destination is legitimate and, for example, not the address of a spammer (e.g. payments@amazon.com is preferable to a numerical account number and simply "Amazon" is preferable to a longer identifier because some users may be fooled by something akin to "amazon-payments@banksrus.com").
+[Wed 11:25:50] <dlongley>	m4nu: i think this has more to do with verifying an identity is who you think it is
+[Wed 11:26:03] <mediaprophet>	+1 
+[Wed 11:26:07] <dlongley>	m4nu: you would probably never manually type in "amazon" to the payment provider, you would be on the amazon website to click buy
+[Wed 11:26:22] <dlongley>	m4nu: you wouldn't need to verify the person receiving the payment was amazon
+[Wed 11:26:36] *	bshambaugh has quit (Read error: Connection reset by peer)
+[Wed 11:26:38] <dlongley>	m4nu: i think this really has to do with identity discovery
+[Wed 11:26:42] *	TallTed has quit (Remote host closed the connection)
+[Wed 11:27:15] <m4nu>	dlongley: This seems like more of a requirement, this just falls out of having short payment identifiers map to identities.
+[Wed 11:27:36] *	bshambaugh (~quassel@adsl-172-0-212-132.dsl.okcyok.sbcglobal.net) has joined #payswarm
+[Wed 11:27:40] <mediaprophet>	how about simply linking a URI to a payment destination
+[Wed 11:27:47] <m4nu>	dlongley: The way this use case is describing verification has to do w/ the way people are creating identifiers.
+[Wed 11:28:16] <mediaprophet>	linking payment identifiers?
+[Wed 11:28:34] <m4nu>	dlongley: This doesn't have to be a built in feature - short verifiable identifiers don't need to be verifiable, the person using the system would use something that would inspire confidence. This is external to how the system is standardized itself.
+[Wed 11:29:57] <m4nu>	dlongley: I think what Evan was trying to say is that the short identifier should be verifiable, and that's not something you can build into the system. It's a choice that someone would have to make. There is no system of trust around the identifier. You don't know if "Amazon" is actually Amazon unless there is someone verifying the name.
+[Wed 11:31:31] <mediaprophet>	wouldn’t something like WebID-TLS support that sort of function (or X509v3 - subjectAltName URI’s?) 
+[Wed 11:31:49] <mediaprophet>	subject to the issuing party i guess...
+[Wed 11:31:59] <m4nu>	Tim, not really, no
+[Wed 11:33:03] <m4nu>	dlongley: Once you map the name to a URL, you can look up that URL and see if you get something like an x509 certificate back, but there is no security inherent in the name itself.
+[Wed 11:34:26] <mediaprophet>	could shorten a URL that relates to a persons profile document - say a facebook profile, or a linkedin profile.  however the recipient of the transaction would need to register that address and verify it.
+[Wed 11:34:40] <m4nu>	I think what he means is something akin to the padlock icon in the browser, but associated w/ the short name.
+[Wed 11:35:14] <mediaprophet>	so a provider creating short-names for authorised links?
+[Wed 11:36:11] <dlongley>	dlongley: maybe this is a use case for sending a tweet to do a purchase, etc.
+[Wed 11:36:19] <dlongley>	dlongley: vs. being on their website
+[Wed 11:36:22] <mediaprophet>	so, network = twitter identifier = @payswarm ?
+[Wed 11:36:40] <m4nu>	Ok, so how about this: A person needs to pay a merchant for a purchase using a short identifier. They should be able to easily verify that the funds are going to be transferred to the appropriate merchant by looking at information associated with the short identifier that validates that they are, in fact, the merchant that they thought they were sending the money to.
+[Wed 11:37:07] <m4nu>	Tim, yeah, kinda like a short name for a payment destination...
+[Wed 11:38:03] <mediaprophet>	donations or micropayments - the ‘busker’ use-case…
+[Wed 11:38:20] <m4nu>	dlongley: A person pays a merchant using a short identifier. Prior to sending the payment, some information associated with the short identifier indicates to them that the short identifier is properly associated with the merchant.
+[Wed 11:38:49] <m4nu>	dlongley: A person pays a merchant using a short identifier. Prior to sending the payment, some information associated with the short identifier indicates to them that the short identifier is a verified short identifier for the merchant.
+[Wed 11:40:27] <m4nu>	dlongley: So, this could be some sort of Twitter advertisement for an item to purchase. You could then tweet back at the item to purchase it using the short identifier.
+[Wed 11:40:37] <mediaprophet>	…’verified short-identifier for the intended recipient? 
+[Wed 11:41:21] *	dlongley mediaprophet: yeah, it would be for any intended recipient, but i think we're trying to make the use case language more like a specific scenario
+[Wed 11:41:21] <m4nu>	dlongley: You could hover over the identifier and effectively see an Extended Validation certificate, ensuring that you are sending payment to the proper destination.
+[Wed 11:42:17] <m4nu>	dlongley: This is really about mapping a short identifier to a longer identifier, that's basically it.
+[Wed 11:42:29] <mediaprophet>	or a campaign for planting trees is being driven via twitter for a named value (say, $5) all you need to do is send ‘buy a tree’ to @buyatree on twitter (presuming both accounts are linked, it works?)
+[Wed 11:42:35] <dlongley>	dlongley: other operations can be done on top of that to get credentials, etc. create fancy UIs
+[Wed 11:42:38] <m4nu>	So, this could really be a standard for URL compression for the Web... standardizing short links.
+[Wed 11:42:55] <m4nu>	Tim, yeah, I think that's the basic use case.
+[Wed 11:43:41] <dlongley>	dlongley: So, something like - DID:ManuSporny
+[Wed 11:43:46] <m4nu>	dlongley: If we do the whole decentralized identity thing, we could just have a new scheme, and they would pick a name using their identity, so the solution would be to just tack the name to the end of that decentralized URL scheme.
+[Wed 11:43:48] <dlongley>	dlongley: (DID = decentralized ID URL scheme)
+[Wed 11:43:55] <dlongley>	dlongley: The short identifier in that case would be "ManuSporny"
+[Wed 11:44:41] <mediaprophet>	decentralised or ontology based?
+[Wed 11:44:51] <dlongley>	dlongley: It would be decentralized
+[Wed 11:44:43] <m4nu>	So, @ManuSporny on Twitter would be translated to did:ManuSporny, which would then hit some sort of decentralized lookup, which would return a URL to where you could get the certificate and destination accounts for the individual.
+[Wed 11:45:05] <m4nu>	Tim, they're not exclusive (decentralized vs. ontology)
+[Wed 11:45:11] <dlongley>	dlongley: It would be both, but in this case we're talking about decentralized
+[Wed 11:45:40] <mediaprophet>	i’m just thinking that the use of an ontology might help with an identifier, but only so many english terms…  it’s nice to use your own domain...
+[Wed 11:45:53] <m4nu>	Topic: Short Payment Identifiers for Donations
+[Wed 11:45:53] <m4nu>	Ok, Evan's third use case - A charitable organization or cause posts a donation address on a print advertisement. The address should be as memorable as a social media username so prospective donors need not use QR codes or type full URLs, potentially on a phone, to send a quick donation.
+[Wed 11:45:54] <mediaprophet>	not just english - perhaps another facet
+[Wed 11:45:57] <dlongley>	mediaprophet: we're talking about where your ID wouldn't be linked to a domain
+[Wed 11:46:27] <dlongley>	dlongley: your ID wouldn't have to be tied/locked down to a particular domain, rather the ID itself would be abstracted from the document storage location
+[Wed 11:46:42] <dlongley>	dlongley: so you could move where your identity document is stored easily without having to change your ID
+[Wed 11:46:57] <mediaprophet>	understand… still thinking it through.
+[Wed 11:47:48] <m4nu>	dlongley: These are all about having an identifier that is short and memorable. The other qualities are that it "looks accurate".
+[Wed 11:47:52] <mediaprophet>	@ is used to denote an email address or a twitter address.
+[Wed 11:47:56] <mediaprophet>	# is also used...
+[Wed 11:48:05] <mediaprophet>	could be something simple like that… perhaps $
+[Wed 11:48:26] <m4nu>	dlongley: I think we've covered this, you can have a short identifier map to a longer one. However, what the short identifier looks like is up to user choice. We can't enforce that w/ a standard.
+[Wed 11:49:18] <m4nu>	dlongley: We have an idea for a system once you map it to an identity, you can map it... the short ID and how it looks, if it looks spammy, is not enforceable by a standard. Since we're not choosing them for people, they can chose whatever they want, it's an open question to what a short identifier looks like.
+[Wed 11:49:33] <m4nu>	dlongley: We can't lock down the choices people will make on the short identifiers.
+[Wed 11:50:34] <m4nu>	dlongley: Effectively all that is is that there is a credential issuer out there that will issue short IDs to people, and then people can map that back to their short identity. We will probably do the reverse of that, make it easy to have a short identifier to map to your list of credentials, and then check that identity's credentials to ensure that you're sending stuff to the proper location.
+[Wed 11:51:26] <mediaprophet>	does the concept of a payment equivalent to an email address have sufficient merit...
+[Wed 11:51:37] <m4nu>	dlongley: Really, all of this stuff just sounds like the abstraction we've been moving toward wrt. separating identifier to document storage location. If you don't get a URL scheme, you can prepend it, that may be all we're talking about here.
+[Wed 11:51:58] <m4nu>	Tim, I think we're thinking along the lines of just a short name scheme that maps to a URL...
+[Wed 11:52:08] <m4nu>	and there being some way to look up the mapping that's decentralized.
+[Wed 11:52:33] <m4nu>	(and perhaps requiring payment to have that mapping in the "global ledger")
+[Wed 11:53:06] <m4nu>	So, we're skipping the last use case?
+[Wed 11:53:11] <mediaprophet>	i can think of a few solutions that could support such functions.  i’m not sure specifying one would be helpful atm.
+[Wed 11:53:22] <m4nu>	dlongley: Yeah, the thing that's compelling is that you have a memorable short address to send payments to.
+[Wed 11:53:22] <mediaprophet>	other than the ability to provide one.  
+[Wed 11:53:57] <m4nu>	dlongley: cryptocurrencies use base-64 public keys for IDs, those are not useful to people. They don't have the same memorable features that people would like to have.
+[Wed 11:54:34] <dlongley>	dlongley: give "ManuSporny" to identity/payment software, it prepends URL scheme - did:ManuSporny, then a decentralized network query returns a result that can be used to get a URL to an identity document
+[Wed 11:54:38] <mediaprophet>	ATM, best solution i’ve seen is putting a crypto wallet address into a foaf file
+[Wed 11:55:15] <mediaprophet>	i assume the webpayments identity solution has a similar means of notating an identity, with relavent URI's
+[Wed 11:55:26] <m4nu>	yep, it does
+[Wed 11:55:56] <mediaprophet>	principally, we can’t get away from the identity issue.
+[Wed 11:55:56] <m4nu>	So, this is useful for quick one-off payments, and may come about because of other stuff we're working on right now.
+[Wed 11:56:44] <mediaprophet>	the identity solution, supports an array of payment mechanisms. ideally, the debitor can select which transaction format best suits their needs for that transaction
+[Wed 11:56:51] <m4nu>	but payments to short identifiers is probably low priority as it's a convenience mechanism, not absolutely necessary to perform a payment in may common B2C use cases.
+[Wed 11:57:00] <mediaprophet>	perhaps assign different terms to different gateways / payment identifiers
+[Wed 11:57:27] <mediaprophet>	QR Code is a useful tool...
+[Wed 11:57:39] <m4nu>	dlongley: Something important wrt. where this identity information lives. For example, in a telehash-like network, if you query a short name, you could get a URL sent back to you.
+[Wed 11:57:40] <mediaprophet>	agreed.  low priority atm.
+[Wed 11:58:08] <m4nu>	dlongley: There is also information leakage issue, you don't want to make some of this information public.
+[Wed 11:58:23] <mediaprophet>	+1...
+[Wed 11:58:38] <m4nu>	dlongley: Also, Telehash was supposed to be temporary, but now we're talking about having that network persist. The software wouldn't have any idea of how to map it to anything w/o that network.
+[Wed 11:59:16] <mediaprophet>	http://telehash.org/
+[Wed 11:59:25] <m4nu>	Well, the question is, is that mapping mechanism a nice-to-have or is it a must have.
+[Wed 11:59:49] <m4nu>	dlongley: if we're going to have a shortname lookup mechanism, it would have to be standardized, it would be a must have, and that may be biting off more than we can chew.
+[Wed 11:59:52] <bshambaugh>	Mozilla also is doing something new
+[Wed 12:00:05] <m4nu>	bshambaugh: What's Mozilla doing?
+[Wed 12:00:34] <m4nu>	Topic: Loyalty Cards, Tokenization
+[Wed 12:00:46] <m4nu>	Ok, let's see if we can drop these two use cases, I think we've already got them covered.
+[Wed 12:00:59] <mediaprophet>	link?
+[Wed 12:01:18] <m4nu>	https://www.w3.org/community/webpayments/wiki/CategorizedWebPaymentsUseCases#Initiating_Payments
+[Wed 12:01:31] <m4nu>	I think we can drop these two:
+[Wed 12:01:34] <m4nu>	Application of loyalty cards to purchases.
+[Wed 12:01:42] <m4nu>	Tokenization mechanism that protects the buyer and merchant from theft of credentials.
+[Wed 12:02:06] <dlongley>	"Use Case: A customer can associate a membership card, coupon, or similar token with a transaction to receive a discount or other benefits." covers the above loyalty card case
+[Wed 12:02:12] <mediaprophet>	why loyalty card.  do you have loyalty relationship?  perhaps form loyalty relationship?
+[Wed 12:02:31] <m4nu>	It's about a loyalty relationship (not the card itself)
+[Wed 12:02:40] <m4nu>	but we already have the use case that Dave pointed out above, so it's a duplicate.
+[Wed 12:03:14] <mediaprophet>	ok. few ideas, see if you’ve got them covered.
+[Wed 12:03:18] <m4nu>	"Use Case: Temporary payment tokens for merchants. If token is stolen, thief does not get access to financial account."
+[Wed 12:03:28] <m4nu>	"Use Case: Tokenization mechanism that protects the buyer and merchant from theft of credentials."
+[Wed 12:03:35] <m4nu>	So, those are duplicates, condense into one?
+[Wed 12:04:17] <bshambaugh>	Manu, Mozilla has a new project called Accounts that sounds kinda like what you guys have been talking about.
+[Wed 12:04:22] <mediaprophet>	i have NFC tag that links to my RWW Dataspace.  i buy with cash, tap NFC, then later set my relationship privacy settings with merchant, participate with how many bottles of ice coffee i buy in a month (any outlet).
+[Wed 12:04:29] <mediaprophet>	get my reciept sent via HTTP
+[Wed 12:04:30] <bshambaugh>	one is the token, and one is the mechanism
+[Wed 12:05:17] <m4nu>	https://blog.mozilla.org/blog/2014/02/07/introducing-mozilla-firefox-accounts/
+[Wed 12:06:12] <m4nu>	Brent, aren't Firefox Accounts specific to the Firefox web browser?
+[Wed 12:06:24] <m4nu>	They're not cross-browser compatible, right?
+[Wed 12:06:38] <mediaprophet>	i can log into chrome
+[Wed 12:06:56] <m4nu>	Yes, but that's not powered by Firefox Accounts - it's like it, but totally different system.
+[Wed 12:07:55] <mediaprophet>	understand…  same sort of thing though, isn’t it?
+[Wed 12:08:01] <m4nu>	It's not a generalized solution, it's browser-specific, but yes, same sort of thing.
+[Wed 12:08:11] <mediaprophet>	i believe with alot of existing POS systems, it’s easiest to hijack the print-driver
+[Wed 12:08:17] <m4nu>	RWW Dataspaces, Identity Credentials are better (because they're completely cross-browser)
+[Wed 12:08:38] <voip-ps>	Manu Sporny (SIP/6000-000000ed) has left the conference.
+[Wed 12:08:39] <voip-ps>	Dave Lehn (SIP/6003-000000ef) has left the conference.
+[Wed 12:08:39] <voip-ps>	Dave Longley (SIP/6002-000000ee) has left the conference.
+[Wed 12:08:42] <bshambaugh>	It sounded like that when it was described to me (from a person from Mozilla).  
+[Wed 12:08:59] <m4nu>	bshambaugh: That it was a generalized solution?
+[Wed 12:09:24] <bshambaugh>	No, I think he described it as browser-specific.
+[Wed 12:09:38] <mediaprophet>	the current loyalty use-case seems to be overly specific
+[Wed 12:10:05] <mediaprophet>	perhaps linkage of loyalty (or receipt) information to purchases?
+[Wed 12:10:07] <bshambaugh>	I might be able to get ahold of him if you want.
+[Wed 12:10:08] <mediaprophet>	or transactions?
+[Wed 12:10:23] <mediaprophet>	therein, perhaps the mechanism around support it is where tokenization lives.
+[Wed 12:10:34] <mediaprophet>	but it’s not simply from theft of credientials
+[Wed 12:11:49] <mediaprophet>	also; is loyalty also a constituant of digtital reciept
+[Wed 12:12:41] <m4nu>	bshambaugh: Do you remember who you were talking w/ at Mozilla? 
+[Wed 12:14:18] <m4nu>	bshambaugh: In any case, it's probably important to track the work, but it won't be useful for what we're doing unless it could be standardized (and Mozilla doesn't seem to be very interested in that right now)
+[Wed 12:14:39] <dlongley>	mediaprophet: "Use Case: A customer can associate a membership card, coupon, or similar token with a transaction to receive a discount or other benefits." <-- that one is overly specific?
+[Wed 12:14:58] <dlongley>	dlongley: That's what we replaced the use case that mentions loyalty cards with, is that ok with you?
+[Wed 12:15:18] <mediaprophet>	+1
