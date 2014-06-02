@@ -1,0 +1,160 @@
+[Mon 11:08:39] <m4nu>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2014Jun/0000.html
+[Mon 11:08:46] <dlongley>	scribe: dlongley
+[Mon 11:09:35] <dlongley>	m4nu: pindar had asked to announce some IGF information
+[Mon 11:09:54] <mediaprophet>	The outline (from IGF) looked very positive...
+[Mon 11:10:05] <dlongley>	m4nu: any other updates?
+[Mon 11:10:23] <dlongley>	dlehn: Nope
+[Mon 11:10:22] <m4nu>	Topic: Parametric Selection of Payment Method
+[Mon 11:10:47] <m4nu>	So we have this right now for the use case: Selection of payment method based upon desired payment speed and cost.
+[Mon 11:11:55] <dlongley>	m4nu: this seems to be something that the payment processor would ... it's a fairly complex use case, we could say it's something the payment processor could handle, but that payment processor might have to know information from other payment processors, etc, to produce quotes 
+[Mon 11:12:10] <m4nu>	dlongley: This sounds like a requirement, so we'd need to reword it as a use case.
+[Mon 11:12:22] <mediaprophet>	Should it specifically state directionality? As in: capability at both merchant and end-user contact points??
+[Mon 11:12:37] <m4nu>	dlongley: Maybe the reason it was in here was because the protocol would need to support it - this seems complex, especially for the first version of this.
+[Mon 11:13:01] <mediaprophet>	Different regions might have different rates for payments.  So, cms might check where end customer is..
+[Mon 11:13:32] <dlongley>	m4nu: the problem with the complexity of the use case ... is that it may require something built into the protocol and it may be difficult to add in later
+[Mon 11:13:53] <m4nu>	dlongley: I'm trying to think through how this could be standardized/implemented.
+[Mon 11:14:34] <m4nu>	dlongley: Further problem - how would these prices be displayed, does the merchant have any control over it?
+[Mon 11:14:52] <m4nu>	dlongley: This may or may not require the merchant to know which payment provider's are available.
+[Mon 11:15:07] <mediaprophet>	Perhaps the requirement is being able to identify the characteristics of a payment processor?
+[Mon 11:15:11] <m4nu>	dlongley: or are we talking about merchants providing different payment options.
+[Mon 11:15:45] <m4nu>	dlongley: Payment speed soundsl ike something payment processor could decide. Wouldn't your payment processor just provide with a better rate? Payment processor can process things more quickly, thus at a better rate. Seems like this is out-of-band stuff.
+[Mon 11:16:20] <dlongley>	m4nu: i think the intent at the workshop was a smart wallet that could auto-negotiate on your behalf to pick the best payment processor option based on a number of different variables
+[Mon 11:16:23] <mediaprophet>	Perhaps a means to dynamically signal qualities.
+[Mon 11:16:42] <dlongley>	m4nu: we want your payment agent to be able to determine your fastest/cheapest payment option based on a variety of different inputs
+[Mon 11:17:10] <mediaprophet>	Like petrol prices at a petrol station. Perhaps the characteristics might fluctuate, and/or if a signalling method existed, higher flexibility might encourage competition.
+[Mon 11:17:10] <m4nu>	dlongley: seems to me, based on how we designed payswarm so far, right now merchants put up offers for assets that indicate what minimum costs are. 
+[Mon 11:17:33] <m4nu>	dlongley: You turn around and give that to whatever payment processor you want to. The payment processor will give you a finalized price to display to you before you purchase.
+[Mon 11:18:04] <m4nu>	dlongley: If we don't consider this in version 1, if we wanted to add something to the protocol, what would happen in that case, the "Web Pyaments Commerce Protocol" would just communicate with N-many payment processors to pick one offer.
+[Mon 11:18:10] <m4nu>	dlongley: I think we can layer this.
+[Mon 11:18:18] <mediaprophet>	Does the payment processor signal the "deal" or arrangement (charge) for processing the payment?
+[Mon 11:18:29] <m4nu>	dlongley: We've completely separated concerns - the merchant just states what they need. That may or may not contain some price that must be met.
+[Mon 11:18:30] <mediaprophet>	At the time of the transation
+[Mon 11:19:07] <m4nu>	dlongley: What might end up happening is that the payment processor could give you a refund, or pay the merchant more money... the merchant might say the cost does need to be a dollar, but I'm willing to take between 70%-80% of that dollar. The payment processor might negotiate to give you a refund.
+[Mon 11:19:22] <m4nu>	dlongley: In another case, the merchant could say: I just want $0.80. 
+[Mon 11:19:32] <m4nu>	dlongley: Version 1 could just talk to your payment processor.
+[Mon 11:19:41] <m4nu>	dlongley: Version 2 could talk to N-many processors.
+[Mon 11:19:48] <m4nu>	dlongley: Seems like this could layer and it could work.
+[Mon 11:21:50] <dlongley>	m4nu: going through tim's comments ... the directionality question ... the merchant specifies the asset they are selling and what they want, the customer can come in and read what the merchant wants and figure out which one of their payment processors would give them the best deal and would then meet that offer by posting something back to the merchant
+[Mon 11:22:02] <mediaprophet>	Payment processor more likely to say, I'll charge you 10c to do that transaction, in usd, within the next 30 seconds. The merchant says - that's the cheapest deal, do it.
+[Mon 11:22:13] <dlongley>	m4nu: the merchant doesn't need to contact the customer, the customer can make the best decision for themselves with all the available information
+[Mon 11:22:19] <dlongley>	m4nu: because the merchant has already made all that information known
+[Mon 11:22:22] <mediaprophet>	K.
+[Mon 11:22:33] <dlongley>	m4nu: re: different regions would provide different rates.
+[Mon 11:23:45] <dlongley>	m4nu: "perhaps the requirement is being able to ID the characteristics" that is one requirement, the other requirement is being able to identify the charact. of an offer for sale, the system we're discussing will know each of the payment processors available, they'll be able to say "i have an offer the merchant put forth, what's the fastest you can process this transaction for me and what's the price" and then you pick the best quote
+[Mon 11:24:24] <dlongley>	m4nu: "perhaps a means to dynamically signal qualities" ... i don't know what he means by that exactly, dynamic is a loaded worded, perhaps the means to signal qualities is what linked data is all about, we use linked data to express a whole variety of different qualities
+[Mon 11:25:03] <dlongley>	m4nu: "the characteristics might fluctuate..." ... we assume the characteristics do fluctuate, we allow merchants to publish whenver they want (every 100 ms or every day or year, whatever works for them)
+[Mon 11:25:09] <dlongley>	m4nu: we are enabling flexibility
+[Mon 11:25:18] <mediaprophet>	Some payment processor might fluctuate in price during a given period.
+[Mon 11:25:29] <mediaprophet>	:)
+[Mon 11:25:30] <dlongley>	m4nu: "the payment processor is more likely to say 10c..." ... i think this conflates what the merchant should be able to say
+[Mon 11:25:39] <dlongley>	m4nu: there's no reason to involve the merchant, it's too complex to do it that way
+[Mon 11:25:46] <dlongley>	m4nu: the merchant just has to say "these are the offers, these are the terms"
+[Mon 11:25:56] <dlongley>	m4nu: and the customer/payment processor just figures out what works for them
+[Mon 11:26:04] *	brent has quit (Read error: Connection reset by peer)
+[Mon 11:26:05] <dlongley>	m4nu: if the merchant won't accept something, they don't offer it
+[Mon 11:26:22] <dlongley>	m4nu: "payment processor might fluctuate..." ... yes, that's assumed
+[Mon 11:26:33] <dlongley>	m4nu: we need to rewrite this use case
+[Mon 11:27:27] <m4nu>	A customer discovers an offer for sale by a merchant under terms that the merchant is comfortable with. The customer contacts three different payment processors to get a finalized transaction before accepting that transaction.
+[Mon 11:27:44] <m4nu>	dlongley: We can support that now, the way we've done this (I think it already works with the protocol).
+[Mon 11:27:46] <mediaprophet>	I imagine their might be loyalty opportunities between payment processors and their customers
+[Mon 11:28:21] <m4nu>	dlongley: I think this is already covered by the current design.
+[Mon 11:29:03] <m4nu>	I don't know if we support the merchant specifying which payment processors they support yet.
+[Mon 11:29:11] *	brent (~quassel@107.196.158.121) has joined #payswarm
+[Mon 11:29:15] *	brent is now known as bshambaugh
+[Mon 11:29:35] <m4nu>	dlongley: I think we can do that now, you can list the payees as specific to certain payment processors. So, technically we can do that today, but we may want to do it in a different way in the future.
+[Mon 11:31:58] <m4nu>	A customer discovers an offer for sale by a merchant under terms that the merchant is comfortable with. The offer includes a list of payment processors that the merchant is capable of receiving payment through. The customer contacts a subset of those payment processors that they are capable of sending payment through to get finalized transaction details (such as price or speed) before executing the most desirable transaction.
+[Mon 11:32:38] <mediaprophet>	+1
+[Mon 11:33:15] <dlongley>	m4nu: pindar +1 through skype
+[Mon 11:33:28] <m4nu>	Topic: The IGF 2014 Workshop on Payments and Identity
+[Mon 11:33:36] <m4nu>	http://www.intgovforum.org/cms/wks2014/index.php/proposal/view_public/69
+[Mon 11:34:34] <dlongley>	pindar: the IGF, the good news, is that our proposal has been accepted, and therefore we will present in Instanbul, Turkey, at the panel, well ... it's actually a working group, i had a few names presented to me at the stockholm forum, I just wanted to have it on the record during this call
+[Mon 11:34:58] <mediaprophet>	+1
+[Mon 11:35:02] <mediaprophet>	Looks great
+[Mon 11:35:11] <dlongley>	m4nu: the comments that we got back seemed very reasonable, things we should definitely address
+[Mon 11:35:38] <dlongley>	pindar: a lot of the time was taking up with presentations in last years IGF, so this time there will be some videos and those will get out of the way to have more time
+[Mon 11:36:13] <dlongley>	pindar: We've had some comments from the federal reserve and they might be ideal in terms of reaching out to
+[Mon 11:36:16] <dlongley>	m4nu: i can reach out to them
+[Mon 11:36:41] <dlongley>	pindar: i'll bounce some names later this week, i know you're traveling, we can let the list know about the comments
+[Mon 11:37:00] <dlongley>	m4nu: right, which list?
+[Mon 11:37:36] <dlongley>	m4nu: the web payments CG would be good to hear the comments, the ... actually, maybe it would be good to let them both know, and let the IG list know the MAG is interested in payments
+[Mon 11:38:07] <dlongley>	pindar: This would be a good test case to figure out how we should work the messaging around this.
+[Mon 11:38:36] <dlongley>	m4nu: i forwarded the comments from the MAG to the web payments list, i blanked out email addresses, names, etc. 
+[Mon 11:38:54] <m4nu>	Here are the comments we got back from the IGF MAG: http://lists.w3.org/Archives/Public/public-webpayments/2014May/0149.html
+[Mon 11:39:30] <dlongley>	m4nu: i'll send this onto the web payments chartering IG so they're aware of this happening
+[Mon 11:39:32] <dlongley>	pindar: thank you
+[Mon 11:40:15] <bshambaugh>	+1
+[Mon 11:40:41] <dlongley>	m4nu: we're hoping to send out a pretty big advance in the payments privacy/policing area, it's a new proof of concept we've been working on for the last month ... to demonstrate that this isn't just theoretical, showing how to put all these things together, such as high-stacks credentials, passport, proof of age, driver's license, etc. and digitally signing those so that they can be trusted by third party sites, these credentials
+[Mon 11:40:41] <dlongley>	 could be issued by bank, etc.
+[Mon 11:41:10] <dlongley>	m4nu: national ID card could have signature on it from US, Canadian, Hong Kong gov't, etc.
+[Mon 11:41:30] <dlongley>	m4nu: and be stored with your identity document and be able to be transferred to third parties and would be digitally verifiable
+[Mon 11:41:39] <dlongley>	m4nu: anything else on this topic before moving on?
+[Mon 11:42:02] <dlongley>	dlongley: tim holborn wanted some clarification on something
+[Mon 11:42:12] <dlongley>	mediaprophet: what did you want to be clarified?
+[Mon 11:42:14] *	m4nu mediaprophet what was the '??' for? 
+[Mon 11:42:22] *	m4nu we can clarify since we're on the topic.
+[Mon 11:43:11] <m4nu>	Topic: App Stores
+[Mon 11:43:36] <m4nu>	This is what we have for the app store use case so far: App Stores - selling apps in mobile scenarios.
+[Mon 11:43:50] <mediaprophet>	Oh.  Just seemed like a long pause...
+[Mon 11:44:45] <dlongley>	m4nu: number of problems with this, it's not very specific, it's only mentioning mobile... the problem with mobile is.... the general discussion we had at the workshop was that mobile is *part* of the web, this mechanism is built for the web, it's not "non-mobile" or "non-tablet" the key here is that there's a programmatic way to utilize HTTP and other low-level protocols to execute payment
+[Mon 11:44:46] <mediaprophet>	My app interface hung...  Now I'm catching up.  Sorry.  Gimme a tic
+[Mon 11:44:48] <dlongley>	m4nu: a browser is not required
+[Mon 11:45:15] <dlongley>	m4nu: with in-app purchases, etc. typically a browser is not used, but what we mean by web payments is to use the web as the substrate on top of which payments are built
+[Mon 11:45:21] <dlongley>	m4nu: no browser is required
+[Mon 11:45:33] <dlongley>	m4nu: we can't say "mobile scenario" because what is and isn't mobile is pretty shaky these days
+[Mon 11:45:35] <bshambaugh>	so apps use HTTP?
+[Mon 11:45:45] <dlongley>	m4nu: is a transforming tablet with a keyboard on it a mobile? 
+[Mon 11:46:05] <dlongley>	m4nu: so we should probably just remove the whole "mobile thing" from the use case and just talk about app stores
+[Mon 11:46:20] <dlongley>	m4nu: and app stores that just happen to use the web payments protocol to do payments
+[Mon 11:46:29] <m4nu>	pindar: I agree mobile/non-mobile is not a useful distinction
+[Mon 11:47:05] <m4nu>	We also have this for the next use case: In-app purchases in mobile scenarios for purchasing premium content, virtual goods, or subscriptions.
+[Mon 11:47:11] <m4nu>	So, we might want to combine these two use cases.
+[Mon 11:47:18] <m4nu>	pindar: yes, combine them makes sense
+[Mon 11:47:27] <mediaprophet>	I'm not sure the issues exhibited in those older paradigms apply here.
+[Mon 11:47:42] <m4nu>	dlongley: A customer uses their mobile phone or browser to access an app store to make a purchase. 
+[Mon 11:48:15] <m4nu>	dlongley: A customer purchases premium content, virtual goods, or a subscription from inside of an application.
+[Mon 11:48:30] <mediaprophet>	Can a link be provided in the AppStore to make the purchase in a browser?
+[Mon 11:48:54] <m4nu>	dlongley: I think there are two different cases. You are at an app store making a purchase. You are in an app making a purchase.
+[Mon 11:49:06] <m4nu>	dlongley: What device you're doing that with, doesn't really matter.
+[Mon 11:49:20] <m4nu>	dlongley: if we can mention mobile as an example, that may assuage some people's concerns.
+[Mon 11:49:31] <m4nu>	dlongley: So, with your mobile device, with your browser, it just works wherever.
+[Mon 11:49:40] <mediaprophet>	Might be in a browser making a purchase for an AppStore or an app...
+[Mon 11:50:38] <m4nu>	pindar: leave out desktop
+[Mon 11:50:44] <mediaprophet>	Ie: kid has phone, with no credit card details in AppStore.  Parents use laptop to buy app or send credit to kids appstore
+[Mon 11:50:48] <mediaprophet>	K.
+[Mon 11:51:15] <m4nu>	Then how about this for the first use case: A customer uses a native non-browser application on their mobile phone or tablet, or a web browser to access an app store to make a purchase.
+[Mon 11:51:32] <m4nu>	pindar: Yup, works for me.
+[Mon 11:51:59] <mediaprophet>	+1
+[Mon 11:52:15] <m4nu>	dlongley: I think we need to be slightly more clear about "need to make a purchase via an app store".
+[Mon 11:52:38] <m4nu>	ok, so change to:  A customer uses a native non-browser application on their mobile phone or tablet, or a web browser to make a purchase at an app store.
+[Mon 11:53:22] <m4nu>	dlongley: Your application or web browser can use the same protocol to initiate the payment.
+[Mon 11:53:44] <pindar>	+1
+[Mon 11:54:04] <mediaprophet>	+1
+[Mon 11:54:23] <m4nu>	Topic: In-app Purchases
+[Mon 11:54:42] <m4nu>	What we have right now is: In-app purchases in mobile scenarios for purchasing premium content, virtual goods, or subscriptions.
+[Mon 11:55:29] <mediaprophet>	Why are the principles different for mobile.
+[Mon 11:55:38] <mediaprophet>	Is this due to carrier direct billing?
+[Mon 11:56:18] <mediaprophet>	Arguably, these models also apply to many games for desktop / other platforms.
+[Mon 11:56:22] <dlongley>	m4nu: re: tim, no this was just something that was mentioned at the workshop because people were thinking that mobile-based payments were different
+[Mon 11:56:24] <m4nu>	Tim, no - this is mostly because people at the workshop were too fixated on Mobile.
+[Mon 11:56:26] <mediaprophet>	Or advanced apps. 
+[Mon 11:56:28] <dlongley>	m4nu: from other payments, and they really shouldn't be
+[Mon 11:56:45] <dlongley>	m4nu: carrier-direct billing is different, but the only thing that's different is the payment processor
+[Mon 11:56:58] <dlongley>	m4nu: your payment processor is your mobile carrier, not, for example, paypal or google wallet
+[Mon 11:57:07] <m4nu>	Ok, so this? A customer makes a purchase from within an application for premium content, virtual goods, or subscriptions.
+[Mon 11:57:22] <m4nu>	Pindar: I think we need to ensure that mobile-based payments is not perceived as different even though the payment processor may be different
+[Mon 11:57:25] <mediaprophet>	Yup.
+[Mon 11:57:31] <dlongley>	+1
+[Mon 11:57:37] <mediaprophet>	+1
+[Mon 11:57:40] <pindar>	 +1
+[Mon 11:58:02] <mediaprophet>	I think people forget mobile started with wap
+[Mon 11:58:08] <mediaprophet>	Or similar.
+[Mon 11:58:44] <mediaprophet>	Now, the apps are much more capable of speaking www.
+[Mon 11:59:17] *	rossk (~rossk@64-142-88-9.dedicated.static.sonic.net) has joined #payswarm
+[Mon 11:59:31] <dlongley>	m4nu: next week the meeting time is up in the air, we may or may not have a call next week
+[Mon 11:59:57] <dlongley>	m4nu: we're just going to keep going through the use cases, if we don't do it, the web payments IG will have to, it's better that we do some front running and get some solid use cases down related to the tech we're building
+[Mon 12:00:16] <dlongley>	m4nu: i think so far many of the use cases are already met with at least the payswarm stuff we've put out into the public
+[Mon 12:00:27] <dlongley>	m4nu: that's good that they are met by the tech we've been building over the last 4+ years
+[Mon 12:00:36] <dlongley>	m4nu: any other comments we should be aware of before the call next week?
+[Mon 12:23:58] *	bshambaugh has quit (Ping timeout: 240 seconds)
+[Mon 12:35:23] *	cagedwisdom has quit (Remote host closed the connection)
+[Mon 12:36:53] *	mediaprophet has quit (Quit: Skype: sailing_digital)
