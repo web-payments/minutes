@@ -1,0 +1,154 @@
+[Tue 21:34:44] <m4nu>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2014Jun/0039.html
+[Tue 21:34:48] <voip-ps>	timothy holborn (SIP/getonsip.com-0000010f) has joined the conference.
+[Tue 21:35:08] <dlongley>	scribe: dlongley
+[Tue 21:35:22] *	mediaprophet (~mediaprop@c211-30-43-225.frank3.vic.optusnet.com.au) has joined #payswarm
+[Tue 21:36:38] <dlongley>	m4nu: Additions to the Agenda: We should add two things to the agenda, one is the Identity Credentials demo and the other is the meeting with the US Fed tomorrow that's part of the extension of the work we started with them at the Paris workshop. Any other additions?
+[Tue 21:36:39] <pindar> none from me.
+[Tue 21:36:39] <taaz> Nope.
+[Tue 21:36:58] <m4nu>	Topic: US Federal Reserve Meeting
+[Tue 21:37:34] <dlongley>	m4nu: tomorrow i'm headed to the US Fed bank in Kansas City, we've made good contacts with the US Fed, they are very interested in sending someone to join the web payments work
+[Tue 21:37:43] <dlongley>	m4nu: they are making sure they have someone assigned to us
+[Tue 21:37:50] <dlongley>	m4nu: so we have solid contacts in the US Fed now.
+[Tue 21:38:26] <pindar> please keep in view regulatory FinTech evolution from others jurisdictions such as in Asia Pac
+[Tue 21:38:29] <dlongley>	m4nu: as a result of that we should be able to get in front of a lot of banks and financial institutions, mainly because the US Fed has said that they are really pushing forward to make payments faster and more secure in the US and they are looking for different ways to do it both in and outside the financial industry and the web payments work is somewhat outside it so they are interested in what we're doing here.
+[Tue 21:38:44] <dlongley>	m4nu: we'll be meeting with some of the people we'll be directly working with on the web payments stuff.
+[Tue 21:38:47] <dlongley>	m4nu: any questions on that upcoming meeting?
+[Tue 21:38:52] <dlongley>	pindar: none
+[Tue 21:39:05] <m4nu>	Topic: Identity Credentials Proof of Concept
+[Tue 21:39:40] <m4nu> Background on this topic is here: http://manu.sporny.org/2014/identity-credentials/
+[Tue 21:39:40] <pindar> Haven’t had time to do a decent first pass. Comments thus far looks encouraging. I will need about 2 days
+[Tue 21:39:42] <dlongley>	m4nu: if you've been tracking the mailing list, finally we were able to send out and release all the source code for a demo on identity security and Identity Credentials, it has to do with some of the stuff we're going to be talking about at IGF in Turkey later this year
+[Tue 21:40:44] <dlongley>	m4nu: what we release is what we believe to be a fairly fully-designed solution for doing high-stakes credentials on the web, if you need to prove who you are to a website, if you need to transmit a gov't issued ID card, or whether you are over the age of 18, 21, 55, 65, etc. if you want to transmit some gov't security clearance ... or something as simple as your shipping address, email address, phone number, the demo we just released outlines how you do that in a decentralized way
+[Tue 21:41:14] <pindar> You *do* realize that this is *the* question to try to solve. Now we need to verify the Internet dog’s name in a distributed way. 
+[Tue 21:41:19] <dlongley>	m4nu: now someone can own all of the credentials that are associated with their identity and send them on an as needed basis, it's in the same ballpark as OpenID Connect, we hope it's much more secure, decentralized, and privacy-aware than the other solutions out there
+[Tue 21:41:38] <dlongley>	m4nu: we're putting this out there to get the conversation going on how we think the solution should work
+[Tue 21:41:52] <pindar> We should update the IGF website to point to this and find a mechanism to get this outthere to start the dialogue in advance of the Istanbul meeting
+[Tue 21:41:58] <dlongley>	m4nu: this has a lot to do with payments because to do high-value payments you need KYC, customer clearing, anti-laundering, etc.
+[Tue 21:42:35] <dlongley>	m4nu: we have 10 days to do that [what pindar is saying]
+[Tue 21:42:43] <pindar> great thanks!
+[Tue 21:42:48] <dlongley>	m4nu: my focus is getting the IGF proposal in shape and getting the people invited
+[Tue 21:43:39] <voip-ps>	Pindar Wong (SIP/getonsip.com-00000110) has joined the conference.
+[Tue 21:43:53] <dlongley>	mediaprophet: people looking at this at different ways [missed] ... JSON-LD, turtle, [missed] is another big one, i think that there's a feeling that [missed] that technology [missed] to secure a person's status
+[Tue 21:44:24] <dlongley>	m4nu: i think there's a misunderstanding where WebID+TLS fits in with Identity Credentials, they are interoperable at the most basic level
+[Tue 21:44:28] <mediaprophet>	Might type it: these crediential systems; can support RWW systems...
+[Tue 21:44:29] <dlongley>	mediaprophet: i agree with you
+[Tue 21:44:44] *	dlongley mediaprophet much better right now
+[Tue 21:44:50] <dlongley>	mediaprophet: there are two factors in there
+[Tue 21:46:20] <dlongley>	mediaprophet: there are two factors, one is that FOAF represents an agenda, i interpret as a persona or person... this maps to a WebID TLS cert, which doesn't denote what the basis of that relationship [missed] ... where you are storing all the data on your web server, for example, one of the benefits i saw immediately, was that the IC system was quite clearly indicating a legal statement about a person, i think that's relevant
+[Tue 21:48:06] <voip-ps>	Pindar Wong (SIP/getonsip.com-0000010b) has left the conference.
+[Tue 21:48:11] <dlongley>	mediaprophet: what i can gather is that if i want to set up [missed], if i want to sync all my own apps [missed], [missed echo], worldwide i can do whatever i want, it's mine ... and the data that i store is a decision i make [missed], the IC tech seems to communicate that very well, not only does that communicate that with a Web ontology, it makes it possible to verify those facts, at the end of the day i validated that service,  here's my passport, it's only validated for me, [missed], the framework ...
+[Tue 21:48:48] <mediaprophet>	essentially; i’m saying identity credientials; states clearly who is the owner of the crediential
+[Tue 21:49:12] <mediaprophet>	the ability to create ‘persona’ perahps using FOAF documents; attached to a real identity - seems like what is needed for RWW
+[Tue 21:49:01] <dlongley>	m4nu: let's continue the discussion on the mailing list, i think most people are aligned
+[Tue 21:49:31] <mediaprophet>	+1
+[Tue 21:49:35] <m4nu>	dlongley: What Tim said was that identity credentials are more clear that you're talking about a particular person.
+[Tue 21:49:38] <mediaprophet>	+1 essentially...
+[Tue 21:49:48] <mediaprophet>	it’s clear about the legal entity that is being defined
+[Tue 21:49:51] <pindar> Let’s take it to the list. One problem might be what data is considered’ free game’ in the Public Domain (like one’s name) 
+[Tue 21:50:32] <pindar> this will make the iGF discussion productive and tangibly meaningful
+[Tue 21:50:36] <voip-ps>	timothy holborn (SIP/getonsip.com-0000010f) has left the conference.
+[Tue 21:50:41] <dlongley>	m4nu: in any case, i think we're good, i think what we have out there is a proof of concept, we'll need to discuss in more detail, and see what people like and where we are aligned, it took us too long to get it out there but we were busy and we felt we needed to get something out there to ground the discussion because anders and some other didn't understand how identity played into this
+[Tue 21:51:11] <dlongley>	m4nu: this is an attempt at getting this out there to say what identity and credentials are out there and important and now with some grounding we can discuss it, it will be confusing over the next couple of weeks but now it's done and it helps w/discussion
+[Tue 21:51:19] <dlongley>	m4nu: this makes it more tangible so people don't think we're just talking theory
+[Tue 21:51:21] <dlongley>	m4nu: we have an implementation
+[Tue 21:51:26] <pindar> YES! :)
+[Tue 21:51:31] <dlongley>	m4nu: we can point and say "this is what we're talking about"
+[Tue 21:51:34] <mediaprophet>	I’m really very impressed with the solution; however believe that it is important for the developer community to see how this POC can work with RWW 
+[Tue 21:51:40] <dlongley>	m4nu: "so can we get some feedback"
+[Tue 21:51:49] <dlongley>	m4nu: we can have the rest of the discussion on the mailing list
+[Tue 21:51:59] <mediaprophet>	:)
+[Tue 21:52:04] <pindar>	:)
+[Tue 21:52:41] <m4nu>	Topic: Registration-less Purchases
+[Tue 21:53:25] <dlongley>	m4nu: the idea here is that people should be able to join [visit?] a website and without having to enter your shipping info, username, etc. .. we want people to go to a site and click buy and finish the purchase without having to create an entire account on the site
+[Tue 21:53:28] <m4nu>	https://www.w3.org/community/webpayments/wiki/CategorizedWebPaymentsUseCases
+[Tue 21:53:33] <voip-ps>	timothy holborn (SIP/getonsip.com-00000111) has joined the conference.
+[Tue 21:54:09] <m4nu>	What we have right now is this: Make it simple to register as a new customer (get rid of the registration step, if possible, or make it transparent).
+[Tue 21:54:24] <voip-ps>	Pindar Wong (SIP/getonsip.com-00000112) has joined the conference.
+[Tue 21:54:44] <m4nu>	dlongley: So, we need to change some of this text to make it a use case
+[Tue 21:55:00] <m4nu>	dlongley: A user joins a website and makes a purchase without having to register an account.
+[Tue 21:55:16] <m4nu>	dlongley: A user goes to a website and makes a purchase without having to register an account.
+[Tue 21:55:51] <mediaprophet>	could be sending a micropayment like ‘tipjar’
+[Tue 21:56:06] <m4nu>	dlongley: If you're buying something that doesn't have any age requirements, and is a digital good, you would probably not need to transmit much of anything, maybe just the identity URL.
+[Tue 21:56:27] <dlongley>	"Use Case: Transact with a merchant without revealing any identifying information. Identifying information is available to the payment processor."
+[Tue 21:56:57] <mediaprophet>	+1
+[Tue 21:56:58] <pindar> Nice
+[Tue 21:57:05] <pindar> +1
+[Tue 21:57:07] <m4nu>	dlongley: We already have that as a use case.
+[Tue 21:58:20] <voip-ps>	Pindar Wong (SIP/getonsip.com-00000110) has left the conference.
+[Tue 21:58:26] <mediaprophet>	is the difference between the two; about the ability to simply buy the goods, and not create a ‘loyalty relationship'..
+[Tue 21:58:30] <m4nu>	dlongley: So, you might still send them information, but you don't have to send them information as a part of the purchase process.
+[Tue 21:58:30] <pindar> I should have mentioned this earlier but please keep in view the Creative Commons community w.r.t. the proof of concept
+[Tue 21:58:45] *	dlongley pindar bye, thanks!
+[Tue 21:58:46] <mediaprophet>	great note...
+[Tue 22:00:47] <m4nu>	dlongley: You don't have to go through a process where you establish an account on this site. That's really what this use case is about. You're able to make the purchase without creating that "loyalty use case".
+[Tue 22:01:47] <m4nu>	dlongley: Whether or not the merchant wants to store anything about their identity should not be of concern to the customer.
+[Tue 22:01:58] <mediaprophet>	two parts of creating an account (traditionally) for websites. 1. fulfillment requirements - tracking the order (could be done via a URI, stored on a RWW server elsewhere); 2. creating a loyalty relationship
+[Tue 22:03:10] <m4nu>	Right, so we don't want to do #2 above (in this use case), just #1
+[Tue 22:03:21] <mediaprophet>	traditionally data is stored within the site’s CMS.
+[Tue 22:03:49] <m4nu>	dlongley: The customer doesn't have to register or acknowledge that any account has been created. They can fulfil their purchase without having to do any of that.
+[Tue 22:04:41] <mediaprophet>	to store transaction details in a distributed way as to support the forfillment of a transaction without requiring the establishment of a loyalty relationship
+[Tue 22:05:25] <mediaprophet>	i think that’s user-definable.
+[Tue 22:05:52] <mediaprophet>	a user may select a ‘persona’ in which to present identity (for loyalty purposes) to the merchant.
+[Tue 22:06:05] <mediaprophet>	if the user decides to use the same persona - then the merchant can track it
+[Tue 22:06:27] <m4nu>	dlongley: The customer goes to a merchant website and clicks a buy button and completes the purchase without having to go through any registration process. They also don't have to remember any information to buy anything else on the website and the merchant will be able to remember the customer when they return to the website (via some unique identifier associated with the customer)
+[Tue 22:10:12] <m4nu>	dlongley: Tim said, you could have a single identity document with multiple personas associated with it, identifiers that are credentials, and you could share different credentials w/ the merchant. You chose what to release to track their purchasing behavior.
+[Tue 22:10:37] <mediaprophet>	"a user may select a ‘persona’ in which to present identity (for loyalty purposes) to the merchant"
+[Tue 22:11:27] <mediaprophet>	i think the implicit requirement is that the identifier is a URI; not a database entry of a customers details (primarily)
+[Tue 22:12:45] <mediaprophet>	+1
+[Tue 22:12:47] <m4nu>	The customer goes to a merchant website and clicks a buy button to complete a purchase without having to go through any registration process. During the purchase the customer chooses which information to share with the merchant which the merchant then uses to uniquely identify the customer if they perform any repeat purchases.
+[Tue 22:13:10] <mediaprophet>	+1
+[Tue 22:15:26] <m4nu>	Topic: Scalable Whitelisting
+[Tue 22:15:33] <dlongley>	m4nu: scalable whitelisting came about as part of the Mozilla payments stuff
+[Tue 22:15:59] <m4nu>	This is what we have right now: Whitelisting of parties - users, merchants, payment providers without scalability / anti-compete issues.
+[Tue 22:16:31] <dlongley>	m4nu: the way mozilla ended up implementing their payments API in the first iteration was that they just whitelabeled the companies that could initiate the payments UI...clearly taht does not sclae
+[Tue 22:16:46] <dlongley>	m4nu: you can't have the browser manufacturers, google, paypal, etc. deciding who gets to use the payments API and who doesn't
+[Tue 22:17:09] <dlongley>	m4nu: the counter-argument is that if you open up this to anyone, you end up with phishing/criminal sites taking advantage of people
+[Tue 22:17:38] <dlongley>	m4nu: discussions about mitigating that ... make sure payments UI is user initiated, but even that can be phished, etc.
+[Tue 22:18:23] <dlongley>	m4nu: we came up with one proposal initially, which was that when you go with a payments service, you can have an API that allows that service to register as a payments provider, then that provider has to be used you can't just guess who the customer's payment provider is
+[Tue 22:18:33] <dlongley>	m4nu: so the site you go to when you try to make a payment is set in the browser
+[Tue 22:18:51] <dlongley>	m4nu: we would have a whitelist of all the payment providers that you have said previously that you're ok to do payments through
+[Tue 22:19:08] <dlongley>	m4nu: Mozilla was pretty adamant about the whitelisting service as it would prevent a lot of fraud for them
+[Tue 22:19:23] <mediaprophet>	Many  of these sorts of issues relate to identity
+[Tue 22:19:27] <dlongley>	m4nu: we don't know what the full fraud ramifications are for the tech ... because we don't know what the tech will be, we are just going for use cases, we don't know what the final thing will be
+[Tue 22:19:39] <dlongley>	m4nu: all that to say is that we can't easily say exactly what this whitelist should be or if we even need it
+[Tue 22:19:42] <mediaprophet>	x509 certs 
+[Tue 22:20:27] <m4nu>	dlongley: Let's talk about what this particular use case is about... make sure a user trusts a payment processor. Make sure it's a payment processor that they trust and has been someone that they've previously registered with.
+[Tue 22:21:06] <dlongley>	mediaprophet: from a user perspective, the way WebID+TLS functions is providing distinguishable [missed] documents into [missed] one of the simple [missed] would be whether or not the [missed] has a relationship to the user [missed]
+[Tue 22:21:33] <mediaprophet>	WebID-TLS creates a user certificate, with a subjectAltName URI
+[Tue 22:21:43] <mediaprophet>	if that URI described a machine, with a location; 
+[Tue 22:21:52] <mediaprophet>	and the identity linked to that certificate - as a known entity.
+[Tue 22:22:20] <dlongley>	m4nu: i think this use case has more to do with the customer trusting the payment processor rather than the merchant trusting the customer
+[Tue 22:22:49] <dlongley>	m4nu: i think this case has more to do with whether or not you trust the merchant you're going to do business with or the payment processor you're going to do business with 
+[Tue 22:23:11] <dlongley>	m4nu: the thing Mozilla was concerned with was "how do you trust the dialog that asks you to pay"
+[Tue 22:23:21] <dlongley>	m4nu: to ensure it's coming from your payment processor, not something trying to steal your information
+[Tue 22:23:35] <mediaprophet>	I imagine the merchant’s certificate might distinguish the claim?
+[Tue 22:23:41] <mediaprophet>	mind; use-case, not iterative method...
+[Tue 22:23:47] <mediaprophet>	so; what’s the use-case.
+[Tue 22:24:58] <dlongley>	m4nu: [missed] merchant certificate might have problems for a single domain with lots of merchants (eg: ebay)
+[Tue 22:25:01] <mediaprophet>	gets tricky.  lots of applications...
+[Tue 22:25:33] <dlongley>	m4nu: i think this use case has to do mainly with making sure that the UI you're looking at is from your payment processor
+[Tue 22:25:36] <mediaprophet>	sounds reasonable....
+[Tue 22:26:06] <mediaprophet>	the classic example might be the spam email you get from ‘your bank'
+[Tue 22:26:41] <mediaprophet>	this goes to the legality of the transaction.  It’s an identity use-case
+[Tue 22:27:15] <mediaprophet>	also goes to intention.  did the parties intend to make a transaction with each-other for the specified amount, upon the specified tersm
+[Tue 22:27:17] <mediaprophet>	terms
+[Tue 22:28:26] <mediaprophet>	is this the ability to provide a secured payment claim from a known entity.
+[Tue 22:29:06] <m4nu>	So the use case is: A customer goes to a website and is presented with a payment UI from their payment processor. The UI is displayed in such a way as to guarantee that there is no information that can be phished from the customer.
+[Tue 22:29:59] <mediaprophet>	consent from a trusted source
+[Tue 22:30:00] <m4nu>	So the use case is: A customer goes to a website and is presented with a payment UI from their payment processor. The purchase can be completed without any additional information from the customer other than their consent to complete the purchase.
+[Tue 22:30:37] <mediaprophet>	so - you present me with a payment claim
+[Tue 22:30:47] <mediaprophet>	my system comes-up, says you’ve got a payment claim.  
+[Tue 22:30:51] <mediaprophet>	did i intend to pay you.
+[Tue 22:30:57] <mediaprophet>	i agree.
+[Tue 22:30:59] <mediaprophet>	vs. 
+[Tue 22:31:01] <mediaprophet>	you have website
+[Tue 22:31:10] <mediaprophet>	your website says, pay me.
+[Tue 22:31:18] <mediaprophet>	perhaps i still don’t know the real owner of the website.
+[Tue 22:32:12] <m4nu>	dlongley: This use case isn't about whether or not you trust the merchant... it's about whether or not you trust the dialog presented by your payment processor.
+[Tue 22:32:47] <mediaprophet>	 +1
+[Tue 22:32:51] <m4nu>	Ok, so we're using this: A customer goes to a website and is presented with a payment UI from their payment processor. The purchase can be completed without any additional information from the customer other than their consent to complete the purchase.
+[Tue 22:33:08] <m4nu>	dlongley: and the reason is that we don't want the merchant to phish any secret information from you. 
+[Tue 22:33:08] <m4nu>	Ok, that's all the time we have for today. Thanks for the call everyone, we'll chat next week.
+[Tue 22:36:34] <voip-ps>	Dave Longley (SIP/6002-0000010e) has left the conference.
+[Tue 22:36:34] <voip-ps>	msporny (SIP/192.168.2.6-0000010c) has left the conference.
+[Tue 22:36:44] <voip-ps>	dlehn (SIP/50.134.65.129:5060-0000010d) has left the conference.
