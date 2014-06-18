@@ -1,0 +1,110 @@
+[Tue 21:37:32] <m4nu>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2014Jun/0126.html
+[Tue 21:37:36] <dlongley>	scribe: dlongley
+[Tue 21:38:08] <dlongley>	m4nu: anything to add to the agenda?
+[Tue 21:38:17] <taaz>	nope
+[Tue 21:38:41] <m4nu>	Actually, one thing to add to the agenda - we need to review IGF stuff
+[Tue 21:38:49] <m4nu>	Topic: IGF Workshop on Identity
+[Tue 21:38:49] <m4nu>	Here's the workshop description: http://www.intgovforum.org/cms/wks2014/index.php/proposal/view_public/69
+[Tue 21:39:02] <dlongley>	m4nu: the deadline to update that is on the 20th, which is this friday
+[Tue 21:39:11] <pindar>	I will email IGF a/c details by email to Manu
+[Tue 21:39:23] <dlongley>	m4nu: i've sent emails out to bloomberg, mozilla, US fed, some others
+[Tue 21:39:32] <dlongley>	m4nu: i've asked them to confirm by the 20th if they haven't already
+[Tue 21:40:10] <dlongley>	m4nu: the other issue is that there was a problem trying to submit what we were trying to submit to the IGF, and pindar submitted that on my behalf, so only he can edit the proposal, but i can't edit the proposal so i'll have to send the edits through pindar and make sure he applies those
+[Tue 21:40:30] <dlongley>	m4nu: i think we answered all the questions the IGF asked of us, in fact we had answered them before, meaning that the things that they asked us to clarify we had already clarified
+[Tue 21:41:07] <dlongley>	m4nu: so they wanted the complete list of panelists with their status as confirmed, we're trying to confirm them, the agenda of the workshop which we have, and they want a remote mod for the workshop which we also put in the proposal
+[Tue 21:41:21] <dlongley>	m4nu: they want to increase gov't participation in the panel and we've asked the US fed to join
+[Tue 21:41:41] <dlongley>	m4nu: we asked w3c, world bank, bloomberg, and mozilla to respond
+[Tue 21:41:50] <dlongley>	m4nu: we think w3c and think world bank will be there
+[Tue 21:41:51] <pindar>	That’s great if the US Fed can join
+[Tue 21:42:03] <dlongley>	m4nu: we can try and bring the ripple folks in as well and i think i sent something out to ask them to participate
+[Tue 21:42:20] <dlongley>	m4nu: they asked us to frame the policy questions more clearly. I'll update the current proposal.
+[Tue 21:48:07] <m4nu>	Topic: Whitelisting 
+[Tue 21:48:30] <m4nu>	Ok, we had a combined use case that we were dealing with last week - Whitelisting like MozPay API where customer needs to figure out which payment providers are supported by the merchant. Customer and merchant need to be able to select a payment processor that are compatible.
+[Tue 21:48:47] <m4nu>	I think we dealt with the first item: Whitelisting like MozPay API where customer needs to figure out which payment providers are supported by the merchant.
+[Tue 21:49:01] <m4nu>	but we didn't deal with the second item:  Customer and merchant need to be able to select a payment processor that are compatible.
+[Tue 21:50:29] <m4nu>	dlongley: This use case is about the merchant being able to advertise the payment mechanisms they support, and the customer being able to select which ones they have and which ones they want to use.
+[Tue 21:51:17] <m4nu>	dlongley: So, the use case is - A customer goes to a merchant website, and upon initiating a payment, the merchant provides the payment providers that they support and the customer selects the one that they want to use for the purchase.
+[Tue 21:51:52] *	pindar has quit (Quit: pindar)
+[Tue 21:52:00] <m4nu>	dlongley: Unfortunately, that just sounds like the state we're in right now - we want to make sure that people know that this process is automatic.
+[Tue 21:53:21] <m4nu>	Right, we want to make sure that people know that this should be an automatic/automated process (as much as it can be).
+[Tue 21:53:57] <dlongley>	dlongley: the merchant's software transmits the merchant's payment processor options to the customer's software. The customer's software presents a choice of payment processors the customer has previously registered with that are compatible with the merchant's payment processors
+[Tue 21:54:11] <m4nu>	So if the merchant says: I support Credit Card, ACH, and Bitcoin, and the customer supports Credit Card and Bitcoin, then the options presented to the customer will be: "How do you want to pay? Using your Visa card, or Bitcoin?"
+[Tue 21:54:47] <m4nu>	Ok, so this is the use case, then:  A customer goes to a merchant website, and upon initiating a payment, the merchant's software transmits the merchant's payment processor options to the customer's software. The customer's software presents a choice of payment processors the customer has previously registered with that are compatible with the merchant's payment processors.
+[Tue 21:56:07] <m4nu>	Topic: Automated Payments and Subscriptions
+[Tue 21:56:25] <m4nu>	This is the use case we have today: Automatic payments, transparent to usage (subscriptions and safe pay-as-you-go w/o asking/annoying the customer)
+[Tue 21:57:17] <m4nu>	So, basically what we want to enable here is a customer going to a website, selecting a payment method and then authorizing the website to pull an amount of money (with limits) from their account on a weekly, monthly, yearly, etc. basis.
+[Tue 21:57:42] <dlongley>	dlongley: What about: A customer visits a merchant's website and initiates a payment. Their payment processor presents them with an option to subscribe or add a pay-as-you-go token for future purchases from the merchant.
+[Tue 21:58:24] <m4nu>	It's not just the payment processor - the merchant could ask them to subscribe.
+[Tue 21:58:43] <m4nu>	dlongley: I was trying to be vague on purpose - the merchant would include that information in the information they'd pass on to the payment processor.
+[Tue 21:58:46] <m4nu>	ok
+[Tue 21:59:51] <dlongley>	dlongley: the merchant would include information indicating that they'd like the customer to subscribe/add a pay-as-you-go token
+[Tue 21:59:59] <m4nu>	Topic: Theft of Payment Details
+[Tue 22:00:00] <dlongley>	dlongley: the payment processor would present that to the customer
+[Tue 22:00:07] <m4nu>	So, we have this right now - Use Case: Theft of payment details results in very low return on investment.
+[Tue 22:00:24] <m4nu>	dlongley: I think we have this use case covered.
+[Tue 22:00:53] <m4nu>	We already have this one - Use Case: A customer executes a transaction without revealing secrets that are not vital to the transaction (i.e. identity, passwords, PINs or other information that the merchant does not need to know).
+[Tue 22:01:03] <m4nu>	and we also have this one: Use Case: Temporary payment tokens for merchants. If token is stolen, thief does not get access to financial account. Tokenization mechanism that protects the buyer and merchant from theft of credentials.
+[Tue 22:01:07] <m4nu>	So, I think we're covered.
+[Tue 22:01:42] <m4nu>	dlongley: Yeah, both of those cover this use case
+[Tue 22:01:49] <m4nu>	ok, so we're striking - Use Case: Theft of payment details results in very low return on investment.
+[Tue 22:02:18] <m4nu>	Topic: Intent to Pay
+[Tue 22:02:27] <m4nu>	This is the use case that we have for this one: Decouple payments as much as possible. Base on an intent-to-pay mechanism
+[Tue 22:02:44] <dlongley>	m4nu: this was a proposal made by robin berjon
+[Tue 22:02:51] <dlongley>	m4nu: he said that we could use something like a protocol handler
+[Tue 22:03:07] <dlongley>	m4nu: we could revive the web intents stuff or add a protocol handler for initiating a payment
+[Tue 22:03:19] <dlongley>	m4nu: for any new payment mechanism you wanted to add to the web could just be a new protocol
+[Tue 22:03:28] <dlongley>	m4nu: we should explore this design criteria
+[Tue 22:03:38] <dlongley>	m4nu: we need to phrase it in a way that's useful
+[Tue 22:03:52] <dlongley>	m4nu: i listed this as a design criteria, it's not really a use case
+[Tue 22:04:27] <m4nu>	dlongley: I'm trying to figure out how it's different from the use cases we've discussed thus far. This sounds like an implementation detail (the use of web intents or protocol handlers)
+[Tue 22:04:51] <m4nu>	dlongley: That is, you initiate a transaction and hand the data blob over to the protocol handler.
+[Tue 22:05:18] <m4nu>	dlongley: This is really a question of whether or not we have a specific payments API for browsers, or if we should use a protocol handler or a Web Intent.
+[Tue 22:05:59] <m4nu>	dlongley: I think payments are decoupled already regardless of what the implementation detail would be.
+[Tue 22:07:10] <dlongley>	m4nu: i don't know if we would consider web intents or protocol handlers very heavily if we didn't have anything in there mentioning it
+[Tue 22:07:11] <m4nu>	I'm concerned that we're going to overlook Web Intents or Protocol Handlers if we don't preserve this in some way.
+[Tue 22:08:53] <m4nu>	so, something like this? Design Criteria: Consider using Web Intents or Protocol Handlers to provide a more abstract implementation solution for payment initiation as well as a technology that could be used for solving other intent-related problems on the Web.
+[Tue 22:09:49] <dlongley>	dlongley: What about: Consider using Web Intents or Protocol Handlers to provide an abstraction layer that could be used to solve both payment initiation and other problems on the Web.
+[Tue 22:10:16] <m4nu>	ok, sounds good.
+[Tue 22:11:28] <m4nu>	Topic: Wallet Data Synchronization
+[Tue 22:11:36] <m4nu>	We have this use case now: Sync wallet data, password data, and credential data to the cloud - use the same mechanism for all three.
+[Tue 22:12:00] <dlongley>	m4nu: this was proposed as a general cloud storage mechanism
+[Tue 22:12:17] <dlongley>	m4nu: i think that wallet and credential data are supported by the identity credential spec and you could argue that password is as well
+[Tue 22:12:27] <dlongley>	m4nu: it's also RWW (read write web) stuff
+[Tue 22:12:34] <dlongley>	m4nu: you write things to your personal data space online
+[Tue 22:12:42] <dlongley>	m4nu: your personal data vault, is another way to put it
+[Tue 22:12:43] *	jakehart has quit (Remote host closed the connection)
+[Tue 22:13:04] <dlongley>	m4nu: i think the basic use case is being able to store your private information in a place of your choosing that is not the originator of that data
+[Tue 22:13:33] <m4nu>	dlongley: The purpose of standardization here is so that you could just click a button and switch your data to another storage location. We're talking about a storage API for data.
+[Tue 22:14:15] <m4nu>	It does seem like the main thing we're talking about is ensuring that you can store your data securely in some place and that you can change that location at will.
+[Tue 22:14:30] <m4nu>	dlongley: I don't think that inventing a whole other API to do that is useful.
+[Tue 22:16:37] <m4nu>	dlongley: I think the use case is more about making it easy for people to store their data where they want to store it rather than synchronizing their data.
+[Tue 22:16:57] <m4nu>	dlongley: Effectively, this is about discoverability and reading that information (which needs to be standardized in some way). 
+[Tue 22:17:29] <m4nu>	dlongley: Where you write the data doesn't need to be standardized. That's what the sync thing is about. In the Identity Credentials spec, we do talk about other people being able to write to your personal data vault. 
+[Tue 22:18:03] <m4nu>	dlongley: If there were 3 different providers for storing your personal data, you could switch to them based on the software you're using. As long as the 3 storage mechanisms allowed reads and discoverability in the same way, you could sync to all three.
+[Tue 22:19:09] <m4nu>	dlongley: Maybe this is too far down in the weeds. Maybe the use case should be: A customer is storing their wallet, credential data, passwords, and other sensitive information at one identity provider / wallet provider, then they should be able to switch to a new one and make a payment w/o going through a painful setup process.
+[Tue 22:19:19] <m4nu>	dlongley: I'm wondering if we don't already have this covered.
+[Tue 22:20:13] <m4nu>	dlongley: This is another design criteria - decouple storage of your identity information from where your identity provider is.
+[Tue 22:21:21] <m4nu>	also, keep in mind that we have this use case next - Wallet portability to move to a new wallet service provider at will.
+[Tue 22:21:39] <m4nu>	dlongley: Well, doing that requires that you are able to move your data with you (synching it across websites easily)
+[Tue 22:22:00] <dlongley>	dlongley: proposal: A customer currently stores their wallet and credentials with a particular identity/wallet provider. The customer decides to switch to a different identity/wallet provider and all of their wallet and credential data comes with them.
+[Tue 22:23:15] <m4nu>	So, that takes care of both use cases? 
+[Tue 22:23:19] <m4nu>	dlongley: yeah, I think so
+[Tue 22:23:37] <m4nu>	I agree, I think... trying to think if there is any part of both of those use cases that aren't covered with the text above.
+[Tue 22:25:21] <m4nu>	ok, so reword: A customer stores their wallet and credentials with a particular identity/wallet/data storage provider. The customer decides to switch to a different identity/wallet/data storage provider and all of their wallet and credential data comes with them.
+[Tue 22:26:21] <m4nu>	dlongley: I don't think we need to standardize /how/ the data is stored... just the protocol for querying and retrieving the data.
+[Tue 22:27:12] <m4nu>	dlongley: All we need to standardize is the mechanism that allows you to easily move the data between providers. We have that with the Linked Data solution - you'd expect the data to be available in the cloud, but you can also run your own data provider and run it all on one device w/o any backups and lock it down to that device.
+[Tue 22:27:25] <m4nu>	dlongley: You still have to provide access to it if anyone wants to interface w/ you.
+[Tue 22:28:17] <m4nu>	dlongley: What I'm trying to say is that we were originally trying to conflate too many things, and if we focus too much on all this "cloud" stuff, we lose the kernel of the problem that needs to be solved.
+[Tue 22:28:50] <m4nu>	dlongley: Other people need to be able to get access to whatever data they need to complete a transaction w/ you. Whatever minimal set of data that needs to be transferred to that.
+[Tue 22:29:40] <m4nu>	dlongley: you also need to be able to give another storage provider access to the data to move/migrate/sync it. All that we require of the data provider is that if someone wants to change data providers, they can do so.
+[Tue 22:30:30] <m4nu>	dlongley: I'm pretty sure the Identity Credentials spec handles this stuff now... there are implementation details we need to work out, but the general design is capable of addressing these issues.
+[Tue 22:31:28] <m4nu>	ok, so we're accepting that use case above and striking the two in there now - removing sync specifics, since portability should take care of synching as well.
+[Tue 22:33:20] <m4nu>	Topic: Decentralized Identity
+[Tue 22:33:41] <m4nu>	We only have a few items left in payment initiation... decentralized identity is one of them... two use cases.
+[Tue 22:33:47] <m4nu>	dlongley: They could be combined.
+[Tue 22:33:51] <m4nu>	Agreed, let's do that.
+[Tue 22:34:24] <m4nu>	dlongley: These are really identity use cases
+[Tue 22:34:26] <m4nu>	yeah, ok out of time for today. We'll chat again next week - same time and day of week. Tuesday 9:30pm Boston.
+[Tue 22:35:51] <voip-ps>	Manu Sporny (SIP/6000-00000126) has left the conference.
+[Tue 22:35:52] <voip-ps>	Dave Longley (SIP/6002-00000127) has left the conference.
+[Tue 22:35:53] <voip-ps>	dlehn (SIP/50.134.65.129:5060-00000128) has left the conference.
