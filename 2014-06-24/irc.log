@@ -1,0 +1,123 @@
+[Tue 21:33:47] <m4nu>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2014Jun/0170.html
+[Tue 21:33:48] <dlongley>	scribe: dlongley
+[Tue 21:34:50] <dlongley>	m4nu: anything else to add to the agenda?
+[Tue 21:34:55] <taaz>	nope
+[Tue 21:35:10] <m4nu>	Topic: Introduction to Timothy Ng from Microsoft
+[Tue 21:36:22] <dlongley>	timng: my name is Tim, I work at microsoft, I am an architect on the commerce platform service at MS, we're responsible for building out all of the online and some of the offline physical store payment stuff, we serve all the MS properties today, if you go to an MS store, use xbox live, online business and sign an agreement with us, it goes through our platform, we are looking at third parties build on top of our platform in the future but we haven't put too much thought into that
+[Tue 21:35:20] <pindarhk>	Nice to meet you Tim.
+[Tue 21:36:37] <dlongley>	timng: i'm responsible for stuff/architecture on the payments side.
+[Tue 21:37:46] <dlongley>	pindarhk: i'm a consultant/early stage investor, introduced to this work via creative commons, I'm trying to drive/promote Web Payments in the Asia/Pacific region. I'm based in Hong Kong, I advise on infrastructure. I helped pioneer the Internet/Web infrastructure here 20 years ago, worked with primarily telecoms and ISPs, I try to promote all this work, etc.
+[Tue 21:38:02] <dlongley>	timng: i'm from Hong Kong we should meet up while I'm over there.
+[Tue 21:38:12] <dlongley>	m4nu: it would be great for you guys to meet at some point, pindar only covered 2 percent of what he does. He's been instrumental in moving the Web Payments stuff forward.
+[Tue 21:38:54] <m4nu>	dlongley: Hi, I'm Dave, I'm the CTO at Digital Bazaar - worked on JSON-LD, put a lot of design work and implementations into PaySwarm, spend most of my time implementing software, architecture, payments.
+[Tue 21:40:42] <dlongley>	mediaprophet: I’m a media techologist.  Working on ‘semantic web’ systems, more focused on media distribution since about 2000.  I was involved with Hybrid TV systems (VOD, etc. ISP datacentres, etc. prior to that) a body of work that built into https://www.hbbtv.org/ (project kangaroo, Freeview, which later formed Hbb) having identified http://tools.ietf.org/html/rfc4078, getting in touch with stakeholders in 2007 after delivering the first VOD (RTSP) over DSL2 system in OZ.  After that work, i became involved in the rollout of Digital Cinema Infrastructure (DCI Approved) in Australia / NZ.  In 2010, I restarting the ‘knowledge banking’ platform project, believing the technology standards (RDF/semantic web) were reaching a level where it was possible to deliver something that isn’t propriatery system with undue lock-ins …  I’ve been working on W3 related standards, as to ensure no-golden handcuffs on the underlying data-services platform (dataspaces) since about 2000. Web-Payments capabilities are a counterpart of that work.
+[Tue 21:40:42] <dlongley>	taaz: I'm Digital Bazaar's Director of Research and Testing and spend most of my time implementing and testing the Web Payments technologies we discuss on these calls and others.  I've written implementations for JSON-LD, HTTP Signatures, Web Commerce, Web Payments, Secure Messaging, Identity Credentials, and many of the other specifications we're doing active work on here.
+[Tue 21:41:32] <m4nu>	Welcome to the group, Tim. :)
+[Tue 21:41:32] <m4nu>	Topic: Internet Governance Forum 2014
+[Tue 21:41:31] <dlongley>	m4nu: i think we're good as far as the agenda for the IGF is concerned
+[Tue 21:42:22] <dlongley>	m4nu: we updated the workshop proposal for the IGF that is in turkey in a couple of months, we are getting more positive responses on attendance. Here's the updated proposal:
+[Tue 21:42:40] <m4nu>	http://www.intgovforum.org/cms/wks2014/index.php/proposal/view_public/69
+[Tue 21:42:41] <dlongley>	m4nu: the MAG at the IGF asked us to make a couple of clarifications on our proposal, i believe we made all of them submitted and live now
+[Tue 21:43:10] <pindarhk>	Thanks for the update and dealing with this Manu, sorry for the hassles. 
+[Tue 21:44:10] <dlongley>	m4nu: the additions were: we put down a rough agenda that you can see at the top of the link, intro to web identity, etc. ... then we asked some fairly straightforward policy questions, hopefully that will trigger the group work, ... for before we had the british computer society,  Electronic Frontier Foundation, w3c will most likely join us on the panel, bloomberg has said they want to participate via video, but may not be able to send someone for just one workshop, but may do a video, US fed is trying to send someone, world bank is definitely interested and trying to find someone, mozilla is MIA, ripple might send someone, i think we're good, pindar, what's the next step?
+[Tue 21:44:31] <dlongley>	pindarhk: we don't need to do anything, just make sure everyone does their videos, things will be fairly loose up until the event itself, i'm expecting that they'll confirm and get publically listed
+[Tue 21:44:58] <dlongley>	pindarhk: the main thing to note is that we're trying to change the format so that we can have as much product use of time in Istanbul
+[Tue 21:45:01] <dlongley>	m4nu: thanks pindar, we'll start pushing attendees to submit videos next month.
+[Tue 21:45:20] <m4nu>	Topic: RequestAutocomplete Use Case
+[Tue 21:45:38] <m4nu>	We have this right now: Reject the form auto-fill anti-pattern (RequestAutoComplete) and move to one that doesn't result in security risks if data is stolen at the merchant.
+[Tue 21:45:51] <dlongley>	m4nu: the way the RequestAutocomplete use case was described at the workshop was not a use case, it was a rejection of RequestAutocomplete or its general strategy
+[Tue 21:46:12] <dlongley>	m4nu: one of the arguments against it was that it transmits secrets that we wouldn't be transmitted using a new payment mechanism
+[Tue 21:46:27] <dlongley>	m4nu: sending CC to a merchant seems like a very bad security practice, the question is ... do we want to standardize bad security practices like that?
+[Tue 21:46:53] <dlongley>	m4nu: previously we did discuss, in other use cases and requirements during the workshop, we want to use tokenization and we don't want to unnecessarily transmit secrets to vendors, etc.
+[Tue 21:47:12] <dlongley>	m4nu: how do we reorder it so that don't reject RequestAutocomplete outright, but rather discuss it and say what we don't wnat
+[Tue 21:47:30] <dlongley>	m4nu: we want these mechanisms to be secret free, if a thief steals a token we want it to do little to no damage
+[Tue 21:47:35] <dlongley>	pindarhk: i'm in favor of keeping it clean
+[Tue 21:47:46] <dlongley>	pindarhk: i do view it as a bridging mechanism and outside of the scope of our work
+[Tue 21:48:07] <m4nu>	dlongley: I agree with Pindar, it seems like it's a bridging mechanism. This is really about filling out information automatically for people using the existing system in place.
+[Tue 21:49:05] <m4nu>	dlongley: We're talking about redesigning that piece to ensure that secrets are not necessary, vendors only get what's required for payment. Information needs to be stored in a way that is automatically completed for people, but not via form auto-complete. With Identity Credentials, you can store low or high stakes credentials, and you provide that information on a need to know basis.
+[Tue 21:49:29] <m4nu>	dlongley: The information will be filled in on a need to know basis. So, I don't know exactly want to say about this use case.
+[Tue 21:49:57] <m4nu>	dlongley: We don't want to do what the RequestAutocomplete feature does, but we do want to provide an equivalent functionality.
+[Tue 21:50:33] <dlongley>	m4nu: we probably should not say RequestAutocomplete at all because we don't need to talk about specific technologies here at all
+[Tue 21:51:27] <dlongley>	m4nu: when we go one level up, we want to enable certain pieces of transaction information to be autofilled and we don't want to transmit secrets, and if any information is stolen we don't want the thief to get any sort of large advantage
+[Tue 21:51:40] <dlongley>	m4nu: i believe we have these features covered
+[Tue 21:51:59] <dlongley>	pindarhk: assuming breach at some point is worth reiterating
+[Tue 21:52:17] <dlongley>	pindarhk: one of the problems of this phrasing is a failure of imagination, once people see the other tech what we write here will make much more sense
+[Tue 21:52:42] <dlongley>	m4nu: we don't mention it specifically, we don't say "assume security breaches" we do say that any information stolen is useless to the thief
+[Tue 21:52:49] <dlongley>	m4nu: should we be more specific and assume security breaches?
+[Tue 21:53:18] <m4nu>	dlongley: Yes, this is a design criteria - assume security breaches.
+[Tue 21:53:21] <dlongley>	m4nu: it sounds like a design criteria
+[Tue 21:53:27] <dlongley>	pindarhk: that's my personal preference
+[Tue 21:53:34] <dlongley>	m4nu: PCI folks may take issue with that assumption, but the status quo isn't great either. Cost of a security breach currently for a merchant that accepts credit cards is fairly high.
+[Tue 21:53:48] <m4nu>	So we have this: Use Case: Transmit one or more pieces of information before a purchase occurs such that the identification of participants in a transaction can be performed.
+[Tue 21:55:30] <m4nu>	dlongley: Let's not focus on auto-filling - you can transmit your shipping information w/o having to fill it out at every vendor you go to.
+[Tue 21:56:57] <dlongley>	Topic: Transmission Format of Credentials
+[Tue 21:56:57] <dlongley>	timng: i have a quick question, one of the implications of RequestAutocomplete, is that there's a standard representation of that piece of information, for example, on certain implementations, on safari, if the expiry date is a combo box, it doesn't quite work, if it's a plain text box it works, same with addresses, depending on the address structure on the website it doesn't always work properly, it misses the zipcode if it's not labeled property, in order for autocomplete to work there has to be a standard piece of information for your credit card or your country, if we represent it differently than a browser can't easily auto fill it in without having to make guesses
+[Tue 21:57:10] *	m4nu stops scribing timng, go dlongley.
+[Tue 21:57:24] <dlongley>	timng: i wonder if what's interesting is what the thing is to be sent, like a CC, it's just a feature of the browser then it becomes easy
+[Tue 21:57:38] <dlongley>	m4nu: the assumption that we're making is that JSON-LD is used pretty heavily throughout many of the specs that we're talking about
+[Tue 21:57:55] <dlongley>	m4nu: Google, MS, Yandex, and Yahoo now have a standard address format that seems to work worldwide (schema.org)
+[Tue 21:58:00] <dlongley>	m4nu: we were going to build off of that work
+[Tue 21:58:25] <dlongley>	m4nu: you're absolutely right is that we need a standard way to transmit the information, rather it's in a JSON message
+[Tue 21:58:48] <dlongley>	m4nu: if a vendor needs a proof of age from your and a shipping address and they'd get two JSON objects that would be in a world-wide standard form
+[Tue 21:59:24] <dlongley>	m4nu: i don't think it addresses everything, i'm not trying to paper over the way certain addresses are made in one country vs. another, but the assumption we're talking about is that at some point we'd come up with a standard for representing each one of these pieces of information
+[Tue 21:59:56] <m4nu>	dlongley: It's important that we keep the abstraction clean there. We don't want to have to match up UI forms w/ how the information was entered. At the end of the day, we don't want people markup forms for getting shipping information. 
+[Tue 22:00:18] <m4nu>	dlongley: You don't even have to think about what the UI looks like. Because the standard is not there, we fall back to the UI.
+[Tue 22:00:34] <mediaprophet>	isn’t most of the traditional autocomplete information contained within the identity credientials declaration?
+[Tue 22:00:54] <dlongley>	m4nu: yes, tim it is
+[Tue 22:01:05] <dlongley>	m4nu: simple stuff like proof of age, address, simple stuff like that is there, yes
+[Tue 22:01:28] <dlongley>	m4nu: the assumption we're making here are that those pieces of information are a different part of the system
+[Tue 22:01:52] <dlongley>	m4nu: address, name, proof of age, etc. aren't that difficult
+[Tue 22:02:21] <m4nu>	dlongley: By using JSON-LD, we've essentially decoupled the need to standardize the protocol for transmitting this information from what the information looks like.
+[Tue 22:02:46] <m4nu>	dlongley: We can say that there is an ontology that describes what the information looks like, which is different from what the JSON-LD message looks like.
+[Tue 22:02:48] <mediaprophet>	their’s two tiers?  the merchant and the identity provider…  i’d imagine, most of the traditional ‘claims’ were entered directly via the mechant UI
+[Tue 22:03:43] <dlongley>	mediaprophet: the identity structure has [missed], traditionally you've been giving the information to the merchant, with the autocomplete, facebook connect, etc. it pulls that from some source browser, whatever, i would think with identity credentials, the constituents [missed]
+[Tue 22:04:00] <dlongley>	m4nu: i think that's true, there will be enough people pushing on this stuff to figure out what the format for these messages will look like pretty quickly
+[Tue 22:04:17] <dlongley>	mediaprophet: for a driver's license, the address will be attached to that, right?
+[Tue 22:04:29] <dlongley>	m4nu: it's definitely paired with the IC and in the information that is sent over.
+[Tue 22:05:00] <dlongley>	m4nu: it may not be us that standardizes the format, or may be ... but other groups/orgs can get together and standardize it w/o our consent which is exactly what we want. Each market vertical is going to want their own type of info.
+[Tue 22:06:03] <m4nu>	dlongley: Because that work has been done, and because people are publishing schema.org addresses, we'll probably just re-use that. The problem is being solved as we speak.
+[Tue 22:06:06] <dlongley>	m4nu: we've already gone through a lot of the churn over the past 10 years to create ontologies for this stuff, we should re-use them.
+[Tue 22:06:14] <dlongley>	mediaprophet: i agree
+[Tue 22:06:32] <dlongley>	mediaprophet: we've got an identity provider that has that sort of information and we've got a merchant, most of the autocomplete form data would come from the identity provider itself.
+[Tue 22:07:11] <m4nu>	dlongley: Yes, that's how it'd work. Identity Credentials spec holds all identity data at identity provider, it comes from there.
+[Tue 22:07:41] <dlongley>	dlongley: We currently have this: Transmit one or more pieces of information before a purchase occurs such that the identification of participants in a transaction can be performed.
+[Tue 22:08:10] <m4nu>	dlongley: We could alter that use case a bit.
+[Tue 22:08:46] <mediaprophet>	provide pre-approval of a participant using identity credentials?
+[Tue 22:11:37] <dlongley>	dlongley: Maybe something like this - Transmit one or more pieces of information (such as proof-of-age, shipping address, etc.) to a website to enable access or fulfillment of a transaction.
+[Tue 22:12:08] <m4nu>	+1, may want to mention authorization and access/fulfillment.
+[Tue 22:15:54] <dlongley>	dlongley: Ok, so this? A customer visits a website and authorizes the transmission of one or more pieces of information (such as proof-of-age, shipping address, etc.) previously stored with an identity provider to the website to enable access or fulfillment of a transaction.
+[Tue 22:16:21] <mediaprophet>	+1
+[Tue 22:16:21] <m4nu>	+1, I'll commit that to the use case list.
+[Tue 22:17:29] <m4nu>	Topic: Data Accountability
+[Tue 22:17:29] <m4nu>	The last part of the RequestAutocomplete one is covered by this use case: Use Case: Temporary payment tokens for merchants. If token is stolen, thief does not get access to financial account. Tokenization mechanism that protects the buyer and merchant from theft of credentials.
+[Tue 22:18:13] <m4nu>	dlongley: Do we want to say something about a Design Criteria - avoid trying to guess how browser should complete web forms. Do we want to say something about sharing secrets design pattern.
+[Tue 22:19:23] <m4nu>	Is this what we want? Design Criteria: Avoid solutions that require customer secrets to be unnecessarily exposed to merchants.
+[Tue 22:19:35] <dlongley>	dlongley: Particularly, secrets that could cause great damage if stolen.
+[Tue 22:24:06] <dlongley>	Group discussion around attaching some sort of accountability to the data transmitted, whether or not that is in scope, whether or not it's technically achievable, and whether or not it's politically achievable.
+[Tue 22:28:20] <m4nu>	mediaprophet: What about attaching accountability to data that's transmitted?
+[Tue 22:29:12] <m4nu>	Well, we don't want to transmit secrets at all if possible. Credit card numbers, definitely not. Address information, is a secret that could cause damage.
+[Tue 22:29:35] <m4nu>	dlongley: We don't want to try and standardize that because we don't know how to protect address information very well.
+[Tue 22:29:45] <mediaprophet>	It’s outside of scope, to protect information that has been passed to the merchant (address information, etc.).
+[Tue 22:31:20] <m4nu>	dlongley: I think we have enough information in the use cases where we can just strike the "reject RequestAutocomplete" one. We don't really even need the design criteria.
+[Tue 22:31:21] <m4nu>	ok
+[Tue 22:32:06] <mediaprophet>	The ability to log requests to/from the identity provider is an option - however this may be a value-add.  in theory, a few levels exist; no logging, selective logging, mandatory logging.  this doesn’t protect data that has be previously sent to the mechant - even if a unique key has been generated for each information sharing event.
+[Tue 22:34:00] <m4nu>	I agree about the philosophical goal, don't know if we can prescribe that.
+[Tue 22:34:25] <m4nu>	dlongley: What are the elements that are interoperating here? We don't want to be overly prescriptive.
+[Tue 22:35:18] <m4nu>	mediaprophet: If something doesn't conform wrt. W3C Validator, it doesn't conform. It takes a position. I'm wondering if this is one of those cases. Users have traditionally not had the same level of accountability as companies. There are implications to that in practice.
+[Tue 22:36:49] <m4nu>	mediaprophet: Maybe we should say that protocol should state clearly that it's logging something, logging everything, etc.
+[Tue 22:37:17] <m4nu>	dlongley: The point would be to build a tool that would ask "What is your level of logging?". People don't want to automate where they're putting their identity information so they're not auditing it on a personal level.
+[Tue 22:37:46] <m4nu>	mediaprophet: I think it's the identity provider that would have the logging capability. I think there would be options provided by a compatible service. It could simply be in the receipt.
+[Tue 22:38:04] <m4nu>	dlongley: So a merchant would be able to ask the identity provider if they're logging the information.
+[Tue 22:38:35] <m4nu>	mediaprophet: Let's say service gives you a digital stamp that's traceable. Where that log might live might be w/ the identity provider.
+[Tue 22:39:24] <m4nu>	mediaprophet: A "law-to" relationship - you go to a local shop, they have windows running their POS system, you tap your phone and get your digital receipt, you can specify your loyalty relationship w/ the merchant. How much is that merchant interrogating your data? What are your privacy preferences.
+[Tue 22:39:43] <m4nu>	mediaprophet: If the data exists and you can pull it up, it empowers people to use the data that exists and provide accountability.
+[Tue 22:40:53] <m4nu>	m4nu: So, you're basically saying that you want people to be empowered by knowing when people are reading their personal information.
+[Tue 22:41:18] <m4nu>	mediaprophet: Just saying that having that data available can be important, identifying what data is being made available is as important as not getting it.
+[Tue 22:42:04] <m4nu>	dlongley: An additional spec that could come out of this work could be an optional API for identity providers that would allow you to gather data on who's been requesting your information.
+[Tue 22:42:42] <m4nu>	dlongley: At the same time, you still don't know if they're logging that information. They could only store 10 things - even if that standard exists, it's still policy/trust that people have when they personally audit a place where they store the identity - it's outside of the technology.
+[Tue 22:42:42] <m4nu>	Ok, we're out of time this week, see everyone next week.
+[Tue 22:43:00] <voip-ps>	ubiquitous (SIP/iptel.org-00000147) has left the conference.
+[Tue 22:43:01] <voip-ps>	Manu Sporny (SIP/6000-0000013e) has left the conference.
+[Tue 22:43:02] <voip-ps>	timng (SIP/192.168.1.74-00000143) has left the conference.
+[Tue 22:43:02] <voip-ps>	Dave Longley (SIP/6002-00000140) has left the conference.
+[Tue 22:43:04] <voip-ps>	dlehn (SIP/50.134.65.129:5060-00000149) has left the conference.

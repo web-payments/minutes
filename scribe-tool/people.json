@@ -1,572 +1,863 @@
 {
-  "Fabio Barone": {
-    "alias": ["tawhauc", "tawhuac"]
+  "Adam B. Levine": {
+    "alias": [
+      "AdamBLevine"
+    ],
+    "homepage": "http://letstalkbitcoin.com/bio/adam"
   },
-  "Jose 'Manny' De Loera": {
-    "alias": ["manny"],
-    "homepage": "http://www.linkedin.com/profile/view?id=60198289"
+  "Adrian Citu": {
+    "alias": [
+      "acitu"
+    ],
+    "homepage": "http://be.linkedin.com/in/cituadrian/"
   },
-  "Mike Johnson": {
-    "alias": ["mjohnson", "mjohnson_db"]
+  "Alexander Gee": {
+    "alias": [
+      "agee"
+    ],
+    "homepage": "http://www.concurrences.com/auteur/Alexander-Gee?lang=en"
+  },
+  "Alexandra Lavirotte": {
+    "alias": [
+      "alavirotte"
+    ],
+    "homepage": "http://w3.org/"
+  },
+  "Amir Taaki": {
+    "alias": [
+      "genjix"
+    ],
+    "homepage": "http://en.wikipedia.org/wiki/Amir_Taaki"
+  },
+  "Amr Fahmy": {
+    "alias": [
+      "amrf"
+    ],
+    "homepage": "https://plus.google.com/114459538812845425714/posts"
+  },
+  "Anders Rundgren": {
+    "alias": [
+      "AndersR"
+    ],
+    "homepage": "http://se.linkedin.com/in/andersrundgren"
+  },
+  "Andrei Oprea": {
+    "alias": [
+      "andreio"
+    ],
+    "homepage": "https://github.com/piatra"
+  },
+  "Andy McKay": {
+    "alias": [
+      "amckay"
+    ],
+    "homepage": "http://mozilla.com/"
+  },
+  "Angeles Marzo": {
+    "alias": [
+      "amarzo"
+    ],
+    "homepage": "http://ingdirect.es/"
+  },
+  "Aurelien Chouvet": {
+    "alias": [
+      "achouvet"
+    ],
+    "homepage": "http://w3.org/"
+  },
+  "Axel Nennker": {
+    "alias": [
+      "anennker"
+    ],
+    "homepage": "http://de.linkedin.com/in/axelnennker/"
+  },
+  "Bailey Reutzel": {
+    "alias": [
+      "breutzel"
+    ],
+    "homepage": "https://www.linkedin.com/pub/bailey-reutzel/21/a89/954"
+  },
+  "Bernard Gidon": {
+    "alias": [
+      "bgidon"
+    ],
+    "homepage": "http://w3.org/"
+  },
+  "Brent Shambaugh": {
+    "alias": [
+      "bshambaugh"
+    ],
+    "homepage": "http://adistributedeconomy.blogspot.com/"
+  },
+  "Bryan Sullivan": {
+    "alias": [
+      "bsullivan"
+    ],
+    "homepage": "http://www.linkedin.com/in/blsaws"
+  },
+  "Bülent Ünal": {
+    "alias": [
+      "bÜnal"
+    ],
+    "homepage": "http://net-m.de/"
+  },
+  "Charles McCathie Nevile": {
+    "alias": [
+      "chaals"
+    ],
+    "homepage": "http://www.linkedin.com/in/chaals"
+  },
+  "Christian Fuhrhop": {
+    "alias": [
+      "ChristianFuhrhop"
+    ]
+  },
+  "Connie Theien": {
+    "alias": [
+      "ctheien"
+    ],
+    "homepage": "http://www.linkedin.com/pub/connie-theien/1/609/7bb/"
+  },
+  "Curtis Young": {
+    "alias": [
+      "cyoung"
+    ],
+    "homepage": "http://shcn.cc/"
+  },
+  "Cyril Vignet": {
+    "alias": [
+      "cvignet"
+    ],
+    "homepage": "http://bpce.fr/"
+  },
+  "D. Jaromil Roio": {
+    "alias": [
+      "droio",
+      "jaromil"
+    ],
+    "homepage": "http://dyne.org/"
+  },
+  "Daekeun Jeong": {
+    "alias": [
+      "djeong"
+    ],
+    "homepage": "http://nbreds.com/"
   },
   "Daniel Appelquist": {
-    "alias": ["dka", "dappelquist"],
+    "alias": [
+      "dka",
+      "dappelquist"
+    ],
     "homepage": "http://www.torgo.com/blog/"
   },
   "Daniel Austin": {
-    "alias": ["daustin"]
+    "alias": [
+      "daustin"
+    ]
   },
-  "Mete Balci": {
-    "alias": ["Mete"]
+  "Darren Goucher": {
+    "alias": [
+      "dgoucher"
+    ],
+    "homepage": "http://hsbc.com/"
   },
-  "Timothy Holborn": {
-    "alias": ["mediaprophet"],
-    "homepage": "https://www.linkedin.com/in/ubiquitous"
+  "Dave Birch": {
+    "alias": [
+      "dbirch"
+    ],
+    "homepage": "http://www.dgwbirch.com/DGWB/Welcome.html"
   },
-  "Jeff Cliff": {
-    "alias": ["themusicgod1"],
-    "homepage": "https://plus.google.com/105395547687614433866/about"
+  "Dave Longley": {
+    "alias": [
+      "dlongley",
+      "dlongley-db"
+    ],
+    "homepage": "https://github.com/dlongley"
   },
-  "Matt Kaufman": {
-    "alias": ["mkaufman"]
+  "Dave Raggett": {
+    "alias": [
+      "dsr"
+    ],
+    "homepage": "http://www.w3.org/People/Raggett/"
+  },
+  "David Bialer": {
+    "alias": [
+      "dbialer_"
+    ],
+    "homepage": "http://www.linkedin.com/in/davidbialer"
   },
   "David Ezell": {
-    "alias": ["dezell"]
-  },
-  "Michael Hutchinson": {
-    "alias": ["MichaelHutchinson"]
-  },
-  "Christian Fuhrhop": {
-    "alias": ["ChristianFuhrhop"]
-  },
-  "Mountie Lee": {
-    "alias": ["mountie"]
+    "alias": [
+      "dezell"
+    ],
+    "homepage": "http://verifone.com/"
   },
   "David I. Lehn": {
-    "alias": ["taaz", "dil", "dlehn"],
+    "alias": [
+      "taaz",
+      "dil",
+      "dlehn"
+    ],
     "homepage": "http://dil.lehn.org/"
   },
-  "Evan Schwartz":  {
-    "alias": ["eschwartz"],
-    "homepage": "http://www.linkedin.com/in/evanmarkschwartz"
+  "David Nicol": {
+    "alias": [
+      "dln"
+    ]
+  },
+  "Dmitry Gorilovsky": {
+    "alias": [
+      "mitgor"
+    ],
+    "homepage": "http://aintsys.com/en/index.html"
+  },
+  "Elliott Sprehn": {
+    "alias": [
+      "esprehn"
+    ],
+    "homepage": "http://www.elliottsprehn.com/blog/about/"
+  },
+  "Emil Johansson": {
+    "alias": [
+      "ejohansson"
+    ],
+    "homepage": "http://se.linkedin.com/pub/emil-johansson/2/592/50b/"
+  },
+  "Eric Tak": {
+    "alias": [
+      "etak"
+    ],
+    "homepage": "https://nl.linkedin.com/in/erictak"
   },
   "Erik Anderson": {
     "homepage": "http://www.linkedin.com/in/erikanderson"
   },
-  "Dave Longley": {
-    "alias": ["dlongley", "dlongley-db"],
-    "homepage": "https://github.com/dlongley"
-  },
-  "Dave Raggett": {
-    "alias": ["dsr"],
-    "homepage": "http://www.w3.org/People/Raggett/"
-  },
-  "Joseph Potvin": {
-    "alias": ["joe", "jpotvin"],
-    "homepage": "http://ca.linkedin.com/pub/joseph-potvin/2/148/423"
-  },
-  "David Nicol": {
-    "alias": ["dln"]
-  },
-  "Lloyd Hilaiel": {
-    "alias": ["lloyd|mozilla"],
-    "homepage": "http://lloyd.io/"
-  },
-  "Nick Person": {
-    "alias": ["futuresoon"]
-  },
-  "Madhu Nott": {
-    "alias": ["futuresoon"],
-    "homepage": "http://www.linkedin.com/profile/view?id=1568433"
-  },
-  "Adam B. Levine": {
-    "alias": ["AdamBLevine"],
-    "homepage": "http://letstalkbitcoin.com/bio/adam"
-  },
-  "Anders Rundgren": {
-    "alias": ["AndersR"],
-    "homepage": "http://se.linkedin.com/in/andersrundgren"
-  },
-  "Manu Sporny": {
-    "alias": ["manu-db", "manu1", "manu`", "m4nu"],
-    "homepage": "http://manu.sporny.org/about"
-  },
-  "Pelle Braendgaard": {
-    "alias": ["pelleb"],
-    "homepage": "http://stakeventures.com/pages/whoami"
-  },
-  "Jeff Sayre": {
-    "alias": ["jeffsayre"],
-    "homepage": "http://jeffsayre.com/"
-  },
-  "Dmitry Gorilovsky": {
-    "alias": ["mitgor"],
-    "homepage": "http://aintsys.com/en/index.html"
-  },
-  "Patrick Strateman": {
-    "alias": ["phantomcircuit"]
-  },
-  "Melvin Carvalho": {
-    "alias": ["melvster"],
-    "homepage": "http://melvincarvalho.com/"
-  },
-  "Amir Taaki": {
-    "alias": ["genjix"],
-    "homepage": "http://en.wikipedia.org/wiki/Amir_Taaki"
-  },
-  "Natasha Rooney": {
-    "alias": ["schuki"],
-    "homepage": "http://uk.linkedin.com/pub/natasha-rooney/9/a7b/560"
-  },
-  "Mark Cavage": {
-    "alias": ["mcavage"],
-    "homepage": "https://github.com/mcavage"
-  },
-  "John Foliot": {
-    "alias": ["JF_"],
-    "homepage": "http://john.foliot.ca/"
-  },
-  "Brent Shambaugh": {
-    "alias": ["bshambaugh"],
-    "homepage": "http://adistributedeconomy.blogspot.com/"
-  },
-  "Ian Myles": {
-    "alias": ["imyles"],
-    "homepage": "http://www.linkedin.com/pub/ian-myles/4/154/405"
-  },
-  "Kumar McMillan": {
-    "alias": ["kumar"],
-    "homepage": "http://farmdev.com/about/"
-  },
-  "Fernando Jiménez Moreno": {
-    "alias": ["fernando"],
-    "homepage": "https://github.com/ferjm"
-  },
-  "Iulian Dumitraşcu": {
-    "alias": ["iulian"],
-    "homepage": "Iulian Dumitraşcu"
-  },
-  "Charles McCathie Nevile": {
-    "alias": ["chaals"],
-    "homepage": "http://www.linkedin.com/in/chaals"
-  },
-  "Elliott Sprehn": {
-    "alias": ["esprehn"],
-    "homepage": "http://www.elliottsprehn.com/blog/about/"
-  },
-  "David Bialer": {
-    "alias": ["dbialer_"],
-    "homepage": "http://www.linkedin.com/in/davidbialer"
-  },
-  "Andrei Oprea": {
-    "alias": ["andreio"],
-    "homepage": "https://github.com/piatra"
-  },
-  "Travis Choma": {
-    "alias": ["tchoma"],
-    "homepage": "http://www.linkedin.com/in/travischoma"
-  },
-  "Amr Fahmy": {
-    "alias": ["amrf"],
-    "homepage": "https://plus.google.com/114459538812845425714/posts"
-  },
-  "Pindar Wong": {
-    "alias": ["pindar"],
-    "homepage": "http://www.icann.org/en/groups/board/wong.htm"
-  },
-  "Ted Thibodeau Jr.": {
-    "alias": ["macted"],
-    "homepage": "http://www.linkedin.com/in/macted"
-  },
-  "Joe Cascio": {
-    "alias": ["joecascio"]
-  },
-  "Harry Halpin": {
-    "alias": ["hhalpin"],
-    "homepage": "http://w3.org/"
-  },
-  "Evert Fekkes": {
-    "alias": ["efekkes"],
-    "homepage": "http://rn.rabobank.nl/"
-  },
-  "Oscar Katime": {
-    "alias": ["okatime"],
-    "homepage": "http://bbva.com/"
-  },
-  "Bernard Gidon": {
-    "alias": ["bgidon"],
-    "homepage": "http://w3.org/"
-  },
-  "Max Raskin": {
-    "alias": ["mraskin"],
-    "homepage": "https://twitter.com/maxraskin"
-  },
-  "Prakash Hariramani": {
-    "alias": ["phariramani"],
-    "homepage": "https://www.linkedin.com/in/hariramani"
-  },
-  "Stephane Schultz": {
-    "alias": ["sschultz"],
-    "homepage": "http://15marches.fr/"
-  },
-  "Saurabh Sethi": {
-    "alias": ["ssethi"],
-    "homepage": "http://gsma.com/"
-  },
-  "Cyril Vignet": {
-    "alias": ["cvignet"],
-    "homepage": "http://bpce.fr/"
-  },
-  "Guorong Tian": {
-    "alias": ["gtian"],
-    "homepage": "http://sbc4d.com/"
-  },
-  "WonSuk Lee": {
-    "alias": ["wlee"],
-    "homepage": "http://samsung.com/"
-  },
-  "Philippe Cabos": {
-    "alias": ["pcabos"],
-    "homepage": "http://fr.linkedin.com/in/pcabos/"
-  },
-  "Ricardo Varela": {
-    "alias": ["rvarela", "phobeo"],
-    "homepage": "http://uk.linkedin.com/in/ricardovarela/"
-  },
-  "Jörg Heuer": {
-    "alias": ["joerg", "jheuer"],
-    "homepage": "http://de.linkedin.com/pub/joerg-heuer/2/a47/6ab"
-  },
-  "Michele Sartori": {
-    "alias": ["msartori"],
-    "homepage": "http://oberthur.com/"
-  },
-  "Ernesto Jimenez": {
-    "alias": ["ejimenez"],
-    "homepage": "http://ernesto-jimenez.com/"
-  },
-  "Andy McKay": {
-    "alias": ["amckay"],
-    "homepage": "http://mozilla.com/"
-  },
-  "Hervé Bourdon": {
-    "alias": ["hbourdon"],
-    "homepage": "http://gmail.com/"
-  },
-  "Jungkee Song": {
-    "alias": ["jsong"],
-    "homepage": "http://samsung.com/"
-  },
-  "Gerard Hammarlund": {
-    "alias": ["ghammarlund"],
-    "homepage": "http://endresultsgrp.com/"
-  },
-  "Eric Tak": {
-    "alias": ["etak"],
-    "homepage": "https://nl.linkedin.com/in/erictak"
-  },
-  "Pierre Georget": {
-    "alias": ["pgeorget"],
-    "homepage": "http://gs1fr.org/"
-  },
-  "Mohammed Dadas": {
-    "alias": ["mdadas"],
-    "homepage": "http://orange.com/"
-  },
-  "Stefan Thomas": {
-    "alias": ["sthomas"],
-    "homepage": "http://ripple.com/"
-  },
-  "Stan Stalnaker": {
-    "alias": ["sstalnaker"],
-    "homepage": "http://www.linkedin.com/in/hubculture"
-  },
-  "Harish Natarajan": {
-    "alias": ["hnatarajan"],
-    "homepage": "http://www.linkedin.com/pub/harish-natarajan/2/896/861/"
-  },
   "Eriko Hondo": {
-    "alias": ["ehondo"],
+    "alias": [
+      "ehondo"
+    ],
     "homepage": "http://kddi.com/"
   },
-  "Hannes Tschofenig": {
-    "alias": ["htschofenig"],
-    "homepage": "http://www.tschofenig.priv.at/wp/?page_id=5"
-  },
-  "Tobie Langel": {
-    "alias": ["tlangel"],
-    "homepage": "http://tobielangel.com/"
-  },
-  "David Ezell": {
-    "alias": ["dezell"],
-    "homepage": "http://verifone.com/"
-  },
-  "Karen O'Donoghue": {
-    "alias": ["kodonoghue"],
-    "homepage": "http://isoc.org/"
-  },
-  "Jean-Yves Rossi": {
-    "alias": ["jrossi"],
-    "homepage": "http://cantonconsulting.fr/"
-  },
-  "Martin Hepp": {
-    "alias": ["mhepp"],
-    "homepage": "http://www.heppnetz.de/"
-  },
-  "Francois Crehange": {
-    "alias": ["fcrehange"],
-    "homepage": "http://paybox.com/"
-  },
-  "Giridhar Mandyam": {
-    "alias": ["gmandyam", "giri"],
-    "homepage": "https://www.linkedin.com/pub/giridhar-mandyam/0/905/b99"
-  },
-  "Wendy Seltzer": {
-    "alias": ["wseltzer"],
-    "homepage": "http://wendy.seltzer.org/"
-  },
-  "Ori Eisen": {
-    "alias": ["oeisen"],
-    "homepage": "http://the41st.com/"
-  },
-  "Curtis Young": {
-    "alias": ["cyoung"],
-    "homepage": "http://shcn.cc/"
-  },
-  "Patrice Bernard": {
-    "alias": ["pbernard"],
-    "homepage": "http://conix.fr/"
-  },
-  "Michel Leger": {
-    "alias": ["mleger"],
-    "homepage": "http://fr.linkedin.com/pub/michel-leger/34/b15/b7a/"
-  },
-  "Alexandra Lavirotte": {
-    "alias": ["alavirotte"],
-    "homepage": "http://w3.org/"
-  },
-  "Ye Tian": {
-    "alias": ["ytian"],
-    "homepage": "http://cnnic.cn/"
-  },
-  "Emil Johansson": {
-    "alias": ["ejohansson"],
-    "homepage": "http://se.linkedin.com/pub/emil-johansson/2/592/50b/"
-  },
-  "Jean-Claude Barbezange": {
-    "alias": ["jbarbezange"],
-    "homepage": "http://worldline.com/"
-  },
-  "Angeles Marzo": {
-    "alias": ["amarzo"],
-    "homepage": "http://ingdirect.es/"
-  },
-  "Louise Bennett": {
-    "alias": ["lbennett"],
-    "homepage": "http://uk.linkedin.com/pub/louise-bennett/1/291/2a8/"
-  },
-  "Vidya Chandy": {
-    "alias": ["vchandy"],
-    "homepage": "http://comviva.com/"
-  },
-  "Jeremy King": {
-    "alias": ["jking"],
-    "homepage": "https://www.linkedin.com/pub/jeremy-king/28/753/90a"
-  },
-  "Timothy Ng": {
-    "alias": ["tng"],
-    "homepage": "http://microsoft.com/"
-  },
-  "Ken Isaacson": {
-    "alias": ["kisaacson"],
-    "homepage": "http://www.linkedin.com/pub/ken-isaacson/20/b23/869/"
-  },
-  "Mauro Nunez": {
-    "alias": ["mnunez"],
-    "homepage": "http://pcisecuritystandards.org/"
-  },
-  "Keir Kettle": {
-    "alias": ["kkettle"],
-    "homepage": "http://bango.com/"
-  },
-  "Dave Birch": {
-    "alias": ["dbirch"],
-    "homepage": "http://www.dgwbirch.com/DGWB/Welcome.html"
-  },
-  "Stephan Steglich": {
-    "alias": ["ssteglich"],
-    "homepage": "http://fokus.fraunhofer.de/"
-  },
-  "Bülent Ünal": {
-    "alias": ["bÜnal"],
-    "homepage": "http://net-m.de/"
-  },
-  "Marie-Claire Forgue": {
-    "alias": ["mforgue"],
-    "homepage": "http://w3.org/"
-  },
-  "Luce Moinecourt": {
-    "alias": ["lmoinecourt"],
-    "homepage": "http://cantonconsulting.fr/"
-  },
-  "Gregory Estrade": {
-    "alias": ["gestrade"],
-    "homepage": "http://torlus.github.io/"
-  },
-  "Axel Nennker": {
-    "alias": ["anennker"],
-    "homepage": "http://de.linkedin.com/in/axelnennker/"
-  },
-  "Otero Rafael": {
-    "alias": ["orafael"],
-    "homepage": "http://payleven.com/"
-  },
-  "Robert Kleinfeld": {
-    "alias": ["rkleinfeld"],
-    "homepage": "http://fokus.fraunhofer.de/"
-  },
-  "Adrian Citu": {
-    "alias": ["acitu"],
-    "homepage": "http://be.linkedin.com/in/cituadrian/"
-  },
-  "Mark Evans": {
-    "alias": ["mevans"],
-    "homepage": "http://hsbc.com/"
-  },
-  "Marijke De Soete": {
-    "alias": ["mdesoete"],
-    "homepage": "http://pandora.be/"
-  },
-  "Gray Taylor": {
-    "alias": ["gtaylor"],
-    "homepage": "https://www.linkedin.com/pub/gray-taylor/6/50b/a5b"
-  },
-  "Heimark Karl Johan": {
-    "alias": ["hkarljohan"],
-    "homepage": "http://telenordigital.com/"
-  },
-  "Lars Erik Bolstad": {
-    "alias": ["lerikbolstad"],
-    "homepage": "http://opera.com/"
-  },
-  "Zhibin James Lei": {
-    "alias": ["zjameslei"],
-    "homepage": "http://astri.org/"
-  },
-  "Thomas Picard": {
-    "alias": ["tpicard"],
-    "homepage": "http://alcatel-lucent.com/"
-  },
-  "Rémy Lesellier": {
-    "alias": ["rlesellier"],
-    "homepage": "http://ca-normandie.fr/"
-  },
-  "Alexander Gee": {
-    "alias": ["agee"],
-    "homepage": "http://www.concurrences.com/auteur/Alexander-Gee?lang=en"
-  },
-  "Joe MoonOk": {
-    "alias": ["jmoonok"],
-    "homepage": "http://sk.com/"
-  },
-  "Robin Berjon": {
-    "alias": ["rberjon"],
-    "homepage": "http://berjon.com/about/"
+  "Ernesto Jimenez": {
+    "alias": [
+      "ejimenez"
+    ],
+    "homepage": "http://ernesto-jimenez.com/"
   },
   "Etienne Hayem": {
-    "alias": ["ehayem"],
+    "alias": [
+      "ehayem"
+    ],
     "homepage": "http://zoupic.com/"
   },
-  "Jong Pyo Hong": {
-    "alias": ["jpyohong"],
-    "homepage": "http://paygate.net/"
+  "Evan Schwartz": {
+    "alias": [
+      "eschwartz"
+    ],
+    "homepage": "http://www.linkedin.com/in/evanmarkschwartz"
   },
-  "Sebastian Kippe": {
-    "alias": ["skippe"],
-    "homepage": "http://5apps.com/"
-  },
-  "Jeff Jaffe": {
-    "alias": ["jjaffe"],
-    "homepage": "http://www.w3.org/People/Jeff/"
-  },
-  "Connie Theien": {
-    "alias": ["ctheien"],
-    "homepage": "http://www.linkedin.com/pub/connie-theien/1/609/7bb/"
-  },
-  "Aurelien Chouvet": {
-    "alias": ["achouvet"],
-    "homepage": "http://w3.org/"
-  },
-  "Daekeun Jeong": {
-    "alias": ["djeong"],
-    "homepage": "http://nbreds.com/"
-  },
-  "Neil Mason-Jones": {
-    "alias": ["nmason-jones"],
-    "homepage": "http://transafricasolutions.com/"
-  },
-  "Roy Duffels": {
-    "alias": ["rduffels"],
-    "homepage": "http://rabobank.nl/"
+  "Evert Fekkes": {
+    "alias": [
+      "efekkes"
+    ],
+    "homepage": "http://rn.rabobank.nl/"
   },
   "Evgeny Vinogradov": {
-    "alias": ["evinogradov"],
+    "alias": [
+      "evinogradov"
+    ],
     "homepage": "http://ru.linkedin.com/in/evinogradov/"
   },
-  "Stéphane Boyera": {
-    "alias": ["sboyera"],
-    "homepage": "http://www.w3.org/People/Boyera/"
+  "Fabio Barone": {
+    "alias": [
+      "tawhauc",
+      "tawhuac"
+    ]
   },
-  "Gerben Mak": {
-    "alias": ["gmak"],
-    "homepage": "http://rabobank.nl/"
-  },
-  "Darren Goucher": {
-    "alias": ["dgoucher"],
-    "homepage": "http://hsbc.com/"
-  },
-  "Bryan Sullivan": {
-    "alias": ["bsullivan"],
-    "homepage": "http://www.linkedin.com/in/blsaws"
-  },
-  "Virginie Galindo": {
-    "alias": ["vgalindo"],
-    "homepage": "https://www.linkedin.com/in/virginiegalindo"
+  "Fernando Jiménez Moreno": {
+    "alias": [
+      "fernando"
+    ],
+    "homepage": "https://github.com/ferjm"
   },
   "Floris Kleemans": {
-    "alias": ["fkleemans"],
+    "alias": [
+      "fkleemans"
+    ],
     "homepage": "http://nl.abnamro.com/"
   },
+  "Francois Crehange": {
+    "alias": [
+      "fcrehange"
+    ],
+    "homepage": "http://paybox.com/"
+  },
+  "Gerard Hammarlund": {
+    "alias": [
+      "ghammarlund"
+    ],
+    "homepage": "http://endresultsgrp.com/"
+  },
+  "Gerben Mak": {
+    "alias": [
+      "gmak"
+    ],
+    "homepage": "http://rabobank.nl/"
+  },
+  "Giridhar Mandyam": {
+    "alias": [
+      "gmandyam",
+      "giri"
+    ],
+    "homepage": "https://www.linkedin.com/pub/giridhar-mandyam/0/905/b99"
+  },
+  "Gray Taylor": {
+    "alias": [
+      "gtaylor"
+    ],
+    "homepage": "https://www.linkedin.com/pub/gray-taylor/6/50b/a5b"
+  },
+  "Gregory Estrade": {
+    "alias": [
+      "gestrade"
+    ],
+    "homepage": "http://torlus.github.io/"
+  },
+  "Guorong Tian": {
+    "alias": [
+      "gtian"
+    ],
+    "homepage": "http://sbc4d.com/"
+  },
+  "Hannes Tschofenig": {
+    "alias": [
+      "htschofenig"
+    ],
+    "homepage": "http://www.tschofenig.priv.at/wp/?page_id=5"
+  },
+  "Harish Natarajan": {
+    "alias": [
+      "hnatarajan"
+    ],
+    "homepage": "http://www.linkedin.com/pub/harish-natarajan/2/896/861/"
+  },
+  "Harry Halpin": {
+    "alias": [
+      "hhalpin"
+    ],
+    "homepage": "http://w3.org/"
+  },
+  "Heimark Karl Johan": {
+    "alias": [
+      "hkarljohan"
+    ],
+    "homepage": "http://telenordigital.com/"
+  },
+  "Hervé Bourdon": {
+    "alias": [
+      "hbourdon"
+    ],
+    "homepage": "http://gmail.com/"
+  },
+  "Ian Myles": {
+    "alias": [
+      "imyles"
+    ],
+    "homepage": "http://www.linkedin.com/pub/ian-myles/4/154/405"
+  },
+  "Iulian Dumitraşcu": {
+    "alias": [
+      "iulian"
+    ],
+    "homepage": "Iulian Dumitraşcu"
+  },
+  "Jean-Claude Barbezange": {
+    "alias": [
+      "jbarbezange"
+    ],
+    "homepage": "http://worldline.com/"
+  },
+  "Jean-Yves Rossi": {
+    "alias": [
+      "jrossi"
+    ],
+    "homepage": "http://cantonconsulting.fr/"
+  },
+  "Jeff Cliff": {
+    "alias": [
+      "themusicgod1"
+    ],
+    "homepage": "https://plus.google.com/105395547687614433866/about"
+  },
+  "Jeff Jaffe": {
+    "alias": [
+      "jjaffe"
+    ],
+    "homepage": "http://www.w3.org/People/Jeff/"
+  },
+  "Jeff Sayre": {
+    "alias": [
+      "jeffsayre"
+    ],
+    "homepage": "http://jeffsayre.com/"
+  },
+  "Jeremy King": {
+    "alias": [
+      "jking"
+    ],
+    "homepage": "https://www.linkedin.com/pub/jeremy-king/28/753/90a"
+  },
+  "Joe Cascio": {
+    "alias": [
+      "joecascio"
+    ]
+  },
+  "Joe MoonOk": {
+    "alias": [
+      "jmoonok"
+    ],
+    "homepage": "http://sk.com/"
+  },
+  "John Foliot": {
+    "alias": [
+      "JF_"
+    ],
+    "homepage": "http://john.foliot.ca/"
+  },
   "Jonathan Warren": {
-    "alias": ["jwarren"],
+    "alias": [
+      "jwarren"
+    ],
     "homepage": "http://coinapex.com/"
   },
-  "Bailey Reutzel": {
-    "alias": ["breutzel"],
-    "homepage": "https://www.linkedin.com/pub/bailey-reutzel/21/a89/954"
-  },
-  "Olivier Maas": {
-    "alias": ["omaas"],
-    "homepage": "http://fr.linkedin.com/pub/olivier-maas/1/341/564/"
-  },
-  "Rafael Hernandez": {
-    "alias": ["rhernandez"],
-    "homepage": "http://bbva.com/"
-  },
-  "D. Jaromil Roio": {
-    "alias": ["droio", "jaromil"],
-    "homepage": "http://dyne.org/"
-  },
-  "Lauret Penou": {
-    "alias": ["lpenou"],
-    "homepage": "http://pzen.eu/"
-  },
-  "Mountie Lee": {
-    "alias": ["mlee"],
+  "Jong Pyo Hong": {
+    "alias": [
+      "jpyohong"
+    ],
     "homepage": "http://paygate.net/"
   },
+  "Jose 'Manny' De Loera": {
+    "alias": [
+      "manny"
+    ],
+    "homepage": "http://www.linkedin.com/profile/view?id=60198289"
+  },
+  "Joseph Potvin": {
+    "alias": [
+      "joe",
+      "jpotvin"
+    ],
+    "homepage": "http://ca.linkedin.com/pub/joseph-potvin/2/148/423"
+  },
+  "Jungkee Song": {
+    "alias": [
+      "jsong"
+    ],
+    "homepage": "http://samsung.com/"
+  },
+  "Jörg Heuer": {
+    "alias": [
+      "joerg",
+      "jheuer"
+    ],
+    "homepage": "http://de.linkedin.com/pub/joerg-heuer/2/a47/6ab"
+  },
+  "Karen O'Donoghue": {
+    "alias": [
+      "kodonoghue"
+    ],
+    "homepage": "http://isoc.org/"
+  },
+  "Keir Kettle": {
+    "alias": [
+      "kkettle"
+    ],
+    "homepage": "http://bango.com/"
+  },
+  "Ken Isaacson": {
+    "alias": [
+      "kisaacson"
+    ],
+    "homepage": "http://www.linkedin.com/pub/ken-isaacson/20/b23/869/"
+  },
+  "Kumar McMillan": {
+    "alias": [
+      "kumar"
+    ],
+    "homepage": "http://farmdev.com/about/"
+  },
+  "Lars Erik Bolstad": {
+    "alias": [
+      "lerikbolstad"
+    ],
+    "homepage": "http://opera.com/"
+  },
+  "Lauret Penou": {
+    "alias": [
+      "lpenou"
+    ],
+    "homepage": "http://pzen.eu/"
+  },
+  "Lloyd Hilaiel": {
+    "alias": [
+      "lloyd|mozilla"
+    ],
+    "homepage": "http://lloyd.io/"
+  },
+  "Louise Bennett": {
+    "alias": [
+      "lbennett"
+    ],
+    "homepage": "http://uk.linkedin.com/pub/louise-bennett/1/291/2a8/"
+  },
+  "Luce Moinecourt": {
+    "alias": [
+      "lmoinecourt"
+    ],
+    "homepage": "http://cantonconsulting.fr/"
+  },
+  "Madhu Nott": {
+    "alias": [
+      "futuresoon"
+    ],
+    "homepage": "http://www.linkedin.com/profile/view?id=1568433"
+  },
+  "Manu Sporny": {
+    "alias": [
+      "manu-db",
+      "manu1",
+      "manu`",
+      "m4nu"
+    ],
+    "homepage": "http://manu.sporny.org/about"
+  },
   "Marie-Claire Forgue": {
-    "alias": ["marie", "mcforgue"],
+    "alias": [
+      "marie",
+      "mcforgue"
+    ],
     "homepage": "http://www.w3.org/People/#mcf"
+  },
+  "Marijke De Soete": {
+    "alias": [
+      "mdesoete"
+    ],
+    "homepage": "http://pandora.be/"
+  },
+  "Mark Cavage": {
+    "alias": [
+      "mcavage"
+    ],
+    "homepage": "https://github.com/mcavage"
+  },
+  "Mark Evans": {
+    "alias": [
+      "mevans"
+    ],
+    "homepage": "http://hsbc.com/"
+  },
+  "Martin Hepp": {
+    "alias": [
+      "mhepp"
+    ],
+    "homepage": "http://www.heppnetz.de/"
+  },
+  "Matt Kaufman": {
+    "alias": [
+      "mkaufman"
+    ]
+  },
+  "Mauro Nunez": {
+    "alias": [
+      "mnunez"
+    ],
+    "homepage": "http://pcisecuritystandards.org/"
+  },
+  "Max Raskin": {
+    "alias": [
+      "mraskin"
+    ],
+    "homepage": "https://twitter.com/maxraskin"
+  },
+  "Melvin Carvalho": {
+    "alias": [
+      "melvster"
+    ],
+    "homepage": "http://melvincarvalho.com/"
+  },
+  "Mete Balci": {
+    "alias": [
+      "Mete"
+    ]
+  },
+  "Michael Hutchinson": {
+    "alias": [
+      "MichaelHutchinson"
+    ]
+  },
+  "Michel Leger": {
+    "alias": [
+      "mleger"
+    ],
+    "homepage": "http://fr.linkedin.com/pub/michel-leger/34/b15/b7a/"
+  },
+  "Michele Sartori": {
+    "alias": [
+      "msartori"
+    ],
+    "homepage": "http://oberthur.com/"
+  },
+  "Mike Johnson": {
+    "alias": [
+      "mjohnson",
+      "mjohnson_db"
+    ]
+  },
+  "Mohammed Dadas": {
+    "alias": [
+      "mdadas"
+    ],
+    "homepage": "http://orange.com/"
+  },
+  "Mountie Lee": {
+    "alias": [
+      "mlee"
+    ],
+    "homepage": "http://paygate.net/"
+  },
+  "Natasha Rooney": {
+    "alias": [
+      "schuki"
+    ],
+    "homepage": "http://uk.linkedin.com/pub/natasha-rooney/9/a7b/560"
+  },
+  "Neil Mason-Jones": {
+    "alias": [
+      "nmason-jones"
+    ],
+    "homepage": "http://transafricasolutions.com/"
+  },
+  "Nick Person": {
+    "alias": [
+      "futuresoon"
+    ]
+  },
+  "Olivier Maas": {
+    "alias": [
+      "omaas"
+    ],
+    "homepage": "http://fr.linkedin.com/pub/olivier-maas/1/341/564/"
+  },
+  "Ori Eisen": {
+    "alias": [
+      "oeisen"
+    ],
+    "homepage": "http://the41st.com/"
+  },
+  "Oscar Katime": {
+    "alias": [
+      "okatime"
+    ],
+    "homepage": "http://bbva.com/"
+  },
+  "Otero Rafael": {
+    "alias": [
+      "orafael"
+    ],
+    "homepage": "http://payleven.com/"
+  },
+  "Patrice Bernard": {
+    "alias": [
+      "pbernard"
+    ],
+    "homepage": "http://conix.fr/"
+  },
+  "Patrick Strateman": {
+    "alias": [
+      "phantomcircuit"
+    ]
+  },
+  "Pelle Braendgaard": {
+    "alias": [
+      "pelleb"
+    ],
+    "homepage": "http://stakeventures.com/pages/whoami"
+  },
+  "Philippe Cabos": {
+    "alias": [
+      "pcabos"
+    ],
+    "homepage": "http://fr.linkedin.com/in/pcabos/"
+  },
+  "Pierre Georget": {
+    "alias": [
+      "pgeorget"
+    ],
+    "homepage": "http://gs1fr.org/"
+  },
+  "Pindar Wong": {
+    "alias": [
+      "pindar",
+      "pindarhk"
+    ],
+    "homepage": "http://www.icann.org/en/groups/board/wong.htm"
+  },
+  "Prakash Hariramani": {
+    "alias": [
+      "phariramani"
+    ],
+    "homepage": "https://www.linkedin.com/in/hariramani"
+  },
+  "Rafael Hernandez": {
+    "alias": [
+      "rhernandez"
+    ],
+    "homepage": "http://bbva.com/"
+  },
+  "Ricardo Varela": {
+    "alias": [
+      "rvarela",
+      "phobeo"
+    ],
+    "homepage": "http://uk.linkedin.com/in/ricardovarela/"
+  },
+  "Robert Kleinfeld": {
+    "alias": [
+      "rkleinfeld"
+    ],
+    "homepage": "http://fokus.fraunhofer.de/"
+  },
+  "Robin Berjon": {
+    "alias": [
+      "rberjon"
+    ],
+    "homepage": "http://berjon.com/about/"
+  },
+  "Roy Duffels": {
+    "alias": [
+      "rduffels"
+    ],
+    "homepage": "http://rabobank.nl/"
+  },
+  "Rémy Lesellier": {
+    "alias": [
+      "rlesellier"
+    ],
+    "homepage": "http://ca-normandie.fr/"
+  },
+  "Saurabh Sethi": {
+    "alias": [
+      "ssethi"
+    ],
+    "homepage": "http://gsma.com/"
+  },
+  "Sebastian Kippe": {
+    "alias": [
+      "skippe"
+    ],
+    "homepage": "http://5apps.com/"
+  },
+  "Stan Stalnaker": {
+    "alias": [
+      "sstalnaker"
+    ],
+    "homepage": "http://www.linkedin.com/in/hubculture"
+  },
+  "Stefan Thomas": {
+    "alias": [
+      "sthomas"
+    ],
+    "homepage": "http://ripple.com/"
+  },
+  "Stephan Steglich": {
+    "alias": [
+      "ssteglich"
+    ],
+    "homepage": "http://fokus.fraunhofer.de/"
+  },
+  "Stephane Schultz": {
+    "alias": [
+      "sschultz"
+    ],
+    "homepage": "http://15marches.fr/"
+  },
+  "Stéphane Boyera": {
+    "alias": [
+      "sboyera"
+    ],
+    "homepage": "http://www.w3.org/People/Boyera/"
+  },
+  "Ted Thibodeau Jr.": {
+    "alias": [
+      "macted"
+    ],
+    "homepage": "http://www.linkedin.com/in/macted"
+  },
+  "Thomas Picard": {
+    "alias": [
+      "tpicard"
+    ],
+    "homepage": "http://alcatel-lucent.com/"
+  },
+  "Timothy Holborn": {
+    "alias": [
+      "mediaprophet"
+    ],
+    "homepage": "https://www.linkedin.com/in/ubiquitous"
+  },
+  "Timothy Ng": {
+    "alias": [
+      "tng",
+      "timng"
+    ],
+    "homepage": "http://microsoft.com/"
+  },
+  "Tobie Langel": {
+    "alias": [
+      "tlangel"
+    ],
+    "homepage": "http://tobielangel.com/"
+  },
+  "Travis Choma": {
+    "alias": [
+      "tchoma"
+    ],
+    "homepage": "http://www.linkedin.com/in/travischoma"
+  },
+  "Vidya Chandy": {
+    "alias": [
+      "vchandy"
+    ],
+    "homepage": "http://comviva.com/"
+  },
+  "Virginie Galindo": {
+    "alias": [
+      "vgalindo"
+    ],
+    "homepage": "https://www.linkedin.com/in/virginiegalindo"
+  },
+  "Wendy Seltzer": {
+    "alias": [
+      "wseltzer"
+    ],
+    "homepage": "http://wendy.seltzer.org/"
+  },
+  "WonSuk Lee": {
+    "alias": [
+      "wlee"
+    ],
+    "homepage": "http://samsung.com/"
+  },
+  "Ye Tian": {
+    "alias": [
+      "ytian"
+    ],
+    "homepage": "http://cnnic.cn/"
+  },
+  "Zhibin James Lei": {
+    "alias": [
+      "zjameslei"
+    ],
+    "homepage": "http://astri.org/"
   }
-}
+} 
