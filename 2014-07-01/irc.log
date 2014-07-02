@@ -1,0 +1,88 @@
+[Tue 21:31:30] <voip-ps>	Manu Sporny (SIP/6000-0000014c) has joined the conference.
+[Tue 21:32:59] <voip-ps>	Dave Longley (SIP/6002-0000014d) has joined the conference.
+[Tue 21:33:52] <voip-ps>	dlehn (SIP/50.134.65.129:5060-0000014e) has joined the conference.
+[Tue 21:35:02] <m4nu>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2014Jun/0199.html
+[Tue 21:35:12] <dlongley>	scribe: dlongley
+[Tue 21:35:47] <dlongley>	m4nu: any updates or changes?
+[Tue 21:35:47] <taaz>	nope
+[Tue 21:35:56] <m4nu>	Topic: Decentralized identity information
+[Tue 21:36:11] <m4nu>	This is the use case we have right now - Use Case: Place and update identity information in a decentralized network (replace payment providers, e-mail attestation, etc.)
+[Tue 21:36:35] <dlongley>	m4nu: is this more like a design criteria?
+[Tue 21:36:46] *	You are now known as m4nu
+[Tue 21:36:48] <dlongley>	m4nu: "do not allow a person's payment or identity information to be locked down to any particular provider"
+[Tue 21:37:14] <m4nu>	dlongley: I agree - sounds like design criteria where that is the goal. Need payment / identity information to be portable.
+[Tue 21:37:44] <m4nu>	So, we're doing this as a design criteria, then?
+[Tue 21:37:54] <m4nu>	dlongley: Somewhere we said that you could switch payment providers easily?
+[Tue 21:38:28] <m4nu>	we do have this - The customer decides to switch to a different identity/wallet/data storage provider and all of their wallet and credential data comes with them.
+[Tue 21:38:39] <m4nu>	dlongley: yeah, so we have that, so this is just a general design criteria to prevent vendor lock-in.
+[Tue 21:39:34] <m4nu>	So, something like this - Design Criteria: Ensure data portability via the use of, for example a decentralized network for data storage, and also prevent single point of failure by use of the same.
+[Tue 21:39:42] <m4nu>	dlongley: Maybe we should say - ensure that it's a requirement.
+[Tue 21:40:49] <dlongley>	m4nu: we'll need to mention a core set, because people will want to value add
+[Tue 21:40:55] <m4nu>	so - Design Criteria: Require data portability for customer financial and identity data?
+[Tue 21:40:58] <dlongley>	m4nu: "do i have to export all of my data or just some of it"
+[Tue 21:41:27] <m4nu>	Design Criteria: Require data portability for customer financial data and identity data that is required for core transaction functionality.
+[Tue 21:41:34] <m4nu>	So, that?
+[Tue 21:42:11] <m4nu>	dlongley: It would be annoying for transaction/receipt data to not be portable - we should require any metadata associated with receipts to also be portable, or maybe we say "choose a payment processor that will port all of your related data"?
+[Tue 21:42:38] <m4nu>	dlongley: I think that design criteria is fine, let's strike the use case and move on.
+[Tue 21:44:00] <m4nu>	Topic: Premium SMS
+[Tue 21:44:09] <m4nu>	So we have this Use Case now: Determine how Premium SMS (operator billing) works with a Web payments solution.
+[Tue 21:44:36] <m4nu>	dlongley: We should change this into a design criteria as well - "Ensure Premium SMS is compatible/works with the Web payments olution"
+[Tue 21:46:03] <m4nu>	manu: We don't call out Visa/Mastercard, so why Premium SMS? Maybe we should call all of the ones we can think of out.
+[Tue 21:46:29] <m4nu>	The point is, we want to make sure that the system is flexible enough to support most of the current legacy payment systems in use today.
+[Tue 21:47:01] <dlongley>	dlongley: "Design Criteria: Ensure the Web payments solution can use legacy payment methods (eg: credit card, Premium SMS, ...)"
+[Tue 21:48:00] <m4nu>	dlongley: There needs to be some sort of translation layer there. Web Payments can provide a transaction layer that can integrate w/ legacy payment methods... that's what we want to say.
+[Tue 21:48:07] <dlongley>	dlongley: "Design Criteria: Ensure the Web payments solution can provide an abstraction layer that integrates with legacy payment methods (eg: credit card, Premium SMS, ...)"
+[Tue 21:49:40] <m4nu>	Close, we want to list a few more things by name to make sure people understand the scope.
+[Tue 21:49:40] <m4nu>	Design Criteria: Ensure the Web payments solution can provide an abstraction layer that integrates with existing payment methods (eg: VISA, Mastercard, ACH, PayPal, debit card, Premium SMS, etc.)
+[Tue 21:50:25] <m4nu>	Topic: Financial Regulatory Hooks
+[Tue 21:50:40] <m4nu>	Here's what we have now - Use Case: Enable financial regulation (e.g. reporting above a certain value) to be implemented directly in payment protocols
+[Tue 21:51:56] <dlongley>	m4nu: this was brought up by multiple people, bloomberg, us fed, to come up with hooks that link into the system, so that transactions that go over a certain amount/go to a certain person and being able to wrap that info up and send it to the proper authority and have the authority be able to capture that information, so there's an open system for reporting over $10k txns, rather than some closed system to do it
+[Tue 21:52:46] <dlongley>	m4nu: i think it's going to be highly unlikely that we could specify the protocol for what the server would accept for a regulatory hook, so instead of a transaction so we could have a hook or class or something to put a transaction in there to report to the proper authorities
+[Tue 21:53:24] <m4nu>	dlongley: Couldn't this just be more vocab terms in the receipt itself? Something you send to the proper authority? The payment processor sends it.
+[Tue 21:54:01] <m4nu>	Why would the payment processor put regulatory fields in the receipt?
+[Tue 21:54:17] <m4nu>	dlongley: Transparency. Important to make possible, but maybe we shouldn't mandate it in the spec.
+[Tue 21:54:42] <m4nu>	dlongley: What's important is that you can include that information, and it can be in the receipt if we want it to be.
+[Tue 21:55:11] <dlongley>	m4nu: it does boil down to that, but the regulators also wanted to be told what the protocol would be so they could set up systems to get digitally signed statements of "this is a 10k transaction"
+[Tue 21:55:32] <m4nu>	dlongley: We have machine-readable data in the current design in the receipt, so we have all of that in the current design.
+[Tue 21:57:13] <dlongley>	m4nu: the regulatory event might not be part of a single transaction, it might be triggered after 500 different transactions on a particular day, or it has to do with the purchase of a good/service in a certain country or you need licensing and you're just reporting that someone purchased that item so the gov't can follow up, pretty scary use case, but it's not just ... we have the core infrastructure to do this in the digital receipt mechanism we have but i think what we need is some way of telling the regulators "here's your hook, now you have to tell us the format of the thing that you need", for example, in the US, "this is the FINCEN URL that you post all the regulatory messages to" and then that's something that is managed by FINCEN
+[Tue 21:59:27] <m4nu>	I think what we want is something that allows a payment processor to send a stream of regulatory events to a regulator-provided URL.
+[Tue 22:00:25] <m4nu>	dlongley: So, we are talking about two services? A machine-readable document that says what messages need to be posted, and another the is a drop box for regulatory messages?
+[Tue 22:00:39] <m4nu>	I think we only need the second part, the first part will be human readable (it's complex)
+[Tue 22:01:31] <dlongley>	dlongley: "A payment processor tracks financial regulatory events and submits machine-readable information to a government URL to meet regulatory compliance."
+[Tue 22:03:18] <m4nu>	dlongley: The government has certain regulatory requirements wrt. transactions. In order to make the government and the payment processor operate more efficiently, a URL is provided that helps the payment processor stay in compliance and the government to collect important regulated financial events.
+[Tue 22:04:15] <m4nu>	How about - Use Case: A payment processor tracks mandatory financial regulatory events and submits machine-readable information to a regulator-provided URL to automatically meet regulatory compliance.
+[Tue 22:04:51] <m4nu>	dlongley: Presumably, they'll also have to track receipts and other information in case of an audit.
+[Tue 22:05:26] <m4nu>	Topic: Transaction Rights/Responsibilities
+[Tue 22:05:32] <m4nu>	We currently have this - Use Case: Rights & responsibilities of a transaction being associated with the context of the transaction, and conveyed to parties in the transaction.
+[Tue 22:06:01] <m4nu>	dlongley: This has to do w/ including licensing/terms of use information for whatever good/service has been purchased. I think we can reword this as a use case - PaySwarm already supports it.
+[Tue 22:06:45] <dlongley>	dlongley: "A customer purchases access to a service on a vendor's website. Included in their digital receipt is a machine-readable license that indicates what kind of access they've been granted and for how long."
+[Tue 22:07:43] <m4nu>	maybe we need to say "rights and responsibilities"
+[Tue 22:08:26] <dlongley>	dlongley: "... the vendor can use this license to enforce access to the service." (useful to add?)
+[Tue 22:09:28] <m4nu>	so, how about - Use Case: A customer purchases access to a service on a vendor's website. Included in their digital receipt is a machine-readable license (rights and responsibilities) that indicates what kind of access they've been granted and for how long. The vendor can use this machine-readable license to enforce access to the service.
+[Tue 22:10:23] <m4nu>	Topic: Digital Receipts
+[Tue 22:10:27] <m4nu>	We have this - Use Case: Issue, transmit, validate proof-of-purchase / digital receipt.
+[Tue 22:11:05] <m4nu>	dlongley: We should mention that this digital receipt is cryptographically secured.
+[Tue 22:13:23] <m4nu>	What about - Use Case: A customer purchases a good or service from a vendor resulting in a cryptographically secured, machine-readable, digital receipt that is issued to the customer. The vendor may then use the receipt as a proof-of-purchase for the good or service.
+[Tue 22:13:40] <m4nu>	dlongley: Use "signed" instead of "secured".
+[Tue 22:15:22] <dlongley>	dlongley: "A vendor cryptographically-signs an offer for a good or service. A customer purchases the good or service..."
+[Tue 22:16:08] <m4nu>	ok, so this is the result of those edits: A vendor cryptographically-signs an offer for a good or service. A customer purchases the good or service from the vendor resulting in a cryptographically signed, machine-readable, digital receipt that is issued to the customer. The vendor may then use the receipt as a proof-of-purchase for the good or service.
+[Tue 22:18:00] <m4nu>	dlongley: We may want to modify this one further and strike the next one
+[Tue 22:18:34] <m4nu>	dlongley: We should strike this one - Use Case: Create a common digital receipt format.
+[Tue 22:18:46] <m4nu>	dlongley: Since we already cover that - we may also want to strike the next one as well.
+[Tue 22:19:33] <m4nu>	Ok, so strike this use case too? - Use Case: Prove ownership over a particular asset (proof of purchase / ownership).
+[Tue 22:19:35] <m4nu>	dlongley: yes.
+[Tue 22:20:01] <m4nu>	ok, so we're left with this, then: A vendor cryptographically-signs a standardized offer for a good or service. A customer purchases the good or service from the vendor resulting in a standardized, cryptographically signed, machine-readable, digital receipt that is issued to the customer. The customer or vendor may then use the receipt as a proof-of-purchase for the good or service.
+[Tue 22:20:17] <m4nu>	m4nu: This use case now feels like it should be split apart.
+[Tue 22:20:40] <m4nu>	dlongley: Well, this whole thing is a process. Let's just leave it in as a full use case. When the Web Payments IG comes through on the 2nd pass, they can split it up if they want to.
+[Tue 22:21:31] <m4nu>	Topic: Digital Receipt Storage
+[Tue 22:21:36] <m4nu>	we currently have this - Use Case: Customer can receive digital receipts (receipt POSTed to user's digital receipt storage vs. an emailed receipt).
+[Tue 22:21:45] <m4nu>	dlongley: Don't quite understand the use case?
+[Tue 22:21:53] <dlongley>	m4nu: some people were saying you were just emailing, but it would be nice if every time you made a purchase it could be posted to a URL for your own personal storage
+[Tue 22:23:47] <m4nu>	dlongley: Let's just update this use case - it's pretty close - A customer stores their wallet, credentials, *and digital receipts* with a particular identity/wallet/data storage provider. The customer decides to switch to a different identity/wallet/data storage provider and all of their wallet, *receipt*, and credential data comes with them.
+[Tue 22:24:07] <m4nu>	ok, then we delete the last use case?
+[Tue 22:24:11] <m4nu>	dlongley: Yeah.
+[Tue 22:24:11] <m4nu>	Topic: Uncategorized/Out of Scope Use Cases
+[Tue 22:24:11] <m4nu>	We still need to go through the majority of the uncategorized and out of scope use cases. There are a number of them, but a quick read through the first half of them shows that we've already either covered many of these use cases or we've 
+[Tue 22:30:57] <voip-ps>	Dave Longley (SIP/6002-0000014d) has left the conference.
+[Tue 22:31:01] <voip-ps>	dlehn (SIP/50.134.65.129:5060-0000014e) has left the conference.
+[Tue 22:31:06] <voip-ps>	Manu Sporny (SIP/6000-0000014c) has left the conference.
