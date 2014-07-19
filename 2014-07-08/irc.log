@@ -1,0 +1,177 @@
+[Tue 21:36:26] <m4nu>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2014Jul/0026.html
+[Tue 21:36:30] <dlongley>	scribe: dlongley
+[Tue 21:37:00] <taaz>	nope
+[Tue 21:37:03] <dlongley>	m4nu: any updates?
+[Tue 21:37:26] <m4nu>	Topic: Uncategorized Use Cases
+[Tue 21:37:53] <dlongley>	m4nu: are there any in scope use cases that have come up?
+[Tue 21:38:01] <dlongley>	m4nu: or are we ready to do just out-of-scope/later use cases?
+[Tue 21:38:23] <brent>	e.g. Uncertain Classification?
+[Tue 21:38:57] <m4nu>	https://www.w3.org/community/webpayments/wiki/CategorizedWebPaymentsUseCases
+[Tue 21:39:08] <dlongley>	m4nu: we don't know where they fit ... the person that submitted the use case either wasnt' clear in what they wanted accomplished or it's something out of left field that doesn't fit into the work ... at least not now
+[Tue 21:39:49] <dlongley>	m4nu: we had a high-level pass of this last week
+[Tue 21:40:16] <m4nu>	dlongley: We do need to separate between not in scope for 1st iteration and not in scope for web payments in general.
+[Tue 21:41:28] <brent>	Could we have a 1st iteration and a 2nd might be nice iteration?
+[Tue 21:41:51] <dlongley>	dlongley: brent, are you saying classify them as 1st and 2nd?
+[Tue 21:41:59] <dlongley>	dlongley: It's unclear what you mean
+[Tue 21:42:03] <mediaprophet>	that’s a marketing use-case
+[Tue 21:42:34] <brent>	yes, use cases appropriate for the 1st iteration, and use cases for a 2nd (and subsequent) iterations.
+[Tue 21:42:46] <dlongley>	dlongley: let's make a policy category and put some of these there
+[Tue 21:42:54] <dlongley>	brent: ok, we've already got the 1st done
+[Tue 21:43:01] <mediaprophet>	i actually think striking them is probably a good idea.  it’s implicit that they’ll be incentive to take-up the standard
+[Tue 21:43:04] <dlongley>	dlongley: We're talking about the 2nd and the "never going to be in scope" cases right now
+[Tue 21:43:25] <brent>	okay..thanks Dave Longley
+[Tue 21:44:59] <dlongley>	dlongley: if "access" is referring to "use the web" that's implicit
+[Tue 21:44:59] <mediaprophet>	policy
+[Tue 21:45:01] <dlongley>	dlongley: so this is policy
+[Tue 21:45:18] <mediaprophet>	usecase: Use Case: Take the change for your $100 bill through a web payment.
+[Tue 21:46:04] <dlongley>	m4nu: digital cash, change for $100 goes to 2nd+ iteration
+[Tue 21:46:21] <mediaprophet>	Use Case: When doing a payment, need a way to assure the customer he is his payment service provider and is not subject to phising. Specially problematic in mobile when browser chrome is not available.
+[Tue 21:47:06] <mediaprophet>	you could issue a web-id to the handset?
+[Tue 21:47:16] <mediaprophet>	rather a x509 cert?
+[Tue 21:47:53] <dlongley>	m4nu: the issue ... the discussion at the paris workshop was it's very difficult to determine the difference between a fake page
+[Tue 21:47:55] <dlongley>	m4nu: and a real one
+[Tue 21:47:58] <mediaprophet>	yup
+[Tue 21:48:00] <dlongley>	m4nu: it's very easy to spoof
+[Tue 21:48:10] <dlongley>	m4nu: on mobile you have no browser chrome in general even harder
+[Tue 21:48:26] <mediaprophet>	k
+[Tue 21:48:27] <dlongley>	m4nu: maybe make the mobile phone highlight the border around the window or some hardware-based notification indicating you're talking to your payment provider
+[Tue 21:48:31] <dlongley>	m4nu: and that's out of scope
+[Tue 21:48:38] <mediaprophet>	understand
+[Tue 21:48:41] <dlongley>	m4nu: we're letting folks like the GSMA figure that out
+[Tue 21:48:44] <mediaprophet>	difficult one
+[Tue 21:49:18] <mediaprophet>	Use Case: Payments / digital receipts should be applicable to Encrypted Media Extension authorization to show content.
+[Tue 21:49:32] <dlongley>	m4nu: chaals wants the same proof of purchase mechanism to be used for EME spec
+[Tue 21:49:46] <dlongley>	m4nu: he wants us to talk to them so the HTML5 specs don't have to adopt a blackbox in the browser
+[Tue 21:50:34] <mediaprophet>	Use Case: Payment process includes user informed consent requirements about "what they are getting into".
+[Tue 21:50:55] <brent>	getting into?
+[Tue 21:51:11] <brent>	like a disclaimer
+[Tue 21:51:13] <m4nu> Yeah, only embedded in the receipt.
+[Tue 21:51:14] <mediaprophet>	Use Case: Send money in any currency, have the network automatically do currency conversion, give currency at the other end in the receivers native currency.
+[Tue 21:52:15] <mediaprophet>	Use Case: Market makers acting as a transfer agent (foreign exchange happens automatically)
+[Tue 21:52:24] <mediaprophet>	Use Case: Transfer money through gateway providers of financial networks.
+[Tue 21:52:55] <mediaprophet>	Use Case: Knowing through which financial network your transaction will be delivered (you might care?).
+[Tue 21:53:22] <m4nu> Ok, so all of these are not for the first iteration.
+[Tue 21:53:22] <mediaprophet>	Use Case: Electronically originated checks
+[Tue 21:53:26] <mediaprophet>	that’s IOU's
+[Tue 21:53:41] <mediaprophet>	it’s an IOU - an asserted IOU Essentially...
+[Tue 21:53:55] <mediaprophet>	i’d say it’s included in other areas...
+[Tue 21:53:55] <m4nu> but not for the first iteration (it's more or less supported by the other use cases that are in scope too)
+[Tue 21:53:59] <mediaprophet>	Use Case: Knowing what info will be required to supplement a transaction.
+[Tue 21:54:51] <mediaprophet>	so, it’s notification?
+[Tue 21:55:12] <mediaprophet>	“in-order to carry out this transaction you will be required to give us xx information..."
+[Tue 21:53:55] <m4nu> yep, not in scope for first iteration.
+[Tue 21:55:31] <mediaprophet>	Use Case: Knowing that data minimization principles are followed by systems in a payment chain
+[Tue 21:55:33] *	dlongley brent: yes, like disclaimers, etc. indicating what you get when you pay for something, what you owe the vendor, if anything, etc
+[Tue 21:55:58] <mediaprophet>	Use Case: Digitally signed contacts that are born and executed digitally.
+[Tue 21:56:06] *	brent has quit (Ping timeout: 255 seconds)
+[Tue 21:56:24] <mediaprophet>	i’d keep it in scope
+[Tue 21:56:50] <mediaprophet>	different use case - same tech.,
+[Tue 21:57:14] <mediaprophet>	Use Case: Allow multiple levels of security based on the type of transaction being performed. No auth for small amounts, PIN auth for medium amounts, Secure Element for large amounts.
+[Tue 21:57:58] <mediaprophet>	i think including explicitly somewhere, the capabilties for digital contracts - v.important
+[Tue 21:58:33] *	brent (~quassel@wsip-98-191-199-52.ok.ok.cox.net) has joined #webpayments
+[Tue 21:58:49] <mediaprophet>	their is an array of different use cases for it
+[Tue 21:59:05] <mediaprophet>	technically, yes.  in english - important it’s documented
+[Tue 21:59:20] <mediaprophet>	binding a person to those concepts?
+[Tue 21:59:31] <mediaprophet>	it’s still a valid usecase
+[Tue 22:00:03] <dlongley>	m4nu: smart contracts are out of scope but the system should allow them to be part of the system
+[Tue 22:00:05] <mediaprophet>	agreed.
+[Tue 22:00:25] <brent>	+1
+[Tue 22:00:37] <mediaprophet>	i think the scope around e-contracts may be more complex that considered on a high-level
+[Tue 22:00:42] <mediaprophet>	so, including it...
+[Tue 22:02:14] <mediaprophet>	Use Case: Allow a physical version of a digital receipt that can be verified, perhaps by printing out a QR Code on a slip of paper with some additional information.
+[Tue 22:02:36] <mediaprophet>	design criteria?
+[Tue 22:02:41] <mediaprophet>	mind; where’s the data live?
+[Tue 22:04:09] <mediaprophet>	Use Case: The wallet as an expert system - decide the best mode of operation for the purchase, make wallet providers compete on that metric.
+[Tue 22:05:08] <mediaprophet>	Use Case: Wallet is synced with loyalty coupons and digital receipts as they are collected. Data is synced to cloud or local wallet seamlessly.
+[Tue 22:05:09] <mediaprophet>	Design Criteria: Wallet data should be separate from wallet provider, data should be owned by the customer.
+[Tue 22:05:15] <mediaprophet>	Use Case: Where is the wallet, how is it protected, is it stored on the same device as your 2-factor authentication device? Security side-effects of mobile-as-wallet are not straightforward.
+[Tue 22:06:28] <mediaprophet>	it’s a best practice consideration
+[Tue 22:06:45] <mediaprophet>	which might be put somewhere in documentation, but how it applies to the spec is tangential
+[Tue 22:06:52] <mediaprophet>	i agree.
+[Tue 22:07:56] <mediaprophet>	Use Case: Prevent corporate man-in-the-middle attacks that are commonly used in corporate environments.
+[Tue 22:08:49] <mediaprophet>	i imagine it mgiht be a design note
+[Tue 22:09:25] <mediaprophet>	Use Case: Payment systems running on shared devices must be able to determine the payer.
+[Tue 22:09:47] <mediaprophet>	“best practices” design notes
+[Tue 22:10:09] <mediaprophet>	agreed.
+[Tue 22:10:16] <mediaprophet>	more about communications.
+[Tue 22:10:28] <mediaprophet>	they’ve been a few communications use-cases
+[Tue 22:10:34] <mediaprophet>	strike
+[Tue 22:11:03] <mediaprophet>	i think determining the end-user, is a science
+[Tue 22:11:08] <mediaprophet>	Use Case: Protect privacy when making purchases using geolocation technologies.
+[Tue 22:12:00] <mediaprophet>	I’ve been working on privacy stuff
+[Tue 22:12:02] <mediaprophet>	it’s complicated.
+[Tue 22:12:19] <dlongley>	m4nu: this has to do with do not track stuff, bigger than just web purchases
+[Tue 22:12:27] <mediaprophet>	i say, leave it in for the moment - and perhaps we’d agree that the scope around privacy might be reviewed once we’re ready.
+[Tue 22:13:40] <mediaprophet>	Use Case: Figure out a way to couple identities together to allow one identity to retrieve access to another identity if the 2nd identity loses their 2FA device.
+[Tue 22:14:26] <brent>	with the same level of security?
+[Tue 22:14:31] <mediaprophet>	they’d need to authenticate to their identity.  the number of ‘shopfront’ identities may be n
+[Tue 22:14:48] <dlongley>	Allow a person to use a second identity to access their first identity if the person loses the ability to use the first identity.
+[Tue 22:15:02] <mediaprophet>	in fact, i imagine they’d be able to set-up multiple identity services if they choose to
+[Tue 22:15:46] <mediaprophet>	n = limitless
+[Tue 22:15:53] <dlongley>	Use Case: A person sets a second identity as a backup for accessing their first identity, should they lose the ability to use the first identity.
+[Tue 22:16:12] <brent>	what is an identity to you?
+[Tue 22:16:26] *	dlongley brent an aspect of a person
+[Tue 22:16:36] *	dlongley brent as defined by IC spec
+[Tue 22:16:42] <mediaprophet>	they’ve not lost access if the back-up is available to grant them access
+[Tue 22:16:52] <mediaprophet>	their is identity and an identity provider
+[Tue 22:16:59] *	dlongley mediaprophet, yes, but that's pedantic
+[Tue 22:17:07] <mediaprophet>	AUTH is supported via the identity provider
+[Tue 22:17:12] <mediaprophet>	i have several domains.
+[Tue 22:17:21] <mediaprophet>	they could all be seperate identity providers for me
+[Tue 22:17:36] <mediaprophet>	i might or might not link them together
+[Tue 22:18:28] <mediaprophet>	(if the LD is public, then the choices about how they’re linked become diminished…)
+[Tue 22:18:36] <mediaprophet>	(working on the privacy aspect._)
+[Tue 22:19:10] <mediaprophet>	Use Case: Figure out a way to couple identities together to allow one identity to retrieve access to another identity if the 2nd identity loses their 2FA device.
+[Tue 22:19:11] <mediaprophet>	 seems like a design criteria
+[Tue 22:21:03] <mediaprophet>	sorry - Use Case: Protect privacy when making purchases using geolocation technologies. - is the specificity of ‘geolocation’ required?  is the use-case actually about protecting privacy
+[Tue 22:22:11] <dlongley>	Use Case: Realtime purchases involving prerequisite reception of funds from international sources (e.g. family).
+[Tue 22:22:43] <mediaprophet>	it’s a card not present transaction?
+[Tue 22:22:51] <dlongley>	m4nu: for example someone in carribbean uses mobile phone and gives source payment address of uncle in NYC and uncle is in kiosk in NYC and makes payment on behalf of person in store in carribbean and person can take item home, too complicated for version 1 but supported
+[Tue 22:22:56] <mediaprophet>	sounds like a web-payment user-story
+[Tue 22:23:02] <dlongley>	m4nu: meaning that the proof of transfer/purchase works
+[Tue 22:23:13] <dlongley>	m4nu: you send details between the people
+[Tue 22:23:36] <dlongley>	dlongley: more like just a gift purchase.
+[Tue 22:24:39] <mediaprophet>	but i’d imagine that use-case is that the international person providing the funds to the merchant is the purchaser, the person in front of the counter - is the reciever
+[Tue 22:25:56] <brent>	gut feeling: easy with LD
+[Tue 22:30:15] <dlongley>	m4nu: we'll send this on to the mailing list, get feedback, then send onto steering group, etc.
+[Tue 22:30:28] <dlongley>	m4nu: any other thoughts on the use case stuff, does it seem like a reasonable way to get more consensus?
+[Tue 22:30:38] <mediaprophet>	I’m thinking the ability to include licensing information as part of the reciept is perhaps important
+[Tue 22:30:43] <mediaprophet>	but i’m not sure how that looks yet.
+[Tue 22:30:53] <mediaprophet>	licensing information may include privacy stuff
+[Tue 22:31:05] <dlongley>	Use Case: A customer purchases access to a service on a vendor's website. Included in their digital receipt is a machine-readable license (rights and responsibilities) that indicates what kind of access they've been granted and for how long. The vendor can use this machine-readable license to enforce access to the service.
+[Tue 22:31:16] <mediaprophet>	by licensing i’m thinking both something like creative commons, and a privacy styled method
+[Tue 22:31:16] <dlongley>	m4nu: we have license information and how to express it in a payswarm document as well
+[Tue 22:31:20] <mediaprophet>	for data relating to the transactions
+[Tue 22:31:28] <mediaprophet>	but the method doesn’t exist yet to my understanding.
+[Tue 22:31:29] *	dlongley mediaprophet, exactly
+[Tue 22:31:38] <dlongley>	dlongley: it's in a payswarm doc already
+[Tue 22:31:43] <dlongley>	dlongley: in the implementation certainly
+[Tue 22:31:43] <mediaprophet>	awesome
+[Tue 22:31:53] <dlongley>	m4nu: it needs to be refined more
+[Tue 22:32:03] <dlongley>	m4nu: but the beginnings are in there, it's been in there since the beginning
+[Tue 22:32:14] <dlongley>	m4nu: specifically, the reason we had for expressing licenses was for digital music/video use cases
+[Tue 22:32:19] <mediaprophet>	i remember reviewing that history ;)
+[Tue 22:32:25] <mediaprophet>	sounds good
+[Tue 22:32:26] <dlongley>	m4nu: the media companies are very interested in expressing rights and responsibilities
+[Tue 22:32:32] <mediaprophet>	with regard to personal information privacy
+[Tue 22:32:35] <dlongley>	m4nu: as a result of purchase
+[Tue 22:32:36] <dlongley>	m4nu: ok
+[Tue 22:32:47] <mediaprophet>	i’m thinking the license method is perhaps something that can be applied in the same way
+
+[Tue 22:33:07] <mediaprophet>	so, if their was a creative commons like privacy method; the URI would be described
+[Tue 22:33:14] <dlongley>	m4nu: yeah, in fact, some of the privacy stuff could be part of the license as well
+[Tue 22:33:22] <mediaprophet>	my GIS Point data is used for securing the transaction only
+[Tue 22:33:30] <dlongley>	m4nu: and Tim, for the license stuff, we had a mechanism in there for just pointing to a CC license
+[Tue 22:33:31] <mediaprophet>	:)
+[Tue 22:33:33] <dlongley>	m4nu: expressed in cc-rel
+[Tue 22:33:41] <mediaprophet>	understood.
+[Tue 22:33:50] <dlongley>	m4nu: that's it for the call today, we'll chat again next week
+[Tue 22:34:00] <dlongley>	m4nu: we can discuss what the agenda will be on the mailing list
+[Tue 22:34:09] <dlongley>	m4nu: i think these are the use cases we will push into the steering group
+[Tue 22:34:30] <dlongley>	m4nu: and that will end up being input for what technical work needs to be done, the good news is the vast majority of these cases we have tech for already
+[Tue 22:34:41] <dlongley>	m4nu: there's some refactoring to do a bit
+[Tue 22:34:42] <mediaprophet>	sounds good
+[Tue 22:34:47] <dlongley>	m4nu: if no one has anything else, that's it for the call today.
+[Tue 22:34:49] <mediaprophet>	congrats to getting through the use-cases ;)
+[Tue 22:34:52] <mediaprophet>	bye
+
