@@ -1,0 +1,127 @@
+[Tue 21:36:17] <manu>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2014Jul/0032.html
+[Tue 21:36:26] <dlongley>	scribe: dlongley
+[Tue 21:37:07] <dlongley>	manu describes the agenda, no changes.
+[Tue 21:37:24] <dlongley>	manu: any updates or changes to the agenda?
+[Tue 21:37:34] <manu>	Topic: Web Payments IG Charter (3rd revision)
+[Tue 21:38:31] *	tim (62e12672@gateway/web/freenode/ip.98.225.38.114) has joined #webpayments
+[Tue 21:38:35] <manu>	http://www.w3.org/2014/04/payments/webpayments_charter.html
+[Tue 21:39:30] <dlongley>	manu: the charter has gone through 3 iterations, it's a very broad charter, it covers everything from creating a web payments roadmap to terminology, to wallet APIs to initiating payments, digital receipts, identity and authentication, that doesn't mean that the web payments work will include all of those things, it means that all of those things are in scope for discussion for figuring out what the official group will do
+[Tue 21:40:04] <dlongley>	manu: the desire is to focus fairly narrowly, we don't want it to be a gigantic endeavor, we want to make progress on some focused specs, good bang for our buck instead of boiling the oceans (and various other idioms)
+[Tue 21:40:24] <dlongley>	manu: i imagine some of the discussion in the first few months will be boiling down the set of use cases we want to address
+[Tue 21:40:25] <manu>	https://www.w3.org/community/webpayments/wiki/CategorizedWebPaymentsUseCases
+[Tue 21:40:56] <dlongley>	manu: speaking of use cases we've refined the ones from the web payments work shop, we've made a basic common format, removed duplicates, pushed things off to 2nd/3rd iteration of the tech to help narrow the scope down
+[Tue 21:41:34] <dlongley>	manu: the link in IRC is to the clean use cases, these are only from the web payments workshop, we haven't integrated the payswarm use cases or any of the other common, deployed use cases, such as paying for something via google wallet, paypal, with your mobile phone or CC as you do today
+[Tue 21:41:38] <dlongley>	manu: we will work those in there
+[Tue 21:41:49] <dlongley>	manu: we want to use this as input to the web payments IG
+[Tue 21:42:04] <dlongley>	manu: any questions about the IG charter?
+[Tue 21:42:11] <dlongley>	none
+[Tue 21:42:19] <dlongley>	manu: Tim, have you reviewed the charter?
+[Tue 21:42:40] <dlongley>	timng: yes, i have read through the charter and the use case documents as well, i'm still feeling out and will ask questions after
+[Tue 21:43:48] <dlongley>	manu: the main thing we're blocked on now is getting firm commitments from companies to officially join the work, we have 40 responses from 40 different orgs saying they want to be involved in the work, we have 14 firm commitments from orgs that have named engineers to include in the work, now we have to do a second pass and make sure that the orgs that are already w3c members have committed engineering resources and those that are not w3c members are either on a path to becoming so to participate or we have some kind of invited experts mechanism drawn up for them
+[Tue 21:43:51] <dlongley>	manu: any other questions?
+[Tue 21:43:53] <dlongley>	none
+[Tue 21:44:15] <dlongley>	manu: lehn, thoughts on reading through?
+[Tue 21:44:27] <dlongley>	taaz: i've read through partly i'm going to do a more thorough read through
+[Tue 21:44:34] <manu>	Mailing list for comments are here: http://lists.w3.org/Archives/Public/public-webpaymentsigcharter/
+[Tue 21:44:55] <manu>	Requested changes to the charter are here: https://www.w3.org/community/webpaymentsigcharter/wiki/Main_Page
+[Tue 21:45:16] <dlongley>	manu: we're in good shape for the steering group to start its work, we're in fairly good shape in terms of recruiting orgs to participate in the work
+[Tue 21:45:31] <manu>	Topic: Updates from Payments and Identity Meetings
+[Tue 21:46:26] <dlongley>	manu: there has been pushback on the identity aspect of the web payments work, adrian, anders to a degree, and a few other folks on the mailing list have questioned whether identity should be part of the web payments initiative or if it should be split into another initiative and those multiple working groups would try and talk to one another as they progressed
+[Tue 21:47:32] <dlongley>	manu: i was just at MIT last week talking with W3C and their feeling is that they'd rather see the work be decoupled. We'd have a web payments initiative and an identity initiative, the downside is rounding up the same number of companies for the identity group, we have 180 companies involved, only 40 want to participate, 14 have committed resources. We're looking at a similar sort of initiative for the identity stuff. There is tons of overlap.
+[Tue 21:48:12] <dlongley>	manu: the good news is that we've been doing the leg work on that for a while now, now we have ETS, US Fed, we were just in washington DC last week talking about the US Dept of Education about this, they are very interested in solving the "identity problem" on the web
+[Tue 21:48:36] <dlongley>	manu: they want to assign IDs to students and let them collect credentials, university degrees, nursing licenses, etc. credentials stuff like that
+[Tue 21:49:27] <dlongley>	manu: so the strategy question is, how do we run a payments initiative and an identity initiative and make sure they don't collapse under their own weight, it's hard to manage it all, we do have a very strong interest from the US Fed, the US Dept of Education, and the World Bank to solve both the identity and web payments problems
+[Tue 21:49:40] <dlongley>	manu: they overlap enough that orgs are feeling the pain and desire to solve those issues
+[Tue 21:50:25] <manu>	dlongley: It might be a good idea to put out a vote from the CG on this. My concern is that a certain number of people would be voting for that w/o understanding that they'd be expected to get these companies involved.
+[Tue 21:50:54] <manu>	dlongley: It would be difficult to manage both of these groups at the same time. It's a lot of work to do that. It would be simpler to have just one group, but technically, it may be good to separate the work.
+[Tue 21:51:31] <manu>	dlongley: Both problems are solveable if they're in the same group. I don't disagree that they shouldn't be technically separated. You do need pieces of identity to do web payments, at a minimum, you need an identifier that you can tie other information to.
+[Tue 21:51:52] <manu>	dlongley: If we separate the work entirely, it may be difficult to finish the work.
+[Tue 21:52:15] <manu>	dlongley: If we don't plan ahead, it'll be more difficult to solve more complex problems in the future.
+[Tue 21:52:34] <manu>	dlongley: We don't want to end up w/ a patchwork - so implementers may have to implement things in a piece meal fashion.
+[Tue 21:53:03] <manu>	dlongley: It makes sense to separate the technologies, but it's a lot of work to do it that way.
+[Tue 21:53:21] <manu>	dlongley: Technologies should be decoupled, there needs to be an association that needs to be maintained.
+[Tue 21:54:44] <dlongley>	manu: the biggest worry we have at this point is that the payments problem could be solved not including identity at all, by say using a protocol handler, you register with your payment provider and when you go to pay for something you get taken to your payment processor and you pay for somethig, but the problem is that you completely bypass the more complex purchase use cases, like transmitting shipping address information or your proof of age or whatever
+[Tue 21:55:10] <dlongley>	manu: there are these other use cases that some in the web payments community see as corner cases that aren't actually corner cases if you want to be able to use this payments system for both low and high value transactions
+[Tue 21:55:42] <dlongley>	manu: some in the group don't see transactions for $10k to be worth addressing, but if we want [missed] we have to support that, and for that to happen we need very strong KYC to be associated with the transaction, we need verification
+[Tue 21:56:56] <manu>	dlongley: There is an additional problem - people will start to say - in 80% of the transactions, shipping info would be needed.
+[Tue 21:57:35] <manu>	dlongley: In that case, we could throw shipping information into the receipt, for instance... so you design to solve some small percentage of use cases, so if you want to standardize transmitting other sorts of credentials in a different way. 
+[Tue 21:58:04] <manu>	dlongley: So we end up with a patchwork of information - if the problem were solved more elegantly, all information associated w/ your identity could be transmitted in the same way.
+[Tue 21:58:25] <manu>	dlongley: So, there is a danger in solving the use cases in a way that fractures the solution.
+[Tue 21:58:43] <manu>	dlongley: If we can solve the problem in a forward-thinking way that doesn't require a lot of effort, that's fine, but we need to think ahead.
+[Tue 21:59:08] <manu>	dlongley: If we're putting all that extra design work for the future, maybe we should be doing this anyway. Many ways to mess this up for people in the future.
+[Tue 21:59:40] <manu>	dlongley: I'm concerned about the "let's just solve the simples problems" arguments because they could design us into a corner.
+[Tue 22:01:21] <dlongley>	manu: so these are the discussions we're having with a number of identity folks, we're trying to balance things so that this group that would talk about identity would be composed of people from the payments industry, from identity protection [missed], background checks, people from the education space, we're trying to get a broad swath of people together, it's a double-edged sword ... it could be that we complicate the problem so much that it's unsolvable, which has happened in the past, so we have to be very careful with what we choose to solve, it has to be narrowly scoped, but it has to address a number of the web payments use cases so we don't paint ourselves into the corner
+[Tue 22:01:31] <dlongley>	manu: have you participated in the open ID connect work?
+[Tue 22:01:39] *	wwu (~Admin@209-6-150-149.c3-0.bkl-ubr1.sbo-bkl.ma.cable.rcn.com) has joined #webpayments
+[Tue 22:01:40] <dlongley>	timng: no, i have not looked at the papers
+[Tue 22:02:03] <dlongley>	timng: it's the same kind of problem we're looking in right now, the relationship between identity and payments, so there are a lot of things to think through for these two areas
+[Tue 22:03:28] <dlongley>	manu: i think what we're trying to do ... the focus of the payments and education space is the transmission of some kind of proof of information about yousrelf that's been validated by a third party, digital ID card, drivers license, proof of email address, proof of age, we've been able to narrow the scope down to just that, so that's the breadth of the scope that we want to do, we don't want to make this into solving all identity for everyone over the web, because it means something different to everyone and is impossible, you have site A that wants to transmit digitally verifiable info about you to site B
+[Tue 22:03:35] <dlongley>	manu: the question is how do you do that
+[Tue 22:03:57] <dlongley>	manu: we have our contacts google [missed] OpenID Connect to get involved
+[Tue 22:05:32] <dlongley>	manu: the other piece of information was that we participated in Mozilla's badge alliance [missed], they are interested in assigning IDs/badges to students for course work, if they've taken SAT prep course, calc, etc, they want to assign badges to them, the outcome of that was that Mozilla was very interested in that as well, so that's another org to bring in, as far as the ID work is concerned we have 40-50 orgs interested, the next 6 months will be capacity building, try and figure out how many can get into the same room and how many will commit engineers to working on the identity problem as well
+[Tue 22:05:41] <dlongley>	manu: anything else related to payments and identity and the meetings we've been having? If not, we'll move on.
+[Tue 22:05:41] <manu>	Topic: Plan for Documenting Use Cases
+[Tue 22:05:52] <manu>	https://www.w3.org/community/webpayments/wiki/CategorizedWebPaymentsUseCases
+[Tue 22:06:26] <dlongley>	manu: typically we come up with a user story around each use case, there aren't a crushing amount of use cases, but there are about 35-40 use cases
+[Tue 22:06:54] <dlongley>	manu: we still need to rank them and say which is more important than others, we need to get the community involved in writing up a paragraph description of each case and the requirements, etc
+[Tue 22:07:23] <dlongley>	manu: the other alternative is to wait and leave them simple until we take them to the IG and that group can rank them and the ones that are the first 5-10 end up being put into a use cases doc
+[Tue 22:07:38] <dlongley>	manu: the one liner is in there, 1-2 paragraph description and requirements are put in there
+[Tue 22:07:56] <dlongley>	manu: it is a very herculean task to have a single person write out all the descriptions for the use cases
+[Tue 22:08:09] <dlongley>	manu: hopefully someone from the web payments community can volunteer to help
+[Tue 22:08:16] <dlongley>	manu: any other ideas on getting them documented?
+[Tue 22:08:26] <dlongley>	timng: do you mean to take the use cases as they exist and put more meat on them?
+[Tue 22:08:32] <dlongley>	manu: yes
+[Tue 22:08:40] <dlongley>	timng: do you have an example with an appropriate level of detail?
+[Tue 22:08:58] <manu>	Yeah, this one: https://web-payments.org/specs/source/use-cases/#recurring-payments
+[Tue 22:09:24] <dlongley>	manu: so there's a simple 1 paragraph description of what someone is trying to do, and then the requirements for that
+[Tue 22:09:42] <dlongley>	timng: so turn those use cases into a set of requirements and some scenarios, and kind of flesh it out a little bit
+[Tue 22:09:47] <dlongley>	timng: i can definitely help with that
+[Tue 22:09:53] <dlongley>	timng: i can take a look at the ones on the wiki
+[Tue 22:10:23] <dlongley>	manu: i imagine we will just do most of the work on the wiki, or make a new page and put a template at the top and let people just work on it from there, if you see one that calls out to you, copy the template and just fill one out
+[Tue 22:10:39] <dlongley>	manu: maybe we could just call out specific community members and ask them to do 3 use cases or something
+[Tue 22:10:53] <dlongley>	manu: each of us will do 3 or so and ask others to do 3 each and then we only need about 10 people
+[Tue 22:10:59] <dlongley>	manu: then we can put some meat on all these use cases
+[Tue 22:11:19] <dlongley>	manu: the other thing that we need to do before that is that everyone agrees on the text of the use cases, as there is no need to fill them out if people disagree
+[Tue 22:11:24] <dlongley>	manu: i sent them out for people to vote
+[Tue 22:11:59] <dlongley>	manu: so the plan for documenting the use cases is to send the votes out to +1/-1, then get consensus on a use case being accepted we'll ask someone specifically to write out the use case text for that
+[Tue 22:12:04] <dlongley>	manu: anything else regarding this topic?
+[Tue 22:12:10] <dlongley>	No other comments.
+[Tue 22:12:12] <manu>	Topic: 6-Month Plan for Specification Work
+[Tue 22:12:58] <dlongley>	manu: this is a bit premature, we have a set of specs that we are releasing patent and royalty free as a starting point for all these techs, many of the use cases we have are already covered and the CG has signed off as them being in scope, but that doesn't mean W3C member orgs have signed off
+[Tue 22:13:11] <dlongley>	manu: because we haven't had a chance to discuss them with any amount of length yet
+[Tue 22:13:29] <dlongley>	manu: that said, we have a good track record of proposing specs and then getting them out to REC
+[Tue 22:13:43] <dlongley>	manu: for example, RDFa, JSON-LD, JSON-LD API, HTML5+RDFa
+[Tue 22:14:13] <dlongley>	manu: there are some specs that are fairly time critical, for example, we have JSON-LD normalization and canonicalization (RDF Dataset Normalization)
+[Tue 22:14:22] <dlongley>	manu: we have 4-5 implementations that are interoperable for that
+[Tue 22:14:44] <dlongley>	manu: the issue is that the spec is so small that it doesn't need its own WG, it just needs to go into a WG to adopt the work, we're trying to find a home for it
+[Tue 22:14:58] <dlongley>	manu: it's kind of the basis for a lot of the digital signature stuff we're doing so we need a normative spec for that
+[Tue 22:15:12] <dlongley>	manu: if all else fails it will go into web payments or identity WGs and we don't want to wait that long to get that one done
+[Tue 22:16:26] <dlongley>	manu: the other one is the IC spec, we can't really do anything with that spec without an official WG and there will probably be one created for it, in the interim there's a concern that the IC spec is a competitor to OpenID Connect when that isn't the case necessarily, it's about transmitting credentials digitally signed by a 3rd party, we need enough demos and examples demonstrating the use of the IC spec and how to integrate with OpenID Connect and OpenID connect providers
+[Tue 22:16:38] <dlongley>	manu: we don't want to mislead that there's competitive stuff there when there isn't
+[Tue 22:17:43] <dlongley>	manu: the other time-critical thing is the http-signatures spec which is a 4-5 page spec is simple, mark nottingham in charge of http/2 likes the state it's in as does [missed], we have the green light to push it through a more formal process at IETF, problem is we've all been too busy to make updates, it's been a month and a half since the last revision, we really need to get it done and out there or finalize it so that implementors can implement to the latest spec
+[Tue 22:17:51] <dlongley>	manu: and we really need to do something about JSON-LD and graph normalization stuff
+[Tue 22:18:03] <dlongley>	manu: everything else, from what i remember are things that can be done in the web payments or identity WG
+[Tue 22:18:58] <dlongley>	manu: any other time critical specs?
+[Tue 22:19:09] <dlongley>	dlongley: maybe the Secure Messaging spec
+[Tue 22:19:19] <dlongley>	manu: yeah, that's important, we have multiple implementations but we haven't updated
+[Tue 22:19:26] <dlongley>	manu: the spec in a while to match, it's very low level
+[Tue 22:19:36] <dlongley>	manu: both identity and payments specs build on top of it
+[Tue 22:20:39] <manu>	So, most important to least important over next 6 months: Use Cases, HTTP Signatures, RDF Graph Normalization, Secure Messaging
+[Tue 22:20:46] <dlongley>	manu: everything else is secondary, we can wait 6 months for the other specs
+[Tue 22:21:11] <manu>	dlongley: Secure Messaging depends on RDF Graph Normalization... so yeah, I agree with that ordering.
+[Tue 22:21:28] <taaz>	sounds good.  can always adjust as needed.
+[Tue 22:21:59] <dlongley>	manu: the http-signatures spec will be about a week of work i think
+[Tue 22:22:00] <manu>	dlongley: Yeah, RDF Graph Normalization will take a lot of spec work (writing to align w/ implementations)
+[Tue 22:22:40] <dlongley>	manu: the downside is no one is paying for that work
+[Tue 22:22:48] <dlongley>	manu: no orgs have stepped up to help finish off those specs
+[Tue 22:22:55] <dlongley>	manu: Secure Messaging hasn't changed that much
+[Tue 22:23:10] <dlongley>	manu: it's wrong right now because it doesn't match the implementations but it's not a very complicated spec
+[Tue 22:23:37] <dlongley>	manu: tim, do you know if Microsoft is going to be submitting anything?
+[Tue 22:23:50] <dlongley>	timng: we started talking about it, we are discussing it, no firm plans yet, i will let you know
+[Tue 22:24:12] <dlongley>	manu: i think that's it for the call this week, we'll try to get the web payments CG into use case mode, discussing, documenting, focusing on that stuff
+[Tue 22:24:19] <dlongley>	manu: trying to prep those docs as much as possible for the Web Payments Steering Group
+[Tue 22:24:40] <voip-wp>	Dave Longley (SIP/6002-00000005) has left the conference.
+[Tue 22:24:42] <voip-wp>	Manu Sporny (SIP/6000-00000004) has left the conference.
+[Tue 22:24:44] <voip-wp>	timng (SIP/172.16.42.100-00000003) has left the conference.
+[Tue 22:24:45] <voip-wp>	dlehn (SIP/50.134.65.129:5060-00000006) has left the conference.
+
