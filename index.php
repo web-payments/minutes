@@ -43,7 +43,7 @@ else
 }
 ?><br>
 <strong><span class="icon icon-clock"></span> Time</strong>: 
-1500 UTC / 8am San Francisco / 11am Boston / 4pm London<br>
+1400 UTC / 7am San Francisco / 10am Boston / 3pm London / 4pm Cape Town / 10pm Hong Kong / 12am Brisbane <br>
 
 <strong><span class="icon icon-mobile"></span> SIP</strong>: 
 <a href="sip:payswarm@digitalbazaar.com">payswarm@digitalbazaar.com</a> (Windows / Mac OSX: use <a href="http://icanblink.com/">Blink</a>, Linux: use <a href="http://www.linphone.org/">Linphone</a>)<br>
