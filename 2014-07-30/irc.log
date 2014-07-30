@@ -1,0 +1,193 @@
+[Wed 10:07:27] <manu>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2014Jul/0111.html
+[Wed 10:07:30] <dlongley>	scribe: dlongley
+[Wed 10:07:53] <voip-wp>	timng (SIP/192.168.1.60-0000001e) has joined the conference.
+[Wed 10:07:59] <voip-wp>	Joseph Potvin (SIP/getonsip.com-0000001f) has joined the conference.
+[Wed 10:08:02] <dlongley>	manu: any updates or changes?
+[Wed 10:08:06] <dlongley>	taaz: nope
+[Wed 10:08:14] <manu>	Topic: Credentials Community Group Formation
+[Wed 10:08:54] <dlongley>	manu: this is something that we've been discussing with various large organizations behind the scenes for a while. At the web payments workshop, identity was a common thread for the two days, and we created a number of identity use cases at the workshop which we later refined on these calls.
+[Wed 10:09:15] *	timng (ae1589c5@gateway/web/freenode/ip.174.21.137.197) has joined #webpayments
+[Wed 10:09:26] <dlongley>	manu: but the discussion from march to now has been quesitoning whether or not we want to tackle the identity problem for payments. It's a much narrower problem, KYC, money laundering,etc. making sure you can crypto-verify someone sending money is who they say they are.
+[Wed 10:09:49] *	jpotvin (~jpotvin@69-165-170-68.dsl.teksavvy.com) has joined #webpayments
+[Wed 10:09:54] <dlongley>	manu: some saying we definitely need identity credential verification (identity attribute exchange) for a good web payments system, others saying we don't that bitcoin is good enough and we can rely on legislation and other things to shore up the rest
+[Wed 10:10:06] <dlongley>	manu: we've been discussing splitting off the Identity Credentials stuff into its own CG and now have enough large corporate support to do so.
+[Wed 10:10:22] <manu>	W3C Credentials Community Group Charter: https://docs.google.com/document/d/1dPzWbPF0jlox8UHnr522nBWCjLJMQ_vGbbtsA5-pAsg/edit
+[Wed 10:10:39] <dlongley>	manu: that is a rough draft of the Credentials CG charter, we need input on it.
+[Wed 10:10:59] <dlongley>	manu: it's focused on low and high stakes credentials, it's for storing and transmitting creds, like govt issued licenses, university degrees, etc.
+[Wed 10:11:33] <dlongley>	manu: we believe we have enough momentum to launch another group and w3c management at a high level seems to be onboard with two separate initiatives understanding that the web payments work will likely need stuff from the Credentials CG
+[Wed 10:11:47] <dlongley>	manu: we want to launch the CG group next week or the week after ... just to get the paperwork, etc out of the way. Then we'll use it as a rallying point for a credentialing initiative at W3C.
+[Wed 10:11:53] <dlongley>	manu: and then ask orgs to join the work and make public statements of support.
+[Wed 10:12:03] <voip-wp>	Joseph Potvin (SIP/getonsip.com-0000001a) has left the conference.
+[Wed 10:12:24] <dlongley>	manu: the work is meant to be very narrowly scoped, we don't want to get stuck in quagmire of identity on the web, rather just work on transmitting and receiving digital crypto-verifiable creds on the web
+[Wed 10:12:40] <dlongley>	manu: evgeny, Tim, it would be great to have Yandex and Microsoft look at the work to see if they want to participate
+[Wed 10:12:53] <dlongley>	manu: we are reaching out to US Fed, Bloomberg, etc. to see if they want to participate
+[Wed 10:13:21] <dlongley>	manu: this is basically our response to people saying the identity/cred work should be separated from the web payments work, but still making sure it supports the web payments work
+[Wed 10:13:25] <dlongley>	manu: any comments around this?
+[Wed 10:13:32] <dlongley>	jpotvin: sounds reasonable to me
+[Wed 10:14:07] <dlongley>	manu: we're hoping to get w3c paperwork out of way and launch the CG next week, we are thinking of launching with this charter but we're still getting feedback from large orgs on it
+[Wed 10:14:12] <dlongley>	manu: it specifies what's in scope and out of scope
+[Wed 10:14:30] <dlongley>	manu: talking about the specs that we contribute to w3c in that group are patent/royalty unencumbered
+[Wed 10:15:01] <dlongley>	manu: the charter is really just a modification of the web payments charter, which was created after several weeks of discussion, so if people are happy in web payments CG they should be happy at least with the proposed initial charter
+[Wed 10:15:09] <dlongley>	manu: for the Credentials CG
+[Wed 10:15:17] <manu>	Topic: Feedback on Use Cases Revisions
+[Wed 10:15:23] <manu>	https://www.w3.org/community/webpayments/wiki/CategorizedWebPaymentsUseCases
+[Wed 10:15:29] <dlongley>	manu: the next few calls will likely be mostly about comments on the use cases
+[Wed 10:16:23] <dlongley>	manu: the use cases on that wiki page, the categorized web payments use cases came out of the web payments workshop, we tried to take every use case that was reported and refine and rework them, not remove them (minus dups), but categorize and make clear what each use case is suppsoed to do, we did that
+[Wed 10:16:35] <dlongley>	manu: and sent to the mailing list, but about half of them were still confusing
+[Wed 10:16:47] <dlongley>	manu: people asking what use cases are intended to solve, what they mean, terminology, etc
+[Wed 10:16:57] <dlongley>	manu: i've gone through all the responses and annotated all the use cases with people's comments
+[Wed 10:17:11] <dlongley>	manu: the goal of the call today is to go through those comments and modify the use cases so they make more sense
+[Wed 10:18:07] <manu>	voip: connections?
+[Wed 10:18:07] <voip-wp>	Conference connections: Evgeny [SIP/sip2sip.info-0000001b], Manu Sporny [SIP/6000-00000019], dlehn [SIP/50.134.65.129:5060-0000001d], Joseph Potvin [SIP/getonsip.com-0000001f], Dave Longley [SIP/6002-0000001c], timng [SIP/192.168.1.60-0000001e]
+[Wed 10:18:24] <manu>	voip: 1f is joseph
+[Wed 10:18:24] <voip-wp>	joseph is now associated with SIP/getonsip.com-0000001f.
+[Wed 10:18:29] <manu>	voip: mute joseph
+[Wed 10:18:29] <voip-wp>	joseph has been muted.
+[Wed 10:18:33] <manu>	voip: unmute joseph
+[Wed 10:18:33] <voip-wp>	joseph has been unmuted.
+[Wed 10:19:37] <dlongley>	manu: any comments on what we're trying to achieve?
+[Wed 10:19:48] <dlongley>	jpotvin: on the item that i raised earlier is that within scope here?
+[Wed 10:20:18] <dlongley>	manu: yes, i added it, we should probably discuss that since we've got you on the call, we did discuss it before and the finding the discussion was that we didn't know if it was enforceable from a technical standpoint
+[Wed 10:20:44] <dlongley>	manu: and since it's not enforceable, the likelihood that people use it will be low, people won't give people an option
+[Wed 10:20:56] <dlongley>	jpotvin: as i said in paris, paypal is already letting people do this
+[Wed 10:21:02] <dlongley>	manu: let's pick this up after the general stuff
+[Wed 10:21:31] <dlongley>	manu: we do have it down, it's listed as a use case, it's now a use case, it's about 40% down the page (payees and payers negotiate)
+[Wed 10:21:41] <dlongley>	manu: it's in scope to discuss, whether or not it's going to stick depends on the discussion
+[Wed 10:22:19] <manu>	Topic: General Comments on Use Cases
+[Wed 10:22:19] <dlongley>	voip: mute joseph
+[Wed 10:22:20] <voip-wp>	joseph has been muted.
+[Wed 10:22:32] *	dlongley type: voip: mute joseph
+[Wed 10:22:45] *	dlongley to unmute type: voip: unmute joseph
+[Wed 10:23:21] <dlongley>	manu: the general comments had to do with whether or not we're calling people customers and merchants/vendors or payers and payees
+[Wed 10:23:27] <manu>	For example, Melvin Carvalho: In crypto currency payments, generally a payment is from one public key to another (ie URI to URI), and may not include either a customer or merchant.
+[Wed 10:23:29] <dlongley>	manu: we were using the terms customer and merchant in the use cases
+[Wed 10:23:47] <voip-wp>	joseph (SIP/getonsip.com-0000001f) has left the conference.
+[Wed 10:24:01] <manu>	Adrian basically made the same point - Refer to "payers" and "payees" rather than "customers" and "merchants" unless the use case is specifically limited to these actors.
+[Wed 10:24:06] <dlongley>	manu: melvin makes the point that some of these are payer to payee, no merchant, adrian has made the same point
+[Wed 10:24:33] <voip-wp>	Joseph Potvin (SIP/getonsip.com-00000020) has joined the conference.
+[Wed 10:24:39] <jpotvin>	voip: mute joseph
+[Wed 10:24:39] <voip-wp>	SIP/getonsip.com-00000020 has been muted.
+[Wed 10:24:50] <manu>	dlongley: I think that the general problem here is that the use cases weren't written out in example text enough - throwing in names and such, "this is an example of something that could be supported". We have this inbetween language that makes it sounds limited.
+[Wed 10:25:07] <manu>	dlongley: If we say "payer" and "payee" we still need to elaborate on who the payer and payee is. 
+[Wed 10:25:44] <manu>	dlongley: The other issue is, if we come up with those examples, it'll make it look like it's a customer/merchant relationship. So, I don't think we can just address this by changing to payer and payee.
+[Wed 10:26:03] <jpotvin>	voip: unmute joseph
+[Wed 10:26:03] <voip-wp>	SIP/getonsip.com-00000020 has been unmuted.
+[Wed 10:26:12] <manu>	dlongley: I don't think this addresses the problem. Instead, we may need to add more use cases. If they think that somethings not supported, we need to add more use cases.
+[Wed 10:27:01] <dlongley>	jpotvin: the idea of changing the language to payer/payee, is like discussions we've had in the past, this CG that communities of wider scope, this has to do with fitting neutral language, it's not about CG coming up with language, it's about adopting language that has been established
+[Wed 10:27:10] <jpotvin>	voip: mute joseph
+[Wed 10:27:10] <voip-wp>	SIP/getonsip.com-00000020 has been muted.
+[Wed 10:28:30] <jpotvin>	voip: unmute joseph
+[Wed 10:28:30] <voip-wp>	SIP/getonsip.com-00000020 has been unmuted.
+[Wed 10:28:35] <manu>	dlongley: I'm not going to dispute that it's better. The context where it's used is going to be confused. We're going to use people's names or company names. Because we're drilling down to an exact situation, they're losing the general scope of where it's used.
+[Wed 10:29:28] <manu>	dlongley: If we use "Jill is paying on Megacorps website", they'll lose sight of the same technology being used for both situations. Changing "customer" to "payer" and "merchant" to payee, is an improvement, but it doesn't solve the confusion.
+[Wed 10:29:56] <voip-wp>	Joseph Potvin (SIP/getonsip.com-00000021) has joined the conference.
+[Wed 10:30:16] <dlongley>	timng: i think we generally agree, payer/payee are roles when we discuss this at MS, for example, if you look at one of the roles, if you look at the use cases, Jack may be the payer, identifying roles is important, and maybe even Jack is the customer and his mom is the payee
+[Wed 10:31:01] <manu>	dlongley: That might be useful once we describe the situation in personalized situations to have the roles that people play. That's where this language could be useful. That's where I think this language should be. We should use 'payer' and 'payee' as definitive roles.
+[Wed 10:31:06] <dlongley>	evgeny: it's not necessary the customer is the payer and merchant is payee. In some cases, like 3rd party escrow, there are different roles. 
+[Wed 10:31:41] <dlongley>	manu: so evgeny, do you agree with the role-based assignment, so we use an example name Jack/Jill and then specify the roles they play in these payment scenarios?
+[Wed 10:31:49] <dlongley>	manu: does that seem like an incremental step in the right direction?
+[Wed 10:32:05] <voip-wp>	Joseph Potvin (SIP/getonsip.com-00000022) has joined the conference.
+[Wed 10:32:06] <dlongley>	evgeny: my idea is that we have to differentiate between payer and payee and it's different for customer/merchant, so yes, we need to assign roles.
+[Wed 10:32:09] <jpotvin>	voip: mute joseph
+[Wed 10:32:09] <voip-wp>	SIP/getonsip.com-00000022 has been muted.
+[Wed 10:32:40] <dlongley>	manu: i'm hearing 4 roles: customer, merchant, payer, payee and they aren't necessarily the same thing
+[Wed 10:32:43] <dlongley>	evgeny: yes
+[Wed 10:32:51] <jpotvin>	voip: unmute joseph
+[Wed 10:32:52] <voip-wp>	SIP/getonsip.com-00000022 has been unmuted.
+[Wed 10:32:55] <dlongley>	manu: let's try to apply all these roles in the use cases
+[Wed 10:33:08] <dlongley>	jpotvin: to be clear, is a customer not a type of payer?
+[Wed 10:33:23] <dlongley>	evgeny: customer can be either payer or payee
+[Wed 10:33:41] <dlongley>	jpotvin: it's not that there are 4 roles, there are subset
+[Wed 10:33:50] <jpotvin>	voip: mute joseph
+[Wed 10:33:50] <voip-wp>	SIP/getonsip.com-00000022 has been muted.
+[Wed 10:34:08] <voip-wp>	Joseph Potvin (SIP/getonsip.com-00000020) has left the conference.
+[Wed 10:34:13] <dlongley>	timng: i think from "buyer" may be better than customer
+[Wed 10:34:23] <jpotvin>	voip: unmute joseph
+[Wed 10:34:26] <dlongley>	timng: for example, when i was young i was the buyer but i wasn't the payer
+[Wed 10:34:44] <dlongley>	timng: buyer may be more appropriate from customer. Customer can be confusing.
+[Wed 10:34:48] <voip-wp>	Joseph Potvin (SIP/getonsip.com-00000021) has left the conference.
+[Wed 10:35:34] <manu>	dlongley: This might be a level of abstraction that's out of scope. We're trying to make these use cases personalized, so we could have an example where a younger person is making a purchase, the payer is the parent. But, this is probably out of scope for the technology. It's something that happens, but it's not necessarily something that we need to be involved with.
+[Wed 10:35:51] <jpotvin>	voip: unmute joseph
+[Wed 10:35:53] <manu>	dlongley: This might just be a discussion that we can have - a side note, people can implement systems to allow minors to pay for things.
+[Wed 10:36:00] <manu>	voip: connections?
+[Wed 10:36:00] <voip-wp>	Conference connections: Evgeny [SIP/sip2sip.info-0000001b], Manu Sporny [SIP/6000-00000019], dlehn [SIP/50.134.65.129:5060-0000001d], Dave Longley [SIP/6002-0000001c], Joseph Potvin [SIP/getonsip.com-00000022], timng [SIP/192.168.1.60-0000001e]
+[Wed 10:37:02] <dlongley>	manu: i think joseph's point was that there's a hierarchical relationship with the roles, evgeny doesn't seem convinced, timng is saying it's better to take a role-based approach, no hierarchy to start but one might show up as we go
+[Wed 10:38:06] <dlongley>	timng: i think "customer" is ambiguous, i think defining the roles should be clear, a payer is the source of money, the payee is a receiver, in more complex use cases there may be multiple parties involved in the transaction, so sorting those out will be helpful
+[Wed 10:38:33] <dlongley>	manu: i think we should definitely have payer/payee roles in there, we should go role based in this and define what each of these roles does
+[Wed 10:39:06] <manu>	dlongley: We can have some of the players in the use cases be in multiple roles... that might automatically resolve the hierarchy issue that Joseph raised.
+[Wed 10:39:21] <jpotvin>	agreed
+[Wed 10:39:24] <manu>	dlongley: Ok, we'll have roles, some people in multiple roles.
+[Wed 10:39:24] <dlongley>	timng: i agree
+[Wed 10:41:05] <manu>	dlongley: for each use case, we may want to say something about design requirements needed for use cases to work. If they have this ability in the technology, it would also apply to some sort of Bitcoin situation. So personalized use case, roles required, design requirements in order to make it possible.
+[Wed 10:41:47] <manu>	https://www.w3.org/community/webpayments/wiki/CategorizedWebPaymentsUseCases#Introduction
+[Wed 10:42:06] <dlongley>	manu: i've written a proposal, the link is in IRC
+[Wed 10:42:45] <dlongley>	manu: adrian had this comment: "Be specific when talking about identities, or identity attributes (claims), whether the use case refers to the payer's or the payee's identity or both."
+[Wed 10:43:37] <dlongley>	manu: that's good advice, we should be specific about identity, we are talking about identity attributes, credentials, claims about a particular identity URL, in general (unless there's disagreement here), we're just talking about the minimum number of attributes about the identity required to complete the txn
+[Wed 10:44:21] <manu>	dlongley: that's another piece of meta-information that we can include for the use case writeup - "identity attributes required for use case".
+[Wed 10:45:12] <manu>	dlongley: That'll help us stake out exactly what the Web Payments group needs from the Credentials CG technological solutions.
+[Wed 10:46:09] <dlongley>	manu: the other general comment, is basically "do we really need to address this identity attribute issue or can we create a payment solution without any identity exchange at all", could we come up with a digital receipt standard without talking about how the identity is referred to in that receipt
+[Wed 10:46:21] <dlongley>	manu: the main sticking point here is not whether or not we can do this
+[Wed 10:46:38] <manu>	So there is an issue about whether or not we can do identity: My suggestion would be to focus the first iteration on payment processing without a need to exchange/verify the payer identity and add this in iteration 2. In terms of discussion within the IG, I think both are appropriate.
+[Wed 10:47:23] <dlongley>	manu: in terms of the web payments steering group both are in scope, but the discussion shouldn't focus on identity
+[Wed 10:47:53] <voip-wp>	Joseph Potvin (SIP/getonsip.com-00000022) has left the conference.
+[Wed 10:48:13] <dlongley>	manu: it's certainly possible to come up with a payments solution without any identity attached to it, you can transmit value from point A to point B, the problem is that when it comes to the regulatory frameworks in most nations, it's not good enough to have cash going from A to B because you run afoul of anti-money laundering regulation, stored-value regulation, etc.
+[Wed 10:48:20] <dlongley>	manu: For example, if you want to be a money transmitter in the US, you have to deal with identity.
+[Wed 10:48:57] <dlongley>	manu: Digital Bazaar's position is that identity credentials is definitely in scope because otherwise you fall into the nascar payment problem very quickly, if you can't transmit at least your payment processor list, then almost automatically the payment UI requires you to put all the payment solutiosn you can think of
+[Wed 10:49:16] <manu>	dlongley: And that shuts out smaller players that want to provide payment solutions. That's the other knock-on effect of that.
+[Wed 10:49:55] <dlongley>	manu: identity attribute exchange is in scope at a minimum to eliminate the nascar problem, and while we're doing that there's a lot that could be transmitted to boost trustworthiness of txns online
+[Wed 10:50:14] <dlongley>	manu: does anyone think that a first iteration of payments without any identity stuff would be interesting or useful to implementors?
+[Wed 10:51:04] <dlongley>	evgeny: i'm thinking about which use cases could be done without identity, i can't think of them easily, you really need identity for even the most basic ones.
+[Wed 10:51:16] *	timng has quit (Ping timeout: 246 seconds)
+[Wed 10:51:19] <voip-wp>	Joseph Potvin (SIP/getonsip.com-00000023) has joined the conference.
+[Wed 10:51:22] <dlongley>	evgeny: i think there aren't many cases where we can go without the identity data at all
+[Wed 10:51:41] <dlongley>	voip-wp: 23 is joseph
+[Wed 10:51:41] <voip-wp>	joseph is now associated with SIP/getonsip.com-00000023.
+[Wed 10:51:44] <jpotvin>	voip: mute joseph
+[Wed 10:51:44] <voip-wp>	joseph has been muted.
+[Wed 10:52:10] <dlongley>	manu: in general it seems we need identity to do anything decent with this payments stuff
+[Wed 10:52:25] <voip-wp>	timng (SIP/192.168.1.60-0000001e) has left the conference.
+[Wed 10:52:27] <manu>	voip: unmute joseph
+[Wed 10:52:28] <voip-wp>	joseph has been unmuted.
+[Wed 10:52:43] <voip-wp>	timng (SIP/192.168.1.60-00000024) has joined the conference.
+[Wed 10:52:44] *	timng (ae1589c5@gateway/web/freenode/ip.174.21.137.197) has joined #webpayments
+[Wed 10:52:53] <dlongley>	jpotvin: "Value and Exchange Benchmarking" is the phrase is use to describe this
+[Wed 10:52:55] <manu>	Topic: Value-in-Exchange Benchmarking
+[Wed 10:53:01] <manu>	So, we have this Use Case: Payee and payers negotiate secure price in an open market. They are free to choose all three essential attributes of the numeric quantity expressing a price (e.g. 10.99), namely: a unit-of-account (e.g. $ £ € ¥ etc.); a medium-of-exchange (e.g. debit card, credit card, web payment etc.); and, a value-in-exchange benchmark (e.g. WM Reuters Spot Exchange; Purchasing Power Parity; Commodity Index; etc.)
+[Wed 10:53:03] <dlongley>	jpotvin: i'm talking with a number of people in different communities for the right terminology
+[Wed 10:54:19] <dlongley>	jpotvin: the issue is... paypal has seen it useful to provide a choice of more than one benchmark when there are txns involving more than one currency, it's not very hard to implement, paypal has done too much on it, but the reason they do that, it's a complex thing to wrap your head around it, they do an incredible job attempting to explain it, in terms of a use case it's actually quite simple, the choice of the benchmark is obviously relevant when there's more than one currency, just as relevant when there's payment over time
+[Wed 10:54:32] <dlongley>	jpotvin: so even in a single currency the issue arises for subscriptions, etc
+[Wed 10:55:18] <dlongley>	jpotvin: as soon as someone needs to think about it they have to scratch their head and think about it, the challenge we have is that not addressing it is a default decision to leave this aspect to an arbitrary supplier, paypal says you can do that or choose ours, there should be more general w3c ways to approach
+[Wed 10:55:31] <dlongley>	manu: i don't think the question is whether this is useful to society, etc. it should definitely exist
+[Wed 10:55:38] <dlongley>	manu: the question is whether we can technically enforce it
+[Wed 10:55:59] <dlongley>	manu: if a merchant specifies a benchmark, is it then "illegal" for a payment processor to ignore that and use whatever they want
+[Wed 10:56:43] <dlongley>	manu: payment processors might just run through anyway, you could argue the merchant could jump in and sue the payment processor because they didn't follow the contract the merchant specified, there's a destabilizing risk there that the payment processors then don't process anything with a pricing benchmark
+[Wed 10:57:26] <dlongley>	jpotvin: i think all of these specifications are voluntary, if i'm a vendor and i have a catalog for something for $10.99 and the intermediary makes it $11.99 and takes a dollar, it's an external issue if the intermediary is imposing
+[Wed 10:58:29] <dlongley>	jpotvin: the problem that we have in the last two decades is we've gotten used to a certain way of doing things because of the way it organically emerged in the web payments space, but the question that arises with the creation of the w3c web payments standard if it proceeds to pave the cow path when it's an unfair cow path or if it specifies out macroeconomic fee for service vs.. microeconomic [missed]
+[Wed 10:59:46] *	jpotvin has quit (Quit: Leaving.)
+[Wed 11:00:01] <dlongley>	manu: no disagreement from me personally, the concern i have is whether or not this is technically something that is fairly simple to implement; we don't know any of the details for how to implement because we haven't put a lot of thought into it, if we put this feature in, at a minimum, we'll need a protocol for reading the benchmark data, some query protocol saying the merchant set the price on this date, so they are expecting the unit of account and price to be .... they set it in jan 2013 and now someone wants to purchase and now they have to figure out the difference between jan 2013 and jul 2014, and we need a full-blown protocol to do all that
+[Wed 11:00:21] <dlongley>	manu: the concern is that every payment processor will have to implement that and if it's not simple to implement, we could see that as one more argument as to why they don't want to use web payments
+[Wed 11:00:43] <dlongley>	manu: i know that doesn't resonate with you, as this is the right thing to do because we have an unfair system and if we can right it, we should
+[Wed 11:00:53] <dlongley>	manu: my concern is that in trying to do that it may become something payment processors don't want to do
+[Wed 11:01:05] *	jpotvin (~jpotvin@69-165-170-68.dsl.teksavvy.com) has joined #webpayments
+[Wed 11:01:23] <dlongley>	jpotvin: i think you're over-complicating it, paypal is already doing this, shouldn't there be a spec describing what paypal is already doing
+[Wed 11:01:47] <dlongley>	jpotvin: as with anything, there's a really complex way to look at this and a simple way
+[Wed 11:02:04] <dlongley>	jpotvin: if the CG says paypal is doing that and we don't want to address that use case, then I don't get it.
+[Wed 11:02:24] <dlongley>	manu: you're talking about paypal which is a gigantic corp, and implementing this as small players might be difficult
+[Wed 11:03:05] <dlongley>	manu: it's non-trivial from an implementation standpoint, ... secondly, we add fragility to the system, if the benchmark goes down, can't get access to it, etc you can't buy things on the system
+[Wed 11:03:40] <dlongley>	manu: counter-arguments, we're talking about a single REST call out, any kind of pricing index that's fragile won't be used by people, they'll just switch to one that isn't fragile, it's about trying to figure out the benefits of doing this and if they outweight the cost
+[Wed 11:03:49] <dlongley>	manu: i'm making these arguments more as a devil's advocate
+[Wed 11:03:54] <dlongley>	manu: personally i'd love to see this tech
+[Wed 11:04:00] <dlongley>	manu: these are the arguments you'll get from implementors
+[Wed 11:04:24] <dlongley>	jpotvin: this is, at this scope, just the CG identifying use cases for the IG to talk about
+[Wed 11:04:40] <dlongley>	jpotvin: if the IG determines it's too much of a headache to implement, that's a stage one could arrive at
+[Wed 11:05:06] <dlongley>	jpotvin: i think taking it out at this point is to accept one of the great blockages of transparency of web payments off the bat
+[Wed 11:05:36] <manu>	dlongley: I think it should go in, let's put it in at this stage. Let's get the IG to make the determination. We should put it out there as something that the community has discussed.
+[Wed 11:06:13] <dlongley>	jpotvin: i'll go back and look at the use case and see if i can make it seem less problematic
+[Wed 11:06:21] <dlongley>	manu: i think the use case is pretty clear regarding what you're asking for
+[Wed 11:06:26] <dlongley>	manu: but we can discuss offline
+[Wed 11:06:51] <voip-wp>	timng (SIP/192.168.1.60-00000024) has left the conference.
+[Wed 11:06:51] <voip-wp>	dlehn (SIP/50.134.65.129:5060-0000001d) has left the conference.
+[Wed 11:06:52] <voip-wp>	Manu Sporny (SIP/6000-00000019) has left the conference.
+[Wed 11:06:52] <voip-wp>	Dave Longley (SIP/6002-0000001c) has left the conference.
+[Wed 11:06:53] <voip-wp>	Evgeny (SIP/sip2sip.info-0000001b) has left the conference.
+[Wed 11:07:07] <voip-wp>	joseph (SIP/getonsip.com-00000023) has left the conference.
