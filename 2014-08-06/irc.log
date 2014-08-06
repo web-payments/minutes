@@ -1,0 +1,104 @@
+[Wed 10:04:42] <manu>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2014Aug/0030.html
+[Wed 10:04:52] <dlongley>	scribe: dlongley
+[Wed 10:05:16] <voip-wp>	Dave Lehn (SIP/6003-00000033) has joined the conference.
+[Wed 10:05:28] <dlongley>	manu: last week we covered general comments, not a lot of response to it, so we may be good as far as that's concerned
+[Wed 10:05:43] <voip-wp>	Evgeny (SIP/sip2sip.info-00000034) has joined the conference.
+[Wed 10:05:57] <dlongley>	manu: we need to add the credential CG launch to the agenda, we're going to try to do that today, get all the paperwork for that worked out and get that launched today
+[Wed 10:06:00] <dlongley>	manu: any changes to the agenda?
+[Wed 10:06:06] <dlongley>	taaz: none
+[Wed 10:06:25] <manu>	Topic: Formation of Credentials Community Group
+[Wed 10:06:47] <manu>	The charter for the group is here: https://docs.google.com/document/d/1dPzWbPF0jlox8UHnr522nBWCjLJMQ_vGbbtsA5-pAsg/edit
+[Wed 10:08:09] <dlongley>	manu: we have had feedback from orgs that aren't part of web payments but are part of the education community, the charter has been approved by other orgs that plan on joining, the order of operations will be to create the CG today after making some last few modifications to the charter, we'll send out a call for participation, then we're going to be asking for launch partners through the rest of the month, we're going to gather all the large companies that want to be part of the announcement of the group to the press; the group is for the standardization of credentials for use in payments, education/learning, and background checks.
+[Wed 10:08:45] <manu>	Aug 7th-9th: W3C Credentials CG is created at W3C (paperwork complete)
+[Wed 10:09:30] <manu>	Aug 10th-30th: Revise charter, determine telecon times, have at least 1 call, gather "launch partners" for formal public announcement at the end of August, vote on charter
+[Wed 10:10:10] <manu>	Aug 19th: Presentation of Credentials CG initiative at SemTech 2014, ask of audience is: join the work, meet at Credentials CG
+[Wed 10:10:27] <manu>	https://web-payments.org/slides/2014/semtech/
+[Wed 10:10:38] <manu>	http://semtechbizsj2014.semanticweb.com/sessionPop.cfm?confid=82&proposalid=6674
+[Wed 10:11:03] <manu>	Sep 2-5th: United Nations - Internet Governance Forum - The Payment, Privacy, Policing Paradox Workshop
+[Wed 10:11:10] <manu>	http://igf2014.sched.org/event/781846f97d253b11129ee88f4dd176ff
+[Wed 10:11:24] *	Evgeny_ (4d4b9940@gateway/web/freenode/ip.77.75.153.64) has joined #webpayments
+[Wed 10:11:41] <manu>	Gather regulatory, policy, and legal concerns, recruit the necessary governments and law makers to provide input on the privacy / law issues
+[Wed 10:12:13] <manu>	Sept 15-Oct 25th: Weekly Credentials CG telecons, picking WG chairs, discuss use cases and requirements, determine when technical specs will be ready to go standards-track at W3C
+[Wed 10:12:39] <manu>	Oct 27th-31st: W3C Technical Plenary - 1st Web Payments Face-to-Face (credentials are an element), 1st Credentials CG Face-to-Face (unconference session)
+[Wed 10:12:45] <manu>	http://www.w3.org/2014/11/TPAC/
+[Wed 10:13:03] <dlongley>	manu: any questions on the credentials schedule?
+[Wed 10:13:08] <dlongley>	No questions raised.
+[Wed 10:13:17] <manu>	Topic: Identity Use Cases Revisions
+[Wed 10:13:31] <manu>	Identity use cases: https://www.w3.org/community/webpayments/wiki/UseCases#Identity
+[Wed 10:13:52] <manu>	So, we're starting with this use case: Store basic credentials and payment provider information on the Web in a way that is easy to share with various payees/merchants given authorization by the owner (payee) of the credential, and that is easy to synchronize between devices.
+[Wed 10:14:07] <manu>	input from Steven Rowat: I think we need to have more discussion about identity's implications before deciding whether to attempt to do it together with web payments.
+[Wed 10:14:33] <manu>	input from Adrian: Not required for first iteration. It is not ESSENTIAL for the payer to exchange identity credentials to complete a basic transaction. Think this should be the focus of 2nd iteration.
+[Wed 10:15:21] <dlongley>	manu: with the credential CG happening, i think what we're doing is offloading all of this identity discussion to that CG, if there's concern in the web payments CG for identity derailing us, the credential CG will pick up the use cases
+[Wed 10:16:15] <manu>	dlongley: I think what's most important in the web payments work is that there is some way to link to an identity via a URL. We should consider whether the Credential CG, having that link should be enough for what we want to do w/ Web Payments. If all we need to do in Web Payments is ensure that the URL is available, then all the details can be worked out by the Credentials CG.
+[Wed 10:16:40] <manu>	dlongley: The goal is to decouple as much as possible, but still cover all the use cases we wanted to. We can consider this a first iteration where we want to concern ourselves with those pieces.
+[Wed 10:17:22] <dlongley>	manu: if we take this path and if for whatever reason the credentials CG fails, we could use OpenID connect to establish the URL, but we wouldn't get anonymity, privacy, etc. and of those things
+[Wed 10:17:27] <dlongley>	manu: but at least we could do something
+[Wed 10:19:14] <dlongley>	manu: so i think that addresses steven and adrian's comments, re: steven, it's the other group's decision to figure things out, and re: adrian, we aren't handling the identity stuff for iteration one
+[Wed 10:19:31] <manu>	Topic: Credential Transmission
+[Wed 10:19:31] <manu>	Ok, on to the next use case - Use Case: Steve (buyer) visits a website (merchant) and authorizes the transmission of one or more credentials (such as proof-of-age, shipping address, etc.) previously stored with a credential storage service to the website to enable access or fulfillment of a transaction.
+[Wed 10:19:58] <manu>	feedback from Adrian: Not required for first iteration. It is not ESSENTIAL for the payer to exchange identity credentials to complete a basic transaction. Think this should be the focus of 2nd iteration.
+[Wed 10:20:42] <manu>	So, resolution for both is: A Credentials CG is being created to handle all identity requirements for Web Payments (and other market verticals). The Web Payments CG will proceed assuming that there will be a mechanism to establish an identity URL for participants in a transaction.
+[Wed 10:21:18] <manu>	next use case is: Using metadata that is the result of a transaction, discover attributes associated with the participants (payer, payee, buyer, merchant) in the transaction.
+[Wed 10:21:37] <manu>	response from Steven Rowat: wouldn't someone in the NSA be doing exactly this? Or Google, to get data to drive advertising revenue? Isn't there a good case that this is unconstitutional in the US?   I don't think this is what you mean...but what do you mean? Who needs to discover attributes associated with the identity of the participants? Why not just ask the participants? 
+[Wed 10:22:11] <dlongley>	manu: steven's questions all surround who has the rights to the data
+[Wed 10:22:34] <dlongley>	manu: his concerns would be that someone could get meta data from the receipt, but that's not what we want it's up to the owner of the identity to release the data
+[Wed 10:23:14] <manu>	dlongley: There was a lot of misunderstanding over this use case. This isn't meant to wipe out all other use cases about privacy. This was about the participants being able to access other participants data WITH THE STRICT APPROVAL of the requestee.
+[Wed 10:23:36] <manu>	dlongley: If you want to provide the information, there is a mechanism to do so. We should reword it. "Should the participants agree..."
+[Wed 10:23:45] <manu>	dlongley: I think that resolves all of Steven's questions.
+[Wed 10:25:23] <dlongley>	dlongley: what about: Given permission from participants in a transaction, metadata can be obtained to discover attributes associated with those participants (payer, payee, buyer, merchant).
+[Wed 10:26:36] <manu>	dlongley: We may want to talk about real-time authorization and interactive authorization. Preauthorization via some sort of digital signature, or interactive authorization.
+[Wed 10:27:14] <manu>	Given permission from participants (payer, payee, buyer, merchant) in a transaction, use transaction metadata to discover additional attributes (name, address, preferred financial account) associated with the participants in the transaction in real-time or via an interactive mechanism.
+[Wed 10:28:22] <dlongley>	manu: the gist of the use case is that "you have just completed a transaction with these people and you may want to find out more information about them post-transaction"
+[Wed 10:29:19] <dlongley>	dlongley: Given the permission of the participants of a transaction, its metadata can be used to discover additional attributes associated with those participants.
+[Wed 10:29:53] <dlongley>	Evgeny: after a transaction has been completed you can't be sure that the information you obtained will be exactly the same afterwards as it was at the time of the txn
+[Wed 10:31:14] <dlongley>	manu: That's true. It's a problem wrt. fraud, but it may also be a benefit (getting the most recent, up to date email address or shipping address for a customer).
+[Wed 10:32:04] <manu>	dlongley: This sounds like you need data in the receipt and have that information only accessible to people involved in the transaction.
+[Wed 10:32:16] <manu>	dlongley: This is private information that's a part of the receipt.
+[Wed 10:32:34] <manu>	dlongley: We are talking about having metadata in the receipt itself, in the transaction metadata somewhere.
+[Wed 10:33:32] <manu>	dlongley: We need to make sure that these receipts are private pieces of information, only accessible by private participants in the transaction. Some of the information is only available to some of the participants in the transaction.
+[Wed 10:34:05] <manu>	dlongley: This use case is really about two things - you can store metadata that is directly related to the transaction in the digital receipt, and you can indicate who is allowed (of the participants in the transaction), who can see what pieces of information.
+[Wed 10:35:41] <manu>	dlongley: I think the original design was to leave as much as possible out of digital receipt as possible.
+[Wed 10:36:04] <manu>	dlongley: in one case, the information is in the digital receipt, in other cases, it's not.
+[Wed 10:36:39] <manu>	manu: It's the latter, there are pointers, the information lives elsewhere.
+[Wed 10:40:19] <manu>	Given the permission of the participants (payer, payee, buyer, merchant) of a transaction, the transaction metadata can be used to discover additional attributes associated with those participants. For example, given the buyer's authorization, a merchant could query the identity URL for the buyer contained in a digital receipt and obtain an up-to-date shipping address.
+[Wed 10:42:12] <manu>	dlongley: Another example could be a merchant querying the identity for an up-to-date email address. Keep in mind that this can always be done before the fact, as a part of the login process to the website. The login process would ask for an email credential, shipping address credential, etc.
+[Wed 10:44:00] <dlongley>	Evgeny: allowing a change to the shipping address after the transaction was made could affect fraud or sales tax, etc
+[Wed 10:45:44] <manu>	dlongley: Yes, this is an issue. We should make this clear - obtaining information after the fact might have regulatory and fraud implications.
+[Wed 10:47:34] <dlongley>	Topic: Digitally Verifiable Credentials (KYC)
+[Wed 10:47:34] <dlongley>	Dlongley: the next use case: "Use Case: Digitally verifiable credentials such that a merchant and payment processor involved in a transaction can prove that they have performed the proper due diligence when identifying the payer and the payee (KYC)."
+[Wed 10:47:49] <dlongley>	dlongley: this, again, falls under the previous resolution
+[Wed 10:47:58] <dlongley>	dlongley: for pushing this off to the credentials CG
+[Wed 10:49:06] <dlongley>	manu: once we go over these use cases we'll send them over to the credentials CG
+[Wed 10:49:18] <manu>	Topic: IdP Mechanism
+[Wed 10:49:18] <manu>	So, this one is next - Use Case: Use an existing, widely deployed identity provider mechanism (i.e. OpenID Connect) to integrate with the digital credentials sharing and payments initiation process.
+[Wed 10:49:29] <manu>	input from Steven Rowat: would the 'existing, widely deployed' mechanism be part of the specification and go through the same W3C process, and end up being a supported (necessary? sufficient?) part of the whole mechanism? Or is it implied that the i.d. provider mechanism would remain outside the W3C process, which would nonetheless be designed as a socket for it? Or would the payment mechanism have a socket that could fit any number of identity provider mechanisms, without prejudice, but this one is being specified so that there will at least be one example that works for sure? If so, are there downsides to this? For instance, are there other provider or potential provider mechanisms whose developers will be annoyed by being passed over? Or, are there yet-to-be imagined mechanisms that might be better than the chosen existing one, potential mechanisms which will now fail to be developed because one has been already blessed by (association with) the W3C? 
+[Wed 10:50:41] <dlongley>	manu: re: part of w3c, openID connect has already gone through some other standardization process, so no need to discuss that, if we go with identity credentials, that will have to be a part of the Credentials CG work.
+[Wed 10:51:18] <dlongley>	manu: re: would IDP be outside w3c? if it's identity credentials it's inside w3c, if it's openID connect it's outside
+[Wed 10:51:58] <dlongley>	manu: re: specifying the tech ... yes, we have to specify the tech in a way that IDP mechanisms can be pluggable, if they fail, we need a way to have a mechanism establish a URL so that the rest of the stuff can stick together. The payment stuff depends on there being a URL.
+[Wed 10:52:16] <dlongley>	manu: whether it's openID connect, IC stuff, or something else, it's up in the air
+[Wed 10:52:22] <dlongley>	manu: re: downsides? yes, depending on which way we go
+[Wed 10:53:00] <dlongley>	manu: if IC is selected, openID connect people could be fairly pissed off about it, if openID connect is selected then IC will be annoyed as it doesn't have third-party digital signatures, JSON-LD, etc.
+[Wed 10:53:10] <dlongley>	manu: we are saying that IC spec is going to support openID connect in some way
+[Wed 10:53:13] <dlongley>	manu: so we get best of both
+[Wed 10:53:58] <dlongley>	manu: re: can we imagine something better ... we don't know how successful any of this will be, it's an open question, if both fail there will be a better mechanism eventually, we want to make the payments stuff fairly agnostic for how you establish and query the identity URL
+[Wed 10:54:08] <dlongley>	manu: that said, i don't think that there are any changes to the use case
+[Wed 10:54:14] <dlongley>	manu: these are just clarifying questions
+[Wed 10:54:54] <manu>	dlongley: We could try to decouple and abstract identity away as much as possible. So, one could use whatever solution that wins in the identity space.
+[Wed 10:55:32] <manu>	ok, so, Decouple and abstract identity away as much as possible. So, one could use whatever solution that wins in the identity space. No change required for the use case, clarifications have been made on the mailing list and telecon.
+[Wed 10:55:54] <manu>	Topic: Truly Anonymous Transactions
+[Wed 10:55:54] <manu>	next use case: Enable anonymous transactions such that the identity of the payee is not discoverable by payees, merchants, or payment processors.
+[Wed 10:56:12] <manu>	input from Steven Rowat: Do you mean 'but can be discoverable by governments or law enforcement when they have appropriate authorization'?  If so, +1, but I think it would be best to include that explicitly. 
+[Wed 10:58:02] <manu>	dlongley: i don't see how that could be done, where payees, merchants, and payment processors can't know who you are... but governments can?
+[Wed 10:59:55] <manu>	manu: The government could assign an identity token where they can only tie it back to the citizen.
+[Wed 11:00:12] <manu>	dlongley: I meant, I don't see how this could be feasibly done.
+[Wed 10:59:54] <dlongley>	Evgeny: we have to keep in mind governments usually make the payment service providers responsible for ensuring that the identity can be linked back to a citizen, gov't doesn't do KYC clearing by themselves
+[Wed 10:59:54] <dlongley>	manu: Yes, good point Evgeny.
+[Wed 11:03:25] <manu>	dlongley: If you want to use some sort of cryptocurrency that supports this, you should use that. This doesn't have to be a part of the standardization process.
+[Wed 11:03:51] <dlongley>	manu: the purpose is to have a cash equivalent
+[Wed 11:05:23] <manu>	dlongley: I don't think the technologies are worked out for truly anonymous transactions. For example, bitcoin is traceable, zerocash is better, but still being researched.
+[Wed 11:05:52] <manu>	Ok, so position on this is: We do not believe that this is a version 1 feature because the technology to achieve it is still being actively researched and developed.
+[Wed 11:06:13] <manu>	dlongley: Bitcoin is far more anonymous than other mechanisms, but it doesn't fully achieve the fully anonymous goal.
+[Wed 11:06:17] <voip-wp>	Evgeny (SIP/sip2sip.info-00000034) has left the conference.
+[Wed 11:06:54] <voip-wp>	Dave Longley (SIP/6002-00000032) has left the conference.
+[Wed 11:06:55] <voip-wp>	Manu Sporny (SIP/6000-00000031) has left the conference.
+[Wed 11:06:58] <voip-wp>	Dave Lehn (SIP/6003-00000033) has left the conference.
