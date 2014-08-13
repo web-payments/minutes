@@ -1,0 +1,74 @@
+[Wed 10:07:26] <manu>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2014Aug/0055.html
+[Wed 10:07:33] <dlongley>	scribe: dlongley
+[Wed 10:08:23] <dlongley>	manu: we're trying to get use cases in shape, we'll be handling them off to IG
+[Wed 10:08:35] <dlongley>	manu: we can pass off identity use cases to credentials CG once started up
+[Wed 10:09:08] <dlongley>	manu: last time we discussed doing truly anonymous txns is probably not a 1.0 task because the technology isn't there yet
+[Wed 10:09:21] <manu>	Topic: Short payment identifiers
+[Wed 10:09:21] <manu>	next use case: Gunther (payer) pays The Widget Store (merchant) using a short identifier. Prior to sending the payment, some information associated with the short identifier indicates to Gunther that the short identifier is a verified short identifier for the merchant.
+[Wed 10:10:27] <manu>	Steven Rowat said - Don't understand this one; ambiguity for me in at least two places. At first I believed the 'short identifier' was a label for the 'person', ie, identified the person to the merchant. Then I couldn't figure out the antecedent of 'them' in the second sentence (is it the person, or the merchant, or both of them?) Then in the last part of that sentence it seemed likely, but not certain, that 'short identifier for the merchant' indicates t
+[Wed 10:10:27] <manu>	hat it's the merchant, not the person, who is represented by the short label. It could also mean it's representing the 'person', but provided 'for' the merchant. If I had to bet I guess I'd go with the former, rather than the latter. But I'm really not sure.
+[Wed 10:10:31] <dlongley>	manu: for example, you can say "send $5 to ~Amazon" etc. and send a payment by looking up the identifier via a decentralized network, could alsoj ust use a domain name
+[Wed 10:11:32] <manu>	dlongley: I think he was just confused about the language around 'short identifier'
+[Wed 10:11:57] <dlongley>	dlongley: Proposal - "Gunther makes a payment using a short identifier that identifies The Widget Store (merchant)..."
+[Wed 10:13:45] <dlongley>	pindar: will this be internationalized/localized?
+[Wed 10:13:59] <dlongley>	manu: are you saying "amazon" should mean different things in different parts of the world?
+[Wed 10:14:50] <dlongley>	pindar: i'm talking about a globally-unique identifier, taking a global view from the start, this is a different layer from here, so let's just keep it simple and say globally unique is fine for now
+[Wed 10:15:16] <dlongley>	manu: we haven't had anyone request that an identifier mean something different in different network segments and we can address it at that point if it comes up
+[Wed 10:15:49] <dlongley>	manu: we're talking about a DNS-like system here where you can claim names
+[Wed 10:16:50] <manu>	dlongley: If we are talking about localizing things, you can build stuff on top of it. Standard should cover global namespace, but people can write localized services if they want to to do whatever mappings that they want.
+[Wed 10:17:25] <manu>	dlongley: Otherwise, at some point the identifier becomes something else, standard should probably not have to concern itself on concatenation, provide some kind of aliasing service.
+[Wed 10:18:17] <dlongley>	pindar: i think dave's comment caters to the localization concern
+[Wed 10:19:56] <dlongley>	dlongley: Proposal - Gunther (payer) enters a short-identifier that he believes identifies The Widget Store (merchant) into a UI. The UI displays a certificate of authenticity that indicates the short identifier is in fact for The Widget Store. Gunther uses the short identifier to make a payment to the store.
+[Wed 10:25:01] <manu>	dlongley: This may need to say something about the UI needing to be trusted.
+[Wed 10:25:16] <manu>	Yeah, we're trying to stay away from trusted UI language - it's a quagmire.
+[Wed 10:26:03] <manu>	dlongley: This isn't as bad as a trusted UI problem, you just need to trust that you're paying the right person, but the payment stuff is either preconfigured so it won't go through, or you will be redirected to your payment processors site and that should take care of that particular phishing problem.
+[Wed 10:26:53] <manu>	dlongley: The problem surfaces when you try to go to a non-trusted website and use the short identifier (and the website lies to you). You can sort of piggy-back on top of the SSL trust system. If you use this on the Twitter website for example, you can trust that Twitter isn't going to try and lie to you.
+[Wed 10:27:22] <manu>	Topic: Identity recovery
+[Wed 10:27:22] <manu>	Next up is Design Criteria: A primary entity (buyer, merchant, etc.) with access to a credential service sets a second entity (buyer, merchant, etc.) as a backup for accessing their credentials, should they lose the ability to access the credential service (loss of password or 2-factor authentication device).
+[Wed 10:28:06] <dlongley>	manu: this is about having a "recovery buddy" so a person or people can do something to the network to release your information and you can get your data bakc
+[Wed 10:28:12] <manu>	Steven's feedback on that - In theory it seems like a good idea, but maybe is too general? What are the implications...such as, will all their credentials merely switch over seamlessly at all the providers? Will all KYC and other legal entities be in the loop, or does this cause anonymity/laundering problems? By 'lose the ability', could you also be including a government taking away someone's identity or controlling it -- let's say someone in China is bl
+[Wed 10:28:12] <manu>	acklisted by their government, but someone in, Oh, just for a random example, the United States government, disagrees and says, fine, we'll honor your second identity and not your first, and then everybody will be happy
+[Wed 10:29:24] <manu>	dlongley: Maybe this is too general, I think we can address that here. We didn't intend to discuss the other things he brought up. 
+[Wed 10:30:01] <manu>	dlongley: This was supposed to be about - if you have forgotten your password, or dropped your 2-factor device, then someone can access that account.
+[Wed 10:30:15] <manu>	dlongley: If a government were to shut down your account, it would be shut down in a different way.
+[Wed 10:30:34] <manu>	dlongley: I don't know how explicit we need to get here.
+[Wed 10:31:14] <dlongley>	manu: this is a design criteria that is supposed to be fairly broad, we didn't intend for those questions to be raised, but they are good questions, for example, can a gov't take away your identity
+[Wed 10:31:33] <dlongley>	manu: there are good mechanisms in place where the gov't can revoke your gov't credentials, but not other ones that didn't issue
+[Wed 10:31:56] <dlongley>	manu: if you have a chip in your body that requires a 2-factor device to access, and you lose that 2-factor device, I think that's what we're talking about. You lock yourself out of your own identity.
+[Wed 10:33:05] <manu>	dlongley: This is design criteria is about the person themselves denying access to themselves by accident, and then recovering from that.
+[Wed 10:33:06] <dlongley>	pindar: i think that's the underlying scope of this design criteria
+[Wed 10:34:50] <dlongley>	dlongley: proposal - a primary entity (buyer, merchant, etc.) with access to a credential service sets a second entity (buyer, merchant, etc.) as a backup for accessing their credentials, should they inadvertently lose their ability to access the credential service (accidental loss of password or 2-factor authentication device).
+[Wed 10:37:53] <dlongley>	manu: Yeah, better - but now I'm wondering if we need this. You want to effectively assign power of attorney
+[Wed 10:38:12] <dlongley>	pindar: so for example on death
+[Wed 10:40:13] <dlongley>	manu: Yes, and now I'm wondering if that should be standardized. There is huge potential here for phishing if it's standardized, maybe it should just be a feature.
+[Wed 10:41:56] <manu>	dlongley: This is another layer of abstraction on how you get into your identity - you have a password, SMS, to login.... backup email, backup password, etc. I don't think we're adding anything here by having this design criteria, It has all these knock-on effects on who owns your identity.
+[Wed 10:42:06] <manu>	pindar: potential to be unnecessarily complex.
+[Wed 10:42:36] <dlongley>	manu: i'm making a note that we're concerned this shouldn't be built-in into the standard, it can be unnecessarily complex while not adding anything novel
+[Wed 10:43:21] <manu>	ok, on to initiating payment and wallet use cases
+[Wed 10:43:30] <manu>	Topic: Purchase requests
+[Wed 10:43:30] <manu>	first up Use Case: A buyer selects an item to purchase on merchant's site, merchant generates a purchase request that will be processed by the buyer's payment processor.
+[Wed 10:44:02] <manu>	Jorge is saying +1 only if generating the purchase request is equivalent to generating a link or token.
+[Wed 10:45:22] <manu>	dlongley: a token or link is just a link back to another location, a token doesn't contain enough information. At some point, you have to get the information
+[Wed 10:46:13] <manu>	dlongley: Saying it can only be a link or token may be unnecessarily complex because you can't lock in a price using a URL unless the information exists in the URL, or the token is created for every time a person clicks on a link, this just seems like a bad idea - using link/token.
+[Wed 10:46:40] <manu>	dlongley: using a link/token is a premature decision. The only thing we need to say is that the purchase request either needs to have all the information in it, or it is a link to all that information.
+[Wed 10:47:49] <dlongley>	manu: i don't think we need to say if it's a link or token, etc., i think there are technically good reasons for not having it just be a token -- you can't just generate things on the fly you need a token that maps somewhere; you are adding a layer of indirection that may be unnecessary
+[Wed 10:48:29] <dlongley>	manu: some of these transactions are so fantastically complex that you dont' want to put all that data in a link -- and if the link doesn't have the informatino you're just using a layer of indirection that may only complicate the situation as the indirection could be unnecessary
+[Wed 10:49:14] <manu>	dlongley: If you're using links/tokens - that means that you need another layer of authentication. Added layers of complexity that may not need to be there at all.
+[Wed 10:49:53] <manu>	Topic: Payment links
+[Wed 10:49:53] <manu>	next up Use Case: A developer can create a link with a specific payment URI scheme or rel-type such that when a buyer clicks on it, the buyer's payment processor starts the payment process.
+[Wed 10:50:07] <manu>	Adrian said - updated use case - Is URI scheme the only way to do this?
+[Wed 10:50:22] <manu>	Jorge says - this is my favorite approach. No NASCAR problem, no list of payment processors, just an email with a payment link. It could be implemented with a simple form with text field for inputs like 'wallet.example.com/walletID' or 'walletID@walletexample.com' (maybe with a drop down menu), make an API call to the example provider and let the provider send the email with the payment link if the transaction is possible.
+[Wed 10:55:18] <manu>	Discussion around Jorge's input - not preferred mechanism, doesn't go far enough, people shouldn't have to remember their wallet ID or their information. If we are going to do what Jorge proposes, there is no innovation there. It's just asking people to type in their address to their payment provider.
+[Wed 10:56:00] <manu>	dlongley: This approach wouldn't build Web Payments into the web, it would be on top of it, using a typical form.
+[Wed 10:56:52] <dlongley>	pindar: it's going in entirely the wrong direction (not trying to be out of line), but not where we want to go, also may introduce unexpected behavior
+[Wed 10:56:57] <manu>	pindar: Jorge's proposal is going in entirely the wrong direction. It also might generate an element of surprise, we're trying to make it easier to use this technology by pushing the complexity down, not surfacing it in the form of a form input for a wallet ID.
+[Wed 10:58:32] <manu>	Next up Use Case: When a payee intends to make a payment, they are given a choice to pick among the intersection of the payment processors they're registered with and the payment processors that are advertised by the payee.
+[Wed 10:59:06] <manu>	Jorge's input is that this is the NASCAR problem.
+[Wed 10:59:46] <manu>	dlongley: This is a misunderstanding of the NASCAR problem - who is deciding what the set of options are - you or the merchant. if you are able of picking from payment processors that only you have, that's fine.
+[Wed 11:00:53] <manu>	dlongley: There is an element here about an intersection of payment processors, merchant only supports a small number, you only have a small number, so you're only going to see payment processors that you're interested in.
+[Wed 11:01:08] <manu>	dlongley: As michael williams commented, we'd fully expect browsers or payment processors to choose defaults. 
+[Wed 11:01:52] <dlongley>	manu: yeah, ideally you'd be able to set a default, joseph potvin has talked about setting a default price index too, etc. we want to make setting defaults the way things are done to make it as easy as possible
+[Wed 11:01:56] <dlongley>	pindar: agreed
+[Wed 11:01:56] <dlongley>	taaz: Yeah, don't think they're familiar w/ the technology that's being proposed, it's specifically designed to avoid the NASCAR issues.
+[Wed 11:02:21] <dlongley>	pindar: there seems to be a mentality that is related to the current situation that will be very different once this solution is deployed
+[Wed 11:02:44] <dlongley>	manu: next week we have to cancel because i'll be doing a keynote at semtech
