@@ -1,0 +1,123 @@
+[Wed 10:07:07] <m4nu>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2014Sep/0015.html
+[Wed 10:07:12] <m4nu>	scribe: dlehn
+[Wed 10:08:01] <dlehn>	m4nu: any updates to agenda?
+[Wed 10:08:38] <m4nu>	Topic: IGF 2014 - Web Payments/Credentials Workshop Review
+[Wed 10:08:45] <dlehn>	m4nu: We went over the IGF workshop on yesterday's Credentials CG call, so let's just refer to that discussion.
+[Wed 10:09:03] <m4nu>	Here's the transcript from the Web Payments/Credentials workshop at IGF 2014: http://www.intgovforum.org/cms/174-igf-2014/transcripts/2059-2014-09-04-ws69-payment-privacy-policing-paradox-room-4
+[Wed 10:09:07] *	Evgeny (4d4b990d@gateway/web/freenode/ip.77.75.153.13) has joined #webpayments
+[Wed 10:09:15] <m4nu>	Here's the video from the workshop: https://www.youtube.com/watch?v=m8cIYzy5MIA
+[Wed 10:10:13] <dlehn>	m4nu: we'll put together a page with that info so when talking to governments, standards orgs, etc. we can point to the page.
+[Wed 10:10:37] <m4nu>	We discussed this stuff on the Credentials CG call yesterday, so we won't rehash that discussion here: http://opencreds.org/minutes/2014-09-09/#5
+[Wed 10:11:14] <dlehn>	m4nu: There's the in depth talk about the workshop (link above).
+[Wed 10:11:39] <dlehn>	m4nu: We'll do followup and try to get those people into the work.
+[Wed 10:11:36] <m4nu>	Topic: Payment Initiation / Wallet Use Case Revisions
+[Wed 10:11:50] <m4nu>	scribe: dlongley
+[Wed 10:11:50] <m4nu>	Wallet / Payment Initiation use cases: https://www.w3.org/community/webpayments/wiki/UseCases
+[Wed 10:12:05] <m4nu>	last time we talked about this one - Use Case: A merchant advertises different details, such as price, for an offer of sale based on potential payment processor choice.
+[Wed 10:13:20] <dlehn>	m4nu: We ended on Michael Williams' comments, basically saying that we don't think we can achieve what he wants, even though we really want to.
+[Wed 10:14:50] <dlehn>	dlongley: we've had discussions about this in the past, the ability to do decentralized clearing. Ripple is an option. We've also talked about using a more decentralized version of the block chain technology.  The key issue is that we need some way to "validate" monetary inputs into the system.
+[Wed 10:15:18] <dlehn>	m4nu: This is all experimental technology, that's the problem. We don't have enough experience w/ it to think about standardizing it because we're not sure it scales.
+[Wed 10:19:06] <mediaprophet>	A project is emerging entitled bitmark https://github.com/project-bitmark/documents/tree/master/pdf perhaps we could ask them whether some technology might exist as to provide that type of service.
+[Wed 10:19:56] <dlongley>	tim: i'm not sure if the way bitmark is implemented supports that or if it can be effectively forked to achieve the needs of web payments
+[Wed 10:20:11] <dlongley>	tim: in melvin's web credits system he has a decentralized blockchain that was working off of data.fm. I believe it was.
+[Wed 10:20:13] <mediaprophet>	http://webcredits.data.fm/
+[Wed 10:20:38] <mediaprophet>	is it closer to http://dig.csail.mit.edu/2010/Papers/IAB-privacy/httpa.pdf ??
+[Wed 10:21:09] <dlongley>	m4nu: i don't think it was a decentralized block chain, you could put it anywhere, but you couldn't fork the block chain, the fundamental design we're talking about is different from centralized block chain stuff, his stuff would allow you to put the block chain somewhere on the web and everyone would have to agree to a particular history, it was each account gets its own block chain
+[Wed 10:21:21] <dlongley>	tim: would this be helped if there was some sort of credentialing system?
+[Wed 10:22:01] <dlongley>	m4nu: there's certainly a creds part to it, the URL/HTTP part is used for looking up where a particular resource is, the thing we've been vacillating between is using URL or some decentralized/dht system like telehash to create those URLs.
+[Wed 10:22:12] <dlongley>	m4nu: using URLs only as an entry point into the decentralized credential/block chain to do reading/writing
+[Wed 10:22:42] <dlongley>	m4nu: we have all these techs up in the air, if we want to make quick progress we can't make the decision to standardize telehash or some decentralized mechanism, we have to use techs that already exist, URLs, JSON-LD, IC, etc.
+[Wed 10:23:12] <dlongley>	tim: it sounds like it's in an experimental field, it's something we're interested in but we don't want to steer away from critical path, it's where innovation can happen and we can participate in some way
+[Wed 10:23:30] <dlongley>	m4nu: i agree, that's the response to Michael we want to have, we agree with him, we want to do what he's talking about but we need the tech to get there.
+[Wed 10:23:59] <dlongley>	m4nu: he even pointed to the decentralized settlement process we have in one of our specs, but he probably doesn't know that's really experimental, we just haven't had the time to work on it
+[Wed 10:24:20] <dlongley>	tim: i think bitmark has 20 active devs on the project, i've spoken to Mark, and he's shown interest in web payments
+[Wed 10:24:26] <dlongley>	tim: they may be interested in participating in the CG
+[Wed 10:24:39] <dlongley>	tim: maybe we can get them involved w/o having them be a constituent of our critical path
+[Wed 10:25:01] <dlongley>	m4nu: yes, sounds great, i say that having no real view into technical details of bitmark yet, but if you think it would be good to look at, bring them in
+[Wed 10:25:35] <dlongley>	m4nu: jorge is saying he doesn't know if a website could display a proper price. The problem is that since the person hasn't specified who their payment processor is, on the website, the website has no way of running the code for showing them the actual price.
+[Wed 10:26:14] <dlongley>	m4nu: we could have some kind of API in the browser for dealing with multiple offers
+[Wed 10:26:16] <m4nu>	dlongley: Right now, the merchant can enumerate different offers. The merchant can figure out how to display it.
+[Wed 10:26:22] <mediaprophet>	description of Bitmark: https://twitter.com/ProjectBitmark/media
+[Wed 10:26:25] <mediaprophet>	in images.
+[Wed 10:27:34] <dlongley>	Manu: anything else on the use case before moving on?
+[Wed 10:27:48] <dlongley>	tim: nope
+[Wed 10:27:48] <m4nu>	Topic: Loyalty Cards
+[Wed 10:27:48] <m4nu>	Next use case - Use Case: A buyer can associate a membership card, coupon, or similar token with a transaction to receive a discount or other benefits.
+[Wed 10:28:13] <m4nu>	Steven Rowat said - I think these could wait until a later version. I know many marketing strategies use them, but many don't; essentially they're an optional add-on (IMO there's an argument that they're like tariff barriers -- somebody starts, then everybody does it, and it becomes cruft that we all pay for without good reason). I suggest putting minimal resources into it, as a socket that the vendor must provide most of the code/structure for. 
+[Wed 10:29:06] <dlongley>	m4nu: what we could do is push this off to the creds group ... having a loyalty coupon/membership is like having a credential
+[Wed 10:29:15] <mediaprophet>	+1
+[Wed 10:29:35] <dlongley>	m4nu: when you try to do a purchase a vendor could optionally ask for a loyalty credential
+[Wed 10:29:41] <dlongley>	m4nu: and then the vendor could price accordingly
+[Wed 10:29:46] <m4nu>	Adrian also said that he'd prefer to have this for later iterations.
+[Wed 10:29:59] <dlongley>	tim: i agree, i would just ask if that credential could be used to provide the discount in the transactional process
+[Wed 10:30:28] <dlongley>	m4nu: the way it would work, i think with the current tech, there would be a request for the loyalty card, then the website would show a different set of offers
+[Wed 10:30:54] <m4nu>	dlongley: We can certainly do it the way that you just suggested. I can't think of a hook that a payment processor could use to process that.
+[Wed 10:31:32] <m4nu>	dlongley: Payment processor looking at a set of payees, this other information is present (like a loyalty coupon), it's not built into the transaction process. The merchant probably establishes that you have the loyalty card through the credentials process.
+[Wed 10:31:53] <m4nu>	tim: This doesn't affect the digital receipt, right?
+[Wed 10:32:15] <m4nu>	dlongley: The vendor can always include extra information in the digital receipt, to say that they used a loyalty card, but the payment processor will not know about that information (most likely)
+[Wed 10:32:32] <dlongley>	dlongley: there would be no special processing rules that the payment processor could apply to the loyalty card info, but the vendor could include it and get that information back in the receipt
+[Wed 10:32:43] <dlongley>	dlongley: (it would be opaque to the payment processor)
+[Wed 10:34:05] <m4nu>	dlongley: In the future, if a certain token is present in an offer, then a different set of payees could be used. If we think it's beneficial to be put into the transaction process.
+[Wed 10:34:27] <m4nu>	dlongley: There will be some details about ensuring that the information remains private - loyalty cards can't be misused.
+[Wed 10:34:36] <dlongley>	tim: i think there is a use case to have a social membership card
+[Wed 10:34:43] <dlongley>	tim: and that's also a credentials problem
+[Wed 10:35:00] <dlongley>	m4nu: yeah, i think whenever we're talking about membership i think that's a credentials thing that we can push off to that group
+[Wed 10:35:36] <dlongley>	m4nu: until there's a very solid use case that says this loyalty coupon/membership card absolutely must be part of the txn process we should leave it out and let people just compose the two techs: creds and payments together to solve these complex use cases
+[Wed 10:35:42] <dlongley>	m4nu: rather than complicating the payment protocol
+[Wed 10:35:46] <m4nu>	Topic: Variable Pseudo-anonymity
+[Wed 10:35:46] <m4nu>	Next use case is - Use Case: Leveraging variable degrees of anonymity per requirements of the payment transaction.
+[Wed 10:36:11] <m4nu>	Feedback from Adrian is to shift this to a later version.
+[Wed 10:37:17] <dlongley>	m4nu: based on the discussions we've been having, especially about the nigerian ID card, kingsley and steven rowat's input on that, i don't think that the variable degrees of anonymity and privacy we can shift this to a later version ... people seem to be rightly concerned about this issue
+[Wed 10:37:26] <dlongley>	tim: is this a creds use case?
+[Wed 10:38:36] <dlongley>	m4nu: kind of, if you have an account that is identified by some URL and that URL can be used to discover who you are and get some info about you, then that's problematic, without even talking about the creds stuff, but if your URL has "timholborn" in it then people can identify who you are, or based on your spending habits at two sites owned by the same org, if you transmit a pseudo-anonymous cred and you name/whatever is in the account URL then your ID is less than you think.
+[Wed 10:38:49] <dlongley>	m4nu: you shouldn't have to transmit your entire ID if you're just buying a candy bar
+[Wed 10:38:59] <dlongley>	tim: i absolutely agree i just thought creds would be handling this?
+[Wed 10:40:01] <dlongley>	m4nu: it could be, there are two chunks of info transmitting to the website, you notify the website who your payment processor is (and that's it) and they don't know who you are, if when the digital receipt is generated and the payment processor puts in there, say your name in a URL, then your privacy is violated because the payment processor didn't know you were doing something pseudo anonymous
+[Wed 10:40:08] <dlongley>	m4nu: and so that info gets accidentally leaked.
+[Wed 10:40:20] <dlongley>	tim: makes sense, I agree.
+[Wed 10:41:05] <dlongley>	tim: i think the language should be clearer -- defining pseudo-anonymity, etc.
+[Wed 10:41:13] <dlongley>	m4nu: i think that we should use pseudo-anonymity everywhere
+[Wed 10:41:22] <dlongley>	tim: yes, you said the tech isn't there for true anonymity
+[Wed 10:41:36] <dlongley>	tim: i think we should state some defs for anonymity
+[Wed 10:41:52] <dlongley>	scribe missed some fast discussion on anonymity.
+[Wed 10:42:20] <dlongley>	m4nu: i think there's a lot of confusion on what anonymity means, using cash isn't anonymous, serial numbers on cash, etc.
+[Wed 10:42:25] <dlongley>	tim: video cameras in the building
+[Wed 10:42:31] <dlongley>	dlongley: merchant saw your face
+[Wed 10:42:53] <dlongley>	m4nu: when we talk about true anonymity it's something like a usb drop cemented into an alleyway w/ no cameras for multiple blocks around.
+[Wed 10:43:13] <dlongley>	m4nu: we need to be more clear and use pseudo-anonymity from here on out so people don't think they are more protected than they are
+[Wed 10:43:25] <dlongley>	m4nu: whatever your definition of anonymity is, you may not be as private/safe as you are
+[Wed 10:43:37] <dlongley>	m4nu: if you're that worried about it you shouldn't be doing it over the internet
+[Wed 10:43:54] <dlongley>	m4nu: the internet makes it easy to find "the" node to send information to... and then it's easy to track that particular node
+[Wed 10:44:52] <dlongley>	tim: i believe lay technical people believe things like 'Bitcoin provides true anonymity' and that's misleading and unfortunate, from a marketing level it's difficult to clarify, between one org that claims anonymity and one that claims pseudo-anonymity, i think integrity of this process is of utmost importance.
+[Wed 10:45:15] <dlongley>	m4nu: we're not against true anonymity per se but it would be completely incorrect to say we provide it
+[Wed 10:46:04] <dlongley>	tim: i'm a citizen of Australia and if i'm being investigated that much then so be it. I think people that are super afraid of that maybe shouldn't be on the Web.
+[Wed 10:47:08] <dlongley>	Evgeny: maybe we can achieve true anonymity in this use case, the buyer can be completely anonymous to merchant but provide details to merchant.
+[Wed 10:47:57] <mediaprophet>	what i was saying, was that as a subject to the rule of law (of my country, Australia) then if lawful intercept makes requests - so be it.  Yet, there are so very many use-cases where people have the right to pseudo-anonymity.
+[Wed 10:48:03] <m4nu>	dlongley: We should still be careful about using "true anonymity". It's just a higher degree of anonymity. If a merchant uses sophisticated tracking techniques, the buyer could be tracked.
+[Wed 10:48:10] <mediaprophet>	almost every other party; save, local law-enforcement, etc.
+[Wed 10:48:20] <m4nu>	For example, putting a Google tracking cookie would allow Google to figure out who a buyers is.
+[Wed 10:48:56] <dlongley>	m4nu: any kind of tracking cookie from any org or conglomerate could allow them to follow browsing habits and figure out who a person is
+[Wed 10:49:08] <dlongley>	tim: or a browser login, etc.
+[Wed 10:49:54] <dlongley>	m4nu: there are so many different ways to track people online, while we can solve the pseudo-anonymity problem between buyer and merchant ... that doesn't mean cookie tracking, malware, etc. lots of other devices don't exist that errode your privacy online (all out of scope for the work here)
+[Wed 10:50:17] <dlongley>	m4nu: we're just trying to increase the level of effort any org would have to extend to violate your privacy, we're not saying it's impossible just making it as difficult as we can to break privacy
+[Wed 10:51:50] <dlongley>	tim: the gov't is of service to the people, and what they provide is very different from what a private corporation
+[Wed 10:52:01] <m4nu>	Topic: Offers and Price Quotes
+[Wed 10:52:01] <m4nu>	This is the next one - Use Case: A buyer discovers an offer for sale by a merchant under terms that the merchant is comfortable with. The offer includes a list of payment processors that the merchant is capable of receiving payment through. The buyer's software contacts a subset of those payment processors that they are capable of sending payment through to get finalized transaction details (such as price or speed) before executing the most desirable transaction.
+[Wed 10:52:49] <m4nu>	Jorge's feedback - NASCAR problem
+[Wed 10:53:37] <m4nu>	dlongley: Again, I think that's a misunderstanding of the NASCAR problem. This is about user choice, not about splattering choices that are not relevant to the buyer. This is about giving the buyer choice. This is about providing the buyer with utility, not noise.
+[Wed 10:54:01] <m4nu>	Feedback from Michael Williams: Is there a user flow for proxying from payment processors included by merchant to another payment processor as described above?
+[Wed 10:57:24] <dlongley>	dlongley: we should at least mention the decentralized payment processor/proxied payment processor idea as a design criteria for a future version or similar so it's on the IG's radar
+[Wed 10:57:31] <m4nu>	Topic: Native App Purchases
+[Wed 10:57:31] <m4nu>	next Use Case: A buyer uses a native non-browser application on their mobile phone or tablet, or a web browser to make a purchase at an app store.
+[Wed 10:57:45] <m4nu>	Jorge's feedback: Native apps are ok as long as they use the Web infrastructure for the transactions (e.g. REST APIs)
+[Wed 10:57:58] <mediaprophet>	+1
+[Wed 10:58:06] <dlongley>	+1
+[Wed 10:59:29] <dlongley>	m4nu: anything else to discuss before next call?
+[Wed 10:59:46] <dlongley>	tim: the creds group is working on some of the use cases for identity, if there's any feedback from web payments group that would be great
+[Wed 10:59:51] <dlongley>	tim: any other use cases they suggest, etc.
+[Wed 11:00:26] <dlongley>	m4nu: i think we have to be very careful with how we reword the use cases in the creds group, some will be fundamental for creds and others will be periphery use cases web payments people care about
+[Wed 11:00:31] <voip-wp>	Manu Sporny (SIP/6000-0000001b) has left the conference.
+[Wed 11:00:31] <voip-wp>	Tim (IAX2/diamondcard-4266) has left the conference.
+[Wed 11:00:32] <voip-wp>	Dave Longley (SIP/6002-0000001c) has left the conference.
+[Wed 11:00:33] <voip-wp>	dlehn (SIP/50.134.65.129:5060-0000001a) has left the conference.
+[Wed 11:00:34] <voip-wp>	Evgeny (SIP/sip2sip.info-0000001e) has left the conference.
