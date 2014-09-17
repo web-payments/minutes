@@ -1,0 +1,106 @@
+[Wed 10:04:50] <manu>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2014Sep/0067.html
+[Wed 10:04:55] <dlongley>	scribe: dlongley
+[Wed 10:05:28] <dlongley>	manu: any updates to the agenda?
+[Wed 10:05:30] <dlongley>	taaz: none
+[Wed 10:05:32] *	dlongley sure
+[Wed 10:05:39] <manu>	Topic: W3C TPAC Web Payments / Credentials Agenda
+[Wed 10:05:47] <manu>	http://www.w3.org/2014/11/TPAC/
+[Wed 10:05:55] <voip-wp>	Dave Lehn (SIP/6003-0000004b) has joined the conference.
+[Wed 10:05:56] <manu>	This is in Santa Clara, California,  27-31 October 2014
+[Wed 10:06:13] <dlongley>	manu: the Web Payments and Credentials meetings will be on Monday and Tuesday, 27-28
+[Wed 10:06:26] <dlongley>	manu: Anyone from the those communities should come on those days.
+[Wed 10:06:40] <dlongley>	manu: There's also some time in the middle of the day for adhoc meetings.
+[Wed 10:07:20] <dlongley>	manu: The charter is being reviewed for the IG and once the vote is complete they'll be able to say who they've picked as chairs and talk about all that in a face to face meeting at TPAC.
+[Wed 10:08:07] <dlongley>	manu: If any person or organization wants to attend those meetings and is not a W3C member, they should contact me (Manu Sporny) so I can make sure you're on the list and can get into the room, if you want to bypass me talk to Stephane Boyera or Karen Myers at W3C.
+[Wed 10:08:30] <dlongley>	manu: At the very worst at the end of this week, I'm going to write a blog post and circulate it widely in various communities to ensure people know this is happening.
+[Wed 10:09:06] <dlongley>	manu: W3C has another group that's tentatively on the schedule and I'll ask for the same treatment, they really should have had this on the agenda but they don't have it on there since it bothers some orgs if it wasn't passed by the advisor community
+[Wed 10:09:30] *	dlongley sure
+[Wed 10:09:54] *	pindarhk (7430455a@gateway/web/freenode/ip.116.48.69.90) has joined #webpayments
+[Wed 10:10:26] <pindarhk>	Agree tha we should come out a draft agenda that can be discussed and ratified
+[Wed 10:10:46] <dlongley>	manu: The agenda has not been set yet, so we really should come up with a draft agenda because whoever is going to be chairing the work at W3C TPAC is probably not as up-to-date as we are as to what is going on. We should say "Let's look at the refined use cases, pull in updates from credentials work, etc."
+[Wed 10:11:03] <dlongley>	manu: We need to come up with an agenda and then propose it to those chairs who I imagine will be fairly open to it because it's less work they have to do.
+[Wed 10:11:10] <pindarhk>	Nope
+[Wed 10:11:12] <dlongley>	manu: Any questions about how to participate or the agenda?
+[Wed 10:11:24] <dlongley>	manu: Pindar, will you be able to attend?
+[Wed 10:11:57] <dlongley>	pindarhk: I've got Science and Technology Society, meetings in South Korea, etc. so it's unlikely that I'll be able to attend.
+[Wed 10:12:03] <pindarhk>	Sorry I've an OCED meeting in Tokyo, STS in Kyoto and WKF in Seoul that month
+[Wed 10:11:55] <manu>	Topic: Payment Initiation / Wallet Use Case Revisions
+[Wed 10:12:16] <manu>	https://www.w3.org/community/webpayments/wiki/UseCases#Initiating_Payments_.2F_Wallet_APIs
+[Wed 10:12:30] <dlongley>	manu: I think the last time we were on..
+[Wed 10:12:39] <manu>	this one - Use Case: A buyer uses a native non-browser application on their mobile phone or tablet, or a web browser to make a purchase at an app store.
+[Wed 10:12:48] <dlongley>	manu: We basically agreed with Jorge on his feedback.
+[Wed 10:13:02] <manu>	Topic: In-app Purchases
+[Wed 10:13:09] <manu>	This one is next - Use Case: A buyer makes a purchase from within an application for premium content, virtual goods, or subscriptions.
+[Wed 10:13:21] <manu>	Jorge's feedback: However, without embedding wallets, but by obtaining delegated access through OAuth tokens.
+[Wed 10:13:58] <dlongley>	manu: I believe that the current mechanism doesn't require an OAuth token, you're assigned a budget, which could be viewed as OAuth-token-like mechanism, but we didn't have a use/need for OAuth in the entire stack we put together.
+[Wed 10:14:24] <dlongley>	manu: In general we agreed with Jorge's feedback, but we don't think that the technology that should be used in the use case. So we agree with him but we don't think we should put a specific technology into the use case.
+[Wed 10:14:46] <pindarhk>	Nope
+[Wed 10:14:50] <dlongley>	manu: It's still a point to discuss later, whether we should use what we have already designed or start using OAuth.
+[Wed 10:15:00] <voip-wp>	Evgeny (SIP/sip2sip.info-0000004c) has joined the conference.
+[Wed 10:15:33] <dlongley>	dlongley: Yeah, that's fine.
+[Wed 10:15:33] <pindarhk>	Agreed
+[Wed 10:16:14] <voip-wp>	Pindar Wong (SIP/getonsip.com-00000048) has left the conference.
+[Wed 10:16:46] <dlongley>	manu: Next week we'll likely do a longer call to get these use cases finished so they are out there well before TPAC and so the community can give feedback.
+[Wed 10:16:50] <voip-wp>	Pindar Wong (SIP/getonsip.com-0000004d) has joined the conference.
+[Wed 10:18:06] <manu>	Topic: Registration-less purchasing
+[Wed 10:18:18] <manu>	next up - Use Case: The buyer goes to a merchant website and clicks a buy button to complete a purchase without having to go through any registration process. During the purchase the buyer chooses which information to share with the merchant which the merchant then uses to uniquely identify the buyer if they perform any repeat purchases.
+[Wed 10:19:04] <dlongley>	manu: The idea behind this use case is that they can transmit all the credentials that are necessary and complete the financial purchase in one click.
+[Wed 10:19:11] <manu>	Steven Rowat's feedback: Redundant? What's the difference between this and the Use Case that's third from the top, that says: "given a choice to pick among the intersection of the payment processors they're registered with and the payment processors that are advertised by the merchant"? 
+[Wed 10:19:26] *	Evgeny_ (4d4b9801@gateway/web/freenode/ip.77.75.152.1) has joined #webpayments
+[Wed 10:20:30] *	mediaprophet (~mediaprop@110-174-83-219.static.tpgi.com.au) has joined #webpayments
+[Wed 10:21:02] <dlongley>	manu: The previous one (intersection of payment processors) is a choice given to them once the information has been provided to the merchant. This one has to do with doing a registration-less purchase. You click the buy button and then all the information is transmitted to the merchant. So a merchant can say "I'd like your email address and here's the offer for purchase."
+[Wed 10:21:15] <dlongley>	manu: I don't think we can cover this right now due to how the design has changed.
+[Wed 10:22:16] <dlongley>	dlongley: We've decoupled identity storage and payment processors, but a browser could still turn the process into a single click.
+[Wed 10:22:19] <pindarhk>	Agree with Dave's point w.r.t. streamlining of purchase
+[Wed 10:22:35] <manu>	Response to Steven - it's not redundant, this has to do w/ credential transmission + purchasing (streamlining the purchase process). The other use case has to do w/ selecting among provided credentials (selection of payment processor).
+[Wed 10:23:04] <pindarhk>	Language looks good to me
+[Wed 10:23:42] <manu>	dlongley: I don't think we need to change the use case language.
+[Wed 10:23:46] <manu>	Adrian's feedback: For later iterations
+[Wed 10:24:35] <manu>	dlongley: I think Adrian's general feedback is that anything identity related can be pushed off... so, this may have come from there. Some of this use case will be covered by what the credentials group is doing.
+[Wed 10:24:50] <manu>	Yeah, plus we get this use case "for free" based on the current technology design.
+[Wed 10:25:46] <manu>	dlongley: Really, this is an API in a browser - where the merchant's javascript says "give me this credential, and here's an offer"... credentials are delivered first, then offer is processed.
+[Wed 10:27:54] <manu>	dlongley: In the polyfill case, we're going to have to provide advice on how to implement a one-click flow.
+[Wed 10:28:27] <manu>	Yeah, so we're deferring the idea of there being a single API call to do credential transmission and purchasing.
+[Wed 10:29:18] <dlongley>	dlongley: Not necessarily a "single API call" but some browser API (could be a chain of calls).
+[Wed 10:29:30] <manu>	Reponse to Adrian - We're deferring the notion that there would be a single API call to achieve this use case. However, we can achieve this use case with the current technology and a best-practice note, nothing new is required and therefore it doesn't make sense to postpone the use case if we can achieve it today using browser polyfills.
+[Wed 10:29:18] <manu>	tim: Hey, listening in but under the weather today.
+[Wed 10:29:53] *	pindarhk has quit (Quit: Page closed)
+[Wed 10:31:56] <manu>	Topic: Payment UIs and Buyer Authorization
+[Wed 10:32:02] <manu>	Next up - Use Case: A buyer goes to a merchant website and is presented with a payment UI from their payment processor. The purchase can be completed without any additional information from the buyer other than their consent to complete the purchase.
+[Wed 10:32:23] <manu>	Jorge's feedback: Custom payment UIs are not the way to go in my opinion.
+[Wed 10:32:38] <voip-wp>	Pindar Wong (SIP/getonsip.com-0000004d) has left the conference.
+[Wed 10:32:40] <manu>	Michael Williams' feedback: if proxying as described above happens by default if chosen as an option before.
+[Wed 10:34:29] <dlongley>	dlongley: Use case is vague, is this UI just one displayed on the payment processors site after a redirect? Is it shown on the merchant's site? Is it a "trusted" payment UI on the browser?
+[Wed 10:35:06] <dlongley>	manu: Yes, it is too vague. For a "trusted" payment UI, the UI always looks the same regardless of which merchant site you visit. However, everyone that worked on this on phones found that the phishing risk is too high.
+[Wed 10:35:34] <dlongley>	manu: I think the general thought is that a trusted UI is problematic, not a solved problem yet.
+[Wed 10:36:05] <dlongley>	manu: If we're not talking about that then we're talking about the UI on the payment processor site and they can customize that site however they want to reduce or prevent phishing.
+[Wed 10:36:28] <dlongley>	manu: I think we agreed that custom payment UIs on the merchant's site are a no go, but customized payment UIs on the payment processor's site are fine.
+[Wed 10:36:44] *	esprehn has quit (Read error: Connection reset by peer)
+[Wed 10:36:45] <dlongley>	manu: The problem is that the use case doesn't say where the payment UI shows up, it just says the payment processor provides the payment UI.
+[Wed 10:36:59] <dlongley>	manu: It doesn't say if you're shown that on the merchant website or you see it on the payment processor website.
+[Wed 10:39:05] <manu>	dlongley: I'm trying to figure out if this is already covered in the other use cases. If this use case comes down to your payment processor just showing you a UI, do we need to say that?
+[Wed 10:39:34] <manu>	Yes, because it means that we're not saying that we want to do hardware/Trusted UI stuff and it says that we don't want the merchant to be in control of the payment UI.
+[Wed 10:39:47] <manu>	dlongley: So we're re-writing the use case?
+[Wed 10:39:50] <manu>	Yes, I think so.
+[Wed 10:39:51] <dlongley>	dlongley: rewrite - The buyer goes to a merchant website and clicks buy to purchase an offer. The buyer is redirected to their payment processor's website which presents them with a payment UI. The buyer completes the purchase and is sent back to the merchant's website with a digital receipt confirming the purchase.
+[Wed 10:42:53] <manu>	Response to Jorge - Merchant-based custom payment UIs are a bad idea, browser-based Trusted UIs don't seem to have a good solution at the moment, which means that the only payment UI that can be presented safely is from the payment processor. It's in the payment processor's purview to change the UI to meet their customer's expectations. We should not try to specify what a payment UI should look like.
+[Wed 10:44:31] <manu>	Response to Michael - We would like payment proxying technology to exist, but to date, none has been invented to enable this to happen on a global scale. We will try to solve this problem during the v2 work. We should mention the idea of having more decentralized payment processors to the Web Payments IG for Design Criteria for future versions.
+[Wed 10:46:01] <dlongley>	dlongley: we should add this use case: "The buyer uses their payment processor's website to set a spending limit (and/or other limitations) for a particular merchant or set of merchants. Later, when the buyer clicks buy on the merchant's website, the purchase process is completed immediately (consent is assumed) if the offer price is within the spending limit (and/or other limitations).
+[Wed 10:46:01] <dlongley>	manu: i'll add it to the bottom of the wiki
+[Wed 10:47:04] <dlongley>	dlongley: ok, new revision then: The buyer goes to a merchant website and clicks buy to purchase an offer. The buyer is redirected to their payment processor's website which presents them with a payment UI. The buyer completes the purchase (optionally without providing any information other than their consent). The buyer is sent back to the merchant's website with a digital receipt confirming the purchase.
+[Wed 10:48:24] <manu>	Evgeny: A quick comment about merchant-based UIs, we can't avoid it completely - think of an in-game purchase... better to make that purchase in-game w/o going to payment provider.
+[Wed 10:48:43] <manu>	Evgeny: We need to think about issuing some kind of permission to spend that the customer gives to merchant.
+[Wed 10:48:59] <dlongley>	Evgeny: We can avoid merchant-based UI completely, if you think about in-game purchases, it's better to not go to the payment provider's website at all. Which is related to the use case Dave Longley proposed. Even if some other type of permission is given there needs to be a merchant site UI.
+[Wed 10:49:12] <manu>	Evgeny: I prefer that we shouldn't say we don't support merchant-based UIs.
+[Wed 10:49:38] <manu>	dlongley: Merchant UIs are only used if the buyer has previously given permission via their payment processor. That prevents the phishing attack.
+[Wed 10:50:16] <manu>	dlongley: That's really how we want in-app/game purchases to work, the buyer says: I authorize this merchant to pull money from me. Particularly for in-game, in-app purchases.
+[Wed 10:52:12] *	esprehn (sid10445@gateway/web/irccloud.com/x-jilgrxkgsufyttso) has joined #webpayments
+[Wed 10:52:59] <manu>	dlongley: You should never be giving your consent (password, pin, etc) on a merchant website... you should be doing that on your payment processor. Merchant-based UIs should be using a payment token, not asking for payment details.
+[Wed 10:53:59] <manu>	"Yes, I would like to spend $5 [OK]" instead of "Buy this item for $5 [Enter your payment processor password: *******]"
+[Wed 10:54:08] <manu>	on the merchant website.
+[Wed 10:55:12] <dlongley>	dlongley: You must always grant authorization via your payment processor's website, never *only* on the merchant website. You can preauthorize future consent on your payment processor's site (with certain limits) -- such that if you do click buy on a merchant's site, so long as the offer there falls within those limits then authorization will be granted.
+[Wed 10:55:28] <manu>	Response to Jorge - Merchant-based custom payment UIs that don't use a pre-authorized token from a payment processor are a bad idea, browser-based Trusted UIs don't seem to have a good solution at the moment, which means that the only payment UI that can be presented that asks for possibly private information is from the payment processor on the payment processors website. It's in the payment processor's purview to change the UI to meet their customer's expectations. We should not try to specify what a payment UI should look like.
+[Wed 10:57:53] <manu>	Ok, so this is what it looks like now - Use Case: The buyer goes to a merchant website and clicks buy to initiate a purchase. The buyer is redirected to their payment processor's website which presents them with a payment UI. The buyer completes the purchase (optionally without providing any information other than their consent). The buyer is sent back to the merchant's website with a digital receipt confirming the purchase.
+[Wed 10:59:04] <manu>	Topic: Finishing out the use cases
+[Wed 10:59:30] <manu>	We need to spend a large chunk of time to go through the rest of these use cases, we want them done before W3C TPAC, so we're going to spend a lot of time next week to finish out the payment initiation/wallet use cases
+[Wed 10:59:55] <manu>	Then the week after, we'll spend as much time as it takes to go through the digital receipt use cases.
