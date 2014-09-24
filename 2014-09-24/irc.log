@@ -1,0 +1,322 @@
+[Wed 10:05:36] <manu`>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2014Sep/0121.html
+[Wed 10:05:37] <dlongley>	scribe: dlongley
+[Wed 10:05:42] <voip-wp>	Evgeny (SIP/sip2sip.info-00000082) has joined the conference.
+[Wed 10:06:15] <dlongley>	manu`: We're doing a use case super-session today to get all of these use cases into a position where the Web Payments CG can vote on whether or not we want to use them, etc.
+[Wed 10:06:23] *	Jonny_ (4d4b9801@gateway/web/freenode/ip.77.75.152.1) has joined #webpayments
+[Wed 10:06:31] <dlongley>	manu`: Then we can take them to the Web Payments IG as input to help speed things along.
+[Wed 10:06:57] <dlongley>	manu`: There are seven use cases left and hopefully we can get it done in 1.5 hours.
+[Wed 10:07:07] <dlongley>	manu`: We'll put them into a document that can be voted on by the community after that.
+[Wed 10:07:15] <dlongley>	pindar: all clear.
+[Wed 10:07:15] <dlongley>	taaz: sounds good.
+[Wed 10:07:20] <manu`>	voip: connection?
+[Wed 10:07:24] <manu`>	voip: connections?
+[Wed 10:07:24] <voip-wp>	Conference connections: Manu Sporny [SIP/6000-0000007f], Evgeny [SIP/sip2sip.info-00000082], Pindar Wong [SIP/getonsip.com-00000081], Pindar Wong [SIP/getonsip.com-0000007e], Dave Longley [SIP/6002-00000080]
+[Wed 10:07:33] <manu`>	voip: disconnect 81
+[Wed 10:07:34] <voip-wp>	Pindar Wong (SIP/getonsip.com-00000081) has left the conference.
+[Wed 10:07:36] <manu`>	voip: connections?
+[Wed 10:07:36] <voip-wp>	Conference connections: Manu Sporny [SIP/6000-0000007f], Evgeny [SIP/sip2sip.info-00000082], Pindar Wong [SIP/getonsip.com-0000007e], Dave Longley [SIP/6002-00000080]
+[Wed 10:07:57] <manu`>	voip: disconnect 7e
+[Wed 10:07:57] <voip-wp>	Pindar Wong (SIP/getonsip.com-0000007e) has left the conference.
+[Wed 10:07:59] <manu`>	voip: connections?
+[Wed 10:08:00] <voip-wp>	Conference connections: Manu Sporny [SIP/6000-0000007f], Evgeny [SIP/sip2sip.info-00000082], Dave Longley [SIP/6002-00000080]
+[Wed 10:08:55] *	pindarhk (743044ba@gateway/web/freenode/ip.116.48.68.186) has joined #webpayments
+[Wed 10:14:25] <manu`>	Topic: W3C TPAC and Web Payments announcement
+[Wed 10:14:15] <pindarhk>	Sorry I won't be able to make this meeting if it proceeds at such short notice
+[Wed 10:14:22] <dlongley>	manu`: I've got some good news from W3C TPAC -- an announcement.
+[Wed 10:15:00] <dlongley>	manu`: The TPAC registration form now includes the Web Payments work
+[Wed 10:14:31] <manu`>	https://www.w3.org/2002/09/wbs/35125/TPAC2014/?login
+[Wed 10:14:54] <pindarhk>	Excellent. Excellent Excellent
+[Wed 10:15:09] <pindarhk>	I'll inform those concerned in this part of the world!
+[Wed 10:15:14] <pindarhk>	In Asia Pacific that is
+[Wed 10:15:25] <dlongley>	manu`: This is excellent news so we can finally tell people to register and we can get a count of the people who are attending for the Web Payments work.
+[Wed 10:15:48] <dlongley>	manu`: We may want to make a lot of noise with the people who have already with TPAC to make sure to check that item if they want to join the Web Payments work.
+[Wed 10:15:50] <pindarhk>	Thanks to all ... this is now very clear
+[Wed 10:16:03] <pindarhk>	Back to use cases
+[Wed 10:08:57] <manu`>	Topic: Payment Processor Selection
+[Wed 10:11:54] <pindarhk>	Thanks for preparing this - https://www.w3.org/community/webpayments/wiki/index.php?title=UseCases&diff=916&oldid=913
+[Wed 10:09:01] <manu`>	First up is this use case: A buyer goes to a merchant website, and upon initiating a payment, the merchant's software transmits the merchant's payment processor options to the buyer's software. The buyer's software presents a choice of payment processors the buyer has previously registered with that are compatible with the merchant's payment processors.
+[Wed 10:09:45] <manu`>	Jorge's feedback: NASCAR problem
+[Wed 10:10:24] <voip-wp>	Pindar Wong (SIP/getonsip.com-00000083) has joined the conference.
+[Wed 10:10:45] <dlongley>	manu`: As with his other responses he doesn't understand that this is a solution to the NASCAR problem.
+[Wed 10:11:16] <voip-wp>	Dave Lehn (SIP/6003-00000084) has joined the conference.
+[Wed 10:11:31] <dlongley>	manu`: The payment processor choice information will be transmitted and only one button will be shown.
+[Wed 10:12:05] <dlongley>	dlongley: Let's not say it will be one button, rather it will only be showing the options that the user is interested in, which will also likely be configurable (defaults, etc.) in their user agent.
+[Wed 10:12:31] <manu`>	Michael Williams' feedback: not sure how different from "Use Case: When a customer intends to make a payment, they are given a choice to pick among the intersection of the payment processors they're registered with and the payment processors that are advertised by the merchant."
+[Wed 10:13:11] <manu`>	Michael is right, it's redundant
+[Wed 10:13:15] <manu`>	dlongley: Yeah, I agree.
+[Wed 10:13:15] <pindarhk>	So we should scrap it right?
+[Wed 10:13:24] <dlongley>	dlongley: yes
+[Wed 10:13:25] <pindarhk>	OK.
+[Wed 10:13:26] <manu`>	Response to Jorge - There is agreement that this isn't a NASCAR problem, there seems to be some misunderstanding around how the system is intended to work.
+[Wed 10:13:26] <dlongley>	manu`: Yes.
+[Wed 10:13:32] <manu`>	Response to Michael - Michael is correct, this does seem to duplicate 100% of the functionality expressed by the use case he refers to. We should strike this use case as a duplicate.
+[Wed 10:16:19] <manu`>	Topic: Wallet Portability
+[Wed 10:16:29] <manu`>	Next use case is - An entity (payer, payee, merchant, buyer) stores their wallet, credentials, and digital receipts with a particular identity/wallet/data storage provider. The entity decides to switch to a different identity/wallet/data storage provider and all of their wallet, receipt, and credential data comes with them.
+[Wed 10:17:24] <manu`>	Jorge's feedback - the capability of switching wallet hosting providers would be great, but I guess it would be hard to achieve if there is balance to be transferred that would imply one provider sending actual money to another.
+[Wed 10:17:33] <dlongley>	dlongley: We missed a use case -- we can go back to that one after this one.
+[Wed 10:18:56] <dlongley>	manu`: In the future if we're going to be able to do clearing in an immediate manner, then that means that this capability that money moves with all the other information has to hold. The technology we have right now can transfer all the information because it's all linked information, so we have mechanisms to transmit that or we don't think they are that difficult to create, and if we have a system to do clearing that actually moves money from one payment processor to another then the use case can be achievable.
+[Wed 10:19:20] <pindarhk>	Just because you can does it mean you should?
+[Wed 10:20:05] <pindarhk>	Unintended consequences?
+[Wed 10:21:06] <dlongley>	evgeny: One of the possibilities ... when you are recording payments, merchants can store other information -- so if we remove the word "their" then that opens up the use case.
+[Wed 10:23:04] <manu`>	now the use case reads: An entity (payer, payee, merchant, buyer) stores wallet, credentials, and digital receipts with a particular identity/wallet/data storage provider. The entity decides to switch to a different identity/wallet/data storage provider and all wallet, receipt, and credential data comes with them.
+[Wed 10:23:22] <dlongley>	manu`: Evgeny, does that updated text work for you?
+[Wed 10:23:26] <dlongley>	Evgeny: Yes.
+[Wed 10:24:09] <pindarhk>	OK... I think I understand what just happened and am fine with removal of 'their'
+[Wed 10:23:53] <manu`>	Topic: Payment Tokens
+[Wed 10:24:02] <manu`>	Next use case - A buyer visits a merchant's website and initiates a payment. Their payment processor presents them with an option to subscribe or add a pay-as-you-go token for future purchases from the merchant.
+[Wed 10:24:37] <dlongley>	manu`: This is effectively tokenization, it's a way to support subscription.
+[Wed 10:24:43] <manu`>	Jorge's feedback -  Pay-as-you-go tokens sound good, but what about choosing the payment processor first?
+[Wed 10:25:01] <dlongley>	manu`: We have other use cases for choosing the payment processor.
+[Wed 10:25:21] <pindarhk>	OK
+[Wed 10:25:24] <dlongley>	dlongley: Separation of concerns; this is an additional featur.e
+[Wed 10:25:33] <manu`>	dlongley: Yes, there is a separation of concerns here - pay as you go token is separate from choosing your payment processor
+[Wed 10:25:38] <manu`>	Response to Jorge - The selection of the payment process is handled by the following Use Case: When a payee intends to make a payment, they are given a choice to pick among the intersection of the payment processors they're registered with and the payment processors that are advertised by the merchant/payee.
+[Wed 10:25:58] <dlongley>	dlongley: This is also more than subscription.
+[Wed 10:26:12] <voip-wp>	Pindar Wong (SIP/getonsip.com-00000083) has left the conference.
+[Wed 10:26:18] <manu`>	tim: Is pay-as-you-go different from subscribe?
+[Wed 10:26:39] <voip-wp>	Pindar Wong (SIP/getonsip.com-00000085) has joined the conference.
+[Wed 10:27:11] <pindarhk>	No zero balance?
+[Wed 10:27:20] <manu`>	dlongley: Pay-as-you-go could be viewed as subscribe, but viewed as something else. As you pay for things on the website, you're willing to give additional confirmation steps. That's slightly different from subscribe, which is that you're signing up for a membership that will be charged to your account every so often, you could use pay-as-you-go to authorize subscription.
+[Wed 10:27:55] <manu`>	dlongley: You could implement this a variety of ways - you go to buy something on the site, your payment processor gives you the option to pre-authorize up to $10/month in transactions from the merchant/site.
+[Wed 10:28:10] <manu`>	dlongley: You could also hand over a payment token to the merchant, so different ways to do it.
+[Wed 10:28:35] <manu`>	tim: Subscribe is usually a monthly recurring charge, you agree to a certain amount to be withdrawn from you account on a certain interval.
+[Wed 10:28:53] <manu`>	tim: Pay as you go could be done in an ad-hoc manner. Those are potentially two separate products.
+[Wed 10:29:09] <manu`>	dlongley: Those are two different products, my only point is that they can be implemented using the same mechanism.
+[Wed 10:29:35] <dlongley>	mediaprophet: Subscription usually refers to a monthly reoccuring charge, you agree to some amount being taken out periodically. Pay-as-you-go is more like you pay when you use a product.
+[Wed 10:30:02] <dlongley>	manu`: I agree with Dave in that we found that when we went to implement this they work in the same way, but at a high-level we should say there are two use cases.
+[Wed 10:30:29] <pindarhk>	agree with manu's description to clarify the two different 'use' cases regardless that they may be imlemented the same way
+[Wed 10:31:00] <manu`>	dlongley: I still want you to show me a receipt when a purchase happens vs. I don't want to be shown a receipt, just do the purchase behind the scenes.
+[Wed 10:31:43] <voip-wp>	Pindar Wong (SIP/getonsip.com-00000086) has joined the conference.
+[Wed 10:31:55] <manu`>	tim: A subscription is a periodic basis, the other kind is a non-periodic basis (maybe with a cap)
+[Wed 10:32:22] <manu`>	tim: Is a payment processor required to make a transfer that then gives credits? Rather than offer pay as you go.
+[Wed 10:32:43] <dlongley>	manu`: Let's split the use case because it confuses what we're trying to do.
+[Wed 10:33:19] <dlongley>	manu`: One will be for a regular subscription, where the customer isn't informed asked for payment, the other is pay-as-you-go the customer needs to be shown a receipt or asked if it's ok to send the money.
+[Wed 10:33:20] <pindarhk>	Yup
+[Wed 10:33:21] <mediaprophet>	+1
+[Wed 10:33:27] <pindarhk>	+1
+[Wed 10:35:52] <manu`>	so, here's the first part of the split use case - A buyer visits a merchant's website and initiates a payment. Their payment processor presents them with an option to subscribe to a merchant's product or service, which will result in periodic payments at a known value to the merchant.
+[Wed 10:36:10] <pindarhk>	works for me
+[Wed 10:36:16] <mediaprophet>	+1
+[Wed 10:36:27] <dlongley>	+1
+[Wed 10:36:49] <mediaprophet>	actually, agreed valued.
+[Wed 10:37:18] <mediaprophet>	or known value to the merchant? does this mean the customer knows the value too?
+[Wed 10:38:32] <manu`>	dlongley: There is a distinction between these two uses cases, when you're doing a subscription - you're pushing to merchants account. With pay-as-you-go, merchant pulls money from  customer.
+[Wed 10:39:04] <manu`>	dlongley: With in-app payments, it's the merchant that's going to be requesting payment. The token has to exist, the merchant is going to be using a back-end payment initiation request, which uses the token.
+[Wed 10:39:17] <manu`>	tim: Is it similar to a credit card?
+[Wed 10:39:34] <manu`>	dlongley: In this case, you're not transmitting credit card information to the merchant.
+[Wed 10:39:48] <manu`>	tim: Is this a limitless pay as you go token?
+[Wed 10:40:19] <manu`>	dlongley: We're not at all suggesting it should be limitless. There are some set of parameters that have to be met. For example, "This pay as you go token is limited to $10/month"
+[Wed 10:40:31] <manu`>	dlongley: There could be other parameters that fit in there as well, it's definitely not limitless.
+[Wed 10:40:53] <manu`>	tim: In the credit card world, they can preauthorize, limit up to a certain amount.
+[Wed 10:41:21] <manu`>	dlongley: That's not what preauth does, preauth puts funds aside for the merchant. It's not intended to do what we're talking about here.
+[Wed 10:41:51] <pindarhk>	Sorry I'm lost. What's the problem?
+[Wed 10:42:22] <manu`>	dlongley: We could say it's similar, we can't say it's a precedent, but we can't say it's the same thing.
+[Wed 10:42:27] <voip-wp>	Pindar Wong (SIP/getonsip.com-00000085) has left the conference.
+[Wed 10:42:42] <dlongley>	manu`: Credit card preauth is a hold of funds to ensure the merchant can get their funds. It's not the same thing as the pay-as-you-go thing we're discussing right now.
+[Wed 10:42:56] <voip-wp>	Pindar Wong (SIP/getonsip.com-00000087) has joined the conference.
+[Wed 10:43:12] <dlongley>	dlongley: It prevents the customer from being able to spend their own credit.
+[Wed 10:43:34] <dlongley>	manu`: Here the merchant isn't placing a hold on the funds, but they are able to charge up to, for instance, $10/month.
+[Wed 10:43:42] <voip-wp>	Pindar Wong (SIP/getonsip.com-00000088) has joined the conference.
+[Wed 10:43:49] <dlongley>	mediaprophet: Is there a clearing issue here?
+[Wed 10:46:00] <dlongley>	manu`: The credit card issue is a merchant business model issue -- the idea is to put a hold on some amount of money to ensure the merchant can collect their funds. The merchant can hold those funds between when the customer says they intend to purchase and when they actually do -- or they can delay shipment, etc. this gets complicated, etc.
+[Wed 10:47:42] <manu`>	dlongley: This is intended to work almost exactly the same way as an interactive purchase. It's designed to be a non-interactive way of buying. You're just skipping some steps here.
+[Wed 10:47:45] <voip-wp>	Pindar Wong (SIP/getonsip.com-00000087) has left the conference.
+[Wed 10:47:48] <voip-wp>	Pindar Wong (SIP/getonsip.com-00000086) has left the conference.
+[Wed 10:48:07] <pindarhk>	Make a side note w.r.t. hold of funds
+[Wed 10:48:24] <pindarhk>	kick it to the IG
+[Wed 10:48:54] <manu`>	dlongley: We've had discussions about escrow wrt. hold on funds, etc. We dont' have use cases for it yet.
+[Wed 10:49:08] <pindarhk>	Good point Tim.
+[Wed 10:49:15] <dlongley>	manu`: Ok, let's make a side note that we don't have that use case and then head back to the current use case.
+[Wed 10:49:41] <manu`>	So, here's the split use case - A buyer visits a merchant's website and initiates a payment. Their payment processor presents them with an option to assign a pay-as-you-go token with a specific spending limit for future purchases with the merchant. An option is also presented to require the display of a receipt when a purchase occurs, or to perform the purchase in the background with no display of the purchase process.
+[Wed 10:49:59] <mediaprophet>	+1
+[Wed 10:50:04] <dlongley>	+1
+[Wed 10:50:12] <pindarhk>	+1
+[Wed 10:50:49] <pindarhk>	do we say no display or no interaction?
+[Wed 10:51:11] <pindarhk>	thanks
+[Wed 10:51:18] <mediaprophet>	:)
+[Wed 10:52:08] <pindarhk>	no interruptive display
+[Wed 10:52:09] <manu`>	dlongley: What about in-app purchase process - it could be non-interactive wrt. the payment processor, but interactive wrt. the game.
+[Wed 10:52:15] <mediaprophet>	not required.
+[Wed 10:52:19] <mediaprophet>	ie: optional
+[Wed 10:52:52] <pindarhk>	I like it
+[Wed 10:52:57] <manu`>	So, new language - A buyer visits a merchant's website and initiates a payment. Their payment processor presents them with an option to assign a pay-as-you-go token with a specific spending limit for future purchases with the merchant. An option is also presented to require the display of a receipt when a purchase occurs, or to perform the purchase in the background with no interactive purchase process required.
+[Wed 10:53:01] <pindarhk>	Don't forget this is a huge business
+[Wed 10:53:27] <pindarhk>	+1
+[Wed 10:53:27] <dlongley>	+1
+[Wed 10:54:03] <pindarhk>	if the parent sets it up then it should be fine
+[Wed 10:55:20] <dlongley>	manu`: We looked into this quite a bit, there are number of online child protection acts, etc. assuming we meet those regulations, parents can set up children with certain accounts with amounts of money or they can assign pay-as-you-go tokens with spending limits to their children, and optionally the payment processor can send some kind of notification (email/text) when purchases happen so parents can follow purchase history.
+[Wed 10:55:28] <dlongley>	mediaprophet: What about authorization aspect?
+[Wed 10:56:03] <dlongley>	manu`: There is always an authorization aspect, and there are multiple ways to handle it, I think we cover them, subscription, pay-as-you-go, etc. and on top of that you can do "notify me when this token is used, etc."
+[Wed 10:56:19] <dlongley>	manu`: All those things build off of these base use cases and are value adds that a payment processor can do.
+[Wed 10:56:48] <dlongley>	manu`: What I thought you might be saying is "Why don't we add use cases for children spending limits, etc." but I don't know if that would buy us much except that people know it works for that sort of use case.
+[Wed 10:56:50] <pindarhk>	You can build on these base use cases
+[Wed 10:57:23] <pindarhk>	for other cases that we've not thought of yet or models that have yet to emerge
+[Wed 10:57:41] <dlongley>	mediaprophet: I was just saying parents may not want to allow children to use these preauthorized tokens (?).
+[Wed 10:57:58] <manu`>	Topic: Legacy Payment Systems
+[Wed 10:58:03] <manu`>	next up - Design Criteria: Ensure the Web payments solution can provide an abstraction layer that integrates with existing payment methods (eg: VISA, Mastercard, ACH, PayPal, debit card, Premium SMS, etc.)
+[Wed 10:58:23] <manu`>	Jorge's feedback - Compatibility is always good, but sometimes complicated, and even more for the entry-level payment provider trying to achieve PCI compliance. Excluding SMS, this is very high-end, and doesn't apply to the 2.5 billion unbanked.
+[Wed 10:58:58] <dlongley>	manu`: While true, focusing on 2.5 billion unbanked is important.
+[Wed 10:59:07] <mediaprophet>	mediaprophet: with the micro-payment (pre-authorisation) use-case, whilst in many use-cases of that particular high-level use-case - the user may not want to be bothered.  one area of use-cases, may be children using a game that has ‘in-app’ purchases; in which case, authorisation may be required (by the parent, for example.).  Sounds like we’ve got that covered in other areas though. (per discussion with Manu.. )
+[Wed 10:59:30] <voip-wp>	Pindar Wong (SIP/getonsip.com-00000088) has left the conference.
+[Wed 10:59:38] <manu`>	dlongley: One comment in response to entry level payment providers, we are not saying a payment provider MUST support legacy payment systems... they may support legacy ones, they may not.
+[Wed 10:59:39] <pindarhk>	agree with must->may finesse
+[Wed 11:00:02] <voip-wp>	Pindar Wong (SIP/getonsip.com-00000089) has joined the conference.
+[Wed 11:00:13] <dlongley>	manu`: If a payment processor wants to come online and only support bitcoin, that's fine. If one wants to support the full array of options including shipping gold bullion, they may do so.
+[Wed 11:00:43] <manu`>	Response to Jorge - Focusing on the 2.5B unbanked is a priority for the group, but in order to get traction, we can't ignore also supporting legacy systems. We believe this is achievable given the right level of abstraction, and have experimental software implementation proofs of concept to demonstrate integration with legacy systems.
+[Wed 11:00:56] <pindarhk>	yup
+[Wed 11:01:17] <mediaprophet>	+1
+[Wed 11:01:27] <manu`>	dlongley: It's fine, I do think we should mention it being difficult for new payment processors. we should mention that it's not required for new payment processors to support older legacy systems, and if they did support it it would be compatible.
+[Wed 11:01:41] <pindarhk>	I'm not comfortable with the defniion of 'new'
+[Wed 11:02:27] <mediaprophet>	how about emerging?
+[Wed 11:02:40] <dlongley>	dlongley: We can use "entry-level" like Jorge said.
+[Wed 11:02:49] <manu`>	this is what we have now - Response to Jorge - Focusing on the 2.5B unbanked is a priority for the group, but in order to get traction, we can't ignore also supporting legacy systems. We believe this is achievable given the right level of abstraction, and have experimental software implementation proofs of concept to demonstrate integration with legacy systems. We are not saying a payment provider MUST support legacy payment systems. They may support legacy ones, they may not.
+[Wed 11:02:55] <pindarhk>	I like this much better
+[Wed 11:02:59] <dlongley>	+1
+[Wed 11:03:48] <manu`>	Topic: Multiple authorization levels
+[Wed 11:04:01] <manu`>	Currently we have: Do not prevent multiple levels of security based on the type of transaction being performed. No auth for small amounts, PIN auth for medium amounts, Secure Element for large amounts.
+[Wed 11:04:16] <manu`>	Steven Rowat and Michael's feedback is: would it be possible to avoid the opening double negative, say by using a single positive, such as "Allow multiple levels..." and "Allow the implementation..."  ?
+[Wed 11:04:26] <manu`>	basically, changing it to this: Design Criteria: Allow multiple levels of security based on the type of transaction being performed. No auth for small amounts, PIN auth for medium amounts, Secure Element for large amounts.
+[Wed 11:04:51] <voip-wp>	Pindar Wong (SIP/getonsip.com-0000008a) has joined the conference.
+[Wed 11:04:56] <manu`>	dlongley: We explicitly chose the double negative, we didn't want to prevent it, we didn't want to put it in the spec.
+[Wed 11:05:58] <dlongley>	dlongley: "Allow payment processors to choose to use multiple levels..."
+[Wed 11:07:34] <manu`>	This is what I put in there - Allow payment processors to choose to use multiple levels of security based on the type of transaction being performed. For example: No auth for small amounts, PIN auth for medium amounts, Secure Element for large amounts.
+[Wed 11:07:40] <dlongley>	dlongley: Allow payment processors to optionally define multiple levels of required authorization based on the type of transaction being performed. No auth for small amounts, PIN auth for medium amounts, Secure Element for large amounts.
+[Wed 11:07:41] <mediaprophet>	“allow payment processor to define multiple levels of security based on the type of transaction being performed."
+[Wed 11:08:45] <pindarhk>	still thinking
+[Wed 11:10:02] <dlongley>	dlongley: "Allow payment processors to define the required level of authorization for particular transactions based on their preferences and local regulations."
+[Wed 11:10:05] <manu`>	manu: I have no strong feelings, Dave's may be overly specific, Tim's is less specific, don't know if that's good..
+[Wed 11:10:11] <pindarhk>	define could be zero
+[Wed 11:10:41] <pindarhk>	OK ... that works for me
+[Wed 11:10:42] <manu`>	So, this is what we're settling on? Design Criteria: Allow payment processors to define the required level of authorization for particular transactions based on their preferences and local regulations. For example: No auth for small amounts, PIN auth for medium amounts, Secure Element for large amounts.
+[Wed 11:11:03] <dlongley>	+1
+[Wed 11:11:03] <pindarhk>	+1
+[Wed 11:11:07] <mediaprophet>	+1
+[Wed 11:11:11] <Jonny_>	+1
+[Wed 11:11:39] <manu`>	voip: connections?
+[Wed 11:11:39] <voip-wp>	Conference connections: Pindar Wong [SIP/getonsip.com-0000008a], IAX2/diamondcard-1269, Evgeny [SIP/sip2sip.info-00000082], Dave Longley [SIP/6002-00000080], Manu Sporny [SIP/6000-0000007f], Pindar Wong [SIP/getonsip.com-00000089], Dave Lehn [SIP/6003-00000084]
+[Wed 11:11:47] *	manu` Jonny_ are you Evgeny?
+[Wed 11:12:02] *	dlongley heh, yeah, sorry pindar!
+[Wed 11:12:04] <dlehn>	+1
+[Wed 11:12:31] <manu`>	Topic: Smart Contracts
+[Wed 11:12:47] <manu`>	We currently have - Design Criteria: Do not prevent the implementation of simple digital contracts and smart contracts.
+[Wed 11:12:48] <mediaprophet>	ECHO - if not talking please mute MIC
+[Wed 11:12:59] <manu`>	Steven Rowat's feedback - Would it be possible to avoid the opening double negative, say by using a single positive, such as "Allow multiple levels..." and "Allow the implementation..."  ?
+[Wed 11:13:10] <manu`>	Michael Williams's feedback - double negative "don't prevent" is confusing, maybe allow?
+[Wed 11:13:35] *	Jonny__ (4d4b9801@gateway/web/freenode/ip.77.75.152.1) has joined #webpayments
+[Wed 11:13:45] <dlongley>	dlongley: "Ensure the technology permits the optional implementation of simple digital contracts and smart contracts."
+[Wed 11:14:56] <manu`>	Evgeny: Let's not forget that there are other partners that may require authorization, let's not restrict it to just payment processors.
+[Wed 11:15:25] *	Jonny_ has quit (Ping timeout: 246 seconds)
+[Wed 11:15:27] <pindarhk>	very good point
+[Wed 11:15:47] <manu`>	Evgeny: So, we shouldn't use 'choose', we should use 'define' because it enables payment processors to create new mechanisms of authorization.
+[Wed 11:15:50] <voip-wp>	Pindar Wong (SIP/getonsip.com-00000089) has left the conference.
+[Wed 11:17:04] <pindarhk>	Can you paste the text?
+[Wed 11:17:34] <manu`>	Pindar, currently we have - Design Criteria: Ensure the technology allows the optional implementation of simple digital contracts and smart contracts.
+[Wed 11:17:43] <manu`>	tim: What about 'support'?
+[Wed 11:17:55] <manu`>	dlongley: We specifically don't want to do that because we don't want to build that into this version of the technology.
+[Wed 11:18:09] <dlongley>	dlongley: "Ensure the technology allows simple digital contracts or smart contracts to be layered on top of it" ?
+[Wed 11:18:19] <pindarhk>	Thanks
+[Wed 11:19:04] <manu`>	dlongley: Trying to think about a way of saying "Does not restrict".
+[Wed 11:19:29] <manu`>	tim: We may want to specify that this goes w/ a particular release.
+[Wed 11:19:41] <manu`>	tim: Smart contracts / parametric contracts may be with a future release.
+[Wed 11:19:49] <dlongley>	dlongley: "Ensure the technology can be later extended to support ..." ?
+[Wed 11:20:08] <dlongley>	dlongley: "Ensure the technology can be extended or does not prohibit the implementation of..."?
+[Wed 11:20:38] <pindarhk>	Evolve
+[Wed 11:21:02] <dlongley>	manu`: We want to build in a path of evolution like pindar says.
+[Wed 11:21:08] <manu`>	dlongley: We want people to be able to innovate on top of version 1 Web Payments technology, so the design criteria are a way of trying to get that to happen.
+[Wed 11:21:14] <voip-wp>	Pindar Wong (SIP/getonsip.com-0000008b) has joined the conference.
+[Wed 11:21:43] <mediaprophet>	“enable interoperability with digital contracts, parametric and smart contract projects with aligned design criteria'
+[Wed 11:21:47] <mediaprophet>	um.
+[Wed 11:22:16] <manu`>	So, here's the current proposal: Ensure the technology can be extended or does not prohibit the implementation of simple digital contracts and smart contracts.
+[Wed 11:22:20] <pindarhk>	I like the last version of Dave's text
+[Wed 11:22:25] <pindarhk>	OK works for me
+[Wed 11:22:30] <dlongley>	+1
+[Wed 11:22:40] <pindarhk>	+1
+[Wed 11:22:43] <mediaprophet>	+1
+[Wed 11:23:18] <manu`>	Topic: Machine-readable licenses
+[Wed 11:23:36] <manu`>	We currently have Use Case: A payer purchases access to a service on a payee's website. Included in their digital receipt is a machine-readable license (rights and responsibilities) that indicates what kind of access they've been granted and for how long. The payee can use this machine-readable license to enforce access to the service.
+[Wed 11:24:12] <manu`>	Feedback from Adrian is that this shouldn't be a version 1.0 feature.
+[Wed 11:24:23] <manu`>	Response to Adrian could be -While it isn't required for the first iteration, the use case can be achieved via a single vocabulary term and URL in the digital receipt. The group shouldn't attempt to define the vocabulary terminology to express the machine-readable license, but rather provide a hook for another group such as the ODRL community or Creative Commons to define what this looks vocabulary looks like.
+[Wed 11:24:38] <mediaprophet>	did we miss: “ A payment processor tracks mandatory financial regulatory events and submits machine-readable information to a regulator-provided URL to automatically meet regulatory compliance.”
+[Wed 11:25:58] <manu`>	dlongley: I think we might want to mention that JSON-LD has a lot to do with this use case. We use a technology that allows domain-specific vocabularies to be included into digital receipts, there's not much that needs to be done to achieve the use case.
+[Wed 11:26:18] <pindarhk>	One of the problems is that the capabilities of JSON-LD is not widely known (yet)
+[Wed 11:26:39] <manu`>	manu: It makes it sound like we are going to define the license/rights vocabulary.
+[Wed 11:26:48] <manu`>	dlongley: Maybe this should be a design criteria instead of a use case.
+[Wed 11:26:55] <pindarhk>	Agree that it should be a design criteria
+[Wed 11:26:58] <pindarhk>	smart move
+[Wed 11:28:24] <pindarhk>	for tading in virtual goods for example
+[Wed 11:28:40] <dlongley>	dlongley: "Allow the digital receipt format to include domain-specific vocabulary information to support use cases such as including machine-readable license information that can be later used to obtain access to a service."
+[Wed 11:29:16] <manu`>	tim: Why are we being specific about licenses? Perishable goods are a bigger industry, why not them? For example, food needs to be tracked, this is about generic linked data expression in digital licenses.
+[Wed 11:29:16] <pindarhk>	Yup ... I like this wording
+[Wed 11:31:52] *	Jonny__ has quit (Ping timeout: 246 seconds)
+[Wed 11:32:07] <pindarhk>	GS-1 identifiers
+[Wed 11:32:42] <manu`>	So, this? Allow the digital receipt format to include domain-specific vocabulary information to support use cases such as including machine-readable licenses, nutrition and perishability information, UPC/GS1 identifiers, tax classification, and other information that can be later used to obtain access to a service.
+[Wed 11:32:48] <pindarhk>	these are just examples
+[Wed 11:34:01] <mediaprophet>	some receipt examples are here (for later, offline review): https://nrf.com/resources/retail-technology-standards/xml-schemas
+[Wed 11:34:56] <manu`>	Response to Adrian - This was meant to be a general statement on the requirements around data model extensibility. The use case has been converted to a design criteria and been rewritten to capture the intent of the original use case.
+[Wed 11:36:20] <manu`>	Topic: Unclassified/Unreviewed use cases
+[Wed 11:36:33] <manu`>	I don't think we need to do anything about either one.
+[Wed 11:36:39] <manu`>	The first one is: When a customer intends to make a payment, it is possible to pick a payment processor trusted by the merchant as an intermediate proxy for a payment processor not trusted by the merchant.
+[Wed 11:37:39] <dlongley>	manu`: This requires decentralized clearing which we don't have in here for v1.
+[Wed 11:37:40] <pindarhk>	Sorry... what's he trying to say... I don't understand
+[Wed 11:37:50] <dlongley>	tim: I understand.
+[Wed 11:37:52] <pindarhk>	OK
+[Wed 11:37:56] <manu`>	Response to Michael - This requires a decentralized clearing mechanism and we don't have that yet, it's a version 2 feature. It's important, we want to do it, we don't have the technical bandwidth to solve this problem and all of the other problems.
+[Wed 11:38:29] <pindarhk>	more trust helps ;)
+[Wed 11:38:32] <pindarhk>	works for me
+[Wed 11:38:38] <dlongley>	+1
+[Wed 11:38:43] <mediaprophet>	+1
+[Wed 11:38:47] <manu`>	Next use case: The buyer uses their payment processor's website to set a spending limit (and/or other limitations) for a particular merchant or set or merchants. Later, when the buyer clicks buy on the merchant's website, the purchase process is completed immediately (assumed consent) if the offer price is within the spending limit (and/or other limitations).
+[Wed 11:38:49] <pindarhk>	+1
+[Wed 11:39:29] <manu`>	manu: This is a duplicate use case?
+[Wed 11:39:49] <manu`>	dlongley: We may want to specify other limitations, can we move that into the prior pay-as-you-go token use case?
+[Wed 11:39:53] <mediaprophet>	within agree terms.
+[Wed 11:39:58] <pindarhk>	Purchase bomb attack?
+[Wed 11:40:17] <mediaprophet>	only within agreed terms
+[Wed 11:40:47] <manu`>	Response to Dave Longley: This is largely a duplicate of the pay-as-you-go token use case, the only bit that we could add to the pay-as-you-go use case is the ("and/or other limitations") language.
+[Wed 11:41:53] <pindarhk>	For example: very small deltas in offer price by a dodgy merchant?
+[Wed 11:43:16] <manu`>	manu: You can put other limits on it - per purchase, per month, etc. to protect against purchase bombs.
+[Wed 11:43:52] <dlongley>	dlongley: Or you can say up to $10 can be spent at this merchant, but for any single offer, only up to $1 can be spent, for instance.
+[Wed 11:44:23] <dlongley>	dlongley: A variety of parameters can be offered by payment processors to their users to manage convenience and trust.
+[Wed 11:44:34] <manu`>	I modified the pay as you go use case a bit: A buyer visits a merchant's website and initiates a payment. Their payment processor presents them with an option to assign a pay-as-you-go token with a specific spending limit (and/or other limitations) for future purchases with the merchant. An option is also presented to require the display of a receipt when a purchase occurs (and/or other interactions), or to perform the purchase in the background with no interactive purchase process required.
+[Wed 11:45:18] <pindarhk>	thinking
+[Wed 11:45:44] <pindarhk>	ok that works for me tks!
+[Wed 11:46:21] <dlongley>	manu`: I think we're done. Does anyone think we aren't?
+[Wed 11:46:21] <dlongley>	Cheering / celebration.
+[Wed 11:46:45] <manu`>	Topic: Voting on the Use Cases
+[Wed 11:47:10] <dlongley>	manu`: We can clean it up in the wiki and go through another set of comments -- but I don't think that would be a good idea at this point because we've discussed them to death.
+[Wed 11:47:30] <dlongley>	manu`: Let's just put them in a document and see if the community agrees to it; it's not a final document but let's try to get agreement on it being a solid starting document.
+[Wed 11:47:44] <dlongley>	manu`: The alternative is allowing everyone to vote on each individual use case, which might be an issue.
+[Wed 11:47:57] <pindarhk>	I prefer a vote on the entire document, and allow people to note objections for each use case
+[Wed 11:48:37] <pindarhk>	vote on whole document but not objections
+[Wed 11:48:47] <manu`>	dlongley: I think we should allow people to make notes for each individual use case. So, vote on document, then leave feedback on individual use cases that can be integrated into next revision of the document.
+[Wed 11:48:59] <manu`>	voip: connections?
+[Wed 11:48:59] <voip-wp>	Conference connections: Pindar Wong [SIP/getonsip.com-0000008a], IAX2/diamondcard-1269, Dave Longley [SIP/6002-00000080], Manu Sporny [SIP/6000-0000007f], Pindar Wong [SIP/getonsip.com-0000008b], Dave Lehn [SIP/6003-00000084]
+[Wed 11:51:24] <dlongley>	manu`: The vote is a yay or nay for the document and then there can be comments on each individual use case.
+[Wed 11:51:24] <mediaprophet>	+1
+[Wed 11:51:29] <pindarhk>	+1
+[Wed 11:51:32] <dlongley>	manu`: We can't go through another round of comments because it will take too long.
+[Wed 11:51:38] <dlongley>	+1
+[Wed 11:51:52] <manu`>	PROPOSAL: There will be a vote on all of the use cases that the group has revised over the past 3 months with an option to make additional comments on each individual use case.
+[Wed 11:51:56] <pindarhk>	Good way fwd.
+[Wed 11:52:03] <dlongley>	+1
+[Wed 11:52:04] <manu`>	+1
+[Wed 11:52:06] <dlehn>	+1
+[Wed 11:52:07] <pindarhk>	+1
+[Wed 11:52:08] <mediaprophet>	+1
+[Wed 11:52:13] <manu`>	RESOLVED: There will be a vote on all of the use cases that the group has revised over the past 3 months with an option to make additional comments on each individual use case.
+[Wed 11:52:19] <pindarhk>	I think we're done! :)
+[Wed 11:52:24] <pindarhk>	HURRAY!
+[Wed 11:52:27] <dlongley>	yay!
+[Wed 11:53:33] <manu`>	PROPOSAL: Open a vote by the end of the week on the whether or not to accept the use case document as the CG's official position, the vote will be open for 2 weeks from the time the polls open.
+[Wed 11:53:36] <manu`>	+1
+[Wed 11:53:37] <dlongley>	+1
+[Wed 11:53:40] <mediaprophet>	+1
+[Wed 11:53:51] <dlehn>	+1
+[Wed 11:53:51] <pindarhk>	+1
+[Wed 11:53:53] <manu`>	RESOLVED: Open a vote by the end of the week on the whether or not to accept the use case document as the CG's official position, the vote will be open for 2 weeks from the time the polls open.
+[Wed 11:53:59] <pindarhk>	Thank you one and all... thanks Tim for staying up so very late for you.
+[Wed 11:54:06] <dlongley>	dlongley: yeah, thanks tim!
+[Wed 11:54:13] <pindarhk>	Cheers! :)
+[Wed 11:54:16] <voip-wp>	Manu Sporny (SIP/6000-0000007f) has left the conference.
+[Wed 11:54:17] <voip-wp>	Dave Longley (SIP/6002-00000080) has left the conference.
+[Wed 11:54:20] <mediaprophet>	Cheers ;)
