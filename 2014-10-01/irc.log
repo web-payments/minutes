@@ -1,0 +1,114 @@
+[Wed 10:05:30] <m4nu>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2014Sep/0160.html
+[Wed 10:05:34] <dlongley>	scribe: dlongley
+[Wed 10:06:01] *	adrianhopebailie (29a15e02@gateway/web/freenode/ip.41.161.94.2) has joined #webpayments
+[Wed 10:06:11] <dlongley>	m4nu: Call should be short today; we basically want to propose an agenda for W3C TPAC.
+[Wed 10:06:15] <m4nu>	Topic: Status of Web Payments Use Cases Vote
+[Wed 10:06:21] <m4nu>	http://lists.w3.org/Archives/Public/public-webpayments/2014Sep/0155.html
+[Wed 10:07:29] <dlongley>	m4nu: The call for votes went out last Friday, we have six people voting so far, so six different organizations. We should send out a reminder this week to make sure everyone tries to vote. So it closes Oct 10th, which is the same day the Web Payments Activity vote closes. We're a couple of days into the vote, we've gotten really good feedback so far. Adrian, your feedback was really good.
+[Wed 10:07:42] <dlongley>	m4nu: We'll may wait until after the vote to post all the feedback together.
+[Wed 10:07:51] <dlongley>	m4nu: Any questions or concerns about the votes or use cases so far?
+[Wed 10:07:55] <dlongley>	none
+[Wed 10:08:38] <dlongley>	m4nu: We'll send out a reminder email to everyone in the group as well as letting every other org we've been in contact with (250+) to let them know what's going on with the two votes (Activity Charter and CG)
+[Wed 10:08:49] <dlongley>	m4nu: It seems some orgs are completely unaware the vote is happening or they've missed it.
+[Wed 10:09:09] <m4nu>	Topic: Agenda Bashing for W3C TPAC
+[Wed 10:09:38] <dlongley>	m4nu: We have eight hours of meeting time split over two days, two hours in the morning and two in the afternoon...
+[Wed 10:09:41] <m4nu>	http://www.w3.org/2014/11/TPAC/
+[Wed 10:10:08] <m4nu>	https://www.w3.org/wiki/TPAC2014/ad-hoc-meetings
+[Wed 10:10:25] <dlongley>	m4nu: There are ad-hoc meetings that can happen, so for example, on Monday and Tuesday there will be ad-hoc meetings, between the official Web Payments IG meeting.
+[Wed 10:10:38] <dlongley>	m4nu: Two hours of IG meeting, 4 hours of ad-hoc meetings, and then 2 hours of IG meeting again.
+[Wed 10:11:06] <m4nu>	http://www.w3.org/2014/11/TPAC/#Monday/Tuesday%20Groups
+[Wed 10:11:24] <dlongley>	m4nu: The Web Payments IG group is there on Tuesday, see link in IRC.
+[Wed 10:11:48] <dlongley>	m4nu: There's a list of people who have registered, but since W3C was late getting the item there on the agenda, people missed it when they registered so we have to tell those people to go back and re-register.
+[Wed 10:12:26] <dlongley>	m4nu: So 9am-11am is the start of the IG meeting from 11am-3pm ... we could create identity credentials group meetings as a break out session and then the afternoon is more IG meetings.
+[Wed 10:12:39] <dlongley>	m4nu: I'm assuming that we're going to be doing payments use cases for most of the two days in the IG.
+[Wed 10:12:49] <dlongley>	m4nu: I'm assuming we'll be doing credentials use cases in the identity meetings.
+[Wed 10:13:02] <dlongley>	m4nu: I'm expecting a lot of time will be spent discussing use cases and the implications around those.
+[Wed 10:13:18] <adrianhopebailie>	Am I wrong that there is time set aside on Mon and Tues?
+[Wed 10:13:20] <dlongley>	m4nu: Is there anything else we should be focusing on other than use cases, such as a roadmap, doing demos, etc.
+[Wed 10:14:08] <dlongley>	m4nu: There's a specific time set aside Mon and Tue for the web payments IG which is member only and that's 9-11am and 3-5/6pm. And that's for the official work. The non-official work can happen elsewhere.
+[Wed 10:14:32] <dlongley>	m4nu: I think it would be smart for us to do one break out session for identity/credentials on one day and one for web payments on another day so people who aren't in the IG can attend.
+[Wed 10:14:47] <dlongley>	m4nu: If there are orgs that want to attend but can't, then we might want to have another session (web payments) in the break out room.
+[Wed 10:14:57] <adrianhopebailie>	Having some time set aside for credentials/identity is probabaly a good idea
+[Wed 10:14:58] <adrianhopebailie>	+1
+[Wed 10:15:17] <dlongley>	m4nu: Adrian, will you be at TPAC?
+[Wed 10:15:44] *	dlongley not for me
+[Wed 10:16:32] <dlongley>	m4nu: The W3C TPAC thing is a pretty important meeting to make sure we bring everyone up to speed on what's been going on, so what's the general question ...
+[Wed 10:16:47] <m4nu>	Adrian: I'm talking to my board about becoming a W3C member, and then attending W3C TPAC.
+[Wed 10:17:01] <m4nu>	dlongley: Maybe we should do some demos. Show people the direction that this stuff could head in.
+[Wed 10:17:14] <m4nu>	dlongley: IGs going to think about which WGs should be created.
+[Wed 10:18:25] <m4nu>	dlongley: The IGs going to create WGs for the identity work?
+[Wed 10:18:29] <m4nu>	Yes, that's the plan.
+[Wed 10:19:01] <m4nu>	dlongley: We need to make sure the W3C members in the IG are well aware that the identity work has been split off in the CGs
+[Wed 10:19:19] <m4nu>	dlongley: They need to understand that we still need that work to happen officially. We should also talk about Roadmaps.
+[Wed 10:19:27] <m4nu>	dlongley: We should talk about stuff that's out of scope as well.
+[Wed 10:19:40] <m4nu>	dlongley: Like, for example, decentralized clearing solutions - out of scope for version 1.
+[Wed 10:20:07] <m4nu>	dlongley: We should talk about a roadmap - we have a lot of these things on the radar, they have been discussed, there is a plan. We want the work to be done in an iterative process.
+[Wed 10:20:29] <dlongley>	m4nu: This is bringing up the concept that we should have a roadmap discussion
+[Wed 10:20:40] <m4nu>	Start with a brief background/history on what got us to where we are today.
+[Wed 10:20:55] <m4nu>	Do a quick overview of the use cases w/o discussion.
+[Wed 10:21:16] <m4nu>	Adrian: Identify which of the payments use cases are dependent on the credentials work and which ones aren't.
+[Wed 10:21:43] <m4nu>	dlongley: We might want to mention a roadmap fairly early, people might have questions on things on the roadmap. Maybe we can direct the discussion on things that should be handled in first version of the work.
+[Wed 10:22:31] <m4nu>	dlongley: We can discuss this as historical background - these are the things that came up, these are the ways they were split out, these are for future versions, etc. We could then go into use cases. We need to make sure that people don't feel this is set in stone, it's just how the work has evolved.
+[Wed 10:24:38] <m4nu>	Ok, so first 2 hour chunk is: 1. Overview of W3C and the process, 2. History of Web Payments at W3C and CG work, 3. Where we are now, what we need to accomplish at W3C TPAC 4. Potential Road Map
+[Wed 10:25:27] <m4nu>	dlongley: Somewhere in there, we'll be talking about splitting use cases into version 1, and "later"
+[Wed 10:25:45] <m4nu>	dlongley: We found that there are two general areas that we need to work on - payments stuff and identity stuff.
+[Wed 10:26:19] <m4nu>	dlongley: The breakout session has more to do w/ whether or not people are available.
+[Wed 10:26:57] *	Evgeny (4d4b997a@gateway/web/freenode/ip.77.75.153.122) has joined #webpayments
+[Wed 10:27:04] <voip-wp>	Evgeny (SIP/sip2sip.info-000000a8) has joined the conference.
+[Wed 10:27:15] <dlongley>	m4nu: We need to have two break out sessions, identity+payments, for the people not deeply involved in the IG work.
+[Wed 10:27:45] <dlongley>	m4nu: We hold the payments thing on Tuesday in the middle of the day, and that will be a basic overview for people not directly involved in the work; a high-level overview of what's happened over the last two days, here are some resources to track the work, etc.
+[Wed 10:28:17] <dlongley>	m4nu: I was hoping the break out session would try and summarize what's happening in the IG.
+[Wed 10:28:30] <dlongley>	m4nu: I think the only way we can schedule this is credentials break out on day one and web payments break out on day two.
+[Wed 10:29:03] <dlongley>	m4nu: We could do identity on both Monday and Tuesday and payments on Wednesday.
+[Wed 10:29:39] <m4nu>	dlongley: As long as there are enough people for payments on wednesday, that aren't going to miss out - most of focus will be on payments in official group. There is less time for the identity stuff to be discussed.
+[Wed 10:30:17] <dlongley>	m4nu: That will give us four hours of time to do face-to-face on identity and around those two meetings there will be payments, 8 hours total on payments.
+[Wed 10:30:33] <dlongley>	m4nu: On wednesday we could have a wrap up session for those who couldn't attend on Monday and Tuesday.
+[Wed 10:31:27] <dlongley>	m4nu: The Internet Identity Workshop happens on Wednesday at the same time we could do a breakout session at TPAC, which is problematic.
+[Wed 10:31:27] <voip-wp>	Evgeny (SIP/sip2sip.info-000000a8) has left the conference.
+[Wed 10:31:51] <voip-wp>	Evgeny (SIP/sip2sip.info-000000a9) has joined the conference.
+[Wed 10:34:23] <m4nu>	dlongley: Will there be a significant number wanting to attend a breakout session.
+[Wed 10:35:00] <m4nu>	dlongley: Do you need to squeeze anything in on Tuesday?
+[Wed 10:35:31] *	Evgeny has quit (Ping timeout: 246 seconds)
+[Wed 10:36:04] <m4nu>	dlongley: Only official members can come into IG meeting - all Web Payments talk will happen Mon/Tue?
+[Wed 10:36:21] <m4nu>	Yes, W3C TPAC attendance is on a bell curve - most everyone will be there on Wednesday.
+[Wed 10:37:11] <dlongley>	m4nu: So Payments IG meeting Mon/Tues, in between will be break out sessions for Identity/Credentials, and then quick overviews of the payments and identity work on Wednesday in break out session starting in the morning.
+[Wed 10:37:29] <adrianhopebailie>	+1
+[Wed 10:37:53] *	Evgeny (4d4b9801@gateway/web/freenode/ip.77.75.152.1) has joined #webpayments
+[Wed 10:38:17] <dlongley>	m4nu: I would imagine the Credentials stuff will be formatted in a way that matches the Payments stuff, so we'll do a history/etc.
+[Wed 10:38:44] <dlongley>	m4nu: Intro to W3C, history of what got us here, we have a set of use cases, and here's the roadmap.
+[Wed 10:39:04] <dlongley>	m4nu: The second day will be just use cases, focusing/refining, getting consensus.
+[Wed 10:39:12] <dlongley>	m4nu: That will be it for the credentials stuff.
+[Wed 10:39:35] <dlongley>	m4nu: Monday (intro, etc.), Tuesday (use cases for 2 hours)
+[Wed 10:40:43] <m4nu>	m4nu: Are we going to be able to do demos at W3C TPAC?
+[Wed 10:41:40] <m4nu>	dlongley: The current system we have would be simpler to demo than the new system that has regulatory stuff in it.
+[Wed 10:43:18] <m4nu>	Monday, 2nd Web Payments IG session - maybe start off w/ use cases, then show demos.
+[Wed 10:44:44] <dlongley>	m4nu: A lot of people will be introduced to these use cases for the first time.
+[Wed 10:45:17] <dlongley>	m4nu: Because their orgs have prohibited involvement until official work starts.
+[Wed 10:45:20] <m4nu>	Adrian: How much time does it take to talk through and demonstrate the use case?
+[Wed 10:46:16] <m4nu>	Adrian: There are a number of use cases that we can't demo yet, I'm sure. For illustration of what the use case is intended to address, a demo is very useful.
+[Wed 10:47:01] <m4nu>	dlongley: Something that we should probably do is order the use cases in demo-able order. An alternative would be to discuss those use cases and show a demo once, that would allow people to understand how those use cases could be addressed. Then we could keep going through the demo, that would be one way to speed it up.
+[Wed 10:47:42] <m4nu>	Adrian: If we show a demo, it's not the only way to solve the use case, it's one way to solve the use case. We might want to have discussion first and then show the demo.
+[Wed 10:48:17] <dlongley>	m4nu: If we show the demo first they may get overly hung up on the demo and if we do it last they might not get the use case until they've seen the demo, so tradeoffs.
+[Wed 10:48:29] <m4nu>	Adrian: Maybe this needs to be done on a case-by-case basis. 
+[Wed 10:49:12] <dlongley>	m4nu: In general, there will be some set of demos, we don't know if they'll be done first or inline w/the discussion around the use cases.
+[Wed 10:49:32] <dlongley>	m4nu: What might be helpful if we do a wrap up and say everything between the intro and the wrap up will be discussion around use cases and roadmap and things like that.
+[Wed 10:49:51] <dlongley>	m4nu: Let's jump to Tuesday afternoon... what do we want to put on the agenda in terms of wrap up items are concerned.
+[Wed 10:50:31] <m4nu>	Adrian: What's required for the IG to continue? What are the expected steps after TPAC?
+[Wed 10:51:24] <dlongley>	m4nu: We also need to give everyone an intro to the specs we have so far, they are proposals, not set in stone, but someone has to start and provide the IP to start the standardization work (that's before the wrap up).
+[Wed 10:51:51] <dlongley>	m4nu: We can talk about the next steps with Stephane Boyera and the two chairs of the IG.
+[Wed 10:52:38] <dlongley>	m4nu: We can identify what we need to do and where we need to go, etc. and that's a group discussion, maybe committing to some kind of time line. We'll have a technical roadmap and a procedural time line -- and we can talk about what the next year looks like and what happens in the next year, what documents are expected to be delivered, etc. things like that.
+[Wed 10:53:09] <dlongley>	m4nu: The other thing we should discuss in the wrap up is recruiting, more W3C members to participate in the work, we have to take recruiting pretty seriously because everyone's time is split so much in W3C so we need to get orgs to join and assign engineers.
+[Wed 10:53:39] <dlongley>	adrianhopebailie: Does anyone have a prioritized list of candidates? People to get involved, etc.?
+[Wed 10:54:00] <dlongley>	m4nu: Yeah, I keep a list, maybe I should publish that on the wiki -- to list all the orgs we want to participate and our current status in outreach to them.
+[Wed 10:54:39] <dlongley>	m4nu: We need to be careful not to get in the way of W3C communications.
+[Wed 10:55:38] <m4nu>	Adrian: It's important that we reach out to many of these organizations, especially the large ones, to make sure they know what's going on.
+[Wed 10:56:02] <dlongley>	m4nu: Agreed, and we've been doing that for the last three years which is one reason we've got so many people involved in the workshop, etc.
+[Wed 10:56:31] <m4nu>	Adrian: With the new /official/ group, we should do more outreach.
+[Wed 10:57:54] <dlongley>	m4nu: We're at the top of the hour -- let's take everything we've discussed on this call, I'll try and put a proposed agenda together and we can get feedback from the CG to refine/get objections and then pass to chairs and W3C staff.
+[Wed 10:57:54] <taaz> thanks, bye.
+[Wed 10:57:54] <evgeny> bye
+[Wed 10:58:21] <voip-wp>	Manu Sporny (SIP/6000-000000a7) has left the conference.
+[Wed 10:58:22] <voip-wp>	Dave Longley (SIP/6002-000000a6) has left the conference.
+[Wed 10:58:26] <voip-wp>	dlehn (SIP/71.197.0.193:5060-000000a5) has left the conference.
+[Wed 10:58:26] <voip-wp>	Evgeny (SIP/sip2sip.info-000000a9) has left the conference.
+[Wed 10:58:37] <voip-wp>	Adrian Hope-Bailie (SIP/sip2sip.info-000000a4) has left the conference.
