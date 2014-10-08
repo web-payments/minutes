@@ -1,0 +1,82 @@
+[Wed 10:05:41] <m4nu>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2014Oct/0029.html
+[Wed 10:05:42] <dlongley>	scribe: dlongley
+[Wed 10:06:14] <dlongley>	m4nu: Hopefully we'll have a short call today, talk briefly about the agenda and then the roadmap and then adjourn.
+[Wed 10:06:21] <dlongley>	bshambaugh: The voting is still open, right?
+[Wed 10:06:21] <dlongley>	taaz: Yep.
+[Wed 10:06:26] <dlongley>	m4nu: Yes, until this Friday, I believe.
+[Wed 10:06:52] <dlongley>	m4nu: We have 11 responses, which is good.
+[Wed 10:07:08] <dlongley>	m4nu: We should remind people to vote once more before it closes on Friday.
+[Wed 10:07:31] <m4nu>	ACTION: Manu to remind Web Payments CG to vote on use cases.
+[Wed 10:07:46] <dlongley>	bshambaugh: There seems to be some talk about Apple Pay and I was wondering what's going on with Google and other big players.
+[Wed 10:07:55] <m4nu>	Topic: Apple Pay
+[Wed 10:08:52] <dlongley>	m4nu: There's been quite a bit of discussion on Apple Pay. I think in general everyone's been happy about Apple jumping into this space and pushing tokenization. And people have been saying they've been building it on standards (questionable whether those are open). So there's speculation that if there's standardization on the payments work Apple might adopt it as well.
+[Wed 10:09:08] <dlongley>	m4nu: That's good as well, they are a non-traditional payment provider and if we create technologies they can use then that's great.
+[Wed 10:10:03] <dlongley>	m4nu: I know Anders tends to look at this as "Of course they will be successful -- the only way we make progress in this space is if a giant player mandates something." He doesn't seem to think the way we're doing thinks with W3C can make progress and that the industry will pick things up around standardization.
+[Wed 10:10:17] <dlongley>	m4nu: So we need to watch this space, see what Apple is doing, pull anything good their doing into the spec, etc.
+[Wed 10:10:24] <dlongley>	bshambaugh: What would linked data do for Apple?
+[Wed 10:11:20] <dlongley>	m4nu: It's not what linked data would specifically do for Apple, it's what it would do for the payments ecosystem. The ecosystem would be able to express much more rich transactional data, what did you buy, warranty information, licenses, etc. There's none of that with the Apple Pay solution as far as I know.
+[Wed 10:11:33] <dlongley>	bshambaugh: Why would Apple or other providers care about that?
+[Wed 10:11:46] <dlongley>	m4nu: The way to approach large players about this isn't to ask "Given their dominance why would they care?"
+[Wed 10:12:16] <dlongley>	m4nu: What we're trying to do instead is create an ecosystem where competition is possible. A large player doesn't have a forcing function to get them to switch to something else.
+[Wed 10:12:44] <dlongley>	m4nu: What's going to convince Apple to switch is that there's a huge competitive ecosystem and if they don't adopt what others are using then Apple will be at a disadvantage.
+[Wed 10:13:04] <dlongley>	m4nu: If Google and the banks, etc. adopt this technology and Apple doesn't, they become a much smaller player in the ecosystem.
+[Wed 10:13:44] <dlongley>	m4nu: The 100 players after the top players will be convinced to adopt the open standard, and the larger players will want to adopt the standard and compete in the ecosystem rather than going it alone.
+[Wed 10:13:53] <dlongley>	m4nu: That's the general approach for any of these open standards.
+[Wed 10:14:44] <m4nu>	dlongley: One historical example is to look at IE5 and IE6, Microsoft had by far the largest chunk of the market w/ a non-compliant browser. Open Standards made it possible for other browsers to enter the market and Microsoft was forced to come along. The entire ecosystem benefitted because of those open standards.
+[Wed 10:15:00] <dlongley>	bshambaugh: This is something that has existed since the early Web?
+[Wed 10:15:06] <voip-wp>	Dave Lehn (SIP/6003-000000c2) has joined the conference.
+[Wed 10:15:20] <dlongley>	m4nu: It's existed since standards -- just look at bolts, screws, threads, etc.
+[Wed 10:15:49] <dlongley>	m4nu: Before standards came along and said everyone can manufacture bolts to certain specs then the people creating buildings could then source their materials from lots of different orgs.
+[Wed 10:16:12] <dlongley>	bshambaugh: Should the question then be "How can we work with bitcoin?" since they are an emerging player?
+[Wed 10:16:47] <dlongley>	m4nu: We are already assuming that the specs will help bitcoin, and they don't try to specify whatever the payment layer is -- they allow proprietary systems to run on top of the standards.
+[Wed 10:16:58] <dlongley>	m4nu: So anyone can use them at their core.
+[Wed 10:17:18] <dlongley>	m4nu: We don't want to pick winners, we want to make sure all these various payment mechanisms can integrate and work with the standard.
+[Wed 10:17:39] <dlongley>	bshambaugh: So your hope is that devs will say "There's a new standard coming out of W3C and let's adopt it."
+[Wed 10:18:37] <dlongley>	m4nu: To some extent yes, but devs will have choices in front of them 1. "I have to implement the API for Apple Pay and Google Wallet and X, Y, and Z." or 2. "I can implement the open standard from W3C and I'm done." -- and it's future proof as new payment providers come online.
+[Wed 10:18:51] <dlongley>	bshambaugh: So you're focused on Web developers and then get critical mass.
+[Wed 10:20:02] <dlongley>	m4nu: The focus on the Web dev is an important thing but we also have to give these businesses a reason to do it, it does open everything up to a level playing field (competition) and let Web devs drive down costs with less to implement, and the barrier for entry into the payments space is lower and we do this without threatening anyone's business model -- it's a rising tide that helps all ships.
+[Wed 10:20:14] <dlongley>	bshambaugh: Web developers don't really have to understand linked data to implement it, right?
+[Wed 10:20:17] <dlongley>	m4nu: That's correct.
+[Wed 10:20:35] <dlongley>	m4nu: We're trying to make it really easy on Web developers but still get all the benefits of linked data. We try to hide those details if they don't care about them.
+[Wed 10:20:45] <dlongley>	m4nu: We want the payments stuff to be a very simple drag and drop operation.
+[Wed 10:20:56] <dlongley>	bshambaugh: If they want to get more advanced they can.
+[Wed 10:20:58] <dlongley>	m4nu: Exactly.
+[Wed 10:21:21] <m4nu>	Topic: Agenda Bashing for W3C TPAC
+[Wed 10:21:28] <m4nu>	https://docs.google.com/document/d/1R_hLcUBXJxm3DhQC4JmyzS_hKlnhQDUFBvfZR5UaFf0/edit?usp=sharing
+[Wed 10:22:10] <dlongley>	m4nu: I have heard from W3C, the staff contact, they are giving time for Web Payments CG and Credentials CG to meet, the Credentials one will likely meet on Tuesday.
+[Wed 10:22:35] <dlongley>	m4nu: The issue with the Web Payments IG, the meeting, is that many of the people who are attending did not attend the workshop, so everyone will need to be brought up to speed, so most of the first day will be that.
+[Wed 10:22:44] <dlongley>	m4nu: Getting them understanding the general understanding of where we're going.
+[Wed 10:23:03] <dlongley>	m4nu: In our agenda we had proposed to go through design criteria and use cases, and the chairs and staff contact believe it may be premature to do that.
+[Wed 10:23:17] <dlongley>	m4nu: I think it will help direct the discussion but we need to figure it out.
+[Wed 10:23:48] <dlongley>	m4nu: The agenda will come out next week which isn't much time before TPAC but we do have a little time to go back and forth. I will try and make sure the Web Payments CG and Credentials CG interests are represented in the agenda.
+[Wed 10:24:01] <dlongley>	m4nu: Everyone will be able to comment one various announcements are made.
+[Wed 10:24:16] <dlongley>	m4nu: It's still a question of whether or not we'll be able to make the type of progress we want to make at the meeting.
+[Wed 10:25:04] <dlongley>	m4nu: It's frustrating because we keep having to catch orgs up to speed on what the CG has been doing for the last 4 years, so there's this weird tension; the big orgs that will work internally and adopt the standard and we have to bring them up to speed but the problem is that every meeting we've had to do that with new players, etc.
+[Wed 10:25:33] <dlongley>	m4nu: I was hoping that we could make some progress at TPAC but it sounds like we may have to do something similar to the Web Payments workshop again, hopefully that isn't the case. It's not anyone's fault, it's just the way things are unfolding.
+[Wed 10:25:57] <dlongley>	m4nu: That's where we are right now, I don't think it helps us that much to work on the agenda we have; with that, any questions or concerns over the agenda?
+[Wed 10:26:27] <m4nu>	dlongley: My only concerns reflect what you said. I'm concerned that we keep having to re-review the work. The work will eventually progress, I'm sure.
+[Wed 10:26:59] <dlongley>	m4nu: We've got two hours on the first day, to talk about the Web Payments and Credentials CGs, we could focus on the use cases we have and here's a quick demo of a system that uses these specs.
+[Wed 10:27:38] <dlongley>	m4nu: This is not a green field exercise, we have stuff, we are frustrated that we keep re-reviewing this stuff but we understand that people need to be brought up to speed, but let's spend some time understanding where this group that has been operating for 4 years now has gotten.
+[Wed 10:27:53] <dlongley>	m4nu: The Web Payments workshop ended up repeating discussions we've had over the past couple of years.
+[Wed 10:28:02] <dlongley>	m4nu: So maybe that should be our approach.
+[Wed 10:28:42] <m4nu>	dlongley: That could be the approach. Why not - we're meeting here to discuss the Web Payments work, what some of you might not know is that we have 4 years of work - here's what we have that we'll be bringing into the work. We've made a lot of progress, lots of calls, etc. Show demo and use cases.
+[Wed 10:29:00] <m4nu>	dlongley: That really helps put a positive spin on this, shows that people have been working on this.
+[Wed 10:29:53] <m4nu>	dlongley: Don't focus on what we want to prevent, bring people into the work as quickly as possible. Settle in and continue the work. People have been working on this, this specific problem of Web Payments. There's a lot of effort that's already been put into it.
+[Wed 10:30:18] <dlongley>	m4nu: I'll put the presentations together with that general thought in mind.
+[Wed 10:30:24] <dlongley>	m4nu: And hopefully we can review the week before TPAC.
+[Wed 10:30:47] <m4nu>	Topic: Web Payments Roadmap
+[Wed 10:31:19] <m4nu>	Proposed technology stack for Web Payments: http://lists.w3.org/Archives/Public/public-webpayments/2014Oct/0029.html
+[Wed 10:32:24] <m4nu>	Dependencies/spec development timeline: https://docs.google.com/drawings/d/1ynhajSaXw0wCqkTqTzc925_HBnHvz2bKC_S8th_xE9A/edit
+[Wed 10:32:58] <dlongley>	m4nu: We don't have how long each of those will take, but we do have what we need to get done to get to the Web Commerce API, the question is whether this turns in the roadmap.
+[Wed 10:33:08] <dlongley>	m4nu: Let's propose that we start there and see where we get from there.
+[Wed 10:33:19] <m4nu>	Organizations involved in Web Payments work: https://docs.google.com/drawings/d/1H3guwrrYZALQR91iB7QzN1n4ViUnIKgVT6bZiRuyenI/edit
+[Wed 10:34:17] <m4nu>	dlongley: We want to be clear that the identity credentials piece is being worked on as separate work. We should probably talk about how it'll tie in. Web Payments work depends on identity URL. Use cases related to that are solved by another group, so it doesn't seem like there's a huge piece that's sitting in the middle here. It's important, we want it in this work, but it could seem like a red flag to lots of people.
+[Wed 10:34:38] <m4nu>	dlongley: That could have a positive effect, we do want a WG to work on Credentials. It's worth mentioning in the presentation. We may want to explain that part in more detail.
+[Wed 10:35:11] <m4nu>	Does this seem like the spec stack that we want?
+[Wed 10:35:21] <m4nu>	dlongley: It certainly does to me, this is what we've been talking about for 4 years.
+[Wed 10:36:46] <dlongley>	m4nu: The specs currently have things injected in there ... for example, Identity Credentials has login and preferences, and you might consider that Credentials, Login, and Preferences, so that may be three different specs.
+[Wed 10:37:10] <m4nu>	dlongley: I agree - we may want to mention all the specs from each of these other specs. Link them all together. "For a login solution, see this spec."
+[Wed 10:37:16] <dlongley>	m4nu: I think it would be a good idea to split the specs up.
+[Wed 10:37:29] *	rossk (~rossk@64-142-88-9.dedicated.static.sonic.net) has joined #webpayments
+[Wed 10:37:46] <dlongley>	m4nu: Anything else, any other comments on the roadmap?
+[Wed 10:37:59] <dlongley>	m4nu: We won't be able to have a vote on it due to time constraints, but that's the way it goes.
