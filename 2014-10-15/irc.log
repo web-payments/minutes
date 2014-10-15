@@ -1,0 +1,125 @@
+[Wed 10:05:13] <m4nu>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2014Oct/0058.html
+[Wed 10:05:15] <dlongley>	scribe: dlongley
+[Wed 10:06:10] <dlongley>	manu:Today is a quick intro of James Dailey and his interest in the group and then W3C TPAC Web Payments CG Presentation, talking about the roadmap, and then reviewing use cases feedback. Any questions or changes?
+[Wed 10:06:22] <m4nu>	Topic: Introduction to James Dailey from Mifos
+[Wed 10:06:20] <jdailey>	http://mifos.org/
+[Wed 10:08:19] <dlongley>	jdailey: Started about 8 years ago to bring an open platform to microfinance, we've expanded and rewritten it to be a core transaction platform and used for retail for direct banking, we have 100s of implementations globally, we have several dozen integrators, to serve the needs of their banking partners, it's completely open source, it's Java, MySQL, etc. We have a pretty involved API, connecting to the Web interfaces, etc. I'm interested in integrating a Web payments platform or mobile payments platform with our system. We want to put this up in the cloud and offer a full stack for mobile payments in various countries, etc.
+[Wed 10:08:44] <dlongley>	manu: That sounds great and fairly aligned with the kind of stuff we're working on here, something like mifos would be good to prove interoperability.
+[Wed 10:08:53] <dlongley>	m4nu: Have you dealt with W3C in any way before?
+[Wed 10:09:18] <dlongley>	jdailey: Way back in the 90s I was working on the OASIS project.
+[Wed 10:09:25] <dlongley>	m4nu: I was wondering if you're a W3C member.
+[Wed 10:09:30] <dlongley>	jdailey: Nope.
+[Wed 10:09:58] <dlongley>	m4nu: The CG is completely open and anyone can join, but the reason I ask is that there would be an interest in getting you involved in the Working Groups that get spun up.
+[Wed 10:10:16] <dlongley>	m4nu: We'd like to have you be represented in the technical work, we don't have any open source/banking/financial platforms involved right now.
+[Wed 10:10:22] <dlongley>	m4nu: Is the org a non-profit?
+[Wed 10:10:32] <dlongley>	jdailey: Yes, and it's based in Seattle, but we're very virtual.
+[Wed 10:10:57] <dlongley>	m4nu: Great, that's aligned with W3C (also very virtual). We'd like to have your area of expertise represented in the group, we'll take more of this offline.
+[Wed 10:11:26] <dlongley>	m4nu: Moving forward, we'd be interested in hearing if we're meeting the needs of the mifos platform, it's a perfect example of where we'd like to see the technology used.
+[Wed 10:12:01] <dlongley>	jdailey: I'm not one of the devs on the platform on this point. There's a regular dev call on Thursdays that anyone can join. For now I'm getting a feel for where you guys are at and looking at your archive and getting where the state is.
+[Wed 10:12:06] <dlongley>	m4nu: Ok, great.
+[Wed 10:12:08] <m4nu>	Topic: W3C TPAC - Web Payments CG Presentation
+[Wed 10:14:47] <dlongley>	m4nu: So this work started 4-5 years ago, we created the CG about 2 years after that. W3C is ~400 member orgs, most big technology orgs are part of W3C. We've been lobbying W3C to make web payments a core part of the Web, making payments secure and as easy as it is to send an email today. We've had some great success over the last year. We had the world's first Web Payments workshop in Paris this year, a bunch of W3C orgs joined and decided that Web Payments should get done. Over the past month there was a vote to officially get this work started at W3C. The vote will say that the work has been started, and in 2 weeks on 27th,28th in Santa Clara, CA, at W3C TPAC there will be a first face-to-face meeting.
+[Wed 10:15:17] *	bshambaugh (~brent@adsl-107-196-156-93.dsl.okcyok.sbcglobal.net) has joined #webpayments
+[Wed 10:15:20] <dlongley>	m4nu: The meeting will be about what type of work the W3C membership would like to do about Web Payments. The minutes from the meeting will be public and you'll know all the companies that participated after October.
+[Wed 10:15:44] <dlongley>	m4nu: This agenda item is about discussing what we'll be presenting (the CG) for an hour at TPAC.
+[Wed 10:15:59] <m4nu>	https://web-payments.org/specs/source/use-cases/
+[Wed 10:16:20] <m4nu>	https://web-payments.org/specs/source/roadmap/
+[Wed 10:16:25] <dlongley>	m4nu: The use cases are a boiling down of the use cases that came out of the workshop earlier this year.
+[Wed 10:16:40] <dlongley>	m4nu: These are some docs we can talk about and present in the one hour at TPAC.
+[Wed 10:16:59] <dlongley>	m4nu: So the question is, other than the use cases and the roadmap, what are the main points that we want to make?
+[Wed 10:17:32] <m4nu>	dlongley: Other than those two documents, it's important that we emphasize that a lot of work has taken place in the CG around this technology and keeping the scope focused on what we think is achievable. That was discussed earlier in the year.
+[Wed 10:17:44] <m4nu>	dlongley: We have technical specifications to look at - that ties into road map and use cases.
+[Wed 10:17:54] <m4nu>	dlongley: I think talking about those three things would be good enough for the hour that we have.
+[Wed 10:18:41] <dlongley>	m4nu: We also have the credentials CG that will be talking in the hour following us. It's good that this will be the first major discussion and it will be about the work the CG has been doing. We probably want to avoid talking about credentials until that meeting/presentation.
+[Wed 10:19:25] <dlongley>	m4nu: The feedback that we've gotten from the chairs is that they don't want to presuppose any set of use cases. They want the W3C membership to try and work through what the use cases should be. The downside for that is that we already did that at the workshop and it takes a long time to do that.
+[Wed 10:19:39] <dlongley>	m4nu: It might be good for us to have a very-high level review of design criteria and use cases.
+[Wed 10:20:10] <dlongley>	m4nu: But at least saying, for example, we've got "data portability is important".
+[Wed 10:20:33] <dlongley>	Manu goes down use case list outlining examples we could provide.
+[Wed 10:21:05] <m4nu>	dlongley: One thing we could do is start off in areas that are clear where we could get interoperability - initiating payments, digital receipts, etc. 
+[Wed 10:21:32] <m4nu>	dlongley: We could then go into things you're talking about at a high level - general idea - we've found at least two areas that we can focus on to get something standardized to get payment processors to interoperate.
+[Wed 10:22:27] <m4nu>	dlongley: We want to give them a higher-level overview at first - these are the areas that we can standardize. We don't want to dive into the details too early. Different payment processors are out there - standardize on how we initiate a payment and then provide digital receipt on how that happens. Details inbetween are largely out of scope. There are a lot of other use cases that can be created from those two basic things we think we can standardize.
+[Wed 10:22:38] <m4nu>	dlongley: Then we can go into data portability, etc.
+[Wed 10:23:11] <m4nu>	dlongley: 20 minutes of presentations, 40 minutes of questions.
+[Wed 10:24:02] <dlongley>	m4nu: We do have that roadmap document, we list the entire stack of specs/techs for the CG to work on. It could be missing things that other CG members want in there, but to date these are the specs we have in there. If other people want to add things they should create a spec and publish it for us to add it.
+[Wed 10:25:04] <dlongley>	m4nu: The problem with the roadmap is that we haven't had a chance to vote on it, but we do know that the group has approved the techs/specs.
+[Wed 10:25:10] <m4nu>	dlongley: One thing we could do is say - here is a set of technologies that have been approved by the group, and this is a proposed way to put it into a roadmap to move forward. This is a way that we could get these proposed technologies in there. The technologies themselves have been approved by the group.
+[Wed 10:25:42] <dlongley>	m4nu: We'll put that out there and if anyone from CG has any concerns we can tweak it.
+[Wed 10:26:21] <dlongley>	m4nu: So 20 mins of presentation, keep it high-level, let people know there's a use cases and roadmap. Let them know there's a set of techs/specs for the work, etc. and go into questions at that point.
+[Wed 10:26:49] <dlongley>	m4nu: Anyone else on the call have thoughts/concerns about how we'll be presenting this at TPAC?
+[Wed 10:27:49] <dlongley>	m4nu: The agenda will go out later today. The schedule is Monday and Tuesday (27-28th) are all day sessions on Web Payments. On the 27th we'll have a 1 hour slot for this CG and 1 hour slot for Credentials CG. The rest of the time will be Web Payments talk and the agenda will be out later today.
+[Wed 10:28:22] <dlongley>	m4nu: In the morning on Tuesday we'll talk Credentials and then later in the afternoon we'll recap.
+[Wed 10:28:38] <dlongley>	m4nu: On Wednesday we'll review what happened.
+[Wed 10:28:59] <dlongley>	m4nu: That's for a review for members that aren't directly involved in the work to understand what has happened and what will happen in the near future.
+[Wed 10:29:14] <dlongley>	m4nu: I'll put together the slide deck and hopefully we can review by end of today or tomorrow
+[Wed 10:29:36] <dlongley>	m4nu: James, did that make sense? You're jumping right in the middle of all this stuff, could you make out what's going on?
+[Wed 10:29:50] <dlongley>	jdailey: Sure! It's very understandable, I'm sure there's lots of politics I don't get.
+[Wed 10:30:25] <dlongley>	m4nu: There aren't too many politics just yet; and W3C will focus on the technical work to avoid any politics between the big orgs. The focusing is on use cases, tech, and implementations.
+[Wed 10:30:34] <m4nu>	Topic: Web Payments Roadmap Review
+[Wed 10:31:11] <m4nu>	https://web-payments.org/specs/source/roadmap/#technology-stack
+[Wed 10:31:12] <dlongley>	m4nu: This outlines the tech stack that the CG has approved with votes and we lay it out so people can understand how the stack looks and what's done and what isn't.
+[Wed 10:32:04] <m4nu>	dlongley: We may want to put another box in there with vocabularies.
+[Wed 10:32:12] <m4nu>	dlehn: It may be difficult to make everything match up in a box format.
+[Wed 10:32:51] <m4nu>	manu: Here's the Credentials CG technology stack: http://opencreds.org/specs/source/roadmap/#technology-stack
+[Wed 10:33:25] <m4nu>	dlongley: This group originally started out as the Web Payments group... the Credentials group was split off to deal w/ identity/credentials for other industries (including finance/banking)
+[Wed 10:34:18] <m4nu>	dlongley: The Credentials CG works on 'credentials' - crypographically provable claims about things - merchant offering a good for sale (with digital signature on the offer), person's Know Your Customer details, etc.
+[Wed 10:34:47] <dlongley>	jdailey: Does the Credentials CG get into biometrics?
+[Wed 10:34:52] <dlongley>	m4nu: Only in that we want to reuse it.
+[Wed 10:35:16] <dlongley>	m4nu: The Credentials CG is narrowly-focused -- it's about being able to prove that one entity made claims about another entity.
+[Wed 10:35:46] <dlongley>	m4nu: Examples of credentials are passports, driver's licenses, proofs of age, etc. it could be retinal scans, etc.
+[Wed 10:36:04] <dlongley>	m4nu: So we're talking about the credential container format and how to verify it.
+[Wed 10:36:46] <dlongley>	m4nu: For example, in the future if you're doing some critical govt work, and they'd do a palm vein scan on you, and they'd digitally sign it and give that to you and you could give that credential to get access to some secure website.
+[Wed 10:37:35] <dlongley>	jdailey: Makes sense, and you're one step above the actual id verification.
+[Wed 10:38:02] <dlongley>	jdailey: In Uganda or other nations without certain kinds of ID we're looking at if we can use things like photos from a smartphone, etc. to build an identity iteratively.
+[Wed 10:38:24] <dlongley>	jdailey: I wanted to understand where you were with that.
+[Wed 10:38:52] <dlongley>	m4nu: On Tuesdays we have Credential CG calls and we have members such as ETS participating.
+[Wed 10:39:53] <dlongley>	m4nu: The use case you just outlined is a very important use case that we're actively pursuing. We believe we have tech for this. 3rd parties could create identity credentials for you and the only thing that matters is that the consumer has to trust the NGO or for-profit company that created the credential in the first place. You can use multiple different decentralized credentials to do KYC.
+[Wed 10:40:19] <dlongley>	m4nu: You can mix and match and put different creds together.
+[Wed 10:40:31] <dlongley>	jdailey: Great, thanks.
+[Wed 10:41:13] <dlongley>	m4nu: We've had a number of people say we shouldn't focus on identity because it could be a quagmire, etc. and that's another reason it was spun off into its own group.
+[Wed 10:41:32] <m4nu>	https://web-payments.org/specs/source/roadmap/#timeline
+[Wed 10:42:01] <dlongley>	Evgeny: Is JSON the only message format that can be used? Or can it be extended to use XML for example?
+[Wed 10:43:11] <dlongley>	m4nu: You could argue that RDF XML could be used, but right now there's no XML stack. We made this decision early on and we want Web devs adopting this technology and XML isn't something that Web devs, in general, tend to like. There certainly are XML-based APIs that exist, and we could talk about XML, and certainly it's used for backend clearing like ISO-(swift) but that's really for backend clearing, etc.
+[Wed 10:43:56] <dlongley>	Evgeny: I'm not sure its a problem, just wanted to mention that other formats may be desired/want to be discussed.
+[Wed 10:44:38] <dlongley>	m4nu: Sure, the banking industry is very XML-driven and just getting into JSON. It may be a point of contention. We tried to develop a tech stack that Web devs would get excited about and XML isn't something like that.
+[Wed 10:44:48] <dlongley>	m4nu: We should have an in-depth discussion at TPAC.
+[Wed 10:45:12] <dlongley>	m4nu: We dont' address the XML stack and it could be a big problem and if we want to use XML we have to bring in a whole other tech stack, signatures, XML processor, etc.
+[Wed 10:45:24] <dlongley>	m4nu: Here's what we can say is that people *can* use RDF XML but I don't think anyone wants to do that.
+[Wed 10:45:48] *	mlilenium_ (~mlilenium@178.251.136.142) has joined #webpayments
+[Wed 10:45:50] <dlongley>	m4nu: If we're using Semantic Web linked data technology, then XML doesn't really let that happen other than RDF XML and the developer community has railed against that, it's very disliked.
+[Wed 10:45:54] *	mlilenium_ (~mlilenium@178.251.136.142) has left #webpayments
+[Wed 10:46:13] <dlongley>	m4nu: We should discuss it; the other thing we don't want to have happen is that the banking community might run away if it doesn't say XML.
+[Wed 10:47:24] <m4nu>	dlongley: One thing that might help is to front-run - this is the front-end stack of technologies. Backend clearing can still use XML - we're trying to achieve interoperability at front-end right now, not back-end as well.
+[Wed 10:48:13] <dlongley>	m4nu: One possibility is that a bank runs this software to do payment initiation and digital receipts, but then they'd use ISO202122 [?]for backend clearing that they already have implemented.
+[Wed 10:48:15] <m4nu>	https://web-payments.org/specs/source/roadmap/#timeline
+[Wed 10:49:35] <dlongley>	m4nu: On this time scale we're about 60-90% complete on the first three items. We need to update http sigs and push it through the process we're like 90% done. We just need to update RDF normalization spec to the latest version and put it through a W3C group, they are basically just waiting on us to say when we should start that work.
+[Wed 10:50:05] <dlongley>	m4nu: We're probably 70% of the way through the Web Commerce spec, but only 20% of the way through Web Commerce API, we want a polyfill for it and want browsers to eventually implement but can't count on it.
+[Wed 10:50:13] <dlongley>	m4nu: I don't think the timeline really expresses that information.
+[Wed 10:50:25] <m4nu>	dlongley: You could put some in-line progress bars.
+[Wed 10:51:33] <dlongley>	Evgeny: A good idea would be to point to boxes that can be developed in parallel.
+[Wed 10:51:51] <dlongley>	Evgeny: We can't easily tell from the picture
+[Wed 10:52:08] <dlongley>	m4nu: Almost all of them can be done in parallel, really, but we should make that more clear.
+[Wed 10:52:31] <dlongley>	m4nu: Let's say we spun out a technical working group for each blue block, they could all be done in parallel. They'd just need to be synced up right at the end.
+[Wed 10:52:43] <dlongley>	m4nu: Since we've got technical implementations of this stuff we can integrate quickly.
+[Wed 10:53:03] <dlongley>	m4nu: The thing I wanted to get away from was just having all the blocks be aligned. They can all be done in parallel and it would just look like a big stack.
+[Wed 10:53:12] <dlongley>	m4nu: Maybe we can say that all of them can start together.
+[Wed 10:53:24] <m4nu>	dlongley: maybe left-align them then the right sides become a bit longer
+[Wed 10:53:37] <dlongley>	Evgeny: Talk about dependencies.
+[Wed 10:53:58] <m4nu>	https://web-payments.org/specs/source/roadmap/#timeline
+[Wed 10:55:17] <dlongley>	m4nu: I'll try another iteration and publish to the mailing list and we can talk more next week after we've redone the diagram.
+[Wed 10:55:24] <m4nu>	https://web-payments.org/specs/source/roadmap/#active-collaborators
+[Wed 10:56:07] <dlongley>	m4nu: The last thing at the bottom of the roadmap are active collaborators. We want to reach out to SWIFT and US Fed as two examples, SWIFT is interested and keeping up to date and they aren't sending anyone to participate, US Fed is assigning people and are directly involved in the work. The latter group is listed on here.
+[Wed 10:56:19] <dlongley>	m4nu: These are the orgs that are making it part of their mission to make Web Payments a success.
+[Wed 10:57:30] <dlongley>	m4nu: We have technical groups on the left and policy groups on the right and Open Payments Foundation in the middle whose only purpose is to make these standard techs. The OPF is there to create open source implementations of these technologies.
+[Wed 10:57:53] <dlongley>	m4nu: I didn't put all the orgs that fall under the W3C umbrella, are there any other external orgs that should be on here that we missed?
+[Wed 10:58:21] <m4nu>	This is what the sister document looks like at Credentials CG: http://opencreds.org/specs/source/roadmap/#active-collaborators
+[Wed 10:58:56] <dlongley>	m4nu: This is from the Credentials CG and here you'll notice the Badge Alliance (a spin off from Mozilla) is in the middle there too.
+[Wed 10:59:19] <dlongley>	m4nu: They have been added because they are a different consortium outside of W3C that are actively involved in this work in creating badges for people.
+[Wed 10:59:44] <dlongley>	m4nu: We're at the top of the hour, anything else to discuss today?
+[Wed 11:00:08] <dlongley>	m4nu: We have what should go into the CG presentation at TPAC, we'll float that out to the other CG members and get feedback, and then we're ready for TPAC.
+[Wed 11:00:24] <dlongley>	m4nu: Any other thoughts or concerns, things to deal with before TPAC?
+[Wed 11:00:31] <dlongley>	No other thoughts, meeting adjourned.
+[Wed 11:00:43] <voip-wp>	Evgeny (SIP/sip2sip.info-00000023) has left the conference.
+[Wed 11:00:44] <voip-wp>	Dave Longley (SIP/6002-00000022) has left the conference.
+[Wed 11:00:44] <voip-wp>	James Dailey (SIP/sip2sip.info-00000020) has left the conference.
+[Wed 11:00:44] <voip-wp>	Manu Sporny (SIP/6000-00000021) has left the conference.
+[Wed 11:00:45] <voip-wp>	dlehn (SIP/71.197.0.193:5060-00000024) has left the conference.
