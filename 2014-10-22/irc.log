@@ -1,0 +1,159 @@
+[Wed 10:04:00] <m4nu>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2014Oct/0102.html
+[Wed 10:04:03] <dlongley>	scribe: dlongley
+[Wed 10:04:58] <dlongley>	m4nu: Any additions to the agenda?
+[Wed 10:05:19] <dlongley>	pindar: Just a data point about Financial Innovation talk - I'll add to IRC at some point.
+[Wed 10:05:35] <dlongley>	m4nu: Let's just add it as the first topic to cover.
+[Wed 10:05:39] <m4nu>	Topic: Financial Innovation Forum 2014
+[Wed 10:06:50] <dlongley>	FIF2014 Agenda for November 12th - The Mira, Hong Kong - http://www.questexevent.com/FinanceTechInnovation/2014HK/agenda/
+[Wed 10:06:50] <dlongley>	pindar: This is an opportunity to present whatever comes out of the TPAC meeting. If you remember when you spoke at Hong Kong last year, it's the same conference. What I hope to do with the presentation is outline the outcomes, the history of the work at W3C to date, and the outcomes of TPAC. So if you can send some slides to be presented that would be great. This is for Hong Kong Finance Innovation. "Modernize or Fail, Redefining Banking for the Times"
+[Wed 10:07:06] <dlongley>	pindar: That's November 12th, 2014.
+[Wed 10:13:01] <pindarhk>	link to conference I referenced here: http://edm.enterpriseinnovation.net/edm/Financetech/FIF_HK_2014_randstad_eDM01.html
+
+[Wed 10:07:26] <m4nu>	voip: connections?
+[Wed 10:08:12] <m4nu>	voip: 377 is Jorge
+[Wed 10:08:12] <voip-wp>	Jorge is now associated with IAX2/diamondcard-377.
+[Wed 10:08:50] <dlongley>	m4nu: That's great, Pindar, we can work on the post-TPAC slides together, thanks for speaking at that conference. Anything else?
+[Wed 10:08:54] <dlongley>	pindar: No, thank you.
+[Wed 10:09:13] <m4nu>	Topic: Introduction to Jorge Zaccaro (Playbanq)
+[Wed 10:09:13] <dlongley>	m4nu: Jorge, would you mind doing a quick intro of yourself to the group?
+[Wed 10:10:18] <dlongley>	Jorge: I'm an engineer from Columbia, and an entrepreneur, I founded a company called Playbanq. People who want to play games online here have to beg their parents to lend them their credit cards and I'm working on developing a mini-market to enable people to deposit small amounts.
+[Wed 10:10:45] <dlongley>	m4nu: Great, your work is very aligned with how we're thinking about Web Payments here, delighted to have you join the group.
+[Wed 10:11:07] <m4nu>	Topic: W3C TPAC - Web Payments CG Presentation
+[Wed 10:11:14] <m4nu>	https://web-payments.org/slides/2014/tpac-wpig-wpcg/
+[Wed 10:11:43] *	pindarhk (743045b3@gateway/web/freenode/ip.116.48.69.179) has joined #webpayments
+[Wed 10:11:53] <pindarhk>	Good as I thought the slides were left deliberately blank
+[Wed 10:11:53] <dlongley>	m4nu: There was a problem with the slide before -- the images weren't showing up due to a rendering bug which has now been fixed. You should be able to see those in slide 7-8, etc. now.
+[Wed 10:12:58] <dlongley>	m4nu: The main purpose of this presentation at TPAC is to introduce this to people who are new to the Web Payments work. At W3C, many years of work may happen before the big tech companies join the work and reps from those companies are often behind on the work that has happened in that space. This presentation is meant to bring everyone up to speed on what's been going on in the past few years. Hopefully that's conveyed in the presentation.
+[Wed 10:13:11] <dlongley>	m4nu: Let's go through it really quickly to see if anyone in the call feels that something is out of place or missing, etc.
+[Wed 10:13:14] <m4nu>	https://web-payments.org/slides/2014/tpac-wpig-wpcg/
+[Wed 10:13:45] <dlongley>	m4nu: This is a presentation to the Web Payments IG, there will be 40-50 verified people in the room, there may be 20+ or more that haven't registered yet.
+[Wed 10:14:11] <dlongley>	m4nu: First slide intro, second slide talks about what the Web Payments CG is about.
+[Wed 10:14:30] <pindarhk>	Please add 'open'
+[Wed 10:14:43] <dlongley>	m4nu: Pre-standards tech community, we're transparent, we record everything, etc. We do discussion around payments tech, use cases, we work on specs, etc.
+[Wed 10:15:16] <dlongley>	pindar: Primarily from developing countries view -- they can join, etc.
+[Wed 10:15:45] <dlongley>	m4nu: Ok, slide 3, history timeline. Back in 2010 the tech initiative started (actual tech predates even that).
+[Wed 10:15:52] <pindarhk>	please add tax
+[Wed 10:16:09] <dlongley>	Manu gives rundown of history on slides.
+[Wed 10:16:25] <dlongley>	m4nu: This should let people know a lot of work has gone into the CG.
+[Wed 10:16:33] <dlongley>	Pindar: Trade and taxation.
+[Wed 10:16:34] <dlongley>	m4nu: Ok.
+[Wed 10:16:47] <dlongley>	m4nu: Slide 4 is about what's broken and the current failures in the Web Platform.
+[Wed 10:16:58] <dlongley>	m4nu: Credentials, Payment Initiation, Digital Receipts.
+[Wed 10:17:26] <pindarhk>	agile and vibrant
+[Wed 10:17:26] <dlongley>	m4nu: Slide 5, we talk about why the work is important, civic, moral, capitalistic issues.
+[Wed 10:17:52] <dlongley>	Pindar: Add vibrant to the last bullet point.
+[Wed 10:17:53] <dlongley>	m4nu: Ok.
+[Wed 10:18:26] <dlongley>	m4nu: Next slide, the chairs of the IG didn't want us to go into details of Use Cases at this point, so we'll just mention that we've got them, our Use Cases are "your" Use Cases, etc. high-level.
+[Wed 10:18:51] <dlongley>	m4nu: Slide 7 we've got tech stack. All the IP rights, etc. ready to be handed over. This is what we think you'd need to do something like a standard "digital wallet".
+[Wed 10:19:10] <pindarhk>	'digital wallet' in quotes
+[Wed 10:19:47] <pindarhk>	totally agree w.r.t. abiguity of wallet term
+[Wed 10:19:54] <dlongley>	m4nu: As people know, the chairs and staff contact have said we need to focus on "wallets". As the responses have shown it's not quite clear what people think "wallets" are. Chair hat off/not speaking for DB, I think "wallets" is a confusing term. We need to break down what functionality we want to see, and once we do that we could call that a "digital wallet".
+[Wed 10:20:42] <dlongley>	m4nu: Let's assume we come up with a definition for "digital wallet", what kind of technologies would constitute that? We're showing we have a tech stack that works today, it doesn't have to be that stack and we can change it, but the message is that we have a stack that works and we can compare and contrast. We can pull in other solutions, etc. We want people to know we're not starting from zero.
+[Wed 10:21:55] <dlongley>	pindar: I've seen email to Manu privately about my personal feelings about the "digital wallet" term. Others have shared their feelings. I feel that this is a strawman, a way to ground these relatively ambiguous terms. This is my big concern with "digital wallet" [missed, will fill back in].
+[Wed 10:22:28] <dlongley>	m4nu: Here's the concern that the community group has going into this. We're going to spend endless time discussing terminology, and not enough time spent on the actual technologies.
+[Wed 10:23:01] <dlongley>	m4nu: We start getting wrapped around the axle on the terminology we're going to use. I think it's fine to have that discussion about the terminology but it won't solve the problem. We need a set of common terms to communicate, but the real meat is in the technical work.
+[Wed 10:23:49] <dlongley>	pindar: Entirely agree. If they do want to discuss "digital wallets". I do think a starting point would be all the innovation in bitcoin wallets, etc. I think if they do that they will quickly focus on where standardization is possible. I think they can all the work that the CG has done and see that there's been thinking along these lines for some time.
+[Wed 10:24:20] <dlongley>	m4nu: People in the CG will remember that we had this discussion on wallets 3 years ago and we realized we have to talk about what to standardize and what we can do. And terminology comes later.
+[Wed 10:24:29] <dlongley>	Jorge: Focus on use cases, etc.
+[Wed 10:25:24] <dlongley>	m4nu: The agenda that we proposed to the chairs and staff contact was all Use Case driven and they decided not to take that approach. Partially I agree, because they said that there will be lots of new people in the room and starting with use cases may confuse them. And they wanted to start out talking about ISO20022, terminology, etc. And then maybe get to use cases, etc.
+[Wed 10:26:19] <dlongley>	pindar: They are welcome to discuss whatever they want in whatever order they see fit and then eventually we'll end up at use cases. If it's going to be a gentle intro to this space, I'm fully-supportive. If this is a decision to focus only on digital wallets I have huge objection. But my understanding from the mailing list and Stephane that that isn't the case. Can I have some assurances?
+[Wed 10:27:12] <dlongley>	m4nu: You're read on this correct. We won't be in any position to make those sorts of decisions at this meeting. We can make administrative decisions (when telecons will happen, etc.). What we're going to take on is in the charter and it isn't just wallets, it's identity and all that sort of stuff. There won't be any "hard" decisions made at TPAC; it's meant to be an intro to the entire area.
+[Wed 10:27:25] <dlongley>	pindar: Even though the chairmanship came down from above.
+[Wed 10:27:45] <dlongley>	m4nu: That's how W3C works -- and you can always challenge those decisions but they rarely are. I think the chairs are good solid picks for people.
+[Wed 10:27:54] <dlongley>	pindar: I'm still new to this process so I'm still learning.
+[Wed 10:29:10] <dlongley>	m4nu: It's all documented and online. When it comes to selecting chairs, they tend to pick from very large orgs. It serves a joint purpose: chair has to be good and manage expectations appropriately, someone with good soft-skills. They have to have good hard skills to understand the tech. They also want to choose from large orgs to demonstrate that they have the orgs they need to have to make this a success. So you'll see chairs from MS, Google, Bloomberg, HP, IBM, etc. These big orgs get chairs, because it's a marketing thing. Other big orgs get involved when they see it.
+[Wed 10:30:19] <dlongley>	pindar: I get that. I come from Asia Pacific and I've dealt with developing economies for many years, there's a chance for this work to be transformative. I do want to see that reflected in leadership and I don't see that yet. I do think the nature and scope of this work to handle, for example the civic part you mentioned in your slides. I want to see that born out.
+[Wed 10:30:39] <dlongley>	m4nu: Agreed. Some companies in south africa other places have been priced out of the initiative which is terrible.
+[Wed 10:31:19] <dlongley>	m4nu: The other problem is that IGF has not been looked on favorably by some of the orgs at W3C so they are skeptical whether or not IGF can provide good input into the process. We have to really make sure orgs in civil society are represented in the group. We want to make a strong case for NGOs as invited experts.
+[Wed 10:31:36] <dlongley>	pindar: Precisely. Another reason why I want to minimally have the word "open" for the Cg.
+[Wed 10:31:58] <dlongley>	pindar: The timeframe for F2F, etc. for those not following this issue closely is hard to respond to.
+[Wed 10:32:12] <dlongley>	pindar: Having NGOs be invited experts -- is that good enough? I'm not sure.
+[Wed 10:32:24] <dlongley>	pindar: Very important that the CG is open to get participation.
+[Wed 10:32:28] <dlongley>	m4nu: Agree completely.
+[Wed 10:32:33] <dlongley>	m4nu: We just need to convince the IG to align.
+[Wed 10:32:38] <pindarhk>	OK... thanks... I've said my bit
+[Wed 10:32:45] <dlongley>	m4nu: That's going to take weeks and time, etc.
+[Wed 10:32:50] <dlongley>	pindar: In terms of openness?
+[Wed 10:33:06] <pindarhk>	Yes, in terms of openness.
+[Wed 10:33:51] <dlongley>	m4nu: Yes, if you don't have membership you aren't automatically invited to join the work. Very different from the CG, anyone can join and we take all input as equal. With membership we have big orgs paying lots of money annually, and they are all good people, but when push comes to shove, if there's some technical decision that could create more competition for the membership companies you may see push back internally.
+[Wed 10:34:10] <pindarhk>	W3C should consider whether it is doubly disadvantaging those who don't yet have the ability to pay to participate in the standards work.
+[Wed 10:34:34] <dlongley>	m4nu: People outside have little way to change that. Digital rights management, netflix and MS really pushed for putting black boxes in there (EME), etc for example. They are required to respond to public comment, but with that example we're moving forward with that stuff in 	HTML5.
+[Wed 10:35:08] <dlongley>	m4nu: In reality, there are three classes of entities at W3C. Full-blown members (MS, Google, etc), startups, invited experts NGOs, etc. (associate members), and general public -- the last group has no actual vote, but can provide input.
+[Wed 10:35:43] <pindarhk>	noted
+[Wed 10:35:50] <dlongley>	m4nu: W3C has to pay attention to their paying members before they pay attention to the public. In reality, they have done an excellent job balancing all this and it's been transparent. No one should think, though, that the W3C IG/Working groups will be as open at the CG, they just aren't.
+[Wed 10:37:25] <dlongley>	m4nu: Back to the slides. We've got collaborators in the image here. Tech groups and Policy/Law/etc groups in separate groups. The Open Payments Foundation is in the middle, the sole purpose is to create open source solutions for standards. It's funded to create open source solutions for the technology that is to be standardized at for example, W3C. So OPF can also work on policy/law things and tech things. They are assigned to make sure this work is successful.
+[Wed 10:37:57] <dlongley>	m4nu: We've got US Fed Reserve workshop, roundtables, etc. We've attended one of those and intend to keep them up to date on this work.
+[Wed 10:38:09] <dlongley>	pindar: Can you clarify the term "Steering Group"?
+[Wed 10:38:58] <pindarhk>	Thanks for the clarification
+[Wed 10:38:59] <dlongley>	m4nu: It's an unofficial term. Interest group doesn't mean anything to anyone outside of W3C. The Web Payments IG is meant to "steer" the work. They collect use cases, create a roadmap, identify gaps in the payment tech w/respect to the open Web platform, etc. They will be the ones recommending which technical work will start. They don't create the tech, that's for Working Groups.
+[Wed 10:39:05] <dlongley>	m4nu: Does that answer your question?
+[Wed 10:39:09] <dlongley>	pindar: Yes, thank you.
+[Wed 10:40:37] <dlongley>	m4nu: Slide 9 talks about how CG and IG can work together. The CG is free to experiment, whereas IGs aren't. IGs can only collect info and document it, and propose what tech work should be done. Working Groups can only work within their mandate for narrowly scoped stuff. For example, if we want to work on integrating bitcoin into wallets/other tech, that work can only happen at the CG if it's not in the mandate for the official groups.
+[Wed 10:40:55] <dlongley>	m4nu: Nothing is really off limits in the CG; we learn about it, document it there, create tech and feed that into the other groups.
+[Wed 10:41:02] <dlongley>	m4nu: We're setting up the CG to support the IG and WGs.
+[Wed 10:41:09] <dlongley>	m4nu: If they need some experimental work done we can do that as well.
+[Wed 10:41:12] <dlongley>	m4nu: Any questions?
+[Wed 10:41:28] <dlongley>	pindar: Can you confirm that that will be the IG's understanding at the TPAC meeting?
+[Wed 10:42:26] <dlongley>	m4nu: I hope they will get it; we'll repeat it until they do -- I've never seen a group turn down help, the only time would be if there are members that feel threatened by the work the CG is doing. For example, working on decentralized backend clearing worldwide -- that could disrupt some companies.
+[Wed 10:42:42] <dlongley>	Jorge: That's very likely to happen isn't it?
+[Wed 10:43:11] <dlongley>	pindar: I disagree, I'm from Hong Kong, big banking sector, I think it's about how everyone evolves, it's not directly adversarial. I don't think that's the necessarily the case here.
+[Wed 10:44:05] <dlongley>	m4nu: We've been very careful to not come across in any adversarial way. We want this to be a rising tide that raises all ships. We want the banks, etc. to be brought along with the technology we're creating. We don't want to disrupt the global economy. We want to ensure everyone's brought along. Every one of these businesses should be able to access these technologies.
+[Wed 10:44:25] <dlongley>	pindar: There may be those that have the view expressed earlier, but I don't think that's part of this group.
+[Wed 10:44:33] <dlongley>	m4nu: Exactly, we're bridge builders, not burners.
+[Wed 10:44:52] <dlongley>	m4nu: To try and answer your question, no guarantees that IG will accept the help, but they'd be incredibly foolish not to.
+[Wed 10:45:19] <dlongley>	m4nu: We've heard that they think the Use Cases doc is very good and they should base their work on that, they are very happy with the front running we've done and that they should use what we've done.
+[Wed 10:45:27] <dlongley>	pindar: Just wanted that for the record, thank you.
+[Wed 10:45:45] <dlongley>	m4nu: At slide 10, it's a 20 minute overview, we've leaving time for questions/back and forth.
+[Wed 10:46:04] <dlongley>	m4nu: We can say -- do you want to look at Use Cases, Demo, about input from IGF, etc. Talk about what the group wants to discuss.
+[Wed 10:46:19] <dlongley>	m4nu: Then handed over to the participants in the IG and that's the end of the presentation.
+[Wed 10:46:31] <dlongley>	pindar: Which demo is this? And did you fix the certificates issue?
+[Wed 10:47:03] <dlongley>	m4nu: It's not that demo, it's the payswarm demo where we show the purchase of a blog article. Here's what a "digital wallet" could look like. At no point was I asked for a credit card by the merchant, who my payment provider is, etc.
+[Wed 10:47:22] <dlongley>	pindar: Let's share these slides with people as soon as possible so we're more productive, thank you.
+[Wed 10:47:46] <dlongley>	m4nu: We'll link to the slide deck, etc.
+[Wed 10:47:49] <pindarhk>	nope done
+[Wed 10:48:11] <m4nu>	Topic: Presentation to W3C Membership
+[Wed 10:48:16] <m4nu>	https://web-payments.org/slides/2014/tpac-payments/
+[Wed 10:48:55] <dlongley>	m4nu: There will be 50-70 participants in the room for presentation IG, that means another 400-450 that can't attend. So we're planning an unconference session to present to them.
+[Wed 10:49:11] <dlongley>	m4nu: We want to show the W3C membership the work that's going on to listen to what's happened.
+[Wed 10:49:36] <dlongley>	m4nu: This presentation is called the W3C Web Payments Activity. It will combine IG and CG into a single presentation. We'll skip this for now because we need to talk about something else.
+[Wed 10:49:45] <pindarhk>	Agreed... these slides look fine, but please normalize
+[Wed 10:50:28] <dlongley>	m4nu: The layout is effective the same. Intro IG, history, overview of how IG meeting went, links to resources.
+[Wed 10:50:43] <pindarhk>	Great looks fine
+[Wed 10:50:48] <pindarhk>	Done
+[Wed 10:50:49] <dlongley>	m4nu: We'll pull in the changes from the other slide deck into this one.
+[Wed 10:50:54] <m4nu>	Topic: W3C TPAC - Web Payments IG Agenda
+[Wed 10:50:59] <m4nu>	https://www.w3.org/Payments/IG/wiki/Draft_F2F_Agenda_-_TPAC_2014_-_27/28_October_2014#Day_1_.28October_27.29
+[Wed 10:52:54] <pindarhk>	Any remote participation or recording ?
+[Wed 10:52:58] <dlongley>	m4nu: The agenda isn't ideal -- it's not what the CG would have done anyway -- but understandable that they kind of have to set up the agenda in this way. They are assuming that 50-60% of the people in the room will be very new to the work. They won't know what's going on and didn't come to Paris workshop. Day one will be about bringing them up to speed, talking about the charter, etc. We'll be introducing to the CG. We're going to talk about related work with NFC, Web Crypto, etc. Then we'll talk about standards outside of W3C, eg: ISO 20022.
+[Wed 10:53:18] <dlongley>	m4nu: ISO 20022 can be reused definitely, other specs we'll see, etc.
+[Wed 10:53:33] <dlongley>	m4nu: Then at 5pm the wallet discussion will begin.
+[Wed 10:53:48] <dlongley>	m4nu: We can redesign the day 2 agenda after day 1 after we see how it went.
+[Wed 10:54:10] <dlongley>	Jorge: What are you going to talk about regarding "wallets" at 5pm?
+[Wed 10:54:29] <dlongley>	m4nu: We're not sure. I believe it's going to be a disaster :). All about terminology.
+[Wed 10:54:38] <dlongley>	m4nu: Any member can say something there, we'll just see what happens.
+[Wed 10:55:28] <dlongley>	m4nu: Joerg is the one talking about wallets, he's been participating in the credentials CG calls, so I think he'll structure it in a way that makes sense, but the possibility for it to get side tracked is very high. So the people from the CG need to help make sure we help bring the discussion back in line so we don't get lost.
+[Wed 10:55:58] <dlongley>	pindar: I actually slightly disagree with Manu with the CG chiming in, sometimes it helps for self-realization to work.
+[Wed 10:56:07] <dlongley>	pindar: That this terminology discussion is a rat hole.
+[Wed 10:56:43] <dlongley>	m4nu: We sort of tried that before, but after 3 hours of discussion we lost that time. Then we'll have to have that discussion all over again. Your point is very good -- there's no other way to get through this than to have the group have the realization.
+[Wed 10:57:36] <m4nu>	dlongley: One problem with letting them come to the self-realization is that they may come to the wrong conclusion - digital wallets are too difficult, there's nothing we can standardize here yet. We don't want that.
+[Wed 10:57:53] <dlongley>	pindar: Could you add a point about that to the slides?
+[Wed 10:57:59] <m4nu>	pindar: We should make it clear that concrete progress can be made, maybe put it in the slides.
+[Wed 10:58:03] <dlongley>	pindar: That the CG has come to the conclusion that concrete progress can be made.
+[Wed 10:59:15] <dlongley>	m4nu: We're going to be in the room at the AC meeting.
+[Wed 10:59:18] <pindarhk>	Where is Manu going to be during that time?
+[Wed 11:00:19] <dlongley>	m4nu: During 11am-3pm, I'll be in the Web Payments room, in the Credentials CG. The entire time I'll be in the room.
+[Wed 11:00:39] <pindarhk>	Please note next year's date for the IGF won't prob. coincide with the TPAC 2015
+[Wed 11:00:57] <dlongley>	m4nu: The CG has done a great job prepping for TPAC I think we're in great shape. If anyone wants to change the message, add a point to the slide, etc. We'll integrate.
+[Wed 11:01:19] <pindarhk>	Great to have the IRC channel
+[Wed 11:01:56] <dlongley>	m4nu: One final note, the TPAC IRC channel will be announced next week. There will be a scribe, everything will be minuted at TPAC, those minutes will be public. You can follow along in the IRC channel or wait for the minutes to come out. I will warn people that W3C minutes won't be as clean as those we do here, they may be hard to follow. But they may spend some time cleaning them up.
+[Wed 11:02:02] <dlongley>	m4nu: Any other concerns?
+[Wed 11:02:15] <dlongley>	pindar: Keep the next year's IGF, etc. in mind.
+[Wed 11:02:21] <dlongley>	m4nu: The call for next week is canceled because of TPAC.
+[Wed 11:02:25] <pindarhk>	Sorry to miss it! Thanks for your effort everyone... have a great meeting!
+[Wed 11:02:27] <dlongley>	m4nu: Thanks everyone!
+[Wed 11:02:27] <taaz>	bye!
+[Wed 11:02:41] <voip-wp>	Dave Longley (SIP/6002-00000030) has left the conference.
+[Wed 11:02:42] <voip-wp>	Manu Sporny (SIP/6000-0000002c) has left the conference.
+[Wed 11:02:44] <voip-wp>	Pindar (IAX2/diamondcard-12984) has left the conference.
+[Wed 11:02:44] <voip-wp>	dlehn (SIP/71.197.0.193:5060-0000002e) has left the conference.
+[Wed 11:02:48] <voip-wp>	Jorge (IAX2/diamondcard-377) has left the conference.
