@@ -23,6 +23,12 @@
     ],
     "homepage": "http://www.concurrences.com/auteur/Alexander-Gee?lang=en"
   },
+  "An Qi Li": {
+    "alias": [
+      "angel"
+    ],
+    "homepage": "http://www.w3.org/People/#angel"
+  },
   "Jorge Zaccaro": {
     "alias": [
       "jorgezaccaro"
@@ -124,6 +130,9 @@
       "ChristianFuhrhop"
     ]
   },
+  "Claudia Swendseid": {
+    "homepage": "https://www.minneapolisfed.org/about/whoweare/swendseid.cfm"
+  },
   "Connie Theien": {
     "alias": [
       "ctheien"
@@ -148,6 +157,15 @@
       "jaromil"
     ],
     "homepage": "http://dyne.org/"
+  },
+  "Daniel Burnett": {
+    "alias": [
+      "dburnett"
+    ],
+    "homepage": "https://twitter.com/DanielCBurnett"
+  },
+  "Dan Sun": {
+    "homepage": "https://www.linkedin.com/pub/dan-sun/23/454/637"
   },
   "Daekeun Jeong": {
     "alias": [
@@ -178,6 +196,26 @@
       "dbirch"
     ],
     "homepage": "http://www.dgwbirch.com/DGWB/Welcome.html"
+  },
+  "Dave McDermitt": {
+    "alias": [
+      "dmcdermittd",
+      "dmcdermitt",
+      "mcdermittd"
+    ],
+    "homepage": "http://www.linkedin.com/pub/dave-mcdermitt/0/439/bb2"
+  },
+  "Thomas Lammer": {
+    "homepage": "https://www.linkedin.com/profile/view?id=18357155"
+  },
+  "Eric Korb": {
+    "homepage": "http://www.linkedin.com/in/erickorb"
+  },
+  "Matt Howarter": {
+    "homepage": "http://www.linkedin.com/pub/matt-howarter/6/111/239"
+  },
+  "Daniel Buchner": {
+    "homepage": "http://www.backalleycoder.com/about/"
   },
   "Dave Longley": {
     "alias": [
@@ -298,6 +336,9 @@
     ],
     "homepage": "http://nl.abnamro.com/"
   },
+  "Francis": {
+    "homepage": "http://unknown.com/"
+  },
   "Francois Crehange": {
     "alias": [
       "fcrehange"
@@ -322,6 +363,9 @@
       "giri"
     ],
     "homepage": "https://www.linkedin.com/pub/giridhar-mandyam/0/905/b99"
+  },
+  "Glen Wiley": {
+    "homepage": "https://www.linkedin.com/pub/glen-wiley/1/965/955"
   },
   "Gray Taylor": {
     "alias": [
@@ -377,6 +421,30 @@
     ],
     "homepage": "http://www.linkedin.com/pub/ian-myles/4/154/405"
   },
+  "Istvan Lajtos": {
+    "homepage": "https://www.linkedin.com/profile/view?id=6184799"
+  },
+  "Bill Gebert": {
+    "homepage": "https://www.linkedin.com/profile/view?id=7463009"
+  },
+  "Brian Sletten": {
+    "homepage": "https://www.linkedin.com/profile/view?id=23158801"
+  },
+  "Mary Bold": {
+    "homepage": "https://www.linkedin.com/profile/view?id=28919225"
+  },
+  "Dieter Gludovacz": {
+    "homepage": "https://www.linkedin.com/in/gludovaczdieter"
+  },
+  "Al Villarica": {
+    "homepage": "https://www.linkedin.com/profile/view?id=318512"
+  },
+  "Vagner Diniz": {
+    "homepage": "https://www.linkedin.com/profile/view?id=1426029"
+  },
+  "Miguel Ballesteros": {
+    "homepage": "https://www.linkedin.com/pub/miguel-ballesteros/4/683/567"
+  },
   "Iulian Dumitraşcu": {
     "alias": [
       "iulian"
@@ -401,17 +469,17 @@
     ],
     "homepage": "http://cantonconsulting.fr/"
   },
-  "Jeff Cliff": {
-    "alias": [
-      "themusicgod1"
-    ],
-    "homepage": "https://plus.google.com/105395547687614433866/about"
-  },
   "Jeff Jaffe": {
     "alias": [
       "jjaffe"
     ],
     "homepage": "http://www.w3.org/People/Jeff/"
+  },
+  "Jeff Cliff": {
+    "alias": [
+      "themusicgod1"
+    ],
+    "homepage": "https://plus.google.com/105395547687614433866/about"
   },
   "Jeff Sayre": {
     "alias": [
@@ -684,6 +752,12 @@
     ],
     "homepage": "http://payleven.com/"
   },
+  "Patrick Adler": {
+    "alias": [
+      "pat", "padler"
+    ],
+    "homepage": "https://www.linkedin.com/pub/patrick-adler/2/730/2b4"
+  },
   "Patrice Bernard": {
     "alias": [
       "pbernard"
@@ -801,7 +875,8 @@
   },
   "Stéphane Boyera": {
     "alias": [
-      "sboyera"
+      "sboyera",
+      "steph"
     ],
     "homepage": "http://www.w3.org/People/Boyera/"
   },
@@ -879,4 +954,4 @@
     ],
     "homepage": "http://astri.org/"
   }
-} 
+}
