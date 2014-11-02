@@ -7,14 +7,14 @@
   var $ = (typeof jQuery !== 'undefined') ? jQuery : undefined;
   /* Standard regular expressions to use when matching lines */
   var commentRx = /^\[?(.*)\]?\s+\<(.*)\>\s+(.*)$/;
-  var scribeRx = /^scribe:.*$/i;
+  var scribeRx = /^(scribe|scribenick):.*$/i;
   var meetingRx = /^meeting:\s(.*)$/i;
-  var presentRx = /^present\s?\+\s(.*)$/i;
   var totalPresentRx = /^total present:\s(.*)$/i;
   var dateRx = /^date:\s(.*)$/i;
   var chairRx = /^chair:.*$/i;
   var audioRx = /^audio:\s?(.*)$/i;
   var proposalRx = /^(proposal|proposed):.*$/i;
+  var presentRx = /^present[:+](.*)$/i;
   var resolutionRx = /^(resolution|resolved): ?(.*)$/i;
   var useCaseRx = /^(use case|usecase):\s?(.*)$/i;
   var topicRx = /^topic:\s*(.*)$/i;
@@ -63,19 +63,19 @@
   {
     var rval = {};
 
-    for(p in scrawl.people)
+    for(var p in scrawl.people)
     {
       var person = scrawl.people[p];
-      var names = p.split(' ')
+      var names = p.split(' ');
 
       // append any aliases to the list of known names
       if('alias' in person)
       {
-        names = names.concat(person['alias']);
+        names = names.concat(person.alias);
       }
 
       // Add the aliases and names if they don't already exist in the aliases
-      for(n in names)
+      for(var n in names)
       {
         var alias = names[n];
         alias = alias.toLowerCase();
@@ -245,7 +245,7 @@
         rval += ' [scribe assist by ' + scrawl.htmlencode(assist) + ']';
       }
 
-      rval += ' <a id="link-' + scrawl.counter + 
+      rval += ' <a id="link-' + scrawl.counter +
         '" style="display:none;" href="#'+ scrawl.counter + '">✪</a></div>\n';
     }
     else
@@ -343,19 +343,22 @@
             context.scribe.push(aliases[scribe]);
             scrawl.present(context, aliases[scribe]);
             rval = scrawl.information(
-              context.scribe[context.scribe.length-1] + 
+              context.scribe[context.scribe.length-1] +
               ' is scribing.', textMode);
          }
        }
        else if(msg.search(chairRx) != -1)
        {
-         var chair = msg.split(':')[1].replace(' ', '').split(' ')[0];
-         chair = chair.toLowerCase();
+         var chairs = msg.split(':')[1].split(',');
 
-         if(chair in aliases)
-         {
-            context.chair = aliases[chair];
-            scrawl.present(context, aliases[chair]);
+         context.chair = [];
+         for(var i = 0; i < chairs.length; i++) {
+           var chair = chairs[i].replace(' ', '').toLowerCase();
+           if(chair in aliases)
+           {
+              context.chair.push(aliases[chair]);
+              scrawl.present(context, aliases[chair]);
+           }
          }
        }
        // check for meeting line
@@ -363,6 +366,26 @@
        {
          var meeting = msg.match(meetingRx)[1];
          context.group = meeting;
+       }
+       // check for present line
+       else if(msg.search(presentRx) != -1)
+       {
+          var present = msg.match(presentRx)[1].toLowerCase();
+          var people = present.split(',');
+
+          // try to find the person by full name, last name, and then first name
+          for(var i = 0; i < people.length; i++) {
+            var person = people[i].replace(/^\s/, '').replace(/\s$/, '');
+            var lastName = person.split(' ')[1];
+            var firstName = person.split(' ')[0];
+            if(person in aliases) {
+              scrawl.present(context, aliases[person]);
+            } else if(lastName in aliases) {
+              scrawl.present(context, aliases[lastName]);
+            } else {
+              console.log('Could not find alias for', person);
+            }
+          }
        }
        // check for audio line
        else if(msg.search(audioRx) != -1)
@@ -415,11 +438,7 @@
          var usecase = msg.match(useCaseRx)[2];
          rval = scrawl.usecase(usecase, textMode);
        }
-       else if(msg.search(presentRx) != -1) 
-       {
-         // ignore present lines
-       }
-       else if(msg.search(totalPresentRx) != -1) 
+       else if(msg.search(totalPresentRx) != -1)
        {
          context.totalPresent = msg.match(totalPresentRx)[1];
        }
@@ -503,7 +522,8 @@
            else
            {
              rval = scrawl.error(
-               '(IRC nickname not recognized)' + line, textMode);
+               '(IRC nickname \'' + nick + '\' not recognized)' + line,
+               textMode);
            }
          }
          else
@@ -617,14 +637,14 @@
           peoplePresent += ', ';
         }
 
-        peoplePresent += '<a href="' + person.homepage + '">'+ 
+        peoplePresent += '<a href="' + person.homepage + '">'+
           person.name + '</a>'
       }
       if(context.totalPresent) {
         peoplePresent += ', ' + context.totalPresent;
       }
 
-      rval += '<dt>Chair</dt><dd>' + chair + '</dd>\n';
+      rval += '<dt>Chair</dt><dd>' + chair.join(' and ') + '</dd>\n';
       rval += '<dt>Scribe</dt><dd>' + scribe.join(' and ') + '</dd>\n';
       rval += '<dt>Present</dt><dd>' + peoplePresent + '</dd>\n';
 
@@ -697,9 +717,9 @@
         }
       }
 
-      rval += 'Chair:\n  ' + chair + '\n';
+      rval += 'Chair:\n  ' + chair.join(' and ') + '\n';
       rval += 'Scribe:\n  ' + scribe.join(' and ') + '\n';
-      rval += 'Present:\n  ' + 
+      rval += 'Present:\n  ' +
         scrawl.wordwrap(peoplePresent, 65, '\n  ') + '\n';
       if(context.audio) {
         rval += 'Audio:\n  https://web-payments.org/minutes/' +
