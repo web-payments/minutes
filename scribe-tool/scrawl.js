@@ -22,7 +22,7 @@
   var voipRx = /^voip.*$/i;
   var toVoipRx = /^voip.{0,4}:.*$/i;
   var rrsAgentRx = /^RRSAgent.*$/i;
-  var queueRx = /^q[+-]\s.*|^q[+-].*|^ack\s+.*|^ack$/i;
+  var queueRx = /^q[+-?]\s.*|^q[+-?].*|^ack\s+.*|^ack$/i;
   var voteRx = /^[+-][01]\s.*|[+-][01]$/i;
   var agendaRx = /^agenda:\s*(http:.*)$/i;
   var urlRx = /((ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?)/;
