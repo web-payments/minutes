@@ -29,6 +29,18 @@
     ],
     "homepage": "http://www.w3.org/People/#angel"
   },
+  "Dan Druta": {
+    "homepage": "http://www.linkedin.com/in/dandruta"
+  },
+  "Bill Smith": {
+    "homepage": "http://www.linkedin.com/pub/bill-smith/1/a0b/3a6"
+  },
+  "Marie-Claire Forgue": {
+    "homepage": "http://www.w3.org/People/#mcf"
+  },
+  "Karen Myers": {
+    "homepage": "http://www.w3.org/People/#karen"
+  },
   "Jorge Zaccaro": {
     "alias": [
       "jorgezaccaro"
@@ -204,6 +216,9 @@
       "mcdermittd"
     ],
     "homepage": "http://www.linkedin.com/pub/dave-mcdermitt/0/439/bb2"
+  },
+  "Siddharth Bajaj": {
+    "homepage": "http://www.linkedin.com/in/sbajaj24"
   },
   "Thomas Lammer": {
     "homepage": "https://www.linkedin.com/profile/view?id=18357155"
@@ -875,16 +890,26 @@
   },
   "Stéphane Boyera": {
     "alias": [
+      "stephane",
       "sboyera",
       "steph"
     ],
     "homepage": "http://www.w3.org/People/Boyera/"
+  },
+  "Andrew Fregly": {
+    "homepage": "https://www.linkedin.com/in/amfregly"
   },
   "Ted Thibodeau Jr.": {
     "alias": [
       "macted"
     ],
     "homepage": "http://www.linkedin.com/in/macted"
+  },
+  "Shane McCarron": {
+    "alias": [
+      "ShaneM"
+    ],
+    "homepage": "https://www.linkedin.com/in/halindrome"
   },
   "Thomas Picard": {
     "alias": [
