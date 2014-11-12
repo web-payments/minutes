@@ -1,0 +1,45 @@
+[Wed 10:05:18] <m4nu>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2014Nov/0050.html
+[Wed 10:05:21] <m4nu>	scribe: m4nu
+[Wed 10:05:32] <m4nu>	m4nu: Any changes to the Agenda?
+[Wed 10:05:32] <pindarhk>	Add FIF 2014 to agenda
+[Wed 10:05:45] <m4nu>	TOpic: Financial Innovation Forum 2014
+[Wed 10:05:47] *	dlehn (~dlehn@c-71-197-0-193.hsd1.va.comcast.net) has joined #webpayments
+[Wed 10:06:08] <m4nu>	pindarhk: About 200 people attended, insurance companies in addition to banks there - good discussion about Apple Pay, lot of interest in tokenization in general. I found that quite surprising.
+[Wed 10:06:20] <m4nu>	pindarhk: Provided an update from last year - remarked about formal formation of IG.
+[Wed 10:07:04] <m4nu>	pindarhk: I circulated the slides to the list - I want to push more non-traditional players to join W3C. I have a meeting w/ one of the major Credit Card companies to talk w/ them. I need to chat with someone offline to get these organizations integrated into the work.
+[Wed 10:07:50] <m4nu>	pindarhk: There was almost no time for Q/A - it took me about 45 minutes to leave conference venue due to corridor discussion - so that's great. Rushed timeframe for 2017 - not to be confused w/ press release that went out. I'm going to be a regular fixture at this event. Insurance companies in the mix was notable.
+[Wed 10:08:12] <m4nu>	m4nu: Were there people from last year that wanted to participate more?
+[Wed 10:08:29] <voip-wp>	dlehn (SIP/71.197.0.193:5060-00000055) has joined the conference.
+[Wed 10:08:55] <m4nu>	pindarhk: If you recall, we now know CTO for New York City - was at UBS last year and she followed up recently, so this event has resulted in net gains for the Web Payments work. No one introduced themselves as having followed the work. I didn't get a sense that we had the same group of people. I think the notable difference was the arrival of the tech community was good. 
+[Wed 10:10:00] <m4nu>	pindarhk: It was hypothetical last year, having Apple do what they did was a good wake up call. That said, corridor discussion - we have very convenience NFC payment systems in Hong Kong. Value proposition for Apple Pay was not clear - we already have great NFC payment mechanisms. Value proposition for developing economies may be better than developed ones. 
+[Wed 10:10:17] <m4nu>	pindarhk: Apple Pay trajectory was not clear. It was also not clear if the transaction fee approach would fly in Asia. 
+[Wed 10:11:31] <m4nu>	pindarhk: Interesting thing as compared to Money 20/20 - cryptocurrencies raised half-way through the day, would've thought it would've occurred earlier. Blockchain technical element isn't in the general awareness, I found it quite surprising. Those are my take-away points. Maybe next year Blockchain will be more visible. Maybe around companies like Apple. Visa was there, presented their tokenization work. All in all, it was good, good to have a variety of non-bank players. Clearly, there were a lot of banks.
+[Wed 10:12:27] <m4nu>	pindarhk: Clear focus on security, not clear on what HTTP/2 will change wrt. security landscape. Performance existing infrastrcutures would be impacted... F5 was there talking about their security solutions. The widespread use of encryption, people are still metering out what the tactical impact will be.
+[Wed 10:12:57] <m4nu>	Topic: W3C TPAC Web Payments Face-to-face Review
+[Wed 10:13:07] <m4nu>	scribe: dlehn
+[Wed 10:13:16] <m4nu>	http://www.w3.org/2014/10/f2f-wpay-minutes.html
+[Wed 10:13:30] <dlehn>	m4nu: minutes are out, web payments IG face to face meeting went very well
+[Wed 10:14:06] <dlehn>	m4nu: Expecting small crowd, but we filled room to capacity. About 35-48 people throughout both days, many of them very new to the work. Some participants from Web Payments CG were also there.
+[Wed 10:15:12] <dlehn>	m4nu: Had a lot of interesting organizations there.  US Federal Reserve had 3 people, Rabobank there, Verisign, Verizon, GSM association, internet socity, bloomburg, nacs, walmart, target, and more... major players in the space.
+[Wed 10:15:22] <dlehn>	m4nu: All large players from different verticals.
+[Wed 10:16:02] <dlehn>	m4nu: People from mobile, government, education, standards organizations, browser vendor opera, paypal
+[Wed 10:16:39] <dlehn>	m4nu: Only about 10 organizations have been participating in CG.  Large organizations may be more careful with participation.
+[Wed 10:17:30] <dlehn>	m4nu: We started out the day by going over the Web Payments IG charter: http://www.w3.org/2014/04/payments/webpayments_charter.html
+[Wed 10:17:30] <dlehn>	m4nu: We then had presentations from various W3C groups including Web Payments CG, Credentials CG, NFC WG, WebAppsSec WG, WebCrypto WG, etc.
+[Wed 10:18:12] <dlehn>	m4nu: We also had presentation on various ISO and financial industry standards from X9.  
+[Wed 10:18:28] <dlehn>	m4nu: During the last part of the day, we broke out into wallet discussion, which gave everyone an idea on what Deutche Telekom research had been doing wrt. Wallets and standardization. That discussion was a bit problematic because it focused on the wrong layer of abstraction. That became clear by the second day.
+[Wed 10:19:51] <dlehn>	m4nu: So, the group decided to change the "wallet" concept into more of a "payment agent" idea. Remember that "User Agent" is basically a browser on the Web, and it has a number of features that are expected of clients trying to communicate via the Web. We're applying the same general approach to payments. This approach has served the Web well over the past 25 years.
+[Wed 10:19:51] <dlehn>	m4nu: During the afternoon on the second day, the group was attempting to figure out how to have the discussion around a payment agent - and the Web Payments CG use cases became the natural place to start. We tried going over the for 15 minutes, and then dove deeper for an hour and a half. It generated really good discussion and there was a lot of agreement w/ that general approach and some of the basic concepts. The Web Payments CG use cases have been preliminarily integrated into the Web Payments IG use case list here: http://www.w3.org/Payments/IG/wiki/Use_Cases_Task_Force#Community_Group_Use_Cases
+[Wed 10:21:28] <pindarhk>	Good that the Web Payments CG use cases were discussed.
+[Wed 10:21:47] <dlehn>	m4nu: We also brought in a number of use cases from X9, etc.
+[Wed 10:22:11] <dlehn>	m4nu: We finished off the afternoon by talking about task forces, telecon times, and general administrivia wrt. where does the IG go from here.
+[Wed 10:23:29] <dlehn>	m4nu: The IG wanted weekly meetings, problems with worldwide group and finding good telecon times.
+[Wed 10:23:37] <dlehn>	m4nu: group met for the first time last week, the minutes from that meeting haven't been approved yet.
+[Wed 10:24:11] <m4nu>	Topic: W3C TPAC Hallway Discussion
+[Wed 10:24:11] <m4nu>	See the Open Credentials meeting from yesterday: http://opencreds.org/minutes/2014-11-11/
+[Wed 10:24:52] <dlehn>	m4nu: credential CG had face to face meeting.  had mix from web payments cg, ig, and credentials people, great cross-pollination.
+[Wed 10:25:59] <dlehn>	m4nu: people interested in work on related tech (graph normalization, http signatures, etc), so that work might be moving forward faster than we had anticipated.
+[Wed 10:26:14] <dlehn>	m4nu: There is interest from the Social Web WG, Web Annotations WG, and Data Activity in general around two of the specs that are being incubated in this group: RDF Graph Normalization and Secure Messaging. This is really great news as we were concerned about those specs finding a home at W3C.
+[Wed 10:26:13] <m4nu>	Any questions on W3C TPAC meeting? If not, we'll end the call for today.
+[Wed 10:26:30] <pindarhk>	no ... thanks you've covered most of it
+[Wed 10:26:38] <pindarhk>	Thanks for the update
