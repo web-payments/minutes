@@ -746,7 +746,7 @@
     var context =
     {
       'group': scrawl.group,
-      'chair': 'Manu Sporny',
+      'chair': ['Manu Sporny'],
       'present': {},
       'scribe': [],
       'topics': [],
