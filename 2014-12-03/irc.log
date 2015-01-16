@@ -1,0 +1,64 @@
+[Wed 10:02:36] <manu>	Agenda: http://lists.w3.org/Archives/Public/public-webpayments/2014Dec/0000.html
+[Wed 10:02:37] <dlongley>	Date: 2014-12-04
+[Wed 10:02:37] <dlongley>	scribe: dlongley
+[Wed 10:02:37] <dlongley>	Present+ taaz
+[Wed 10:04:17] <dlongley>	manu: Agenda for today is light - just updates and future planning. The other thing we may want to put on the agenda is talking about the release some of digital bazaar's source code as a commercial product and to discuss a way to allow contributors to the project to revenue share, etc.
+[Wed 10:04:26] <dlongley>	manu: Any other changes?
+[Wed 10:04:35] <dlongley>	none
+[Wed 10:04:37] <manu>	Topic: Scaling Teleconferences Back
+[Wed 10:05:14] <dlongley>	manu: There are currently four calls around web payments that are going on every week. The CG, IG, IG Use Cases Task Force, IG payment agent task force.
+[Wed 10:05:20] <voip-wp>	bshambaugh (SIP/172.0.212.173-00000089) has joined the conference.
+[Wed 10:05:35] <dlongley>	manu: All four of those are going on every week and we may want to scale these CG calls back particularly because we don't have as much attendance on these calls.
+[Wed 10:05:40] <dlongley>	manu: We could scale back to once a month.
+[Wed 10:05:56] <manu>	dlongley: Once per month for Web Payments CG call is enough.
+[Wed 10:06:09] <dlongley>	manu: Of course we can always call for another meeting at any point if we feel that's necessary.
+[Wed 10:06:23] <dlongley>	manu: Ok, let's do these once per month from now on. Most of the work will shift to Web Payments IG.
+[Wed 10:06:32] <manu>	Topic: Web Payments IG Update
+[Wed 10:07:33] <dlongley>	manu: Currently there are multiple streams of work going on in the Web Payments IG. This is good, good discussion, good competent people and everyone excited about the work. We've got folks from Deutsche Telekom, World Bank, W3C, DB, etc. people who have been involved w/W3C a long time and new members.
+[Wed 10:07:42] *	bshambaugh has quit (Ping timeout: 258 seconds)
+[Wed 10:08:12] <dlongley>	manu: We have three major task forces in IG. I'm heading up Use Cases Task Force, the purpose is to create a Use Cases document. We've taken the CG Use Cases doc and handed it over to them to seed the work. We've got ISO 20022 use cases as well.
+[Wed 10:08:24] <dlongley>	manu: A new standard 12812 coming out of X9 and some other use cases from X9.
+[Wed 10:09:32] <voip-wp>	Evgeny (SIP/sip2sip.info-0000008a) has joined the conference.
+[Wed 10:09:48] *	Evgeny (4d4b9954@gateway/web/freenode/ip.77.75.153.84) has joined #webpayments
+[Wed 10:10:00] <dlongley>	manu: All these docs are getting integrated into a single Use Cases doc. We have those calls Thurs 9am EST, only W3C members may join the calls. The other task force is the Payment Agent task force. The Agent is a piece of software that runs payment activities for you on the web. Parallel to the User Agent (browser). The point is to figure out the basic architecture for the Payment Agent, what it does what it can access, etc. Two docs will be created from the task forces and fed into the roadmap doc which will talk about status of payments on the Web. The roadmap doc will also demonstrate what the IG thinks is possible, where the gaps are and what can be done.
+[Wed 10:10:52] <dlongley>	manu: There is at least one more task force of interest. The Glossary Task Force's purpose is to make sure the language is aligned with the industry, we aren't inventing new terminology or if we are we put it somewhere so people know what we're talking about. So, everything is moving well in the IG, people are motivated, we're hoping to get some docs out in Q1 in 2015.
+[Wed 10:10:58] <dlongley>	manu: Those will be first public working drafts.
+[Wed 10:11:08] <dlongley>	manu: That's an update from the Web Payments IG, any questions?
+[Wed 10:11:15] <dlongley>	none
+[Wed 10:11:25] <manu>	Topic: Planning for next several months
+[Wed 10:13:26] <dlongley>	manu: Now that the IG is up and running, what should the CG do? Certainly it an help review the Use Cases and docs and all the things IG is working on, but we should also be focusing on some technical stuff as well. We moved the credentials work to another CG, we didn't want a distraction or people wouldn't care as much as it, etc. In hindsight, it's funny because the credentials CG has tons of interest lots of people working on things. The opposite of what was predicted is happening.
+[Wed 10:13:31] <dlongley>	manu: That CG is very active.
+[Wed 10:14:50] <dlongley>	manu: The credentials work will continue to happen in the Credentials CG, the question is what we do here to increase activity. We do have to talk about RDF Dataset Normalization. The credentials group is almost to the point that the RDF Dataset Normalization should be pushed to official W3C work. We did have a discussion w/one of the W3C staff contacts on a mailing list about digital signatures, etc. and there may be further discussion there. This CG can play a supporting role related to that, but either way that work will continue.
+[Wed 10:15:04] <dlongley>	manu: Are there any ideas on what the CG should be focusing on primarily over the next couple of months?
+[Wed 10:15:43] <manu>	dlongley: I think work items that we have in the charter are all relevant, all of those things will be discussed in the IG. We can be semi-reactive to IG - fill in gaps in technology/ideas, put that information into the group.
+[Wed 10:15:52] <manu>	dlongley: Follow what the IG is doing, feed information into that group.
+[Wed 10:16:56] <dlongley>	manu: One of the things that makes it really difficult is that the IG has a week delay on when their minutes are approved. So it's been difficult to let the CG know what's been going on. It's not a big deal in the long term, but by the time the CG reads the minutes, the IG has already moved on from the discussion. There's new stuff that has happened since then, so coordination may be hard. But I agree we could be semi-reactive to what's going on there.
+[Wed 10:17:08] <dlongley>	manu: The commerce spec, the WebDHT stuff, etc. things that no one has picked up yet.
+[Wed 10:17:32] <dlongley>	manu: Fully decentralized version of identity credentials over the Web, but the credentials CG will be working on that.
+[Wed 10:18:13] <dlongley>	manu: We might want to talk about the source code stuff. I think it's fine to be reactive to the IG right now until they get a more stable direction on where they want to go. We could just make sure the CG is aware of the discussions the IG is having, copy/paste to the mailing list so people know what's going on.
+[Wed 10:18:40] <dlongley>	brent: If we meet every month we'll be able to consolidate the last three weeks, which will help
+[Wed 10:18:53] <dlongley>	manu: Maybe if the calls are only monthly that's less of a big deal.
+[Wed 10:19:23] <dlongley>	brent: They'll be publishing minutes about what they've talked about?
+[Wed 10:19:34] <dlongley>	manu: Kind of like the minutes we publish but not as clean/pretty, but there is a log of what was discussed.
+[Wed 10:19:45] <dlongley>	brent: Is it structured like a CG but just different people?
+[Wed 10:20:28] <dlongley>	manu: It's very like how we operate here, yes. They don't record the audio like we do here. But everything else is basically run like we do in this group. Everyone there is from a company that is from the financial industry or is an implementor, so there are more industry professionals in that group.
+[Wed 10:21:06] <dlongley>	manu: So the general plan is to be reactive to IG's needs and the people in the IG can post as much as they can (once released) from the IG to the CG mailing list.
+[Wed 10:21:15] <dlongley>	manu: Any other comments?
+[Wed 10:21:16] <dlongley>	none
+[Wed 10:21:24] <manu>	Topic: Release of Payswarm Source Code
+[Wed 10:24:32] <dlongley>	manu: We've been talking about this internally at Digital Bazaar for a while now. We want to make a reference implementation available so people can hack on things and test things out and that's hard to do if you have to build the whole thing from scratch. So we've been talking about possibly releasing source code. If we do this, a big if, we'll release under a commercial license, it's all DB's intellectual property but people can look at the source but DB retains all rights. That would be stage 1, stage 2 could be that we allow non-commercial use of the platform, so for anyone who wants to develop or test an idea out, or propose an update to the specs but needs an implementation they can use the platform to do that. If the entity/org/person isn't profiting off of the source code then they can use it. Stage 3 might be a profit-sharing mechanism. We want anyone that develops on this code to get paid for doing so. We think that's the healthiest way towards a good ecosystem and healthy platform. A certain percentage of revenue made by the software goes back into the community. Meaning if a dev adds a new feature to the product and a license deal occurs later then some of that revenue goes back to the developer -- where that dev doesn't have to work at DB, they can be self-employed, work at another company, etc.
+[Wed 10:24:46] <dlongley>	manu: The idea is to create some kind of revenue sharing mechanism with the platform. Who knows where we're going from there.
+[Wed 10:25:38] <dlongley>	manu: We want to do smart contracts at some point, in the group, and we want to dogfood the smart contract stuff, and if we're going to do that, we should do that on the core platform, the reference implementation. In the future, the way that devs end up getting paid will be that the payments are run through the platform and the percentages for who gets paid what would be split up through a smart contract. A program will pay people instead of some human run process.
+[Wed 10:25:51] <dlongley>	manu: That's the proposal of an idea we're playing around with right now.
+[Wed 10:26:37] <dlongley>	brent: [missed] has been allowing different people to get paid when working on a project when they aren't directly working for the companies behind the projects.
+[Wed 10:27:04] <dlongley>	brent: What about other things with people gaming the system, people are too humble/meek, etc. I guess it would really need to be established, before hand or something, how much something is actually worth.
+[Wed 10:27:29] <dlongley>	manu: Yes, that's what we've been grappling with, and if we do this, we'd be doing this in a staged approach because it may be hard to get right.
+[Wed 10:29:38] <dlongley>	manu: A really simple approach is adding/removing lines of source are worth some percentage of revenue, but perhaps too simple. The only way to track stuff is to look at lines of source committed added/removed. The other things like documentation, evangelizing the product, etc. are all valuable things but are more difficult to handle to begin with. We can reevaluate the algorithm every year to try and make sure people are compensated for things like that but it will take stages/work to figure out how to do it properly. Like the payments work, when we started this work everyone was saying it would be too hard, no one will join the work, etc. but we've made tons of progress in that area. We think the smart contract stuff is going to work as well, and trying to integrate it into the core part of our work may help.
+[Wed 10:30:02] <dlongley>	manu: We're hoping to pull the community group into the discussion and start out naively and see how far we get (if we decide to do this).
+[Wed 10:30:31] <manu>	http://www.sensorica.co/
+[Wed 10:31:51] <dlongley>	manu: What we're trying to do is seed the community group with technology to talk about and we're trying to make sure that the CG folks get something out of it, a financial reward out of participating rather than the typical open source thing where other companies mostly benefit from that vs. the contributors getting paid. Not that we have anything against open source, we have plenty of open source libs and use it, but we'd like to reward people for working on financial software.
+[Wed 10:31:59] <dlongley>	manu: Any other comments?
+[Wed 10:32:07] <dlongley>	none
+[Wed 10:32:51] <dlongley>	brent: I've been working on my own Use Cases; I reviewed a lot of payment companies back in March, I came up with a few new things.
+[Wed 10:33:00] <dlongley>	manu: If you've got new ones let us know because we're integrating in the IG right now.
+[Wed 10:33:47] <dlongley>	manu: Next call will be in January, first or second week.
