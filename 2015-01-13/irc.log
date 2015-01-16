@@ -1,0 +1,95 @@
+[Tue 22:01:50] <dlongley>	scribe: dlongley
+[Tue 22:01:52] <manu>	Agenda: https://lists.w3.org/Archives/Public/public-webpayments/2015Jan/0007.html
+[Tue 22:02:22] <dlongley>       Date: 2015-01-14
+[Tue 22:02:22] <dlongley>       Present+ Tim
+[Tue 22:02:22] <dlongley>	manu: Most of these calls will be reviews because there's so much happening in the Web Payments IG (which has 3 calls) it's hard to keep up.
+[Tue 22:02:45] <dlongley>	manu: It's a flurry of activity to try and get ready for the f2f that's happening next month. So we'll go through the things happening around payments and credentials.
+[Tue 22:02:58] <dlongley>	manu: It's good that we're so busy.
+[Tue 22:03:24] <manu>	Topic: Web Payments IG Update
+[Tue 22:04:12] <dlongley>	manu: The IG is having 3 weekly calls. We have a call on Tuesday 9am ET, that is the "all hands" web payments IG meeting, one at Thursday 12pm ET, which is a use cases task for meeting and a call on Friday 9:30am ET which is a payment agent task force meeting.
+[Tue 22:04:32] <manu>	Meeting minutes for Web Payments IG: https://www.w3.org/Payments/IG/wiki/Main_Page#Recent_Meetings
+[Tue 22:04:53] <manu>	Upcoming Web Payments IG meetings: https://www.w3.org/Payments/IG/wiki/Main_Page#Upcoming_Meetings
+[Tue 22:05:39] <dlongley>	manu: The meetings are going well, people from Bloomberg, [missed] all providing really good input. It's good and we're making rapid progress.
+[Tue 22:06:40] <manu>	Here's the use cases wiki for the Web Payments IG: https://www.w3.org/Payments/IG/wiki/Use_Cases_Task_Force#Status
+[Tue 22:06:41] <dlongley>	manu: The Web Payments CG, this group, worked on a set of use cases that we got from the Web Payments workshop from last year. Those use cases are now integrated into the Web Payments IG wiki, which is what we wanted. All these groups have their ability to say what they wanted about the use cases and they are now getting integrated into an official document (FPWD).
+[Tue 22:07:34] <dlongley>	manu: The use cases get hashed out in the wiki and once the group feels that they are ready to get into the FPWD.
+[Tue 22:07:39] <manu>	Here's a link to the pre-FPWD Web Payments IG Use Cases document: https://dvcs.w3.org/hg/webpayments/raw-file/default/latest/use-cases/index.html
+[Tue 22:08:07] <dlongley>	manu: So these use cases have been vetted by multiple groups and are not getting, over time, into the FPWD.
+[Tue 22:08:58] <dlongley>	manu: The FPWD won't have all of the use cases, it will have just the ones that we've found to be the highest priority. We have so much input in just the use cases document, literally hundreds of use cases, areas from X9, US Fed, [missed], there's an immense amount of material to go through and boil down, the group is working on that.
+[Tue 22:09:11] <dlongley>	manu: Any questions on use cases before we move on?
+[Tue 22:09:13] <dlongley>	none
+[Tue 22:09:19] <manu>	Next group is the Payment Agent Task Force
+[Tue 22:10:07] <dlongley>	manu: A Payment Agent is effectively a software program like a User Agent is a browser, for example. A Payment Agent does payment transactions, etc. We're looking at how to express everything that this Payment Agent does.
+[Tue 22:10:09] <manu>	Here's one view of payment flows for the payment agent: https://www.w3.org/Payments/IG/wiki/Payment_Agent_Task_Force#Flows_and_Protocols
+[Tue 22:10:46] <manu>	We're also exploring a transaction-phase based approach to explain details about the payment agent: https://lists.w3.org/Archives/Public/public-webpayments-ig/2015Jan/0006.html
+[Tue 22:10:55] <manu>	https://docs.google.com/document/d/1q_1OA1FPE1L-jkXlvu89RFSJ3FGWeHyw5SUJotfiACk/edit
+[Tue 22:11:46] <dlongley>	manu: We haven't quite figured out what we're going to do with the Payment Agent document but things are coming together. We're discussing how to best tell the story about what the Payment Agent does. We're going to break apart the technology stack to figure out how to make these things happen.
+[Tue 22:12:42] <dlongley>	manu: All of this work is being done as a precursor to the third f2f meeting for the payments work, which will happen in Rabobank headquarters in Utrecht, Netherlands on Feb 2-4.
+[Tue 22:13:05] <dlongley>	manu: We're going to talk about everything we typically talk about in these web payments things: security, digital receipts, transactions, and credentials.
+[Tue 22:13:23] <dlongley>	manu: If there's nothing else on the Web Payments IG update, we'll jump to the Credentials CG update.
+[Tue 22:13:26] <dlongley>	manu: Any questions?
+[Tue 22:13:27] <dlongley>	none
+[Tue 22:13:31] <manu>	Topic: Credentials CG Update
+[Tue 22:14:10] <manu>	Credentials Roadmap document: https://docs.google.com/document/d/19pnLioDVOoTl5ScUHgf_Bj9gUpQBHyShrnDoY_uz20c/edit
+[Tue 22:14:25] <dlongley>	manu: The Credentials CG is moving along pretty well. Unfortunately, I don't think the roadmap document is public just yet but I'll provide the link to it [as it will open up].
+[Tue 22:14:25] <dlehn>	(it's not public)
+[Tue 22:15:19] <dlongley>	manu: We feel that we have the use cases that we want done so we want the web payments IG to integrate those credentials use cases; many of them are shared problems with multiple different industry verticals included overlap with web payments (eg: KYC, high stakes, etc.)
+[Tue 22:15:43] <dlongley>	manu: The Badge Alliance is doing work on a vocabulary to be used with JSON-LD for credentials.
+[Tue 22:15:53] <dlongley>	http://openbadges.github.io/openbadges-specification/1.1/context.json
+[Tue 22:16:11] <manu>	Here's a link to the specification for the JSON-LD credentials/badges vocabualry: http://openbadges.github.io/openbadges-specification/
+[Tue 22:16:37] <dlongley>	manu: A different group is working on that, and we've got Dave Longley primarily working on the spec for RDF Dataset Normalization.
+[Tue 22:16:48] <manu>	here's the link to the dataset normalization work that Dave Longley is leading: http://json-ld.org/spec/latest/rdf-dataset-normalization/
+[Tue 22:17:10] <dlongley>	manu: We also have some stuff going on with Linked Data Signatures that we hope to get out sooner rather than later.
+[Tue 22:17:28] <dlongley>	manu: We're talking with W3C for trying to create groups for where this stuff will best fit. That discussion is ongoing.
+[Tue 22:17:37] <dlongley>	manu: That's basically the update for the credentials group.
+[Tue 22:19:09] <dlongley>	manu: We have a lot of participation in the Credentials CG and not necessarily in the Web Payments CG. The problem for the Web Payments CG is that we have multiple groups that have picked up the Web Payments CG work and are going forward with it, leaving the Web Payments CG not with too many documents to work on. We do have the Web Commerce Spec and Web Commerce API that need to be worked on, otherwise the Web Payments IG and Credentials CG have picked up the work. That's not a bad thing, it's just somewhat of a concern because we spent a lot of time building a community where people are ready to contribute but as soon as they are ready we have shifted a lot of the work to other groups.
+[Tue 22:19:24] <manu>	Topic: Upcoming Events
+[Tue 22:19:39] <manu>	3rd official Web Payments IG Face-to-face
+[Tue 22:19:46] <manu>	Feb 2nd-4th 2015, At Rabobank HQ in Utrecht, Netherlands
+[Tue 22:20:18] <manu>	https://www.w3.org/Payments/IG/wiki/2014-02-02_Meeting_Page
+[Tue 22:20:43] <dlongley>	manu: We are trying to bring in Invited Experts, people should think about attending.
+[Tue 22:20:50] <dlongley>	manu: That's one way you could participate in the official work.
+[Tue 22:21:17] <manu>	The other near-term event is NACHA - Payments 2015
+[Tue 22:21:30] <manu>	April 19th-22nd 2015, New Orleans
+[Tue 22:21:39] <manu>	https://payments.nacha.org/2015CFP
+[Tue 22:21:53] <dlongley>	manu: The Web Payments work at W3C will be presenting there.
+[Tue 22:22:10] <dlongley>	manu: There are a number of other events that are up in the air, in the April/June time frame and we'll announce once the details are sorted out.
+[Tue 22:22:25] <dlongley>	manu: We'll be talking at some fairly large events with big industry players so that's great news.
+[Tue 22:22:38] <dlongley>	manu: So that's it for the upcoming events, anyone else know of any that are coming up that we're participating in?
+[Tue 22:22:48] <manu>	Topic: Coordination and priority on work items
+[Tue 22:23:43] <dlongley>	manu: I think on the docket for this year ... our high priority items are getting: RDF Dataset Normalization spec done, finalizing HTTP signatures and getting that out there, trying to a home for the Linked Data Signatures spec (used to be Secure Messaging spec and we're splitting that into two specs and rebranding).
+[Tue 22:24:00] <dlongley>	manu: The credentials group is going to be pushing some of that work forward along with the Identity Credentials spec.
+[Tue 22:24:31] <dlongley>	manu: The other specs that this group cares about are the Web Commerce spec, the Web Payments spec, and the Web Commerce API.
+[Tue 22:24:38] <dlongley>	manu: Along with their associated vocabularies.
+[Tue 22:24:49] <dlongley>	manu: I think that's it, that's what we want to get done for version 1.0 of this system.
+[Tue 22:26:05] <dlongley>	manu: It looks like the Web Payments IG is headed in the same direction as the Web Payments CG, so it looks like the CG did a good job. If they IG continues down that path they'll likely end up at the Web Commerce/Web Commerce API specs and we'll hopefully have that more baked when we get there.
+[Tue 22:26:18] <manu>	dlongley: Generally in agreement with those specs.
+[Tue 22:26:53] <manu>	dlongley: We have a few other specs on the site - payment intents, price indexing, that we think are not a part of 1.0. Maybe we can extend to those specs in the future, make them a part of a later version.
+[Tue 22:27:31] <dlongley>	manu: The other thing to consider is WebDHT/kademlia type solution.
+[Tue 22:27:34] <manu>	manu: The other thing that's a big question mark is the WebDHT work... we need a Telehash-lite mechanism for the Web. Decentralized hashtable.
+[Tue 22:27:55] <dlongley>	manu: It's not new technology, we just have to build a look up mechanism over HTTP.
+[Tue 22:28:09] <dlongley>	manu: Maybe it will be built over WebSockets or something if that's not possible.
+[Tue 22:28:16] <dlongley>	manu: Any other business to discuss?
+[Tue 22:28:38] <dlongley>	manu: I think we won't meet for another month, we'll meet post Utrecht f2f to talk about what was discussed there.
+[Tue 22:29:29] <mediapro_>	I think things look to be progressing well... Critical path produced by the Payments CG, appear to have been shipped to other groups.  I think that's a good outcome overall...
+[Tue 22:29:31] <dlongley>	manu: Myself, Dave Longley, and Dave Lehn are super tied up getting spec work, etc. done so there's not a lot of free time/time to meet. If there are no objections we'll meet next month, 2nd week of Feb to do a status update.
+[Tue 22:30:07] <dlongley>	manu: The critical path has been farmed out to multiple different groups, which is a good outcome, so more people are looking at each individual piece.
+[Tue 22:30:31] <dlongley>	manu: We have 10-14/6-15 people involved in the different groups Credentials CG/Web Payments IG looking at this stuff now.
+[Tue 22:30:37] <dlongley>	manu: Which is good.
+[Tue 22:30:47] <dlongley>	manu: So I think we'll just keep updates coming in these meetings.
+[Tue 22:30:59] *	jpotvin-opman-ca (~jpotvin@69-165-170-68.dsl.teksavvy.com) has joined #webpayments
+[Tue 22:31:10] <dlongley>	dlehn: The stuff on the IG website, it's all locked down, is there a way for it to be more open so the CG people can get better access?
+[Tue 22:31:12] *	jpotvin-opman-ca (~jpotvin@69-165-170-68.dsl.teksavvy.com) has left #webpayments
+[Tue 22:31:17] <dlongley>	dlehn: The wiki pages, etc. some of them are locked.
+[Tue 22:31:32] <dlongley>	manu: The newest ones are locked, the old ones shouldn't be -- once the minutes are approved they should be unlocked.
+[Tue 22:31:39] <dlongley>	manu: Are you talking about the lock icon next to it?
+[Tue 22:31:49] <dlongley>	dlehn: Yeah, it says authorization required for some of them.
+[Tue 22:32:00] <dlongley>	manu: The lock icon just means it's an HTTPS link I think.
+[Tue 22:32:10] <dlongley>	dlehn: Some pages go to other pages that require authorization.
+[Tue 22:32:14] *	jpotvin (45a5aa44@gateway/web/freenode/ip.69.165.170.68) has joined #webpayments
+[Tue 22:32:36] <dlongley>	manu: Unfortunately they are sending agendas out to the members only mailing list instead of the public mailing list and maybe we can ask the IG to send that kind of info to the public.
+[Tue 22:32:47] <dlongley>	dlehn: More people could follow along later if they have that information.
+[Tue 22:33:30] <dlongley>	manu: I'll try to bring it up and make it so we're a little more open with agendas and other things we can be.
+[Tue 22:33:54] <dlongley>	manu: Any other comments?
+[Tue 22:33:59] <dlongley>	none
+[Tue 22:34:21] <dlongley>	manu: Ok, so we'll meet next month, second week of Feb.
