@@ -1,0 +1,137 @@
+[Tue 22:11:15] <dlongley>	scribe: dlongley
+[Tue 22:11:21] <manu>	Agenda: https://lists.w3.org/Archives/Public/public-webpayments/2015Feb/0004.html
+[Tue 22:11:57] <dlongley>	manu: Any changes to the agenda?
+[Tue 22:12:01] <dlongley>	none
+[Tue 22:12:01] <dlongley>	Present+ taaz
+[Tue 22:12:09] <manu>	Topic: F2F Use Cases
+[Tue 22:12:18] <manu>	https://www.w3.org/Payments/IG/wiki/Meeting_Summary_Feb2015#Use_Cases
+[Tue 22:12:49] <dlongley>	manu: The following use cases were approved at the Utrecht F2F. It basically covers the steps of a transaction.
+[Tue 22:12:56] <manu>	Initiating a Payment
+[Tue 22:12:56] <manu>	Partially Blinding Payment Information
+[Tue 22:12:56] <manu>	Choosing a Payment Instrument
+[Tue 22:12:56] <manu>	Making a Payment Without Registering
+[Tue 22:12:56] <manu>	Payer-initiated Funds Transfer
+[Tue 22:12:57] <manu>	Limiting Payee-initiated Payments
+[Tue 22:12:59] <manu>	Proof of Payment, Hold, or Funds
+[Tue 22:13:01] <manu>	Refunds
+[Tue 22:13:03] <manu>	Applying Coupons and Loyalty Cards to a Payment
+[Tue 22:13:07] <manu>	Performing a Payment in Multiple Phases
+[Tue 22:13:58] <dlongley>	manu: The text looks different from the use cases we were looking on because people had problems with us saying "push based payments" or "pseudo anonymity" which was changed to "partially blinding payment information" and "push based payments" was changed to "payer-initiated funds transfer". There were people who had issues with "pull vs. push" payment language, so we'll have to change that.
+[Tue 22:14:08] <dlongley>	manu: All the use cases were integrated into the spec, so for example...
+[Tue 22:14:23] <manu>	For example, this is a link to the payment initiation use case: https://dvcs.w3.org/hg/webpayments/raw-file/default/latest/use-cases/index.html#initiating-a-payment
+[Tue 22:15:11] <dlongley>	manu: We're going to need to refine the use cases a bit and need the web payments CG to review, we'd like to get it out by march so the more reviews we get in the better. People have said that they want the requirements to be stripped out of there.
+[Tue 22:16:25] <dlongley>	manu: A number of people felt that the generalized introduction isn't what we wanted to do, rather we wanted a more loosely defined introduction, but the problem with that is the same problem we had when we tried a loose introduction before where people thought it was too vague, etc. So right now we have, in the spec, a fairly technical high-level 1-2 sentence description of it and then talk about points of view (payer, payment processor, etc.) and then we talk about why it's important and a requirements section. That's the template we have right now for the use cases.
+[Tue 22:16:48] <manu>	Topic: Desired Outcomes from the Face-to-face
+[Tue 22:16:55] <manu>	https://lists.w3.org/Archives/Public/public-webpayments-ig/2015Feb/0002.html
+[Tue 22:18:05] <dlongley>	manu: Chaals put together a desired outcomes list; people didn't have an issue with them, he said they were apple pie statements (they are benign). The goals of the group are fast adoption of the technology, create a level playing field, reduce transaction fraud, reduce amount of software necessary, removal of need for merchant to hold onto customer data, etc.
+[Tue 22:18:09] <manu>	- A fast and significant adoption of the technology (>100M+ in the first two years).
+[Tue 22:18:09] <manu>	- Level playing field (aka fair competition) for merchants, payment providers, customers, software vendors, and payment networks.
+[Tue 22:18:09] <manu>	- A great reduction in "stolen card" transaction fraud.
+[Tue 22:18:09] <manu>	- A great reduction in the amount of custom software that a merchant must write to integrate with new payment products.
+[Tue 22:18:10] <manu>	- Removal of the need for a merchant to hold on to sensitive customer data.
+[Tue 22:18:12] <manu>	- Greatly reduced payment provider switching costs for customers and merchants.
+[Tue 22:18:22] <dlongley>	manu: Chaals added these items:
+[Tue 22:18:30] <manu>	- Does not add (ideally reduces) the time required to make a payment
+[Tue 22:18:30] <manu>	- Enables value-added services to help payers
+[Tue 22:18:30] <manu>	- Requires as little new technology and as few standards as possible
+[Tue 22:18:30] <manu>	- Enables anyone to understand what they are doing (esp. its cost) when they make a payment to another person (or system or company or object)
+[Tue 22:18:30] <manu>	- Does not interfere with the ability to meet regulatory requirements
+[Tue 22:18:32] <manu>	- Enables people to "take their money out of the system"
+[Tue 22:18:36] <manu>	- Can be delegated to an "agent" (device, automated process, etc).
+[Tue 22:18:54] <dlongley>	manu: Some of them are vague so he's reworking them in the wiki. The idea here is that there's a set of desired outcomes that will probably go in the roadmap doc and maybe in the use cases doc as well.,
+[Tue 22:19:03] <dlongley>	manu: We want to quickly outline high-level goals.
+[Tue 22:19:06] <manu>	Topic: F2F Credentials Discussion
+[Tue 22:19:19] <manu>	https://www.w3.org/Payments/IG/wiki/Meeting_Summary_Feb2015#Use_Cases
+[Tue 22:19:34] <manu>	The group discussed the importance of Credentials for Know-Your-Customer and Anti-Money Laundering regulation, and seemed to indicate loose consensus on the following:
+[Tue 22:19:34] <manu>	Credentials are an important part of Payments.
+[Tue 22:19:34] <manu>	It would be very difficult to meet regulatory compliance without some basic credential support.
+[Tue 22:19:34] <manu>	If a Credentials Working Group is recommended, it should be separate but coordinated-closely with the Payments work.
+[Tue 22:20:50] <dlongley>	manu: The group talked about the need for credentials for KYC, anti-money laundering, etc. There was loose consensus in that people agreed they were important (credentials) for payments. If a credentials WG is recommended, everyone agreed that it should probably not be lumped in with the payments work. If a payments WG is created at W3C a separate credentials WG should be created and they should work independently but closely.
+[Tue 22:21:10] <dlongley>	manu: The credentials work is important to more than just financial services, eg: health care, government service-type orgs, etc.
+[Tue 22:21:17] <dlongley>	manu: education, etc.
+[Tue 22:21:49] <dlongley>	manu: There were a number of other new task forces that were created and I'm a bit concerned that we have a lot of task forces now. We have like eight now and that may be spreading people thin.
+[Tue 22:22:02] <dlongley>	manu: We may need more concentrated work on use cases, roadmap, and payment agent design.
+[Tue 22:22:27] <manu>	https://www.w3.org/Payments/IG/wiki/File:Extended_four_corner_model.png
+[Tue 22:22:27] <dlongley>	manu: There was a pretty interesting diagram -- there was a discussion about a vocabulary that's been used and ...
+[Tue 22:22:30] *	dlongley bad audio
+[Tue 22:22:42] *	dlongley ok, back
+[Tue 22:23:02] <dlongley>	manu: Everyone in the group was able to make the three corners models google wallet, etc. and the four corners models like visa, MC onto this diagram.
+[Tue 22:23:23] <dlongley>	manu: All of those things are glossary terms that we need to pay attention to.
+[Tue 22:23:58] <dlongley>	manu: We want to do some industry outreach and I think all that stuff... we're going to wait until the minutes are published until we talk about that with any more detail.
+[Tue 22:25:07] <dlongley>	manu: There was quite a bit of discussion about the payment agent architecture and how that's being done and we need to have a pretty deep discussion on exactly what the architecture for that kind of stuff is. In general that's a summary of what happened at the F2F. I think we were expecting 18 and we got around 30, it was great. Around two crypto-currency orgs showed up, Ripple Labs joined W3C and attended and so did Ethereum, so now we have some cryptocurrency folks involved now. Any questions before we move into the next topic?
+[Tue 22:25:27] <manu>	Topic: Next 3-6 Months of Work
+[Tue 22:25:53] <manu>	   * Proof-of-Purchase/Hold/Funds
+[Tue 22:25:53] <manu>	   * Digital Receipts
+[Tue 22:25:53] <manu>	   * WebDHT / Where are you From
+[Tue 22:25:53] <manu>	   * Identity Credentials
+[Tue 22:27:30] *	jpotvin (45a5aa44@gateway/web/freenode/ip.69.165.170.68) has joined #webpayments
+[Tue 22:27:32] <dlongley>	manu: The way the current CG work is going, the p3 implementation is going, we made an assumption that the payment system would have some mechanism for encoding a digital receipt as a core part of the payment network. For example, when you buy something you can use Linked Data and attach the entire inventory of what you're buying and include it in what you're buying. And we've discovered that the retailers don't want the payments systems to see that data, that it's proprietary, it's their data. They dont' want the big tech companies to see the products they are buying, etc. They don't want to be disrupted by sharing this data.
+[Tue 22:27:50] <dlongley>	manu: If you can advertise to people because you know what they want before they head into the store the brick and mortars may have reduced business, etc.
+[Tue 22:28:33] <dlongley>	manu: So when we talk about digital receipt and proof of payment, the problem with the digital receipt and offer portion... that's the other part that came up is that the group doesn't think that offers are essential for v1. The idea that you'd put an offer up on a website and a search engine would index it, etc. they aren't concerned with achieving that.
+[Tue 22:29:43] <dlongley>	manu: The best I could do is say that there are large search companies that are interested in that. The idea that there would be a machine-readable offer on a webpage didn't seem compelling to many participants in the room. We need to also find a way to decouple the digital receipt from the payment request. Maybe you could encrypt the digital receipt all the way through to the customer. Someone else said all they need is a merchant reference number and then they can reconstruct it on their side. But this is a problem for customers getting really detailed receipts for them to store.
+[Tue 22:30:08] <dlongley>	manu: If that's not in the critical path then it becomes an afterthought and maybe the merchant will write the receipt somewhere that the customer can access but maybe not.
+[Tue 22:30:19] <dlongley>	manu: It could end up that retailers just don't implement this.
+[Tue 22:31:22] <dlongley>	manu: So we might have to back off of digital receipts and focus on proof of purchase/hold/funds. The other thing that we need to talk about is this whole decentralized identifier thing, WebDHT, etc. and how that fits in with the identity credentials stuff. We could end up reusing the decentralized identifiers for identifying financial accounts, identities in the system of course, and creating pseudo-anonymous identifiers as well, so it has a big impact on that as well.
+[Tue 22:31:32] <manu>	scribe: manu
+[Tue 22:32:07] <manu>	dlongley: My thoughts on digital receipts/offers - at a bare minimum, what I'd like to see - payment initiation messages should be in JSON-LD / Linked Data format, so if you want to offer information to end up in a digital receipt, at a bare minimum you can offer that information.
+[Tue 22:33:24] <manu>	dlongley: So, people can offer that as a value-add. Same thing for digital receipt on way back - should be JSON-LD. We should spec out ways to include encrypted data if they want to. All of this can work, but for larger retailers/small retailers - if you don't want to include your items in the receipt, you don't have to - you can use an identifier. They can keep their information private if they want to. However, if they don't have a problem doing that, they can put that information in there and run it through the transaction.
+[Tue 22:33:54] <manu>	dlongley: We don't want to prescibe stuff that retailers /have/ to do - we don't want to push show stoppers on people. These are JSON-LD messages, you can put what you want in them.
+[Tue 22:34:59] <manu>	manu: People were concerned about digital receipts and offers - they were afraid it would take it into the weeds.
+[Tue 22:35:38] <manu>	dlongley: We should provide those as options, it's achievable - payment processors need to preserve information in the request and include it in the receipt. Larger retailers would want that anyway - preserve my merchant IDs in there.
+[Tue 22:36:35] <manu>	dlongley: all data from payment initiation should pass through - if we figure out a way to do pass-through data, then we enable innovation to happen. The other thing that's important is, it might be difficult for flows/use cases we've had in the past if payment processors can't display to their users what they're buying.
+[Tue 22:37:24] <manu>	dlongley: If you start requiring a trusted UI, you have problems. So, when you go to pay for these things, we want to be on a payment processors site for a lot of these use cases. Merchant X wants $5 - if that's all you can see, then it's not as nice as what we've designed before. Merchant X wants $Y for Z items.
+[Tue 22:39:17] <dlongley>	manu: One of the other things that came up was that many people were concerned about ensuring that legacy payment systems operated in this new frame that we were outlining. A number of people were really concerned that we kept talking about push payments and the card network folks wanted to know about their industry (incredibly large) supports that as well. I pushed back quite a bit that we would start handing over information
+[Tue 22:39:17] <dlongley>	to the merchant in these messages and most other people said we don't want to do that, but what we do want to do is be able to pass through proprietary card network data, like emv code tokenization cryptogram. So from the payment terminal to the payment system that can go into the legacy payment system by the merchant to initiate the funds transfer.
+[Tue 22:40:04] <dlongley>	manu: So we have to start demonstrating some of the other stuff as well, like, how does the proof of funds or proof of payment, can we pass back an emv co cryptrogram and can the merchant use that and pass it into the legacy system.
+[Tue 22:40:43] <manu>	dlongley: I think the simple answer is "yes" we need to support that and it shouldn't be a very big change to what we're doing.
+[Tue 22:41:11] <manu>	dlongley: The general flow is still the same - you use the "proof-of-*" to get what you want from the legacy network.
+[Tue 22:41:32] <manu>	dlongley: unfortunately for the customer, that doesn't quite work in the ideal way, but we can support that w/o changing much at all.
+[Tue 22:42:29] <dlongley>	manu: This agenda topic is basically, what are we going to focus on for the next 3-6 months of work. I guess this concept of ... we need to decouple the offer and the line items a bit more and the thing we return back isn't necessarily a digital receipt but a proof of purchase/hold/funds and in that thing the merchant might get some token to do pull payments.
+[Tue 22:42:49] <dlongley>	manu: We want to have the ability to include the list of goods that would be purchased and we want to be able to put cryptograms, etc in the response.
+[Tue 22:43:01] <dlongley>	manu: What we might want to do is detail exactly what these messages look like.
+[Tue 22:43:13] <dlongley>	manu: There are a number of people that wnat to see what the messages look like.
+[Tue 22:43:57] <manu>	dlongley: I actually don't think much has to change. Instead of payment initiation being an offer... we can have a payment initiation object that could contain an offer. If there is no offer - it's just a request for money.
+[Tue 22:45:04] <dlongley>	manu: I think the focus is, let's get the messages correct and into a presentable form for the Web Payments IG and see if that's what they're looking for. For the next 2 months use cases will be sent out there and hopefully the Web payments CG can say those are the use cases and these are what the messages could look like with JSON-LD and signatures, etc.
+[Tue 22:45:15] <dlongley>	manu: I agree it's not a huge change but it is a change to the underlying messaging format.
+[Tue 22:45:40] <dlongley>	manu: So the last two things have to do with the WebDHT, where are you from problem, etc. and the DID/Credentials spec.
+[Tue 22:46:04] <manu>	Topic: Decentralized identifiers
+[Tue 22:46:05] <manu>	http://opencreds.org/minutes/2015-02-10/#topic-4
+[Tue 22:46:50] <dlongley>	manu: This is something we shouldn't put in the critical path for anything, but it's something the Web Payments CG should look at. We do believe there's a solution for it, but we need to work through all the technical details for it to see if it's something that's doable.
+[Tue 22:47:28] <manu>	dlongley: General agreement that there are a lot of ideas out there to explore to solve the problem. It's probably a solvable problem, but we're trying to reduce complexity. Can we fit it in w/ the rest of the work? Implementation and testing work to do. 
+[Tue 22:47:51] <dlongley>	manu: We'll need to raise some foundation money to put some people on it, because it's a fairly large task.
+[Tue 22:48:10] <dlongley>	manu: I don't know if it would be as big as JSON-LD but I could see it becoming nearly that size.
+[Tue 22:48:42] <dlongley>	manu: I think the group is going to start hearing more about it, this WebDHT, IC stuff. The IC stuff is being taken care of in the Credentials CG and the WebDHT hasn't really been started and needs to get started sooner than later.
+[Tue 22:48:48] <dlongley>	manu: Anything else to discuss or be concerned about?
+[Tue 22:50:16] <jpotvin>	yup
+[Tue 22:50:25] <dlongley>	manu: We'll do one more of these at night and if we don't get anyone else from asia pacific we'll move back to day time in the US.
+[Tue 22:50:37] <jpotvin>	is payment attributes use case still "in"?
+[Tue 22:51:11] <dlongley>	manu: Well, it's not out, it hasn't been voted on by the group because the people assigned to fill out the use case haven't filled it out yet.
+[Tue 22:51:15] <dlongley>	manu: It hasn't come up on the docket yet.
+[Tue 22:51:31] <dlongley>	manu: So, no, it's not out. And the group seems to be fairly reluctant to say anything is out, it's just a question of priority.
+[Tue 22:51:39] <dlongley>	manu: Let me check the use cases, one sec.
+[Tue 22:51:42] <jpotvin>	lots of work going on here on that one -- but not yet coherent
+[Tue 22:52:13] <jpotvin>	so here it's okay if it's empty presently -- we'll be contributing soon
+[Tue 22:52:14] <manu>	https://www.w3.org/Payments/IG/wiki/Use_Cases_Task_Force#Choosing_the_Attributes_of_Price
+[Tue 22:52:46] <jpotvin>	ya,  saw that   -- I was just checking if it's "up to date" as such
+[Tue 22:53:01] <dlongley>	manu: If joseph is going to be contributing to it, he should do it ASAP; it would be best if joseph took what's in the wiki and filled out the examples details, etc. all that.
+[Tue 22:53:09] <dlongley>	manu: That would be good.
+[Tue 22:53:15] <dlongley>	manu: It is up-to-date
+[Tue 22:53:27] <dlongley>	manu: It just hasn't been filled out yet.
+[Tue 22:53:40] <jpotvin>	okay -- i'd like if you could point me to the section of the wiki
+[Tue 22:54:00] <dlongley>	manu: Since Ripple Labs has joined they might be fairly interested in the whole value exchange stuff ... Ethereum as well. Joseph should talk to Evan from Ripple and Vinay from Ethereum
+[Tue 22:54:14] <dlongley>	manu: If they have any thoughts on the use case.
+[Tue 22:54:32] <manu>	manu: jpotvin, here's the section of the wiki you should fill out: https://www.w3.org/Payments/IG/wiki/Use_Cases_Task_Force#Choosing_the_Attributes_of_Price
+[Tue 22:54:47] <jpotvin>	I'm working on this with http://www.dkl.com/corporate_overview.html
+[Tue 22:54:53] <manu>	manu: and unfortunately, you need to be a W3C member to do that - but you can also send your comments into the public-webpayments-ig-comments mailing list.
+[Tue 22:55:34] <jpotvin>	all good -- our work can be contributed anyways
+[Tue 22:55:46] <dlongley>	manu: The team looks fairly impressive.
+[Tue 22:55:55] <jpotvin>	cool bunch
+[Tue 22:56:07] <manu>	manu: the Web Payments IG has to respond to comments you send in, so send them in early and often :)
+[Tue 22:56:18] <dlongley>	manu: Ok, anything else?
+[Tue 22:56:26] *	manu jpotvin anything else you want to ask/discuss?
+[Tue 22:56:31] <jpotvin>	ya, we've been deep-thinking some things
+[Tue 22:56:42] <jpotvin>	that's all for now
+[Tue 22:56:44] <jpotvin>	thanks
+[Tue 22:56:45] <manu>	manu: Send it to the mailing list if you can share.
+[Tue 22:56:53] <manu>	manu: ok, thanks - ending the call, then.
+[Tue 22:57:02] <jpotvin>	g'night
